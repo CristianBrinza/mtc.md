@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:400,300,600,700,800');
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  position: relative;
+}
+
+:root {
+  font-family: Inter, serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+
+  color-scheme: light dark;
+  color: #222;
+  background-color: #ffffff;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --theme_primary_color_black: #222;
+  --theme_primary_color_white: #ffffff;
+
+  --theme_navbar_top_gray: #8C8C8C;
+
+
+
+  /* Transition for smooth theme changes */
+  transition:
+          background-color 0.8s ease-in-out,
+          color 0.8s ease-in-out;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #1d1d1f;
+    background-color: #ffffff;
+  }
+}
+
+/* Dark Mode Specific Styles */
+:root.dark-mode {
+  color: #ffffff;
+  background-color: #222;
+
+  --theme_primary_color_black: #ffffff;
+  --theme_primary_color_white: #222;
+
+}

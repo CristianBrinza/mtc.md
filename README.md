@@ -1,2 +1,1 @@
 # mtc.md
-mtc.md

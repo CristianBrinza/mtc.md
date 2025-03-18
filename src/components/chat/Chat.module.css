@@ -1,0 +1,7 @@
+.chat_icon{
+    position: fixed;
+    right: 50px;
+    bottom: 40px;
+    cursor: pointer;
+    z-index: 9999999999;
+}
