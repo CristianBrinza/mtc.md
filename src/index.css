@@ -30,6 +30,9 @@ body {
   --theme_primary_color_black: #222;
   --theme_primary_color_white: #ffffff;
 
+  --theme_primary_color_light_gray: #F7F7F7;
+  --theme_primary_color_gray: #EBEBEB;
+
   --theme_navbar_top_gray: #8C8C8C;
 
 

@@ -200,8 +200,9 @@ const Navbar: React.FC = () => {
                   </div>
 
                   <div className={styles.navbar_bottom_menu_right}>
-                    <Icon type="search" />
-                    <Icon type="cart" />
+
+                    <Link  to={`/${t('lang')}/cart`} className={styles.navbar_bottom_menu_right_lang_btn}> <Icon type="search" /></Link>
+                   <Link  to={`/${t('lang')}/cart`} className={styles.navbar_bottom_menu_right_lang_btn}> <Icon type="cart" /></Link>
                     <Icon type="user" />
                     <div className={styles.navbar_bottom_menu_right_lang_btn} onClick={toggleLangPopup}>
                     {i18n.language === 'en' ? (
@@ -213,25 +214,26 @@ const Navbar: React.FC = () => {
                     )}
                     </div>
                     {isListLangPopupVisible && (
-                    <div className={styles.navbar_bottom_menu_right_lang}>
-                      <button
-                        onClick={() => handleChangeLanguage('ro')}
-                      >
-                        {t('navbar.romanian')}
-                      </button>
-                      <button
-                        onClick={() => handleChangeLanguage('en')}
+                      <div className={styles.navbar_bottom_menu_right_lang}>
+                        <div className={styles.navbar_bottom_menu_right_lang_btn_select}
+                             onClick={() => handleChangeLanguage('ro')}
+                        >
+                          {t('navbar.romanian')}
+                        </div>
+                        <div className={styles.navbar_bottom_menu_right_lang_btn_select}
+                             onClick={() => handleChangeLanguage('ru')}
 
-                      >
-                        {t('navbar.english')}
-                      </button>
-                      <button
-                        onClick={() => handleChangeLanguage('ru')}
+                        >
+                          {t('navbar.russian')}
+                        </div>
+                        <div className={styles.navbar_bottom_menu_right_lang_btn_select}
+                             onClick={() => handleChangeLanguage('en')}
 
-                      >
-                        {t('navbar.russian')}
-                      </button>
-                    </div>
+                        >
+                          {t('navbar.english')}
+                        </div>
+
+                      </div>
                     )}
                   </div>
 
