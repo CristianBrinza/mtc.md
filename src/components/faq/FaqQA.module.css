@@ -19,13 +19,27 @@
   margin-top: -1px;
 }
 .FaqQA_inside {
-  padding: 0px;
+  padding: 0px 34px 0px 20px;
   box-sizing: border-box;
   border-bottom: 1px solid #ebebeb;
-  height: 0px;
+  /*height: 0px;*/
+  max-height: 0px; /* Ensures smooth transition */
   overflow: hidden;
+  transition:
+    max-height 0.3s ease-in-out,
+    padding 0.3s ease-in-out;
 }
+
 .FaqQA_inside_show {
-  height: auto;
+  max-height: 500px; /* Adjust this value based on your content */
   padding: 10px 34px 20px 20px;
+}
+
+.FaqQA_title_svg {
+  transform: rotate(0deg) !important;
+  transition: transform 0.3s;
+}
+.FaqQA_title_svg_rotated {
+  transform: rotate(45deg) !important;
+  transition: transform 0.3s;
 }

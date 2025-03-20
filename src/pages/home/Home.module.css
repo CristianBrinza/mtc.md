@@ -13,6 +13,7 @@
 .home_slider_main {
   width: 100%;
   display: flex;
+  cursor: pointer;
 }
 .home_hero_img_desk {
   width: 100%;

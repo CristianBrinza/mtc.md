@@ -6,12 +6,47 @@ import Hero from '../../../components/hero/Hero.tsx';
 import styles from './Triple.module.css';
 import Faq from '../../../components/faq/Faq.tsx';
 import FaqQA from '../../../components/faq/FaqQA.tsx';
+import ShopCard from '../../../components/shop_card/ShopCard.tsx';
+import Slider from 'react-slick';
+import Functions from '../../../components/functions/Functions.tsx';
+import Footer from '../../../components/footer/Footer.tsx';
 
 export default function Triple() {
   const breadcrumbItems = [
     { label: 'Promo', url: ' ' },
     { label: 'Internet + TV + Mobil' },
   ];
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 951,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 651,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <>
@@ -38,9 +73,67 @@ export default function Triple() {
         </div>
       </Hero>
 
-      <div className={`title ${styles.title1}`}>
-        Crează-ți propriul abonament:
+      {/*<div className={`title ${styles.title1}`}>*/}
+      {/*  Crează-ți propriul abonament:*/}
+      {/*</div>*/}
+
+      <div className={`title ${styles.title2}`}>
+        Smartphone la DOAR 1 leu, sau Preț Special!
       </div>
+
+      <div className={`sub_title ${styles.sub_title1}`}>
+        Alege oferta de internet cu TV fără reducere și primești la conectare
+        unul din device-urile de mai jos
+      </div>
+
+      <Slider {...settings} className={styles.triple_carousell}>
+        <div className={styles.triple_carousell_block}>
+          <ShopCard
+            image="/images/shop/323564512.png"
+            price={1}
+            old_price={2999}
+            reducere="-99%"
+            title='Hisense TV 32"'
+            subtitle="32A4N"
+            characteristics='Direct LED / Full HD / 32"'
+          />
+        </div>
+        <div className={styles.triple_carousell_block}>
+          <ShopCard
+            image="/images/shop/394534437.png"
+            price={1}
+            old_price={2999}
+            reducere="-99%"
+            title='Hisense TV 43"'
+            subtitle="43A4N (4k)"
+            characteristics='UHD VA / 4k / 43"'
+          />
+        </div>
+        <div className={styles.triple_carousell_block}>
+          <ShopCard
+            image="/images/shop/394534437.png"
+            price={2599}
+            old_price={2999}
+            reducere="-99%"
+            title='Hisense TV 55"'
+            subtitle="55A4N (4k)"
+            characteristics='UHD VA / 4k / 55"'
+          />
+        </div>
+        <div className={styles.triple_carousell_block}>
+          <ShopCard
+            image="/images/shop/523534569.png"
+            price={13499}
+            old_price={2999}
+            reducere="-99%"
+            title="Apple"
+            subtitle="Iphone 16 Pro"
+            characteristics="(8/256GB)"
+          />
+        </div>
+      </Slider>
+
+      <Functions title={'Funcții interactive'} />
       <Chat />
       <Feedback />
       <Faq style_type="1">
@@ -201,6 +294,8 @@ export default function Triple() {
           </p>
         </FaqQA>
       </Faq>
+
+      <Footer discalmer={true} />
     </>
   );
 }

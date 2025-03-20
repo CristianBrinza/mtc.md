@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
 
   // Use a single state for active menu; null means no menu is open.
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [isOverlayVisible, setOverlayVisible] = useState(false);
+  const [setOverlayVisible] = useState(false);
 
   // One function to toggle any menu.
   const toggleMenu = (menu: string) => {
@@ -276,7 +276,7 @@ const Navbar: React.FC = () => {
                 className={styles.navbar_bottom_menu_option}
                 onClick={() => toggleMenu('menu1')}
               >
-                Internet + TV
+                {t('navbar.internet_tv')}
               </div>
               <div
                 className={`${styles.navbar_bottom_menu_option_submenu} ${activeMenu === 'menu1' ? styles.navbar_bottom_menu_option_submenu_show : ''}`}
@@ -423,6 +423,13 @@ const Navbar: React.FC = () => {
                     >
                       Wi-Fi 6
                     </div>
+                    <div
+                      className={
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                      }
+                    >
+                      Safe-web
+                    </div>
                   </div>
                 </div>
               </div>
@@ -431,7 +438,7 @@ const Navbar: React.FC = () => {
                   className={styles.navbar_bottom_menu_option}
                   onClick={() => toggleMenu('menu2')}
                 >
-                  Mobil
+                  {t('navbar.mobil')}
                 </div>
               </div>
               <div
@@ -470,7 +477,7 @@ const Navbar: React.FC = () => {
                         styles.navbar_bottom_menu_option_submenu_block_list_item
                       }
                     >
-                      Mereu cu tine
+                      Modem Wi-Fi
                     </div>
                     <div
                       className={

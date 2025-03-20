@@ -13,7 +13,7 @@ interface FaqProps {
 const Faq: React.FC<FaqProps> = ({
   children,
   style_type,
-  max_faq = 5,
+  max_faq = 4,
   hideButtonAfterClick = true,
 }) => {
   const [showAll, setShowAll] = useState(false);

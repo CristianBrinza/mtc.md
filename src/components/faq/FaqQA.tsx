@@ -18,7 +18,10 @@ const FaqQA: React.FC<FaqQAProps> = ({ children, question }) => {
     <div className={styles.FaqQA} style={FaqQAStyle}>
       <div className={styles.FaqQA_title} onClick={toggleFAQ}>
         <div>{question}</div>
-        <Icon type="plus" />
+        <Icon
+          className={`${styles.FaqQA_title_svg} ${activeFAQ ? styles.FaqQA_title_svg_rotated : ''}`}
+          type="plus"
+        />
       </div>
       <div
         className={`${styles.FaqQA_inside} ${activeFAQ ? styles.FaqQA_inside_show : ''}`}

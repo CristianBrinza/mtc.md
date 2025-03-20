@@ -98,7 +98,6 @@
   display: flex;
   align-items: center;
   gap: 40px;
-  cursor: pointer;
   position: relative;
 }
 .navbar_bottom a {
@@ -287,7 +286,9 @@
   font-style: normal;
   font-weight: 600;
   line-height: 16px; /* 100% */
+  cursor: pointer;
 }
+
 .navbar_bottom_menu_option_submenu_block_list_item_small_text {
   font-size: 14px;
   font-weight: 400;

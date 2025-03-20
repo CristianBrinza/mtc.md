@@ -1,0 +1,15 @@
+.functions {
+  margin: 40px auto 20px;
+  width: 100%;
+  max-width: 1180px;
+}
+.functions_title {
+  margin: 0px auto 20px;
+  width: 100%;
+  max-width: 650px;
+  text-align: center;
+}
+.functions_inside {
+  border-radius: 20px;
+  padding: 33px 45px 33px 45px;
+}

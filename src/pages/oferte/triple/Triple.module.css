@@ -4,3 +4,21 @@
   max-width: 650px;
   text-align: center;
 }
+.title2 {
+  margin: 40px auto 0;
+  width: 100%;
+  max-width: 650px;
+  text-align: center;
+}
+.sub_title1 {
+  margin: 2px auto 10px;
+  width: 100%;
+  max-width: 650px;
+  text-align: center;
+  background: var(--theme_primary_color_white);
+}
+.triple_carousell {
+  width: 100%;
+  max-width: 1180px;
+  margin: 30px auto 10px;
+}

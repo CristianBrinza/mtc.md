@@ -1,0 +1,124 @@
+.ShopCard {
+  width: 280px;
+  height: 430px;
+  border-radius: 20px;
+  border: 1.25px solid var(--theme_primary_color_dark_gray);
+  position: relative;
+  overflow: hidden;
+}
+
+.ShopCard_img {
+  width: 100%;
+}
+
+.ShopCard_title {
+  color: var(--theme_primary_color_black);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px; /* 110% */
+  letter-spacing: -0.2px;
+}
+.ShopCard_title span {
+  font-weight: 400;
+  letter-spacing: -0.6px;
+}
+.ShopCard_inside {
+  padding: 0px 16px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.ShopCard_cart {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+}
+.ShopCard_price {
+  color: var(--theme_primary_color_blue_2);
+  font-family: Inter;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 76.923% */
+  letter-spacing: -0.26px;
+}
+.ShopCard_price_small {
+  font-size: 18px;
+}
+
+.ShopCard_old_price {
+  color: #c9c9c9;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 111.111% */
+  letter-spacing: -0.18px;
+  margin-bottom: 4px;
+}
+.ShopCard_price_small {
+  font-size: 14px;
+  line-height: 16px;
+}
+.ShopCard_old_price_line {
+  border-top: 1px solid #c9c9c9;
+  height: 1px;
+  margin-bottom: 13px;
+  margin-top: -10px;
+  width: 100%;
+}
+.ShopCard_old_price_block {
+  display: flex;
+  gap: 5px;
+}
+
+.ShopCard_cart {
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+.ShopCard_like:hover,
+.ShopCard_compare:hover,
+.ShopCard_cart:hover {
+  transform: scale(1.15);
+}
+.ShopCard_like,
+.ShopCard_compare {
+  bottom: 64px;
+  right: -30px;
+  font-size: 17px;
+  font-weight: 500;
+  position: absolute;
+  transform: scale(1);
+  transition:
+    0.3s opacity 0.2s,
+    0.5s right 0.1s,
+    transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.ShopCard_compare {
+  bottom: 104px;
+}
+.ShopCard_like_show,
+.ShopCard_compare_show {
+  right: 20px;
+  opacity: 1;
+}
+.ShopCard_characteristics {
+  color: #c9c9c9;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+  letter-spacing: -0.14px;
+  margin: 3px 0 23px;
+}

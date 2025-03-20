@@ -34,6 +34,8 @@ body {
   --theme_primary_color_gray: #ebebeb;
   --theme_primary_color_dark_gray: #ddd;
 
+  --theme_primary_color_blue_2: #adbbff;
+
   --theme_navbar_top_gray: #8c8c8c;
 
   /* Transition for smooth theme changes */
@@ -101,7 +103,16 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: 28px; /* 100% */
-  margin: 10px 0 10px;
+  margin: 10px 0 0px;
+}
+.sub_title {
+  color: #2f3043;
+  text-align: center;
+  font-family: 'Source Sans Pro';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px; /* 100% */
 }
 
 .slick-dots li {
@@ -160,6 +171,7 @@ body {
 }
 
 .slick-prev:before {
+  /*content: url('data:image/svg+xml;charset=UTF-8,<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30ZM17.3891 5.91811C17.0445 5.57353 16.4858 5.57353 16.1412 5.91811L7.40637 14.653C7.06179 14.9975 7.06179 15.5562 7.40637 15.9008L10.526 19.0204L16.1412 24.6356C16.4858 24.9802 17.0445 24.9802 17.3891 24.6356L19.8847 22.14C20.2293 21.7954 20.2293 21.2367 19.8847 20.8921L14.8934 15.9008C14.5488 15.5562 14.5488 14.9975 14.8934 14.653L19.8847 9.66161C20.2293 9.31703 20.2293 8.75836 19.8847 8.41378L17.3891 5.91811Z" fill="%23D9D9D9"/> </svg>') !important;*/
   content: url('data:image/svg+xml;charset=UTF-8,<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 24.5C18.6274 24.5 24 19.1274 24 12.5C24 5.87258 18.6274 0.5 12 0.5C5.37258 0.5 0 5.87258 0 12.5C0 19.1274 5.37258 24.5 12 24.5ZM13.9109 5.23443C13.6352 4.95876 13.1883 4.95876 12.9126 5.23443L5.92475 12.2223C5.64909 12.498 5.64909 12.9449 5.92475 13.2206L8.42042 15.7162L12.9126 20.2085C13.1883 20.4841 13.6352 20.4841 13.9109 20.2085L15.9074 18.2119C16.1831 17.9363 16.1831 17.4893 15.9074 17.2136L11.9144 13.2206C11.6387 12.9449 11.6387 12.498 11.9144 12.2223L15.9074 8.22923C16.1831 7.95357 16.1831 7.50663 15.9074 7.23097L13.9109 5.23443Z" fill="%23FFF"/></svg>') !important;
 }
 .slick-next:before {
