@@ -4,5 +4,9 @@
     "romanian": "Romanian",
     "english": "Enghish",
     "russian": "Russian"
+  },
+  "general": {
+    "faq_more": "show more",
+    "faq_less": "show less"
   }
 }

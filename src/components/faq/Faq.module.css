@@ -1,0 +1,27 @@
+.faq {
+  width: 100%;
+  max-width: 1180px;
+  border-radius: 20px;
+  display: flex;
+  padding: 40px 0px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin: 40px auto;
+}
+.faq_title {
+  color: var(--theme_primary_color_black);
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 29px; /* 103.571% */
+}
+.faq_inside {
+  width: 100%;
+}
+.faq_after {
+  width: 100%;
+  height: 0px;
+}

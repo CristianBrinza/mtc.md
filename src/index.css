@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
   margin: 0;
@@ -21,7 +22,6 @@ body {
   color: #222;
   background-color: #ffffff;
 
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -30,19 +30,17 @@ body {
   --theme_primary_color_black: #222;
   --theme_primary_color_white: #ffffff;
 
-  --theme_primary_color_light_gray: #F7F7F7;
-  --theme_primary_color_gray: #EBEBEB;
+  --theme_primary_color_light_gray: #fafafa;
+  --theme_primary_color_gray: #ebebeb;
+  --theme_primary_color_dark_gray: #ddd;
 
-  --theme_navbar_top_gray: #8C8C8C;
-
-
+  --theme_navbar_top_gray: #8c8c8c;
 
   /* Transition for smooth theme changes */
   transition:
-          background-color 0.8s ease-in-out,
-          color 0.8s ease-in-out;
+    background-color 0.8s ease-in-out,
+    color 0.8s ease-in-out;
 }
-
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -58,5 +56,116 @@ body {
 
   --theme_primary_color_black: #ffffff;
   --theme_primary_color_white: #222;
+}
 
+.hero_title {
+  color: #252525;
+  font-family: Poppins;
+  font-size: 40.889px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 44.606px; /* 109.091% */
+  letter-spacing: -0.818px;
+}
+
+.hero_subtitle {
+  color: #252525;
+  font-family: 'Source Sans Pro';
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 100% */
+  letter-spacing: -0.44px;
+}
+
+.hero_subtitle b {
+  font-weight: 700 !important;
+}
+
+.hero_small_title {
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-family: 'Source Sans Pro';
+  font-size: 21.297px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24.007px; /* 112.727% */
+  letter-spacing: -0.426px;
+}
+
+.title {
+  color: rgba(0, 0, 0, 0.85);
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 100% */
+  margin: 10px 0 10px;
+}
+
+.slick-dots li {
+  margin: 0 5px !important;
+  opacity: 1 !important;
+}
+.slick-dots li {
+  color: transparent !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 100px;
+  background: rgba(217, 223, 255, 0.8);
+  opacity: 1 !important;
+  overflow: hidden;
+  transition: width 0.3s ease-in-out;
+}
+
+.slick-dots li.slick-active {
+  opacity: 1 !important;
+  color: transparent !important;
+  border-radius: 100px;
+  background: rgba(181, 193, 255, 0.8);
+  width: 17px !important;
+  height: 8px !important;
+  overflow: hidden;
+}
+.slick-dots li.slick-active button:before {
+  color: transparent !important;
+}
+.slick-dots button:before {
+  color: transparent !important;
+}
+
+.slick-dots {
+  width: 100% !important;
+  max-width: 1600px !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  bottom: 0px !important;
+}
+
+.slick-prev {
+  left: 20px !important;
+  z-index: 9999 !important;
+  margin-top: -20px !important;
+}
+.slick-next {
+  right: 20px !important;
+  z-index: 9999 !important;
+  margin-top: -20px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 36px;
+}
+
+.slick-prev:before {
+  content: url('data:image/svg+xml;charset=UTF-8,<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 24.5C18.6274 24.5 24 19.1274 24 12.5C24 5.87258 18.6274 0.5 12 0.5C5.37258 0.5 0 5.87258 0 12.5C0 19.1274 5.37258 24.5 12 24.5ZM13.9109 5.23443C13.6352 4.95876 13.1883 4.95876 12.9126 5.23443L5.92475 12.2223C5.64909 12.498 5.64909 12.9449 5.92475 13.2206L8.42042 15.7162L12.9126 20.2085C13.1883 20.4841 13.6352 20.4841 13.9109 20.2085L15.9074 18.2119C16.1831 17.9363 16.1831 17.4893 15.9074 17.2136L11.9144 13.2206C11.6387 12.9449 11.6387 12.498 11.9144 12.2223L15.9074 8.22923C16.1831 7.95357 16.1831 7.50663 15.9074 7.23097L13.9109 5.23443Z" fill="%23FFF"/></svg>') !important;
+}
+.slick-next:before {
+  content: url('data:image/svg+xml;charset=UTF-8,<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 24.5C18.6274 24.5 24 19.1274 24 12.5C24 5.87258 18.6274 0.5 12 0.5C5.37258 0.5 0 5.87258 0 12.5C0 19.1274 5.37258 24.5 12 24.5ZM13.9109 5.23443C13.6352 4.95876 13.1883 4.95876 12.9126 5.23443L5.92475 12.2223C5.64909 12.498 5.64909 12.9449 5.92475 13.2206L8.42042 15.7162L12.9126 20.2085C13.1883 20.4841 13.6352 20.4841 13.9109 20.2085L15.9074 18.2119C16.1831 17.9363 16.1831 17.4893 15.9074 17.2136L11.9144 13.2206C11.6387 12.9449 11.6387 12.498 11.9144 12.2223L15.9074 8.22923C16.1831 7.95357 16.1831 7.50663 15.9074 7.23097L13.9109 5.23443Z" fill="%23FFF"/></svg>') !important;
+}
+
+.slick-next {
+  rotate: 180deg;
 }

@@ -1,0 +1,29 @@
+.hero {
+  border-radius: 20px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.hero_inside {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero_img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+}
