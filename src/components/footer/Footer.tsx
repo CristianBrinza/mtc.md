@@ -14,7 +14,7 @@ const Footer: React.FC<FooterProps> = ({ discalmer }) => {
   return (
     <div style={FooterStyle}>
       {discalmer == true ? (
-        <div className={styles.discalmer}>{t('functions.descalmer')}</div>
+        <div className={styles.discalmer}>{t('footer.descalmer')}</div>
       ) : (
         'lei'
       )}

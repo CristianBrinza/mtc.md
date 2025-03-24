@@ -1,0 +1,50 @@
+.MyApp {
+  margin: 40px auto 20px;
+  width: 100%;
+  max-width: 1180px;
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  padding: 33px 45px 33px 45px;
+  box-sizing: border-box;
+  height: 220px;
+}
+.MyApp_text {
+  width: 100%;
+  max-width: 580px;
+  color: #333;
+  font-family: 'Source Sans Pro';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.18px;
+  margin: 10px 0 22px;
+}
+.MyApp_text_btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.MyApp_Img {
+  position: absolute;
+  bottom: 0;
+  width: 300px;
+  height: auto;
+  right: 150px;
+}
+
+.MyApp_text_btn {
+  cursor: pointer;
+}
+.MyApp_text_btn:hover .MyApp_text_btn_bg {
+  fill: var(--theme_primary_color_gray);
+}
+.MyApp_text_btn_border {
+  stroke: var(--theme_primary_color_dark_gray);
+}
+.MyApp_text_btn:hover .MyApp_text_btn_border {
+  stroke: var(--theme_primary_color_gray);
+}

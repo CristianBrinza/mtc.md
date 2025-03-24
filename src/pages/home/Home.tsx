@@ -1,6 +1,5 @@
 import Navbar from '../../components/navbar/Navbar.tsx';
 import Chat from '../../components/chat/Chat.tsx';
-import Feedback from '../../components/feedback/Feedback.tsx';
 import styles from './Home.module.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';

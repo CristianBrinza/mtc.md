@@ -43,7 +43,8 @@ const Faq: React.FC<FaqProps> = ({
           {showAll ? t('general.faq_less') : t('general.faq_more')}
         </Button>
       )}
-      {faqArray.length > max_faq && (hideButtonAfterClick || !showAll) && (
+      {showAll && <div className={styles.faq_after}>&nbsp;</div>}
+      {faqArray.length < max_faq && (
         <div className={styles.faq_after}>&nbsp;</div>
       )}
     </div>

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Feedback.module.css';
+import Popup from '../Popup/Popup.tsx';
 
 const Feedback: React.FC = () => {
+  const [showPopup, setShowPopup] = useState<boolean>(false);
+  const closePopup = () => {
+    setShowPopup(false);
+  };
   return (
     <>
-      <div className={styles.feedback_icon}>
+      <div className={styles.feedback_icon} onClick={() => setShowPopup(true)}>
         <svg
           width="36"
           height="96"
@@ -22,6 +27,10 @@ const Feedback: React.FC = () => {
           />
         </svg>
       </div>
+
+      <Popup id="1284768" isVisible={showPopup} onClose={closePopup}>
+        <div className="popup_content">test</div>
+      </Popup>
     </>
   );
 };

@@ -9,16 +9,17 @@
   width: 100%;
   max-width: 650px;
   text-align: center;
+  margin-bottom: -2px;
+  overflow: hidden;
 }
 .sub_title1 {
   margin: 2px auto 10px;
   width: 100%;
   max-width: 650px;
   text-align: center;
-  background: var(--theme_primary_color_white);
 }
 .triple_carousell {
   width: 100%;
   max-width: 1180px;
-  margin: 30px auto 10px;
+  margin: 30px auto 30px;
 }

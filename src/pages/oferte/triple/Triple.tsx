@@ -10,6 +10,7 @@ import ShopCard from '../../../components/shop_card/ShopCard.tsx';
 import Slider from 'react-slick';
 import Functions from '../../../components/functions/Functions.tsx';
 import Footer from '../../../components/footer/Footer.tsx';
+import MyApp from '../../../components/app/MyApp.tsx';
 
 export default function Triple() {
   const breadcrumbItems = [
@@ -89,43 +90,47 @@ export default function Triple() {
       <Slider {...settings} className={styles.triple_carousell}>
         <div className={styles.triple_carousell_block}>
           <ShopCard
+            device_id={323564512}
             image="/images/shop/323564512.png"
             price={1}
             old_price={2999}
             reducere="-99%"
-            title='Hisense TV 32"'
+            title="Hisense "
             subtitle="32A4N"
             characteristics='Direct LED / Full HD / 32"'
           />
         </div>
         <div className={styles.triple_carousell_block}>
           <ShopCard
+            device_id={394534437}
             image="/images/shop/394534437.png"
             price={1}
-            old_price={2999}
-            reducere="-99%"
-            title='Hisense TV 43"'
+            old_price={5099}
+            reducere="- 5098"
+            title="Hisense"
             subtitle="43A4N (4k)"
-            characteristics='UHD VA / 4k / 43"'
+            characteristics='UHD VA / 4K / 43"'
           />
         </div>
         <div className={styles.triple_carousell_block}>
           <ShopCard
+            device_id={394534437}
             image="/images/shop/394534437.png"
-            price={2599}
-            old_price={2999}
-            reducere="-99%"
-            title='Hisense TV 55"'
+            price={2999}
+            old_price={7299}
+            reducere="-40%"
+            title="Hisense"
             subtitle="55A4N (4k)"
-            characteristics='UHD VA / 4k / 55"'
+            characteristics='UHD VA / 4K / 55"'
           />
         </div>
         <div className={styles.triple_carousell_block}>
           <ShopCard
+            device_id={5235345692}
             image="/images/shop/523534569.png"
             price={13499}
             old_price={2999}
-            reducere="-99%"
+            // reducere="-99%"
             title="Apple"
             subtitle="Iphone 16 Pro"
             characteristics="(8/256GB)"
@@ -133,35 +138,48 @@ export default function Triple() {
         </div>
       </Slider>
 
-      <Functions title={'Funcții interactive'} />
+      <Functions
+        title={'general.functions'}
+        functions={['Internet', 'TV', 'MTC', 'APP']}
+      />
+      <MyApp />
       <Chat />
       <Feedback />
       <Faq style_type="1">
-        <FaqQA question="Cum pot să raportez o infracțiune sau o ilegalitate?">
-          <p>
-            <span></span>
+        <FaqQA question=" Unde pot achita factura mea pentru Internet?">
+          <div>
             <span>
-              Folosește-ți smartphone-ul ca și un Internet Hotspot, accesând:
+              <strong></strong>Cea mai rapidă și comodă modalitate de achitare a
+              serviciului de Internet fix este achitarea prin intermediul
+              serviciului "Reîncărcare cont", cu cardurile Visa, MasterCard,
+              Visa Electron sau Maestro.
               <br />
               <br />
-              <strong>Setări</strong>⇒&nbsp;
-              <strong>Hotspot mobil și tethering</strong>&nbsp;(trebuie să fie
-              activat) ⇒&nbsp;<strong>alege Parolă Wi-Fi&nbsp;</strong>⇒&nbsp;
-              <strong>setează parola cu minim 8 caractere</strong>⇒
-              <strong>SALVARE</strong>&nbsp;⇒<strong>MAI MULTE</strong>
-              &nbsp;(pentru Dispositive premise/Configurare Mobile hotspot -
-              complează numele rețelei și parola pentru a te conecta doar cu
-              dispozitivele cunoscute /Setări de expirare). La dezactivare -
-              debifează Hotspot mobil.
-              <br />
-              Notă:&nbsp; Setările pot fi diferite în funcție de modelul
-              telefonului.
-              <br />
-              <br />E bine să cunoști! Prin HotSpot se mărește consumul de date
-              a traficului de internet.
+              Modalităţile de plată a serviciilor:
             </span>
-            <span></span>
-          </p>
+
+            <ul>
+              <li>&nbsp;&nbsp;&nbsp; Aplicaţia mobilă "MyMoldtelecom"</li>
+              <li>&nbsp;&nbsp;&nbsp; Bănci</li>
+              <li>&nbsp;&nbsp;&nbsp; Oficiile Poşta Moldovei</li>
+              <li>&nbsp;&nbsp;&nbsp; Puncte de vânzări Moldtelecom</li>
+              <li>
+                &nbsp;&nbsp;&nbsp; Prin intermediul bancomatelor Victoriabank
+              </li>
+              <li>
+                &nbsp;&nbsp;&nbsp; Achitarea serviciilor prin intermediul Online
+                Banking
+              </li>
+              <li>
+                &nbsp;&nbsp;&nbsp; Prin intermediul terminalelor de plăţi
+                electronice NettoPro, OSMP şi MMPS
+              </li>
+              <li>
+                &nbsp;&nbsp;&nbsp; Prin intermediul sistemelor de plăți
+                electronice B-Pay
+              </li>
+            </ul>
+          </div>
         </FaqQA>
         <FaqQA question="Cum pot să raportez o infracțiune sau o ilegalitate?">
           <p>

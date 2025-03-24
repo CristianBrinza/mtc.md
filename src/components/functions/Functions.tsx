@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Functions.module.css';
 import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import './Functions.css';
+import Icon, { icons } from '../Icon.tsx';
+import Popup from '../Popup/Popup.tsx';
 
 interface FunctionsProps {
   title?: string;
   style_type?: string;
+  functions: Array<string>;
 }
 
-const Functions: React.FC<FunctionsProps> = ({ title, style_type }) => {
+const Functions: React.FC<FunctionsProps> = ({
+  title,
+  style_type,
+  functions,
+}) => {
   const FunctionsStyle: React.CSSProperties = {
     background:
       style_type === 'gray'
@@ -19,6 +26,17 @@ const Functions: React.FC<FunctionsProps> = ({ title, style_type }) => {
           : 'var(--theme_primary_color_light_gray)',
   };
 
+  const [hoveredBlock, setHoveredBlock] = useState<string | null>(null);
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    const id = e.currentTarget.dataset.id;
+    if (id) setHoveredBlock(id);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredBlock(null);
+  };
+
   const { t } = useTranslation();
 
   const settings = {
@@ -26,10 +44,9 @@ const Functions: React.FC<FunctionsProps> = ({ title, style_type }) => {
     infinite: true,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 2800,
     slidesToShow: 4,
     slidesToScroll: 1,
-
     responsive: [
       {
         breakpoint: 1300,
@@ -52,19 +69,116 @@ const Functions: React.FC<FunctionsProps> = ({ title, style_type }) => {
     ],
   };
 
+  const [activePopup, setActivePopup] = useState<string | null>(null);
+
+  const togglePopup = (popup: string) => {
+    setActivePopup(activePopup !== popup ? popup : null);
+  };
+
+  const renderFunctionBlock = (
+    id: string,
+    icon: string,
+    title: string,
+    description: string,
+    popup: string
+  ) => (
+    <div className={styles.functions_carousell_inside} key={id}>
+      <div className={styles.functions_carousell_inside_block}>
+        <Icon
+          color={'var(--theme_primary_color_dark_gray)'}
+          type={icon as keyof typeof icons}
+          size="35px"
+          className={styles.functions_carousell_inside_block_icon}
+        />
+        <div className={styles.functions_carousell_inside_block_title}>
+          {title}
+        </div>
+        <div className={styles.functions_carousell_inside_block_text}>
+          {description}
+        </div>
+        <div
+          className={styles.functions_carousell_inside_block_btn}
+          data-id={id}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => togglePopup(popup)}
+        >
+          <span>Detalii</span>{' '}
+          <Icon
+            className="LinkButton_arrow"
+            type="arrow_right"
+            style={{
+              transition: 'transform 0.3s ease',
+              transform:
+                hoveredBlock === id ? 'translateX(4px)' : 'translateX(0)',
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className={styles.functions}>
       {title && (
-        <div className={`title ${styles.functions_title}`}>{title}</div>
+        <div className={`title ${styles.functions_title}`}>{t(`${title}`)}</div>
       )}
       <div className={styles.functions_inside} style={FunctionsStyle}>
         <Slider {...settings} className="functions_carousell">
-          <div className={styles.functions_carousell_inside}>ll</div>
-          <div className={styles.functions_carousell_inside}>ll</div>
-          <div className={styles.functions_carousell_inside}>ll</div>
-          <div className={styles.functions_carousell_inside}>ll</div>
+          {functions.includes('Internet') &&
+            renderFunctionBlock(
+              'Internet', // ID
+              'cart', // Icon (must be a valid key from icons)
+              'Internet',
+              'Descărca date cu viteză mare și vizita web-ul fără griji',
+              'menu1'
+            )}
+
+          {functions.includes('TV') &&
+            renderFunctionBlock(
+              'TV',
+              'child',
+              'TV',
+              'Privește canalele tale preferate și bucură-te de divertisment',
+              'menu1'
+            )}
+
+          {functions.includes('MTC') &&
+            renderFunctionBlock(
+              'MTC',
+              'user',
+              'MTC',
+              'Comunică eficient și rapid prin rețeaua MTC',
+              'menu1'
+            )}
+
+          {functions.includes('APP') &&
+            renderFunctionBlock(
+              'APP',
+              'business',
+              'Aplicație',
+              'Gestionează-ți serviciile dintr-o singură aplicație',
+              'menu2'
+            )}
         </Slider>
       </div>
+
+      <Popup
+        id="1281278"
+        width="900px"
+        isVisible={activePopup === 'menu1'}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className="popup_content">test1</div>
+      </Popup>
+      <Popup
+        id="1281278"
+        width="900px"
+        isVisible={activePopup === 'menu2'}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className="popup_content">test2</div>
+      </Popup>
     </div>
   );
 };

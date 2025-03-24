@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
 
   // Use a single state for active menu; null means no menu is open.
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [setOverlayVisible] = useState(false);
+  const [, setOverlayVisible] = useState(false);
 
   // One function to toggle any menu.
   const toggleMenu = (menu: string) => {
@@ -624,7 +624,89 @@ const Navbar: React.FC = () => {
                 <Link to="/shop"> M-eShop</Link>
               </div>
               <div className={styles.navbar_bottom_menu_option}>
-                <Link to=""> Descoperă</Link>
+                <div
+                  className={styles.navbar_bottom_menu_option}
+                  onClick={() => toggleMenu('menu4')}
+                >
+                  {' '}
+                  Descoperă
+                </div>
+              </div>
+              <div
+                className={`${styles.navbar_bottom_menu_option_submenu} ${activeMenu === 'menu4' ? styles.navbar_bottom_menu_option_submenu_show : ''}`}
+              >
+                <div className={styles.navbar_bottom_menu_option_submenu_block}>
+                  <div
+                    className={
+                      styles.navbar_bottom_menu_option_submenu_block_title
+                    }
+                  >
+                    Aplicatii
+                  </div>
+                  <div
+                    className={
+                      styles.navbar_bottom_menu_option_submenu_block_list_small
+                    }
+                  >
+                    <div
+                      className={
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                      }
+                    >
+                      My Moldtelecom
+                    </div>
+                    <div
+                      className={
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                      }
+                    >
+                      Moldtelecom TV
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.navbar_bottom_menu_option_submenu_block}>
+                  <div
+                    className={
+                      styles.navbar_bottom_menu_option_submenu_block_title
+                    }
+                  >
+                    Oferte
+                  </div>
+                  <div
+                    className={
+                      styles.navbar_bottom_menu_option_submenu_block_list_small
+                    }
+                  >
+                    <div
+                      className={
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                      }
+                    >
+                      Mergi și castigi
+                    </div>
+                    <div
+                      className={
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                      }
+                    >
+                      Challenge
+                    </div>
+                    <div
+                      className={
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                      }
+                    >
+                      Transfer credit
+                    </div>
+                    <div
+                      className={
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                      }
+                    >
+                      Plus
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className={styles.navbar_bottom_menu_option}>
                 <Link to="/help"> Ajutor</Link>

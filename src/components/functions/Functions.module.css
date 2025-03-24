@@ -18,3 +18,48 @@
 .functions_carousell .slick-dots {
   background: red;
 }
+.functions_carousell_inside_block_title {
+  color: var(--theme_primary_color_black);
+  font-family: 'Source Sans Pro';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px; /* 122.222% */
+  width: 100%;
+  max-width: 235px;
+  margin: 4px 0 0;
+}
+.functions_carousell_inside_block_text {
+  color: var(--theme_primary_color_black);
+  width: 100%;
+  max-width: 235px;
+  font-family: 'Source Sans Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 5px 0 10px;
+}
+.functions_carousell_inside_block_btn {
+  color: var(--theme_primary_color_black);
+  font-family: 'Source Sans Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  cursor: pointer;
+}
+.functions_carousell_inside_block {
+  box-sizing: border-box;
+  padding: 5px 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.functions_carousell_inside_block_icon {
+  margin-bottom: 5px;
+}
