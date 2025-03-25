@@ -241,7 +241,7 @@
   pointer-events: auto;
 }
 
-.navbar_bottom_menu_option_submenu_block {
+.navbar_bottom_menu_option_submenu_block, .navbar_bottom_menu_option_submenu_block_small {
   width: 280px;
 }
 

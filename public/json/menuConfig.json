@@ -1,6 +1,5 @@
 [
   {
-    "id": "menu1",
     "label": "navbar.internet_tv",
     "submenu": [
       {
@@ -8,23 +7,25 @@
         "items": [
           {
             "label": "2.1 Gbps",
-            "to": "/triple",
-            "arrow": true
-          },
-          {
-            "label": "Double",
-            "smallText": "navbar.internet_tv_double_small"
-          },
-          {
-            "label": "Triple",
-            "smallText": "navbar.internet_tv_triple_small",
             "to": "/triple"
           },
           {
-            "label": "Abonamente Internet"
+            "label": "Double",
+            "smallText": "Internet + TV",
+            "to": "/"
           },
           {
-            "label": "Abonamente TV"
+            "label": "Triple",
+            "smallText": "Internet + TV + Mobil",
+            "to": "/triple"
+          },
+          {
+            "label": "Abonamente Internet",
+            "to": "/"
+          },
+          {
+            "label": "Abonamente TV",
+            "to": "//"
           }
         ]
       },
@@ -32,100 +33,101 @@
         "title": "Descopera",
         "small": true,
         "items": [
-          { "label": "Moldtelecom TV" },
-          { "label": "Cinematografe online" },
-          { "label": "Wi-Fi Plus" }
+          { "label": "Moldtelecom TV", "to": "/" },
+          { "label": "Cinematografe online", "to": "/" },
+          { "label": "Wi-Fi Plus", "to": "/"}
         ]
       },
       {
         "title": "altele",
         "small": true,
         "items": [
-          { "label": "Canale TV" },
-          { "label": "Echipament TV" },
-          { "label": "Echipament Wi-Fi" },
-          { "label": "Wi-Fi 6" },
-          { "label": "Safe-web" }
+          { "label": "Canale TV", "to": "/" },
+          { "label": "Echipament TV", "to": "/" },
+          { "label": "Echipament Wi-Fi", "to": "/" },
+          { "label": "Wi-Fi 6", "to": "/" },
+          { "label": "Safe-web", "to": "/" }
         ]
       }
     ]
   },
   {
-    "id": "menu2",
+
     "label": "navbar.mobil",
     "submenu": [
       {
         "title": "Promo",
         "items": [
-          { "label": "Portare" },
-          { "label": "Telefonie Mobila" },
-          { "label": "Modem Wi-Fi" },
-          { "label": "4G Acasa" }
+          { "label": "Portare", "to": "/" },
+          { "label": "Telefonie Mobila", "to": "/" },
+          { "label": "Modem Wi-Fi", "to": "/" },
+          { "label": "4G Acasa", "to": "/" }
         ]
       },
       {
         "title": "Servicii digitale",
         "small": true,
         "items": [
-          { "label": "eSIM" },
-          { "label": "Prepay Digtal" },
-          { "label": "One Number" }
+          { "label": "eSIM", "to": "/" },
+          { "label": "Prepay Digtal", "to": "/" },
+          { "label": "One Number", "to": "/" }
         ]
       },
       {
         "title": "Descopera",
         "small": true,
         "items": [
-          { "label": "Cartela Moldtelecom" },
-          { "label": "MyMoldtelecom" },
-          { "label": "Roaming" },
-          { "label": "Apeluri internationale" },
-          { "label": "Programul de fidelitate" }
+          { "label": "Cartela Moldtelecom", "to": "/"},
+          { "label": "MyMoldtelecom", "to": "/"},
+          { "label": "Roaming","to": "/" },
+          { "label": "Apeluri internationale", "to": "/"},
+          { "label": "Programul de fidelitate", "to": "/"}
         ]
       }
     ]
   },
   {
-    "id": "menu3",
+
     "label": "Fix",
     "submenu": [
       {
+        "title": "Descopera",
+        "small": true,
         "items": [
-          { "label": "Abonamente telefonie fixa" },
-          { "label": "Opțiuni & servicii de rețea" },
-          { "label": "Fax to E-mail" }
+          { "label": "Abonamente telefonie fixa", "to": "/"},
+          { "label": "Opțiuni & servicii de rețea", "to": "/"},
+          { "label": "Fax to E-mail", "to": "/"}
         ]
       }
     ]
   },
   {
-    "id": "menu4",
+    "label": "M-eShop",
+    "to": "/shop"
+  },
+  {
+    "menu_id": "menu4",
     "label": "Descoperă",
     "submenu": [
       {
         "title": "Aplicatii",
         "small": true,
-        "items": [{ "label": "My Moldtelecom" }, { "label": "Moldtelecom TV" }]
+        "items": [{ "label": "My Moldtelecom","to": "/" },
+          { "label": "Moldtelecom TV", "to": "/"}]
       },
       {
         "title": "Oferte",
         "small": true,
         "items": [
-          { "label": "Mergi și castigi" },
-          { "label": "Challenge" },
-          { "label": "Transfer credit" },
-          { "label": "Plus" }
+          { "label": "Mergi și castigi", "to": "/"},
+          { "label": "Challenge", "to": "/"},
+          { "label": "Transfer credit", "to": "/"},
+          { "label": "Plus", "to": "/"}
         ]
       }
     ]
   },
   {
-    "id": "menu5",
-    "label": "M-eShop",
-    "to": "/shop"
-  },
-  {
-    "id": "menu6",
     "label": "Ajutor",
     "to": "/help"
   }

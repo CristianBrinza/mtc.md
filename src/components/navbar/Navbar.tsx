@@ -1,37 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Icon from '../Icon.tsx';
 import { useTranslation } from 'react-i18next';
-//import { Link, useLocation, useNavigate } from 'react-router-dom';
+
+interface SubmenuItem {
+  label: string;
+  smallText?: string;
+  to: string;
+}
+
+interface SubmenuBlock {
+  title: string;
+  small?: boolean;
+  items: SubmenuItem[];
+}
+
+interface MenuItem {
+  menu_id?: string;
+  label: string;
+  to?: string;
+  submenu?: SubmenuBlock[];
+}
 
 const Navbar: React.FC = () => {
   const currentHour = new Date().getHours();
   const isAvailable = currentHour >= 8 && currentHour < 22;
 
-  // const [isMenuVisible, setIsMenuVisible] = useState(false);
-  // const [showLangPopup, setShowPopup] = useState(false);
-  //
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
+
   const [isListLangPopupVisible, setIsListLangPopupVisible] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [menuConfig, setMenuConfig] = useState<MenuItem[]>([]);
+  const [, setOverlayVisible] = useState(false);
+
+  useEffect(() => {
+    fetch('/json/menuConfig.json')
+      .then((res) => res.json())
+      .then((data: MenuItem[]) => setMenuConfig(data))
+      .catch((err) => console.error('Error fetching menu config:', err));
+  }, []);
 
   const toggleLangPopup = () => {
     setIsListLangPopupVisible(!isListLangPopupVisible);
   };
 
-  // Use a single state for active menu; null means no menu is open.
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [, setOverlayVisible] = useState(false);
-
-  // One function to toggle any menu.
-  const toggleMenu = (menu: string) => {
-    if (activeMenu !== menu) {
-      setActiveMenu(menu);
+  const toggleMenu = (menuKey: string) => {
+    if (activeMenu !== menuKey) {
+      setActiveMenu(menuKey);
       setOverlayVisible(true);
     } else {
-      // Close all menus
       setActiveMenu(null);
       setOverlayVisible(false);
     }
@@ -40,44 +60,17 @@ const Navbar: React.FC = () => {
   const handleChangeLanguage = (lang: string) => {
     i18n.changeLanguage(lang).then(() => {
       const pathParts = location.pathname.split('/').filter(Boolean);
-
       if (['en', 'ro', 'ru'].includes(pathParts[0])) {
         pathParts[0] = lang;
       } else {
         pathParts.unshift(lang);
       }
-
       const newPath = `/${pathParts.join('/')}/`.replace(/\/+$/, '/');
       navigate(newPath);
       setIsListLangPopupVisible(false);
       localStorage.setItem('i18nextLng', lang);
     });
   };
-  //
-  // const [isDarkMode, setIsDarkMode] = useState(false);
-  //
-  // useEffect(() => {
-  //   const savedTheme = localStorage.getItem('theme');
-  //   if (savedTheme === 'dark') {
-  //     document.documentElement.classList.add('dark-mode');
-  //     setIsDarkMode(true);
-  //   }
-  // }, []);
-  //
-  // const toggleTheme = () => {
-  //   const newMode = !isDarkMode;
-  //   setIsDarkMode(newMode);
-  //   if (newMode) {
-  //     document.documentElement.classList.add('dark-mode');
-  //     localStorage.setItem('theme', 'dark');
-  //   } else {
-  //     document.documentElement.classList.remove('dark-mode');
-  //     localStorage.setItem('theme', 'light');
-  //   }
-  // };
-  //
-  // const toggleMenuVisibility = () => setIsMenuVisible(!isMenuVisible);
-  // const toggleLang = () => setShowPopup(!showLangPopup);
 
   return (
     <>
@@ -96,8 +89,12 @@ const Navbar: React.FC = () => {
             <Link to="/">Contacte</Link>
             (8:00 -22:00)
             <div
-              className={`${styles.navbar_top_left_availabilty} ${isAvailable ? styles.navbar_top_left_availabilty_available : styles.navbar_top_left_availabilty_unavailable}`}
-            ></div>
+              className={`${styles.navbar_top_left_availabilty} ${
+                isAvailable
+                  ? styles.navbar_top_left_availabilty_available
+                  : styles.navbar_top_left_availabilty_unavailable
+              }`}
+            />
           </div>
           <div className={styles.navbar_top_right}>
             <Link to="/mymtc">MyMoldtelecom</Link>
@@ -270,912 +267,98 @@ const Navbar: React.FC = () => {
             </svg>
           </Link>
 
+
           <div className={styles.navbar_bottom_menu}>
             <div className={styles.navbar_bottom_menu_options}>
-              <div
-                className={styles.navbar_bottom_menu_option}
-                onClick={() => toggleMenu('menu1')}
-              >
-                {t('navbar.internet_tv')}
-              </div>
-              <div
-                className={`${styles.navbar_bottom_menu_option_submenu} ${activeMenu === 'menu1' ? styles.navbar_bottom_menu_option_submenu_show : ''}`}
-              >
-                <div className={styles.navbar_bottom_menu_option_submenu_block}>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_title
-                    }
-                  >
-                    Promo
-                  </div>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_list
-                    }
-                  >
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item
-                        }
+              {menuConfig.map((item, index) => {
+                // Use menu_id if available, otherwise use the label as key.
+                const menuKey = item.menu_id ? item.menu_id : item.label;
+                if (item.submenu) {
+                  return (
+                    <div key={index}>
+                      <div
+                        className={styles.navbar_bottom_menu_option}
+                        onClick={() => toggleMenu(menuKey)}
                       >
-                        2.1 Gbps
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item
-                        }
+                        {t(item.label)}
+                      </div>
+                      <div
+                        className={`${styles.navbar_bottom_menu_option_submenu} ${
+                          activeMenu === menuKey ? styles.navbar_bottom_menu_option_submenu_show : ''
+                        }`}
                       >
-                        Double
-                        <span
-                          className={
-                            styles.navbar_bottom_menu_option_submenu_block_list_item_small_text
-                          }
-                        >
-                          &nbsp;(Internet + TV)
-                        </span>
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
+                        {item.submenu.map((block, blockIndex) => (
+                          <div
+                            key={blockIndex}
+                            className={
+                              block.small
+                                ? styles.navbar_bottom_menu_option_submenu_block_small
+                                : styles.navbar_bottom_menu_option_submenu_block
+                            }
+                          >
+                            <div className={styles.navbar_bottom_menu_option_submenu_block_title}>
+                              {block.title}
+                            </div>
+                            <div
+                              className={
+                                block.small
+                                  ? styles.navbar_bottom_menu_option_submenu_block_list_small
+                                  : styles.navbar_bottom_menu_option_submenu_block_list
+                              }
+                            >
+                              {block.items.map((subItem, subIndex) => (
+                                <div
+                                  key={subIndex}
+                                  className={styles.navbar_bottom_menu_option_submenu_block_list_item_row}
+                                >
+                                  <Link
+                                    to={subItem.to}
+                                    className={
+                                      block.small
+                                        ? styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                                        : styles.navbar_bottom_menu_option_submenu_block_list_item
+                                    }
+                                  >
+                                    {subItem.label}
+                                    {subItem.smallText && (
+                                      <span
+                                        className={styles.navbar_bottom_menu_option_submenu_block_list_item_small_text}
+                                      >
+                                        &nbsp;({t(subItem.smallText)})
+                                      </span>
+                                    )}
+                                  </Link>
+                                  <Icon
+                                    className={styles.navbar_bottom_menu_option_submenu_block_list_item_arrow}
+                                    type="arrow_right"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/triple"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item
-                        }
-                      >
-                        Triple
-                        <span
-                          className={
-                            styles.navbar_bottom_menu_option_submenu_block_list_item_small_text
-                          }
-                        >
-                          &nbsp;(Internet + TV + Mobil)
-                        </span>
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
+                  );
+                } else if (item.to) {
+                  return (
+                    <div key={index} className={styles.navbar_bottom_menu_option}>
+                      <Link to={item.to}>{t(item.label)}</Link>
                     </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item
-                        }
-                      >
-                        Abonamente Internet
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item
-                        }
-                      >
-                        Abonamente TV
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.navbar_bottom_menu_option_submenu_block}>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_title
-                    }
-                  >
-                    Descopera
-                  </div>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_list_small
-                    }
-                  >
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Moldtelecom TV
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Cinematografe online
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Wi-Fi Plus
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.navbar_bottom_menu_option_submenu_block}>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_title
-                    }
-                  >
-                    altele
-                  </div>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_list_small
-                    }
-                  >
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Canale TV
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Echipament TV
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Echipament Wi-Fi
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Wi-Fi 6
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Safe-web
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.navbar_bottom_menu_option}>
-                <div
-                  className={styles.navbar_bottom_menu_option}
-                  onClick={() => toggleMenu('menu2')}
-                >
-                  {t('navbar.mobil')}
-                </div>
-              </div>
-              <div
-                className={`${styles.navbar_bottom_menu_option_submenu} ${activeMenu === 'menu2' ? styles.navbar_bottom_menu_option_submenu_show : ''}`}
-              >
-                <div className={styles.navbar_bottom_menu_option_submenu_block}>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_title
-                    }
-                  >
-                    Promo
-                  </div>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_list
-                    }
-                  >
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item
-                        }
-                      >
-                        Portare
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item
-                        }
-                      >
-                        Telefonie Mobila
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item
-                        }
-                      >
-                        Modem Wi-Fi
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item
-                        }
-                      >
-                        4G Acasa
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.navbar_bottom_menu_option_submenu_block}>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_title
-                    }
-                  >
-                    Servicii digitale
-                  </div>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_list_small
-                    }
-                  >
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        eSIM
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Prepay Digtal
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        One Number
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.navbar_bottom_menu_option_submenu_block}>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_title
-                    }
-                  >
-                    Descopera
-                  </div>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_list_small
-                    }
-                  >
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Cartela Moldtelecom
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        MyMoldtelecom
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Roaming
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Apeluri internationale
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Programul de fidelitate
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.navbar_bottom_menu_option}>
-                <div
-                  className={styles.navbar_bottom_menu_option}
-                  onClick={() => toggleMenu('menu3')}
-                >
-                  Fix
-                </div>
-              </div>
-              <div
-                style={{ left: '400px' }}
-                className={`${styles.navbar_bottom_menu_option_submenu} ${activeMenu === 'menu3' ? styles.navbar_bottom_menu_option_submenu_show : ''}`}
-              >
-                <div className={styles.navbar_bottom_menu_option_submenu_block}>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_title
-                    }
-                  >
-                    Telefonie Fixa
-                  </div>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_list_small
-                    }
-                  >
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Abonamente telefonie fixa
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Opțiuni & servicii de rețea
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Fax to E-mail
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.navbar_bottom_menu_option}>
-                <Link to="/shop"> M-eShop</Link>
-              </div>
-              <div className={styles.navbar_bottom_menu_option}>
-                <div
-                  className={styles.navbar_bottom_menu_option}
-                  onClick={() => toggleMenu('menu4')}
-                >
-                  Descoperă
-                </div>
-              </div>
-              <div
-                className={`${styles.navbar_bottom_menu_option_submenu} ${activeMenu === 'menu4' ? styles.navbar_bottom_menu_option_submenu_show : ''}`}
-              >
-                <div className={styles.navbar_bottom_menu_option_submenu_block}>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_title
-                    }
-                  >
-                    Aplicatii
-                  </div>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_list_small
-                    }
-                  >
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        My Moldtelecom
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Moldtelecom TV
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.navbar_bottom_menu_option_submenu_block}>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_title
-                    }
-                  >
-                    Oferte
-                  </div>
-                  <div
-                    className={
-                      styles.navbar_bottom_menu_option_submenu_block_list_small
-                    }
-                  >
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Mergi și castigi
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Challenge
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Transfer credit
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
-                      }
-                    >
-                      <Link
-                        to="/"
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
-                        }
-                      >
-                        Plus
-                      </Link>
-                      <Icon
-                        className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
-                        }
-                        type="arrow_right"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.navbar_bottom_menu_option}>
-                <Link to="/help"> Ajutor</Link>
-              </div>
+                  );
+                }
+                return null;
+              })}
             </div>
 
             <div className={styles.navbar_bottom_menu_right}>
               <Icon type="search" />
-
-              <Link
-                to="/cart"
-                className={styles.navbar_bottom_menu_right_lang_btn}
-              >
-                {' '}
+              <Link to="/cart" className={styles.navbar_bottom_menu_right_lang_btn}>
                 <Icon type="cart" />
               </Link>
-              <Link
-                to="/mymtc"
-                className={styles.navbar_bottom_menu_right_lang_btn}
-              >
-                {' '}
-                <Icon type="user" />{' '}
+              <Link to="/mymtc" className={styles.navbar_bottom_menu_right_lang_btn}>
+                <Icon type="user" />
               </Link>
-
               <div
                 className={styles.navbar_bottom_menu_right_lang_btn}
                 onClick={toggleLangPopup}
@@ -1188,9 +371,10 @@ const Navbar: React.FC = () => {
                   <Icon type="ru" size="28px" />
                 )}
               </div>
-
               <div
-                className={`${styles.navbar_bottom_menu_right_lang} ${isListLangPopupVisible ? `${styles.navbar_bottom_menu_right_lang_show}` : ''}`}
+                className={`${styles.navbar_bottom_menu_right_lang} ${
+                  isListLangPopupVisible ? styles.navbar_bottom_menu_right_lang_show : ''
+                }`}
               >
                 <div
                   className={styles.navbar_bottom_menu_right_lang_btn_select}
