@@ -98,18 +98,20 @@ const ShopCard: React.FC<ShopCardProps> = ({
     >
       <img className={styles.ShopCard_img} src={image} alt="Device" />
       <div className={styles.ShopCard_inside}>
-        <div className={styles.ShopCard_title}>
-          {title}
-          {subtitle && (
-            <span>
-              <br />
-              {subtitle}
-            </span>
-          )}
-        </div>
+        <div className={styles.ShopCard_top}>
+          <div className={styles.ShopCard_title}>
+            {title}
+            {subtitle && (
+              <span>
+                <br />
+                {subtitle}
+              </span>
+            )}
+          </div>
 
-        <div className={styles.ShopCard_characteristics}>
-          {characteristics && <span>{characteristics}</span>}
+          <div className={styles.ShopCard_characteristics}>
+            {characteristics && <span>{characteristics}</span>}
+          </div>
         </div>
         {old_price ? (
           <div className={styles.ShopCard_old_price_block}>
@@ -127,6 +129,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
                 <div className={styles.ShopCard_old_price_sale}>
                   {reducere}{' '}
                   {Number(reducere) === 1 ? t('general.leu') : t('general.lei')}
+                  &nbsp;
                 </div>
               ))}
           </div>

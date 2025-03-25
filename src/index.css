@@ -34,7 +34,12 @@ body {
   --theme_primary_color_gray: #ebebeb;
   --theme_primary_color_dark_gray: #ddd;
 
+  --theme_primary_color_blue_0: #292c48;
+  --theme_primary_color_blue_1: #f3f5ff;
   --theme_primary_color_blue_2: #adbbff;
+  --theme_primary_color_blue_3: #dfe4fd;
+  --theme_primary_color_blue_4: #2f3043;
+
   --theme_primary_color_red_2: #ef4d6c;
 
   --theme_navbar_top_gray: #8c8c8c;
@@ -106,8 +111,17 @@ body {
   line-height: 28px; /* 100% */
   margin: 10px 0 0px;
 }
+.title_2 {
+  color: var(--theme_primary_color_blue_4);
+  text-align: center;
+  font-family: 'Source Sans Pro';
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+}
 .sub_title {
-  color: #2f3043;
+  color: var(--theme_primary_color_blue_4);
   text-align: center;
   font-family: 'Source Sans Pro';
   font-size: 14px;

@@ -1,0 +1,132 @@
+[
+  {
+    "id": "menu1",
+    "label": "navbar.internet_tv",
+    "submenu": [
+      {
+        "title": "Promo",
+        "items": [
+          {
+            "label": "2.1 Gbps",
+            "to": "/triple",
+            "arrow": true
+          },
+          {
+            "label": "Double",
+            "smallText": "navbar.internet_tv_double_small"
+          },
+          {
+            "label": "Triple",
+            "smallText": "navbar.internet_tv_triple_small",
+            "to": "/triple"
+          },
+          {
+            "label": "Abonamente Internet"
+          },
+          {
+            "label": "Abonamente TV"
+          }
+        ]
+      },
+      {
+        "title": "Descopera",
+        "small": true,
+        "items": [
+          { "label": "Moldtelecom TV" },
+          { "label": "Cinematografe online" },
+          { "label": "Wi-Fi Plus" }
+        ]
+      },
+      {
+        "title": "altele",
+        "small": true,
+        "items": [
+          { "label": "Canale TV" },
+          { "label": "Echipament TV" },
+          { "label": "Echipament Wi-Fi" },
+          { "label": "Wi-Fi 6" },
+          { "label": "Safe-web" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "menu2",
+    "label": "navbar.mobil",
+    "submenu": [
+      {
+        "title": "Promo",
+        "items": [
+          { "label": "Portare" },
+          { "label": "Telefonie Mobila" },
+          { "label": "Modem Wi-Fi" },
+          { "label": "4G Acasa" }
+        ]
+      },
+      {
+        "title": "Servicii digitale",
+        "small": true,
+        "items": [
+          { "label": "eSIM" },
+          { "label": "Prepay Digtal" },
+          { "label": "One Number" }
+        ]
+      },
+      {
+        "title": "Descopera",
+        "small": true,
+        "items": [
+          { "label": "Cartela Moldtelecom" },
+          { "label": "MyMoldtelecom" },
+          { "label": "Roaming" },
+          { "label": "Apeluri internationale" },
+          { "label": "Programul de fidelitate" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "menu3",
+    "label": "Fix",
+    "submenu": [
+      {
+        "items": [
+          { "label": "Abonamente telefonie fixa" },
+          { "label": "Opțiuni & servicii de rețea" },
+          { "label": "Fax to E-mail" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "menu4",
+    "label": "Descoperă",
+    "submenu": [
+      {
+        "title": "Aplicatii",
+        "small": true,
+        "items": [{ "label": "My Moldtelecom" }, { "label": "Moldtelecom TV" }]
+      },
+      {
+        "title": "Oferte",
+        "small": true,
+        "items": [
+          { "label": "Mergi și castigi" },
+          { "label": "Challenge" },
+          { "label": "Transfer credit" },
+          { "label": "Plus" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "menu5",
+    "label": "M-eShop",
+    "to": "/shop"
+  },
+  {
+    "id": "menu6",
+    "label": "Ajutor",
+    "to": "/help"
+  }
+]

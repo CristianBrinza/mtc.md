@@ -1,12 +1,12 @@
 .MyApp {
-  margin: 40px auto 20px;
+  margin: 45px auto 30px;
   width: 100%;
   max-width: 1180px;
   position: relative;
   border-style: solid;
   border-width: 1px;
   border-radius: 20px;
-  padding: 33px 45px 33px 45px;
+  padding: 33px 45px 37px 45px;
   box-sizing: border-box;
   height: 220px;
 }
@@ -15,12 +15,12 @@
   max-width: 580px;
   color: #333;
   font-family: 'Source Sans Pro';
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 16px;
   letter-spacing: 0.18px;
-  margin: 10px 0 22px;
+  margin: 7px 0 22px;
 }
 .MyApp_text_btns {
   display: flex;
@@ -31,9 +31,9 @@
 .MyApp_Img {
   position: absolute;
   bottom: 0;
-  width: 300px;
+  width: 440px;
   height: auto;
-  right: 150px;
+  right: 20px;
 }
 
 .MyApp_text_btn {

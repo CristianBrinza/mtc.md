@@ -96,7 +96,7 @@ export default function Triple() {
             old_price={2999}
             reducere="-99%"
             title="Hisense "
-            subtitle="32A4N"
+            subtitle="32A4N (FHD)"
             characteristics='Direct LED / Full HD / 32"'
           />
         </div>
@@ -142,10 +142,10 @@ export default function Triple() {
         title={'general.functions'}
         functions={['Internet', 'TV', 'MTC', 'APP']}
       />
-      <MyApp />
+      <MyApp style_type={'3'} />
       <Chat />
       <Feedback />
-      <Faq style_type="1">
+      <Faq style_type="3">
         <FaqQA question=" Unde pot achita factura mea pentru Internet?">
           <div>
             <span>

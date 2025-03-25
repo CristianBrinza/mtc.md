@@ -10,6 +10,7 @@ interface ButtonProps {
   border_radius?: string;
   hover_bgcolor?: string;
   hover_color?: string;
+  hover_border?: string;
   children: React.ReactNode;
   onClick?: () => Promise<void> | void;
   to?: string;
@@ -25,6 +26,7 @@ const Button: React.FC<ButtonProps> = ({
   bgcolor,
   hover_bgcolor,
   hover_color,
+  hover_border,
   border,
   border_radius,
   children,
@@ -74,11 +76,11 @@ const Button: React.FC<ButtonProps> = ({
     borderWidth: '1px',
     borderStyle: 'solid',
     borderColor: isHovered
-      ? hover_bgcolor
+      ? hover_border
       : border || 'var(--theme_primary_color_dark_gray)',
     borderRadius: border_radius || '100px',
     cursor: disabled ? 'not-allowed' : 'pointer',
-    padding: '0px 28px',
+    padding: '0px 24px',
     color: isHovered
       ? hover_color || 'var(--theme_primary_color_black)'
       : color || 'var(--theme_primary_color_black)',

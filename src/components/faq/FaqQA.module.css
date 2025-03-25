@@ -12,16 +12,18 @@
   align-self: stretch;
   width: 100%;
   font-weight: 600;
-
   box-sizing: border-box;
   justify-content: space-between;
-  border-top: 1px solid #ebebeb;
+  border-top-width: 1px;
+  border-top-style: solid;
   margin-top: -1px;
+  cursor: pointer;
 }
 .FaqQA_inside {
   padding: 0px 34px 0px 20px;
   box-sizing: border-box;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
   /*height: 0px;*/
   max-height: 0px; /* Ensures smooth transition */
   overflow: hidden;

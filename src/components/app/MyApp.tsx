@@ -1,7 +1,5 @@
 import React from 'react';
 import styles from './MyApp.module.css';
-import Button from '../Button.tsx';
-import Icon from '../Icon.tsx';
 
 interface MyAppProps {
   style_type?: string;
@@ -10,16 +8,16 @@ interface MyAppProps {
 const MyApp: React.FC<MyAppProps> = ({ style_type }) => {
   const MyAppStyle: React.CSSProperties = {
     background:
-      style_type === 'gray'
+      style_type === '1'
         ? 'var(--theme_primary_color_light_gray)'
-        : style_type === 'blue'
-          ? 'var(--theme_primary_color_blue)'
+        : style_type === '2'
+          ? 'var(--theme_primary_color_blue_3)'
           : 'transparent',
     borderColor:
-      style_type === 'gray'
-        ? 'var(--theme_primary_color_light_gray)'
-        : style_type === 'blue'
-          ? 'var(--theme_primary_color_blue)'
+      style_type === '3'
+        ? 'var(--theme_primary_color_gray)'
+        : style_type === '4'
+          ? 'var(--theme_primary_color_blue_3)'
           : 'var(--theme_primary_color_gray)',
   };
 

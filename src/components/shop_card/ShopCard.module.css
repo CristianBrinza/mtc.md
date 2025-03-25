@@ -19,10 +19,23 @@
   font-weight: 700;
   line-height: 22px; /* 110% */
   letter-spacing: -0.2px;
+
+  font-size: 18px;
+  line-height: 20px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.15em;
+  font-weight: 600;
+}
+.ShopCard_top {
+  height: 88px;
 }
 .ShopCard_title span {
-  font-weight: 400;
-  letter-spacing: -0.6px;
+  /*font-weight: 400;*/
+  /*font-size: 18px;*/
+  /*letter-spacing: -0.6px;*/
 }
 .ShopCard_inside {
   padding: 0px 16px;
@@ -92,7 +105,7 @@
 }
 .ShopCard_like,
 .ShopCard_compare {
-  bottom: 64px;
+  bottom: 63px;
   right: -30px;
   font-size: 17px;
   font-weight: 500;

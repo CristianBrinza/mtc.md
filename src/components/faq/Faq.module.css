@@ -11,12 +11,7 @@
   margin: 40px auto;
 }
 .faq_title {
-  color: var(--theme_primary_color_black);
-  font-family: Poppins;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 29px; /* 103.571% */
+  font-size: 32px;
 }
 .faq_inside {
   width: 100%;

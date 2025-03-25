@@ -296,53 +296,117 @@ const Navbar: React.FC = () => {
                   >
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      2.1 Gbps
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item
-                      }
-                    >
-                      Double
-                      <span
+                      <Link
+                        to="/"
                         className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small_text
+                          styles.navbar_bottom_menu_option_submenu_block_list_item
                         }
                       >
-                        &nbsp;(Internet + TV)
-                      </span>
+                        2.1 Gbps
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
-                    <Link
-                      to="/triple"
+                    <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Triple
-                      <span
+                      <Link
+                        to="/"
                         className={
-                          styles.navbar_bottom_menu_option_submenu_block_list_item_small_text
+                          styles.navbar_bottom_menu_option_submenu_block_list_item
                         }
                       >
-                        &nbsp;(Internet + TV + Mobil)
-                      </span>
-                    </Link>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item
-                      }
-                    >
-                      Abonamente Internet
+                        Double
+                        <span
+                          className={
+                            styles.navbar_bottom_menu_option_submenu_block_list_item_small_text
+                          }
+                        >
+                          &nbsp;(Internet + TV)
+                        </span>
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Abonamente TV
+                      <Link
+                        to="/triple"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item
+                        }
+                      >
+                        Triple
+                        <span
+                          className={
+                            styles.navbar_bottom_menu_option_submenu_block_list_item_small_text
+                          }
+                        >
+                          &nbsp;(Internet + TV + Mobil)
+                        </span>
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
+                    </div>
+                    <div
+                      className={
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
+                      }
+                    >
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item
+                        }
+                      >
+                        Abonamente Internet
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
+                    </div>
+                    <div
+                      className={
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
+                      }
+                    >
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item
+                        }
+                      >
+                        Abonamente TV
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                   </div>
                 </div>
@@ -361,24 +425,63 @@ const Navbar: React.FC = () => {
                   >
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Moldtelecom TV
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Moldtelecom TV
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Cinematografe online
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Cinematografe online
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Wi-Fi Plus
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Wi-Fi Plus
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                   </div>
                 </div>
@@ -397,38 +500,103 @@ const Navbar: React.FC = () => {
                   >
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Canale TV
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Canale TV
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Echipament TV
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Echipament TV
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Echipament Wi-Fi
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Echipament Wi-Fi
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Wi-Fi 6
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Wi-Fi 6
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Safe-web
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Safe-web
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                   </div>
                 </div>
@@ -459,32 +627,83 @@ const Navbar: React.FC = () => {
                   >
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Portare
-                    </div>
-
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item
-                      }
-                    >
-                      Telefonie Mobila
-                    </div>
-                    <div
-                      className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item
-                      }
-                    >
-                      Modem Wi-Fi
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item
+                        }
+                      >
+                        Portare
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      4G Acasa
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item
+                        }
+                      >
+                        Telefonie Mobila
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
+                    </div>
+                    <div
+                      className={
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
+                      }
+                    >
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item
+                        }
+                      >
+                        Modem Wi-Fi
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
+                    </div>
+                    <div
+                      className={
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
+                      }
+                    >
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item
+                        }
+                      >
+                        4G Acasa
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                   </div>
                 </div>
@@ -503,24 +722,63 @@ const Navbar: React.FC = () => {
                   >
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      eSIM
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        eSIM
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Prepay Digtal
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Prepay Digtal
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      One Number
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        One Number
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                   </div>
                 </div>
@@ -539,38 +797,103 @@ const Navbar: React.FC = () => {
                   >
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Cartela Moldtelecom
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Cartela Moldtelecom
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      MyMoldtelecom
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        MyMoldtelecom
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Roaming
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Roaming
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Apeluri internationale
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Apeluri internationale
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Programul de fidelitate
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Programul de fidelitate
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                   </div>
                 </div>
@@ -591,30 +914,75 @@ const Navbar: React.FC = () => {
                 <div className={styles.navbar_bottom_menu_option_submenu_block}>
                   <div
                     className={
-                      styles.navbar_bottom_menu_option_submenu_block_list
+                      styles.navbar_bottom_menu_option_submenu_block_title
+                    }
+                  >
+                    Telefonie Fixa
+                  </div>
+                  <div
+                    className={
+                      styles.navbar_bottom_menu_option_submenu_block_list_small
                     }
                   >
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Abonamente telefonie fixa
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Abonamente telefonie fixa
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
-
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Opțiuni & servicii de rețea
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Opțiuni & servicii de rețea
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Fax to E-mail
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Fax to E-mail
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                   </div>
                 </div>
@@ -628,7 +996,6 @@ const Navbar: React.FC = () => {
                   className={styles.navbar_bottom_menu_option}
                   onClick={() => toggleMenu('menu4')}
                 >
-                  {' '}
                   Descoperă
                 </div>
               </div>
@@ -650,17 +1017,43 @@ const Navbar: React.FC = () => {
                   >
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      My Moldtelecom
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        My Moldtelecom
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Moldtelecom TV
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Moldtelecom TV
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                   </div>
                 </div>
@@ -679,31 +1072,83 @@ const Navbar: React.FC = () => {
                   >
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Mergi și castigi
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Mergi și castigi
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Challenge
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Challenge
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Transfer credit
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Transfer credit
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                     <div
                       className={
-                        styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        styles.navbar_bottom_menu_option_submenu_block_list_item_row
                       }
                     >
-                      Plus
+                      <Link
+                        to="/"
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_small
+                        }
+                      >
+                        Plus
+                      </Link>
+                      <Icon
+                        className={
+                          styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                        }
+                        type="arrow_right"
+                      />
                     </div>
                   </div>
                 </div>
