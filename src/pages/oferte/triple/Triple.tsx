@@ -145,7 +145,7 @@ export default function Triple() {
       <MyApp style_type={'3'} />
       <Chat />
       <Feedback />
-      <Faq style_type="3">
+      <Faq style_type="1">
         <FaqQA question=" Unde pot achita factura mea pentru Internet?">
           <div>
             <span>

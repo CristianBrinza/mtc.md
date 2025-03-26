@@ -117,8 +117,10 @@
     transform 0.3s ease-in-out;
   cursor: pointer;
 }
+
 .ShopCard_compare {
   bottom: 104px;
+  transition-delay:  0.2s;
 }
 .ShopCard_like_show,
 .ShopCard_compare_show {
