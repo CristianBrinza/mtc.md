@@ -8,6 +8,7 @@ interface SubmenuItem {
   label: string;
   smallText?: string;
   to: string;
+  new?: boolean;
 }
 
 interface SubmenuBlock {
@@ -38,9 +39,9 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     fetch('/json/menuConfig.json')
-      .then((res) => res.json())
+      .then(res => res.json())
       .then((data: MenuItem[]) => setMenuConfig(data))
-      .catch((err) => console.error('Error fetching menu config:', err));
+      .catch(err => console.error('Error fetching menu config:', err));
   }, []);
 
   const toggleLangPopup = () => {
@@ -267,7 +268,6 @@ const Navbar: React.FC = () => {
             </svg>
           </Link>
 
-
           <div className={styles.navbar_bottom_menu}>
             <div className={styles.navbar_bottom_menu_options}>
               {menuConfig.map((item, index) => {
@@ -284,7 +284,9 @@ const Navbar: React.FC = () => {
                       </div>
                       <div
                         className={`${styles.navbar_bottom_menu_option_submenu} ${
-                          activeMenu === menuKey ? styles.navbar_bottom_menu_option_submenu_show : ''
+                          activeMenu === menuKey
+                            ? styles.navbar_bottom_menu_option_submenu_show
+                            : ''
                         }`}
                       >
                         {item.submenu.map((block, blockIndex) => (
@@ -296,7 +298,11 @@ const Navbar: React.FC = () => {
                                 : styles.navbar_bottom_menu_option_submenu_block
                             }
                           >
-                            <div className={styles.navbar_bottom_menu_option_submenu_block_title}>
+                            <div
+                              className={
+                                styles.navbar_bottom_menu_option_submenu_block_title
+                              }
+                            >
                               {block.title}
                             </div>
                             <div
@@ -309,7 +315,9 @@ const Navbar: React.FC = () => {
                               {block.items.map((subItem, subIndex) => (
                                 <div
                                   key={subIndex}
-                                  className={styles.navbar_bottom_menu_option_submenu_block_list_item_row}
+                                  className={
+                                    styles.navbar_bottom_menu_option_submenu_block_list_item_row
+                                  }
                                 >
                                   <Link
                                     to={subItem.to}
@@ -322,14 +330,28 @@ const Navbar: React.FC = () => {
                                     {subItem.label}
                                     {subItem.smallText && (
                                       <span
-                                        className={styles.navbar_bottom_menu_option_submenu_block_list_item_small_text}
+                                        className={
+                                          styles.navbar_bottom_menu_option_submenu_block_list_item_small_text
+                                        }
                                       >
                                         &nbsp;({t(subItem.smallText)})
                                       </span>
                                     )}
                                   </Link>
+                                  {subItem.new && (
+                                    <div
+                                      className={
+                                        styles.navbar_bottom_menu_option_submenu_new
+                                      }
+                                    >
+                                      new
+                                    </div>
+                                  )}
+
                                   <Icon
-                                    className={styles.navbar_bottom_menu_option_submenu_block_list_item_arrow}
+                                    className={
+                                      styles.navbar_bottom_menu_option_submenu_block_list_item_arrow
+                                    }
                                     type="arrow_right"
                                   />
                                 </div>
@@ -337,12 +359,20 @@ const Navbar: React.FC = () => {
                             </div>
                           </div>
                         ))}
+                        <div
+                          className={
+                            styles.navbar_bottom_menu_option_submenu_add
+                          }
+                        ></div>
                       </div>
                     </div>
                   );
                 } else if (item.to) {
                   return (
-                    <div key={index} className={styles.navbar_bottom_menu_option}>
+                    <div
+                      key={index}
+                      className={styles.navbar_bottom_menu_option}
+                    >
                       <Link to={item.to}>{t(item.label)}</Link>
                     </div>
                   );
@@ -353,10 +383,16 @@ const Navbar: React.FC = () => {
 
             <div className={styles.navbar_bottom_menu_right}>
               <Icon type="search" />
-              <Link to="/cart" className={styles.navbar_bottom_menu_right_lang_btn}>
+              <Link
+                to="/cart"
+                className={styles.navbar_bottom_menu_right_lang_btn}
+              >
                 <Icon type="cart" />
               </Link>
-              <Link to="/mymtc" className={styles.navbar_bottom_menu_right_lang_btn}>
+              <Link
+                to="/mymtc"
+                className={styles.navbar_bottom_menu_right_lang_btn}
+              >
                 <Icon type="user" />
               </Link>
               <div
@@ -373,26 +409,28 @@ const Navbar: React.FC = () => {
               </div>
               <div
                 className={`${styles.navbar_bottom_menu_right_lang} ${
-                  isListLangPopupVisible ? styles.navbar_bottom_menu_right_lang_show : ''
+                  isListLangPopupVisible
+                    ? styles.navbar_bottom_menu_right_lang_show
+                    : ''
                 }`}
               >
                 <div
                   className={styles.navbar_bottom_menu_right_lang_btn_select}
                   onClick={() => handleChangeLanguage('ro')}
                 >
-                  {t('navbar.romanian')}
+                  RO
                 </div>
                 <div
                   className={styles.navbar_bottom_menu_right_lang_btn_select}
                   onClick={() => handleChangeLanguage('ru')}
                 >
-                  {t('navbar.russian')}
+                  RU
                 </div>
                 <div
                   className={styles.navbar_bottom_menu_right_lang_btn_select}
                   onClick={() => handleChangeLanguage('en')}
                 >
-                  {t('navbar.english')}
+                  EN
                 </div>
               </div>
             </div>

@@ -7,7 +7,8 @@
         "items": [
           {
             "label": "2.1 Gbps",
-            "to": "/triple"
+            "to": "/triple",
+            "new": true
           },
           {
             "label": "Double",
@@ -35,7 +36,7 @@
         "items": [
           { "label": "Moldtelecom TV", "to": "/" },
           { "label": "Cinematografe online", "to": "/" },
-          { "label": "Wi-Fi Plus", "to": "/"}
+          { "label": "Wi-Fi Plus", "to": "/" }
         ]
       },
       {
@@ -52,7 +53,6 @@
     ]
   },
   {
-
     "label": "navbar.mobil",
     "submenu": [
       {
@@ -77,26 +77,25 @@
         "title": "Descopera",
         "small": true,
         "items": [
-          { "label": "Cartela Moldtelecom", "to": "/"},
-          { "label": "MyMoldtelecom", "to": "/"},
-          { "label": "Roaming","to": "/" },
-          { "label": "Apeluri internationale", "to": "/"},
-          { "label": "Programul de fidelitate", "to": "/"}
+          { "label": "Cartela Moldtelecom", "to": "/" },
+          { "label": "MyMoldtelecom", "to": "/" },
+          { "label": "Roaming", "to": "/" },
+          { "label": "Apeluri internationale", "to": "/" },
+          { "label": "Programul de fidelitate", "to": "/" }
         ]
       }
     ]
   },
   {
-
     "label": "Fix",
     "submenu": [
       {
         "title": "Descopera",
         "small": true,
         "items": [
-          { "label": "Abonamente telefonie fixa", "to": "/"},
-          { "label": "Opțiuni & servicii de rețea", "to": "/"},
-          { "label": "Fax to E-mail", "to": "/"}
+          { "label": "Abonamente telefonie fixa", "to": "/" },
+          { "label": "Opțiuni & servicii de rețea", "to": "/" },
+          { "label": "Fax to E-mail", "to": "/" }
         ]
       }
     ]
@@ -112,17 +111,19 @@
       {
         "title": "Aplicatii",
         "small": true,
-        "items": [{ "label": "My Moldtelecom","to": "/" },
-          { "label": "Moldtelecom TV", "to": "/"}]
+        "items": [
+          { "label": "My Moldtelecom", "to": "/" },
+          { "label": "Moldtelecom TV", "to": "/" }
+        ]
       },
       {
         "title": "Oferte",
         "small": true,
         "items": [
-          { "label": "Mergi și castigi", "to": "/"},
-          { "label": "Challenge", "to": "/"},
-          { "label": "Transfer credit", "to": "/"},
-          { "label": "Plus", "to": "/"}
+          { "label": "Mergi și castigi", "to": "/" },
+          { "label": "Challenge", "to": "/" },
+          { "label": "Transfer credit", "to": "/" },
+          { "label": "Plus", "to": "/" }
         ]
       }
     ]

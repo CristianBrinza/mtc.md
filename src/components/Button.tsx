@@ -1,7 +1,7 @@
 // components/Button.tsx
 import React, { useState, ReactElement, isValidElement } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Icon from './Icon';
+import Icon, { icons } from './Icon';
 
 interface ButtonProps {
   bgcolor?: string;
@@ -19,6 +19,7 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
   id?: string;
+  icon?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -37,6 +38,7 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
   disabled = false,
   id,
+  icon,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
@@ -80,7 +82,7 @@ const Button: React.FC<ButtonProps> = ({
       : border || 'var(--theme_primary_color_dark_gray)',
     borderRadius: border_radius || '100px',
     cursor: disabled ? 'not-allowed' : 'pointer',
-    padding: '0px 24px',
+    padding: '0px 22px',
     color: isHovered
       ? hover_color || 'var(--theme_primary_color_black)'
       : color || 'var(--theme_primary_color_black)',
@@ -112,10 +114,17 @@ const Button: React.FC<ButtonProps> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
-      className={`${className}`}
+      className={`mtc_button ${className}`}
       rel="noopener noreferrer"
     >
       {children}
+      {icon && (
+        <Icon
+          className="Button_icon"
+          type={icon as keyof typeof icons}
+          color={color}
+        />
+      )}
     </a>
   ) : to ? (
     <Link
@@ -125,9 +134,16 @@ const Button: React.FC<ButtonProps> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
-      className={`${className}`}
+      className={`mtc_button ${className}`}
     >
       {children}
+      {icon && (
+        <Icon
+          className="Button_icon"
+          type={icon as keyof typeof icons}
+          color={color}
+        />
+      )}
     </Link>
   ) : (
     <button

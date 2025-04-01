@@ -22,7 +22,7 @@ const Functions: React.FC<FunctionsProps> = ({
       style_type === 'gray'
         ? 'var(--theme_primary_color_light_gray)'
         : style_type === 'blue'
-          ? 'var(--theme_primary_color_blue)'
+          ? 'var(--theme_primary_color_blue_1)'
           : 'var(--theme_primary_color_light_gray)',
   };
 
@@ -85,12 +85,28 @@ const Functions: React.FC<FunctionsProps> = ({
     <div className={styles.functions_carousell_inside} key={id}>
       <div className={styles.functions_carousell_inside_block}>
         <Icon
-          color={'var(--theme_primary_color_dark_gray)'}
+          color={
+            style_type === 'gray'
+              ? 'var(--theme_primary_color_dark_gray)'
+              : style_type === 'blue'
+                ? 'var(--theme_primary_color_blue_2)'
+                : 'var(--theme_primary_color_dark_gray)'
+          }
           type={icon as keyof typeof icons}
           size="35px"
           className={styles.functions_carousell_inside_block_icon}
         />
-        <div className={styles.functions_carousell_inside_block_title}>
+        <div
+          className={styles.functions_carousell_inside_block_title}
+          style={{
+            color:
+              style_type === 'gray'
+                ? 'var(--theme_primary_color_black)'
+                : style_type === 'blue'
+                  ? 'var(--theme_primary_color_blue_4)'
+                  : 'var(--theme_primary_color_black)',
+          }}
+        >
           {title}
         </div>
         <div className={styles.functions_carousell_inside_block_text}>
@@ -130,7 +146,7 @@ const Functions: React.FC<FunctionsProps> = ({
               'Internet', // ID
               'cart', // Icon (must be a valid key from icons)
               'Internet',
-              'Descărca date cu viteză mare și vizita web-ul fără griji',
+              'Descară date cu viteză mare și vizita web-ul fără griji',
               'menu1'
             )}
 
@@ -138,7 +154,7 @@ const Functions: React.FC<FunctionsProps> = ({
             renderFunctionBlock(
               'TV',
               'child',
-              'TV',
+              '1 TV Suplimentar',
               'Privește canalele tale preferate și bucură-te de divertisment',
               'menu1'
             )}

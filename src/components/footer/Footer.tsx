@@ -285,11 +285,11 @@ const Footer: React.FC<FooterProps> = ({ discalmer }) => {
           </div>
 
           <div className={styles.footer_inside_middle}>
-<div className={styles.footer_inside_middle_block}>
-<div className={styles.footer_inside_middle_title}>
-  Despre companie
-</div>
-</div>
+            <div className={styles.footer_inside_middle_block}>
+              <div className={styles.footer_inside_middle_title}>
+                Despre companie
+              </div>
+            </div>
           </div>
           <div className={styles.footer_inside_bottom}>
             <div className={styles.footer_inside_bottom_left}>

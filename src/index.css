@@ -104,12 +104,19 @@ body {
 
 .title {
   color: rgba(0, 0, 0, 0.85);
-  font-family: Poppins;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 28px; /* 100% */
+  /*font-family: Poppins;*/
+  /*font-size: 28px;*/
+  /*font-style: normal;*/
+  /*font-weight: 600;*/
+  /*line-height: 28px; !* 100% *!*/
   margin: 10px 0 0px;
+
+  font-family: 'Source Sans Pro';
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 106.667% */
+  letter-spacing: -0.3px;
 }
 .title_2 {
   color: var(--theme_primary_color_blue_4);
@@ -195,4 +202,36 @@ body {
 
 .slick-next {
   rotate: 180deg;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.Button_icon {
+  margin: 0 0 0 0;
+  transition: margin 0.3s ease;
+}
+.mtc_button:hover .Button_icon {
+  margin: 0 -3px 0 3px;
+}
+.gradient_text_1 {
+  background: linear-gradient(92deg, #00a55e 0.79%, #0075af 61.33%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient_text_2 {
+  background: linear-gradient(91deg, #e42021 20.51%, #fc0 76.69%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

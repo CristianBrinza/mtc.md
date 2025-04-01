@@ -11,6 +11,9 @@ import Slider from 'react-slick';
 import Functions from '../../../components/functions/Functions.tsx';
 import Footer from '../../../components/footer/Footer.tsx';
 import MyApp from '../../../components/app/MyApp.tsx';
+import OptionsCards from '../../../components/options_cards/OptionsCards.tsx';
+import Popup from '../../../components/Popup/Popup.tsx';
+import { useState } from 'react';
 
 export default function Triple() {
   const breadcrumbItems = [
@@ -49,11 +52,46 @@ export default function Triple() {
     ],
   };
 
+  const optionsData = [
+    {
+      type: 'Descoperă',
+      title: '<grad1>Moldtelecom TV</grad1> :/ la doar 40 lei!',
+      subtitle:
+        'Accesează acum <b>oriunde</b> în reteaua :/ Moldtelecom pe <b>orice ecran</b>.',
+      image: '/images/landings/15534010.png',
+      to: 'kll',
+    },
+    {
+      type: 'Descoperă',
+      title: 'CINEMA ONLINE :/ la doar <grad2>59 lei/lună</grad2>!',
+      subtitle:
+        'Explorează lumea televiziunii :/ interactive cu abonamentul dorit,:/ <b>direct pe smartphone-ul tău</b>.',
+      image: '/images/landings/15534010.png',
+      to: 'kll',
+      popup: '1281570', // pass only the popup ID
+    },
+  ];
+
+  const [activePopup, setActivePopup] = useState<string | null>(null);
+
+  const togglePopup = (popup: string) => {
+    setActivePopup(activePopup !== popup ? popup : null);
+  };
+
+
   return (
     <>
+      <Popup
+        id="1281570"
+        width="900px"
+        isVisible={activePopup === '1281570'}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className="popup_content">test2</div>
+      </Popup>
       <Navbar />
       <Breadcrumb items={breadcrumbItems} />
-      <Hero color=" #F7F7F7" image="/images/triple/triple_hero.png">
+      <Hero color=" #F7F7F7" image="/images/landings/triple_hero.png">
         <div
           className="hero_small_title"
           style={{
@@ -78,6 +116,8 @@ export default function Triple() {
       {/*  Crează-ți propriul abonament:*/}
       {/*</div>*/}
 
+      <OptionsCards items={optionsData} popupHandler={togglePopup} />
+
       <div className={`title ${styles.title2}`}>
         Smartphone la DOAR 1 leu, sau Preț Special!
       </div>
@@ -98,11 +138,12 @@ export default function Triple() {
             title="Hisense "
             subtitle="32A4N (FHD)"
             characteristics='Direct LED / Full HD / 32"'
+            tag={'DOAR 1 leu'}
           />
         </div>
         <div className={styles.triple_carousell_block}>
           <ShopCard
-            device_id={394534437}
+            device_id={194234497}
             image="/images/shop/394534437.png"
             price={1}
             old_price={5099}
@@ -110,6 +151,7 @@ export default function Triple() {
             title="Hisense"
             subtitle="43A4N (4k)"
             characteristics='UHD VA / 4K / 43"'
+            tag={'Promo'}
           />
         </div>
         <div className={styles.triple_carousell_block}>
@@ -139,10 +181,11 @@ export default function Triple() {
       </Slider>
 
       <Functions
+        style_type={'blue'}
         title={'general.functions'}
         functions={['Internet', 'TV', 'MTC', 'APP']}
       />
-      <MyApp style_type={'3'} />
+      <MyApp style_type={'blue_white'} />
       <Chat />
       <Feedback />
       <Faq style_type="1">
@@ -207,30 +250,32 @@ export default function Triple() {
             <span></span>
           </p>
         </FaqQA>
-        <FaqQA question="Cum pot să raportez o infracțiune sau o ilegalitate?">
+        <FaqQA question="Ce este un atac DDoS și cum îți poate afecta afacerea?">
           <p>
-            <span></span>
-            <span>
-              Folosește-ți smartphone-ul ca și un Internet Hotspot, accesând:
-              <br />
-              <br />
-              <strong>Setări</strong>⇒&nbsp;
-              <strong>Hotspot mobil și tethering</strong>&nbsp;(trebuie să fie
-              activat) ⇒&nbsp;<strong>alege Parolă Wi-Fi&nbsp;</strong>⇒&nbsp;
-              <strong>setează parola cu minim 8 caractere</strong>⇒
-              <strong>SALVARE</strong>&nbsp;⇒<strong>MAI MULTE</strong>
-              &nbsp;(pentru Dispositive premise/Configurare Mobile hotspot -
-              complează numele rețelei și parola pentru a te conecta doar cu
-              dispozitivele cunoscute /Setări de expirare). La dezactivare -
-              debifează Hotspot mobil.
-              <br />
-              Notă:&nbsp; Setările pot fi diferite în funcție de modelul
-              telefonului.
-              <br />
-              <br />E bine să cunoști! Prin HotSpot se mărește consumul de date
-              a traficului de internet.
-            </span>
-            <span></span>
+            Un atac DDoS (Distributed Denial of Service) este o amenințare
+            cibernetică care poate paraliza activitatea online a afacerii tale.
+            Acesta constă într-un val masiv de trafic malițios trimis către
+            site-ul sau serverele tale, cu scopul de a le suprasolicita și
+            bloca. <b>Cum te poate afecta?</b>
+            <ul>
+              <li>
+                <b>Blocarea website-ului</b> – Clienții nu mai pot accesa
+                magazinul online sau serviciile digitale.
+              </li>
+              <li>
+                <b>Pierderi financiare</b> – Fiecare minut de downtime înseamnă
+                pierderi directe pentru afacerea ta.
+              </li>
+              <li>
+                <b>Daune reputaționale</b> – Un atac poate afecta încrederea
+                clienților și partenerilor tăi.
+              </li>
+              <li>
+                <b>Solicitări de recompense</b> – În unele cazuri, atacatorii
+                cer sume de bani pentru a opri atacurile.
+              </li>
+            </ul>
+            Nu lăsa atacurile cibernetice să îți pună afacerea în pericol!
           </p>
         </FaqQA>
         <FaqQA question="Cum pot să raportez o infracțiune sau o ilegalitate?">

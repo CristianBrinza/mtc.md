@@ -44,7 +44,7 @@
 .footer_inside_bottom_left_line {
   font-weight: 400;
 }
-.footer_inside_top_icons{
+.footer_inside_top_icons {
   display: flex;
   gap: 16px;
   text-decoration: none;
@@ -52,7 +52,7 @@
   opacity: 1;
   transform: scale(1);
 }
-.footer_inside_middle{
+.footer_inside_middle {
   margin: 35px 0 45px;
   display: flex;
   width: 1180px;
@@ -68,14 +68,11 @@
   gap: 15px;
   flex-shrink: 0;
 }
-.footer_inside_middle_title{
-  color: #FFF;
-  font-family: "Source Sans Pro";
+.footer_inside_middle_title {
+  color: #fff;
+  font-family: 'Source Sans Pro';
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: 22px; /* 110% */
 }
-
-
-

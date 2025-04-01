@@ -1,14 +1,15 @@
 .MyApp {
-  margin: 45px auto 30px;
+  margin: 40px auto 40px;
   width: 100%;
   max-width: 1180px;
   position: relative;
   border-style: solid;
   border-width: 1px;
   border-radius: 20px;
-  padding: 33px 45px 37px 45px;
+  padding: 30px 45px 37px 45px;
   box-sizing: border-box;
-  height: 220px;
+  height: 222px;
+  overflow: hidden;
 }
 .MyApp_text {
   width: 100%;

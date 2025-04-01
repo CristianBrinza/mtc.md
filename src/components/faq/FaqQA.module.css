@@ -11,13 +11,18 @@
   gap: 442px;
   align-self: stretch;
   width: 100%;
-  font-weight: 600;
   box-sizing: border-box;
   justify-content: space-between;
   border-top-width: 1px;
   border-top-style: solid;
   margin-top: -1px;
   cursor: pointer;
+  font-family: 'Source Sans Pro';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.18px;
 }
 .FaqQA_inside {
   padding: 0px 34px 0px 20px;

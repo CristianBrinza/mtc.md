@@ -1,11 +1,11 @@
 .functions {
-  margin: 40px auto 20px;
+  margin: 40px auto 40px;
   width: 100%;
   max-width: 1180px;
   position: relative;
 }
 .functions_title {
-  margin: 0px auto 20px;
+  margin: 0px auto 15px;
   width: 100%;
   max-width: 650px;
   text-align: center;
@@ -19,15 +19,14 @@
   background: red;
 }
 .functions_carousell_inside_block_title {
-  color: var(--theme_primary_color_black);
+  width: 100%;
+  max-width: 235px;
   font-family: 'Source Sans Pro';
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
-  line-height: 22px; /* 122.222% */
-  width: 100%;
-  max-width: 235px;
-  margin: 4px 0 0;
+  line-height: 22px;
+  margin: 12px 0 0;
 }
 .functions_carousell_inside_block_text {
   color: var(--theme_primary_color_black);
@@ -37,7 +36,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 18px; /* 112.5% */
   margin: 5px 0 10px;
 }
 .functions_carousell_inside_block_btn {

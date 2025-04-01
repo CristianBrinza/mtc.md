@@ -6,6 +6,7 @@ import NotFound from './pages/not_found/NotFound.tsx';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n.tsx';
 import Triple from './pages/oferte/triple/Triple.tsx';
+import { routesConfig } from './routesConfig.tsx';
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
             <Route path="/:lang/" element={<Home />} />
             <Route path="/:lang/triple" element={<Triple />} />
             <Route path="*" element={<NotFound />} />
+
+            {routesConfig.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
           </Routes>
         </LanguageProvider>
       </BrowserRouter>

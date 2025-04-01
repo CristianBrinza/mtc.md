@@ -11,10 +11,14 @@ interface ShopCardProps {
   title: string;
   subtitle?: string;
   characteristics?: string;
+  tag?: string;
+  tag_color?: string;
+  tag_text_color?: string;
   device_id: number;
 }
 
-const STORAGE_KEY = 'likedDevices';
+const STORAGE_KEY_LIKE = 'likedDevices';
+const STORAGE_KEY_COMPARE = 'comapreDevices';
 
 // Format price function to use space as a thousands separator
 const formatPrice = (price: number) => {
@@ -29,6 +33,9 @@ const ShopCard: React.FC<ShopCardProps> = ({
   title,
   subtitle,
   characteristics,
+  tag,
+  tag_color,
+  tag_text_color,
   device_id,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -41,7 +48,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
 
   // On component mount, check if this item is Compare by reading localStorage
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
+    const stored = localStorage.getItem(STORAGE_KEY_COMPARE);
     const CompareList: number[] = stored ? JSON.parse(stored) : [];
     if (CompareList.includes(device_id)) {
       setIsCompare(true);
@@ -50,23 +57,23 @@ const ShopCard: React.FC<ShopCardProps> = ({
 
   // Handle the Compare button click: add or remove the device_id from localStorage
   const handleCompareClick = () => {
-    const stored = localStorage.getItem(STORAGE_KEY);
+    const stored = localStorage.getItem(STORAGE_KEY_COMPARE);
     const CompareList: number[] = stored ? JSON.parse(stored) : [];
     if (!isCompare) {
       CompareList.push(device_id);
       setIsCompare(true);
     } else {
       const updatedList = CompareList.filter(id => id !== device_id);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedList));
+      localStorage.setItem(STORAGE_KEY_COMPARE, JSON.stringify(updatedList));
       setIsCompare(false);
       return;
     }
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(CompareList));
+    localStorage.setItem(STORAGE_KEY_COMPARE, JSON.stringify(CompareList));
   };
 
   // On component mount, check if this item is Compare by reading localStorage
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
+    const stored = localStorage.getItem(STORAGE_KEY_LIKE);
     const likedList: number[] = stored ? JSON.parse(stored) : [];
     if (likedList.includes(device_id)) {
       setIsLiked(true);
@@ -75,18 +82,18 @@ const ShopCard: React.FC<ShopCardProps> = ({
 
   // Handle the like button click: add or remove the device_id from localStorage
   const handleLikeClick = () => {
-    const stored = localStorage.getItem(STORAGE_KEY);
+    const stored = localStorage.getItem(STORAGE_KEY_LIKE);
     const likedList: number[] = stored ? JSON.parse(stored) : [];
     if (!isLiked) {
       likedList.push(device_id);
       setIsLiked(true);
     } else {
       const updatedList = likedList.filter(id => id !== device_id);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedList));
+      localStorage.setItem(STORAGE_KEY_LIKE, JSON.stringify(updatedList));
       setIsLiked(false);
       return;
     }
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(likedList));
+    localStorage.setItem(STORAGE_KEY_LIKE, JSON.stringify(likedList));
   };
 
   return (
@@ -96,6 +103,21 @@ const ShopCard: React.FC<ShopCardProps> = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      {tag && (
+        <div
+          className={styles.ShopCard_tag}
+          style={{
+            background: tag_color
+              ? tag_color
+              : 'var(--theme_primary_color_gray',
+            color: tag_text_color
+              ? tag_text_color
+              : 'var(--theme_primary_color_black)',
+          }}
+        >
+          {tag}
+        </div>
+      )}
       <img className={styles.ShopCard_img} src={image} alt="Device" />
       <div className={styles.ShopCard_inside}>
         <div className={styles.ShopCard_top}>
@@ -171,7 +193,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
             color={
               isLikeHovered
                 ? 'var(--theme_primary_color_red_2)'
-                : 'var(--theme_primary_color_dark_gray)'
+                : 'var(--theme_primary_color_red_2)'
             }
           />
         ) : (
@@ -193,7 +215,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
         onClick={handleCompareClick}
       >
         {isCompare ? (
-          <Icon type="compare" color="var(--theme_primary_color_dark_gray)" />
+          <Icon type="compare" color="var(--theme_primary_color_blue_3)" />
         ) : (
           <Icon
             type="compare"
