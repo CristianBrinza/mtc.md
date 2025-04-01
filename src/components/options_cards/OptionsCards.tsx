@@ -11,7 +11,7 @@ interface OptionsCardsItem {
   image: string;
   to?: string;
   detalii?: string;
-  popup: string;
+  popup?: string;
 }
 
 interface OptionsCardsProps {
