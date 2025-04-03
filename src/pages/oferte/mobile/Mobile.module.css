@@ -24,3 +24,36 @@
   max-width: 1180px;
   margin: 30px auto 30px;
 }
+
+.tm_carousell :global(.ShopCard) {
+  margin: 0 auto;
+}
+
+@media (max-width: 1300px) {
+  .tm_carousell,
+  .tm_carousell_abonamente,
+  .title1,
+  .title2,
+  .sub_title1 {
+    max-width: 880px;
+  }
+}
+@media (max-width: 940px) {
+  .tm_carousell,
+  .tm_carousell_abonamente,
+  .title1,
+  .title2,
+  .sub_title1 {
+    width: 580px;
+  }
+}
+
+@media (max-width: 650px) {
+  .tm_carousell,
+  .tm_carousell_abonamente,
+  .title1,
+  .title2,
+  .sub_title1 {
+    width: calc(100vw - 40px);
+  }
+}

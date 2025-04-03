@@ -15,7 +15,7 @@ interface BreadcrumbProps {
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
   const { t } = useTranslation();
   return (
-    <div className="breadcrumb main">
+    <div className="breadcrumb">
       <Link to={`/${t('lang')}/`}>
         <svg
           style={{ marginTop: '1px', marginBottom: '-1px' }}

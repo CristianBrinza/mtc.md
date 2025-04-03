@@ -95,10 +95,13 @@ export default function Mobile() {
           Promo
         </div>
         <div className="hero_title">
-          Profită acum de oferta <br />
-          de <span style={{ textDecoration: 'underline' }}>
+          Acum ai <br />
+          <span
+            className="stroked-text_black"
+            style={{ fontWeight: '700', lineHeight: '1' }}
+          >
             -35% REDUCERE
-          </span>{' '}
+          </span>
           <br />
           timp de 2 ani!
         </div>

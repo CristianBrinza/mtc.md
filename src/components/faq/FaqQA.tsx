@@ -34,12 +34,14 @@ const FaqQA: React.FC<FaqQAProps> = ({
         }}
       >
         <div>{question}</div>
-        <Icon
-          className={`${styles.FaqQA_title_svg} ${
-            activeFAQ ? styles.FaqQA_title_svg_rotated : ''
-          }`}
-          type="plus"
-        />
+        <div className={styles.FaqQA_title_svg_block}>
+          <Icon
+            className={`${styles.FaqQA_title_svg} ${
+              activeFAQ ? styles.FaqQA_title_svg_rotated : ''
+            }`}
+            type="plus"
+          />
+        </div>
       </div>
       <div
         className={`${styles.FaqQA_inside} ${

@@ -27,3 +27,11 @@
   height: 100%;
   width: auto;
 }
+
+@media (max-width: 1500px) {
+  .hero {
+    border-radius: 0px;
+    width: 1500px;
+    margin-left: calc((1500px - 100vw) / -2);
+  }
+}

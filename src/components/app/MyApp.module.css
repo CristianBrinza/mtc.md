@@ -49,3 +49,72 @@
 .MyApp_text_btn:hover .MyApp_text_btn_border {
   stroke: var(--theme_primary_color_gray);
 }
+
+@media (max-width: 1300px) {
+  .MyApp {
+    max-width: 880px;
+    padding: 20px 45px 20px 45px;
+    box-sizing: border-box;
+    height: 252px;
+  }
+  .MyApp_Img {
+    right: -160px;
+    width: 510px;
+  }
+  .MyApp_title {
+    max-width: 420px;
+  }
+  .MyApp_text {
+    max-width: 420px;
+    height: 48px;
+  }
+}
+@media (max-width: 940px) {
+  .MyApp {
+    width: 580px;
+    padding: 30px 45px 20px 45px;
+    height: auto;
+  }
+  .MyApp_Img {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: -25px;
+    right: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .MyApp {
+    width: calc(100vw - 40px);
+  }
+}
+
+@media (max-width: 500px) {
+  .MyApp_text_btns {
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .svg_line {
+    stroke: transparent;
+  }
+  .MyApp_text_icons {
+    margin-left: -10px !important;
+  }
+  .MyApp_text {
+    max-width: 100%;
+    height: auto;
+  }
+  .MyApp_Img {
+    width: 120vw;
+    margin-right: -30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .MyApp {
+    padding: 30px 30px 20px 30px;
+  }
+}

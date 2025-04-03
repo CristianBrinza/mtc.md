@@ -489,21 +489,24 @@ const Navbar: React.FC = () => {
             </div>
 
             <div className={styles.navbar_bottom_menu_right}>
-              <Icon type="search" />
+              <Icon
+                type="search"
+                className={` ${styles.topbnav_menu_desktop} `}
+              />
               <Link
                 to="/cart"
-                className={styles.navbar_bottom_menu_right_lang_btn}
+                className={`${styles.navbar_bottom_menu_right_lang_btn} ${styles.topbnav_menu_desktop} `}
               >
                 <Icon type="cart" />
               </Link>
               <Link
                 to="/mymtc"
-                className={styles.navbar_bottom_menu_right_lang_btn}
+                className={`${styles.navbar_bottom_menu_right_lang_btn} ${styles.topbnav_menu_desktop} `}
               >
                 <Icon type="user" />
               </Link>
               <div
-                className={styles.navbar_bottom_menu_right_lang_btn}
+                className={`${styles.navbar_bottom_menu_right_lang_btn} `}
                 onClick={toggleLangPopup}
               >
                 {i18n.language === 'en' ? (
@@ -540,6 +543,11 @@ const Navbar: React.FC = () => {
                   EN
                 </div>
               </div>
+              <Icon
+                type="menu"
+                className={styles.topbnav_menu_mobile_block}
+                // onClick={toggleMenuVisibility}
+              />
             </div>
           </div>
         </div>

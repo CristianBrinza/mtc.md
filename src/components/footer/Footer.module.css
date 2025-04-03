@@ -1,5 +1,5 @@
 .footer {
-  width: 100vw;
+  width: 100%;
   background: #212a55;
 }
 .footer_inside {
@@ -8,8 +8,9 @@
   margin: 0px auto;
 }
 .discalmer {
-  width: 100%;
+  width: calc(100% - 40px);
   max-width: 1180px;
+  padding: 0;
   margin: 30px auto 20px;
   color: var(--theme_primary_color_dark_gray);
   text-align: center;
@@ -75,4 +76,26 @@
   font-style: normal;
   font-weight: 700;
   line-height: 22px; /* 110% */
+}
+.footer_block {
+  width: 100%;
+  max-width: 100vw;
+}
+
+@media (max-width: 1300px) {
+  .discalmer {
+    max-width: 850px;
+  }
+}
+@media (max-width: 940px) {
+  .discalmer {
+    width: 580px;
+  }
+}
+
+@media (max-width: 650px) {
+  .discalmer {
+    width: calc(100vw - 40px);
+    padding: 0px 20px;
+  }
 }

@@ -5,6 +5,15 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Link } from 'react-router-dom';
+import Videos from '../../components/videos/Videos.tsx';
+import { useEffect, useState } from 'react';
+import Footer from '../../components/footer/Footer.tsx';
+
+interface videosItem {
+  url_ro?: string;
+  url_ru?: string;
+  url_en?: string;
+}
 
 export default function Home() {
   const settings = {
@@ -17,6 +26,13 @@ export default function Home() {
     slidesToScroll: 1,
   };
 
+  const [videos, setVideos] = useState<videosItem[]>([]);
+  useEffect(() => {
+    fetch('/json/home_videos.json')
+      .then(response => response.json())
+      .then((data: videosItem[]) => setVideos(data))
+      .catch(error => console.error('Error loading videos:', error));
+  }, []);
   return (
     <>
       <Navbar />
@@ -43,7 +59,9 @@ export default function Home() {
         </div>
       </Slider>
 
+      <Videos items={videos} />
       <Chat />
+      <Footer discalmer={true} />
     </>
   );
 }

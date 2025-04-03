@@ -7,6 +7,7 @@
   line-height: 16px; /* 114.286% */
   width: 100%;
   max-width: 1385px;
+  padding: 0 10px;
   margin: 20px auto 7px;
   gap: 8px;
   display: flex;

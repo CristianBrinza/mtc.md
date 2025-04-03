@@ -3,7 +3,7 @@
   max-width: 1180px;
   border-radius: 20px;
   display: flex;
-  padding: 40px 0px;
+  padding: 40px;
   box-sizing: border-box;
   flex-direction: column;
   align-items: center;
@@ -20,4 +20,23 @@
   width: 100%;
   height: 0px;
   margin-bottom: -0px;
+}
+
+@media (max-width: 1300px) {
+  .faq {
+    width: 880px;
+  }
+}
+
+@media (max-width: 940px) {
+  .faq {
+    width: 580px;
+  }
+}
+
+@media (max-width: 650px) {
+  .faq {
+    width: calc(100vw - 40px);
+    padding: 40px 30px;
+  }
 }

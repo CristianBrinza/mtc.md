@@ -257,5 +257,16 @@ body {
 }
 .mtc_carousell .slick-next:before {
   content: url('data:image/svg+xml;charset=UTF-8,<svg style="transform:rotate(180deg)" width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M1.05116 18.0923L8.34149 10.0209L1.05116 1.90653" stroke="%232F3043" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </svg>') !important;
-  margin-left: -70px !important;
+  margin-left: -100px !important;
+}
+
+.stroked-text_white {
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke-width: 1.8px;
+  -webkit-text-stroke-color: var(--theme_primary_color_white);
+}
+.stroked-text_black {
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke-width: 1.8px;
+  -webkit-text-stroke-color: var(--theme_primary_color_black);
 }

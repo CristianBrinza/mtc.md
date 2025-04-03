@@ -8,7 +8,7 @@
   display: flex;
   padding: 13px 34px 13px 20px;
   align-items: center;
-  gap: 442px;
+  gap: 40px;
   align-self: stretch;
   width: 100%;
   box-sizing: border-box;
@@ -23,6 +23,10 @@
   font-weight: 600;
   line-height: 18px;
   letter-spacing: 0.18px;
+}
+.FaqQA_title_svg_block {
+  width: 24px;
+  height: 24px;
 }
 .FaqQA_inside {
   padding: 0px 34px 0px 20px;
@@ -49,4 +53,19 @@
 .FaqQA_title_svg_rotated {
   transform: rotate(45deg) !important;
   transition: transform 0.3s;
+}
+
+@media (max-width: 650px) {
+  .FaqQA_title {
+    padding: 13px 5px 13px 5px;
+  }
+  .FaqQA_inside_show {
+    padding: 10px 0px 20px 0px;
+  }
+}
+
+@media (max-width: 550px) {
+  .FaqQA_title {
+    padding: 13px 5px 13px 0px;
+  }
 }

@@ -4,6 +4,7 @@
   border-radius: 20px;
   border: 1px solid #ddd;
   overflow: hidden;
+  margin: 0 auto;
 
   .AbonamentCard_img {
     width: 100%;

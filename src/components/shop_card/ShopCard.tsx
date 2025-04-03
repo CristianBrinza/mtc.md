@@ -99,7 +99,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
   return (
     <div
       id={device_id.toString()}
-      className={styles.ShopCard}
+      className={`${styles.ShopCard} ShopCard`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

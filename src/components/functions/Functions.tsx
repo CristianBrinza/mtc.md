@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from './Functions.module.css';
 import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
-import './Functions.css';
 import Icon, { icons } from '../Icon.tsx';
 import Popup from '../Popup/Popup.tsx';
 

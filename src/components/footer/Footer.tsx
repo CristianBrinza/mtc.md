@@ -13,11 +13,9 @@ const Footer: React.FC<FooterProps> = ({ discalmer }) => {
   const { t } = useTranslation();
 
   return (
-    <div style={FooterStyle}>
-      {discalmer == true ? (
+    <div style={FooterStyle} className={styles.footer_block}>
+      {discalmer == true && (
         <div className={styles.discalmer}>{t('footer.descalmer')}</div>
-      ) : (
-        'lei'
       )}
 
       <div className={styles.footer}>
