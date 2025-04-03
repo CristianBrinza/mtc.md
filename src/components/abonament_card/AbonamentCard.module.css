@@ -1,0 +1,63 @@
+.AbonamentCard {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+
+  .AbonamentCard_img {
+    width: 100%;
+    height: auto;
+  }
+  .AbonamentCard_type {
+    margin-top: 20px;
+    color: #828282;
+    font-family: 'Open Sans';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px; /* 160% */
+  }
+  .AbonamentCard_title {
+    color: var(--theme_primary_color_black);
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px; /* 100% */
+  }
+  .AbonamentCard_inside {
+    padding: 0 20px 20px;
+  }
+}
+.AbonamentCard_price {
+  color: var(--theme_primary_color_black);
+  font-family: Poppins;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36.97px; /* 97.289% */
+  letter-spacing: -1.14px;
+  margin-top: 42px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.AbonamentCard_price_valuta {
+  color: var(--theme_primary_color_black);
+  font-family: Poppins;
+  font-size: 14.788px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 17.253px; /* 116.667% */
+}
+.AbonamentCard_price_old {
+  color: rgba(0, 0, 0, 0.25);
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10px; /* 100% */
+  text-decoration-line: line-through;
+}

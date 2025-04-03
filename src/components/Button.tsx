@@ -1,5 +1,5 @@
 // components/Button.tsx
-import React, { useState, ReactElement, isValidElement } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Icon, { icons } from './Icon';
 
@@ -153,17 +153,17 @@ const Button: React.FC<ButtonProps> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
-      className={`${className}`}
+      className={`mtc_button ${className}`}
       disabled={disabled}
     >
-      {React.Children.map(children, child => {
-        if (isValidElement(child) && child.type === Icon) {
-          return React.cloneElement(child as ReactElement<any>, {
-            color: buttonIconColor,
-          });
-        }
-        return child;
-      })}
+      {children}
+      {icon && (
+        <Icon
+          className="Button_icon"
+          type={icon as keyof typeof icons}
+          color={buttonIconColor}
+        />
+      )}
     </button>
   );
 };

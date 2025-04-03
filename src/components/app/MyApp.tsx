@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './MyApp.module.css';
 import Button from '../Button.tsx';
-import Icon from '../Icon.tsx';
 
 interface MyAppProps {
   style_type?: string;
@@ -38,13 +37,15 @@ const MyApp: React.FC<MyAppProps> = ({ style_type }) => {
       </div>
       <div className={styles.MyApp_text_btns}>
         <Button
+          to="https://mtc.md/my-mtc"
           color={'var(--theme_primary_color_blue_4)'}
           bgcolor={'var(--theme_primary_color_blue_3)'}
           border={'var(--theme_primary_color_blue_3)'}
+          hover_border={'var(--theme_primary_color_blue_2)'}
           hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+          icon={'arrow_right'}
         >
           Descarcă aplicația
-          <Icon type="arrow_right" />
         </Button>
         <svg
           style={{ margin: '0 0 0 5px' }}

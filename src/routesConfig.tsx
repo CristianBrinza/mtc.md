@@ -3,6 +3,7 @@ import React from 'react';
 import Home from './pages/home/Home';
 import Triple from './pages/oferte/triple/Triple';
 import NotFound from './pages/not_found/NotFound';
+import Mobile from './pages/oferte/mobile/Mobile.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -21,6 +22,11 @@ export const routesConfig: RouteConfig[] = [
     path: '/:lang/triple',
     i18nKey: 'navbar.internet_tv',
     element: React.createElement(Triple),
+  },
+  {
+    path: '/:lang/mobile',
+    i18nKey: 'navbar.internet_tv',
+    element: React.createElement(Mobile),
   },
   {
     path: '*',

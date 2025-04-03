@@ -187,23 +187,41 @@ const ShopCard: React.FC<ShopCardProps> = ({
         onMouseLeave={() => setIsLikeHovered(false)}
         onClick={handleLikeClick}
       >
-        {isLiked ? (
-          <Icon
-            type="heart_fill"
-            color={
-              isLikeHovered
-                ? 'var(--theme_primary_color_red_2)'
-                : 'var(--theme_primary_color_red_2)'
-            }
-          />
-        ) : (
-          <Icon
-            type="heart"
-            color={
-              isLikeHovered ? 'var(--theme_primary_color_red_2)' : undefined
-            }
-          />
-        )}
+        <Icon
+          type={
+            isLikeHovered
+              ? 'heart_fill'
+              : isLiked && isHovered
+                ? 'heart_fill'
+                : 'heart'
+          }
+          color={
+            isLikeHovered
+              ? 'var(--theme_primary_color_red_2)'
+              : isLiked
+                ? isHovered
+                  ? 'var(--theme_primary_color_red_2)'
+                  : 'var(--theme_primary_color_gray)'
+                : 'var(--theme_primary_color_black)'
+          }
+        />
+        {/*{isLiked ? (*/}
+        {/*  <Icon*/}
+        {/*    type="heart_fill"*/}
+        {/*    color={*/}
+        {/*      isLikeHovered*/}
+        {/*        ? 'var(--theme_primary_color_red_2)'*/}
+        {/*        : 'var(--theme_primary_color_gray)'*/}
+        {/*    }*/}
+        {/*  />*/}
+        {/*) : (*/}
+        {/*  <Icon*/}
+        {/*    type="heart"*/}
+        {/*    color={*/}
+        {/*      isLikeHovered ? 'var(--theme_primary_color_red_2)' : undefined*/}
+        {/*    }*/}
+        {/*  />*/}
+        {/*)}*/}
       </div>
 
       <div
@@ -215,12 +233,12 @@ const ShopCard: React.FC<ShopCardProps> = ({
         onClick={handleCompareClick}
       >
         {isCompare ? (
-          <Icon type="compare" color="var(--theme_primary_color_blue_3)" />
+          <Icon type="compare" color="var(--theme_primary_color_gray)" />
         ) : (
           <Icon
             type="compare"
             color={
-              isCompareHovered ? 'var(--theme_primary_color_blue_2)' : undefined
+              isCompareHovered ? 'var(--theme_primary_color_blue_3)' : undefined
             }
           />
         )}

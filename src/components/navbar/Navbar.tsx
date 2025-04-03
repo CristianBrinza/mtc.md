@@ -3,6 +3,8 @@ import styles from './Navbar.module.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Icon from '../Icon.tsx';
 import { useTranslation } from 'react-i18next';
+import Slider from 'react-slick';
+import Button from '../Button.tsx';
 
 interface SubmenuItem {
   label: string;
@@ -20,8 +22,15 @@ interface SubmenuBlock {
 interface MenuItem {
   menu_id?: string;
   label: string;
+  promo?: PromoBlock[];
   to?: string;
   submenu?: SubmenuBlock[];
+}
+interface PromoBlock {
+  image_ro: string;
+  image_ru: string;
+  image_en: string;
+  to?: string;
 }
 
 const Navbar: React.FC = () => {
@@ -73,6 +82,54 @@ const Navbar: React.FC = () => {
     });
   };
 
+  const getImageByLanguage = (img: PromoBlock): string => {
+    switch (i18n.language) {
+      case 'ro':
+        return img.image_ro;
+      case 'ru':
+        return img.image_ru;
+      case 'en':
+      default:
+        return img.image_en;
+    }
+  };
+  const [progressKey, setProgressKey] = useState(0);
+  const handlePromoMouseEnter = () => {
+    // Optional: stop/reset autoplay dacă vrei
+  };
+
+  const handlePromoMouseLeave = () => {
+    setProgressKey(prev => prev + 1); // Forțează resetul animației
+  };
+
+  const [, setCurrentPromoIndex] = useState(0);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // pauseOnHover: true,
+    beforeChange: (oldIndex: number, newIndex: number) => {
+      void oldIndex;
+      setCurrentPromoIndex(newIndex);
+      setProgressKey(prev => prev + 1); // Reset progress bar on card change
+    },
+  };
+
+  const [isSticky, setIsSticky] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY >= 18);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       <div
@@ -82,8 +139,12 @@ const Navbar: React.FC = () => {
           setOverlayVisible(false);
         }}
       />
-
-      <nav className={styles.navbar}>
+      {isSticky && (
+        <div className={styles.navbar_bottom_sticky_placeholder}>&nbsp;</div>
+      )}
+      <nav
+        className={` ${styles.navbar}  ${isSticky ? styles.navbar_bottom_sticky : ''} `}
+      >
         <div className={styles.navbar_top}>
           <div className={styles.navbar_top_left}>
             <Link to="/magazine">Magazine</Link>
@@ -111,7 +172,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        <div className={styles.navbar_bottom}>
+        <div className={`${styles.navbar_bottom}`}>
           <Link to="/">
             <svg
               width="205"
@@ -359,11 +420,57 @@ const Navbar: React.FC = () => {
                             </div>
                           </div>
                         ))}
-                        <div
-                          className={
-                            styles.navbar_bottom_menu_option_submenu_add
-                          }
-                        ></div>
+                        {item.promo && (
+                          <Slider
+                            {...settings}
+                            className={
+                              styles.navbar_bottom_menu_option_submenu_add
+                            }
+                          >
+                            {item.promo.map((promoItem, promoIndex) => (
+                              <div key={promoIndex}>
+                                <div
+                                  className={
+                                    styles.navbar_bottom_menu_option_submenu_add_inside
+                                  }
+                                  onMouseEnter={handlePromoMouseEnter}
+                                  onMouseLeave={handlePromoMouseLeave}
+                                  style={{
+                                    backgroundImage: `url(${getImageByLanguage(promoItem)})`,
+                                  }}
+                                >
+                                  <Button
+                                    to={promoItem.to}
+                                    className={
+                                      styles.navbar_bottom_menu_option_submenu_add_inside_btn
+                                    }
+                                    bgcolor={'#ffffff'}
+                                    border={'#ffffff'}
+                                    hover_bgcolor={'#dfe4fd'}
+                                    hover_border={'#dfe4fd'}
+                                  >
+                                    <Icon
+                                      type="business"
+                                      style={{ pointerEvents: 'none' }}
+                                    />
+                                  </Button>
+                                  <div
+                                    className={
+                                      styles.navbar_bottom_menu_option_submenu_add_inside_load
+                                    }
+                                  >
+                                    <div
+                                      key={progressKey}
+                                      className={
+                                        styles.navbar_bottom_menu_option_submenu_add_inside_load_inside
+                                      }
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </Slider>
+                        )}
                       </div>
                     </div>
                   );

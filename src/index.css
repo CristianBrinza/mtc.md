@@ -235,3 +235,27 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.abonament_card_small_text {
+  color: var(--theme_primary_color_black);
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 275;
+  line-height: 22px;
+}
+
+.mtc_carousell .slick-dots {
+  margin: 10px 0 -20px !important;
+  display: flex !important;
+  justify-content: flex-end;
+  width: 100% !important;
+}
+
+.mtc_carousell .slick-prev:before {
+  content: url('data:image/svg+xml;charset=UTF-8,<svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8.94894 1.90755L1.6585 9.97889L8.94871 18.0934" stroke="%232F3043" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </svg>') !important;
+  margin-left: -100px !important;
+}
+.mtc_carousell .slick-next:before {
+  content: url('data:image/svg+xml;charset=UTF-8,<svg style="transform:rotate(180deg)" width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M1.05116 18.0923L8.34149 10.0209L1.05116 1.90653" stroke="%232F3043" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </svg>') !important;
+  margin-left: -70px !important;
+}

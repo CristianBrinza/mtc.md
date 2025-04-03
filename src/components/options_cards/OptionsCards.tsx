@@ -3,7 +3,6 @@ import styles from './OptionsCards.module.css';
 import Slider from 'react-slick';
 import Button from '../Button.tsx';
 
-
 interface OptionsCardsItem {
   type: string;
   title: string;
@@ -19,8 +18,7 @@ interface OptionsCardsProps {
   popupHandler?: (popupId: string) => void;
 }
 
-
-const OptionsCards: React.FC<OptionsCardsProps> = ({ items = []  }) => {
+const OptionsCards: React.FC<OptionsCardsProps> = ({ items = [] }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -68,82 +66,85 @@ const OptionsCards: React.FC<OptionsCardsProps> = ({ items = []  }) => {
     }
   };
 
-
-
   return (
     <>
-    <Slider {...settings} className={styles.options_cards_carousell}>
-      {items.map((item: OptionsCardsItem) => (
-        <div className={styles.options_cards_carousell_block} key={item.title}>
-          <div className={styles.options_cards_carousell_block_inside}>
-            <div className={styles.options_cards_carousell_block_inside_type}>
-              {item.type}
-            </div>
-            <div className={styles.options_cards_carousell_block_inside_title}>
+      <Slider {...settings} className={styles.options_cards_carousell}>
+        {items.map((item: OptionsCardsItem) => (
+          <div
+            className={styles.options_cards_carousell_block}
+            key={item.title}
+          >
+            <div className={styles.options_cards_carousell_block_inside}>
+              <div className={styles.options_cards_carousell_block_inside_type}>
+                {item.type}
+              </div>
               <div
-                dangerouslySetInnerHTML={{
-                  __html: formatText(item.title),
-                }}
-              />
-            </div>
-
-            <div
-              className={styles.options_cards_carousell_block_inside_subtitle}
-            >
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: formatText(item.subtitle),
-                }}
-              />
-            </div>
-
-            <div className={styles.options_cards_carousell_block_inside_btns}>
-              {item.to && (
-                <Button
-                  to={item.to}
-                  bgcolor={'var(--theme_primary_color_blue_3)'}
-                  border={'var(--theme_primary_color_blue_3)'}
-                  hover_border={'var(--theme_primary_color_blue_2)'}
-                  hover_bgcolor={'var(--theme_primary_color_blue_3)'}
-                  icon={'arrow_right'}
-                >
-                  Activează acum
-                </Button>
-              )}
-              {item.detalii && (
-                <Button
-                  to={item.to}
-                  bgcolor={'var(--theme_primary_color_blue_3)'}
-                  border={'var(--theme_primary_color_blue_3)'}
-                  hover_border={'var(--theme_primary_color_blue_2)'}
-                  hover_bgcolor={'var(--theme_primary_color_blue_3)'}
-                  icon={'arrow_right'}
-                  onClick={() => handleClick(item.detalii)}
-                >
-                  Detalii ofertă
-                </Button>
-              )}
-              {item.popup && (
+                className={styles.options_cards_carousell_block_inside_title}
+              >
                 <div
-                  className={styles.options_cards_carousell_block_inside_popup}
-                  onClick={() => handleClick(item.popup)}
-                >
-                  Detalii ofertă
-                </div>
-              )}
+                  dangerouslySetInnerHTML={{
+                    __html: formatText(item.title),
+                  }}
+                />
+              </div>
+
+              <div
+                className={styles.options_cards_carousell_block_inside_subtitle}
+              >
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: formatText(item.subtitle),
+                  }}
+                />
+              </div>
+
+              <div className={styles.options_cards_carousell_block_inside_btns}>
+                {item.to && (
+                  <Button
+                    to={item.to}
+                    bgcolor={'var(--theme_primary_color_blue_3)'}
+                    border={'transparent'}
+                    hover_border={'var(--theme_primary_color_blue_3)'}
+                    hover_bgcolor={'var(--theme_primary_color_blue_3)'}
+                    icon={'arrow_right'}
+                  >
+                    Activează acum
+                  </Button>
+                )}
+                {item.detalii && (
+                  <Button
+                    to={item.to}
+                    bgcolor={'var(--theme_primary_color_blue_3)'}
+                    border={'transparent'}
+                    hover_border={'var(--theme_primary_color_blue_3)'}
+                    hover_bgcolor={'var(--theme_primary_color_blue_3)'}
+                    icon={'arrow_right'}
+                    onClick={() => handleClick(item.detalii)}
+                  >
+                    Detalii ofertă
+                  </Button>
+                )}
+                {item.popup && (
+                  <div
+                    className={
+                      styles.options_cards_carousell_block_inside_popup
+                    }
+                    onClick={() => handleClick(item.popup)}
+                  >
+                    Detalii ofertă
+                  </div>
+                )}
+              </div>
             </div>
+            <img
+              className={styles.options_cards_carousell_block_img}
+              src={item.image}
+              alt="Moldtelecom"
+            />
           </div>
-          <img
-            className={styles.options_cards_carousell_block_img}
-            src={item.image}
-            alt="Moldtelecom"
-          />
-        </div>
-      ))}
-    </Slider>
-
-
- </>
+        ))}
+      </Slider>
+    </>
   );
 };
 

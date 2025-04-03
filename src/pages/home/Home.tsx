@@ -33,27 +33,7 @@ export default function Home() {
         </div>
 
         <div className={styles.home_slider_main}>
-          <Link to={'/triple'} className={styles.home_hero}>
-            <img
-              className={styles.home_hero_img_desk}
-              src="/images/homepage/home_hero_tm_desktop_ro.png"
-              alt="Moldtelecom"
-            />
-          </Link>
-        </div>
-
-        <div className={styles.home_slider_main}>
-          <Link to={'/triple'} className={styles.home_hero}>
-            <img
-              className={styles.home_hero_img_desk}
-              src="/images/homepage/home_hero_tm_desktop_ro.png"
-              alt="Moldtelecom"
-            />
-          </Link>
-        </div>
-
-        <div className={styles.home_slider_main}>
-          <Link to={'/triple'} className={styles.home_hero}>
+          <Link to={'/mobile'} className={styles.home_hero}>
             <img
               className={styles.home_hero_img_desk}
               src="/images/homepage/home_hero_tm_desktop_ro.png"

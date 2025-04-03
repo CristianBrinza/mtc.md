@@ -1,14 +1,45 @@
 [
   {
     "label": "navbar.internet_tv",
+    "promo": [
+      {
+        "image_ro": "/images/landings/35174500.png",
+        "image_ru": "/images/landings/35174500.png",
+        "image_en": "/images/landings/35174500.png",
+        "to": "/"
+      },
+      {
+        "image_ro": "/images/landings/15174519.png",
+        "image_ru": "/images/landings/15174519.png",
+        "image_en": "/images/landings/15174519.png",
+        "to": "/"
+      },
+      {
+        "image_ro": "/images/landings/95274512.png",
+        "image_ru": "/images/landings/95274512.png",
+        "image_en": "/images/landings/95274512.png",
+        "to": "/"
+      },
+      {
+        "image_ro": "/images/landings/35544076.png",
+        "image_ru": "/images/landings/35544076.png",
+        "image_en": "/images/landings/35544076.png",
+        "to": "/triple"
+      },
+      {
+        "image_ro": "/images/landings/95574312.png",
+        "image_ru": "/images/landings/95574312.png",
+        "image_en": "/images/landings/95574312.png",
+        "to": "/mobile"
+      }
+    ],
     "submenu": [
       {
         "title": "Promo",
         "items": [
           {
             "label": "2.1 Gbps",
-            "to": "/triple",
-            "new": true
+            "to": "/triple"
           },
           {
             "label": "Double",
@@ -54,12 +85,26 @@
   },
   {
     "label": "navbar.mobil",
+    "promo": [
+      {
+        "image_ro": "/images/landings/25274567.png",
+        "image_ru": "/images/landings/25274567.png",
+        "image_en": "/images/landings/25274567.png",
+        "to": "/"
+      },
+      {
+        "image_ro": "/images/landings/51174513.png",
+        "image_ru": "/images/landings/51174513.png",
+        "image_en": "/images/landings/51174513.png",
+        "to": "/"
+      }
+    ],
     "submenu": [
       {
         "title": "Promo",
         "items": [
           { "label": "Portare", "to": "/" },
-          { "label": "Telefonie Mobila", "to": "/" },
+          { "label": "Telefonie Mobila", "to": "/mobile" },
           { "label": "Modem Wi-Fi", "to": "/" },
           { "label": "4G Acasa", "to": "/" }
         ]
@@ -88,6 +133,20 @@
   },
   {
     "label": "Fix",
+    "promo": [
+      {
+        "image_ro": "/images/landings/35544076.png",
+        "image_ru": "/images/landings/35544076.png",
+        "image_en": "/images/landings/35544076.png",
+        "to": "/triple"
+      },
+      {
+        "image_ro": "/images/landings/95574312.png",
+        "image_ru": "/images/landings/95574312.png",
+        "image_en": "/images/landings/95574312.png",
+        "to": "/mobile"
+      }
+    ],
     "submenu": [
       {
         "title": "Descopera",
@@ -107,6 +166,14 @@
   {
     "menu_id": "menu4",
     "label": "Descoperă",
+    "promo": [
+      {
+        "image_ro": "/images/landings/45220512.png",
+        "image_ru": "/images/landings/45220512.png",
+        "image_en": "/images/landings/45220512.png",
+        "to": "/triple"
+      }
+    ],
     "submenu": [
       {
         "title": "Aplicatii",

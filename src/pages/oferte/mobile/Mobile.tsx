@@ -3,7 +3,7 @@ import Chat from '../../../components/chat/Chat.tsx';
 import Feedback from '../../../components/feedback/Feedback.tsx';
 import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb.tsx';
 import Hero from '../../../components/hero/Hero.tsx';
-import styles from './Triple.module.css';
+import styles from './Mobile.module.css';
 import Faq from '../../../components/faq/Faq.tsx';
 import FaqQA from '../../../components/faq/FaqQA.tsx';
 import ShopCard from '../../../components/shop_card/ShopCard.tsx';
@@ -11,14 +11,12 @@ import Slider from 'react-slick';
 import Functions from '../../../components/functions/Functions.tsx';
 import Footer from '../../../components/footer/Footer.tsx';
 import MyApp from '../../../components/app/MyApp.tsx';
-import OptionsCards from '../../../components/options_cards/OptionsCards.tsx';
-import Popup from '../../../components/Popup/Popup.tsx';
-import { useState } from 'react';
+import AbonamentCard from '../../../components/abonament_card/AbonamentCard.tsx';
 
-export default function Triple() {
+export default function Mobile() {
   const breadcrumbItems = [
     { label: 'Promo', url: ' ' },
-    { label: 'Internet + TV + Mobil' },
+    { label: 'Telefonie mobila' },
   ];
 
   const settings = {
@@ -51,43 +49,39 @@ export default function Triple() {
       },
     ],
   };
+  const settings_carousell = {
+    dots: true,
+    infinite: true,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 4500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
 
-  const optionsData = [
-    {
-      type: 'Descoperă',
-      title: '<grad1>Moldtelecom TV</grad1> :/ la doar 40 lei!',
-      subtitle:
-        'Accesează acum <b>oriunde</b> în reteaua :/ Moldtelecom pe <b>orice ecran</b>.',
-      image: '/images/landings/15534010.png',
-      to: '/test',
-    },
-    {
-      type: 'Descoperă',
-      title: 'CINEMA ONLINE :/ la doar <grad2>59 lei/lună</grad2>!',
-      subtitle:
-        'Explorează lumea televiziunii :/ interactive cu abonamentul dorit,:/ <b>direct pe smartphone-ul tău</b>.',
-      image: '/images/landings/15534010.png',
-      to: '/test',
-      popup: '1281570', // pass only the popup ID
-    },
-  ];
-
-  const [activePopup, setActivePopup] = useState<string | null>(null);
-
-  const togglePopup = (popup: string) => {
-    setActivePopup(activePopup !== popup ? popup : null);
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 951,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 651,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
     <>
-      <Popup
-        id="1281570"
-        width="900px"
-        isVisible={activePopup === '1281570'}
-        onClose={() => setActivePopup(null)}
-      >
-        <div className="popup_content">test2</div>
-      </Popup>
       <Navbar />
       <Breadcrumb items={breadcrumbItems} />
       <Hero color=" #F7F7F7" image="/images/landings/triple_hero.png">
@@ -101,21 +95,81 @@ export default function Triple() {
           Promo
         </div>
         <div className="hero_title">
-          Crează-ți propriul <br />
-          abonament, așa cum îți <br />
-          dorești
+          Profită acum de oferta <br />
+          de <span style={{ textDecoration: 'underline' }}>
+            -35% REDUCERE
+          </span>{' '}
+          <br />
+          timp de 2 ani!
         </div>
         <div className="hero_subtitle">
-          Economisește până la <b>5000 LEI</b> <br />
-          timp de 24 luni
+          Alege <b> GRATUIT</b> un număr frumos care <br />
+          te reprezintă!
         </div>
       </Hero>
 
+      <div className={`title ${styles.title2}`}>
+        Alege cel mai avantajos abonament
+      </div>
+
+      <div className={`sub_title ${styles.sub_title1}`}>
+        de telefonie mobilă
+      </div>
+      <Slider
+        {...settings_carousell}
+        className={`${styles.tm_carousell_abonamente} mtc_carousell`}
+      >
+        <div className={styles.tm_carousell_block}>
+          <AbonamentCard
+            type={'Abonament'}
+            title={'Smart 95'}
+            image={'/images/landings/45534119.png'}
+            price={'98'}
+            old_price={''}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <AbonamentCard
+            type={'Abonament'}
+            title={'Liberty 120'}
+            image={'/images/landings/45534119.png'}
+            price={'78'}
+            old_price={'120 lei/lună'}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <AbonamentCard
+            type={'Abonament'}
+            title={'Liberty 150'}
+            image={'/images/landings/45534119.png'}
+            price={'97.5'}
+            old_price={'160 lei/lună'}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <AbonamentCard
+            type={'Abonament'}
+            title={'Liberty 190'}
+            image={'/images/landings/45534119.png'}
+            price={'123.5'}
+            old_price={'190 lei/lună'}
+            onClick={() => console.log('sss')}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <AbonamentCard
+            type={'Abonament'}
+            title={'Liberty <sml>plus</sml> 250'}
+            image={'/images/landings/45534119.png'}
+            price={'162.5'}
+            old_price={'250 lei/lună'}
+            onClick={() => console.log('sss')}
+          />
+        </div>
+      </Slider>
       {/*<div className={`title ${styles.title1}`}>*/}
       {/*  Crează-ți propriul abonament:*/}
       {/*</div>*/}
-
-      <OptionsCards items={optionsData} popupHandler={togglePopup} />
 
       <div className={`title ${styles.title2}`}>
         Smartphone la DOAR 1 leu, sau Preț Special!
@@ -126,8 +180,8 @@ export default function Triple() {
         unul din device-urile de mai jos
       </div>
 
-      <Slider {...settings} className={styles.triple_carousell}>
-        <div className={styles.triple_carousell_block}>
+      <Slider {...settings} className={styles.tm_carousell}>
+        <div className={styles.tm_carousell_block}>
           <ShopCard
             device_id={323564512}
             image="/images/shop/323564512.png"
@@ -140,7 +194,7 @@ export default function Triple() {
             tag={'DOAR 1 leu'}
           />
         </div>
-        <div className={styles.triple_carousell_block}>
+        <div className={styles.tm_carousell_block}>
           <ShopCard
             device_id={194234497}
             image="/images/shop/394534437.png"
@@ -153,7 +207,7 @@ export default function Triple() {
             tag={'Promo'}
           />
         </div>
-        <div className={styles.triple_carousell_block}>
+        <div className={styles.tm_carousell_block}>
           <ShopCard
             device_id={394534437}
             image="/images/shop/394534437.png"
@@ -165,7 +219,7 @@ export default function Triple() {
             characteristics='UHD VA / 4K / 55"'
           />
         </div>
-        <div className={styles.triple_carousell_block}>
+        <div className={styles.tm_carousell_block}>
           <ShopCard
             device_id={5235345692}
             image="/images/shop/523534569.png"
@@ -181,7 +235,7 @@ export default function Triple() {
 
       <Functions
         style_type={'blue'}
-        title={'general.functions'}
+        title={'general.recommended_options'}
         functions={['Internet', 'TV', 'MTC', 'APP']}
       />
       <MyApp style_type={'blue_white'} />
