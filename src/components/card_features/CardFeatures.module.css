@@ -1,0 +1,34 @@
+.card {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  border: 2px solid #f3f5ff;
+  background: #f3f5ff;
+  overflow: hidden;
+}
+.card_img {
+  width: 100%;
+}
+.card_inside {
+  width: 100%;
+  padding: 16px 30px 22px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.card_inside_title {
+  color: #323232;
+  font-family: 'Source Sans Pro';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 100% */
+}
+.card_inside_subtitle {
+  margin: 10px 0 16px;
+  width: 95%;
+  color: #323232;
+  line-height: 1.2;
+  height: 58px;
+}

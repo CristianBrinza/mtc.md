@@ -143,7 +143,7 @@ const Navbar: React.FC = () => {
         <div className={styles.navbar_bottom_sticky_placeholder}>&nbsp;</div>
       )}
       <nav
-        className={` ${styles.navbar}  ${isSticky ? styles.navbar_bottom_sticky : ''} `}
+        className={` ${styles.navbar}  ${isSticky ? styles.navbar_bottom_sticky : ''} mtc_navbar `}
       >
         <div className={styles.navbar_top}>
           <div className={styles.navbar_top_left}>

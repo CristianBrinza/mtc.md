@@ -440,7 +440,7 @@
   position: fixed;
   top: 0;
   background: var(--theme_primary_color_white);
-  margin-top: -32px;
+  margin-top: -36px;
 }
 .navbar_bottom_sticky_placeholder {
   width: 100%;

@@ -19,3 +19,49 @@
   width: 100%;
   height: auto;
 }
+.home_carousell {
+  width: 100%;
+  max-width: 1180px;
+  margin: 30px auto 30px;
+}
+.home_title {
+  width: 100%;
+  max-width: 1800px;
+  margin: 25px auto -12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home_carousell :global(.ShopCard) {
+  margin: 0 auto;
+}
+
+.home_topbar {
+  width: 100%;
+  border-bottom: 1px solq var(--);
+  margin: -5px 0 0;
+}
+.home_topbar_inside {
+  width: 100%;
+  max-width: 1180px;
+  margin: 30px auto 30px;
+}
+.home_topbar_block {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--theme_primary_color_black);
+}
+
+.home_carousell :global(.slick-prev:before) {
+  content: url('data:image/svg+xml;charset=UTF-8,<svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8.94894 1.90755L1.6585 9.97889L8.94871 18.0934" stroke="%232F3043" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </svg>') !important;
+  margin-left: -100px !important;
+}
+.home_carousell :global(.slick-next:before) {
+  content: url('data:image/svg+xml;charset=UTF-8,<svg style="transform:rotate(180deg)" width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M1.05116 18.0923L8.34149 10.0209L1.05116 1.90653" stroke="%232F3043" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </svg>') !important;
+  margin-left: -100px !important;
+}

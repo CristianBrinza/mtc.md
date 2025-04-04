@@ -25,6 +25,20 @@ const Videos: React.FC<videosProps> = ({ items }) => {
     autoplaySpeed: 2800,
     slidesToShow: 3,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 951,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   const getURLByLanguage = (item: videosItem): string => {
@@ -91,13 +105,10 @@ const Videos: React.FC<videosProps> = ({ items }) => {
       </div>
 
       {showVideoIndex !== null && (
-        <div className={`${styles.videos_popup} ${styles.videos_popup_show}`}>
-          <div
-            className={styles.videos_popup_close}
-            onClick={() => setShowVideoIndex(null)}
-          >
-            ✕
-          </div>
+        <div
+          className={`${styles.videos_popup} ${styles.videos_popup_show}`}
+          onClick={() => setShowVideoIndex(null)}
+        >
           <iframe
             className={styles.videos_carousell_iframe_popup}
             src={getEmbedUrl(getURLByLanguage(items[showVideoIndex]))}

@@ -19,10 +19,16 @@ export const routesConfig: RouteConfig[] = [
     element: React.createElement(Home),
   },
   {
+    path: '/:lang/newsite',
+    i18nKey: 'navbar.internet_tv',
+    element: React.createElement(Triple),
+  },
+  {
     path: '/:lang/triple',
     i18nKey: 'navbar.internet_tv',
     element: React.createElement(Triple),
   },
+
   {
     path: '/:lang/mobile',
     i18nKey: 'navbar.internet_tv',
