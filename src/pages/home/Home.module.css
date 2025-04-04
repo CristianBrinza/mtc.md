@@ -74,6 +74,8 @@
   align-items: flex-start;
   position: relative;
   justify-content: center;
+  box-sizing: border-box;
+  padding: 0 0 0 20px;
 }
 .home_discount_block_small_title {
   font-size: 14px;
@@ -124,4 +126,20 @@
   height: 400px;
   position: absolute;
   right: 0;
+}
+.home_carousell_phones {
+  background: #f8f8f8;
+  box-sizing: border-box;
+  padding: 30px 0;
+}
+.home_carousell_phones :global(.ShopCard) {
+  background: #fff;
+  border-color: #fff;
+}
+.home_topbar_block_svg {
+  height: 35px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }

@@ -89,10 +89,10 @@ export default function Mobile() {
           className="hero_small_title"
           style={{
             background:
-              'linear-gradient(279deg, #20AE9A 2.89%, #8CDC58 83.23%)',
+              'linear-gradient(91deg, rgb(223 74 75) 10.51%, rgb(255 179 0) 76.69%)',
           }}
         >
-          Promo
+          Porteaza-te la Moldtelecom
         </div>
         <div className="hero_title">
           Acum ai <br />
