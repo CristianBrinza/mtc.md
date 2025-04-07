@@ -31,6 +31,12 @@
         "image_ru": "/images/landings/95574312.png",
         "image_en": "/images/landings/95574312.png",
         "to": "/mobile"
+      },
+      {
+        "image_ro": "/images/landings/45274567.png",
+        "image_ru": "/images/landings/45274567.png",
+        "image_en": "/images/landings/45274567.png",
+        "to": "/"
       }
     ],
     "submenu": [
@@ -57,7 +63,7 @@
           },
           {
             "label": "Abonamente TV",
-            "to": "//"
+            "to": "/"
           }
         ]
       },
@@ -135,16 +141,10 @@
     "label": "Fix",
     "promo": [
       {
-        "image_ro": "/images/landings/35544076.png",
-        "image_ru": "/images/landings/35544076.png",
-        "image_en": "/images/landings/35544076.png",
-        "to": "/triple"
-      },
-      {
-        "image_ro": "/images/landings/95574312.png",
-        "image_ru": "/images/landings/95574312.png",
-        "image_en": "/images/landings/95574312.png",
-        "to": "/mobile"
+        "image_ro": "/images/landings/85272512.png",
+        "image_ru": "/images/landings/85272512.png",
+        "image_en": "/images/landings/85272512.png",
+        "to": "/"
       }
     ],
     "submenu": [
@@ -171,7 +171,13 @@
         "image_ro": "/images/landings/45220512.png",
         "image_ru": "/images/landings/45220512.png",
         "image_en": "/images/landings/45220512.png",
-        "to": "/triple"
+        "to": "/"
+      },
+      {
+        "image_ro": "/images/landings/75274512.png",
+        "image_ru": "/images/landings/75274512.png",
+        "image_en": "/images/landings/75274512.png",
+        "to": "/"
       }
     ],
     "submenu": [

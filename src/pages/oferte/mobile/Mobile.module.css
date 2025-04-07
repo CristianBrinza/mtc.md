@@ -22,13 +22,38 @@
 .tm_carousell_abonamente {
   width: 100%;
   max-width: 1180px;
-  margin: 30px auto 30px;
+  margin: 30px auto 50px;
 }
 
 .tm_carousell :global(.ShopCard) {
   margin: 0 auto;
 }
+.tm_carousell_block_row {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  color: var(--theme_primary_color_gray_1);
+  font-size: 14px;
+  line-height: 15px;
+}
+.tm_carousell_block_row b {
+  color: var(--theme_primary_color_gray_2);
+}
+.tm_carousell_block_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+  height: 140px;
+}
 
+.tm_carousell_block_row_svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
 @media (max-width: 1300px) {
   .tm_carousell,
   .tm_carousell_abonamente,

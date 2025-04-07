@@ -33,6 +33,8 @@ body {
   --theme_primary_color_light_gray: #fafafa;
   --theme_primary_color_gray: #ebebeb;
   --theme_primary_color_dark_gray: #ddd;
+  --theme_primary_color_gray_1: #cbcbcb;
+  --theme_primary_color_gray_2: #a2a2a2;
 
   --theme_primary_color_blue_0: #292c48;
   --theme_primary_color_blue_1: #f3f5ff;

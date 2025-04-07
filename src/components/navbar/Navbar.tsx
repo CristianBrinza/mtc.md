@@ -109,10 +109,10 @@ const Navbar: React.FC = () => {
     infinite: true,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // pauseOnHover: true,
+    pauseOnHover: false,
     beforeChange: (oldIndex: number, newIndex: number) => {
       void oldIndex;
       setCurrentPromoIndex(newIndex);

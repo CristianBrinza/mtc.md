@@ -1,0 +1,122 @@
+.popupBlock {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(166, 166, 166, 0.68);
+  align-items: flex-start;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999999999999;
+  overflow-y: auto;
+  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s ease;
+  -moz-transition: opacity 0.6s ease;
+  -ms-transition: opacity 0.6s ease;
+  -o-transition: opacity 0.6s ease;
+  transition: opacity 1s ease-in-out;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.popupBlockShow {
+  opacity: 1;
+  display: flex;
+}
+
+.popupBlockShow .popupBlockInside {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.popupBlock::-webkit-scrollbar {
+  display: none;
+}
+
+.popupBlockInside {
+  box-sizing: border-box;
+  border-radius: 24px;
+  padding: 10px;
+  background: #fff;
+  width: 95vw;
+  max-width: 600px;
+  margin: 10vw 0 10vw 0;
+  position: relative;
+  color: #1d1d1f;
+  font-family: Inter, serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  transform: translateY(30px);
+  transition:
+    transform 0.3s ease,
+    opacity 0.6s ease;
+  -webkit-transition:
+    transform 0.3s ease,
+    opacity 0.6s ease;
+  -moz-transition:
+    transform 0.3s ease,
+    opacity 0.6s ease;
+  -ms-transition:
+    transform 0.3s ease,
+    opacity 0.6s ease;
+  -o-transition:
+    transform 0.3s ease,
+    opacity 0.6s ease;
+  display: flex;
+  gap: 10px;
+}
+
+.popupCloseButton {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.popupOptionSubmenuAdd {
+  width: 330px;
+  height: 460px;
+  border-radius: 15px;
+  background: var(--theme_primary_color_blue_1);
+  overflow: hidden;
+}
+
+.popupOptionSubmenuAddInside {
+  width: 330px;
+  height: 460px;
+  overflow: hidden;
+  background-size: cover !important;
+  display: flex;
+  position: relative;
+}
+
+.popupOptionSubmenuAddInside_load {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  width: 50px;
+  height: 8px;
+  border-radius: 100px;
+  background: white;
+  overflow: hidden;
+}
+
+.popupOptionSubmenuAddInside_load_inside {
+  height: 100%;
+  background: #adbbff;
+  border-radius: 100px;
+  animation: loadBar 3s linear forwards;
+  width: 0%; /* Will be animated */
+}
+
+@keyframes loadBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

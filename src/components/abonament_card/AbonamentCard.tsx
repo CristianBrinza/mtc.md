@@ -10,6 +10,7 @@ interface AbonamentCardItem {
   old_price?: string;
   detalii?: string;
   onClick?: () => Promise<void> | void;
+  children?: React.ReactNode;
 }
 
 const AbonamentCard: React.FC<AbonamentCardItem> = ({
@@ -19,6 +20,7 @@ const AbonamentCard: React.FC<AbonamentCardItem> = ({
   price,
   old_price,
   onClick,
+  children,
 }) => {
   function formatText(text: string): string {
     // Step 1: Replace <b> and </b> with placeholders
@@ -46,6 +48,7 @@ const AbonamentCard: React.FC<AbonamentCardItem> = ({
           />
         </div>
 
+        <div className={styles.AbonamentCard_children}>{children}</div>
         <div className={styles.AbonamentCard_price}>
           <div>{price}</div>
           <div>

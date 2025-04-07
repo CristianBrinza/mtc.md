@@ -15,6 +15,7 @@ interface ShopCardProps {
   tag_color?: string;
   tag_text_color?: string;
   device_id: number;
+  buy?: () => Promise<void> | void;
 }
 
 const STORAGE_KEY_LIKE = 'likedDevices';
@@ -37,6 +38,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
   tag_color,
   tag_text_color,
   device_id,
+  buy,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isCartHovered, setIsCartHovered] = useState(false);
@@ -94,6 +96,10 @@ const ShopCard: React.FC<ShopCardProps> = ({
       return;
     }
     localStorage.setItem(STORAGE_KEY_LIKE, JSON.stringify(likedList));
+  };
+
+  const handleClick = () => {
+    if (buy) buy();
   };
 
   return (
@@ -171,6 +177,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
         className={`${styles.ShopCard_cart}`}
         onMouseEnter={() => setIsCartHovered(true)}
         onMouseLeave={() => setIsCartHovered(false)}
+        onClick={handleClick}
       >
         <Icon
           type="cart"

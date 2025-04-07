@@ -14,6 +14,7 @@ import MyApp from '../../../components/app/MyApp.tsx';
 import OptionsCards from '../../../components/options_cards/OptionsCards.tsx';
 import Popup from '../../../components/Popup/Popup.tsx';
 import { useState } from 'react';
+import PopupBuy from '../../../components/PopupBuy/PopupBuy.tsx';
 
 export default function Triple() {
   const breadcrumbItems = [
@@ -175,9 +176,19 @@ export default function Triple() {
             title="Apple"
             subtitle="Iphone 16 Pro"
             characteristics="(8/256GB)"
+            buy={() => setActivePopup('3281270')}
           />
         </div>
       </Slider>
+
+      <PopupBuy
+        id="3281270"
+        width="900px"
+        isVisible={activePopup === '3281270'}
+        onClose={() => setActivePopup(null)}
+        title={'aaa'}
+        config={'444'}
+      />
 
       <Functions
         style_type={'blue'}

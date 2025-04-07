@@ -401,7 +401,7 @@
   height: 100%;
   background: #adbbff;
   border-radius: 100px;
-  animation: loadBar 2.5s linear forwards;
+  animation: loadBar 3s linear forwards;
   width: 0%; /* Will be animated */
 }
 
