@@ -30,11 +30,14 @@ body {
   --theme_primary_color_black: #222;
   --theme_primary_color_white: #ffffff;
 
+  --theme_primary_color_black_1: rgba(0, 0, 0, 0.88);
+
   --theme_primary_color_light_gray: #fafafa;
   --theme_primary_color_gray: #ebebeb;
   --theme_primary_color_dark_gray: #ddd;
   --theme_primary_color_gray_1: #cbcbcb;
   --theme_primary_color_gray_2: #a2a2a2;
+  --theme_primary_color_gray_3: #f3f3f3;
 
   --theme_primary_color_blue_0: #292c48;
   --theme_primary_color_blue_1: #f3f5ff;
@@ -109,7 +112,7 @@ body {
   /*font-family: Poppins;*/
   /*font-size: 28px;*/
   /*font-style: normal;*/
-  /*font-weight: 600;*/
+  /*font-weight: 800;*/
   /*line-height: 28px; !* 100% *!*/
   margin: 10px 0 0px;
 
@@ -129,6 +132,19 @@ body {
   font-weight: 700;
   line-height: 32px;
 }
+.title_3 {
+  color: rgba(0, 0, 0, 0.85);
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 100% */
+  margin: 10px 0 0px;
+}
+.title_3_bold {
+  font-weight: 700;
+}
+
 .sub_title {
   color: var(--theme_primary_color_blue_4);
   text-align: center;
@@ -237,6 +253,20 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.gradient_text_3 {
+  background: linear-gradient(91deg, #20d590 20.51%, #25acee 76.69%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient_text_4 {
+  /*background: linear-gradient(270deg, #00063D -7.47%, #004297 95.46%);*/
+  background: linear-gradient(270deg, #00063d 10.17%, #669df5 99.83%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .abonament_card_small_text {
   color: var(--theme_primary_color_black);
   font-family: Poppins;

@@ -7,6 +7,10 @@
   overflow: hidden;
 }
 
+.ShopCard_gray {
+  background-color: var(--theme_primary_color_gray_3);
+  border: 1.25px transparent var(--theme_primary_color_gray_3);
+}
 .ShopCard_img {
   width: 100%;
   margin-top: 10px;

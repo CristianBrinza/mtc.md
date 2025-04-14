@@ -13,6 +13,7 @@ import ShopCard from '../../components/shop_card/ShopCard.tsx';
 import { useTranslation } from 'react-i18next';
 import CardFeatures from '../../components/card_features/CardFeatures.tsx';
 import Button from '../../components/Button.tsx';
+import CornerBanner from '../../components/corner_banner/CornerBanner.tsx';
 
 interface videosItem {
   url_ro?: string;
@@ -428,7 +429,9 @@ export default function Home() {
         />
       </div>
       <div className={styles.home_carousell_phones}>
-        <div className={`title ${styles.home_title}`}>
+        <div
+          className={`title title_3 title_3_bold gradient_text_4 ${styles.home_title}`}
+        >
           {t('home.exclusive_online')}
         </div>
         <Slider {...settings_phones} className={styles.home_carousell}>
@@ -484,7 +487,7 @@ export default function Home() {
           </div>
         </Slider>
       </div>
-      <div className={`title ${styles.home_title}`}>
+      <div className={`title title_3 ${styles.home_title}`}>
         {t('home.only_digital')}
       </div>
       <Slider {...settings_digital} className={styles.home_carousell}>
@@ -521,6 +524,7 @@ export default function Home() {
       <Videos items={videos} />
       <Chat />
       <Footer discalmer={true} />
+      <CornerBanner />
     </>
   );
 }

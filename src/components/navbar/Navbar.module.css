@@ -134,6 +134,11 @@
 }
 .navbar_bottom_menu_right svg {
   cursor: pointer;
+  transform: scale(1) !important;
+  transition: transform 0.1s ease-in-out;
+}
+.navbar_bottom_menu_right svg:hover {
+  transform: scale(1.1) !important;
 }
 .navbar_bottom_menu_right_lang {
   position: absolute;

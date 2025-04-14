@@ -424,6 +424,17 @@ export const icons = {
       />
     </>
   ),
+  arrow_down: (
+    <>
+      <path
+        d="M6.5 9.5L12 15.5L17.5 9.5"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </>
+  ),
 };
 const Icon: React.FC<IconProps> = ({
   type,

@@ -24,7 +24,7 @@ const MyApp: React.FC<MyAppProps> = ({ style_type }) => {
 
   return (
     <div className={styles.MyApp} style={MyAppStyle}>
-      <div className={`title ${styles.MyApp_title}`}>
+      <div className={`title title_3 ${styles.MyApp_title}`}>
         Descarcă aplicația My&nbsp;Moldtelecom
       </div>
       {/*<div className={styles.MyApp_text}>*/}

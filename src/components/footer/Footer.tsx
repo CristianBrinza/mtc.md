@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Footer.module.css';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import Icon from '../Icon.tsx';
 
 interface FooterProps {
   discalmer?: boolean;
@@ -11,6 +12,10 @@ const Footer: React.FC<FooterProps> = ({ discalmer }) => {
   const FooterStyle: React.CSSProperties = {};
 
   const { t } = useTranslation();
+
+  const [isUtilVisible, setIsUtilVisible] = useState(false);
+  const [isLegalVisible, setIsLegalVisible] = useState(false);
+  const [isAboutVisible, setIsAboutVisible] = useState(false);
 
   return (
     <div style={FooterStyle} className={styles.footer_block}>
@@ -285,7 +290,212 @@ const Footer: React.FC<FooterProps> = ({ discalmer }) => {
           <div className={styles.footer_inside_middle}>
             <div className={styles.footer_inside_middle_block}>
               <div className={styles.footer_inside_middle_title}>
-                Despre companie
+                Despre noi
+              </div>
+              <div className={styles.footer_inside_middle_list}>
+                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                  Despre companie
+                </Link>
+                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                  Cariera
+                </Link>
+                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                  Magazine
+                </Link>
+                {isAboutVisible == false && (
+                  <div
+                    className={styles.footer_inside_middle_link_btn}
+                    onClick={() => {
+                      setIsAboutVisible(true);
+                    }}
+                  >
+                    <span>Mai multe</span>{' '}
+                    <Icon
+                      type="arrow_down"
+                      color={'#ADBBFF'}
+                      style={{ margin: '-5px 0' }}
+                    />
+                  </div>
+                )}
+
+                {isAboutVisible === true && [
+                  <Link
+                    key="1"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Consiliul societatii
+                  </Link>,
+                  <Link
+                    key="2"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Structura organizatorica
+                  </Link>,
+                  <Link
+                    key="3"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Statutul Moldtelecom
+                  </Link>,
+                  <Link
+                    key="3"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Cod de etica
+                  </Link>,
+                ]}
+              </div>
+            </div>
+            <div className={styles.footer_inside_middle_block}>
+              <div className={styles.footer_inside_middle_title}>&nbsp;</div>
+              <div className={styles.footer_inside_middle_list}>
+                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                  Asistenta
+                </Link>
+                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                  Licitații
+                </Link>
+              </div>
+            </div>
+            <div className={styles.footer_inside_middle_block}>
+              <div className={styles.footer_inside_middle_title}>Legal</div>
+              <div className={styles.footer_inside_middle_list}>
+                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                  Conditii contractuale
+                </Link>
+                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                  Stuctura organizatorica
+                </Link>
+                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                  Rapoarte
+                </Link>
+                {isLegalVisible == false && (
+                  <div
+                    className={styles.footer_inside_middle_link_btn}
+                    onClick={() => {
+                      setIsLegalVisible(true);
+                    }}
+                  >
+                    <span>Mai multe</span>{' '}
+                    <Icon
+                      type="arrow_down"
+                      color={'#ADBBFF'}
+                      style={{ margin: '-5px 0' }}
+                    />
+                  </div>
+                )}
+
+                {isLegalVisible === true && [
+                  <Link
+                    key="1"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Securutatea datelor
+                  </Link>,
+                  <Link
+                    key="2"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Procedura de selectie a partenerilor
+                  </Link>,
+                  <Link
+                    key="3"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Plan-prognoza achizitii 2025
+                  </Link>,
+                  <Link
+                    key="4"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Securutatea datelor
+                  </Link>,
+                ]}
+              </div>
+            </div>
+            <div className={styles.footer_inside_middle_block}>
+              <div className={styles.footer_inside_middle_title}>
+                Util şi Informativ
+              </div>
+              <div className={styles.footer_inside_middle_list}>
+                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                  Speedtest
+                </Link>
+                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                  Nouați rețea
+                </Link>
+                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                  Asistenta
+                </Link>
+
+                {isUtilVisible == false && (
+                  <div
+                    className={styles.footer_inside_middle_link_btn}
+                    onClick={() => {
+                      setIsUtilVisible(true);
+                    }}
+                  >
+                    <span>Mai multe</span>{' '}
+                    <Icon
+                      type="arrow_down"
+                      color={'#ADBBFF'}
+                      style={{ margin: '-5px 0' }}
+                    />
+                  </div>
+                )}
+
+                {isUtilVisible === true && [
+                  <Link
+                    key="1"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Ghiduri Video
+                  </Link>,
+                  <Link
+                    key="2"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Depune reclamatie
+                  </Link>,
+                  <Link
+                    key="3"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Divertisment
+                  </Link>,
+                  <Link
+                    key="4"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Harta acoperire
+                  </Link>,
+                  <Link
+                    key="5"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Locațiune
+                  </Link>,
+                  <Link
+                    key="6"
+                    to="/"
+                    className={styles.footer_inside_middle_link}
+                  >
+                    Protejeaza-te de fraude
+                  </Link>,
+                ]}
               </div>
             </div>
           </div>

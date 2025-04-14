@@ -11,6 +11,7 @@ interface AbonamentCardItem {
   detalii?: string;
   onClick?: () => Promise<void> | void;
   children?: React.ReactNode;
+  style_type?: string;
 }
 
 const AbonamentCard: React.FC<AbonamentCardItem> = ({
@@ -21,6 +22,7 @@ const AbonamentCard: React.FC<AbonamentCardItem> = ({
   old_price,
   onClick,
   children,
+  style_type,
 }) => {
   function formatText(text: string): string {
     // Step 1: Replace <b> and </b> with placeholders
@@ -37,7 +39,9 @@ const AbonamentCard: React.FC<AbonamentCardItem> = ({
     <div className={styles.AbonamentCard}>
       <img className={styles.AbonamentCard_img} src={image} alt="Moldtelecom" />
 
-      <div className={styles.AbonamentCard_inside}>
+      <div
+        className={`${styles.AbonamentCard_inside} ${style_type === 'gray' && styles.AbonamentCard_inside_gray}`}
+      >
         <div className={styles.AbonamentCard_type}>{type}</div>
         <div className={styles.AbonamentCard_title}>
           {' '}
@@ -60,9 +64,12 @@ const AbonamentCard: React.FC<AbonamentCardItem> = ({
         </div>
 
         <Button
+          color={'var(--theme_primary_color_blue_4)'}
+          bgcolor={'var(--theme_primary_color_blue_3)'}
+          border={'var(--theme_primary_color_blue_3)'}
+          hover_border={'var(--theme_primary_color_blue_2)'}
+          hover_bgcolor={'var(--theme_primary_color_blue_2)'}
           icon={'arrow_right'}
-          hover_bgcolor={'var(--theme_primary_color_blue_3)'}
-          hover_border={'var(--theme_primary_color_blue_3)'}
           onClick={onClick}
         >
           <span style={{ fontWeight: '700' }}> Comandă acum</span>

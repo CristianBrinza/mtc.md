@@ -136,7 +136,9 @@ const Functions: React.FC<FunctionsProps> = ({
   return (
     <div className={styles.functions}>
       {title && (
-        <div className={`title ${styles.functions_title}`}>{t(`${title}`)}</div>
+        <div className={`title title_3 ${styles.functions_title}`}>
+          {t(`${title}`)}
+        </div>
       )}
       <div className={styles.functions_inside} style={FunctionsStyle}>
         <Slider {...settings} className="functions_carousell">

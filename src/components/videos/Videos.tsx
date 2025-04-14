@@ -62,7 +62,7 @@ const Videos: React.FC<videosProps> = ({ items }) => {
 
   return (
     <div className={styles.videos}>
-      <div className={`title ${styles.videos_title}`}>
+      <div className={`title title_3 ${styles.videos_title}`}>
         {t('general.videos')}
       </div>
 

@@ -15,6 +15,8 @@ import AbonamentCard from '../../../components/abonament_card/AbonamentCard.tsx'
 import Icon from '../../../components/Icon.tsx';
 import PopupBuy from '../../../components/PopupBuy/PopupBuy.tsx';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Button from '../../../components/Button.tsx';
 
 export default function Mobile() {
   const breadcrumbItems = [
@@ -90,6 +92,7 @@ export default function Mobile() {
     setActivePopup(activePopup !== popup ? popup : null);
     setTitle(title);
   };
+  const navigate = useNavigate();
 
   return (
     <>
@@ -103,16 +106,18 @@ export default function Mobile() {
               'linear-gradient(91deg, rgb(223 74 75) 10.51%, rgb(255 179 0) 76.69%)',
           }}
         >
-          Porteaza-te la Moldtelecom
+          {/*Porteaza-te la Moldtelecom*/}
+          -35% REDUCERE
         </div>
         <div className="hero_title">
           Acum ai <br />
-          <span
-            className="stroked-text_black"
-            style={{ fontWeight: '700', lineHeight: '1' }}
-          >
-            -35% REDUCERE
-          </span>
+          -35% REDUCERE
+          {/*<span*/}
+          {/*  className="stroked-text_black"*/}
+          {/*  style={{ fontWeight: '700', lineHeight: '1' }}*/}
+          {/*>*/}
+          {/*  -35% REDUCERE*/}
+          {/*</span>*/}
           <br />
           timp de 2 ani!
         </div>
@@ -122,13 +127,30 @@ export default function Mobile() {
         </div>
       </Hero>
 
-      <div className={`title ${styles.title2}`}>
-        Alege cel mai avantajos abonament
+      <div className={styles.chose_product}>
+        <div
+          className={`${styles.chose_product_item} ${styles.chose_product_item_active}`}
+        >
+          Portare
+          <div className={styles.chose_product_line}></div>
+        </div>
+        <div
+          className={styles.chose_product_item}
+          onClick={() => navigate('/')}
+        >
+          Telefonie mobila
+          <div className={styles.chose_product_line}></div>
+        </div>
       </div>
 
-      <div className={`sub_title ${styles.sub_title1}`}>
+      <div className={`title title_3 gradient_text_2 ${styles.title2}`}>
+        Cele mai avantajoase abonamente
+      </div>
+
+      <div className={`sub_title ${styles.sub_title1} ${styles.sub_title2}`}>
         de telefonie mobilă
       </div>
+
       <Slider
         {...settings_carousell}
         className={`${styles.tm_carousell_abonamente} mtc_carousell`}
@@ -137,7 +159,7 @@ export default function Mobile() {
           <AbonamentCard
             type={'Abonament'}
             title={'Smart 95'}
-            image={'/images/landings/45534119.png'}
+            image={'/images/landings/40536119.png'}
             price={'98'}
             old_price={''}
           >
@@ -146,7 +168,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -157,7 +179,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -167,10 +189,7 @@ export default function Mobile() {
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'sms'}
-                    color={'var(--theme_primary_color_dark_gray)'}
-                  />
+                  <Icon type={'sms'} color={'var(--theme_primary_black_1)'} />
                 </div>
                 <span>
                   <b>Nelimitat</b> min. și SMS în rețea
@@ -180,7 +199,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'internet'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -203,7 +222,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -214,7 +233,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -224,10 +243,7 @@ export default function Mobile() {
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'sms'}
-                    color={'var(--theme_primary_color_dark_gray)'}
-                  />
+                  <Icon type={'sms'} color={'var(--theme_primary_black_1)'} />
                 </div>
                 <span>
                   <b>Nelimitat</b> min. și SMS în rețea
@@ -237,7 +253,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'internet'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -260,7 +276,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -271,7 +287,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -281,10 +297,7 @@ export default function Mobile() {
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'sms'}
-                    color={'var(--theme_primary_color_dark_gray)'}
-                  />
+                  <Icon type={'sms'} color={'var(--theme_primary_black_1)'} />
                 </div>
                 <span>
                   <b>Nelimitat</b> min. și SMS în rețea
@@ -294,7 +307,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'internet'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -318,7 +331,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -329,7 +342,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -339,10 +352,7 @@ export default function Mobile() {
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'sms'}
-                    color={'var(--theme_primary_color_dark_gray)'}
-                  />
+                  <Icon type={'sms'} color={'var(--theme_primary_black_1)'} />
                 </div>
                 <span>
                   <b>Nelimitat</b> min. și SMS în rețea
@@ -352,7 +362,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'internet'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -376,7 +386,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -387,7 +397,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -397,10 +407,7 @@ export default function Mobile() {
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'sms'}
-                    color={'var(--theme_primary_color_dark_gray)'}
-                  />
+                  <Icon type={'sms'} color={'var(--theme_primary_black_1)'} />
                 </div>
                 <span>
                   <b>Nelimitat</b> min. și SMS în rețea
@@ -410,7 +417,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'internet'}
-                    color={'var(--theme_primary_color_dark_gray)'}
+                    color={'var(--theme_primary_black_1)'}
                   />
                 </div>
                 <span>
@@ -422,6 +429,18 @@ export default function Mobile() {
         </div>
       </Slider>
 
+      <div className={styles.btn_detalii}>
+        <Button
+          color={'var(--theme_primary_color_blue_4)'}
+          bgcolor={'var(--theme_primary_color_blue_1)'}
+          border={'var(--theme_primary_color_blue_1)'}
+          hover_border={'var(--theme_primary_color_blue_2)'}
+          hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+          icon={'arrow_right'}
+        >
+          Detalii ofertă
+        </Button>
+      </div>
       <PopupBuy
         id="3281270"
         isVisible={activePopup === '3281270'}
@@ -433,7 +452,7 @@ export default function Mobile() {
       {/*  Crează-ți propriul abonament:*/}
       {/*</div>*/}
 
-      <div className={`title ${styles.title2}`}>
+      <div className={`title title_3 ${styles.title2}`}>
         Smartphone la DOAR 1 leu, sau Preț Special!
       </div>
 

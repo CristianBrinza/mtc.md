@@ -16,6 +16,7 @@ interface ShopCardProps {
   tag_text_color?: string;
   device_id: number;
   buy?: () => Promise<void> | void;
+  style_type?: string;
 }
 
 const STORAGE_KEY_LIKE = 'likedDevices';
@@ -39,6 +40,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
   tag_text_color,
   device_id,
   buy,
+  style_type,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isCartHovered, setIsCartHovered] = useState(false);
@@ -105,7 +107,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
   return (
     <div
       id={device_id.toString()}
-      className={`${styles.ShopCard} ShopCard`}
+      className={`${styles.ShopCard} ShopCard ${style_type === 'gray' && styles.ShopCard_gray}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

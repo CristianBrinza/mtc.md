@@ -110,9 +110,9 @@
         "title": "Promo",
         "items": [
           { "label": "Portare", "to": "/" },
-          { "label": "Telefonie Mobila", "to": "/mobile" },
+          { "label": "Abonamente mobile", "to": "/mobile" },
           { "label": "Modem Wi-Fi", "to": "/" },
-          { "label": "4G Acasa", "to": "/" }
+          { "label": "Modem 4G Acasa", "to": "/" }
         ]
       },
       {
