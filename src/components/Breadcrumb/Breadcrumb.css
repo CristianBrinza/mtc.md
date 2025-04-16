@@ -1,14 +1,14 @@
 .breadcrumb {
-  color: rgba(0, 0, 0, 0.44);
-  font-family: 'Source Sans Pro';
+  color: #969fa8;
+  font-family: Poppins;
   font-size: 14px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 16px; /* 114.286% */
   width: 100%;
   max-width: 1385px;
   padding: 0 10px;
-  margin: 20px auto 7px;
+  margin: 15px auto 15px;
   gap: 8px;
   display: flex;
   align-items: center;
@@ -24,19 +24,25 @@
 .breadcrumb-separator {
   color: #00000090;
   font-family: 'Source Sans Pro';
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 16px; /* 100% */
 }
 .breadcrumb span:last-child span {
-  color: #1a1a1a;
-  font-family: 'Source Sans Pro';
+  color: #969fa8;
+  font-family: Poppins;
   font-size: 14px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 16px; /* 114.286% */
 }
 .breadcrumb-item {
   margin-right: 8px;
+  height: 100%;
+  display: flex;
+}
+.breadcrumb-line {
+  display: flex;
+  align-items: center;
 }

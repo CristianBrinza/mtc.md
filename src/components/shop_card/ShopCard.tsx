@@ -115,6 +115,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
         <div
           className={styles.ShopCard_tag}
           style={{
+            opacity: 0,
             background: tag_color
               ? tag_color
               : 'var(--theme_primary_color_gray',

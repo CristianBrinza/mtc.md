@@ -91,7 +91,7 @@ export default function Triple() {
       </Popup>
       <Navbar />
       <Breadcrumb items={breadcrumbItems} />
-      <Hero color=" #F7F7F7" image="/images/landings/triple_hero.png">
+      <Hero color=" #F7F7F7">
         <div
           className="hero_small_title"
           style={{

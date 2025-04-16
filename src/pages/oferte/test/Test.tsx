@@ -3,7 +3,7 @@ import Chat from '../../../components/chat/Chat.tsx';
 import Feedback from '../../../components/feedback/Feedback.tsx';
 import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb.tsx';
 import Hero from '../../../components/hero/Hero.tsx';
-import styles from './Mobile.module.css';
+import styles from '../mobile/Mobile.module.css';
 import Faq from '../../../components/faq/Faq.tsx';
 import FaqQA from '../../../components/faq/FaqQA.tsx';
 import ShopCard from '../../../components/shop_card/ShopCard.tsx';
@@ -143,7 +143,7 @@ export default function Mobile() {
         </div>
       </div>
 
-      <div className={`title title_5 gradient_text_2 ${styles.title2}`}>
+      <div className={`title title_4 gradient_text_2 ${styles.title2}`}>
         Cele mai avantajoase abonamente <br />
         de telefonie mobilă
       </div>
@@ -449,7 +449,7 @@ export default function Mobile() {
       {/*  Crează-ți propriul abonament:*/}
       {/*</div>*/}
 
-      <div className={`title title_3 title_5 gradient_text_4 ${styles.title2}`}>
+      <div className={`title title_3 title_4 gradient_text_4 ${styles.title2}`}>
         Smartphone la DOAR 1 leu, sau Preț Special!
       </div>
 
@@ -470,7 +470,6 @@ export default function Mobile() {
             subtitle="32A4N (FHD)"
             characteristics='Direct LED / Full HD / 32"'
             tag={'DOAR 1 leu'}
-            style_type={'gray'}
           />
         </div>
         <div className={styles.tm_carousell_block}>
@@ -484,7 +483,6 @@ export default function Mobile() {
             subtitle="43A4N (4k)"
             characteristics='UHD VA / 4K / 43"'
             tag={'Promo'}
-            style_type={'gray'}
           />
         </div>
         <div className={styles.tm_carousell_block}>
@@ -514,10 +512,6 @@ export default function Mobile() {
           />
         </div>
       </Slider>
-
-      <div className={styles.devices_discalmer}>
-        <sup>*</sup>Oferta este valabilă în limita stocului disponibil
-      </div>
 
       <Functions
         style_type={'blue'}

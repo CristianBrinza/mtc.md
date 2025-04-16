@@ -138,7 +138,25 @@ body {
   font-size: 30px;
   font-style: normal;
   font-weight: 600;
-  line-height: 28px; /* 100% */
+  line-height: 30px; /* 100% */
+  margin: 10px 0 0px;
+}
+.title_4 {
+  color: rgba(0, 0, 0, 0.85);
+  font-family: Poppins;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px; /* 100% */
+  margin: 10px 0 0px;
+}
+.title_5 {
+  color: rgba(0, 0, 0, 0.85);
+  font-family: Poppins;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 38px; /* 100% */
   margin: 10px 0 0px;
 }
 .title_3_bold {

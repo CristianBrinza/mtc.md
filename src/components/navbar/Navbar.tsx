@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './Navbar.module.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Icon from '../Icon.tsx';
@@ -57,11 +57,15 @@ const Navbar: React.FC = () => {
     setIsListLangPopupVisible(!isListLangPopupVisible);
   };
 
+  const [lockedMenu, setLockedMenu] = useState<string | null>(null);
+
   const toggleMenu = (menuKey: string) => {
-    if (activeMenu !== menuKey) {
+    if (lockedMenu !== menuKey) {
+      setLockedMenu(menuKey);
       setActiveMenu(menuKey);
       setOverlayVisible(true);
     } else {
+      setLockedMenu(null);
       setActiveMenu(null);
       setOverlayVisible(false);
     }
@@ -119,7 +123,7 @@ const Navbar: React.FC = () => {
       setProgressKey(prev => prev + 1); // Reset progress bar on card change
     },
   };
-
+  const hideTimerRef = useRef<NodeJS.Timeout | null>(null);
   const [isSticky, setIsSticky] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -136,6 +140,7 @@ const Navbar: React.FC = () => {
         className={`${styles.navbar_overlay} ${activeMenu ? styles.navbar_overlay_show : ''}`}
         onClick={() => {
           setActiveMenu(null);
+          setLockedMenu(null);
           setOverlayVisible(false);
         }}
       />
@@ -340,15 +345,49 @@ const Navbar: React.FC = () => {
                       <div
                         className={styles.navbar_bottom_menu_option}
                         onClick={() => toggleMenu(menuKey)}
+                        onMouseEnter={() => {
+                          if (hideTimerRef.current) {
+                            clearTimeout(hideTimerRef.current);
+                            hideTimerRef.current = null;
+                          }
+                          if (!lockedMenu) setActiveMenu(menuKey);
+                        }}
+                        onMouseLeave={() => {
+                          if (!lockedMenu) {
+                            hideTimerRef.current = setTimeout(() => {
+                              setActiveMenu(null);
+                            }, 300);
+                          }
+                        }}
                       >
                         {t(item.label)}
+                        {item.submenu && (
+                          <div
+                            className={styles.navbar_bottom_menu_option_circle}
+                          ></div>
+                        )}
                       </div>
+
                       <div
                         className={`${styles.navbar_bottom_menu_option_submenu} ${
                           activeMenu === menuKey
                             ? styles.navbar_bottom_menu_option_submenu_show
                             : ''
                         }`}
+                        onMouseEnter={() => {
+                          if (hideTimerRef.current) {
+                            clearTimeout(hideTimerRef.current);
+                            hideTimerRef.current = null;
+                          }
+                          if (!lockedMenu) setActiveMenu(menuKey);
+                        }}
+                        onMouseLeave={() => {
+                          if (!lockedMenu) {
+                            hideTimerRef.current = setTimeout(() => {
+                              setActiveMenu(null);
+                            }, 300);
+                          }
+                        }}
                       >
                         {item.submenu.map((block, blockIndex) => (
                           <div
@@ -420,7 +459,7 @@ const Navbar: React.FC = () => {
                             </div>
                           </div>
                         ))}
-                        {item.promo && (
+                        {item.promo && activeMenu === menuKey && (
                           <Slider
                             {...settings}
                             className={
