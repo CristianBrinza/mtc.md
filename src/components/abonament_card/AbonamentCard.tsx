@@ -40,7 +40,8 @@ const AbonamentCard: React.FC<AbonamentCardItem> = ({
       <img className={styles.AbonamentCard_img} src={image} alt="Moldtelecom" />
 
       <div
-        className={`${styles.AbonamentCard_inside} ${style_type === 'gray' && styles.AbonamentCard_inside_gray}`}
+        className={`${styles.AbonamentCard_inside} ${style_type === 'gray' ? styles.AbonamentCard_inside_gray:
+          style_type === 'new_blue' && styles.AbonamentCard_inside_newblue}`}
       >
         <div className={styles.AbonamentCard_type}>{type}</div>
         <div className={styles.AbonamentCard_title}>

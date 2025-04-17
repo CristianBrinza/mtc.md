@@ -98,7 +98,10 @@ export default function Mobile() {
     <>
       <Navbar />
       <Breadcrumb items={breadcrumbItems} />
-      <Hero color=" #F7F7F7" children={undefined}>
+      <Hero color=" #F7F7F7">
+        <div className={styles.hero_img_block}>
+          <img className={styles.hero_img} src="/images/landings/45274512.png" alt="Moldtelecom" />
+        </div>
         {/*<div*/}
         {/*  className="hero_small_title"*/}
         {/*  style={{*/}
@@ -516,7 +519,7 @@ export default function Mobile() {
       </Slider>
 
       <div className={styles.devices_discalmer}>
-        <sup>*</sup>Oferta este valabilă în limita stocului disponibil
+       <span> <sup>*</sup>Oferta este valabilă în limita stocului disponibil</span>
       </div>
 
       <Functions

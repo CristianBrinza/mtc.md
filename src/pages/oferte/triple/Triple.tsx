@@ -92,24 +92,35 @@ export default function Triple() {
       <Navbar />
       <Breadcrumb items={breadcrumbItems} />
       <Hero color=" #F7F7F7">
-        <div
-          className="hero_small_title"
-          style={{
-            background:
-              'linear-gradient(279deg, #20AE9A 2.89%, #8CDC58 83.23%)',
-          }}
-        >
-          Promo
+        {/*<div*/}
+        {/*  className="hero_small_title"*/}
+        {/*  style={{*/}
+        {/*    background:*/}
+        {/*      'linear-gradient(279deg, #20AE9A 2.89%, #8CDC58 83.23%)',*/}
+        {/*  }}*/}
+        {/*>*/}
+        {/*  Promo*/}
+        {/*</div>*/}
+        {/*<div className="hero_title">*/}
+        {/*  Crează-ți propriul <br />*/}
+        {/*  abonament, așa cum îți <br />*/}
+        {/*  dorești*/}
+        {/*</div>*/}
+        {/*<div className="hero_subtitle">*/}
+        {/*  Economisește până la <b>5000 LEI</b> <br />*/}
+        {/*  timp de 24 luni*/}
+        {/*</div>*/}
+
+        <div className={styles.hero_img_block}>
+          <img className={styles.hero_img} src="/images/landings/45274212.png" alt="Moldtelecom" />
         </div>
-        <div className="hero_title">
-          Crează-ți propriul <br />
-          abonament, așa cum îți <br />
-          dorești
+
+
+        <div className={styles.hero_img_block}>
+          <img className={styles.hero_img} src="/images/landings/45274212.png" alt="Moldtelecom" />
         </div>
-        <div className="hero_subtitle">
-          Economisește până la <b>5000 LEI</b> <br />
-          timp de 24 luni
-        </div>
+
+
       </Hero>
 
       {/*<div className={`title ${styles.title1}`}>*/}

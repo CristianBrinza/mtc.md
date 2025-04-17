@@ -228,7 +228,12 @@
   /*-webkit-backdrop-filter: blur(4px);*/
   /*backdrop-filter: blur(4px);*/
 
-  background: rgba(0, 0, 0, 0.35);
+  /*background: rgba(0, 0, 0, 0.35);*/
+
+    background-color: #1d202366;
+    -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+
   top: 0;
   right: 0;
   bottom: 0;
@@ -274,7 +279,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 20px;
+  gap: 15px;
   padding-bottom: 2px;
 }
 .navbar_bottom_menu_option_submenu_block_list_small {
@@ -372,16 +377,23 @@
 }
 .navbar_bottom_menu_option_submenu_add {
   width: 330px;
+  height: 460px;
   margin: 10px 10px 10px -10px;
   /*height: calc(100% - 20px);*/
   border-radius: 15px;
   background: var(--theme_primary_color_blue_1);
-  height: 460px;
   overflow: hidden;
+
+  width: 290px;
+  height: 404px;
 }
 .navbar_bottom_menu_option_submenu_add_inside {
   width: 330px;
   height: 460px;
+
+  width: 290px;
+  height: 404px;
+
   overflow: hidden;
   background-size: cover !important;
   display: flex;
@@ -490,7 +502,22 @@
   pointer-events: auto; /* allows only when shown */
 }
 
-@media (max-width: 1100px) {
+.navbar_bottom_menu_option_submenu_bottom{
+  position: absolute;
+  bottom: 20px;
+  border-top: 1px solid var(--theme_primary_color_gray_3);
+  width: calc(100% - 400px);
+  padding: 10px 0;
+  color: #626c77;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 500;
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 1250px) {
   .topbnav_menu_mobile_block {
     display: block !important;
   }
@@ -503,7 +530,7 @@
 
   .navbar_bottom_menu_options {
     z-index: 999999;
-    display: flex;
+    display: none;
     align-items: flex-start;
     justify-content: flex-end;
     gap: 25px;
@@ -515,6 +542,9 @@
     left: -10px;
     top: 50px;
     margin: 0;
+  }
+  .topnav_right_show{
+    display: flex;
   }
   .navbar_bottom_menu {
     justify-content: flex-end;
@@ -544,6 +574,9 @@
     overflow: hidden;
   }
   .navbar_bottom_menu_option_submenu_show {
+    position: relative;
+    height:auto;
+    margin-bottom: 20px;
   }
 
   .navbar_bottom_menu_option_submenu_block,

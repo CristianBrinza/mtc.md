@@ -12,6 +12,10 @@ interface SubmenuItem {
   to: string;
   new?: boolean;
 }
+interface BottomItem {
+  label: string;
+  to: string;
+}
 
 interface SubmenuBlock {
   title: string;
@@ -25,6 +29,7 @@ interface MenuItem {
   promo?: PromoBlock[];
   to?: string;
   submenu?: SubmenuBlock[];
+  bottom_menu?: BottomItem[];
 }
 interface PromoBlock {
   image_ro: string;
@@ -105,6 +110,13 @@ const Navbar: React.FC = () => {
   const handlePromoMouseLeave = () => {
     setProgressKey(prev => prev + 1); // Forțează resetul animației
   };
+
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const toggleMenuVisibility = () => {
+    setIsMenuVisible(!isMenuVisible);
+    setOverlayVisible(true);
+  }
+
 
   const [, setCurrentPromoIndex] = useState(0);
 
@@ -335,7 +347,7 @@ const Navbar: React.FC = () => {
           </Link>
 
           <div className={styles.navbar_bottom_menu}>
-            <div className={styles.navbar_bottom_menu_options}>
+            <div  className={`${styles.navbar_bottom_menu_options} ${isMenuVisible ? styles.topnav_right_show : ''}`}>
               {menuConfig.map((item, index) => {
                 // Use menu_id if available, otherwise use the label as key.
                 const menuKey = item.menu_id ? item.menu_id : item.label;
@@ -389,6 +401,15 @@ const Navbar: React.FC = () => {
                           }
                         }}
                       >
+                        {item.bottom_menu&&(
+                        <div className={`${styles.navbar_bottom_menu_option_submenu_bottom} ${styles.topbnav_menu_desktop}`}>
+                          {item.bottom_menu.map((block, blockIndex) => (
+                            <div  key={blockIndex}>
+                              {block.label}
+                            </div>
+                            ))}
+                        </div>
+                        )}
                         {item.submenu.map((block, blockIndex) => (
                           <div
                             key={blockIndex}
@@ -585,7 +606,7 @@ const Navbar: React.FC = () => {
               <Icon
                 type="menu"
                 className={styles.topbnav_menu_mobile_block}
-                // onClick={toggleMenuVisibility}
+                onClick={toggleMenuVisibility}
               />
             </div>
           </div>

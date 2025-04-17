@@ -39,6 +39,16 @@
         "to": "/"
       }
     ],
+    "bottom_menu": [
+      {
+        "label": "Verifica adresa",
+        "to": "/FAQ"
+      },
+      {
+        "label": "FAQ",
+        "to": "/FAQ"
+      }
+    ],
     "submenu": [
       {
         "title": "Promo",
@@ -72,6 +82,7 @@
         "small": true,
         "items": [
           { "label": "Moldtelecom TV", "to": "/" },
+          { "label": "Moldtelecom TV +", "to": "/" },
           { "label": "Cinematografe online", "to": "/" },
           { "label": "Wi-Fi Plus", "to": "/" }
         ]
