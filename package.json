@@ -10,7 +10,8 @@
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write .",
     "deploy": "yarn build && wrangler pages deploy ./dist --project-name=mtc",
-    "predeploy": "yarn build"
+    "predeploy": "yarn build",
+    "find-unused-assets": "node scripts/find-unused-assets.cjs"
   },
   "dependencies": {
     "axios": "^1.7.7",
@@ -38,6 +39,7 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
+    "glob": "^11.0.1",
     "globals": "^15.15.0",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.5.2",
