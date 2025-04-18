@@ -112,15 +112,20 @@ export default function Triple() {
         {/*</div>*/}
 
         <div className={styles.hero_img_block}>
-          <img className={styles.hero_img} src="/images/landings/45274212.png" alt="Moldtelecom" />
+          <img
+            className={styles.hero_img}
+            src="/images/landings/45274212.png"
+            alt="Moldtelecom"
+          />
         </div>
-
 
         <div className={styles.hero_img_block}>
-          <img className={styles.hero_img} src="/images/landings/45274212.png" alt="Moldtelecom" />
+          <img
+            className={styles.hero_img}
+            src="/images/landings/45274212.png"
+            alt="Moldtelecom"
+          />
         </div>
-
-
       </Hero>
 
       {/*<div className={`title ${styles.title1}`}>*/}

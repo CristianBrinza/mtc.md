@@ -3,5 +3,57 @@
   right: 50px;
   bottom: 40px;
   cursor: pointer;
+  z-index: 99999;
+  width: 70px;
+  height: 70px;
+  transform: scale(0.9);
+  transition: transform 0.1s;
+}
+.chat_icon svg {
   z-index: 999999;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.chat_icon:hover {
+  cursor: pointer;
+  transform: scale(0.95);
+}
+
+@keyframes animated_circle {
+  from {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+  }
+  to {
+    width: 120px;
+    height: 120px;
+    opacity: 0;
+  }
+}
+
+.chat_icon_circle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: #dfe4fd;
+  top: -5px;
+  left: -5px;
+  z-index: 99999;
+  border-radius: 1000px;
+}
+.chat_icon_animated_circle {
+  position: absolute;
+  animation-name: animated_circle;
+  animation-duration: 1.3s; /* total cycle = 2s */
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  border: 1px solid #dfe4fd;
+  border-radius: 1000px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

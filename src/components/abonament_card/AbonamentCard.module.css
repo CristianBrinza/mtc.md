@@ -11,8 +11,8 @@
 .AbonamentCard_inside_gray {
   background-color: var(--theme_primary_color_gray_1);
 }
-.AbonamentCard_inside_newblue{
-  background-color: #f2f3f7
+.AbonamentCard_inside_newblue {
+  background-color: #f2f3f7;
 }
 .AbonamentCard_img {
   width: 100%;

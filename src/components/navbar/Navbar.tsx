@@ -115,8 +115,7 @@ const Navbar: React.FC = () => {
   const toggleMenuVisibility = () => {
     setIsMenuVisible(!isMenuVisible);
     setOverlayVisible(true);
-  }
-
+  };
 
   const [, setCurrentPromoIndex] = useState(0);
 
@@ -347,7 +346,9 @@ const Navbar: React.FC = () => {
           </Link>
 
           <div className={styles.navbar_bottom_menu}>
-            <div  className={`${styles.navbar_bottom_menu_options} ${isMenuVisible ? styles.topnav_right_show : ''}`}>
+            <div
+              className={`${styles.navbar_bottom_menu_options} ${isMenuVisible ? styles.topnav_right_show : ''}`}
+            >
               {menuConfig.map((item, index) => {
                 // Use menu_id if available, otherwise use the label as key.
                 const menuKey = item.menu_id ? item.menu_id : item.label;
@@ -401,14 +402,21 @@ const Navbar: React.FC = () => {
                           }
                         }}
                       >
-                        {item.bottom_menu&&(
-                        <div className={`${styles.navbar_bottom_menu_option_submenu_bottom} ${styles.topbnav_menu_desktop}`}>
-                          {item.bottom_menu.map((block, blockIndex) => (
-                            <div  key={blockIndex}>
-                              {block.label}
-                            </div>
+                        {item.bottom_menu && (
+                          <div
+                            className={`${styles.navbar_bottom_menu_option_submenu_bottom} ${styles.topbnav_menu_desktop}`}
+                          >
+                            {item.bottom_menu.map((block, blockIndex) => (
+                              <div
+                                key={blockIndex}
+                                className={
+                                  styles.navbar_bottom_menu_option_submenu_bottom_item
+                                }
+                              >
+                                {block.label}
+                              </div>
                             ))}
-                        </div>
+                          </div>
                         )}
                         {item.submenu.map((block, blockIndex) => (
                           <div
@@ -465,7 +473,7 @@ const Navbar: React.FC = () => {
                                         styles.navbar_bottom_menu_option_submenu_new
                                       }
                                     >
-                                      new
+                                      NEW
                                     </div>
                                   )}
 

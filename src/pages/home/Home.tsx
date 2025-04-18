@@ -430,7 +430,7 @@ export default function Home() {
       </div>
       <div className={styles.home_carousell_phones}>
         <div
-          className={`title title_3 title_3_bold gradient_text_4 ${styles.home_title}`}
+          className={`title title_3 title_3_bold gradient_text_4 ${styles.home_title} ${styles.home_title_exclusiv}`}
         >
           {t('home.exclusive_online')}
         </div>

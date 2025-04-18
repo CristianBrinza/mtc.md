@@ -1,20 +1,23 @@
 #!/usr/bin/env node
 
-const fs   = require('fs');
+const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 
 const deleteFlag = process.argv.includes('--delete');
 
 // globs
-const IMG_GLOB       = path.resolve(process.cwd(), 'public/images/**/*.*');
-const JSON_GLOB      = path.resolve(process.cwd(), 'public/json/**/*.json');
-const SRC_CODE_GLOB  = path.resolve(process.cwd(), 'src/**/*.{js,jsx,ts,tsx,html,css,scss}');
+const IMG_GLOB = path.resolve(process.cwd(), 'public/images/**/*.*');
+const JSON_GLOB = path.resolve(process.cwd(), 'public/json/**/*.json');
+const SRC_CODE_GLOB = path.resolve(
+  process.cwd(),
+  'src/**/*.{js,jsx,ts,tsx,html,css,scss}'
+);
 
 // — Load code for image‐reference checks (src code + public/json) —
 const codeFilesForImages = [
   ...glob.sync(SRC_CODE_GLOB, { nodir: true }),
-  ...glob.sync(JSON_GLOB,      { nodir: true })
+  ...glob.sync(JSON_GLOB, { nodir: true }),
 ];
 const codeTextForImages = codeFilesForImages
   .map(f => fs.readFileSync(f, 'utf8'))
@@ -27,8 +30,8 @@ const codeTextForJSON = codeFilesForJSON
   .join('\n');
 
 // — Collect assets —
-const images   = glob.sync(IMG_GLOB,  { nodir: true });
-const jsonFiles= glob.sync(JSON_GLOB, { nodir: true });
+const images = glob.sync(IMG_GLOB, { nodir: true });
+const jsonFiles = glob.sync(JSON_GLOB, { nodir: true });
 
 // — Find unused images —
 const unusedImages = images.filter(imgPath => {
@@ -39,7 +42,7 @@ const unusedImages = images.filter(imgPath => {
     `images/${file}`,
     `"${file}"`,
     `"/images/${file}"`,
-    `import.*${file}`
+    `import.*${file}`,
   ];
   return !patterns.some(pat => codeTextForImages.includes(pat));
 });
@@ -53,7 +56,7 @@ const unusedJSON = jsonFiles.filter(jsonPath => {
     `json/${file}`,
     `"${file}"`,
     `"/json/${file}"`,
-    `import.*${file}`
+    `import.*${file}`,
   ];
   return !patterns.some(pat => codeTextForJSON.includes(pat));
 });
@@ -66,7 +69,9 @@ if (!unusedImages.length && !unusedJSON.length) {
 
 if (unusedImages.length) {
   console.log('🖼️  Unused images:');
-  unusedImages.forEach(u => console.log('  -', path.relative(process.cwd(), u)));
+  unusedImages.forEach(u =>
+    console.log('  -', path.relative(process.cwd(), u))
+  );
 }
 if (unusedJSON.length) {
   console.log('\n📄  Unused JSON files:');
@@ -81,7 +86,11 @@ if (deleteFlag) {
       fs.unlinkSync(u);
       console.log('   ✔', path.relative(process.cwd(), u));
     } catch (err) {
-      console.error('   ✖ failed to delete', path.relative(process.cwd(), u), err.message);
+      console.error(
+        '   ✖ failed to delete',
+        path.relative(process.cwd(), u),
+        err.message
+      );
     }
   });
   process.exit(0);

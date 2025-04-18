@@ -60,6 +60,9 @@
   height: 24px;
   margin-right: 10px;
 }
+.tm_carousell_block_row_2_liner {
+  line-height: 1.1;
+}
 
 .chose_product {
   width: 100%;
@@ -119,18 +122,17 @@
 /*  background-color: var(--theme_primary_color_gray_4);*/
 /*  border-radius: 100px;*/
 /*}*/
-.hero_img_block{
+.hero_img_block {
   width: 100%;
   height: 100%;
   display: flex;
   overflow: hidden;
 }
 
-.hero_img{
+.hero_img {
   width: 100%;
   height: auto;
 }
-
 
 @media (max-width: 1300px) {
   .tm_carousell,

@@ -41,8 +41,12 @@
     ],
     "bottom_menu": [
       {
-        "label": "Verifica adresa",
-        "to": "/FAQ"
+        "label": "Verifică adresa",
+        "to": "/"
+      },
+      {
+        "label": "Testează viteza",
+        "to": "/"
       },
       {
         "label": "FAQ",
@@ -53,10 +57,6 @@
       {
         "title": "Promo",
         "items": [
-          {
-            "label": "2.1 Gbps",
-            "to": "/triple"
-          },
           {
             "label": "Double",
             "smallText": "Internet + TV",
@@ -74,6 +74,11 @@
           {
             "label": "Abonamente TV",
             "to": "/"
+          },
+          {
+            "label": "2.1 Gbps",
+            "to": "/triple",
+            "new": true
           }
         ]
       },
@@ -82,7 +87,7 @@
         "small": true,
         "items": [
           { "label": "Moldtelecom TV", "to": "/" },
-          { "label": "Moldtelecom TV +", "to": "/" },
+          { "label": "Moldtelecom TV GO", "to": "/" },
           { "label": "Cinematografe online", "to": "/" },
           { "label": "Wi-Fi Plus", "to": "/" }
         ]
@@ -95,7 +100,8 @@
           { "label": "Echipament TV", "to": "/" },
           { "label": "Echipament Wi-Fi", "to": "/" },
           { "label": "Wi-Fi 6", "to": "/" },
-          { "label": "Safe-web", "to": "/" }
+          { "label": "Safe-web", "to": "/" },
+          { "label": "Recomandă un prieten", "to": "/" }
         ]
       }
     ]
@@ -114,6 +120,20 @@
         "image_ru": "/images/landings/51174513.png",
         "image_en": "/images/landings/51174513.png",
         "to": "/"
+      }
+    ],
+    "bottom_menu": [
+      {
+        "label": "Testează viteza",
+        "to": "/"
+      },
+      {
+        "label": "Verifică acoperirea",
+        "to": "/"
+      },
+      {
+        "label": "FAQ",
+        "to": "/FAQ"
       }
     ],
     "submenu": [
@@ -189,6 +209,20 @@
         "image_ru": "/images/landings/75274512.png",
         "image_en": "/images/landings/75274512.png",
         "to": "/"
+      }
+    ],
+    "bottom_menu": [
+      {
+        "label": "Video",
+        "to": "/"
+      },
+      {
+        "label": "Cariera",
+        "to": "/"
+      },
+      {
+        "label": "FAQ",
+        "to": "/FAQ"
       }
     ],
     "submenu": [

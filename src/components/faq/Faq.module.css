@@ -12,6 +12,8 @@
 }
 .faq_title {
   font-size: 32px;
+  /*font-weight: 600;*/
+  /*font-family: Poppins;*/
 }
 .faq_inside {
   width: 100%;
