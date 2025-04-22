@@ -23,7 +23,7 @@ const PopupBuy: React.FC<PopupProps> = ({
   id,
   isVisible,
   onClose,
-  width = '800px',
+  width = '1000px',
   title,
   config,
 }) => {

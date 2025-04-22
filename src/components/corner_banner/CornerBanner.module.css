@@ -42,11 +42,14 @@
   align-items: center;
   justify-content: center;
   padding: 4px;
-  box-sizing: border-box;
-  top: 25px;
-  right: 25px;
+  /*box-sizing: border-box;*/
+  /*top: 25px;*/
+  /*right: 25px;*/
+  top: 20px;
+  right: 20px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  /*transform: scale(0.9);*/
 }
 .corner_banner_close:hover {
   background-color: rgba(0, 0, 0, 0.35);

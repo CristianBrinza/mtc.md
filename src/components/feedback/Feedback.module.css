@@ -6,3 +6,40 @@
   cursor: pointer;
   z-index: 999999;
 }
+.feedback_title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.feedback_subtitle {
+  font-size: 12px;
+}
+.feedback_textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #00000026;
+  background: #fff;
+  margin-top: 8px;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100px;
+  max-height: 500px;
+  color: #1d1d1f;
+  font-family: Inter, serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+.feedback_textarea:focus {
+  border: 1px solid #669df5;
+  outline: none;
+}
+.FeedbackMenu_stars {
+  display: flex;
+  gap: 5px;
+  margin: 8px 0 20px;
+}

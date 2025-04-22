@@ -3,7 +3,7 @@ import styles from './AbonamentCard.module.css';
 import Button from '../Button.tsx';
 
 interface AbonamentCardItem {
-  type: string;
+  type?: string;
   title: string;
   image: string;
   price: string;
@@ -12,6 +12,7 @@ interface AbonamentCardItem {
   onClick?: () => Promise<void> | void;
   children?: React.ReactNode;
   style_type?: string;
+  price_text?: string;
 }
 
 const AbonamentCard: React.FC<AbonamentCardItem> = ({
@@ -23,6 +24,7 @@ const AbonamentCard: React.FC<AbonamentCardItem> = ({
   onClick,
   children,
   style_type,
+  price_text,
 }) => {
   function formatText(text: string): string {
     // Step 1: Replace <b> and </b> with placeholders
@@ -43,10 +45,14 @@ const AbonamentCard: React.FC<AbonamentCardItem> = ({
         className={`${styles.AbonamentCard_inside} ${
           style_type === 'gray'
             ? styles.AbonamentCard_inside_gray
-            : style_type === 'new_blue' && styles.AbonamentCard_inside_newblue
+            : style_type === 'new_white'
+              ? styles.AbonamentCard_inside_newwhite
+              : style_type === 'new_blue' && styles.AbonamentCard_inside_newblue
         }`}
       >
-        <div className={styles.AbonamentCard_type}>{type}</div>
+        <div style={{ display: 'none' }} className={styles.AbonamentCard_type}>
+          {type}
+        </div>
         <div className={styles.AbonamentCard_title}>
           {' '}
           <div
@@ -57,6 +63,16 @@ const AbonamentCard: React.FC<AbonamentCardItem> = ({
         </div>
 
         <div className={styles.AbonamentCard_children}>{children}</div>
+
+        {price_text && (
+          <div
+            className={`${styles.AbonamentCard_price_text_block} ${price_text === ' ' && styles.AbonamentCard_price_text_hide}`}
+          >
+            <div className={styles.AbonamentCard_price_text}>
+              {price_text} {price_text === ' ' && <>&bbsp;</>}
+            </div>
+          </div>
+        )}
         <div className={styles.AbonamentCard_price}>
           <div>{price}</div>
           <div>

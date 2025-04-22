@@ -145,7 +145,7 @@ export default function Mobile() {
           className={styles.chose_product_item}
           onClick={() => navigate('/')}
         >
-          Telefonie mobila
+          Abonament nou
           <div className={styles.chose_product_line}></div>
         </div>
       </div>
@@ -163,51 +163,79 @@ export default function Mobile() {
           <AbonamentCard
             type={'Abonament'}
             title={'Smart 95'}
-            image={'/images/landings/40536119.png'}
+            image={'/images/landings/46424379.png'}
             price={'98'}
             old_price={''}
+            // style_type={'new_white'}
+            price_text={' '}
           >
             <div className={styles.tm_carousell_block_rows}>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
                 <span>
-                  <b>Nelimitat</b> min. și SMS în rețea
+                  <b>Nelimitat</b> <br />
+                  min. și SMS în rețea
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
-                <span>
-                  <b>250 min</b> naționale sau <br />
-                  <b>25 min </b> internaționale
-                </span>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>250 min</b>
+                    <br /> naționale
+                  </span>{' '}
+                  /
+                  <span>
+                    <b>25 min </b>
+                    <br /> internaționale
+                  </span>
+                </div>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon type={'sms'} color={'var(--theme_primary_black_1)'} />
+                  <Icon
+                    type={'sms'}
+                    color={'var(--theme_primary_color_blue_0)'}
+                  />
                 </div>
                 <span>
-                  <b>Nelimitat</b> min. și SMS în rețea
+                  <b>25 SMS</b> <br /> naționale
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'internet'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
                 <span>
-                  <b>25 GB </b> Trafic internet
+                  <b>25 GB </b> <br /> Trafic internet
+                </span>
+              </div>
+              <div
+                className={styles.tm_carousell_block_row}
+                style={{ opacity: '0' }}
+              >
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'internet'}
+                    color={'var(--theme_primary_color_blue_0)'}
+                  />
+                </div>
+                <span>
+                  <b>25 GB </b> <br /> Trafic internet
                 </span>
               </div>
             </div>
@@ -217,51 +245,99 @@ export default function Mobile() {
           <AbonamentCard
             type={'Abonament'}
             title={'Liberty 120'}
-            image={'/images/landings/22770378.png'}
+            image={'/images/landings/72474374.png'}
             price={'78'}
             old_price={'120 lei/lună'}
+            price_text={'35% reducere pentru 24 luni'}
           >
             <div className={styles.tm_carousell_block_rows}>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
                 <span>
-                  <b>Nelimitat</b> min. și SMS în rețea
+                  <b>Nelimitat</b> <br />
+                  min. și SMS în rețea
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
-                <span>
-                  <b>250 min</b> naționale sau <br />
-                  <b>25 min </b> internaționale
-                </span>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>250 min</b>
+                    <br /> naționale
+                  </span>{' '}
+                  /
+                  <span>
+                    <b>25 min </b>
+                    <br /> internaționale
+                  </span>
+                </div>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon type={'sms'} color={'var(--theme_primary_black_1)'} />
+                  <Icon
+                    type={'sms'}
+                    color={'var(--theme_primary_color_blue_0)'}
+                  />
                 </div>
                 <span>
-                  <b>Nelimitat</b> min. și SMS în rețea
+                  <b>25 SMS</b> <br /> naționale
                 </span>
+                <svg
+                  width="16"
+                  height="27"
+                  viewBox="0 0 16 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_10971_13707)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10 11.4128C9.83183 11.4128 9.67055 11.346 9.55164 11.2271C9.43273 11.1082 9.36592 10.9469 9.36592 10.7787V2.16376L7.06634 4.46334C6.94614 4.57534 6.78716 4.63632 6.62289 4.63342C6.45862 4.63052 6.30189 4.56397 6.18572 4.4478C6.06954 4.33163 6.003 4.1749 6.0001 4.01063C5.9972 3.84636 6.05818 3.68738 6.17018 3.56718L9.55192 0.185438C9.67081 0.066696 9.83197 0 10 0C10.168 0 10.3292 0.066696 10.4481 0.185438L13.8298 3.56718C13.9418 3.68738 14.0028 3.84636 13.9999 4.01063C13.997 4.1749 13.9305 4.33163 13.8143 4.4478C13.6981 4.56397 13.5414 4.63052 13.3771 4.63342C13.2128 4.63632 13.0539 4.57534 12.9337 4.46334L10.6341 2.16376V10.7787C10.6341 10.9469 10.5673 11.1082 10.4484 11.2271C10.3294 11.346 10.1682 11.4128 10 11.4128Z"
+                      fill="#86CA5E"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_10971_13707">
+                      <rect width="16" height="27" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'internet'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
                 <span>
-                  <b>25 GB </b> Trafic internet
+                  <b>25 GB </b> <br /> Trafic internet
+                </span>
+              </div>
+              <div
+                className={styles.tm_carousell_block_row}
+                style={{ opacity: '0' }}
+              >
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'internet'}
+                    color={'var(--theme_primary_color_blue_0)'}
+                  />
+                </div>
+                <span>
+                  <b>25 GB </b> <br /> Trafic internet
                 </span>
               </div>
             </div>
@@ -271,51 +347,85 @@ export default function Mobile() {
           <AbonamentCard
             type={'Abonament'}
             title={'Liberty 150'}
-            image={'/images/landings/72474374.png'}
+            image={'/images/landings/98540076.png'}
             price={'97.5'}
             old_price={'160 lei/lună'}
+            price_text={'35% reducere pentru 24 luni'}
           >
             <div className={styles.tm_carousell_block_rows}>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
                 <span>
-                  <b>Nelimitat</b> min. și SMS în rețea
+                  <b>Nelimitat</b> <br />
+                  min. și SMS în rețea
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
-                <span>
-                  <b>250 min</b> naționale sau <br />
-                  <b>25 min </b> internaționale
-                </span>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>250 min</b>
+                    <br /> naționale
+                  </span>{' '}
+                  /
+                  <span>
+                    <b>25 min </b>
+                    <br /> internaționale
+                  </span>
+                </div>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon type={'sms'} color={'var(--theme_primary_black_1)'} />
+                  <Icon
+                    type={'sms'}
+                    color={'var(--theme_primary_color_blue_0)'}
+                  />
                 </div>
                 <span>
-                  <b>Nelimitat</b> min. și SMS în rețea
+                  <b>25 SMS</b> <br /> naționale
                 </span>
+                <svg
+                  width="16"
+                  height="27"
+                  viewBox="0 0 16 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_10971_13707)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10 11.4128C9.83183 11.4128 9.67055 11.346 9.55164 11.2271C9.43273 11.1082 9.36592 10.9469 9.36592 10.7787V2.16376L7.06634 4.46334C6.94614 4.57534 6.78716 4.63632 6.62289 4.63342C6.45862 4.63052 6.30189 4.56397 6.18572 4.4478C6.06954 4.33163 6.003 4.1749 6.0001 4.01063C5.9972 3.84636 6.05818 3.68738 6.17018 3.56718L9.55192 0.185438C9.67081 0.066696 9.83197 0 10 0C10.168 0 10.3292 0.066696 10.4481 0.185438L13.8298 3.56718C13.9418 3.68738 14.0028 3.84636 13.9999 4.01063C13.997 4.1749 13.9305 4.33163 13.8143 4.4478C13.6981 4.56397 13.5414 4.63052 13.3771 4.63342C13.2128 4.63632 13.0539 4.57534 12.9337 4.46334L10.6341 2.16376V10.7787C10.6341 10.9469 10.5673 11.1082 10.4484 11.2271C10.3294 11.346 10.1682 11.4128 10 11.4128Z"
+                      fill="#86CA5E"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_10971_13707">
+                      <rect width="16" height="27" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'internet'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
                 <span>
-                  <b>25 GB </b> Trafic internet
+                  <b>25 GB </b> <br /> Trafic internet
                 </span>
               </div>
             </div>
@@ -325,53 +435,107 @@ export default function Mobile() {
           <AbonamentCard
             type={'Abonament'}
             title={'Liberty 190'}
-            image={'/images/landings/46424379.png'}
+            image={'/images/landings/72779378.png'}
             price={'123.5'}
             old_price={'190 lei/lună'}
             onClick={() => set_Abonament('3281270', 'test')}
+            price_text={'35% reducere pentru 24 luni'}
           >
             <div className={styles.tm_carousell_block_rows}>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
                 <span>
-                  <b>Nelimitat</b> min. și SMS în rețea
+                  <b>Nelimitat</b> <br />
+                  min. și SMS în rețea
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
-                <span>
-                  <b>250 min</b> naționale sau <br />
-                  <b>25 min </b> internaționale
-                </span>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>250 min</b>
+                    <br /> naționale
+                  </span>{' '}
+                  /
+                  <span>
+                    <b>25 min </b>
+                    <br /> internaționale
+                  </span>
+                </div>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon type={'sms'} color={'var(--theme_primary_black_1)'} />
+                  <Icon
+                    type={'sms'}
+                    color={'var(--theme_primary_color_blue_0)'}
+                  />
                 </div>
                 <span>
-                  <b>Nelimitat</b> min. și SMS în rețea
+                  <b>25 SMS</b> <br /> naționale
+                </span>
+                <svg
+                  width="16"
+                  height="27"
+                  viewBox="0 0 16 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_10971_13707)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10 11.4128C9.83183 11.4128 9.67055 11.346 9.55164 11.2271C9.43273 11.1082 9.36592 10.9469 9.36592 10.7787V2.16376L7.06634 4.46334C6.94614 4.57534 6.78716 4.63632 6.62289 4.63342C6.45862 4.63052 6.30189 4.56397 6.18572 4.4478C6.06954 4.33163 6.003 4.1749 6.0001 4.01063C5.9972 3.84636 6.05818 3.68738 6.17018 3.56718L9.55192 0.185438C9.67081 0.066696 9.83197 0 10 0C10.168 0 10.3292 0.066696 10.4481 0.185438L13.8298 3.56718C13.9418 3.68738 14.0028 3.84636 13.9999 4.01063C13.997 4.1749 13.9305 4.33163 13.8143 4.4478C13.6981 4.56397 13.5414 4.63052 13.3771 4.63342C13.2128 4.63632 13.0539 4.57534 12.9337 4.46334L10.6341 2.16376V10.7787C10.6341 10.9469 10.5673 11.1082 10.4484 11.2271C10.3294 11.346 10.1682 11.4128 10 11.4128Z"
+                      fill="#86CA5E"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_10971_13707">
+                      <rect width="16" height="27" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'internet'}
+                    color={'var(--theme_primary_color_blue_0)'}
+                  />
+                </div>
+                <span>
+                  <b>25 GB </b> <br /> Trafic internet
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'internet'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
-                <span>
-                  <b>25 GB </b> Trafic internet
-                </span>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    <b style={{ color: '#DD4E6C' }}>850 min </b>
+                    <br /> Roaming EU
+                  </span>
+                  +
+                  <span>
+                    {' '}
+                    <b style={{ color: '#DD4E6C' }}>7 GB</b>
+                    <br /> Roaming EU
+                  </span>
+                </div>
               </div>
             </div>
           </AbonamentCard>
@@ -380,53 +544,107 @@ export default function Mobile() {
           <AbonamentCard
             type={'Abonament'}
             title={'Liberty <sml>plus</sml> 250'}
-            image={'/images/landings/45534119.png'}
+            image={'/images/landings/72779378.png'}
             price={'162.5'}
             old_price={'250 lei/lună'}
             onClick={() => console.log('sss')}
+            price_text={'35% reducere pentru 24 luni'}
           >
             <div className={styles.tm_carousell_block_rows}>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
                 <span>
-                  <b>Nelimitat</b> min. și SMS în rețea
+                  <b>Nelimitat</b> <br />
+                  min. și SMS în rețea
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
-                <span>
-                  <b>250 min</b> naționale sau <br />
-                  <b>25 min </b> internaționale
-                </span>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>250 min</b>
+                    <br /> naționale
+                  </span>{' '}
+                  /
+                  <span>
+                    <b>25 min </b>
+                    <br /> internaționale
+                  </span>
+                </div>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon type={'sms'} color={'var(--theme_primary_black_1)'} />
+                  <Icon
+                    type={'sms'}
+                    color={'var(--theme_primary_color_blue_0)'}
+                  />
                 </div>
                 <span>
-                  <b>Nelimitat</b> min. și SMS în rețea
+                  <b>25 SMS</b> <br /> naționale
+                </span>
+                <svg
+                  width="16"
+                  height="27"
+                  viewBox="0 0 16 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_10971_13707)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10 11.4128C9.83183 11.4128 9.67055 11.346 9.55164 11.2271C9.43273 11.1082 9.36592 10.9469 9.36592 10.7787V2.16376L7.06634 4.46334C6.94614 4.57534 6.78716 4.63632 6.62289 4.63342C6.45862 4.63052 6.30189 4.56397 6.18572 4.4478C6.06954 4.33163 6.003 4.1749 6.0001 4.01063C5.9972 3.84636 6.05818 3.68738 6.17018 3.56718L9.55192 0.185438C9.67081 0.066696 9.83197 0 10 0C10.168 0 10.3292 0.066696 10.4481 0.185438L13.8298 3.56718C13.9418 3.68738 14.0028 3.84636 13.9999 4.01063C13.997 4.1749 13.9305 4.33163 13.8143 4.4478C13.6981 4.56397 13.5414 4.63052 13.3771 4.63342C13.2128 4.63632 13.0539 4.57534 12.9337 4.46334L10.6341 2.16376V10.7787C10.6341 10.9469 10.5673 11.1082 10.4484 11.2271C10.3294 11.346 10.1682 11.4128 10 11.4128Z"
+                      fill="#86CA5E"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_10971_13707">
+                      <rect width="16" height="27" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'internet'}
+                    color={'var(--theme_primary_color_blue_0)'}
+                  />
+                </div>
+                <span>
+                  <b>25 GB </b> <br /> Trafic internet
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'internet'}
-                    color={'var(--theme_primary_black_1)'}
+                    color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
-                <span>
-                  <b>25 GB </b> Trafic internet
-                </span>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    <b style={{ color: '#DD4E6C' }}>Nelimitat </b>
+                    <br /> min Roaming EU
+                  </span>
+                  +
+                  <span>
+                    {' '}
+                    <b style={{ color: '#DD4E6C' }}>10 GB</b>
+                    <br /> Roaming EU
+                  </span>
+                </div>
               </div>
             </div>
           </AbonamentCard>

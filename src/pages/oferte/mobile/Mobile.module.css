@@ -40,19 +40,29 @@
   flex-direction: row;
   color: gray;
   font-size: 10px;
-  line-height: 15px;
+  line-height: 11px;
+  margin: 2px 0;
 }
 .tm_carousell_block_row b {
-  color: var(--theme_primary_color_black_1);
-  font-size: 14px;
+  color: var(--color-text-primary);
+  /*font-size: 18px;*/
+  font-size: 16px;
   line-height: 15px;
+  /*font-weight: 600;*/
+  opacity: 0.9;
+}
+.tm_carousell_block_row_inline {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  justify-content: flex-start;
 }
 .tm_carousell_block_rows {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 4px;
   width: 100%;
-  height: 140px;
+  height: 180px;
 }
 
 .tm_carousell_block_row_svg {

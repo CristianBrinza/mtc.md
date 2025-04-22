@@ -79,6 +79,7 @@
 .popupOptionSubmenuAdd {
   width: 330px;
   height: 460px;
+
   border-radius: 15px;
   background: var(--theme_primary_color_blue_1);
   overflow: hidden;

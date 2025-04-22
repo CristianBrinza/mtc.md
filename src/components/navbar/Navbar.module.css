@@ -265,7 +265,7 @@
 }
 
 .navbar_bottom_menu_option_submenu_block_title {
-  color: rgba(0, 0, 0, 0.41);
+  color: rgba(0, 0, 0, 0.35);
   font-family: 'Source Sans Pro';
   font-size: 16px;
   font-style: normal;
@@ -376,10 +376,10 @@
   opacity: 1;
 }
 .navbar_bottom_menu_option_submenu_add {
-  width: 330px;
-  height: 460px;
+  /*width: 330px;*/
+  /*height: 460px;*/
+
   margin: 10px 10px 10px -10px;
-  /*height: calc(100% - 20px);*/
   border-radius: 15px;
   background: var(--theme_primary_color_blue_1);
   overflow: hidden;
@@ -388,8 +388,8 @@
   height: 404px;
 }
 .navbar_bottom_menu_option_submenu_add_inside {
-  width: 330px;
-  height: 460px;
+  /*width: 330px;*/
+  /*height: 460px;*/
 
   width: 290px;
   height: 404px;

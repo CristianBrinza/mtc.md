@@ -1,11 +1,30 @@
 import React, { useState } from 'react';
 import styles from './Feedback.module.css';
 import Popup from '../Popup/Popup.tsx';
+import Button from '../Button.tsx';
+import Icon from '../Icon.tsx';
 
 const Feedback: React.FC = () => {
   const [showPopup, setShowPopup] = useState<boolean>(false);
   const closePopup = () => {
     setShowPopup(false);
+  };
+
+  const [answers, setAnswers] = useState<{ [key: string]: number }>({
+    good: 0,
+  });
+
+  const choseStars = (question: string, rating: number) => {
+    setAnswers(prev => {
+      const updatedAnswers = { ...prev, [question]: rating };
+      localStorage.setItem('feedbackAnswers', JSON.stringify(updatedAnswers));
+      return updatedAnswers;
+    });
+  };
+
+  const [improvement, setImprovement] = useState<string>('');
+  const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setImprovement(e.target.value);
   };
   return (
     <>
@@ -29,7 +48,36 @@ const Feedback: React.FC = () => {
       </div>
 
       <Popup id="1284768" isVisible={showPopup} onClose={closePopup}>
-        <div className="popup_content">test</div>
+        <div className={`popup_content ${styles.feedback_form}`}>
+          <div className={styles.feedback_title}>Mulțumim pentru feedback</div>
+          {/*<span className={styles.feedback_subtitle}> Părerea ta e foarte importantă pentru noi ❤️</span> <br/><br/>*/}
+
+          <span style={{ color: '#2f2f2f' }}>
+            Cum evaluezi experiența ta pe www.moldtelecom.md?
+          </span>
+
+          <div className={styles.FeedbackMenu_stars}>
+            {[1, 2, 3, 4, 5].map(star => (
+              <Icon
+                key={star}
+                onClick={() => choseStars('design', star)}
+                type={star <= answers.design ? 'star_fill' : 'star'}
+                color={star <= answers.design ? '#3a3a3a' : '#939393'}
+              />
+            ))}
+          </div>
+
+          <span style={{ color: '#2f2f2f' }}> Te rugăm să lași un mesaj:</span>
+
+          <textarea
+            value={improvement}
+            onChange={handleTextChange}
+            placeholder="Lasa-ne numarul daca doresesti sa fii contactat"
+            className={styles.feedback_textarea}
+          ></textarea>
+
+          <Button>Trimite</Button>
+        </div>
       </Popup>
     </>
   );
