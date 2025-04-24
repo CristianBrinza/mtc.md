@@ -5,7 +5,7 @@ import Home from './pages/home/Home.tsx';
 import NotFound from './pages/not_found/NotFound.tsx';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n.tsx';
-import Triple from './pages/oferte/triple/Triple.tsx';
+import Triple from './pages/personal/oferte/triple/Triple.tsx';
 import { routesConfig } from './routesConfig.tsx';
 import ScrollToTop from './components/scroll_to_top/ScrollToTop.tsx';
 

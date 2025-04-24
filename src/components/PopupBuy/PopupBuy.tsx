@@ -127,6 +127,15 @@ const PopupBuy: React.FC<PopupProps> = ({
           <Icon type="close" color="#1D1D1F" />
         </div>
 
+        <div className={styles.popupBlock_discalmer}>
+          După expedierea solicitării vei fi apelat de un consultant
+          Moldtelecom. Mulțumim! <br />
+          Solicitările parvenite duminică, vor fi procesate luni. | Câmpurile
+          marcate cu * sunt obligatorii.
+          {/*Serviciul livrare acasă este disponibil de luni până sâmbătă, între orele 9.00 şi 18.00. Completează formularul de mai sus.*/}
+          {/*<br/>*/}
+        </div>
+
         <Slider {...settings} className={styles.popupOptionSubmenuAdd}>
           {advertising.map((promoItem, promoIndex) => (
             <div>

@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 import Icon from '../Icon.tsx';
 
 interface FooterProps {
-  discalmer?: boolean;
+  disclaimer?: boolean;
 }
 
-const Footer: React.FC<FooterProps> = ({ discalmer }) => {
+const Footer: React.FC<FooterProps> = ({ disclaimer }) => {
   const FooterStyle: React.CSSProperties = {};
 
   const { t } = useTranslation();
@@ -19,8 +19,8 @@ const Footer: React.FC<FooterProps> = ({ discalmer }) => {
 
   return (
     <div style={FooterStyle} className={styles.footer_block}>
-      {discalmer == true && (
-        <div className={styles.discalmer}>{t('footer.descalmer')}</div>
+      {disclaimer == true && (
+        <div className={styles.disclaimer}>{t('footer.disclaimer')}</div>
       )}
 
       <div className={styles.footer}>

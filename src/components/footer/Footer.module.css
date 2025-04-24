@@ -7,7 +7,7 @@
   max-width: 1180px;
   margin: 0px auto;
 }
-.discalmer {
+.disclaimer {
   width: calc(100% - 40px);
   max-width: 1180px;
   padding: 0;
@@ -115,18 +115,18 @@
 }
 
 @media (max-width: 1300px) {
-  .discalmer {
+  .disclaimer {
     max-width: 850px;
   }
 }
 @media (max-width: 940px) {
-  .discalmer {
+  .disclaimer {
     width: 580px;
   }
 }
 
 @media (max-width: 650px) {
-  .discalmer {
+  .disclaimer {
     width: calc(100vw - 40px);
     padding: 0px 20px;
   }

@@ -1,10 +1,11 @@
 // routesConfig.tsx
 import React from 'react';
 import Home from './pages/home/Home';
-import Triple from './pages/oferte/triple/Triple';
+import Triple from './pages/personal/oferte/triple/Triple';
 import NotFound from './pages/not_found/NotFound';
-import Mobile from './pages/oferte/mobile/Mobile.tsx';
-import Test from './pages/oferte/test/Test.tsx';
+import Mobile from './pages/personal/oferte/mobile/Mobile.tsx';
+import Test from './pages/personal/oferte/test/Test.tsx';
+import Magazine from './pages/personal/magazine/Magazine.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -40,6 +41,12 @@ export const routesConfig: RouteConfig[] = [
     i18nKey: 'navbar.internet_tv',
     element: React.createElement(Test),
   },
+  {
+    path: '/:lang/magazine',
+    i18nKey: 'navbar.internet_tv',
+    element: React.createElement(Magazine),
+  },
+
   {
     path: '*',
     i18nKey: 'not_found.title',

@@ -40,7 +40,7 @@ interface PromoBlock {
 
 const Navbar: React.FC = () => {
   const currentHour = new Date().getHours();
-  const isAvailable = currentHour >= 8 && currentHour < 22;
+  const isAvailable = currentHour >= 6 && currentHour < 24;
 
   const { t, i18n } = useTranslation();
   const location = useLocation();
@@ -164,8 +164,12 @@ const Navbar: React.FC = () => {
         <div className={styles.navbar_top}>
           <div className={styles.navbar_top_left}>
             <Link to="/magazine">Magazine</Link>
-            <Link to="/">Contacte</Link>
-            (8:00 -22:00)
+            <Link
+              to={`https://www.moldtelecom.md/${t('lang')}/personal/contacte`}
+            >
+              Contacte
+            </Link>
+            (6:00 -24:00)
             <div
               className={`${styles.navbar_top_left_availabilty} ${
                 isAvailable
@@ -175,8 +179,10 @@ const Navbar: React.FC = () => {
             />
           </div>
           <div className={styles.navbar_top_right}>
-            <Link to="/mymtc">MyMoldtelecom</Link>
-            <Link to="/business">
+            <Link to={`https://my.moldtelecom.md/my-moldtelecom`}>
+              MyMoldtelecom
+            </Link>
+            <Link to={`https://www.moldtelecom.md/${t('lang')}/business`}>
               Business
               <Icon
                 style={{ marginTop: '1px', marginBottom: '-1px' }}
@@ -557,18 +563,20 @@ const Navbar: React.FC = () => {
             </div>
 
             <div className={styles.navbar_bottom_menu_right}>
-              <Icon
-                type="search"
-                className={` ${styles.topbnav_menu_desktop} `}
-              />
               <Link
-                to="/cart"
+                to={`https://www.moldtelecom.md/${t('lang')}/personal/search`}
+                className={`${styles.navbar_bottom_menu_right_lang_btn} ${styles.topbnav_menu_desktop} `}
+              >
+                <Icon type="search" />
+              </Link>
+              <Link
+                to={`https://www.moldtelecom.md/${t('lang')}/personal/cart`}
                 className={`${styles.navbar_bottom_menu_right_lang_btn} ${styles.topbnav_menu_desktop} `}
               >
                 <Icon type="cart" />
               </Link>
               <Link
-                to="/mymtc"
+                to={`https://my.moldtelecom.md/my-moldtelecom`}
                 className={`${styles.navbar_bottom_menu_right_lang_btn} ${styles.topbnav_menu_desktop} `}
               >
                 <Icon type="user" />

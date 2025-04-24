@@ -523,7 +523,7 @@ export default function Home() {
       <MyApp />
       <Videos items={videos} />
       <Chat />
-      <Footer discalmer={true} />
+      <Footer disclaimer={true} />
       <CornerBanner />
     </>
   );

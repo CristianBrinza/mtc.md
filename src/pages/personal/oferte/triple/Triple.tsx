@@ -1,20 +1,19 @@
-import Navbar from '../../../components/navbar/Navbar.tsx';
-import Chat from '../../../components/chat/Chat.tsx';
-import Feedback from '../../../components/feedback/Feedback.tsx';
-import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb.tsx';
-import Hero from '../../../components/hero/Hero.tsx';
+import Navbar from '../../../../components/navbar/Navbar.tsx';
+import Chat from '../../../../components/chat/Chat.tsx';
+import Feedback from '../../../../components/feedback/Feedback.tsx';
+import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb.tsx';
+import Hero from '../../../../components/hero/Hero.tsx';
 import styles from './Triple.module.css';
-import Faq from '../../../components/faq/Faq.tsx';
-import FaqQA from '../../../components/faq/FaqQA.tsx';
-import ShopCard from '../../../components/shop_card/ShopCard.tsx';
+import Faq from '../../../../components/faq/Faq.tsx';
+import FaqQA from '../../../../components/faq/FaqQA.tsx';
+import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 import Slider from 'react-slick';
-import Functions from '../../../components/functions/Functions.tsx';
-import Footer from '../../../components/footer/Footer.tsx';
-import MyApp from '../../../components/app/MyApp.tsx';
-import OptionsCards from '../../../components/options_cards/OptionsCards.tsx';
-import Popup from '../../../components/Popup/Popup.tsx';
+import Functions from '../../../../components/functions/Functions.tsx';
+import Footer from '../../../../components/footer/Footer.tsx';
+import MyApp from '../../../../components/app/MyApp.tsx';
+import Popup from '../../../../components/Popup/Popup.tsx';
 import { useState } from 'react';
-import PopupBuy from '../../../components/PopupBuy/PopupBuy.tsx';
+import PopupBuy from '../../../../components/PopupBuy/PopupBuy.tsx';
 
 export default function Triple() {
   const breadcrumbItems = [
@@ -53,31 +52,7 @@ export default function Triple() {
     ],
   };
 
-  const optionsData = [
-    {
-      type: 'Descoperă',
-      title: '<grad1>Moldtelecom TV</grad1> :/ la doar 40 lei!',
-      subtitle:
-        'Accesează acum <b>oriunde</b> în reteaua :/ Moldtelecom pe <b>orice ecran</b>.',
-      image: '/images/landings/15534010.png',
-      to: '/test',
-    },
-    {
-      type: 'Descoperă',
-      title: 'CINEMA ONLINE :/ la doar <grad2>59 lei/lună</grad2>!',
-      subtitle:
-        'Explorează lumea televiziunii :/ interactive cu abonamentul dorit,:/ <b>direct pe smartphone-ul tău</b>.',
-      image: '/images/landings/15534010.png',
-      to: '/test',
-      popup: '1281570', // pass only the popup ID
-    },
-  ];
-
   const [activePopup, setActivePopup] = useState<string | null>(null);
-
-  const togglePopup = (popup: string) => {
-    setActivePopup(activePopup !== popup ? popup : null);
-  };
 
   return (
     <>
@@ -131,8 +106,6 @@ export default function Triple() {
       {/*<div className={`title ${styles.title1}`}>*/}
       {/*  Crează-ți propriul abonament:*/}
       {/*</div>*/}
-
-      <OptionsCards items={optionsData} popupHandler={togglePopup} />
 
       <div className={`title ${styles.title2}`}>
         Smartphone la DOAR 1 leu, sau Preț Special!
@@ -384,7 +357,7 @@ export default function Triple() {
         </FaqQA>
       </Faq>
 
-      <Footer discalmer={true} />
+      <Footer disclaimer={true} />
     </>
   );
 }

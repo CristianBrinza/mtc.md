@@ -121,3 +121,14 @@
     width: 100%;
   }
 }
+
+.popupBlock_discalmer {
+  position: absolute;
+  bottom: 20px;
+  max-width: 620px;
+  width: 100%;
+  right: 10px;
+  font-size: 10px;
+  line-height: 10px;
+  opacity: 0.5;
+}

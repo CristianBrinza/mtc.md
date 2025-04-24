@@ -24,7 +24,7 @@ const OptionsCards: React.FC<OptionsCardsProps> = ({ items = [] }) => {
     infinite: true,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 2800,
+    autoplaySpeed: 4500,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -108,7 +108,7 @@ const OptionsCards: React.FC<OptionsCardsProps> = ({ items = [] }) => {
                     hover_bgcolor={'var(--theme_primary_color_blue_3)'}
                     icon={'arrow_right'}
                   >
-                    Activează acum
+                    Află mai multe
                   </Button>
                 )}
                 {item.detalii && (
@@ -121,7 +121,7 @@ const OptionsCards: React.FC<OptionsCardsProps> = ({ items = [] }) => {
                     icon={'arrow_right'}
                     onClick={() => handleClick(item.detalii)}
                   >
-                    Detalii ofertă
+                    Află mai multe
                   </Button>
                 )}
                 {item.popup && (

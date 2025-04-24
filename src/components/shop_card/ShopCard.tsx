@@ -17,6 +17,8 @@ interface ShopCardProps {
   device_id: number;
   buy?: () => Promise<void> | void;
   style_type?: string;
+  show_like?: boolean;
+  show_comapre?: boolean;
 }
 
 const STORAGE_KEY_LIKE = 'likedDevices';
@@ -41,6 +43,8 @@ const ShopCard: React.FC<ShopCardProps> = ({
   device_id,
   buy,
   style_type,
+  show_comapre = true,
+  show_like = true,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isCartHovered, setIsCartHovered] = useState(false);
@@ -189,70 +193,76 @@ const ShopCard: React.FC<ShopCardProps> = ({
           }
         />
       </div>
-      <div
-        className={`${styles.ShopCard_like} ${isHovered ? styles.ShopCard_like_show : ''} ${
-          isLiked ? styles.isliked : ''
-        }`}
-        onMouseEnter={() => setIsLikeHovered(true)}
-        onMouseLeave={() => setIsLikeHovered(false)}
-        onClick={handleLikeClick}
-      >
-        <Icon
-          type={
-            isLikeHovered
-              ? 'heart_fill'
-              : isLiked && isHovered
-                ? 'heart_fill'
-                : 'heart'
-          }
-          color={
-            isLikeHovered
-              ? 'var(--theme_primary_color_red_2)'
-              : isLiked
-                ? isHovered
-                  ? 'var(--theme_primary_color_red_2)'
-                  : 'var(--theme_primary_color_gray)'
-                : 'var(--theme_primary_color_black)'
-          }
-        />
-        {/*{isLiked ? (*/}
-        {/*  <Icon*/}
-        {/*    type="heart_fill"*/}
-        {/*    color={*/}
-        {/*      isLikeHovered*/}
-        {/*        ? 'var(--theme_primary_color_red_2)'*/}
-        {/*        : 'var(--theme_primary_color_gray)'*/}
-        {/*    }*/}
-        {/*  />*/}
-        {/*) : (*/}
-        {/*  <Icon*/}
-        {/*    type="heart"*/}
-        {/*    color={*/}
-        {/*      isLikeHovered ? 'var(--theme_primary_color_red_2)' : undefined*/}
-        {/*    }*/}
-        {/*  />*/}
-        {/*)}*/}
-      </div>
 
-      <div
-        className={`${styles.ShopCard_compare} ${isHovered ? styles.ShopCard_compare_show : ''} ${
-          isCompare ? styles.isCompare : ''
-        }`}
-        onMouseEnter={() => setIsCompareHovered(true)}
-        onMouseLeave={() => setIsCompareHovered(false)}
-        onClick={handleCompareClick}
-      >
-        {isCompare ? (
-          <Icon type="compare" color="var(--theme_primary_color_gray)" />
-        ) : (
+      {show_like == true && (
+        <div
+          className={`${styles.ShopCard_like} ${isHovered ? styles.ShopCard_like_show : ''} ${
+            isLiked ? styles.isliked : ''
+          }`}
+          onMouseEnter={() => setIsLikeHovered(true)}
+          onMouseLeave={() => setIsLikeHovered(false)}
+          onClick={handleLikeClick}
+        >
           <Icon
-            type="compare"
+            type={
+              isLikeHovered
+                ? 'heart_fill'
+                : isLiked && isHovered
+                  ? 'heart_fill'
+                  : 'heart'
+            }
             color={
-              isCompareHovered ? 'var(--theme_primary_color_blue_3)' : undefined
+              isLikeHovered
+                ? 'var(--theme_primary_color_red_2)'
+                : isLiked
+                  ? isHovered
+                    ? 'var(--theme_primary_color_red_2)'
+                    : 'var(--theme_primary_color_gray)'
+                  : 'var(--theme_primary_color_black)'
             }
           />
-        )}
-      </div>
+          {/*{isLiked ? (*/}
+          {/*  <Icon*/}
+          {/*    type="heart_fill"*/}
+          {/*    color={*/}
+          {/*      isLikeHovered*/}
+          {/*        ? 'var(--theme_primary_color_red_2)'*/}
+          {/*        : 'var(--theme_primary_color_gray)'*/}
+          {/*    }*/}
+          {/*  />*/}
+          {/*) : (*/}
+          {/*  <Icon*/}
+          {/*    type="heart"*/}
+          {/*    color={*/}
+          {/*      isLikeHovered ? 'var(--theme_primary_color_red_2)' : undefined*/}
+          {/*    }*/}
+          {/*  />*/}
+          {/*)}*/}
+        </div>
+      )}
+      {show_comapre == true && (
+        <div
+          className={`${styles.ShopCard_compare} ${isHovered ? styles.ShopCard_compare_show : ''} ${
+            isCompare ? styles.isCompare : ''
+          }`}
+          onMouseEnter={() => setIsCompareHovered(true)}
+          onMouseLeave={() => setIsCompareHovered(false)}
+          onClick={handleCompareClick}
+        >
+          {isCompare ? (
+            <Icon type="compare" color="var(--theme_primary_color_gray)" />
+          ) : (
+            <Icon
+              type="compare"
+              color={
+                isCompareHovered
+                  ? 'var(--theme_primary_color_blue_3)'
+                  : undefined
+              }
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 };

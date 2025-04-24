@@ -11,12 +11,13 @@ interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
+  max_width?: number;
 }
 
-const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
+const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, max_width }) => {
   const { t } = useTranslation();
   return (
-    <div className="breadcrumb">
+    <div className="breadcrumb" style={{ maxWidth: max_width }}>
       <Link to={`/${t('lang')}/`}>
         <svg
           style={{ marginTop: '1px', marginBottom: '-1px' }}
