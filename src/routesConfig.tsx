@@ -6,6 +6,7 @@ import NotFound from './pages/not_found/NotFound';
 import Mobile from './pages/personal/oferte/mobile/Mobile.tsx';
 import Test from './pages/personal/oferte/test/Test.tsx';
 import Magazine from './pages/personal/magazine/Magazine.tsx';
+import IconShowcase from './pages/technical/IconShowcase.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -46,6 +47,13 @@ export const routesConfig: RouteConfig[] = [
     i18nKey: 'navbar.internet_tv',
     element: React.createElement(Magazine),
   },
+  //technical
+  {
+    path: '/:lang/icons',
+    i18nKey: 'navbar.internet_tv',
+    element: React.createElement(IconShowcase),
+  },
+
 
   {
     path: '*',

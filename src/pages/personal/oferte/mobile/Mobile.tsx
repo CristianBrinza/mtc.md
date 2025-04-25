@@ -100,7 +100,15 @@ export default function Mobile() {
       type: 'Descoperă',
       title: 'Acum ai <grad1>Moldtelecom TV</grad1> :/ la doar 40 lei!',
       subtitle:
-        'Accesează acum <b>oriunde</b> în reteaua :/ Moldtelecom pe <b>orice ecran</b>.',
+        'Moldtelecom TV oferă televiziune digitală de calitate,:/ cu sute de canale, opțiuni HD și funcții interactive. :/ :/ Accesează acum <b>oriunde</b> în reteaua  Moldtelecom pe <b>orice ecran</b>.',
+      image: '/images/landings/42779078.png',
+      to: '/test',
+    },
+    {
+      type: 'Descoperă',
+      title: ' <grad4>Moldtelecom TV</grad4> :/ la doar 40 lei!',
+      subtitle:
+        'Moldtelecom TV oferă televiziune digitală de calitate,:/ cu sute de canale, opțiuni HD și funcții interactive. :/ :/ Accesează acum <b>oriunde</b> în reteaua  Moldtelecom pe <b>orice ecran</b>.',
       image: '/images/landings/42779078.png',
       to: '/test',
     },
@@ -108,7 +116,7 @@ export default function Mobile() {
       type: 'Descoperă',
       title: ' CINEMA ONLINE :/ la doar <grad2>59 lei/lună</grad2>!',
       subtitle:
-        'Explorează lumea televiziunii :/ interactive cu abonamentul dorit,:/ <b>direct pe smartphone-ul tău</b>.',
+        'Explorează lumea televiziunii  interactive cu abonamentul dorit, <b>direct pe smartphone-ul tău</b>.',
       image: '/images/landings/15534010.png',
       to: '/test',
       popup: '1281570', // pass only the popup ID

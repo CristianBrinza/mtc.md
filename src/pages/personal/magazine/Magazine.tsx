@@ -184,13 +184,16 @@ export default function Magazine() {
           </Button>
         </div>
 
-       
-          <div
-            id="map"
-            ref={mapRef}
-            style={{ width: '100%', height: '500px',   display: view !== 'map' ? 'none' : 'block' }}
-            className={styles.contact_iframe}
-          />
+        <div
+          id="map"
+          ref={mapRef}
+          style={{
+            width: '100%',
+            height: '500px',
+            display: view !== 'map' ? 'none' : 'block',
+          }}
+          className={styles.contact_iframe}
+        />
 
         {view === 'list' && (
           <div id="mag_list">

@@ -112,34 +112,28 @@ export default function Home() {
     <>
       <Navbar />
 
-      <Slider {...settings}>
-        <div className={styles.home_slider_main}>
-          <Link to={'/triple'} className={styles.home_hero}>
-            <img
-              className={styles.home_hero_img_desk}
-              src="/images/homepage/home_hero_triple_desktop_ro.png"
-              alt="Moldtelecom"
-            />
-          </Link>
-        </div>
-        <div className={styles.home_slider_main}>
-          <Link to={'/mobile'} className={styles.home_hero}>
-            <img
-              className={styles.home_hero_img_desk}
-              src="/images/homepage/home_hero_tm_desktop_ro.png"
-              alt="Moldtelecom"
-            />
-          </Link>
-        </div>
-        <div className={styles.home_slider_main}>
-          <Link to={'/mobile'} className={styles.home_hero}>
-            <img
-              className={styles.home_hero_img_desk}
-              src="/images/homepage/home_hero_mtc_tv_desktop_ro.png"
-              alt="Moldtelecom"
-            />
-          </Link>
-        </div>
+      <Slider {...settings} className={styles.home_slider}>
+        <Link to={'/mobile'} className={styles.home_hero}>
+          <img
+            className={styles.home_hero_img_desk}
+            src="/images/homepage/home_hero_tm_desktop_ro.png"
+            alt="Moldtelecom"
+          />
+        </Link>
+        <Link to={'/mobile'} className={styles.home_hero}>
+          <img
+            className={styles.home_hero_img_desk}
+            src="/images/homepage/home_hero_mtc_tv_desktop_ro.png"
+            alt="Moldtelecom"
+          />
+        </Link>
+        <Link to={'/triple'} className={styles.home_hero}>
+          <img
+            className={styles.home_hero_img_desk}
+            src="/images/homepage/home_hero_triple_desktop_ro.png"
+            alt="Moldtelecom"
+          />
+        </Link>
       </Slider>
 
       <div className={styles.home_topbar}>

@@ -37,7 +37,9 @@ const OptionsCards: React.FC<OptionsCardsProps> = ({ items = [] }) => {
       .replace(/<grad1>/gi, '___GRAD1_OPEN___')
       .replace(/<\/grad1>/gi, '___GRAD1_CLOSE___')
       .replace(/<grad2>/gi, '___GRAD2_OPEN___')
-      .replace(/<\/grad2>/gi, '___GRAD2_CLOSE___');
+      .replace(/<\/grad2>/gi, '___GRAD2_CLOSE___')
+      .replace(/<grad4>/gi, '___GRAD4_OPEN___')
+      .replace(/<\/grad4>/gi, '___GRAD4_CLOSE___');
 
     // Step 2: Split the string on ':/', trim and join with <br />
     temp = temp
@@ -52,7 +54,9 @@ const OptionsCards: React.FC<OptionsCardsProps> = ({ items = [] }) => {
       .replace(/___GRAD1_OPEN___/g, '<span class="gradient_text_1">')
       .replace(/___GRAD1_CLOSE___/g, '</span>')
       .replace(/___GRAD2_OPEN___/g, '<span class="gradient_text_2">')
-      .replace(/___GRAD2_CLOSE___/g, '</span>');
+      .replace(/___GRAD2_CLOSE___/g, '</span>')
+    .replace(/___GRAD4_OPEN___/g, '<span class="gradient_text_4">')
+      .replace(/___GRAD4_CLOSE___/g, '</span>');
   }
 
   const handleClick = (popupScript: string | undefined) => {
