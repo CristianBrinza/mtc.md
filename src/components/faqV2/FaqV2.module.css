@@ -1,0 +1,27 @@
+.faqWrap {
+  width: 100%;
+  margin: 40px auto 0;
+  padding: 15px 0px 20px;
+  background: var(--theme_primary_color_gray_3);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.faq {
+  width: 100%;
+  max-width: 1180px;
+  display: flex;
+}
+.faq_title {
+  width: 30%;
+  padding-left: 0px;
+  margin: 40px auto;
+}
+.faq_inside_right {
+  width: 70%;
+  padding: 25px 0;
+  box-sizing: border-box;
+}
+.faq_btn {
+  margin: 20px 0 0 0;
+}

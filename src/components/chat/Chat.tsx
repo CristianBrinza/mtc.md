@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Chat.module.css';
 
 const Chat: React.FC = () => {
+
+  const [activeOverlay, setActiveOverlay] = useState(false);
+
   return (
     <>
-      <div className={styles.chat_icon}>
+      <div className={`${styles.chat_overlay} ${activeOverlay && styles.chat_overlay_active}`} onClick={ ()=> setActiveOverlay(!activeOverlay)}>
+        &nbsp;
+      </div>
+      <div className={styles.chat_icon} onClick={ ()=> setActiveOverlay(!activeOverlay)}>
         <svg
           width="70"
           height="70"

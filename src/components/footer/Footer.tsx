@@ -6,9 +6,13 @@ import Icon from '../Icon.tsx';
 
 interface FooterProps {
   disclaimer?: boolean;
+  disclaimer_color?: string;
 }
 
-const Footer: React.FC<FooterProps> = ({ disclaimer }) => {
+const Footer: React.FC<FooterProps> = ({
+  disclaimer,
+  disclaimer_color = 'transparent',
+}) => {
   const FooterStyle: React.CSSProperties = {};
 
   const { t } = useTranslation();
@@ -20,7 +24,12 @@ const Footer: React.FC<FooterProps> = ({ disclaimer }) => {
   return (
     <div style={FooterStyle} className={styles.footer_block}>
       {disclaimer == true && (
-        <div className={styles.disclaimer}>{t('footer.disclaimer')}</div>
+        <div
+          className={styles.disclaimer_wrap}
+          style={{ background: disclaimer_color }}
+        >
+          <div className={styles.disclaimer}>{t('footer.disclaimer')}</div>
+        </div>
       )}
 
       <div className={styles.footer}>

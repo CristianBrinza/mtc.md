@@ -5,6 +5,7 @@
   border-radius: 15px;
   /*border: 1px solid #ddd;*/
   background-color: var(--theme_primary_color_blue_1);
+  /*background: #f3f3f8;*/
   overflow: hidden;
   margin: 0 auto;
   color: var(--color-text-primary);
@@ -85,9 +86,12 @@
   display: flex;
 }
 .AbonamentCard_price_text {
-  /*background-color:  rgba(0, 0, 0, 0.08);*/
-  background: #fac031;
+  background-color:  rgba(0, 0, 0, 0.08);
+  /*background: #fac031;*/
+  background: #669df5;
   color: #fff;
+  /*background: rgb(221, 78, 108);*/
+  /*background-color: var(--theme_primary_color_blue_3);*/
 
   /*background: #FDF178;*/
   /*color: #1C2023;*/
@@ -97,6 +101,7 @@
   padding: 2px 4px;
   box-sizing: border-box;
   border-radius: 6px;
+  font-weight: 600;
 }
 .AbonamentCard_price_text_hide {
   opacity: 0;

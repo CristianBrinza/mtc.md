@@ -8,6 +8,7 @@
   height: 70px;
   transform: scale(0.9);
   transition: transform 0.1s;
+  z-index: 99999999999;
 }
 .chat_icon svg {
   z-index: 999999;
@@ -56,4 +57,21 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.chat_overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999999999;
+  pointer-events: none;
+  opacity: 0;
+
+}
+.chat_overlay_active{
+  pointer-events: auto;
+  opacity: 1;
 }

@@ -55,7 +55,7 @@ const OptionsCards: React.FC<OptionsCardsProps> = ({ items = [] }) => {
       .replace(/___GRAD1_CLOSE___/g, '</span>')
       .replace(/___GRAD2_OPEN___/g, '<span class="gradient_text_2">')
       .replace(/___GRAD2_CLOSE___/g, '</span>')
-    .replace(/___GRAD4_OPEN___/g, '<span class="gradient_text_4">')
+      .replace(/___GRAD4_OPEN___/g, '<span class="gradient_text_4">')
       .replace(/___GRAD4_CLOSE___/g, '</span>');
   }
 

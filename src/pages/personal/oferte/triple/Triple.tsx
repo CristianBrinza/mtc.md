@@ -175,8 +175,8 @@ export default function Triple() {
         width="900px"
         isVisible={activePopup === '3281270'}
         onClose={() => setActivePopup(null)}
-        title={'aaa'}
-        config={'444'}
+        title={''}
+        config={''}
       />
 
       <Functions

@@ -7,11 +7,15 @@
   max-width: 1180px;
   margin: 0px auto;
 }
+.disclaimer_wrap {
+  width: 100%;
+}
 .disclaimer {
   width: calc(100% - 40px);
   max-width: 1180px;
-  padding: 0;
-  margin: 30px auto 20px;
+  padding: 30px 0 20px;
+  box-sizing: border-box;
+  margin: 0px auto 0px;
   color: var(--theme_primary_color_dark_gray);
   text-align: center;
   font-size: 14px;

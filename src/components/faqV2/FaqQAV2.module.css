@@ -1,0 +1,75 @@
+.FaqQA {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.FaqQA_title {
+  display: flex;
+  padding: 13px 34px 13px 20px;
+  align-items: center;
+  gap: 40px;
+  align-self: stretch;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--theme_primary_color_gray);
+  margin-top: -1px;
+  cursor: pointer;
+  font-family: 'Source Sans Pro';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.18px;
+}
+.FaqQA_title_svg_block {
+  width: 24px;
+  height: 24px;
+}
+.FaqQA_inside {
+  padding: 0px 34px 0px 20px;
+  box-sizing: border-box;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--theme_primary_color_gray);
+  line-height: 18px;
+  font-size: 14px;
+  /*height: 0px;*/
+  max-height: 0px; /* Ensures smooth transition */
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease-in-out,
+    padding 0.3s ease-in-out;
+}
+
+.FaqQA_inside_show {
+  max-height: 500px; /* Adjust this value based on your content */
+  padding: 10px 34px 20px 20px;
+}
+
+.FaqQA_title_svg {
+  transform: rotate(0deg) !important;
+  transition: transform 0.3s;
+}
+.FaqQA_title_svg_rotated {
+  transform: rotate(45deg) !important;
+  transition: transform 0.3s;
+}
+
+@media (max-width: 650px) {
+  .FaqQA_title {
+    padding: 13px 5px 13px 5px;
+  }
+  .FaqQA_inside_show {
+    padding: 10px 0px 20px 0px;
+  }
+}
+
+@media (max-width: 550px) {
+  .FaqQA_title {
+    padding: 13px 5px 13px 0px;
+  }
+}

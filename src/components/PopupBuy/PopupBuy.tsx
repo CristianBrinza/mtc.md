@@ -11,6 +11,7 @@ interface PopupProps {
   onClose: () => void;
   title: string;
   config: string;
+  children: React.ReactNode;
 }
 
 interface PromoBlock {
@@ -26,6 +27,7 @@ const PopupBuy: React.FC<PopupProps> = ({
   width = '1000px',
   title,
   config,
+  children,
 }) => {
   const popupRef = useRef<HTMLDivElement | null>(null);
 
@@ -157,9 +159,17 @@ const PopupBuy: React.FC<PopupProps> = ({
             </div>
           ))}
         </Slider>
-        {title}
-        <br />
-        {config}
+       <div className={styles.buy_inside}>
+         <div className={styles.buy_title}><b>Mulțumim</b> <br/>
+           că ai ales Moldtelecom</div>
+
+       <div>
+         {title}
+         <br />
+         {config}
+       </div>
+         {children}
+       </div>
       </div>
     </div>
   );

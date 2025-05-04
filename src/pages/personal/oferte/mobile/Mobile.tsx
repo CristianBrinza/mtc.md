@@ -4,8 +4,8 @@ import Feedback from '../../../../components/feedback/Feedback.tsx';
 import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb.tsx';
 import Hero from '../../../../components/hero/Hero.tsx';
 import styles from './Mobile.module.css';
-import Faq from '../../../../components/faq/Faq.tsx';
-import FaqQA from '../../../../components/faq/FaqQA.tsx';
+import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
+import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
 import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 import Slider from 'react-slick';
 import Functions from '../../../../components/functions/Functions.tsx';
@@ -18,6 +18,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../../../components/Button.tsx';
 import OptionsCards from '../../../../components/options_cards/OptionsCards.tsx';
+import Input from '../../../../components/input/Input.tsx';
 
 export default function Mobile() {
   const breadcrumbItems = [
@@ -98,23 +99,15 @@ export default function Mobile() {
   const optionsData = [
     {
       type: 'Descoperă',
-      title: 'Acum ai <grad1>Moldtelecom TV</grad1> :/ la doar 40 lei!',
+      title: '<grad4>Moldtelecom TV</grad4> :/ la doar 40 lei!',
       subtitle:
-        'Moldtelecom TV oferă televiziune digitală de calitate,:/ cu sute de canale, opțiuni HD și funcții interactive. :/ :/ Accesează acum <b>oriunde</b> în reteaua  Moldtelecom pe <b>orice ecran</b>.',
+        'Moldtelecom TV oferă televiziune digitală de calitate,:/ cu sute de canale, opțiuni HD și funcții interactive. :/ :/ Accesează acum <b>oriunde, peorice ecran</b>.',
       image: '/images/landings/42779078.png',
       to: '/test',
     },
     {
       type: 'Descoperă',
-      title: ' <grad4>Moldtelecom TV</grad4> :/ la doar 40 lei!',
-      subtitle:
-        'Moldtelecom TV oferă televiziune digitală de calitate,:/ cu sute de canale, opțiuni HD și funcții interactive. :/ :/ Accesează acum <b>oriunde</b> în reteaua  Moldtelecom pe <b>orice ecran</b>.',
-      image: '/images/landings/42779078.png',
-      to: '/test',
-    },
-    {
-      type: 'Descoperă',
-      title: ' CINEMA ONLINE :/ la doar <grad2>59 lei/lună</grad2>!',
+      title: '<grad2>CINEMA ONLINE</grad2> :/ la doar 59 lei/lună!',
       subtitle:
         'Explorează lumea televiziunii  interactive cu abonamentul dorit, <b>direct pe smartphone-ul tău</b>.',
       image: '/images/landings/15534010.png',
@@ -171,15 +164,25 @@ export default function Mobile() {
         <div
           className={`${styles.chose_product_item} ${styles.chose_product_item_active}`}
         >
+          <Icon
+            size={'22px'}
+            type={'retry'}
+            color={'var(--theme_primary_color_blue_2)'}
+          />
           Portare
-          <div className={styles.chose_product_line}></div>
+          {/*<div className={styles.chose_product_line}></div>*/}
         </div>
         <div
           className={styles.chose_product_item}
           onClick={() => navigate('/')}
         >
+          <Icon
+            size={'22px'}
+            type={'plus'}
+            color={'var(--theme_primary_color_blue_2)'}
+          />
           Abonament nou
-          <div className={styles.chose_product_line}></div>
+          {/*<div className={styles.chose_product_line}></div>*/}
         </div>
       </div>
 
@@ -218,7 +221,7 @@ export default function Mobile() {
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
-                    type={'call_mess'}
+                    type={'call'}
                     color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
@@ -299,19 +302,19 @@ export default function Mobile() {
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
-                    type={'call_mess'}
+                    type={'call'}
                     color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>250 min</b>
+                    <b>350 min </b>
                     <br /> naționale
                   </span>{' '}
                   /
                   <span>
-                    <b>25 min </b>
+                    <b>35 min </b>
                     <br /> internaționale
                   </span>
                 </div>
@@ -324,29 +327,11 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>25 SMS</b> <br /> naționale
+                  <b>
+                    35 SMS <GreenArrow />
+                  </b>{' '}
+                  <br /> naționale
                 </span>
-                <svg
-                  width="16"
-                  height="27"
-                  viewBox="0 0 16 27"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clip-path="url(#clip0_10971_13707)">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10 11.4128C9.83183 11.4128 9.67055 11.346 9.55164 11.2271C9.43273 11.1082 9.36592 10.9469 9.36592 10.7787V2.16376L7.06634 4.46334C6.94614 4.57534 6.78716 4.63632 6.62289 4.63342C6.45862 4.63052 6.30189 4.56397 6.18572 4.4478C6.06954 4.33163 6.003 4.1749 6.0001 4.01063C5.9972 3.84636 6.05818 3.68738 6.17018 3.56718L9.55192 0.185438C9.67081 0.066696 9.83197 0 10 0C10.168 0 10.3292 0.066696 10.4481 0.185438L13.8298 3.56718C13.9418 3.68738 14.0028 3.84636 13.9999 4.01063C13.997 4.1749 13.9305 4.33163 13.8143 4.4478C13.6981 4.56397 13.5414 4.63052 13.3771 4.63342C13.2128 4.63632 13.0539 4.57534 12.9337 4.46334L10.6341 2.16376V10.7787C10.6341 10.9469 10.5673 11.1082 10.4484 11.2271C10.3294 11.346 10.1682 11.4128 10 11.4128Z"
-                      fill="#86CA5E"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_10971_13707">
-                      <rect width="16" height="27" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
@@ -356,7 +341,10 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>25 GB </b> <br /> Trafic internet
+                  <b>
+                    35 GB <GreenArrow />
+                  </b>{' '}
+                  <br /> Trafic internet
                 </span>
               </div>
               <div
@@ -370,7 +358,10 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>25 GB </b> <br /> Trafic internet
+                  <b>
+                    35 GB <GreenArrow />
+                  </b>{' '}
+                  <br /> Trafic internet
                 </span>
               </div>
             </div>
@@ -401,19 +392,19 @@ export default function Mobile() {
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
-                    type={'call_mess'}
+                    type={'call'}
                     color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>250 min</b>
+                    <b>450 min</b>
                     <br /> naționale
                   </span>{' '}
                   /
                   <span>
-                    <b>25 min </b>
+                    <b>45 min </b>
                     <br /> internaționale
                   </span>
                 </div>
@@ -426,29 +417,11 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>25 SMS</b> <br /> naționale
+                  <b>
+                    45 SMS <GreenArrow />
+                  </b>{' '}
+                  <br /> naționale
                 </span>
-                <svg
-                  width="16"
-                  height="27"
-                  viewBox="0 0 16 27"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clip-path="url(#clip0_10971_13707)">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10 11.4128C9.83183 11.4128 9.67055 11.346 9.55164 11.2271C9.43273 11.1082 9.36592 10.9469 9.36592 10.7787V2.16376L7.06634 4.46334C6.94614 4.57534 6.78716 4.63632 6.62289 4.63342C6.45862 4.63052 6.30189 4.56397 6.18572 4.4478C6.06954 4.33163 6.003 4.1749 6.0001 4.01063C5.9972 3.84636 6.05818 3.68738 6.17018 3.56718L9.55192 0.185438C9.67081 0.066696 9.83197 0 10 0C10.168 0 10.3292 0.066696 10.4481 0.185438L13.8298 3.56718C13.9418 3.68738 14.0028 3.84636 13.9999 4.01063C13.997 4.1749 13.9305 4.33163 13.8143 4.4478C13.6981 4.56397 13.5414 4.63052 13.3771 4.63342C13.2128 4.63632 13.0539 4.57534 12.9337 4.46334L10.6341 2.16376V10.7787C10.6341 10.9469 10.5673 11.1082 10.4484 11.2271C10.3294 11.346 10.1682 11.4128 10 11.4128Z"
-                      fill="#86CA5E"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_10971_13707">
-                      <rect width="16" height="27" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
@@ -458,7 +431,10 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>25 GB </b> <br /> Trafic internet
+                  <b>
+                    45 GB <GreenArrow />
+                  </b>{' '}
+                  <br /> Trafic internet
                 </span>
               </div>
             </div>
@@ -490,19 +466,19 @@ export default function Mobile() {
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
-                    type={'call_mess'}
+                    type={'call'}
                     color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>250 min</b>
+                    <b>850 min</b>
                     <br /> naționale
                   </span>{' '}
                   /
                   <span>
-                    <b>25 min </b>
+                    <b>85 min </b>
                     <br /> internaționale
                   </span>
                 </div>
@@ -515,29 +491,12 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>25 SMS</b> <br /> naționale
+                  <b>
+                    85 SMS
+                    <GreenArrow />
+                  </b>{' '}
+                  <br /> naționale
                 </span>
-                <svg
-                  width="16"
-                  height="27"
-                  viewBox="0 0 16 27"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clip-path="url(#clip0_10971_13707)">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10 11.4128C9.83183 11.4128 9.67055 11.346 9.55164 11.2271C9.43273 11.1082 9.36592 10.9469 9.36592 10.7787V2.16376L7.06634 4.46334C6.94614 4.57534 6.78716 4.63632 6.62289 4.63342C6.45862 4.63052 6.30189 4.56397 6.18572 4.4478C6.06954 4.33163 6.003 4.1749 6.0001 4.01063C5.9972 3.84636 6.05818 3.68738 6.17018 3.56718L9.55192 0.185438C9.67081 0.066696 9.83197 0 10 0C10.168 0 10.3292 0.066696 10.4481 0.185438L13.8298 3.56718C13.9418 3.68738 14.0028 3.84636 13.9999 4.01063C13.997 4.1749 13.9305 4.33163 13.8143 4.4478C13.6981 4.56397 13.5414 4.63052 13.3771 4.63342C13.2128 4.63632 13.0539 4.57534 12.9337 4.46334L10.6341 2.16376V10.7787C10.6341 10.9469 10.5673 11.1082 10.4484 11.2271C10.3294 11.346 10.1682 11.4128 10 11.4128Z"
-                      fill="#86CA5E"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_10971_13707">
-                      <rect width="16" height="27" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
@@ -547,13 +506,17 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>25 GB </b> <br /> Trafic internet
+                  <b>
+                    85 GB
+                    <GreenArrow />
+                  </b>{' '}
+                  <br /> Trafic internet
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
-                    type={'internet'}
+                    type={'roaming'}
                     color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
@@ -599,19 +562,20 @@ export default function Mobile() {
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
-                    type={'call_mess'}
+                    type={'call'}
                     color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>250 min</b>
-                    <br /> naționale
+                    <b>Nelimitat</b>
+                    <br />
+                    min naționale
                   </span>{' '}
-                  /
+                  +
                   <span>
-                    <b>25 min </b>
+                    <b>50 min </b>
                     <br /> internaționale
                   </span>
                 </div>
@@ -624,29 +588,11 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>25 SMS</b> <br /> naționale
+                  <b>
+                    Nelimitat SMS <GreenArrow />
+                  </b>{' '}
+                  <br /> naționale
                 </span>
-                <svg
-                  width="16"
-                  height="27"
-                  viewBox="0 0 16 27"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clip-path="url(#clip0_10971_13707)">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10 11.4128C9.83183 11.4128 9.67055 11.346 9.55164 11.2271C9.43273 11.1082 9.36592 10.9469 9.36592 10.7787V2.16376L7.06634 4.46334C6.94614 4.57534 6.78716 4.63632 6.62289 4.63342C6.45862 4.63052 6.30189 4.56397 6.18572 4.4478C6.06954 4.33163 6.003 4.1749 6.0001 4.01063C5.9972 3.84636 6.05818 3.68738 6.17018 3.56718L9.55192 0.185438C9.67081 0.066696 9.83197 0 10 0C10.168 0 10.3292 0.066696 10.4481 0.185438L13.8298 3.56718C13.9418 3.68738 14.0028 3.84636 13.9999 4.01063C13.997 4.1749 13.9305 4.33163 13.8143 4.4478C13.6981 4.56397 13.5414 4.63052 13.3771 4.63342C13.2128 4.63632 13.0539 4.57534 12.9337 4.46334L10.6341 2.16376V10.7787C10.6341 10.9469 10.5673 11.1082 10.4484 11.2271C10.3294 11.346 10.1682 11.4128 10 11.4128Z"
-                      fill="#86CA5E"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_10971_13707">
-                      <rect width="16" height="27" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
@@ -656,13 +602,16 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>25 GB </b> <br /> Trafic internet
+                  <b>
+                    245 GB <GreenArrow />
+                  </b>{' '}
+                  <br /> Trafic internet
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
-                    type={'internet'}
+                    type={'roaming'}
                     color={'var(--theme_primary_color_blue_0)'}
                   />
                 </div>
@@ -700,9 +649,31 @@ export default function Mobile() {
         id="3281270"
         isVisible={activePopup === '3281270'}
         onClose={() => setActivePopup(null)}
-        title={title}
-        config={'444'}
-      />
+        title={''}
+        config={''}
+      >
+        Abonamenteul tau:
+        <form action="" className={styles.form_horizontal}>
+          <Input
+            type="text"
+            placeholder={'0 xx xxx xxx'}
+            value={''}
+            onChange={function (value: string): void {
+              throw new Error('Function not implemented.');
+            }}
+          />
+          <Button
+            color={'var(--theme_primary_color_blue_4)'}
+            bgcolor={'var(--theme_primary_color_blue_1)'}
+            border={'var(--theme_primary_color_blue_1)'}
+            hover_border={'var(--theme_primary_color_blue_2)'}
+            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+            icon="arrow_right"
+          >
+            Plasează comanda
+          </Button>
+        </form>
+      </PopupBuy>
       {/*<div className={`title ${styles.title1}`}>*/}
       {/*  Crează-ți propriul abonament:*/}
       {/*</div>*/}
@@ -799,8 +770,8 @@ export default function Mobile() {
       <MyApp style_type={'blue_white'} />
       <Chat />
       <Feedback />
-      <Faq style_type="1">
-        <FaqQA question=" Unde pot achita factura mea pentru Internet?">
+      <FaqV2 max_faq={6}>
+        <FaqQAV2 question=" Unde pot achita factura mea pentru Internet?">
           <div>
             <span>
               <strong></strong>Cea mai rapidă și comodă modalitate de achitare a
@@ -834,8 +805,8 @@ export default function Mobile() {
               </li>
             </ul>
           </div>
-        </FaqQA>
-        <FaqQA question="Cum pot să raportez o infracțiune sau o ilegalitate?">
+        </FaqQAV2>
+        <FaqQAV2 question="Cum pot să raportez o infracțiune sau o ilegalitate?">
           <p>
             <span></span>
             <span>
@@ -860,8 +831,8 @@ export default function Mobile() {
             </span>
             <span></span>
           </p>
-        </FaqQA>
-        <FaqQA question="Ce este un atac DDoS și cum îți poate afecta afacerea?">
+        </FaqQAV2>
+        <FaqQAV2 question="Ce este un atac DDoS și cum îți poate afecta afacerea?">
           <div>
             Un atac DDoS (Distributed Denial of Service) este o amenințare
             cibernetică care poate paraliza activitatea online a afacerii tale.
@@ -888,8 +859,8 @@ export default function Mobile() {
             </ul>
             Nu lăsa atacurile cibernetice să îți pună afacerea în pericol!
           </div>
-        </FaqQA>
-        <FaqQA question="Cum pot să raportez o infracțiune sau o ilegalitate?">
+        </FaqQAV2>
+        <FaqQAV2 question="Cum pot să raportez o infracțiune sau o ilegalitate?">
           <p>
             <span></span>
             <span>
@@ -914,8 +885,8 @@ export default function Mobile() {
             </span>
             <span></span>
           </p>
-        </FaqQA>
-        <FaqQA question="Cum pot să raportez o infracțiune sau o ilegalitate?">
+        </FaqQAV2>
+        <FaqQAV2 question="Cum pot să raportez o infracțiune sau o ilegalitate?">
           <p>
             <span></span>
             <span>
@@ -940,36 +911,29 @@ export default function Mobile() {
             </span>
             <span></span>
           </p>
-        </FaqQA>
-        <FaqQA question="Cum pot să raportez o infracțiune sau o ilegalitate?">
-          <p>
-            <span></span>
-            <span>
-              Folosește-ți smartphone-ul ca și un Internet Hotspot, accesând:
-              <br />
-              <br />
-              <strong>Setări</strong>⇒&nbsp;
-              <strong>Hotspot mobil și tethering</strong>&nbsp;(trebuie să fie
-              activat) ⇒&nbsp;<strong>alege Parolă Wi-Fi&nbsp;</strong>⇒&nbsp;
-              <strong>setează parola cu minim 8 caractere</strong>⇒
-              <strong>SALVARE</strong>&nbsp;⇒<strong>MAI MULTE</strong>
-              &nbsp;(pentru Dispositive premise/Configurare Mobile hotspot -
-              complează numele rețelei și parola pentru a te conecta doar cu
-              dispozitivele cunoscute /Setări de expirare). La dezactivare -
-              debifează Hotspot mobil.
-              <br />
-              Notă:&nbsp; Setările pot fi diferite în funcție de modelul
-              telefonului.
-              <br />
-              <br />E bine să cunoști! Prin HotSpot se mărește consumul de date
-              a traficului de internet.
-            </span>
-            <span></span>
-          </p>
-        </FaqQA>
-      </Faq>
+        </FaqQAV2>
+      </FaqV2>
 
       <Footer disclaimer={true} />
     </>
+  );
+}
+
+function GreenArrow() {
+  return (
+    <svg
+      width="16"
+      height="14"
+      viewBox="0 0 16 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M9 13.4128C8.83183 13.4128 8.67055 13.346 8.55164 13.2271C8.43273 13.1082 8.36592 12.9469 8.36592 12.7787V4.16376L6.06634 6.46334C5.94614 6.57534 5.78716 6.63632 5.62289 6.63342C5.45862 6.63052 5.30189 6.56397 5.18572 6.4478C5.06954 6.33163 5.003 6.1749 5.0001 6.01063C4.9972 5.84636 5.05818 5.68738 5.17018 5.56718L8.55192 2.18544C8.67081 2.0667 8.83197 2 9 2C9.16803 2 9.32919 2.0667 9.44808 2.18544L12.8298 5.56718C12.9418 5.68738 13.0028 5.84636 12.9999 6.01063C12.997 6.1749 12.9305 6.33163 12.8143 6.4478C12.6981 6.56397 12.5414 6.63052 12.3771 6.63342C12.2128 6.63632 12.0539 6.57534 11.9337 6.46334L9.63408 4.16376V12.7787C9.63408 12.9469 9.56727 13.1082 9.44836 13.2271C9.32945 13.346 9.16817 13.4128 9 13.4128Z"
+        fill="#86CA5E"
+      />
+    </svg>
   );
 }
