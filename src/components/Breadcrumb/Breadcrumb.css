@@ -36,6 +36,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 16px; /* 114.286% */
+  cursor: default;
 }
 .breadcrumb-item {
   margin-right: 8px;

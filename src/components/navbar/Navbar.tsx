@@ -138,7 +138,7 @@ const Navbar: React.FC = () => {
   const [isSticky, setIsSticky] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY >= 18);
+      setIsSticky(window.scrollY >= 30);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -162,21 +162,32 @@ const Navbar: React.FC = () => {
         className={` ${styles.navbar}  ${isSticky ? styles.navbar_bottom_sticky : ''} mtc_navbar `}
       >
         <div className={styles.navbar_top}>
-          <div className={styles.navbar_top_left}>
-            <Link to="/magazine">Magazine</Link>
-            <Link
-              to={`https://www.moldtelecom.md/${t('lang')}/personal/contacte`}
-            >
-              Contacte
+          <div className={styles.navbar_top_left_block}>
+            <Link to="/magazine">
+              {/*Magazine*/}
+              <div
+                className={`${styles.navbar_top_left_block_icons} ${styles.navbar_top_left_block_icons_left}`}
+              >
+                <Icon size={'20px'} type="bag" />
+              </div>
             </Link>
-            (6:00 -24:00)
-            <div
-              className={`${styles.navbar_top_left_availabilty} ${
-                isAvailable
-                  ? styles.navbar_top_left_availabilty_available
-                  : styles.navbar_top_left_availabilty_unavailable
-              }`}
-            />
+            <div className={styles.navbar_top_left}>
+              <Link
+                to={`https://www.moldtelecom.md/${t('lang')}/personal/contacte`}
+              >
+                {/*Contacte*/}
+                <Icon size={'20px'} type="call" />
+                (6:00 -24:00)
+              </Link>
+
+              <div
+                className={`${styles.navbar_top_left_availabilty} ${
+                  isAvailable
+                    ? styles.navbar_top_left_availabilty_available
+                    : styles.navbar_top_left_availabilty_unavailable
+                }`}
+              />
+            </div>
           </div>
           <div className={styles.navbar_top_right}>
             <Link to={`https://my.moldtelecom.md/my-moldtelecom`}>

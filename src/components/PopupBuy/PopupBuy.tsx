@@ -159,17 +159,19 @@ const PopupBuy: React.FC<PopupProps> = ({
             </div>
           ))}
         </Slider>
-       <div className={styles.buy_inside}>
-         <div className={styles.buy_title}><b>Mulțumim</b> <br/>
-           că ai ales Moldtelecom</div>
+        <div className={styles.buy_inside}>
+          <div className={styles.buy_title}>
+            <b>Mulțumim</b> <br />
+            că ai ales Moldtelecom
+          </div>
 
-       <div>
-         {title}
-         <br />
-         {config}
-       </div>
-         {children}
-       </div>
+          <div>
+            {title}
+            <br />
+            {config}
+          </div>
+          {children}
+        </div>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ export const Recaptcha: React.FC = () => {
     e.preventDefault();
     if (!recaptchaRef.current) return;
     try {
-      const token = await recaptchaRef.current.executeAsync();
+      // const token = await recaptchaRef.current.executeAsync();
       recaptchaRef.current.reset();
       // inject or update hidden field
       let hid = formRef.current!.querySelector<HTMLInputElement>(
@@ -39,7 +39,7 @@ export const Recaptcha: React.FC = () => {
         hid.name = 'recaptchaToken';
         formRef.current!.append(hid);
       }
-      hid.value = token;
+      // hid.value = token;
       // now submit for real
       formRef.current!.submit();
     } catch (err) {

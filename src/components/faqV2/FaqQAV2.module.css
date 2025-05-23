@@ -25,6 +25,24 @@
   line-height: 18px;
   letter-spacing: 0.18px;
 }
+@keyframes fadeIn {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.FaqQA_title:hover .FaqQA_title_svg_block {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
 .FaqQA_title_svg_block {
   width: 24px;
   height: 24px;

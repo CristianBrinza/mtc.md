@@ -189,7 +189,7 @@ const Footer: React.FC<FooterProps> = ({
               </defs>
             </svg>
             <div className={styles.footer_inside_top_icons}>
-              <Link to="/">
+              <Link to="/" className={styles.footer_inside_top_icons_link}>
                 <svg
                   width="14"
                   height="24"
@@ -203,7 +203,7 @@ const Footer: React.FC<FooterProps> = ({
                   />
                 </svg>
               </Link>
-              <Link to="/">
+              <Link to="/" className={styles.footer_inside_top_icons_link}>
                 <svg
                   width="23"
                   height="24"
@@ -221,7 +221,7 @@ const Footer: React.FC<FooterProps> = ({
                   />
                 </svg>
               </Link>
-              <Link to="/">
+              <Link to="/" className={styles.footer_inside_top_icons_link}>
                 <svg
                   width="28"
                   height="28"
@@ -235,7 +235,7 @@ const Footer: React.FC<FooterProps> = ({
                   />
                 </svg>
               </Link>
-              <Link to="/">
+              <Link to="/" className={styles.footer_inside_top_icons_link}>
                 <svg
                   width="30"
                   height="30"
@@ -249,7 +249,7 @@ const Footer: React.FC<FooterProps> = ({
                   />
                 </svg>
               </Link>
-              <Link to="/">
+              <Link to="/" className={styles.footer_inside_top_icons_link}>
                 <svg
                   width="28"
                   height="22"
@@ -263,7 +263,7 @@ const Footer: React.FC<FooterProps> = ({
                   ></path>
                 </svg>
               </Link>
-              <Link to="/">
+              <Link to="/" className={styles.footer_inside_top_icons_link}>
                 <svg
                   width="25"
                   height="24"
@@ -277,7 +277,7 @@ const Footer: React.FC<FooterProps> = ({
                   />
                 </svg>
               </Link>
-              <Link to="/">
+              <Link to="/" className={styles.footer_inside_top_icons_link}>
                 <svg
                   width="28"
                   height="28"

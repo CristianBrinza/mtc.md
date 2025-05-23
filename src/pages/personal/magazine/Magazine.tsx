@@ -97,7 +97,11 @@ export default function Magazine() {
         const marker = new google.maps.Marker({
           position: { lat: m.lat, lng: m.lng },
           map,
-          icon: 'https://moldtelecom.md/images/mtc_marker.png',
+          icon: {
+            url: '/images/general/pinpoint_marker.png',
+            scaledSize: new google.maps.Size(28, 36), // Scale to 0.5 (original size assumed to be ~50x80)
+            anchor: new google.maps.Point(12.5, 40), // Half width, full height to anchor from bottom
+          },
         });
         marker.addListener('click', () => {
           // 1) open the InfoWindow

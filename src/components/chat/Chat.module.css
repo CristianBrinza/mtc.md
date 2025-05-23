@@ -59,7 +59,7 @@
   transform: translate(-50%, -50%);
 }
 
-.chat_overlay{
+.chat_overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -69,9 +69,39 @@
   z-index: 9999999999;
   pointer-events: none;
   opacity: 0;
-
 }
-.chat_overlay_active{
+.chat_overlay_active {
   pointer-events: auto;
   opacity: 1;
+}
+
+.chat_icon_telegram,
+.chat_icon_viber,
+.chat_icon_chat {
+  position: absolute;
+  bottom: 55px;
+  right: 73px;
+  transform: scale(1.9);
+  transition:
+    bottom 0.3s ease,
+    right 0.3s ease,
+    transform 0.5s ease;
+}
+.chat_icon_telegram:hover,
+.chat_icon_viber:hover,
+.chat_icon_chat:hover {
+  transform: scale(2.2);
+}
+
+.chat_overlay_active .chat_icon_telegram {
+  bottom: 140px;
+  right: 73px;
+}
+.chat_overlay_active .chat_icon_viber {
+  bottom: 116px;
+  right: 138px;
+}
+.chat_overlay_active .chat_icon_chat {
+  bottom: 55px;
+  right: 160px;
 }

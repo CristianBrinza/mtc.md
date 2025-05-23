@@ -177,7 +177,9 @@ export default function Triple() {
         onClose={() => setActivePopup(null)}
         title={''}
         config={''}
-      />
+      >
+        test
+      </PopupBuy>
 
       <Functions
         style_type={'blue'}

@@ -19,6 +19,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../../../components/Button.tsx';
 import OptionsCards from '../../../../components/options_cards/OptionsCards.tsx';
 import Input from '../../../../components/input/Input.tsx';
+import Popup from '../../../../components/Popup/Popup.tsx';
 
 export default function Mobile() {
   const breadcrumbItems = [
@@ -88,6 +89,7 @@ export default function Mobile() {
   };
 
   const [activePopup, setActivePopup] = useState<string | null>(null);
+  const [activePopupDetalii, setActivePopupDetalii] = useState<boolean>(false);
   const [title, setTitle] = useState<string>('');
 
   const set_Abonament = (popup: string, title: string) => {
@@ -280,7 +282,7 @@ export default function Mobile() {
         <div className={styles.tm_carousell_block}>
           <AbonamentCard
             type={'Abonament'}
-            title={'Liberty 120'}
+            title={'Star 120'}
             image={'/images/landings/72474374.png'}
             price={'78'}
             old_price={'120 lei/lună'}
@@ -370,7 +372,7 @@ export default function Mobile() {
         <div className={styles.tm_carousell_block}>
           <AbonamentCard
             type={'Abonament'}
-            title={'Liberty 150'}
+            title={'Star 150'}
             image={'/images/landings/98540076.png'}
             price={'97.5'}
             old_price={'160 lei/lună'}
@@ -641,10 +643,92 @@ export default function Mobile() {
           hover_border={'var(--theme_primary_color_blue_2)'}
           hover_bgcolor={'var(--theme_primary_color_blue_2)'}
           icon={'arrow_right'}
+          onClick={() => {
+            setActivePopupDetalii(true);
+          }}
         >
           Detalii ofertă
         </Button>
       </div>
+
+      <Popup
+        id="9281270"
+        width={'1000px'}
+        isVisible={activePopupDetalii}
+        onClose={() => setActivePopupDetalii(false)}
+      >
+        <>
+          <ul>
+            <li>
+              Oferta promoțională constă în acordarea unei reduceri de 35% la
+              plata lunare a abonamentelor Star 120, Star150, Liberty 190 și
+              Liberty Plus 250, valabilă pe întreaga perioadă contractuală de 24
+              de luni.
+            </li>
+            <li>
+              Oferta este destinată pentru clienții noi, la conectare, portare
+              din altă rețea sau pentru cei existenți, la reperfectarea
+              contractului sau migrarea de la Prepay.
+            </li>
+            <li>
+              Perioada minimă contractuală pentru abonamentul Start 95 este de 6
+              luni
+            </li>
+            <li>
+              Perioada de comercializare a ofertei: 03.03.2025 – 25.08.2025
+              (inclusiv).
+            </li>
+            <li>
+              Abonații conectați la abonamentele Liberty 190 și Liberty Plus 250
+              pot comunica în Roaming UE+SEE din contul minutelor naționale
+              incluse în abonament. In plus, abonamentul Liberty 190 oferă 7 GB,
+              iar abonamentul Liberty Plus 250 – 10 GB disponibili spre
+              utilizare în Roaming în rețeaua operatorilor incluși în grupul
+              UE+SEE.
+            </li>
+            <li>
+              Pentru apelurile internaționale, destinațiile spre rețeaua fixă și
+              mobilă sunt următoarele țări: Marea Britanie, Franța, Germania,
+              Italia, Spania, Romania, Israel, Rusia, Cehia, Ucraina.
+            </li>
+            <li>
+              Abonații conectați la abonamentul ”Liberty Plus 250” sunt obligați
+              să evite folosirea abuzivă a serviciilor incluse în abonament.
+              Prin ”folosire abuzivă a serviciilor incluse în abonament” se
+              înțelege efectuarea de apeluri de ieșire spre „alți operatori
+              naționali” și/sau expedierea SMS-urilor spre „alți operatori
+              naționali” către mai mult de 200 numere telefonice unice, în
+              decursul unei perioade de facturare, și/sau efectuarea, în
+              decursul unei perioade de facturare, de apeluri nelimitate spre
+              „alți operatori naționali” în volum ce depășește 3000 minute, cu
+              condiția că numărul de minute de ieșire spre „alți operatori
+              naționali” depășește de cel puțin două ori numărul minutelor de
+              intrare dinspre „alți operatori naționali” în aceeași perioadă.
+              Abonații care vor fi identificați că au utilizat abuziv serviciile
+              incluse în abonamentul ”Liberty Plus 250” vor beneficia în
+              continuare de conținutul standard de 1000 Minute și 245 SMS
+              naționale la abonamentul respectiv;
+            </li>
+            <li>
+              Viteza la internet se oferă în funcție de posibilitățile tehnice.
+            </li>
+            <li>
+              Traficul Internet va avea viteza de transfer a datelor la
+              capacitate maximă download (descarcare) și de până la 512 Kbps
+              upload (încarcare), în dependenta de opțiunile suplimentare
+              activate – pentru tehnologia 3G, și la capacitate maximă
+              download/upload (descarcare/încarcare) – pentru tehnologia 4G.
+            </li>
+            <li>
+              Rezoluțiunea anticipată (inclusiv migrarea spre PrePay, schimbul
+              de abonament către unul cu valoare mai mica sau port out) până la
+              expirarea perioadei minime contractuale implică achitarea unei
+              plăți cu titlu de prejudiciu, conform formulei de calcul: 35% din
+              plata de abonament * nr. de luni acordare reducere.
+            </li>
+          </ul>
+        </>
+      </Popup>
       <PopupBuy
         id="3281270"
         isVisible={activePopup === '3281270'}
@@ -653,14 +737,19 @@ export default function Mobile() {
         config={''}
       >
         Abonamenteul tau:
+        <br />
+        <div className={styles.buy_type}>{title}</div>
         <form action="" className={styles.form_horizontal}>
           <Input
             type="text"
             placeholder={'0 xx xxx xxx'}
             value={''}
-            onChange={function (value: string): void {
+            onChange={function (): void {
               throw new Error('Function not implemented.');
             }}
+            // onChange={function (value: string): void {
+            //   throw new Error('Function not implemented.');
+            // }}
           />
           <Button
             color={'var(--theme_primary_color_blue_4)'}

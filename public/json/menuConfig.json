@@ -89,7 +89,7 @@
           { "label": "Moldtelecom TV", "to": "/" },
           { "label": "Moldtelecom TV GO", "to": "/" },
           { "label": "Cinematografe online", "to": "/" },
-          { "label": "Wi-Fi Plus", "to": "/" }
+          { "label": "Wi-Fi Plus", "to": "/wifi-plus" }
         ]
       },
       {

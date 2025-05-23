@@ -48,7 +48,7 @@
   /*font-size: 18px;*/
   font-size: 16px;
   line-height: 15px;
-    /*font-weight: 600;*/
+  /*font-weight: 600;*/
   opacity: 0.9;
 }
 .tm_carousell_block_row_inline {
@@ -91,7 +91,7 @@
   border-radius: 100px;
   /*background-color: var(--theme_primary_color_light_gray);*/
   display: flex;
-  gap:10px;
+  gap: 10px;
   align-items: center;
   justify-content: center;
   /*overflow: hidden;*/
@@ -153,9 +153,12 @@
   height: auto;
 }
 
-.form_horizontal{
+.form_horizontal {
   display: flex;
   gap: 10px;
+}
+
+.buy_type {
 }
 
 @media (max-width: 1300px) {

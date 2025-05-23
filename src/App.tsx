@@ -1,6 +1,6 @@
 import './App.css';
 import { LanguageProvider } from './context/LanguageContext.tsx';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Home from './pages/home/Home.tsx';
 import NotFound from './pages/not_found/NotFound.tsx';
 import { I18nextProvider } from 'react-i18next';
@@ -16,6 +16,7 @@ function App() {
         <LanguageProvider>
           <ScrollToTop />
           <Routes>
+            <Route path="/" element={<Navigate to="/ro" replace />} />
             <Route path="/" element={<Home />} />
             <Route path="/:lang/" element={<Home />} />
             <Route path="/:lang/triple" element={<Triple />} />

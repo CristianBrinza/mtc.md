@@ -9,7 +9,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ color, children }) => {
   const HeroStyle: React.CSSProperties = {
     background: color,
-    height: '550px',
+    // height: '550px',
   };
 
   return (
