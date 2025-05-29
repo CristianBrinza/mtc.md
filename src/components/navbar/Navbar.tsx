@@ -465,9 +465,12 @@ const Navbar: React.FC = () => {
                                     styles.navbar_bottom_menu_option_submenu_block_list_item_row
                                   }
                                 >
-
                                   <a
-                                    href={subItem.to.includes('/personal') ? `https://www.moldtelecom.md/${t('lang')}${subItem.to}` : subItem.to}
+                                    href={
+                                      subItem.to.includes('/personal')
+                                        ? `https://www.moldtelecom.md/${t('lang')}${subItem.to}`
+                                        : subItem.to
+                                    }
                                     className={
                                       block.small
                                         ? styles.navbar_bottom_menu_option_submenu_block_list_item_small

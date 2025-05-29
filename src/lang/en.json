@@ -9,5 +9,125 @@
     "faq_more": "show more",
     "faq_less": "show less",
     "videos": "Video"
+  },
+  "wifi_plus": {
+    "breadcrumb": {
+      "internet": "Internet",
+      "wifi_plus": "Wi-Fi Plus"
+    },
+    "hero": {
+      "alt": "Moldtelecom"
+    },
+    "fill_house": "Fill your home with next-gen Wi-Fi",
+    "functions": {
+      "multi_device": {
+        "title": "Multi-Device",
+        "text": "Supports connection of up to 3 devices per fixed Internet connection."
+      },
+      "extended_coverage": {
+        "title": "Extended Coverage",
+        "text": "Ensures stable Wi-Fi connectivity in every corner of your home."
+      },
+      "super_speeds": {
+        "title": "Superior Speeds",
+        "text": "Browse and stream at high speeds without interruptions."
+      },
+      "constant_support": {
+        "title": "Constant Support",
+        "text": "Receive expert technical assistance anytime for a worry-free experience."
+      },
+      "total_flexibility": {
+        "title": "Total Flexibility",
+        "text": "The Wi-Fi PLUS service can be connected or disconnected at any time."
+      }
+    },
+    "carousel": {
+      "routers": [
+        {
+          "title": "D-Link\nDIR-615",
+          "desc": "Offers ultra-fast connections, extended coverage and outstanding stability, smoothly and without interruptions.",
+          "price": "20"
+        },
+        {
+          "title": "HUAWEI\nOptiXstar K562e-10",
+          "desc": "With a modern design and advanced tech, it’s the ideal choice for today’s smart homes.",
+          "price": "49"
+        }
+      ],
+      "order_now": "Order now",
+      "price_unit": "lei/month"
+    },
+    "details": {
+      "blocks": [
+        {
+          "title": "Usage Conditions",
+          "items": [
+            "Wi-Fi PLUS is an add-on to the existing fixed Internet service, allowing for Wi-Fi coverage extension.",
+            "The Wi-Fi PLUS service fee is added to the monthly subscription starting from the service activation date, confirmed via OTP code.",
+            "The monthly fee applies per each device granted for Wi-Fi coverage expansion. Max 3 devices per fixed Internet connection.",
+            "The subscriber uses the equipment under a commodatum agreement while the service is active.",
+            "The service is disconnected upon returning the device and all accessories. Missing/damaged accessories are billed accordingly.",
+            "The provider may refuse disconnection if the device is not returned or not reimbursed.",
+            "In case of lost/damaged device, compensation is 300 MDL/device (no VAT) or 850 MDL/device (no VAT).",
+            "Connection/disconnection can be done on any day of the billing period without recalculation."
+          ]
+        },
+        {
+          "title": "Comparison",
+          "headers": {
+            "basic": "Basic",
+            "mesh": "Mesh"
+          },
+          "rows": [
+            { "key": "Wifi spectrum", "basic": "2.4 Ghz", "mesh": "2.4/5 Ghz" },
+            {
+              "key": "Standard",
+              "basic": "802.11n (wifi4)",
+              "mesh": "802.11ax (wifi6)"
+            },
+            {
+              "key": "Antennas (mode)",
+              "basic": "2x2 Mimo",
+              "mesh": "2x2 Mu-mimo"
+            },
+            { "key": "Max link-speed", "basic": "300", "mesh": "2400" },
+            {
+              "key": "Effective max speed",
+              "basic": "90/45 Mbps",
+              "mesh": "700/700 Mbps"
+            },
+            {
+              "key": "Current connection",
+              "basic": "cable (switch)",
+              "mesh": "wireless (transparent bridge)"
+            },
+            { "key": "Signal", "basic": "normal", "mesh": "good" },
+            { "key": "Roaming", "basic": "N/A", "mesh": "802.11 k/v" },
+            {
+              "key": "Max channel bandwidth",
+              "basic": "40 Mhz",
+              "mesh": "160 Mhz"
+            }
+          ]
+        }
+      ]
+    },
+    "what_is": {
+      "title": "What is Wi-Fi PLUS?",
+      "text_1": "Wi-Fi PLUS is a service that gives you an additional device to extend Wi-Fi signal in weak zones of your home. ",
+      "text_2": " It receives signal from the main router and retransmits it for a fast and stable connection throughout the house."
+    },
+    "why_choose": {
+      "title": "Why choose Wi-Fi PLUS?",
+      "text": "Connect multiple devices to the same Wi-Fi network without re-entering the password and without interruptions while moving around your home."
+    },
+    "faq": {
+      "q1": "Is Wi-Fi PLUS compatible with any router?",
+      "a1": "Wi-Fi PLUS is designed to be compatible with most modern routers. For specific compatibility details, refer to the device documentation or contact Customer Support.",
+      "q2": "Can I disconnect Wi-Fi PLUS?",
+      "a2": "Yes, you can disconnect the Wi-Fi PLUS service at any time without penalties. Return the device at any Moldtelecom store.",
+      "q3": "How is Wi-Fi PLUS billed?",
+      "a3": "Billing starts from the service activation moment and is included in your monthly Internet bill until it’s disconnected."
+    }
   }
 }

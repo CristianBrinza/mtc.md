@@ -23,5 +23,122 @@
   },
   "footer": {
     "disclaimer": "Stimate client, Moldtelecom.md face eforturi permanente pentru a păstra acuratețea informațiilor din acest site. Cu toate acestea, rareori, informațiile plasate pe site pot conține inadvertențe punctuale, cum ar fi: unele specificații sau prețuri pot fi modificate de către producător, fără preaviz sau pot conține erori de operare. În cazul în care prețurile sau alte detalii referitoare la produse au fost afișate greșit, inclusiv din cauza faptului că au fost introduse greșit în baza de date, www.moldtelecom.md S. A „Moldtelecom” își rezervă dreptul de a anula comercializarea produsului respectiv și de a anunța clientul în cel mai scurt timp despre eroarea aparută. Vă mulțumim pentru înțelegere."
+  },
+  "wifi_plus": {
+    "breadcrumb": {
+      "internet": "Internet",
+      "wifi_plus": "Wi-Fi Plus"
+    },
+    "hero": {
+      "alt": "Moldtelecom"
+    },
+    "fill_house": "Umple casa cu Wi-Fi de ultimă generație",
+    "functions": {
+      "multi_device": {
+        "title": "Multi-Dispozitiv",
+        "text": "Suportă conectarea a până la 3 echipamente per conexiune de Internet fix."
+      },
+      "extended_coverage": {
+        "title": "Acoperire Extinsă",
+        "text": "Asigură conexiune stabilă Wi-Fi în fiecare colț al casei tale."
+      },
+      "super_speeds": {
+        "title": "Viteze Superioare",
+        "text": "Navighează și transmite în streaming la viteze rapide, fără întreruperi."
+      },
+      "constant_support": {
+        "title": "Suport Constant",
+        "text": "Beneficiezi de asistență tehnică specializată oricând ai nevoie pentru o experiență fără griji."
+      },
+      "total_flexibility": {
+        "title": "Flexibilitate Totală",
+        "text": "Serviciul Wi-Fi PLUS poate fi conectat sau deconectat oricând."
+      }
+    },
+    "carousel": {
+      "routers": [
+        {
+          "title": "D-Link\nDIR-615",
+          "desc": "Oferă conexiuni ultra-rapide, acoperire extinsă și stabilitate remarcabilă, fluentă și fără întreruperi.",
+          "price": "20"
+        },
+        {
+          "title": "HUAWEI\nOptiXstar K562e-10",
+          "desc": "Cu un design modern și tehnologie avansată, este alegerea ideală pentru locuințele digitale de astăzi.",
+          "price": "49"
+        }
+      ],
+      "order_now": "Comandă acum",
+      "price_unit": "lei/lună"
+    },
+    "details": {
+      "blocks": [
+        {
+          "title": "Condiții de utilizare",
+          "items": [
+            "Wi-Fi PLUS este o opțiune adițională la serviciul de Internet fix existent, care permite extinderea ariei de acoperire Wi-Fi.",
+            "Plata pentru serviciul Wi-Fi PLUS se va include în abonamentul lunar și se va taxa din momentul activării serviciului, fapt confirmat prin livrarea codului OTP de către Titular.",
+            "Abonamentul lunar se va aplica per fiecare echipament acordat pentru extinderea ariei de acoperire Wi-Fi. În cadrul serviciului Wi-Fi PLUS pot fi conectate maxim 3 echipamente terminale per conexiune Internet fix.",
+            "Abonatul va utiliza echipamentul oferit de către Furnizor în condiții de comodat, pe perioada utilizării serviciului Wi-Fi PLUS.",
+            "Deconectarea serviciului Wi-Fi PLUS va avea loc în momentul restituirii echipamentului terminal (cu toate accesoriile incluse). În cazul depistării accesoriilor lipsă/defecte, Abonatul se obligă să achite contravaloarea acestora.",
+            "Furnizorul este în drept de a refuza deconectarea serviciului Wi-Fi PLUS în cazul nerestituirii echipamentului sau a nerambursării contravalorii acestuia.",
+            "În cazul nereturnării (pierderii/deteriorării) echipamentului, abonatul va restitui plata cu titlu de prejudiciu în mărime de 300 de lei/echipament (fără TVA) sau 850 de lei/echipament (fără TVA).",
+            "Conectarea/deconectarea serviciului este posibilă în orice zi a perioadei de facturare, fără efectuarea recalculului."
+          ]
+        },
+        {
+          "title": "Comparație",
+          "headers": { "basic": "Basic", "mesh": "Mesh" },
+          "rows": [
+            { "key": "Wifi spectrum", "basic": "2,4 Ghz", "mesh": "2,4/5 Ghz" },
+            {
+              "key": "Standard",
+              "basic": "802.11n (wifi4)",
+              "mesh": "802.11ax (wifi6)"
+            },
+            {
+              "key": "Antennas (mode)",
+              "basic": "2x2 Mimo",
+              "mesh": "2x2 Mu-mimo"
+            },
+            { "key": "Max link-speed", "basic": "300", "mesh": "2400" },
+            {
+              "key": "Effective max speed",
+              "basic": "90/45 Mbps",
+              "mesh": "700/700 Mbps"
+            },
+            {
+              "key": "Current connection",
+              "basic": "cable (switch)",
+              "mesh": "wireless (transparent bridge)"
+            },
+            { "key": "Signal", "basic": "normal", "mesh": "good" },
+            { "key": "Roaming", "basic": "N/A", "mesh": "802.11 k/v" },
+            {
+              "key": "Max channel bandwidth",
+              "basic": "40 Mhz",
+              "mesh": "160 Mhz"
+            }
+          ]
+        }
+      ]
+    },
+    "what_is": {
+      "title": "Ce este Wi-Fi PLUS?",
+      "text_1": "Wi-Fi PLUS este un serviciu care îți oferă un dispozitiv suplimentar pentru extinderea semnalului Wi-Fi în zonele casei cu acoperire slabă. ",
+      "text_2": "Prin amplasarea acestuia în locurile unde semnalul Wi-Fi este slab sau inexistent, dispozitivul preia semnalul de la routerul principal și îl retransmite, asigurând o conexiune stabilă și rapidă în întreaga locuință."
+    },
+    "why_choose": {
+      "title": "De ce să alegi Wi-Fi PLUS?",
+      "text": "Conectezi multiple dispozitive la aceeași rețea Wi-Fi, fără a fi necesar să introduci repetat parola și fără întreruperi la navigare în timp ce te deplasezi în locuința ta."
+    },
+    "faq": {
+      "q1": "Wi-Fi PLUS este compatibil cu orice router?",
+      "a1": "Wi-Fi PLUS este proiectat pentru a fi compatibil cu majoritatea routerelor moderne. Pentru detalii specifice despre compatibilitate, te rugăm să consulți documentația echipamentului sau să contactezi Serviciul Suport Clienți.",
+      "q2": "Pot deconecta serviciul Wi-Fi PLUS?",
+      "a2": "Da, serviciul Wi-Fi PLUS poate fi deconectat în orice moment fără penalități. Pentru deconectare, returnează echipamentul în orice magazin Moldtelecom.",
+      "q3": "Cum sunt facturate costurile pentru Wi-Fi PLUS?",
+      "a3": "Facturarea începe de la momentul activării serviciului și costurile sunt incluse în factura lunară de Internet fix până la deconectare."
+    }
   }
 }

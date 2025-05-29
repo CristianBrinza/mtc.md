@@ -311,10 +311,16 @@ const Footer: React.FC<FooterProps> = ({
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
                   Magazine
                 </Link>
-                <Link to={'/'} className={`${styles.footer_inside_middle_link} ${styles.footer_inside_middle_link_sp}`}>
+                <Link
+                  to={'/'}
+                  className={`${styles.footer_inside_middle_link} ${styles.footer_inside_middle_link_sp}`}
+                >
                   Asistenta
                 </Link>
-                <Link to={'/'} className={`${styles.footer_inside_middle_link} ${styles.footer_inside_middle_link_sp}`}>
+                <Link
+                  to={'/'}
+                  className={`${styles.footer_inside_middle_link} ${styles.footer_inside_middle_link_sp}`}
+                >
                   Licitații
                 </Link>
                 {isAboutVisible == false && (
@@ -365,7 +371,9 @@ const Footer: React.FC<FooterProps> = ({
                 ]}
               </div>
             </div>
-            <div className={`${styles.footer_inside_middle_block} ${styles.footer_inside_middle_block_sp}`}>
+            <div
+              className={`${styles.footer_inside_middle_block} ${styles.footer_inside_middle_block_sp}`}
+            >
               <div className={styles.footer_inside_middle_title}>&nbsp;</div>
               <div className={styles.footer_inside_middle_list}>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>

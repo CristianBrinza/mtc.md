@@ -35,7 +35,7 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  .faq_inside_right{
+  .faq_inside_right {
     width: 100%;
   }
   .faq_title {
@@ -47,17 +47,16 @@
 }
 
 @media (max-width: 1000px) {
-  .faqWrap{
+  .faqWrap {
     width: 100%;
   }
-  .faq{
+  .faq {
     max-width: 100%;
-    padding: 0 20px ;
+    padding: 0 20px;
   }
 }
 @media (max-width: 650px) {
   .faq_title {
-
     padding-left: 0px;
   }
 }
