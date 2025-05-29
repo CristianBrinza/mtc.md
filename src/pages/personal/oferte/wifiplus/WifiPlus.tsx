@@ -9,6 +9,7 @@ import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
 import Slider from 'react-slick';
 import Button from '../../../../components/Button.tsx';
 import { useState } from 'react';
+import { t } from 'i18next';
 
 const ArrowIcon: React.FC<{ rotated?: boolean }> = ({ rotated = false }) => (
   <svg
@@ -68,11 +69,16 @@ export default function WifiPlus() {
     <>
       <Navbar />
       <Breadcrumb items={breadcrumbItems} />
-      <Hero color=" #F7F7F7">
+      <Hero color=" #F7F7F7" classname={styles.hero}>
         <div className={styles.hero_img_block}>
           <img
             className={styles.hero_img}
-            src="/images/landings/15274512.png"
+            src={`/images/landings/15274512${t('lang')}.png`}
+            alt="Moldtelecom"
+          />
+          <img
+            className={styles.hero_img_tablet}
+            src={`/images/landings/90296512${t('lang')}.png`}
             alt="Moldtelecom"
           />
         </div>
@@ -167,7 +173,7 @@ export default function WifiPlus() {
                 </div>
                 <img
                   className={styles.wifi_carousell_block_inside_certified}
-                  src="/images/landings/95294512.png"
+                  src="/images/landings/90294512.png"
                   alt="Moldtelecom"
                 />
                 <div className={styles.wifi_carousell_block_inside_btns}>
@@ -296,7 +302,7 @@ export default function WifiPlus() {
               <li>
                 În cazul nereturnării (pierderii/deteriorării) echipamentului,
                 abonatul va restitui plata cu titlu de prejudiciu în mărime de
-                300 de lei/echipament (fără TVA).
+                300 de lei/echipament (fără TVA) sau  850 de lei/echipament (fără TVA).
               </li>
               <li>
                 Conectarea/deconectarea serviciului este posibilă în orice zi a
@@ -305,6 +311,7 @@ export default function WifiPlus() {
             </ul>
           </div>
         </div>
+
 
         {/* Block 1 */}
         <div className={styles.wifi_carousell_btns_detalii_line}>
@@ -427,13 +434,28 @@ export default function WifiPlus() {
           </div>
         </div>
       </div>
+      {/*<div*/}
+      {/*  className={`${styles.wifi_plus_full_block} ${styles.wifi_carousell_full_bg_3}`}*/}
+      {/*>*/}
+      {/*  <div*/}
+      {/*    className={`${styles.wifi_plus_full_block_inside} ${styles.wifi_carousell_full_bg_block_3}`}*/}
+      {/*  >*/}
+      {/*    <div className={styles.wifi_plus_full_block_inside_text}>*/}
+      {/*      <div className={'title_3'}>De ce să alegi Wi-Fi PLUS?</div>*/}
+      {/*      <br />*/}
+      {/*      Conectezi multiple dispozitive la aceeași rețea Wi-Fi, fără a fi*/}
+      {/*      necesar să introduci repetat parola și fără întreruperi la navigare*/}
+      {/*      în timp ce te deplasezi în locuința ta.{' '}*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
       <div
         className={`${styles.wifi_plus_full_block} ${styles.wifi_carousell_full_bg_2}`}
       >
         <div
           className={`${styles.wifi_plus_full_block_inside} ${styles.wifi_carousell_full_bg_block_2}`}
         >
-          <div className={styles.wifi_plus_full_block_inside_text}>
+          <div className={styles.wifi_plus_full_block_inside_text_2}>
             <div className={'title_3'}>De ce să alegi Wi-Fi PLUS?</div>
             <br />
             Conectezi multiple dispozitive la aceeași rețea Wi-Fi, fără a fi

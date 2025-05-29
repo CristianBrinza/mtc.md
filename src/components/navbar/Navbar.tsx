@@ -465,8 +465,9 @@ const Navbar: React.FC = () => {
                                     styles.navbar_bottom_menu_option_submenu_block_list_item_row
                                   }
                                 >
-                                  <Link
-                                    to={subItem.to}
+
+                                  <a
+                                    href={subItem.to.includes('/personal') ? `https://www.moldtelecom.md/${t('lang')}${subItem.to}` : subItem.to}
                                     className={
                                       block.small
                                         ? styles.navbar_bottom_menu_option_submenu_block_list_item_small
@@ -483,7 +484,7 @@ const Navbar: React.FC = () => {
                                         &nbsp;({t(subItem.smallText)})
                                       </span>
                                     )}
-                                  </Link>
+                                  </a>
                                   {subItem.new && (
                                     <div
                                       className={
