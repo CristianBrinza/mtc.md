@@ -9,8 +9,9 @@ import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
 import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
 import Slider from 'react-slick';
 import Button from '../../../../components/Button.tsx';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { t } from 'i18next';
+import Popup from '../../../../components/Popup/Popup.tsx';
 
 const ArrowIcon: React.FC<{ rotated?: boolean }> = ({ rotated = false }) => (
   <svg
@@ -37,6 +38,17 @@ export default function WifiPlus() {
     { label: t('wifi_plus.breadcrumb.wifi_plus') },
   ];
 
+  const [showPopup, setShowPopup] = useState<boolean>(false);
+  const closePopup = (packet:string) => {
+    setShowPopup(false);
+    console.log(packet);
+  };
+
+  const setShowPopupFunction = (packet: string) => {
+    setShowPopup(true);
+    console.log(packet);
+  };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -51,6 +63,8 @@ export default function WifiPlus() {
         settings: {
           slidesToShow: 1,
           autoplay: true,
+          autoplaySpeed: 2000,
+          arrows: true,
         },
       },
     ],
@@ -140,7 +154,9 @@ export default function WifiPlus() {
                   alt=""
                 />
                 <div className={styles.wifi_carousell_block_inside_title}>
-                  {t('wifi_plus.carousel.routers.0.title')}
+                  {/*{t('wifi_plus.carousel.routers.0.title')}*/}
+                  D-Link <br/>
+                  DIR-615
                 </div>
                 <div className={styles.wifi_carousell_block_inside_subtitle}>
                   {t('wifi_plus.carousel.routers.0.desc')}
@@ -182,7 +198,9 @@ export default function WifiPlus() {
                   alt=""
                 />
                 <div className={styles.wifi_carousell_block_inside_title}>
-                  {t('wifi_plus.carousel.routers.1.title')}
+                  {/*{t('wifi_plus.carousel.routers.1.title')}*/}
+                  HUAWEI <br/>
+                  OptiXstar K562e-10"
                 </div>
                 <div className={styles.wifi_carousell_block_inside_subtitle}>
                   {t('wifi_plus.carousel.routers.1.desc')}
@@ -194,7 +212,7 @@ export default function WifiPlus() {
                 />
                 <div className={styles.wifi_carousell_block_inside_btns}>
                   <Button
-                    to="https://mtc.md/my-mtc"
+                    onClick={() => setShowPopupFunction( 'aaa')}
                     color="var(--theme_primary_color_blue_4)"
                     bgcolor="var(--theme_primary_color_blue_3)"
                     border="var(--theme_primary_color_blue_3)"
@@ -335,6 +353,34 @@ export default function WifiPlus() {
       </FaqV2>
 
       <Footer disclaimer={true} />
+
+      <Popup id="1284768" isVisible={showPopup} onClose={closePopup}>
+        <div className={styles.popup_btns}>
+          <Button
+            to={`https://moldtelecom.md/{t('lang')}/cereri`}
+            color="var(--theme_primary_color_blue_4)"
+            bgcolor="var(--theme_primary_color_blue_3)"
+            border="var(--theme_primary_color_blue_3)"
+            hover_border="var(--theme_primary_color_blue_2)"
+            hover_bgcolor="var(--theme_primary_color_blue_2)"
+            icon="arrow_right"
+          >
+            {t('wifi_plus.carousel.order_now_cerere')}
+          </Button>
+          <Button
+           to={'tel:022200200'}
+            color="var(--theme_primary_color_blue_4)"
+            bgcolor="var(--theme_primary_color_blue_3)"
+            border="var(--theme_primary_color_blue_3)"
+            hover_border="var(--theme_primary_color_blue_2)"
+            hover_bgcolor="var(--theme_primary_color_blue_2)"
+            icon="arrow_right"
+          >
+            022 200 200
+          </Button>
+        </div>
+      </Popup>
+
     </>
   );
 }

@@ -590,7 +590,7 @@
   .navbar_bottom_menu {
     justify-content: flex-end;
   }
-  .navbar_top_left {
+  .navbar_top_left_block {
     display: none;
   }
   .navbar_top {

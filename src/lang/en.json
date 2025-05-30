@@ -55,6 +55,7 @@
         }
       ],
       "order_now": "Order now",
+      "order_now_cerere": "Submit request",
       "price_unit": "lei/month"
     },
     "details": {

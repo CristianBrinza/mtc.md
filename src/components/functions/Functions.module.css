@@ -85,6 +85,9 @@
   .functions {
     width: 380px;
   }
+  .functions_inside {
+    /*padding: 20px 45px 20px 45px;*/
+  }
 }
 @media (max-width: 450px) {
   .functions {

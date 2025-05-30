@@ -81,8 +81,16 @@
   .FaqQA_title {
     padding: 13px 5px 13px 5px;
   }
+
+  .FaqQA_inside {
+    padding: 0px !important;
+  }
+
   .FaqQA_inside_show {
-    padding: 10px 0px 20px 0px;
+    padding: 10px 0px 20px 0px !important; /* override default */
+  }
+  .FaqQA_title:hover .FaqQA_title_svg_block {
+    animation: none !important;
   }
 }
 
