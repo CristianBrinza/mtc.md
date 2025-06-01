@@ -12,6 +12,8 @@ import Button from '../../../../components/Button.tsx';
 import React, { useState } from 'react';
 import { t } from 'i18next';
 import Popup from '../../../../components/Popup/Popup.tsx';
+import Chat from '../../../../components/chat/Chat.tsx';
+import Feedback from '../../../../components/feedback/Feedback.tsx';
 
 const ArrowIcon: React.FC<{ rotated?: boolean }> = ({ rotated = false }) => (
   <svg
@@ -83,6 +85,8 @@ export default function WifiPlus() {
   return (
     <>
       <Navbar />
+      <Chat />
+      <Feedback />
       <Breadcrumb items={breadcrumbItems} />
 
       <Hero color="#F7F7F7" classname={styles.hero}>
@@ -168,7 +172,7 @@ export default function WifiPlus() {
                 />
                 <div className={styles.wifi_carousell_block_inside_btns}>
                   <Button
-                    to="https://mtc.md/my-mtc"
+                    onClick={() => setShowPopupFunction( 'aaa')}
                     color="var(--theme_primary_color_blue_4)"
                     bgcolor="var(--theme_primary_color_blue_3)"
                     border="var(--theme_primary_color_blue_3)"
@@ -354,31 +358,36 @@ export default function WifiPlus() {
 
       <Footer disclaimer={true} />
 
-      <Popup id="1284768" isVisible={showPopup} onClose={closePopup}>
-        <div className={styles.popup_btns}>
-          <Button
-            to={`https://moldtelecom.md/{t('lang')}/cereri`}
-            color="var(--theme_primary_color_blue_4)"
-            bgcolor="var(--theme_primary_color_blue_3)"
-            border="var(--theme_primary_color_blue_3)"
-            hover_border="var(--theme_primary_color_blue_2)"
-            hover_bgcolor="var(--theme_primary_color_blue_2)"
-            icon="arrow_right"
-          >
-            {t('wifi_plus.carousel.order_now_cerere')}
-          </Button>
-          <Button
-           to={'tel:022200200'}
-            color="var(--theme_primary_color_blue_4)"
-            bgcolor="var(--theme_primary_color_blue_3)"
-            border="var(--theme_primary_color_blue_3)"
-            hover_border="var(--theme_primary_color_blue_2)"
-            hover_bgcolor="var(--theme_primary_color_blue_2)"
-            icon="arrow_right"
-          >
-            022 200 200
-          </Button>
-        </div>
+      <Popup id="1284768" isVisible={showPopup} onClose={closePopup} width={'800px'}>
+       <div className={styles.popup_div}>
+         <span className={styles.popup_div_title}>Mulțumim
+că ai ales Moldtelecom</span>
+         Serviciul Wi-Fi PLUS poate fi activat prin contactarea Serviciului Suport Clienți sau cerere online.
+         <div className={styles.popup_btns}>
+           <Button
+             to={`https://moldtelecom.md/{t('lang')}/cereri`}
+             color="var(--theme_primary_color_white)"
+             bgcolor="var(--theme_primary_color_blue_4)"
+             border="var(--theme_primary_color_blue_4)"
+             hover_border="var(--theme_primary_color_blue_2)"
+             hover_bgcolor="var(--theme_primary_color_blue_2)"
+             icon="arrow_right"
+           >
+             {t('wifi_plus.carousel.order_now_cerere')}
+           </Button>
+           <Button
+             to={'tel:022200200'}
+             color="var(--theme_primary_color_blue_4)"
+             bgcolor="var(--theme_primary_color_blue_3)"
+             border="var(--theme_primary_color_blue_3)"
+             hover_border="var(--theme_primary_color_blue_2)"
+             hover_bgcolor="var(--theme_primary_color_blue_2)"
+             icon="arrow_right"
+           >
+             022 200 200
+           </Button>
+         </div>
+       </div>
       </Popup>
 
     </>

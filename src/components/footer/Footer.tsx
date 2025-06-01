@@ -526,9 +526,9 @@ const Footer: React.FC<FooterProps> = ({
             <div className={styles.footer_inside_bottom_left}>
               <span className={styles.footer_inside_bottom_left_bold}>
                 {' '}
-                Moldtelecom S.A.
+                Moldtelecom S.A.<br className={styles.footer_inside_middle_link_br}/>
               </span>
-              &nbsp;<span>|</span>&nbsp;Telecommunication Company
+              &nbsp;<span className={styles.footer_inside_middle_link_line}>|</span>&nbsp;Telecommunication Company
             </div>
           </div>
         </div>

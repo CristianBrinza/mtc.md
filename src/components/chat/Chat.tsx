@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Chat.module.css';
 import { Link } from 'react-router-dom';
 
 const Chat: React.FC = () => {
   const [activeOverlay, setActiveOverlay] = useState(false);
+
+  // Fix for iOS 100vh bug
+  useEffect(() => {
+    const setVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+    setVh();
+    window.addEventListener('resize', setVh);
+    return () => window.removeEventListener('resize', setVh);
+  }, []);
 
   return (
     <>

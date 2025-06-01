@@ -27,6 +27,7 @@ const FaqQAV2: React.FC<FaqQAProps> = ({
               activeFAQ ? styles.FaqQA_title_svg_rotated : ''
             }`}
             type="plus"
+            // color="#B7B7B7"
           />
         </div>
       </div>
