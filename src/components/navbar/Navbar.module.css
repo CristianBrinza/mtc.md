@@ -638,10 +638,10 @@
   .navbar {
     padding: 8px 10px 5px;
   }
-  .navbar_bottom_menu_option{
+  .navbar_bottom_menu_option {
     padding-left: 20px;
   }
-  .navbar_bottom_menu_option_submenu_show{
+  .navbar_bottom_menu_option_submenu_show {
     padding-left: 20px;
     margin-left: 20px;
     width: 100vw;
@@ -650,7 +650,7 @@
     border-left: 1px solid var(--theme_primary_color_gray_2);
     margin-top: 10px;
   }
-  .topnav_right_show{
+  .topnav_right_show {
     padding-left: 0px;
     margin-bottom: 40px;
   }

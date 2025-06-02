@@ -59,8 +59,8 @@
         }
       ],
       "order_now": "Закажи",
-  "order_now_cerere": "Подать заявку",
-"price_unit": "лей/месяц"
+      "order_now_cerere": "Подать заявку",
+      "price_unit": "лей/месяц"
     },
     "details": {
       "blocks": [

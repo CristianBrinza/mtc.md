@@ -321,7 +321,7 @@ const Footer: React.FC<FooterProps> = ({
                   to={'/'}
                   className={`${styles.footer_inside_middle_link} ${styles.footer_inside_middle_link_sp}`}
                 >
-                    {t('footer.about.licitatii')}
+                  {t('footer.about.licitatii')}
                 </Link>
                 {isAboutVisible == false && (
                   <div
@@ -345,28 +345,28 @@ const Footer: React.FC<FooterProps> = ({
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                     {t('footer.about.consul')}
+                    {t('footer.about.consul')}
                   </Link>,
                   <Link
                     key="2"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                     {t('footer.about.sructure')}
+                    {t('footer.about.sructure')}
                   </Link>,
                   <Link
                     key="3"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                     {t('footer.about.status')}
+                    {t('footer.about.status')}
                   </Link>,
                   <Link
                     key="3"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                      {t('footer.about.etic')}
+                    {t('footer.about.etic')}
                   </Link>,
                 ]}
               </div>
@@ -380,21 +380,23 @@ const Footer: React.FC<FooterProps> = ({
                   {t('footer.about.asistance')}
                 </Link>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                    {t('footer.about.licitatii')}
+                  {t('footer.about.licitatii')}
                 </Link>
               </div>
             </div>
             <div className={styles.footer_inside_middle_block}>
-              <div className={styles.footer_inside_middle_title}>{t("footer.legal.title")}</div>
+              <div className={styles.footer_inside_middle_title}>
+                {t('footer.legal.title')}
+              </div>
               <div className={styles.footer_inside_middle_list}>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  {t("footer.legal.conditions")}
+                  {t('footer.legal.conditions')}
                 </Link>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  {t("footer.legal.structure")}
+                  {t('footer.legal.structure')}
                 </Link>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  {t("footer.legal.reports")}
+                  {t('footer.legal.reports')}
                 </Link>
                 {isLegalVisible == false && (
                   <div
@@ -418,49 +420,49 @@ const Footer: React.FC<FooterProps> = ({
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    {t("footer.legal.dates")}
+                    {t('footer.legal.dates')}
                   </Link>,
                   <Link
                     key="2"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    {t("footer.legal.procedure")}
+                    {t('footer.legal.procedure')}
                   </Link>,
                   <Link
                     key="3"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                  {t("footer.legal.plan")}
+                    {t('footer.legal.plan')}
                   </Link>,
                   <Link
                     key="4"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                     {t("footer.legal.security")}
+                    {t('footer.legal.security')}
                   </Link>,
                 ]}
               </div>
             </div>
             <div className={styles.footer_inside_middle_block}>
               <div className={styles.footer_inside_middle_title}>
-                {t("footer.utilities.title")}
+                {t('footer.utilities.title')}
               </div>
               <div className={styles.footer_inside_middle_list}>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
                   {t('footer.utilities.speedtest')}
                 </Link>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                    {t("footer.utilities.news")}
+                  {t('footer.utilities.news')}
                 </Link>
                 <Link
                   key="4"
                   to="/"
                   className={styles.footer_inside_middle_link}
                 >
-                 {t("footer.utilities.coverage")}
+                  {t('footer.utilities.coverage')}
                 </Link>
 
                 {isUtilVisible == false && (
@@ -485,36 +487,36 @@ const Footer: React.FC<FooterProps> = ({
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                     {t("footer.utilities.guides")}
+                    {t('footer.utilities.guides')}
                   </Link>,
                   <Link
                     key="2"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                      {t("footer.utilities.reclamation")}
+                    {t('footer.utilities.reclamation')}
                   </Link>,
                   <Link
                     key="3"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                      {t("footer.utilities.divertisment")}
+                    {t('footer.utilities.divertisment')}
                   </Link>,
                   <Link
                     key="5"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                      {t("footer.utilities.locations")}
+                    {t('footer.utilities.locations')}
                   </Link>,
                   <Link
                     key="6"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                     {t("footer.utilities.frauds")}
-                  </Link>
+                    {t('footer.utilities.frauds')}
+                  </Link>,
                 ]}
               </div>
             </div>
@@ -523,9 +525,12 @@ const Footer: React.FC<FooterProps> = ({
             <div className={styles.footer_inside_bottom_left}>
               <span className={styles.footer_inside_bottom_left_bold}>
                 {' '}
-                Moldtelecom S.A.<br className={styles.footer_inside_middle_link_br}/>
+                Moldtelecom S.A.
+                <br className={styles.footer_inside_middle_link_br} />
               </span>
-              &nbsp;<span className={styles.footer_inside_middle_link_line}>|</span>&nbsp;Telecommunication Company
+              &nbsp;
+              <span className={styles.footer_inside_middle_link_line}>|</span>
+              &nbsp;Telecommunication Company
             </div>
           </div>
         </div>

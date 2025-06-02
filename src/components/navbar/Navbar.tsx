@@ -3,6 +3,7 @@ import styles from './Navbar.module.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Icon from '../Icon.tsx';
 import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../context/LanguageContext.tsx';
 import Slider from 'react-slick';
 import Button from '../Button.tsx';
 
@@ -43,6 +44,7 @@ const Navbar: React.FC = () => {
   const isAvailable = currentHour >= 6 && currentHour < 24;
 
   const { t, i18n } = useTranslation();
+  const { setLanguage } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -77,18 +79,18 @@ const Navbar: React.FC = () => {
   };
 
   const handleChangeLanguage = (lang: string) => {
-    i18n.changeLanguage(lang).then(() => {
-      const pathParts = location.pathname.split('/').filter(Boolean);
-      if (['en', 'ro', 'ru'].includes(pathParts[0])) {
-        pathParts[0] = lang;
-      } else {
-        pathParts.unshift(lang);
-      }
-      const newPath = `/${pathParts.join('/')}/`.replace(/\/+$/, '/');
-      navigate(newPath);
-      setIsListLangPopupVisible(false);
-      localStorage.setItem('i18nextLng', lang);
-    });
+    setLanguage(lang); // setează global limba
+
+    const pathParts = location.pathname.split('/').filter(Boolean);
+    if (['en', 'ro', 'ru'].includes(pathParts[0])) {
+      pathParts[0] = lang;
+    } else {
+      pathParts.unshift(lang);
+    }
+    const newPath = `/${pathParts.join('/')}/`.replace(/\/+$/, '/');
+    navigate(newPath);
+    setIsListLangPopupVisible(false);
+    // localStorage.setItem('i18nextLng', lang);
   };
 
   const getImageByLanguage = (img: PromoBlock): string => {
@@ -627,12 +629,12 @@ const Navbar: React.FC = () => {
                 >
                   RU
                 </div>
-                <div
-                  className={styles.navbar_bottom_menu_right_lang_btn_select}
-                  onClick={() => handleChangeLanguage('en')}
-                >
-                  EN
-                </div>
+                {/*<div*/}
+                {/*  className={styles.navbar_bottom_menu_right_lang_btn_select}*/}
+                {/*  onClick={() => handleChangeLanguage('en')}*/}
+                {/*>*/}
+                {/*  EN*/}
+                {/*</div>*/}
               </div>
               <Icon
                 type="menu"

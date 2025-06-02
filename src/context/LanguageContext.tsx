@@ -21,28 +21,28 @@ export const LanguageProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [language, setLanguage] = useState(
+  const [language, setLanguageState] = useState(
     localStorage.getItem('i18nextLng') || 'ro'
   );
   const { i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
 
-  // List of paths to exclude from language redirection
-  const excludedPaths = ['/files/', '/images/', '/json/', '/app'];
+  const setLanguage = async (lang: string) => {
+    await i18n.changeLanguage(lang); // asigură-te că schimbarea este aplicată
+    setLanguageState(lang);
+    localStorage.setItem('i18nextLng', lang);
+  };
 
   useEffect(() => {
     const pathParts = location.pathname.split('/').filter(Boolean);
     let detectedLang = pathParts[0];
 
-    // Check if the current path is an excluded path
+    const excludedPaths = ['/files/', '/images/', '/json/', '/app'];
     const isExcludedPath = excludedPaths.some(path =>
       location.pathname.startsWith(path)
     );
-
-    if (isExcludedPath) {
-      return; // Do nothing if it's an excluded path
-    }
+    if (isExcludedPath) return;
 
     if (!['ro', 'ru', 'en'].includes(detectedLang)) {
       detectedLang = localStorage.getItem('i18nextLng') || 'ro';
@@ -52,10 +52,7 @@ export const LanguageProvider = ({
         (location.pathname !== '/' ? location.pathname : '/');
       navigate(newPath, { replace: true });
     } else if (detectedLang !== i18n.language) {
-      i18n.changeLanguage(detectedLang).then(() => {
-        setLanguage(detectedLang);
-        localStorage.setItem('i18nextLng', detectedLang);
-      });
+      setLanguage(detectedLang);
     }
   }, [location.pathname, i18n.language, navigate]);
 
