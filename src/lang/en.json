@@ -130,5 +130,46 @@
       "q3": "How is Wi-Fi PLUS billed?",
       "a3": "Billing starts from the service activation moment and is included in your monthly Internet bill until it’s disconnected."
     }
+  },
+  "footer": {
+    "maimult": "More",
+    "disclaimer": "Dear customer, Moldtelecom.md makes constant efforts to ensure the accuracy of the information on this site. However, the information published may occasionally contain unintentional discrepancies, such as: some specifications or prices may be changed by the manufacturer without prior notice or may contain operational errors. If prices or other product details are displayed incorrectly, including due to database entry errors, www.moldtelecom.md S.A. 'Moldtelecom' reserves the right to cancel the sale of the respective product and inform the customer as soon as possible about the error. Thank you for your understanding.",
+    "utilities": {
+      "title": "Useful & Informative",
+      "speedtest": "Speedtest",
+      "coverage": "Coverage map",
+      "storeLocator": "Store locator",
+      "news": "Network news",
+      "frauds": "Protect yourself from fraud",
+      "locations": "Locations",
+      "divertisment": "Entertainment",
+      "reclamation": "Submit complaint",
+      "guides": "Video guides"
+    },
+    "legal": {
+      "title": "Legal",
+      "conditions": "Contractual terms",
+      "structure": "Organizational structure",
+      "reports": "Reports",
+      "dates": "Data security",
+      "procedure": "Partner selection procedure",
+      "plan": "Procurement forecast plan 2025",
+      "security": "Data security"
+    },
+    "about": {
+      "title": "About us",
+      "aboutUs": "About the company",
+      "careers": "Careers",
+      "magasin": "Stores",
+      "asistance": "Assistance",
+      "licitatii": "Tenders",
+      "contact": "Contact",
+      "etic": "Code of ethics",
+      "status": "Moldtelecom status",
+      "sructure": "Organizational structure",
+      "consul": "Company board"
+    }
   }
+
 }
+

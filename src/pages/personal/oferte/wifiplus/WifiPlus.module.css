@@ -69,6 +69,7 @@
 }
 .wifi_carousell_block_inside_subtitle {
   margin: 10px 0 0;
+  min-height: 90px;
 }
 .wifi_carousell_block_inside_btns {
   display: flex;

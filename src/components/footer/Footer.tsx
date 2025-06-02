@@ -299,29 +299,29 @@ const Footer: React.FC<FooterProps> = ({
           <div className={styles.footer_inside_middle}>
             <div className={styles.footer_inside_middle_block}>
               <div className={styles.footer_inside_middle_title}>
-                Despre noi
+                {t('footer.about.title')}
               </div>
               <div className={styles.footer_inside_middle_list}>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  Despre companie
+                  {t('footer.about.aboutUs')}
                 </Link>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  Cariera
+                  {t('footer.about.careers')}
                 </Link>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  Magazine
+                  {t('footer.about.magasin')}
                 </Link>
                 <Link
                   to={'/'}
                   className={`${styles.footer_inside_middle_link} ${styles.footer_inside_middle_link_sp}`}
                 >
-                  Asistenta
+                  {t('footer.about.asistance')}
                 </Link>
                 <Link
                   to={'/'}
                   className={`${styles.footer_inside_middle_link} ${styles.footer_inside_middle_link_sp}`}
                 >
-                  Licitații
+                    {t('footer.about.licitatii')}
                 </Link>
                 {isAboutVisible == false && (
                   <div
@@ -330,7 +330,7 @@ const Footer: React.FC<FooterProps> = ({
                       setIsAboutVisible(true);
                     }}
                   >
-                    <span>Mai multe</span>{' '}
+                    <span>{t('footer.maimult')}</span>{' '}
                     <Icon
                       type="arrow_down"
                       color={'#ADBBFF'}
@@ -345,28 +345,28 @@ const Footer: React.FC<FooterProps> = ({
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    Consiliul societatii
+                     {t('footer.about.consul')}
                   </Link>,
                   <Link
                     key="2"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    Structura organizatorica
+                     {t('footer.about.sructure')}
                   </Link>,
                   <Link
                     key="3"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    Statutul Moldtelecom
+                     {t('footer.about.status')}
                   </Link>,
                   <Link
                     key="3"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    Cod de etica
+                      {t('footer.about.etic')}
                   </Link>,
                 ]}
               </div>
@@ -377,24 +377,24 @@ const Footer: React.FC<FooterProps> = ({
               <div className={styles.footer_inside_middle_title}>&nbsp;</div>
               <div className={styles.footer_inside_middle_list}>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  Asistenta
+                  {t('footer.about.asistance')}
                 </Link>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  Licitații
+                    {t('footer.about.licitatii')}
                 </Link>
               </div>
             </div>
             <div className={styles.footer_inside_middle_block}>
-              <div className={styles.footer_inside_middle_title}>Legal</div>
+              <div className={styles.footer_inside_middle_title}>{t("footer.legal.title")}</div>
               <div className={styles.footer_inside_middle_list}>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  Conditii contractuale
+                  {t("footer.legal.conditions")}
                 </Link>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  Stuctura organizatorica
+                  {t("footer.legal.structure")}
                 </Link>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  Rapoarte
+                  {t("footer.legal.reports")}
                 </Link>
                 {isLegalVisible == false && (
                   <div
@@ -403,7 +403,7 @@ const Footer: React.FC<FooterProps> = ({
                       setIsLegalVisible(true);
                     }}
                   >
-                    <span>Mai multe</span>{' '}
+                    <span>{t('footer.maimult')}</span>{' '}
                     <Icon
                       type="arrow_down"
                       color={'#ADBBFF'}
@@ -418,45 +418,49 @@ const Footer: React.FC<FooterProps> = ({
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    Securutatea datelor
+                    {t("footer.legal.dates")}
                   </Link>,
                   <Link
                     key="2"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    Procedura de selectie a partenerilor
+                    {t("footer.legal.procedure")}
                   </Link>,
                   <Link
                     key="3"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    Plan-prognoza achizitii 2025
+                  {t("footer.legal.plan")}
                   </Link>,
                   <Link
                     key="4"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    Securutatea datelor
+                     {t("footer.legal.security")}
                   </Link>,
                 ]}
               </div>
             </div>
             <div className={styles.footer_inside_middle_block}>
               <div className={styles.footer_inside_middle_title}>
-                Util şi Informativ
+                {t("footer.utilities.title")}
               </div>
               <div className={styles.footer_inside_middle_list}>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  Speedtest
+                  {t('footer.utilities.speedtest')}
                 </Link>
                 <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  Nouați rețea
+                    {t("footer.utilities.news")}
                 </Link>
-                <Link to={'/'} className={styles.footer_inside_middle_link}>
-                  Asistenta
+                <Link
+                  key="4"
+                  to="/"
+                  className={styles.footer_inside_middle_link}
+                >
+                 {t("footer.utilities.coverage")}
                 </Link>
 
                 {isUtilVisible == false && (
@@ -466,7 +470,7 @@ const Footer: React.FC<FooterProps> = ({
                       setIsUtilVisible(true);
                     }}
                   >
-                    <span>Mai multe</span>{' '}
+                    <span>{t('footer.maimult')}</span>{' '}
                     <Icon
                       type="arrow_down"
                       color={'#ADBBFF'}
@@ -481,43 +485,36 @@ const Footer: React.FC<FooterProps> = ({
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    Ghiduri Video
+                     {t("footer.utilities.guides")}
                   </Link>,
                   <Link
                     key="2"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    Depune reclamatie
+                      {t("footer.utilities.reclamation")}
                   </Link>,
                   <Link
                     key="3"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    Divertisment
-                  </Link>,
-                  <Link
-                    key="4"
-                    to="/"
-                    className={styles.footer_inside_middle_link}
-                  >
-                    Harta acoperire
+                      {t("footer.utilities.divertisment")}
                   </Link>,
                   <Link
                     key="5"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    Locațiune
+                      {t("footer.utilities.locations")}
                   </Link>,
                   <Link
                     key="6"
                     to="/"
                     className={styles.footer_inside_middle_link}
                   >
-                    Protejeaza-te de fraude
-                  </Link>,
+                     {t("footer.utilities.frauds")}
+                  </Link>
                 ]}
               </div>
             </div>
