@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Chat.module.css';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Chat: React.FC = () => {
   const [activeOverlay, setActiveOverlay] = useState(false);
-
+  const { t } = useTranslation();
   // Fix for iOS 100vh bug
   useEffect(() => {
     const setVh = () => {
@@ -71,9 +72,9 @@ const Chat: React.FC = () => {
             />
           </svg>
         </Link>
-        <Link
+        <a
           className={`${styles.chat_icon_svg} ${styles.chat_icon_chat}`}
-          to="/chat"
+          href={`https://www.moldtelecom.md/${t('lang')}/chat`}
         >
           <svg
             width="24"
@@ -90,7 +91,7 @@ const Chat: React.FC = () => {
               fill="#2F3043"
             />
           </svg>
-        </Link>
+        </a>
       </div>
       <div
         className={styles.chat_icon}

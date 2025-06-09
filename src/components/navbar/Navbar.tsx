@@ -12,6 +12,7 @@ interface SubmenuItem {
   smallText?: string;
   to: string;
   new?: boolean;
+  external?: boolean;
 }
 interface BottomItem {
   label: string;
@@ -208,7 +209,7 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className={`${styles.navbar_bottom}`}>
-          <Link to="/">
+          <a href={`https://www.moldtelecom.md/${t('lang')}/`}>
             <svg
               width="205"
               height="47"
@@ -362,7 +363,7 @@ const Navbar: React.FC = () => {
                 </linearGradient>
               </defs>
             </svg>
-          </Link>
+          </a>
 
           <div className={styles.navbar_bottom_menu}>
             <div
@@ -426,14 +427,19 @@ const Navbar: React.FC = () => {
                             className={`${styles.navbar_bottom_menu_option_submenu_bottom} ${styles.topbnav_menu_desktop}`}
                           >
                             {item.bottom_menu.map((block, blockIndex) => (
-                              <div
+                              <a
+                                href={
+                                  block.to.includes('/personal')
+                                    ? `https://www.moldtelecom.md/${t('lang')}${block.to}`
+                                    : block.to
+                                }
                                 key={blockIndex}
                                 className={
                                   styles.navbar_bottom_menu_option_submenu_bottom_item
                                 }
                               >
-                                {block.label}
-                              </div>
+                                {t(block.label)}
+                              </a>
                             ))}
                           </div>
                         )}
@@ -451,7 +457,7 @@ const Navbar: React.FC = () => {
                                 styles.navbar_bottom_menu_option_submenu_block_title
                               }
                             >
-                              {block.title}
+                              {t(block.title)}
                             </div>
                             <div
                               className={
@@ -479,7 +485,7 @@ const Navbar: React.FC = () => {
                                         : styles.navbar_bottom_menu_option_submenu_block_list_item
                                     }
                                   >
-                                    {subItem.label}
+                                    {t(subItem.label)}
                                     {subItem.smallText && (
                                       <span
                                         className={
@@ -531,7 +537,7 @@ const Navbar: React.FC = () => {
                                   }}
                                 >
                                   <Button
-                                    to={promoItem.to}
+                                    // to={promoItem.to}
                                     className={
                                       styles.navbar_bottom_menu_option_submenu_add_inside_btn
                                     }
@@ -571,7 +577,15 @@ const Navbar: React.FC = () => {
                       key={index}
                       className={styles.navbar_bottom_menu_option}
                     >
-                      <Link to={item.to}>{t(item.label)}</Link>
+                      <a
+                        href={
+                          item.to.includes('/personal')
+                            ? `https://www.moldtelecom.md/${t('lang')}${item.to}`
+                            : item.to
+                        }
+                      >
+                        {t(item.label)}
+                      </a>
                     </div>
                   );
                 }

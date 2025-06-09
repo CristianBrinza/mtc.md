@@ -49,6 +49,10 @@
 .MyApp_text_btn:hover .MyApp_text_btn_border {
   stroke: var(--theme_primary_color_gray);
 }
+.MyApp_title {
+  text-align: start !important;
+  padding: 0 0px;
+}
 
 @media (max-width: 1300px) {
   .MyApp {

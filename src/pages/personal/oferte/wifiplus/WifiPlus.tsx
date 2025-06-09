@@ -66,7 +66,7 @@ export default function WifiPlus() {
         settings: {
           slidesToShow: 1,
           autoplay: true,
-          autoplaySpeed: 2000,
+          autoplaySpeed: 1800,
           arrows: true,
         },
       },
@@ -263,9 +263,11 @@ export default function WifiPlus() {
             }`}
           >
             <ul>
-              {t('wifi_plus.details.blocks.0.items', {
-                returnObjects: true,
-              }).map((item: string, i: number) => (
+              {(
+                t('wifi_plus.details.blocks.0.items', {
+                  returnObjects: true,
+                }) as string[]
+              ).map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
             </ul>
@@ -297,9 +299,11 @@ export default function WifiPlus() {
                 </tr>
               </thead>
               <tbody>
-                {t('wifi_plus.details.blocks.1.rows', {
-                  returnObjects: true,
-                }).map((row: any, i: number) => (
+                {(
+                  t('wifi_plus.details.blocks.1.rows', {
+                    returnObjects: true,
+                  }) as Array<{ key: string; basic: string; mesh: string }>
+                ).map((row, i) => (
                   <tr key={i}>
                     <td>{row.key}</td>
                     <td>{row.basic}</td>
@@ -337,7 +341,18 @@ export default function WifiPlus() {
           className={`${styles.wifi_plus_full_block_inside} ${styles.wifi_carousell_full_bg_block_2}`}
         >
           <div className={styles.wifi_plus_full_block_inside_text_2}>
-            <div className="title_3">{t('wifi_plus.why_choose.title')}</div>
+            <div className="title_3">
+              {t('wifi_plus.why_choose.title')}
+              {t('lang') === 'ru' && <br />}
+              <span>
+                &nbsp;
+                {t('lang') === 'ro' && (
+                  <br className={styles.wifi_plus_br_why} />
+                )}
+                Wi-Fi PLUS
+              </span>
+              ?
+            </div>
             <br />
             {t('wifi_plus.why_choose.text')}
           </div>
@@ -362,18 +377,16 @@ export default function WifiPlus() {
       <Popup
         id="1284768"
         isVisible={showPopup}
-        onClose={closePopup}
+        onClose={() => closePopup('')}
         width={'800px'}
       >
         <div className={styles.popup_div}>
-          <span className={styles.popup_div_title}>
-            Mulțumim că ai ales Moldtelecom
-          </span>
-          Serviciul Wi-Fi PLUS poate fi activat prin contactarea Serviciului
-          Suport Clienți sau cerere online.
+          <span className={styles.popup_div_title}>{t('wifi_plus.thx')}</span>
+
+          {t('wifi_plus.txt_1')}
           <div className={styles.popup_btns}>
             <Button
-              to={`https://moldtelecom.md/{t('lang')}/cereri`}
+              to={`https://moldtelecom.md/${t('lang')}/cereri`}
               color="var(--theme_primary_color_white)"
               bgcolor="var(--theme_primary_color_blue_4)"
               border="var(--theme_primary_color_blue_4)"

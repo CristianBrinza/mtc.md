@@ -5,17 +5,70 @@
     "english": "Engleză",
     "russian": "Rusă",
     "internet_tv": "Internet + TV",
-    "mobil": "Mobil"
+    "mobil": "Mobil",
+    "portare": "Portare",
+    "double": "Double",
+    "triple": "Triple",
+    "internet_tv_only": "Internet + TV",
+    "internet_tv_mobil": "Internet + TV + Mobil",
+    "ab_internet": "Abonamente Internet",
+    "ab_tv": "Abonamente TV",
+    "2_1_gbps": "2.1 Gbps",
+    "apps": "Aplicatii",
+    "descopera": "Descoperă",
+    "mt_tv": "Moldtelecom TV",
+    "mt_tv_go": "Moldtelecom TV GO",
+    "cinema": "Cinematografe online",
+    "wifi_plus": "Wi-Fi Plus",
+    "canale_tv": "Canale TV",
+    "echipament_tv": "Echipament TV",
+    "echipament_wifi": "Echipament Wi-Fi",
+    "wifi6": "Wi-Fi 6",
+    "safeweb": "Safe-web",
+    "recomanda": "Recomandă un prieten",
+    "verifica_adresa": "Verifică adresa",
+    "test_viteza": "Testează viteza",
+    "faq": "FAQ",
+    "promo": "Promo",
+    "verifica_acoperirea": "Verifică acoperirea",
+    "ab_mobile": "Abonamente mobile",
+    "modem_wifi": "Modem Wi-Fi",
+    "modem_4g": "Modem 4G Acasă",
+    "servicii_digitale": "Servicii digitale",
+    "esim": "eSIM",
+    "esim_acasa": "eSIM Acasă",
+    "prepay": "Prepay",
+    "prepay_digital": "Prepay Digital",
+    "onenumber": "One Number",
+    "cartela": "Cartela Moldtelecom",
+    "mymt": "MyMoldtelecom",
+    "roaming": "Roaming",
+    "international": "Apeluri internaționale",
+    "fidelitate": "Programul de fidelitate",
+    "altele": "Altele",
+    "fix": "Telefonie fixă",
+    "ab_fix": "Abonamente telefonie fixă",
+    "optiuni_retea": "Opțiuni & servicii de rețea",
+    "fax_email": "Fax to E-mail",
+    "eshop": "M-eShop",
+    "ajutor": "Ajutor",
+    "oferte": "Oferte",
+    "mergi_castigi": "Mergi și câștigi",
+    "challenge": "Challenge",
+    "transfer_credit": "Transfer credit",
+    "plus": "Plus"
   },
   "general": {
     "faq_more": "mai multe",
     "faq_less": "mai puțin",
+    "more": " Ai nevoie de ajutor?",
     "functions": "Funcții interactive",
     "recommended_options": "Opțiuni recomandate",
     "leu": "leu",
     "lei": "lei",
     "videos": "Video",
-    "news": "Noutati"
+    "news": "Noutati",
+    "see_all": " Vezi toate"
   },
   "home": {
     "exclusive_online": "Descoperă cele mai tari oferte exclusiv online",
@@ -26,6 +79,8 @@
       "internet": "Internet",
       "wifi_plus": "Wi-Fi Plus"
     },
+    "thx": "Mulțumim că ai ales Moldtelecom",
+    "txt_1": " Serviciul Wi-Fi PLUS poate fi activat prin contactarea Serviciului. Suport Clienți sau cerere online.",
     "hero": {
       "alt": "Moldtelecom"
     },
@@ -127,7 +182,7 @@
       "text_2": "Prin amplasarea acestuia în locurile unde semnalul Wi-Fi este slab sau inexistent, dispozitivul preia semnalul de la routerul principal și îl retransmite, asigurând o conexiune stabilă și rapidă în întreaga locuință."
     },
     "why_choose": {
-      "title": "De ce să alegi Wi-Fi PLUS?",
+      "title": "De ce să alegi",
       "text": "Conectezi multiple dispozitive la aceeași rețea Wi-Fi, fără a fi necesar să introduci repetat parola și fără întreruperi la navigare în timp ce te deplasezi în locuința ta."
     },
     "faq": {
@@ -152,7 +207,12 @@
       "locations": "Locațiuni",
       "divertisment": "Divertisment",
       "reclamation": "Depune reclamație",
-      "guides": "Ghiduri video"
+      "guides": "Ghiduri video",
+      "mdix": "Internet Exchange MD-IX",
+      "frephone": "Freephone",
+      "supraveghere": "Supravegherea lucrărilor",
+      "eliberate_proiecte": "Coordonarea proiectelor",
+      "plata": "Modalități de achitare"
     },
     "legal": {
       "title": "Legal",
@@ -162,7 +222,14 @@
       "dates": "Securitatea datelor",
       "procedure": "Procedura de selecție a partenerilor",
       "plan": "Plan-prognoză achiziții 2025",
-      "security": "Securitatea datelor"
+      "security": "Securitatea datelor",
+      "admins_serv": "Servicii administrative",
+      "instruction": "Instrucțiune de lucru acte corupție",
+      "declaration": "Declarația privind politica de mediu",
+      "interdiction": "Lista de interdicție a agenților economici",
+      "regulament": "Regulament achiziționari",
+      "mecanism": "Mecanismul de gestionare a listei e interdicție",
+      "quality": "Declarația în domeniul calității"
     },
     "about": {
       "title": "Despre noi",
@@ -175,7 +242,18 @@
       "etic": "Cod de etică",
       "status": "Statutul Moldtelecom",
       "sructure": "Structura organizațională",
-      "consul": "Consiliul societății"
+      "consul": "Consiliul societății",
+      "inima_codrilor": "Inima Codrilor",
+      "gov_code": "Codul de guvernanță",
+      "quality": "Parametrii de calitate",
+      "certified": "Certificat de conformitate a SMC"
     }
+  },
+  "feedback": {
+    "title": "Mulțumim pentru feedback",
+    "question": "Cum evaluezi experiența ta pe www.moldtelecom.md?",
+    "comment": "Te rugăm să lași un mesaj:",
+    "placeholder": "Lasă-ne mesajul și/sau numărul de contact dacă dorești să fii contactat",
+    "submit": "Trimite"
   }
 }

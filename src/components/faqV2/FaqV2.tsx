@@ -38,9 +38,7 @@ const FaqV2: React.FC<FaqProps> = ({
   return (
     <div className={styles.faqWrap}>
       <div className={styles.faq} style={FaqStyle}>
-        <div className={`title_3 ${styles.faq_title}`}>
-          Ai nevoie de ajutor?
-        </div>
+        <div className={`title_3 ${styles.faq_title}`}>{t('general.more')}</div>
         <div className={styles.faq_inside_right}>
           <div className={styles.faq_inside}>{visibleFaqs}</div>
           {faqArray.length > max_faq && (!hideButtonAfterClick || !showAll) && (

@@ -41,66 +41,68 @@
     ],
     "bottom_menu": [
       {
-        "label": "Verifică adresa",
-        "to": "/"
+        "label": "navbar.test_viteza",
+        "to": "/personal/speedtest"
       },
       {
-        "label": "Testează viteza",
-        "to": "/"
-      },
-      {
-        "label": "FAQ",
-        "to": "/FAQ"
+        "label": "navbar.faq",
+        "to": "/personal/FAQ_Internet_Fix"
       }
     ],
     "submenu": [
       {
-        "title": "Promo",
+        "title": "navbar.promo",
         "items": [
           {
-            "label": "Double",
-            "smallText": "Internet + TV",
-            "to": "/"
+            "label": "navbar.double",
+            "smallText": "navbar.internet_tv_only",
+            "to": "/personal/Promo_Abonamente-TV-Internet"
           },
           {
-            "label": "Triple",
-            "smallText": "Internet + TV + Mobil",
-            "to": "/triple"
+            "label": "navbar.triple",
+            "smallText": "navbar.internet_tv_mobil",
+            "to": "/personal/Promo_Abonamente-TV-Internet-Mobil"
           },
           {
-            "label": "Abonamente Internet",
-            "to": "/"
+            "label": "navbar.ab_internet",
+            "to": "/personal/Abonamente-Internet"
           },
           {
-            "label": "Abonamente TV",
-            "to": "/"
+            "label": "navbar.ab_tv",
+            "to": "/personal/Abonamente-Televiziune"
           },
           {
-            "label": "2.1 Gbps",
-            "to": "/triple"
+            "label": "navbar.2_1_gbps",
+            "to": "/personal/2gbps"
           }
         ]
       },
       {
-        "title": "Descopera",
+        "title": "navbar.descopera",
         "small": true,
         "items": [
-          { "label": "Moldtelecom TV", "to": "/" },
-          { "label": "Moldtelecom TV GO", "to": "/" },
-          { "label": "Cinematografe online", "to": "/personal/cinema" },
-          { "label": "Wi-Fi Plus", "to": "/wifi-plus" }
+          { "label": "navbar.mt_tv", "to": "/personal/moldtelecom_tv" },
+          { "label": "navbar.mt_tv_go", "to": "/personal/moldtelecom-tv-go" },
+          { "label": "navbar.cinema", "to": "/personal/cinema" },
+          { "label": "navbar.wifi_plus", "to": "/wifi-plus" }
         ]
       },
       {
-        "title": "altele",
+        "title": "navbar.altele",
         "small": true,
         "items": [
-          { "label": "Canale TV", "to": "/" },
-          { "label": "Echipament TV", "to": "/" },
-          { "label": "Echipament Wi-Fi", "to": "/" },
-          { "label": "Wi-Fi 6", "to": "/" },
-          { "label": "Safe-web", "to": "/" },
-          { "label": "Recomandă un prieten", "to": "/" }
+          { "label": "navbar.canale_tv", "to": "/canale-TV" },
+          { "label": "navbar.echipament_tv", "to": "/personal/echipamente-tv" },
+          {
+            "label": "navbar.echipament_wifi",
+            "to": "/personal/echipamente-wifi"
+          },
+          { "label": "navbar.wifi6", "to": "/personal/wifi6" },
+          { "label": "navbar.safeweb", "to": "/personal/safe-web" },
+          {
+            "label": "navbar.recomanda",
+            "to": "/personal/recomanda-prietenului"
+          }
         ]
       }
     ]
@@ -123,52 +125,65 @@
     ],
     "bottom_menu": [
       {
-        "label": "Testează viteza",
-        "to": "/"
+        "label": "navbar.test_viteza",
+        "to": "/personal/speedtest"
       },
       {
-        "label": "Verifică acoperirea",
-        "to": "/"
+        "label": "navbar.verifica_acoperirea",
+        "to": "/personal/acoperire-3g"
       },
       {
-        "label": "FAQ",
-        "to": "/FAQ"
+        "label": "navbar.faq",
+        "to": "/personal/FAQ_Telefonie_si_internet_mobil"
       }
     ],
     "submenu": [
       {
-        "title": "Promo",
+        "title": "navbar.promo",
         "items": [
-          { "label": "Portare", "to": "/" },
-          { "label": "Abonamente mobile", "to": "/mobile" },
-          { "label": "Modem Wi-Fi", "to": "/" },
-          { "label": "Modem 4G Acasa", "to": "/" }
+          { "label": "navbar.portare", "to": "/personal/Portare" },
+          { "label": "navbar.ab_mobile", "to": "/Abonamente_Telefonie_Mobila" },
+          {
+            "label": "navbar.modem_wifi",
+            "to": "/personal/Abonamente-Internet-mobil"
+          },
+          { "label": "navbar.modem_4g", "to": "/personal/internet-mobil-acasa" }
         ]
       },
       {
-        "title": "Servicii digitale",
+        "title": "navbar.servicii_digitale",
         "small": true,
         "items": [
-          { "label": "eSIM", "to": "/" },
-          { "label": "Prepay Digtal", "to": "/" },
-          { "label": "One Number", "to": "/" }
+          { "label": "navbar.esim", "to": "/personal/esim" },
+          { "label": "navbar.esim_acasa", "to": "/personal/esim-acasa" },
+          {
+            "label": "navbar.prepay",
+            "to": "/personal/prepay-cartela"
+          },
+          {
+            "label": "navbar.prepay_digital",
+            "to": "/personal/prepay-digital"
+          },
+          { "label": "navbar.onenumber", "to": "/personal/" }
         ]
       },
       {
-        "title": "Descopera",
+        "title": "navbar.descopera",
         "small": true,
         "items": [
-          { "label": "Cartela Moldtelecom", "to": "/" },
-          { "label": "MyMoldtelecom", "to": "/" },
-          { "label": "Roaming", "to": "/" },
-          { "label": "Apeluri internationale", "to": "/" },
-          { "label": "Programul de fidelitate", "to": "/" }
+          { "label": "navbar.mymt", "to": "/personal/mymoldtelecom" },
+          { "label": "navbar.roaming", "to": "/personal/roaming" },
+          {
+            "label": "navbar.international",
+            "to": "/personal/apeluri-internationale"
+          },
+          { "label": "navbar.fidelitate", "to": "/personal/loialitate" }
         ]
       }
     ]
   },
   {
-    "label": "Fix",
+    "label": "navbar.fix",
     "promo": [
       {
         "image_ro": "/images/landings/85272512.png",
@@ -179,23 +194,29 @@
     ],
     "submenu": [
       {
-        "title": "Descopera",
+        "title": "navbar.descopera",
         "small": true,
         "items": [
-          { "label": "Abonamente telefonie fixa", "to": "/" },
-          { "label": "Opțiuni & servicii de rețea", "to": "/" },
-          { "label": "Fax to E-mail", "to": "/" }
+          {
+            "label": "navbar.ab_fix",
+            "to": "/personal/Abonamente-telefonie-fixa"
+          },
+          {
+            "label": "navbar.optiuni_retea",
+            "to": "/personal/Optiuni-retea-fixa"
+          },
+          { "label": "navbar.fax_email", "to": "/personal/Fax-to-email" }
         ]
       }
     ]
   },
   {
-    "label": "M-eShop",
-    "to": "/shop"
+    "label": "navbar.eshop",
+    "to": "/personal/Telefoane"
   },
   {
     "menu_id": "menu4",
-    "label": "Descoperă",
+    "label": "navbar.descopera",
     "promo": [
       {
         "image_ro": "/images/landings/45220512.png",
@@ -213,40 +234,40 @@
     "bottom_menu": [
       {
         "label": "Video",
-        "to": "/"
+        "to": "/personal/Ghiduri-Video"
       },
       {
         "label": "Cariera",
-        "to": "/"
+        "to": "/personal/cariera"
       },
       {
-        "label": "FAQ",
-        "to": "/FAQ"
+        "label": "navbar.faq",
+        "to": "/personal/Intrebari-frecvente"
       }
     ],
     "submenu": [
       {
-        "title": "Aplicatii",
+        "title": "navbar.apps",
         "small": true,
         "items": [
-          { "label": "My Moldtelecom", "to": "/" },
-          { "label": "Moldtelecom TV", "to": "/" }
+          { "label": "navbar.mymt", "to": "https://mtc.md/mymtc" },
+          { "label": "navbar.mt_tv", "to": "/personal/moldtelecom_tv" }
         ]
       },
       {
-        "title": "Oferte",
+        "title": "navbar.oferte",
         "small": true,
         "items": [
-          { "label": "Mergi și castigi", "to": "/" },
-          { "label": "Challenge", "to": "/" },
-          { "label": "Transfer credit", "to": "/" },
-          { "label": "Plus", "to": "/" }
+          {
+            "label": "navbar.mergi_castigi",
+            "to": "/personal/mergi_si_castigi"
+          }
         ]
       }
     ]
   },
   {
-    "label": "Ajutor",
-    "to": "/help"
+    "label": "navbar.ajutor",
+    "to": "/personal/asistenta"
   }
 ]

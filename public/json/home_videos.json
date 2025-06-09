@@ -1,6 +1,26 @@
 [
-  { "url_ro": "rMYO3upF9mo", "url_ru": "rMYO3upF9mo", "url_en": "rMYO3upF9mo" },
-  { "url_ro": "qLWW0vKis_k", "url_ru": "qLWW0vKis_k", "url_en": "qLWW0vKis_k" },
-  { "url_ro": "r8MjOauzepg", "url_ru": "r8MjOauzepg", "url_en": "r8MjOauzepg" },
-  { "url_ro": "10mP9Bn4VZ4", "url_ru": "10mP9Bn4VZ4", "url_en": "10mP9Bn4VZ4" }
+  {
+    "url_ro": "cXGaYB1bOhc",
+    "url_ru": "cXGaYB1bOhc",
+    "url_en": "cXGaYB1bOhc",
+    "title_ro": "Moldtelecom TV GO - Descoperă libertatea televiziunii online"
+  },
+  {
+    "url_ro": "TM39vzfr4pc",
+    "url_ru": "TM39vzfr4pc",
+    "url_en": "TM39vzfr4pc",
+    "title_ro": "Testează o lună gratuit!"
+  },
+  {
+    "url_ro": "rMYO3upF9mo",
+    "url_ru": "rMYO3upF9mo",
+    "url_en": "rMYO3upF9mo",
+    "title_ro": "Internet + TV acasă cu reducere de pâna la 50% reducere timp de 2 ani!"
+  },
+  {
+    "url_ro": "qLWW0vKis_k",
+    "url_ru": "qLWW0vKis_k",
+    "url_en": "qLWW0vKis_k",
+    "title_ro": "Moldtelecom lansează, în premieră, Internetul de 2.1 Gbps – cea mai rapidă conexiune din Moldova!\n"
+  }
 ]

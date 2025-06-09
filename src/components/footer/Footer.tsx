@@ -189,7 +189,10 @@ const Footer: React.FC<FooterProps> = ({
               </defs>
             </svg>
             <div className={styles.footer_inside_top_icons}>
-              <Link to="/" className={styles.footer_inside_top_icons_link}>
+              <a
+                href={`https://mtc.md/fbf`}
+                className={styles.footer_inside_top_icons_link}
+              >
                 <svg
                   width="14"
                   height="24"
@@ -202,8 +205,11 @@ const Footer: React.FC<FooterProps> = ({
                     fill="white"
                   />
                 </svg>
-              </Link>
-              <Link to="/" className={styles.footer_inside_top_icons_link}>
+              </a>
+              <a
+                href={`https://mtc.md/ttf`}
+                className={styles.footer_inside_top_icons_link}
+              >
                 <svg
                   width="23"
                   height="24"
@@ -220,8 +226,11 @@ const Footer: React.FC<FooterProps> = ({
                     fill="white"
                   />
                 </svg>
-              </Link>
-              <Link to="/" className={styles.footer_inside_top_icons_link}>
+              </a>
+              <a
+                href={`https://mtc.md/lif`}
+                className={styles.footer_inside_top_icons_link}
+              >
                 <svg
                   width="28"
                   height="28"
@@ -234,8 +243,11 @@ const Footer: React.FC<FooterProps> = ({
                     fill="white"
                   />
                 </svg>
-              </Link>
-              <Link to="/" className={styles.footer_inside_top_icons_link}>
+              </a>
+              <a
+                href={`https://mtc.md/igf`}
+                className={styles.footer_inside_top_icons_link}
+              >
                 <svg
                   width="30"
                   height="30"
@@ -248,8 +260,11 @@ const Footer: React.FC<FooterProps> = ({
                     fill="white"
                   />
                 </svg>
-              </Link>
-              <Link to="/" className={styles.footer_inside_top_icons_link}>
+              </a>
+              <a
+                href={`https://mtc.md/ytf`}
+                className={styles.footer_inside_top_icons_link}
+              >
                 <svg
                   width="28"
                   height="22"
@@ -262,8 +277,11 @@ const Footer: React.FC<FooterProps> = ({
                     fill="white"
                   ></path>
                 </svg>
-              </Link>
-              <Link to="/" className={styles.footer_inside_top_icons_link}>
+              </a>
+              <a
+                href={`https://mtc.md/okf`}
+                className={styles.footer_inside_top_icons_link}
+              >
                 <svg
                   width="25"
                   height="24"
@@ -276,8 +294,11 @@ const Footer: React.FC<FooterProps> = ({
                     fill="white"
                   />
                 </svg>
-              </Link>
-              <Link to="/" className={styles.footer_inside_top_icons_link}>
+              </a>
+              <a
+                href={`https://mtc.md/tlf`}
+                className={styles.footer_inside_top_icons_link}
+              >
                 <svg
                   width="28"
                   height="28"
@@ -292,7 +313,7 @@ const Footer: React.FC<FooterProps> = ({
                     fill="white"
                   />
                 </svg>
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -302,27 +323,36 @@ const Footer: React.FC<FooterProps> = ({
                 {t('footer.about.title')}
               </div>
               <div className={styles.footer_inside_middle_list}>
-                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                <a
+                  href={`https://moldtelecom.md/${t('lang')}/personal/Despre-companie`}
+                  className={styles.footer_inside_middle_link}
+                >
                   {t('footer.about.aboutUs')}
-                </Link>
-                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                </a>
+                <a
+                  href={`https://moldtelecom.md/${t('lang')}/cariera`}
+                  className={styles.footer_inside_middle_link}
+                >
                   {t('footer.about.careers')}
-                </Link>
-                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                </a>
+                <Link
+                  to={'/magazine'}
+                  className={styles.footer_inside_middle_link}
+                >
                   {t('footer.about.magasin')}
                 </Link>
-                <Link
-                  to={'/'}
+                <a
+                  href={`https://moldtelecom.md/${t('lang')}/asistenta`}
                   className={`${styles.footer_inside_middle_link} ${styles.footer_inside_middle_link_sp}`}
                 >
                   {t('footer.about.asistance')}
-                </Link>
-                <Link
-                  to={'/'}
+                </a>
+                <a
+                  href={`https://moldtelecom.md/${t('lang')}/personal/licitatii_list`}
                   className={`${styles.footer_inside_middle_link} ${styles.footer_inside_middle_link_sp}`}
                 >
                   {t('footer.about.licitatii')}
-                </Link>
+                </a>
                 {isAboutVisible == false && (
                   <div
                     className={styles.footer_inside_middle_link_btn}
@@ -340,34 +370,63 @@ const Footer: React.FC<FooterProps> = ({
                 )}
 
                 {isAboutVisible === true && [
-                  <Link
+                  <a
                     key="1"
-                    to="/"
+                    href={`https://moldtelecom.md/${t('lang')}/personal/Consiliul_societatii`}
                     className={styles.footer_inside_middle_link}
                   >
                     {t('footer.about.consul')}
-                  </Link>,
-                  <Link
+                  </a>,
+                  <a
                     key="2"
-                    to="/"
+                    href={`https://moldtelecom.md/${t('lang')}/personal/structura-organizatorica`}
                     className={styles.footer_inside_middle_link}
                   >
                     {t('footer.about.sructure')}
-                  </Link>,
-                  <Link
+                  </a>,
+                  <a
                     key="3"
-                    to="/"
+                    href={`https://moldtelecom.md/files/Statutul%20MOLDTELECOM%20S.A..pdf`}
                     className={styles.footer_inside_middle_link}
                   >
                     {t('footer.about.status')}
-                  </Link>,
-                  <Link
+                  </a>,
+                  <a
                     key="3"
-                    to="/"
+                    href={`https://moldtelecom.md/files/Moldtelecom%20Cod%20de%20Etic%C4%83%20Corporativa.pdf`}
                     className={styles.footer_inside_middle_link}
                   >
                     {t('footer.about.etic')}
-                  </Link>,
+                  </a>,
+                  <a
+                    key="4"
+                    href={` https://moldtelecom.md/files/Cod-de-GC_S-AMoltelecom_redactratfinal.pdf`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.about.gov_code')}
+                  </a>,
+                  <a
+                    key="5"
+                    href={`https://moldtelecom.md/${t('lang')}/Parametri-de-calitate`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.about.quality')}
+                  </a>,
+                  <a
+                    key="6"
+                    href={`https://moldtelecom.md/files/Certificat%20SMC_4.pdf`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.about.certified')}
+                  </a>,
+
+                  <a
+                    key="7"
+                    href={`https://ivancea.moldtelecom.md/`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.about.inima_codrilor')}
+                  </a>,
                 ]}
               </div>
             </div>
@@ -376,12 +435,18 @@ const Footer: React.FC<FooterProps> = ({
             >
               <div className={styles.footer_inside_middle_title}>&nbsp;</div>
               <div className={styles.footer_inside_middle_list}>
-                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                <a
+                  href={`https://moldtelecom.md/${t('lang')}/asistenta`}
+                  className={styles.footer_inside_middle_link}
+                >
                   {t('footer.about.asistance')}
-                </Link>
-                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                </a>
+                <a
+                  href={`https://moldtelecom.md/${t('lang')}/personal/licitatii_list`}
+                  className={styles.footer_inside_middle_link}
+                >
                   {t('footer.about.licitatii')}
-                </Link>
+                </a>
               </div>
             </div>
             <div className={styles.footer_inside_middle_block}>
@@ -389,15 +454,24 @@ const Footer: React.FC<FooterProps> = ({
                 {t('footer.legal.title')}
               </div>
               <div className={styles.footer_inside_middle_list}>
-                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                <a
+                  href={`https://moldtelecom.md/${t('lang')}/personal/Conditii_contractuale`}
+                  className={styles.footer_inside_middle_link}
+                >
                   {t('footer.legal.conditions')}
-                </Link>
-                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                </a>
+                <a
+                  href={`https://moldtelecom.md/${t('lang')}/personal/structura-organizatorica`}
+                  className={styles.footer_inside_middle_link}
+                >
                   {t('footer.legal.structure')}
-                </Link>
-                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                </a>
+                <a
+                  href={`https://moldtelecom.md/${t('lang')}/personal/Rapoarte`}
+                  className={styles.footer_inside_middle_link}
+                >
                   {t('footer.legal.reports')}
-                </Link>
+                </a>
                 {isLegalVisible == false && (
                   <div
                     className={styles.footer_inside_middle_link_btn}
@@ -415,34 +489,76 @@ const Footer: React.FC<FooterProps> = ({
                 )}
 
                 {isLegalVisible === true && [
-                  <Link
+                  <a
                     key="1"
-                    to="/"
+                    href={`https://moldtelecom.md/${t('lang')}/personal/Securitatea%20Datelor`}
                     className={styles.footer_inside_middle_link}
                   >
                     {t('footer.legal.dates')}
-                  </Link>,
-                  <Link
+                  </a>,
+                  <a
                     key="2"
-                    to="/"
+                    href={`https://moldtelecom.md/files/PROCEDURA%20DE%20SELECTIE.pdf`}
                     className={styles.footer_inside_middle_link}
                   >
                     {t('footer.legal.procedure')}
-                  </Link>,
-                  <Link
+                  </a>,
+                  <a
                     key="3"
-                    to="/"
+                    href={`https://moldtelecom.md/files/Plan%20achizitii%202025%20comasat.xlsx`}
                     className={styles.footer_inside_middle_link}
                   >
                     {t('footer.legal.plan')}
-                  </Link>,
-                  <Link
-                    key="4"
-                    to="/"
+                  </a>,
+                  <a
+                    key="5"
+                    href={`https://moldtelecom.md/${t('lang')}/servicii-administrative`}
                     className={styles.footer_inside_middle_link}
                   >
-                    {t('footer.legal.security')}
-                  </Link>,
+                    {t('footer.legal.admins_serv')}
+                  </a>,
+                  <a
+                    key="5"
+                    href={`https://moldtelecom.md/files/Pages%20from%20IL%20prev.%20depist.%20%20%C8%99i%20%20reac%C8%9Bionare%20%20acte%20coruptie%20varianta%20finala_new.pdf`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.legal.instruction')}
+                  </a>,
+                  <a
+                    key="5"
+                    href={`https://moldtelecom.md/files/Declaratia%20privind%20Politica%20de%20mediu%20S.A.%20Moldtelecom.pdf`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.legal.declaration')}
+                  </a>,
+                  <a
+                    key="6"
+                    href={`https://moldtelecom.md/files/lista%20de%20interdictii%20Moldtelecom.pdf`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.legal.interdiction')}
+                  </a>,
+                  <a
+                    key="7"
+                    href={`https://moldtelecom.md/files/Regulamentul%20cu%20privire%20la%20achizitionarea%20bunurilor%20serviciilor%20si%20lucr%C4%83rilor%20MTC%2028.08.2024.pdf`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.legal.regulament')}
+                  </a>,
+                  <a
+                    key="8"
+                    href={`https://moldtelecom.md/files/Mecanismul%20de%20includere%2C%20eviden%C8%9B%C4%83%20....pdf`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.legal.mecanism')}
+                  </a>,
+                  <a
+                    key="9"
+                    href={`https://moldtelecom.md/files/Declaratia%20privind%20Politica%20in%20domeniul%20calitatii_ed.10-2024_2.pdf`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.legal.quality')}
+                  </a>,
                 ]}
               </div>
             </div>
@@ -451,19 +567,25 @@ const Footer: React.FC<FooterProps> = ({
                 {t('footer.utilities.title')}
               </div>
               <div className={styles.footer_inside_middle_list}>
-                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                <a
+                  href={`https://moldtelecom.md/${t('lang')}/personal/speedtest`}
+                  className={styles.footer_inside_middle_link}
+                >
                   {t('footer.utilities.speedtest')}
-                </Link>
-                <Link to={'/'} className={styles.footer_inside_middle_link}>
+                </a>
+                <a
+                  href={`https://moldtelecom.md/${t('lang')}/retea`}
+                  className={styles.footer_inside_middle_link}
+                >
                   {t('footer.utilities.news')}
-                </Link>
-                <Link
+                </a>
+                <a
                   key="4"
-                  to="/"
+                  href={`https://moldtelecom.md/${t('lang')}/personal/acoperire-3g`}
                   className={styles.footer_inside_middle_link}
                 >
                   {t('footer.utilities.coverage')}
-                </Link>
+                </a>
 
                 {isUtilVisible == false && (
                   <div
@@ -482,41 +604,76 @@ const Footer: React.FC<FooterProps> = ({
                 )}
 
                 {isUtilVisible === true && [
-                  <Link
+                  <a
                     key="1"
-                    to="/"
+                    href={`https://moldtelecom.md/${t('lang')}/personal/Ghiduri-Video`}
                     className={styles.footer_inside_middle_link}
                   >
                     {t('footer.utilities.guides')}
-                  </Link>,
-                  <Link
+                  </a>,
+                  <a
                     key="2"
-                    to="/"
+                    href={`https://moldtelecom.md/${t('lang')}/personal/Reclamatii`}
                     className={styles.footer_inside_middle_link}
                   >
                     {t('footer.utilities.reclamation')}
-                  </Link>,
-                  <Link
+                  </a>,
+                  <a
                     key="3"
-                    to="/"
+                    href={`https://moldtelecom.md/${t('lang')}/personal/Divertisment`}
                     className={styles.footer_inside_middle_link}
                   >
                     {t('footer.utilities.divertisment')}
-                  </Link>,
-                  <Link
+                  </a>,
+                  <a
                     key="5"
-                    to="/"
+                    href={`https://moldtelecom.md/files/Lista%20spatii%20libere%20pasibile%20de%20acordat%20in%20locatiune.pdf`}
                     className={styles.footer_inside_middle_link}
                   >
                     {t('footer.utilities.locations')}
-                  </Link>,
-                  <Link
+                  </a>,
+                  <a
                     key="6"
-                    to="/"
+                    href={`https://moldtelecom.md/${t('lang')}/personal/fraude`}
                     className={styles.footer_inside_middle_link}
                   >
                     {t('footer.utilities.frauds')}
-                  </Link>,
+                  </a>,
+                  <a
+                    key="7"
+                    href={`https://moldtelecom.md/${t('lang')}/mdix`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.utilities.mdix')}
+                  </a>,
+                  <a
+                    key="8"
+                    href={`https://moldtelecom.md/${t('lang')}/personal/freephone`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.utilities.frephone')}
+                  </a>,
+                  <a
+                    key="9"
+                    href={`https://www.moldtelecom.md/${t('lang')}/personal/lucrari`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.utilities.supraveghere')}
+                  </a>,
+                  <a
+                    key="10"
+                    href={`https://moldtelecom.md/Eliberarea%20condi%C8%9Biilor%20tehnice%20%C8%99i%20coordonarea%20proiectelor`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.utilities.eliberate_proiecte')}
+                  </a>,
+                  <a
+                    key="11"
+                    href={`https://moldtelecom.md/ro/personal/modalitati_achitare`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.utilities.plata')}
+                  </a>,
                 ]}
               </div>
             </div>
