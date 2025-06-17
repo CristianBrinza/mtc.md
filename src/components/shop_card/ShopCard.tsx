@@ -19,6 +19,7 @@ interface ShopCardProps {
   style_type?: string;
   show_like?: boolean;
   show_comapre?: boolean;
+  link?: string;
 }
 
 const STORAGE_KEY_LIKE = 'likedDevices';
@@ -43,6 +44,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
   device_id,
   buy,
   style_type,
+  link,
   show_comapre = true,
   show_like = true,
 }) => {
@@ -184,7 +186,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
         className={`${styles.ShopCard_cart}`}
         onMouseEnter={() => setIsCartHovered(true)}
         onMouseLeave={() => setIsCartHovered(false)}
-        onClick={handleClick}
+        onClick={() => (link ? (window.location.href = link) : handleClick())}
       >
         <Icon
           type="cart"

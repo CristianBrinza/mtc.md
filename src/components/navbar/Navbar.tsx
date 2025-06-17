@@ -601,7 +601,7 @@ const Navbar: React.FC = () => {
                 <Icon type="search" />
               </Link>
               <Link
-                to={`https://www.moldtelecom.md/${t('lang')}/personal/cart`}
+                to={`https://www.moldtelecom.md/${t('lang')}/eshop/cart`}
                 className={`${styles.navbar_bottom_menu_right_lang_btn} ${styles.topbnav_menu_desktop} `}
               >
                 <Icon type="cart" />

@@ -8,14 +8,14 @@ import translationRomanian from './lang/ro.json';
 import translationRussian from './lang/ru.json';
 
 const resources = {
-  en: {
-    translation: translationEnglish,
-  },
   ro: {
     translation: translationRomanian,
   },
   ru: {
     translation: translationRussian,
+  },
+  en: {
+    translation: translationEnglish,
   },
 };
 

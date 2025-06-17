@@ -1,19 +1,15 @@
 import Navbar from '../../components/navbar/Navbar.tsx';
-import Chat from '../../components/chat/Chat.tsx';
-import styles from './Home.module.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Link } from 'react-router-dom';
-import Videos from '../../components/videos/Videos.tsx';
-import { useEffect, useState } from 'react';
+import styles from './Home_v2.module.css';
+import { useTranslation } from 'react-i18next';
+import { useEffect, useRef, useState } from 'react';
+import Chat from '../../components/chat/Chat.tsx';
 import Footer from '../../components/footer/Footer.tsx';
 import ShopCard from '../../components/shop_card/ShopCard.tsx';
-import { useTranslation } from 'react-i18next';
-import CardFeatures from '../../components/card_features/CardFeatures.tsx';
-import Button from '../../components/Button.tsx';
-import CornerBanner from '../../components/corner_banner/CornerBanner.tsx';
 import Icon from '../../components/Icon.tsx';
+import Videos from '../../components/videos/Videos.tsx';
 
 interface videosItem {
   url_ro?: string;
@@ -40,13 +36,15 @@ export default function Home() {
     slidesToScroll: 1,
   };
 
+  const { t } = useTranslation();
+
   const settings_phones = {
     dots: true,
     infinite: true,
     arrows: true,
     autoplay: true,
     autoplaySpeed: 2500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
 
     responsive: [
@@ -71,32 +69,28 @@ export default function Home() {
     ],
   };
 
-  const settings_digital = {
-    dots: true,
-    infinite: true,
-    arrows: true,
-    autoplay: false,
-    autoplaySpeed: 2500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+  // ✨ Tell TS this ref will hold a HTMLDivElement
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-    responsive: [
-      {
-        breakpoint: 1300,
-        settings: {
-          slidesToShow: 2,
-          autoplay: true,
-          arrows: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 951,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+  // ✨ Narrow dir to two literal types
+  const scrollByCard = (dir: 'prev' | 'next') => {
+    const container = carouselRef.current;
+    if (!container) return;
+
+    // ✨ Tell TS this will return an HTMLElement (so offsetWidth exists)
+    const card = container.querySelector<HTMLDivElement>(
+      `.${styles.home_deals_card}`
+    );
+    if (!card) return;
+
+    const gap = parseInt(getComputedStyle(container).gap, 10) || 0;
+    const scrollAmount = card.offsetWidth + gap;
+
+    // ✨ Now TS knows container.scrollBy exists on HTMLDivElement
+    container.scrollBy({
+      left: dir === 'next' ? scrollAmount : -scrollAmount,
+      behavior: 'smooth',
+    });
   };
 
   const [videos, setVideos] = useState<videosItem[]>([]);
@@ -132,44 +126,46 @@ export default function Home() {
       .catch(error => console.error('Error loading news:', error));
   }, []);
 
-  const { t } = useTranslation();
   return (
     <>
       <Navbar />
 
       <Slider {...settings} className={styles.home_slider}>
-        <Link to={'/mobile'} className={styles.home_hero}>
+        <a href={'/mobile'} className={styles.home_hero}>
           <img
             className={styles.home_hero_img_desk}
             src="/images/homepage/home_hero_tm_desktop_ro.png"
             alt="Moldtelecom"
           />
-        </Link>
-        <Link to={'/mobile'} className={styles.home_hero}>
+        </a>
+        <a href={'/mobile'} className={styles.home_hero}>
           <img
             className={styles.home_hero_img_desk}
             src="/images/homepage/30292512_desk_ro.png"
             alt="Moldtelecom"
           />
-        </Link>
-        <Link to={'/mobile'} className={styles.home_hero}>
+        </a>
+        <a href={'/mobile'} className={styles.home_hero}>
           <img
             className={styles.home_hero_img_desk}
             src="/images/homepage/home_hero_mtc_tv_desktop_ro.png"
             alt="Moldtelecom"
           />
-        </Link>
-        <Link to={'/triple'} className={styles.home_hero}>
+        </a>
+        <a href={'/triple'} className={styles.home_hero}>
           <img
             className={styles.home_hero_img_desk}
             src="/images/homepage/home_hero_triple_desktop_ro.png"
             alt="Moldtelecom"
           />
-        </Link>
+        </a>
       </Slider>
 
       <div className={styles.home_topbar}>
-        <Link to={'/'} className={styles.home_topbar_block}>
+        <a
+          href={'https://my.moldtelecom.md/my-moldtelecom/'}
+          className={styles.home_topbar_block}
+        >
           <div className={styles.home_topbar_block_svg}>
             <svg
               width="17"
@@ -189,7 +185,7 @@ export default function Home() {
             </svg>
           </div>
           <div className={styles.home_topbar_block_title}>My Moldtelecom</div>
-        </Link>
+        </a>
         <a
           href={`https://www.moldtelecom.md/${t('lang')}/Telefoane`}
           className={styles.home_topbar_block}
@@ -213,7 +209,10 @@ export default function Home() {
           </div>
           <div className={styles.home_topbar_block_title}>eShop</div>
         </a>
-        <Link to={'/'} className={styles.home_topbar_block}>
+        <a
+          href={'https://achitari.moldtelecom.md/Pay'}
+          className={styles.home_topbar_block}
+        >
           <div className={styles.home_topbar_block_svg}>
             <svg
               width="24"
@@ -276,8 +275,11 @@ export default function Home() {
             </svg>
           </div>
           <div className={styles.home_topbar_block_title}>Reincarcare cont</div>
-        </Link>
-        <Link to={'/'} className={styles.home_topbar_block}>
+        </a>
+        <a
+          href={'https://moldtelecom.md/ro/cereri'}
+          className={styles.home_topbar_block}
+        >
           <div className={styles.home_topbar_block_svg}>
             <svg
               width="21"
@@ -295,8 +297,11 @@ export default function Home() {
             </svg>
           </div>
           <div className={styles.home_topbar_block_title}>Cerere online</div>
-        </Link>
-        <Link to={'/'} className={styles.home_topbar_block}>
+        </a>
+        <a
+          href={'https://moldtelecom.md/ro/Factura-prin-email'}
+          className={styles.home_topbar_block}
+        >
           <div className={styles.home_topbar_block_svg}>
             <svg
               width="19"
@@ -319,8 +324,8 @@ export default function Home() {
             </svg>
           </div>
           <div className={styles.home_topbar_block_title}>Primeste factura</div>
-        </Link>
-        <Link to={'/'} className={styles.home_topbar_block}>
+        </a>
+        <a href={'/magazine'} className={styles.home_topbar_block}>
           <div className={styles.home_topbar_block_svg}>
             <svg
               width="31"
@@ -338,234 +343,317 @@ export default function Home() {
             </svg>
           </div>
           <div className={styles.home_topbar_block_title}>Magazine</div>
-        </Link>
+        </a>
       </div>
 
-      <div className={styles.home_discount_block}>
-        <div className={styles.home_discount_block_small_title}>
-          Descoperă cea mai tare promoție
-        </div>
-        <div className={styles.home_discount_block_title}>
-          Home Deal <span>( Internet fibră + TV acasă )</span>
-        </div>
-
-        <div className={styles.home_discount_block_list}>
-          <div className={styles.home_discount_block_list_row}>
-            <div className={styles.home_discount_block_list_svg}>
-              <svg
-                width="49"
-                height="48"
-                viewBox="0 0 49 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M39.8401 10.875H8.36305C6.90696 10.875 5.72656 12.0554 5.72656 13.5115V30.551C5.72656 32.0071 6.90696 33.1875 8.36305 33.1875H39.8401C41.2962 33.1875 42.4766 32.0071 42.4766 30.551V13.5115C42.4766 12.0554 41.2962 10.875 39.8401 10.875Z"
-                  stroke="black"
-                  stroke-opacity="0.85"
-                  stroke-width="3"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M13.6016 37.125H34.6016Z"
-                  fill="black"
-                  fill-opacity="0.85"
-                />
-                <path
-                  d="M13.6016 37.125H34.6016"
-                  stroke="black"
-                  stroke-opacity="0.85"
-                  stroke-width="3"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </div>
-            <div className={styles.home_discount_block_list_text}>
-              <span className={styles.home_discount_block_title_span}>
-                Televiziune
-              </span>{' '}
-              <br />
-              Până la 163 canale, 105 HD, 3 radio cu <br />
-              abonamentul Univers și TV la preț special.
-            </div>
-          </div>
-          <div className={styles.home_discount_block_list_row}>
-            <div className={styles.home_discount_block_list_svg}>
-              <svg
-                width="49"
-                height="48"
-                viewBox="0 0 49 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31.9496 27.6C32.0936 26.412 32.2016 25.224 32.2016 24C32.2016 22.776 32.0936 21.588 31.9496 20.4H38.0336C38.3216 21.552 38.5016 22.758 38.5016 24C38.5016 25.242 38.3216 26.448 38.0336 27.6M28.7636 37.608C29.8436 35.61 30.6716 33.45 31.2476 31.2H36.5576C34.8137 34.2029 32.047 36.4776 28.7636 37.608ZM28.3136 27.6H19.8896C19.7096 26.412 19.6016 25.224 19.6016 24C19.6016 22.776 19.7096 21.57 19.8896 20.4H28.3136C28.4756 21.57 28.6016 22.776 28.6016 24C28.6016 25.224 28.4756 26.412 28.3136 27.6ZM24.1016 38.328C22.6076 36.168 21.4016 33.774 20.6636 31.2H27.5396C26.8016 33.774 25.5956 36.168 24.1016 38.328ZM16.9016 16.8H11.6456C13.3711 13.7887 16.1359 11.5102 19.4216 10.392C18.3416 12.39 17.5316 14.55 16.9016 16.8ZM11.6456 31.2H16.9016C17.5316 33.45 18.3416 35.61 19.4216 37.608C16.1424 36.4781 13.3813 34.2027 11.6456 31.2ZM10.1696 27.6C9.88156 26.448 9.70156 25.242 9.70156 24C9.70156 22.758 9.88156 21.552 10.1696 20.4H16.2536C16.1096 21.588 16.0016 22.776 16.0016 24C16.0016 25.224 16.1096 26.412 16.2536 27.6M24.1016 9.654C25.5956 11.814 26.8016 14.226 27.5396 16.8H20.6636C21.4016 14.226 22.6076 11.814 24.1016 9.654ZM36.5576 16.8H31.2476C30.6833 14.5709 29.8492 12.419 28.7636 10.392C32.0756 11.526 34.8296 13.812 36.5576 16.8ZM24.1016 6C14.1476 6 6.10156 14.1 6.10156 24C6.10156 28.7739 7.99799 33.3523 11.3736 36.7279C13.0451 38.3994 15.0294 39.7253 17.2133 40.6298C19.3971 41.5344 21.7378 42 24.1016 42C28.8755 42 33.4538 40.1036 36.8295 36.7279C40.2051 33.3523 42.1016 28.7739 42.1016 24C42.1016 21.6362 41.636 19.2956 40.7314 17.1117C39.8268 14.9278 38.5009 12.9435 36.8295 11.2721C35.158 9.60062 33.1737 8.27475 30.9899 7.37017C28.806 6.46558 26.4654 6 24.1016 6Z"
-                  fill="black"
-                  fill-opacity="0.85"
-                />
-                <path
-                  d="M31.9496 27.6C32.0936 26.412 32.2016 25.224 32.2016 24C32.2016 22.776 32.0936 21.588 31.9496 20.4H38.0336C38.3216 21.552 38.5016 22.758 38.5016 24C38.5016 25.242 38.3216 26.448 38.0336 27.6M10.1696 27.6C9.88156 26.448 9.70156 25.242 9.70156 24C9.70156 22.758 9.88156 21.552 10.1696 20.4H16.2536C16.1096 21.588 16.0016 22.776 16.0016 24C16.0016 25.224 16.1096 26.412 16.2536 27.6M28.7636 37.608C29.8436 35.61 30.6716 33.45 31.2476 31.2H36.5576C34.8137 34.2029 32.047 36.4776 28.7636 37.608ZM28.3136 27.6H19.8896C19.7096 26.412 19.6016 25.224 19.6016 24C19.6016 22.776 19.7096 21.57 19.8896 20.4H28.3136C28.4756 21.57 28.6016 22.776 28.6016 24C28.6016 25.224 28.4756 26.412 28.3136 27.6ZM24.1016 38.328C22.6076 36.168 21.4016 33.774 20.6636 31.2H27.5396C26.8016 33.774 25.5956 36.168 24.1016 38.328ZM16.9016 16.8H11.6456C13.3711 13.7887 16.1359 11.5102 19.4216 10.392C18.3416 12.39 17.5316 14.55 16.9016 16.8ZM11.6456 31.2H16.9016C17.5316 33.45 18.3416 35.61 19.4216 37.608C16.1424 36.4781 13.3813 34.2027 11.6456 31.2ZM24.1016 9.654C25.5956 11.814 26.8016 14.226 27.5396 16.8H20.6636C21.4016 14.226 22.6076 11.814 24.1016 9.654ZM36.5576 16.8H31.2476C30.6833 14.5709 29.8492 12.419 28.7636 10.392C32.0756 11.526 34.8296 13.812 36.5576 16.8ZM24.1016 6C14.1476 6 6.10156 14.1 6.10156 24C6.10156 28.7739 7.99799 33.3523 11.3736 36.7279C13.0451 38.3994 15.0294 39.7253 17.2133 40.6298C19.3971 41.5344 21.7378 42 24.1016 42C28.8755 42 33.4538 40.1036 36.8295 36.7279C40.2051 33.3523 42.1016 28.7739 42.1016 24C42.1016 21.6362 41.636 19.2956 40.7314 17.1117C39.8268 14.9278 38.5009 12.9435 36.8295 11.2721C35.158 9.60062 33.1737 8.27475 30.9899 7.37017C28.806 6.46558 26.4654 6 24.1016 6Z"
-                  stroke="white"
-                  stroke-width="0.8"
-                />
-              </svg>
-            </div>
-            <div className={styles.home_discount_block_list_text}>
-              <span className={styles.home_discount_block_title_span}>
-                Internet
-              </span>{' '}
-              <br />
-              Viteză maximă de net disponibilă la adresa ta, <br /> de până la
-              2.1 Gbps.
-            </div>
-          </div>
-          <div className={styles.home_discount_block_list_row}>
-            <div className={styles.home_discount_block_list_svg}>
-              <svg
-                width="49"
-                height="48"
-                viewBox="0 0 49 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.50486 20.5141L9.50485 20.5141L9.50325 20.5154C8.62218 21.2523 7.31857 21.1763 6.49368 20.3515C5.52286 19.3806 5.60769 17.8006 6.65205 16.9651L6.65206 16.9651L6.65398 16.9635C16.7991 8.68071 31.4497 8.68089 41.5767 16.9634L41.577 16.9636C42.6235 17.817 42.6902 19.3984 41.7372 20.3515C40.9157 21.173 39.5933 21.238 38.6901 20.4961L38.6898 20.4958C30.222 13.566 17.9551 13.5657 9.50486 20.5141ZM16.66 27.7693L16.6585 27.7704C15.7337 28.4357 14.4928 28.3506 13.7062 27.5639C12.7129 26.5707 12.792 24.9455 13.8906 24.1492C19.9778 19.7559 28.2533 19.7562 34.3222 24.1491L34.3241 24.1504C35.4204 24.929 35.5001 26.5707 34.5247 27.546L34.5068 27.5639C33.7223 28.3484 32.4808 28.4203 31.5524 27.769C29.3755 26.2276 26.7739 25.3998 24.1065 25.3998C21.4389 25.3998 18.8371 26.2277 16.66 27.7693ZM23.0126 36.8704L20.3817 34.2395C19.655 33.5128 19.8319 32.2648 20.6977 31.7917C21.7442 31.2549 22.9035 30.9749 24.0796 30.9749C25.2568 30.9749 26.4171 31.2553 27.4643 31.7931C28.3785 32.2659 28.5418 33.5111 27.8133 34.2395L25.1825 36.8704C24.5821 37.4707 23.6129 37.4707 23.0126 36.8704Z"
-                  fill="black"
-                  stroke="white"
-                  stroke-width="0.5"
-                />
-              </svg>
-            </div>
-            <div className={styles.home_discount_block_list_text}>
-              <span className={styles.home_discount_block_title_span}>
-                {' '}
-                Super Wi-Fi
-              </span>{' '}
-              <br />
-              Stabilitate și viteză ridicată cu echipamentul <br /> Wi-Fi 6, în
-              toate colțurile casei.
-            </div>
-          </div>
-        </div>
-        <Button
-          to={`https://moldtelecom.md/${t('lang')}/Promo_Abonamente-TV-Internet-Mobil`}
-          bgcolor={'var(--theme_primary_color_blue_3)'}
-          border={'transparent'}
-          hover_border={'var(--theme_primary_color_blue_3)'}
-          hover_bgcolor={'var(--theme_primary_color_blue_3)'}
-          icon={'arrow_right'}
-        >
-          Mai multe detalii
-        </Button>
-
-        <img
-          className={styles.home_discount_block_img}
-          src="/images/landings/62474372.png"
-          alt="Speacial_Deal"
-        />
+      <div className={`${styles.home_promo_title} ${''}`}>
+        NEW <span>deals & products</span>
       </div>
-      <div className={styles.home_carousell_phones}>
+      <div className={styles.home_promo}>
+        {/*<div className={`${styles.home_promo_card} ${styles.home_promo_card_1}`}>*/}
+
+        {/*  <div className={styles.home_promo_card_subtitle}>*/}
+        {/*    eSIM*/}
+        {/*  </div>*/}
+        {/*  <div className={styles.home_promo_card_title}>*/}
+        {/*    Descoperă cea mai tare promoție.*/}
+
+        {/*  </div>*/}
+
+        {/*  <svg className={styles.home_promo_card_btn} width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
+        {/*    <rect width="36" height="36" rx="18" fill="#2D2D2F"/>*/}
+        {/*    <path d="M10 18L26 18M26 18L19 11M26 18L19 25" stroke="#D0D0D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>*/}
+        {/*  </svg>*/}
+        {/*</div>*/}
         <div
-          className={`title title_3 title_3_bold gradient_text_4 ${styles.home_title} ${styles.home_title_exclusiv}`}
+          onClick={() => {
+            window.location.href = `https://moldtelecom.md/${t('lang')}/esim-acasa`;
+          }}
+          className={`${styles.home_promo_card} ${styles.home_promo_card_2}`}
         >
-          {t('home.exclusive_online')}
+          <div className={styles.home_promo_card_subtitle}>eSIM Acasa</div>
+          <div className={styles.home_promo_card_title}>
+            Simplu și ușor, oriunde te afli <br />
+            365 zile, la doar 80 lei
+          </div>
+
+          <svg
+            className={styles.home_promo_card_btn}
+            width="36"
+            height="36"
+            viewBox="0 0 36 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="36" height="36" rx="18" fill="#2D2D2F" />
+            <path
+              d="M10 18L26 18M26 18L19 11M26 18L19 25"
+              stroke="#D0D0D1"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
-        <Slider {...settings_phones} className={styles.home_carousell}>
-          <div className={styles.triple_carousell_block}>
-            <ShopCard
-              device_id={194234497}
-              image="/images/shop/394534437.png"
-              price={1}
-              old_price={5099}
-              reducere="- 5098"
-              title="Hisense"
-              subtitle="43A4N (4k)"
-              characteristics='UHD VA / 4K / 43"'
-              tag={'DOAR 1 leu'}
-            />
+        <div
+          onClick={() => {
+            window.location.href = `https://moldtelecom.md/${t('lang')}/moldtelecom-tv-go`;
+          }}
+          className={`${styles.home_promo_card} ${styles.home_promo_card_3}`}
+        >
+          <div className={styles.home_promo_card_subtitle}>
+            Moldtelecom TV GO
           </div>
-          <div className={styles.triple_carousell_block}>
-            <ShopCard
-              device_id={394514438}
-              image="/images/shop/394514438.png"
-              price={2999}
-              old_price={7299}
-              reducere="-40%"
-              title="Samsung"
-              subtitle="Galaxy S25 Ultra"
-              characteristics='(12/512GB)"'
-            />
+          <div className={styles.home_promo_card_title}>
+            TV pe orice Dispozitiv,
+            <br />
+            Oriunde, fara contracte sau obligatii
           </div>
-          <div className={styles.triple_carousell_block}>
-            <ShopCard
-              device_id={383534569}
-              image="/images/shop/383534569.png"
-              price={7499}
-              old_price={8799}
-              reducere="- 1300"
-              title="Huawei"
-              subtitle="Watch 4"
-              characteristics='46 mm / Negru"'
-              tag={'Promo'}
+
+          <svg
+            className={styles.home_promo_card_btn}
+            width="36"
+            height="36"
+            viewBox="0 0 36 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="36" height="36" rx="18" fill="#2D2D2F" />
+            <path
+              d="M10 18L26 18M26 18L19 11M26 18L19 25"
+              stroke="#D0D0D1"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
+          </svg>
+        </div>
+      </div>
+
+      <div className={`${styles.home_phones}`}>
+        <div className={`${styles.home_phones_inside}`}>
+          <div className={`${styles.home_phones_title}`}>
+            Exclusiv online
+            {/*Descoperă cele mai tari oferte exclusiv online*/}
+            <div className={styles.home_phones_subtitle}>
+              Descoperă cele mai tari oferte exclusiv online
+            </div>
           </div>
-          <div className={styles.triple_carousell_block}>
-            <ShopCard
-              device_id={5235345692}
-              image="/images/shop/523534569.png"
-              price={13499}
-              old_price={2999}
-              // reducere="-99%"
-              title="Apple"
-              subtitle="Iphone 16 Pro"
-              characteristics="(8/256GB)"
-            />
-          </div>
-        </Slider>
-        <div className={styles.devices_disclailmer}>
-          <span>
-            {' '}
+
+          <Slider {...settings_phones} className={styles.home_carousell}>
+            <div className={styles.home_carousell_phone}>
+              <ShopCard
+                device_id={194234497}
+                image="/images/shop/394534437.png"
+                price={1}
+                old_price={5099}
+                reducere="- 5098"
+                title="Hisense"
+                subtitle="43A4N (4k)"
+                characteristics='UHD VA / 4K / 43"'
+                tag={'DOAR 1 leu'}
+              />
+            </div>
+            <div className={styles.home_carousell_phone}>
+              <ShopCard
+                device_id={394514438}
+                image="/images/shop/394514438.png"
+                price={2999}
+                old_price={7299}
+                reducere="-40%"
+                title="Samsung"
+                subtitle="Galaxy S25 Ultra"
+                characteristics='(12/512GB)"'
+              />
+            </div>
+            <div className={styles.home_carousell_phone}>
+              <ShopCard
+                device_id={383534569}
+                image="/images/shop/383534569.png"
+                price={7499}
+                old_price={8799}
+                reducere="- 1300"
+                title="Huawei"
+                subtitle="Watch 4"
+                characteristics='46 mm / Negru"'
+                tag={'Promo'}
+                link={`https://moldtelecom.md/${t('lang')}/personal/gadgeturismart/359`}
+              />
+            </div>
+            <div className={styles.home_carousell_phone}>
+              <ShopCard
+                device_id={5235345692}
+                image="/images/shop/523534569.png"
+                price={30489}
+                old_price={36999}
+                reducere="- 6510"
+                title="Apple"
+                subtitle="Iphone 16 Pro Max"
+                characteristics="(8/256GB)"
+                link={`https://www.moldtelecom.md/${t('lang')}/eshop/telefoane/apple-iphone-16-pro-max-8-gb-256-gb-desert-titanium`}
+              />
+            </div>
+            <div className={styles.home_carousell_phone}>
+              <ShopCard
+                device_id={5235345692}
+                image="/images/shop/523534569.png"
+                price={13499}
+                old_price={2999}
+                // reducere="-99%"
+                title="Apple"
+                subtitle="Iphone 16 Pro"
+                characteristics="(8/256GB)"
+              />
+            </div>
+          </Slider>
+          <div className={styles.devices_disclailmer}>
             <sup>*</sup>Oferta este valabilă în limita stocului disponibil
-          </span>
+          </div>
         </div>
       </div>
-      <div className={`title title_3 ${styles.home_title}`}>
-        {t('home.only_digital')}
+      <div className={`${styles.home_deals_title} ${''}`}>WOW! Deals</div>
+      <div className={styles.home_deals} ref={carouselRef}>
+        <div
+          className={`${styles.home_deals_card} ${styles.home_deals_card_1}`}
+        >
+          {/*<div className={`${styles.home_deals_card_special}`}>*/}
+          {/*</div>*/}
+          <div className={styles.home_deals_card_subtitle}>Home Deal</div>
+          <div className={styles.home_deals_card_title}>
+            Descoperă cea mai tare promoție.
+            <br />
+            <span>Internet fibră + TV acasă</span>
+          </div>
+          <svg
+            className={styles.home_deals_card_btn}
+            width="36"
+            height="36"
+            viewBox="0 0 36 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="36" height="36" rx="18" fill="#2D2D2F" />
+            <path
+              d="M10 18L26 18M26 18L19 11M26 18L19 25"
+              stroke="#D0D0D1"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div
+          className={`${styles.home_deals_card} ${styles.home_deals_card_4}`}
+        >
+          <div className={styles.home_deals_card_subtitle}>One Number</div>
+          <div className={styles.home_deals_card_title}>
+            Ramai mereu conenctat.
+          </div>
+          <svg
+            className={styles.home_deals_card_btn}
+            width="36"
+            height="36"
+            viewBox="0 0 36 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="36" height="36" rx="18" fill="#2D2D2F" />
+            <path
+              d="M10 18L26 18M26 18L19 11M26 18L19 25"
+              stroke="#D0D0D1"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div
+          className={`${styles.home_deals_card} ${styles.home_deals_card_2}`}
+        >
+          <div className={styles.home_deals_card_subtitle}>eSIMplu</div>
+          <div className={styles.home_deals_card_title}>
+            Cu eSIM te conectezi 100% digital.
+          </div>
+          <svg
+            className={styles.home_deals_card_btn}
+            width="36"
+            height="36"
+            viewBox="0 0 36 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="36" height="36" rx="18" fill="#2D2D2F" />
+            <path
+              d="M10 18L26 18M26 18L19 11M26 18L19 25"
+              stroke="#D0D0D1"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div
+          className={`${styles.home_deals_card} ${styles.home_deals_card_3}`}
+        >
+          <div className={styles.home_deals_card_subtitle}>
+            Prepay 100% Digital
+          </div>
+          <div className={styles.home_deals_card_title}>
+            Ia-ți cartela Prepay <br /> la doar 10 lei.
+          </div>
+          <svg
+            className={styles.home_deals_card_btn}
+            width="36"
+            height="36"
+            viewBox="0 0 36 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="36" height="36" rx="18" fill="#2D2D2F" />
+            <path
+              d="M10 18L26 18M26 18L19 11M26 18L19 25"
+              stroke="#D0D0D1"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div className={styles.home_deals_card}>{/* Card 5 content */}</div>
       </div>
-      <Slider {...settings_digital} className={styles.home_carousell}>
-        <div className={styles.home_carousell_block}>
-          <CardFeatures
-            img={'/images/landings/12474372.png'}
-            title={' Conecteaza One Number - mereu cu tine'}
-            subtitle={
-              'Acum poți utiliza atât telefonul, cât și ceasul inteligent, cu un singur număr de telefon și abonament.'
-            }
+      <div className={styles.home_deals_btns}>
+        <svg
+          className={styles.home_deals_btns_svg}
+          onClick={() => scrollByCard('prev')}
+          style={{ transform: 'rotate(180deg)' }}
+          width="36"
+          height="36"
+          viewBox="0 0 36 36"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="36" height="36" rx="18" fill="#F2F2F3" />
+          <path
+            d="M23.5587 16.916C24.1447 17.5 24.1467 18.446 23.5647 19.034L16.6077 26.056C16.3147 26.352 15.9287 26.5 15.5427 26.5C15.1607 26.5 14.7787 26.355 14.4867 26.065C13.8977 25.482 13.8947 24.533 14.4777 23.944L20.3818 17.984L14.4408 12.062C13.8548 11.478 13.8528 10.5279 14.4378 9.941C15.0218 9.354 15.9738 9.353 16.5588 9.938L23.5587 16.916Z"
+            fill="#BDBDBE"
           />
-        </div>
-        <div className={styles.home_carousell_block}>
-          <CardFeatures
-            img={'/images/landings/16474379.png'}
-            title={' Cu eSIM te conectezi <br> 100% digital'}
-            subtitle={
-              'eSIMplu să te conectezi prin câteva clickuri la rețeaua mobilă Moldtelecom, oriunde te-ai afla.'
-            }
+        </svg>
+        <svg
+          className={styles.home_deals_btns_svg}
+          onClick={() => scrollByCard('next')}
+          width="36"
+          height="36"
+          viewBox="0 0 36 36"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="36" height="36" rx="18" fill="#F2F2F3" />
+          <path
+            d="M23.5587 16.916C24.1447 17.5 24.1467 18.446 23.5647 19.034L16.6077 26.056C16.3147 26.352 15.9287 26.5 15.5427 26.5C15.1607 26.5 14.7787 26.355 14.4867 26.065C13.8977 25.482 13.8947 24.533 14.4777 23.944L20.3818 17.984L14.4408 12.062C13.8548 11.478 13.8528 10.5279 14.4378 9.941C15.0218 9.354 15.9738 9.353 16.5588 9.938L23.5587 16.916Z"
+            fill="#BDBDBE"
           />
-        </div>
-        <div className={styles.home_carousell_block}>
-          <CardFeatures
-            img={'/images/landings/12774378.png'}
-            title={' Ia-ți cartela Prepay 100% <br> Online'}
-            subtitle={
-              'Cu doar 10 lei, primești tot ce ai nevoie minute, SMS-uri și internet, exact când vrei!'
-            }
-          />
-        </div>
-      </Slider>
-
-      {/*<MyApp />*/}
-
-      <div className={styles.home_award}></div>
+        </svg>
+      </div>
 
       <div className={styles.news}>
         <div className={styles.news_title_block}>
@@ -666,7 +754,6 @@ export default function Home() {
       <Videos items={videos} />
       <Chat />
       <Footer disclaimer={true} />
-      <CornerBanner />
     </>
   );
 }

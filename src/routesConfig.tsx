@@ -7,6 +7,7 @@ import Mobile from './pages/personal/oferte/mobile/Mobile.tsx';
 import Magazine from './pages/personal/magazine/Magazine.tsx';
 import IconShowcase from './pages/technical/IconShowcase.tsx';
 import WifiPlus from './pages/personal/oferte/wifiplus/WifiPlus.tsx';
+import OptionsandServices from './pages/personal/oferte/optionsandservices/OptionsandServices.tsx';
 // import { TestPage } from './pages/test/Test.tsx';
 
 export interface RouteConfig {
@@ -16,9 +17,14 @@ export interface RouteConfig {
 }
 
 export const routesConfig: RouteConfig[] = [
-  { path: '/', i18nKey: 'home.title', element: React.createElement(Home) },
+  // { path: '/', i18nKey: 'home.title', element: React.createElement(Home) },
+  // {
+  //   path: '/:lang/',
+  //   i18nKey: 'home.title',
+  //   element: React.createElement(Home),
+  // },
   {
-    path: '/:lang/',
+    path: '/:lang/home',
     i18nKey: 'home.title',
     element: React.createElement(Home),
   },
@@ -59,7 +65,11 @@ export const routesConfig: RouteConfig[] = [
     i18nKey: 'navbar.internet_tv',
     element: React.createElement(IconShowcase),
   },
-
+  {
+    path: '/:lang/mobile-options',
+    i18nKey: 'not_found.title',
+    element: React.createElement(OptionsandServices),
+  },
   {
     path: '*',
     i18nKey: 'not_found.title',

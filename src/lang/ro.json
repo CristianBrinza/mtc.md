@@ -74,6 +74,12 @@
     "exclusive_online": "Descoperă cele mai tari oferte exclusiv online",
     "only_digital": "Servicii digitale"
   },
+  "optionsandservices": {
+    "breadcrumb": {
+      "mobile": "Mobile",
+      "optionsandservices": "Options & Services"
+    }
+  },
   "wifi_plus": {
     "breadcrumb": {
       "internet": "Internet",

@@ -332,6 +332,15 @@ body {
   margin-left: -100px !important;
 }
 
+.mtc_carousell .slick-prev:before {
+  content: url('data:image/svg+xml;charset=UTF-8,<svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8.94894 1.90755L1.6585 9.97889L8.94871 18.0934" stroke="%232F3043" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </svg>') !important;
+  margin-left: -100px !important;
+}
+.mtc_carousell .slick-next:before {
+  content: url('data:image/svg+xml;charset=UTF-8,<svg style="transform:rotate(180deg)" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="18" fill="%23E2E2E5"/><path d="M23.5587 16.916C24.1447 17.5 24.1467 18.446 23.5647 19.034L16.6077 26.056C16.3147 26.352 15.9287 26.5 15.5427 26.5C15.1607 26.5 14.7787 26.355 14.4867 26.065C13.8977 25.482 13.8947 24.533 14.4777 23.944L20.3818 17.984L14.4408 12.062C13.8548 11.478 13.8528 10.5279 14.4378 9.941C15.0218 9.354 15.9738 9.353 16.5588 9.938L23.5587 16.916Z" fill="%23636365"/></svg>') !important;
+  margin-left: -100px !important;
+}
+
 .stroked-text_white {
   color: rgba(255, 255, 255, 0);
   -webkit-text-stroke-width: 1.8px;

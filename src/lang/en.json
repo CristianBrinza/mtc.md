@@ -10,6 +10,12 @@
     "faq_less": "show less",
     "videos": "Video"
   },
+  "optionsandservices": {
+    "breadcrumb": {
+      "mobile": "Mobile",
+      "optionsandservices": "Options & Services"
+    }
+  },
   "wifi_plus": {
     "breadcrumb": {
       "internet": "Internet",

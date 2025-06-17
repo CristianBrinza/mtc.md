@@ -1,7 +1,7 @@
 import './App.css';
 import { LanguageProvider } from './context/LanguageContext.tsx';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import Home from './pages/home/Home.tsx';
+import Home from './pages/home/Home_v2.tsx';
 import NotFound from './pages/not_found/NotFound.tsx';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n.tsx';

@@ -1,4 +1,4 @@
-// src/pages/WifiPlus/WifiPlus.tsx
+// src/pages/OptionsandServices/OptionsandServices.tsx
 import Navbar from '../../../../components/navbar/Navbar.tsx';
 import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb.tsx';
 import Hero from '../../../../components/hero/Hero.tsx';
