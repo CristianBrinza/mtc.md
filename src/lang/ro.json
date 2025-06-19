@@ -679,5 +679,16 @@
         "Prin cerere depusă la orice reprezentață SA Moldtelecom"
       ]
     }
+  },
+  "myapp": {
+    "title": "Descarcă aplicația My Moldtelecom",
+    "text": "Gestionează conturile și serviciile, achită facturile, transferă bani pe contul altor persoane sau activează opțiuni adiționale, oricând și oriunde",
+    "btn": "Descarcă aplicația"
+  },
+  "promorazuieste": {
+    "breadcrumb": {
+      "app": "Promo",
+      "name": "Răzuiește"
+    }
   }
 }

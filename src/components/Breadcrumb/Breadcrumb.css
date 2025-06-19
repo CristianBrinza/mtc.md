@@ -1,6 +1,6 @@
 .breadcrumb {
   color: #969fa8;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -31,7 +31,7 @@
 }
 .breadcrumb span:last-child span {
   color: #969fa8;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './MyApp.module.css';
 import Button from '../Button.tsx';
+import { useTranslation } from 'react-i18next';
 
 interface MyAppProps {
   style_type?: string;
@@ -22,21 +23,19 @@ const MyApp: React.FC<MyAppProps> = ({ style_type }) => {
           : 'var(--theme_primary_color_gray)',
   };
 
+  const { t } = useTranslation();
+
   return (
     <div className={styles.MyApp} style={MyAppStyle}>
       <div className={`title title_3 ${styles.MyApp_title}`}>
-        Descarcă aplicația My&nbsp;Moldtelecom
+        {t('myapp.title')}
       </div>
       {/*<div className={styles.MyApp_text}>*/}
       {/*  <b> Gestionează conturile</b> și serviciile, <b>achită facturile</b>,{' '}*/}
       {/*  <b>transferă bani</b> pe contul altor persoane sau activează opțiuni*/}
       {/*  adiționale, oricând și oriunde*/}
       {/*</div>*/}
-      <div className={styles.MyApp_text}>
-        Gestionează conturile și serviciile, achită facturile, transferă bani pe
-        contul altor persoane sau activează opțiuni adiționale, oricând și
-        oriunde
-      </div>
+      <div className={styles.MyApp_text}>{t('myapp.text')}</div>
       <div className={styles.MyApp_text_btns}>
         <Button
           to="https://mtc.md/my-mtc"
@@ -47,7 +46,7 @@ const MyApp: React.FC<MyAppProps> = ({ style_type }) => {
           hover_bgcolor={'var(--theme_primary_color_blue_2)'}
           icon={'arrow_right'}
         >
-          Descarcă aplicația
+          {t('myapp.btn')}
         </Button>
         <svg
           className={styles.MyApp_text_icons}

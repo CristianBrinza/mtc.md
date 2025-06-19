@@ -8,6 +8,7 @@ import Magazine from './pages/personal/magazine/Magazine.tsx';
 import IconShowcase from './pages/technical/IconShowcase.tsx';
 import WifiPlus from './pages/personal/oferte/wifiplus/WifiPlus.tsx';
 import OptionsandServices from './pages/personal/oferte/optionsandservices/OptionsandServices.tsx';
+import PromoRazuieste from './pages/personal/oferte/promo_razuieste/PromoRazuieste.tsx';
 // import { TestPage } from './pages/test/Test.tsx';
 
 export interface RouteConfig {
@@ -69,6 +70,11 @@ export const routesConfig: RouteConfig[] = [
     path: '/:lang/mobile-options',
     i18nKey: 'not_found.title',
     element: React.createElement(OptionsandServices),
+  },
+  {
+    path: '/:lang/razuieste',
+    i18nKey: 'not_found.title',
+    element: React.createElement(PromoRazuieste),
   },
   {
     path: '*',

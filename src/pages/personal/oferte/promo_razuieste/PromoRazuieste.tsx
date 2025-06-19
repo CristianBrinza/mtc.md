@@ -1,86 +1,33 @@
-// src/pages/OptionsandServices/OptionsandServices.tsx
 import Navbar from '../../../../components/navbar/Navbar.tsx';
 import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb.tsx';
 import Hero from '../../../../components/hero/Hero.tsx';
-import styles from './WifiPlus.module.css';
+import styles from './PromoRazuieste.module.css';
 import Footer from '../../../../components/footer/Footer.tsx';
-import CostumeFunctions from '../../../../components/functions/CostumeFunctions.tsx';
-import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
-import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
-import Slider from 'react-slick';
-import Button from '../../../../components/Button.tsx';
-import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Popup from '../../../../components/Popup/Popup.tsx';
 import Chat from '../../../../components/chat/Chat.tsx';
 import Feedback from '../../../../components/feedback/Feedback.tsx';
+import Button from '../../../../components/Button.tsx';
+import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
+import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
+import MyApp from '../../../../components/app/MyApp.tsx';
+import { useState } from 'react';
+import Popup from '../../../../components/Popup/Popup.tsx';
 
-const ArrowIcon: React.FC<{ rotated?: boolean }> = ({ rotated = false }) => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    className={rotated ? styles.rotated : ''}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M3 8.5L12 17.5L21 8.5"
-      stroke="#B7B7B7"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
-export default function WifiPlus() {
+export default function PromoRazuieste() {
   const { t } = useTranslation();
   const breadcrumbItems = [
-    { label: t('wifi_plus.breadcrumb.internet'), url: ' ' },
-    { label: t('wifi_plus.breadcrumb.wifi_plus') },
+    { label: t('promorazuieste.breadcrumb.app'), url: ' ' },
+    { label: t('promorazuieste.breadcrumb.name') },
   ];
 
   const [showPopup, setShowPopup] = useState<boolean>(false);
-  const closePopup = (packet: string) => {
-    setShowPopup(false);
-    console.log(packet);
-  };
 
-  const setShowPopupFunction = (packet: string) => {
-    setShowPopup(true);
-    console.log(packet);
-  };
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    arrows: false,
-    autoplay: false,
-    autoplaySpeed: 2500,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 651,
-        settings: {
-          slidesToShow: 1,
-          autoplay: true,
-          autoplaySpeed: 1800,
-          arrows: true,
-        },
-      },
-    ],
-  };
-
-  const [openBlocks, setOpenBlocks] = useState<boolean[]>([]);
-
-  const toggleBlock = (index: number) => {
-    setOpenBlocks(prev => {
-      const copy = [...prev];
-      copy[index] = !copy[index];
-      return copy;
-    });
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText('1002600048836');
+    } catch (err) {
+      console.error('Eroare la copiere:', err);
+    }
   };
 
   return (
@@ -94,320 +41,291 @@ export default function WifiPlus() {
         <div className={styles.hero_img_block}>
           <img
             className={styles.hero_img}
-            src={`/images/landings/15274512${t('lang')}.png`}
+            src={`/images/landings/15094512${t('lang')}.png`}
             alt={t('wifi_plus.hero.alt')}
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/90296512${t('lang')}.png`}
+            src={`/images/landings/15994522${t('lang')}.png`}
             alt={t('wifi_plus.hero.alt')}
           />
         </div>
       </Hero>
 
-      <CostumeFunctions
-        style_type="blue"
-        costume={[
-          {
-            id: 'custom0',
-            icon: 'devices',
-            title: t('wifi_plus.functions.multi_device.title'),
-            text: t('wifi_plus.functions.multi_device.text'),
-            popupId: 'customPopup1',
-          },
-          {
-            id: 'custom1',
-            icon: 'home',
-            title: t('wifi_plus.functions.extended_coverage.title'),
-            text: t('wifi_plus.functions.extended_coverage.text'),
-            popupId: 'customPopup1',
-          },
-          {
-            id: 'custom2',
-            icon: 'speed',
-            title: t('wifi_plus.functions.super_speeds.title'),
-            text: t('wifi_plus.functions.super_speeds.text'),
-            popupId: 'customPopup1',
-          },
-          {
-            id: 'custom3',
-            icon: 'support',
-            title: t('wifi_plus.functions.constant_support.title'),
-            text: t('wifi_plus.functions.constant_support.text'),
-            popupId: 'customPopup1',
-          },
-          {
-            id: 'custom4',
-            icon: 'ai',
-            title: t('wifi_plus.functions.total_flexibility.title'),
-            text: t('wifi_plus.functions.total_flexibility.text'),
-            popupId: 'customPopup1',
-          },
-        ]}
-      />
+      <div className={styles.promorazuieste}>
+        <div className="title_3">
+          Câștigă în fiecare săptămână cu My Moldtelecom
+        </div>
+        <div className={styles.btns}>
+          <Button
+            to="https://mtc.md/my-mtc"
+            color={'var(--theme_primary_color_blue_4)'}
+            bgcolor={'var(--theme_primary_color_blue_3)'}
+            border={'var(--theme_primary_color_blue_3)'}
+            hover_border={'var(--theme_primary_color_blue_2)'}
+            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+            icon={'arrow_right'}
+          >
+            Răzuiește acum
+          </Button>
+          <Button
+            onClick={() => setShowPopup(true)}
+            color={'var(--theme_primary_color_blue_4)'}
+            bgcolor={'var(--theme_primary_color_blue_3)'}
+            border={'var(--theme_primary_color_blue_3)'}
+            hover_border={'var(--theme_primary_color_blue_2)'}
+            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+            icon={'arrow_right'}
+          >
+            Regulament concurs
+          </Button>
+        </div>
+        Intra in aplicatia{' '}
+        <a className={styles.promorazuieste_btn} href="https://mtc.md/my-mtc">
+          MyMoldtelecom
+        </a>{' '}
+        în <b>fiecare weekend </b> si Răzuiește cartonasul pentru a câștiga
+        premii! <br />
+        Nu mai aștepta norocul să vină de la sine – ia-l tu acum în mâini și
+        transformă fiecare răzuire într-un premiu garantat! <br />
+        Poți câștiga beneficii plăcute în formă de trafic Internet sau minute
+        naționale, fără efort și absolut gratuit.
+        <br />
+        <br />
+        <br />
+      </div>
+      <div className={styles.promorazuieste}>
+        <div className="title_3">Iată ce poți câștiga:</div>
 
-      <div className={styles.wifi_plus_full_block}>
-        <div className={styles.wifi_plus_full_block_inside}>
-          <div className="title_3">{t('wifi_plus.fill_house')}</div>
-          <Slider {...settings} className={styles.wifi_carousell}>
-            {/* Router 0 */}
-            <div className={styles.wifi_carousell_block}>
-              <div className={styles.wifi_carousell_block_inside}>
-                <img
-                  className={styles.wifi_carousell_block_inside_img}
-                  src="/images/landings/92204512.png"
-                  alt=""
-                />
-                <div className={styles.wifi_carousell_block_inside_title}>
-                  {/*{t('wifi_plus.carousel.routers.0.title')}*/}
-                  D-Link <br />
-                  DIR-615
-                </div>
-                <div className={styles.wifi_carousell_block_inside_subtitle}>
-                  {t('wifi_plus.carousel.routers.0.desc')}
-                </div>
-                <img
-                  className={styles.wifi_carousell_block_inside_certified}
-                  src="/images/landings/90294512.png"
-                  alt=""
-                />
-                <div className={styles.wifi_carousell_block_inside_btns}>
-                  <Button
-                    onClick={() => setShowPopupFunction('aaa')}
-                    color="var(--theme_primary_color_blue_4)"
-                    bgcolor="var(--theme_primary_color_blue_3)"
-                    border="var(--theme_primary_color_blue_3)"
-                    hover_border="var(--theme_primary_color_blue_2)"
-                    hover_bgcolor="var(--theme_primary_color_blue_2)"
-                    icon="arrow_right"
-                  >
-                    {t('wifi_plus.carousel.order_now')}
-                  </Button>
-                  <span className={styles.wifi_carousell_block_inside_price}>
-                    {t('wifi_plus.carousel.routers.0.price')}
-                    <span
-                      className={styles.wifi_carousell_block_inside_subprice}
-                    >
-                      {` ${t('wifi_plus.carousel.price_unit')}`}
-                    </span>
-                  </span>
-                </div>
-              </div>
-            </div>
-            {/* Router 1 */}
-            <div className={styles.wifi_carousell_block}>
-              <div className={styles.wifi_carousell_block_inside}>
-                <img
-                  className={styles.wifi_carousell_block_inside_img}
-                  src="/images/landings/95204512.png"
-                  alt=""
-                />
-                <div className={styles.wifi_carousell_block_inside_title}>
-                  {/*{t('wifi_plus.carousel.routers.1.title')}*/}
-                  HUAWEI <br />
-                  OptiXstar K562e-10"
-                </div>
-                <div className={styles.wifi_carousell_block_inside_subtitle}>
-                  {t('wifi_plus.carousel.routers.1.desc')}
-                </div>
-                <img
-                  className={styles.wifi_carousell_block_inside_certified}
-                  src="/images/landings/95294512.png"
-                  alt=""
-                />
-                <div className={styles.wifi_carousell_block_inside_btns}>
-                  <Button
-                    onClick={() => setShowPopupFunction('aaa')}
-                    color="var(--theme_primary_color_blue_4)"
-                    bgcolor="var(--theme_primary_color_blue_3)"
-                    border="var(--theme_primary_color_blue_3)"
-                    hover_border="var(--theme_primary_color_blue_2)"
-                    hover_bgcolor="var(--theme_primary_color_blue_2)"
-                    icon="arrow_right"
-                  >
-                    {t('wifi_plus.carousel.order_now')}
-                  </Button>
-                  <span className={styles.wifi_carousell_block_inside_price}>
-                    {t('wifi_plus.carousel.routers.1.price')}
-                    <span
-                      className={styles.wifi_carousell_block_inside_subprice}
-                    >
-                      {` ${t('wifi_plus.carousel.price_unit')}`}
-                    </span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </Slider>
+        <div className={styles.win}>
+          <div className={styles.wincard}>
+            100MB <br />
+            <span>pentru o zi</span>
+          </div>
+          <div className={styles.wincard}>
+            500 MB <br />
+            <span>pentru o zi</span>
+          </div>
+          <div className={styles.wincard}>
+            1GB <br />
+            <span>pentru o zi</span>
+          </div>
+          <div className={styles.wincard}>
+            5GB <br />
+            <span>pentru 3 zile</span>
+          </div>
+          <div className={styles.wincard}>
+            10 GB <br />
+            <span>pentru 3 zile</span>
+          </div>
+          <div className={styles.wincard}>
+            20 minute <br />
+            <span>pentru o zile</span>
+          </div>
+          <div className={styles.wincard}>
+            50 minute <br />
+            <span>pentru 3 zile</span>
+          </div>
+          <div className={styles.wincard}>
+            100 min <br />
+            <span>pentru 3 zile</span>
+          </div>
+        </div>
+        <div className={styles.promorazuieste_down}>
+          Premiul câștigat se activează automat în contul tău – gata de
+          utilizare imediat! <br />
+          <span>
+            Campania se desfășoară între 21 iunie 2025 - 30 septembrie 2025
+            (inclusiv).
+          </span>
         </div>
       </div>
+      <MyApp />
 
-      {/* Details Blocks */}
-      <div
-        className={`${styles.wifi_carousell_btns_detalii_v2} ${styles.wifi_carousell_btns_detalii_v2_first}`}
-      >
-        {/* Block 0 */}
-        <div className={styles.wifi_carousell_btns_detalii_line}>
-          <div
-            className={styles.wifi_carousell_btns_detalii_line_title}
-            onClick={() => toggleBlock(0)}
-          >
-            {t('wifi_plus.details.blocks.0.title')}
-            <ArrowIcon rotated={!!openBlocks[0]} />
+      <FaqV2 max_faq={7}>
+        <FaqQAV2 question={'Ce este campania „Weekend cu beneficii”?'}>
+          <div>
+            Este o tombolă digitală desfășurată în aplicația MyMoldtelecom, prin
+            care abonații eligibili pot răzui un scratch-card în fiecare sâmbătă
+            sau duminică, pentru a primi instant trafic internet sau minute
+            naționale gratuite.
           </div>
-          <div
-            className={`${styles.wifi_carousell_btns_detalii_line_inside} ${
-              openBlocks[0]
-                ? styles.wifi_carousell_btns_detalii_line_inside_open
-                : ''
-            }`}
-          >
+        </FaqQAV2>
+        <FaqQAV2 question={'Cine poate participa la campanie?'}>
+          <div>
             <ul>
-              {(
-                t('wifi_plus.details.blocks.0.items', {
-                  returnObjects: true,
-                }) as string[]
-              ).map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
+              <li>
+                Abonații persoane fizice (prepaid sau postpaid) ai serviciilor
+                de telefonie mobilă Moldtelecom, cu vârsta minimă de 18 ani.
+              </li>
+              <li>
+                Este necesară instalarea ori actualizarea la ultima versiune a
+                aplicației MyMoldtelecom din Play Market sau App Store.
+              </li>
+              <li>Angajații S.A. Moldtelecom NU pot participa.</li>
             </ul>
           </div>
-        </div>
-
-        {/* Block 1 */}
-        <div className={styles.wifi_carousell_btns_detalii_line}>
-          <div
-            className={styles.wifi_carousell_btns_detalii_line_title}
-            onClick={() => toggleBlock(1)}
-          >
-            {t('wifi_plus.details.blocks.1.title')}
-            <ArrowIcon rotated={!!openBlocks[1]} />
-          </div>
-          <div
-            className={`${styles.wifi_carousell_btns_detalii_line_inside} ${
-              openBlocks[1]
-                ? styles.wifi_carousell_btns_detalii_line_inside_open
-                : ''
-            }`}
-          >
-            <table>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>{t('wifi_plus.details.blocks.1.headers.basic')}</th>
-                  <th>{t('wifi_plus.details.blocks.1.headers.mesh')}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {(
-                  t('wifi_plus.details.blocks.1.rows', {
-                    returnObjects: true,
-                  }) as Array<{ key: string; basic: string; mesh: string }>
-                ).map((row, i) => (
-                  <tr key={i}>
-                    <td>{row.key}</td>
-                    <td>{row.basic}</td>
-                    <td>{row.mesh}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      {/* What is Wi-Fi PLUS */}
-      <div
-        className={`${styles.wifi_plus_full_block} ${styles.wifi_carousell_full_bg}`}
-      >
-        <div
-          className={`${styles.wifi_plus_full_block_inside} ${styles.wifi_carousell_full_bg_block}`}
-        >
-          <div className={styles.wifi_plus_full_block_inside_text}>
-            <div className="title_3">{t('wifi_plus.what_is.title')}</div>
-            <br />
-            {t('wifi_plus.what_is.text_1')} <br />
-            <br />
-            {t('wifi_plus.what_is.text_2')}
-          </div>
-        </div>
-      </div>
-
-      {/* Why choose Wi-Fi PLUS */}
-      <div
-        className={`${styles.wifi_plus_full_block} ${styles.wifi_carousell_full_bg_2}`}
-      >
-        <div
-          className={`${styles.wifi_plus_full_block_inside} ${styles.wifi_carousell_full_bg_block_2}`}
-        >
-          <div className={styles.wifi_plus_full_block_inside_text_2}>
-            <div className="title_3">
-              {t('wifi_plus.why_choose.title')}
-              {t('lang') === 'ru' && <br />}
-              <span>
-                &nbsp;
-                {t('lang') === 'ro' && (
-                  <br className={styles.wifi_plus_br_why} />
-                )}
-                Wi-Fi PLUS
-              </span>
-              ?
-            </div>
-            <br />
-            {t('wifi_plus.why_choose.text')}
-          </div>
-        </div>
-      </div>
-
-      {/* FAQ */}
-      <FaqV2 max_faq={6}>
-        <FaqQAV2 question={t('wifi_plus.faq.q1')}>
-          <div>{t('wifi_plus.faq.a1')}</div>
         </FaqQAV2>
-        <FaqQAV2 question={t('wifi_plus.faq.q2')}>
-          <div>{t('wifi_plus.faq.a2')}</div>
+        <FaqQAV2 question={'De câte ori pot participa la campanie?'}>
+          <div>
+            Poți răzui o singură dată în fiecare weekend: fie sâmbătă, fie
+            duminică.
+          </div>
         </FaqQAV2>
-        <FaqQAV2 question={t('wifi_plus.faq.q3')}>
-          <div>{t('wifi_plus.faq.a3')}</div>
+        <FaqQAV2 question={'Partciparea costă ceva?\n'}>
+          <div>
+            Participarea este gratuită; trebuie doar să ai aplicația instalată /
+            actualizată.
+          </div>
         </FaqQAV2>
       </FaqV2>
-
       <Footer disclaimer={true} />
-
       <Popup
-        id="1284768"
+        id="1981718"
         isVisible={showPopup}
-        onClose={() => closePopup('')}
-        width={'800px'}
+        onClose={() => setShowPopup(false)}
+        width={'1000px'}
       >
         <div className={styles.popup_div}>
-          <span className={styles.popup_div_title}>{t('wifi_plus.thx')}</span>
-
-          {t('wifi_plus.txt_1')}
-          <div className={styles.popup_btns}>
-            <Button
-              to={`https://moldtelecom.md/${t('lang')}/cereri`}
-              color="var(--theme_primary_color_white)"
-              bgcolor="var(--theme_primary_color_blue_4)"
-              border="var(--theme_primary_color_blue_4)"
-              hover_border="var(--theme_primary_color_blue_2)"
-              hover_bgcolor="var(--theme_primary_color_blue_2)"
-              icon="arrow_right"
+          <span className={styles.popup_div_title}>
+            Regulamentul campaniei ”Weekend cu beneficii”
+          </span>{' '}
+          <br /> <br />
+          <h3>1. ORGANIZATORUL CAMPANIEI</h3>
+          <p>
+            1.1. Organizatorul Campaniei în aplicația MyMoldtelecom este S.A.
+            „Moldtelecom”, persoană juridică înregistrată în Registrul de Stat
+            al persoanelor juridice al Republicii Moldova cu IDNO (cod fiscal){' '}
+            <a
+              href="#"
+              onClick={e => {
+                e.preventDefault();
+                handleCopy();
+              }}
             >
-              {t('wifi_plus.carousel.order_now_cerere')}
-            </Button>
-            <Button
-              to={'tel:022200200'}
-              color="var(--theme_primary_color_blue_4)"
-              bgcolor="var(--theme_primary_color_blue_3)"
-              border="var(--theme_primary_color_blue_3)"
-              hover_border="var(--theme_primary_color_blue_2)"
-              hover_bgcolor="var(--theme_primary_color_blue_2)"
-              icon="arrow_right"
-            >
-              022 200 200
-            </Button>
-          </div>
+              1002600048836
+            </a>
+            , cu sediul în{' '}
+            <a href="https://maps.app.goo.gl/kYR2Dmyb9dCwTUui7">
+              MD-2001, bd. Ştefan cel Mare şi Sfânt, 10, mun. Chişinău,
+              Republica Moldova
+            </a>{' '}
+            (numit în continuare „Moldtelecom” sau „Organizator”).
+          </p>
+          <p>
+            1.2. Prezentul Regulament este obligatoriu pentru toţi
+            participanţii. Regulamentul este disponibil gratuit oricărui
+            participant pe site-ul{' '}
+            <a href="https://www.moldtelecom.md" target="_blank">
+              www.moldtelecom.md
+            </a>{' '}
+            şi în Reprezentanţele Moldtelecom (inclusiv dealeri) pe durata
+            întregii Campanii.
+          </p>
+          <p>
+            1.3. Participanţii la Campanie vor putea obţine informaţii
+            suplimentare apelând gratuit:
+          </p>
+          <ul>
+            <li>
+              din reţeaua Moldtelecom: <a href="tel:1181">1181</a>
+            </li>
+            <li>
+              din reţeaua mobilă Moldtelecom: <a href="tel:200">200</a>
+            </li>
+            <li>
+              de pe telefon fix/mobil din alte reţele:{' '}
+              <a href="tel:022200200">(022) 200-200</a>
+            </li>
+            <li>în reprezentanțele Companiei din întreaga țară</li>
+          </ul>
+          <h3>2. REGULILE DE PARTICIPARE</h3>
+          <p>
+            2.1. Perioada de desfășurare a Campaniei este{' '}
+            <b>21.06.2025 – 30.09.2025</b> inclusiv.
+          </p>
+          <p>
+            2.2. Campania este destinată abonaților de telefonie mobilă
+            Voce/Date (prepaid/postpaid), persoane fizice, cu vârsta minimă de
+            18 ani și care au instalată/actualizată aplicația MyMoldtelecom.
+          </p>
+          <p>
+            2.3. Nu pot participa persoanele cu statut de angajat S.A.
+            Moldtelecom.
+          </p>
+          <h3>3. MECANISMUL DESFĂȘURĂRII CAMPANIEI</h3>
+          <p>
+            3.1. Abonații eligibili trebuie să deschidă aplicația MyMoldtelecom
+            și să acceseze pagina „Contul meu”, unde vor găsi un scratch card de
+            răzuit pentru a primi un premiu instant.
+          </p>
+          <p>3.2. Fondul de premii include:</p>
+          <ul>
+            <li>
+              Carduri cu trafic mobil: <b>100MB, 500MB, 1GB, 5GB, 10GB</b>
+            </li>
+            <li>
+              Carduri cu minute naționale: <b>20, 50, 100 minute</b>
+            </li>
+          </ul>
+          <p>3.3. Valabilitatea premiilor:</p>
+          <ul>
+            <li>
+              <b>100MB, 500MB, 1GB </b> – valabile 1 zi
+            </li>
+            <li>
+              <b>5GB, 10GB</b> – valabile 3 zile
+            </li>
+            <li>
+              <b>20, 50, 100 minute</b> – valabile 3 zile
+            </li>
+          </ul>
+          <p>
+            3.4. Un participant poate răzui un card o singură dată în fiecare
+            sâmbătă sau duminică.
+          </p>
+          <p>
+            3.5. Premiile se activează automat și se consumă prioritar față de
+            alte opțiuni.
+          </p>
+          <h3>4. PRELUCRAREA DATELOR CU CARACTER PERSONAL</h3>
+          <p>
+            4.1. Participarea implică acordul privind prelucrarea datelor
+            personale în scopul desfășurării Campaniei.
+          </p>
+          <p>
+            4.2. Procesarea presupune orice acțiune asupra datelor: colectare,
+            stocare, adaptare, consultare, utilizare, combinare, ștergere sau
+            distrugere.
+          </p>
+          <h2>5. MODIFICARE, SUSPENDARE ȘI ANULARE</h2>
+          <p>5.1. Organizatorul poate modifica sau completa Regulamentul.</p>
+          <p>
+            5.2. Modificările devin valabile la publicarea lor pe site-ul
+            Organizatorului.
+          </p>
+          <p>
+            5.3. În cazuri excepționale, Campania poate fi suspendată, anulată
+            sau extinsă.
+          </p>
+          <h3>6. RECLAMAȚII ȘI LITIGII</h3>
+          <p>
+            6.1. Reclamațiile trebuie trimise în scris la sediul Organizatorului
+            în termen de 5 zile lucrătoare de la producerea evenimentului.
+          </p>
+          <p>
+            6.2. Litigiile vor fi soluționate pe cale amiabilă sau de către
+            instanțele competente din Republica Moldova.
+          </p>
+          <h3>7. DISPOZIȚII FINALE</h3>
+          <p>
+            7.1. Regulamentul este reglementat de legislația în vigoare a
+            Republicii Moldova.
+          </p>
+          <p>
+            7.2. Invalidarea unei prevederi nu afectează valabilitatea
+            celorlalte.
+          </p>
         </div>
       </Popup>
     </>
