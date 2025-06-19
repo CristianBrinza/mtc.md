@@ -377,5 +377,307 @@
     "comment": "Te rugăm să lași un mesaj:",
     "placeholder": "Lasă-ne mesajul și/sau numărul de contact dacă dorești să fii contactat",
     "submit": "Trimite"
+  },
+  "popups": {
+    "f1": {
+      "title": "Internet Mobil",
+      "table": {
+        "headers": [
+          "Descriere opțiune",
+          "SMS Cod",
+          "Trafic ",
+          "Tarif",
+          "Valabilitate"
+        ],
+        "rows": [
+          [
+            "<span>Internet Nelimitat 1 zi</span>",
+            "<span>Nelimitat1zi</span>",
+            "<span>nelimitat</span>",
+            "<span>20 lei</span>",
+            "<span>1 zi</span>"
+          ],
+          [
+            "<span>Internet Nelimitat 7 zile</span>",
+            "<span>Nelimitat/7</span>",
+            "nelimitat",
+            "100 lei",
+            "7 zile"
+          ],
+          [
+            "<span>Internet 10 GB 15 zile</span>",
+            "<span>10GB/15</span>",
+            "<span>10 GB</span>",
+            "<span>50 lei</span>",
+            "<span>15 zile</span>"
+          ],
+          [
+            "<span>Internet 5 GB <span>30 zile</span></span>",
+            "<span>5GB/30</span>",
+            "<span>5 GB</span>",
+            "<span>60 lei</span>",
+            "<span>30 zile</span>"
+          ],
+          [
+            "<span>Internet 10 GB <span>30<span> zile</span></span></span>",
+            "<span>10GB</span>",
+            "<span>10 GB</span>",
+            "<span>100 lei</span>",
+            "<span>30 zile</span>"
+          ],
+          [
+            "<span>Internet 20 GB <span>30<span> zile</span></span></span>",
+            "20GB",
+            "<span>20 GB</span>",
+            "<span>150 lei</span>",
+            "<span>30 zile</span>"
+          ]
+        ]
+      },
+      "conditionsTitle": "Condiții de utilizare opțiune:",
+      "conditions": [
+        "Opțiunile pentru 1 zi sunt valabile 24 ore din momentul activării.",
+        "Opțiunea poate fi activată în orice zi, de mai multe ori pe lună.",
+        "Viteza de acces la internet este în funcţie de terminalul utilizat.",
+        "Pot fi activate până la 5 opțiuni concomitent, diferite sau de același fel.",
+        "Opțiunile sunt valabile doar în perioada activă.",
+        "Opțiunea este disponibilă pentru toţi abonații Moldtelecom, deținători de abonamente sau cartela Prepay, telefonie mobilă sau internet mobil."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru Postpay și <a href=\"tel:*200#\">*200#</a> pentru Prepay, urmând instrucțiunile.",
+        "Prin cerere depusă la orice reprezentanță SA Moldtelecom"
+      ]
+    },
+    "f2": {
+      "title": "Minute Naționale",
+      "table": {
+        "headers": ["Descriere opțiune", "SMS Cod", "Tarif", "Valabilitate"],
+        "rows": [
+          ["50 minute<span> / 30 zile</span>", "50min", "15 lei", "30 zile"],
+          ["100 minute<span> / 30 zile</span>", "100min", "40 lei", "30 zile"],
+          ["200 minute<span> / 30 zile</span>", "200min", "70 lei", "30 zile"]
+        ]
+      },
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Opțiunea este valabilă 30 zile calendaristice.",
+        "Minutele opțiunii nu se cumulează cu cele din abonament.",
+        "În caz de abonament deja cu minute incluse, opțiunea are prioritate.",
+        "Opțiunea poate fi activată în orice zi, de mai multe ori pe lună.",
+        "La schimb de pachet, opțiunea se păstrează."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere la orice reprezentanță SA Moldtelecom"
+      ]
+    },
+    "f3": {
+      "title": "Minute Internaționale",
+      "table": {
+        "headers": [
+          "Descriere opțiune",
+          "SMS Cod",
+          "Tarif",
+          "Conținut",
+          "Valabilitate"
+        ],
+        "rows": [
+          [
+            "Activare România și Ucraina",
+            "Int30",
+            "50 lei",
+            "30 min.<br/><span>internationale</span>",
+            "30 zile"
+          ],
+          [
+            "Activare Europa, Israel, SUA, Canada",
+            "Int25",
+            "50 lei",
+            "25 min.<br/><span>internationale</span>",
+            "30 zile"
+          ],
+          [
+            "Activare orice țară",
+            "Int10",
+            "50 lei",
+            "10 min.<br/><span>internationale</span>",
+            "30 zile"
+          ]
+        ]
+      },
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Opțiunea este valabilă 30 zile.",
+        "Opțiunea „Europa, Israel, SUA, Canada” conține următoarele destinații internaționale: Ucraina, Italia, Romania, Germania, Franța, Cehia, Marea Britanie, Polonia, Grecia, Portugalia, Spania, Belarusia, Estonia, Belgia, Turcia, Israel, USA, Canada.",
+        "Opțiunea Orice Țară conține destinațiile din Zona 1, Zona 2, Zona 3.",
+        "Minutele incluse în opțiune sunt destinate pentru apeluri spre orice rețea mobilă sau fixă.",
+        "După consumarea Minutelor internaționale incluse în opțiune, convorbirile vor fi taxate la tarifele standard aplicate pentru fiecare țară în parte.",
+        "Pot fi activate până la 5 opțiuni concomitent, diferite sau de același fel.",
+        "Opțiunea este disponibilă pentru toţi abonații Moldtelecom, deținători de abonamente sau cartela Prepay, telefonie mobilă sau internet mobil."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ]
+    },
+    "f4": {
+      "title": "Pachete SMS",
+      "table": {
+        "headers": ["Descriere opțiune", "SMS Cod", "Tarif", "Valabilitate"],
+        "rows": [
+          ["50 SMS Naționale", "SMS50", "10 lei", "30 zile"],
+          ["20 SMS Internaționale", "SMS35", "35 lei", "30 zile"],
+          ["100 SMS Naționale", "SMS15", "15 lei", "30 zile"]
+        ]
+      },
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Opțiunea este valabilă 30 zile calendaristice.",
+        "Conținutul de SMS neconsumat nu se va raporta în perioada următoare.",
+        "Opțiunea poate fi activată în orice zi, de mai multe ori pe lună.",
+        "Opțiunile ”SMS” activate se vor consuma prioritar conținutului din abonament sau cartelă.",
+        "La schimbul de pachet opțiunea va fi păstrată.",
+        "După consumarea SMS-urilor incluse în opțiune, SMS-urile expediate vor fi taxate la tarifele aferente planului tarifar.",
+        "Opțiunile sunt valabile când abonatul se afla în perioada activă.",
+        "Opțiunea este disponibilă pentru toţi abonații Moldtelecom, deținători de abonamente sau cartela Prepay, telefonie mobilă sau internet mobil."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ]
+    },
+    "f5": {
+      "title": "Roaming Europe",
+      "table": {
+        "headers": [
+          "Descriere opțiune",
+          "SMS Cod",
+          "Trafic internet",
+          "Tarif",
+          "Valabilitate"
+        ],
+        "rows": [
+          ["Apeluri Roaming UE", "UE70apel", "100 min", "100 lei", "30 zile"],
+          ["Internet Roaming UE", "UE100net", "2 GB", "100 lei", "30 zile"],
+          ["Combo Roaming UE", "UE100", "1 GB / 50 min", "100 lei", "30 zile"]
+        ]
+      },
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Tarifele includ toate taxele, inclusiv TVA.",
+        "Seria de opțiuni „Roaming UE” este disponibilă pentru toți abonații de Telefonie mobilă Postpay, Voce și Date și Prepay.",
+        "După consumarea conținutului în Roaming inclus în opțiune, convorbirile și traficul internet vor fi taxate conform tarifelor standard în roaming pentru fiecare operator.",
+        "Conținutul opțiunilor este destinat pentru utilizarea în Roaming în rețeaua operatorilor, conform listei.",
+        "Minutele incluse în opțiunile “Internet Roaming UE” și “Combo Roaming UE” repartizate după cum urmează:\n  • “Apeluri Roaming UE” – 100 min de ieșire locale, de ieșire către MD;\n  • “Combo Roaming UE” – 50 min de ieșire locale, de ieșire către MD."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ],
+      "deactivationTitle": "Dezactivarea opțiune:",
+      "deactivation": [
+        "Prin aplicația mobilă “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin apel la nr. <a href=\"tel:+37322200200\">+373 22 200 200</a> Serviciul Suport Clienți;",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru clienții Prepay și urmărirea instrucțiunilor meniului.",
+        "Dezactivarea serviciului este gratuită."
+      ]
+    },
+    "f6": {
+      "title": "Roaming World",
+      "table": {
+        "headers": [
+          "Descriere opțiune",
+          "SMS Cod",
+          "Tarif",
+          "Conținut",
+          "Valabilitate"
+        ],
+        "rows": [
+          ["Apeluri World", "Wapel", "70 lei", "10 min", "30 zile"],
+          ["Internet World", "Wnet", "100 lei", "1 GB", "30 zile"]
+        ]
+      },
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Tarifele includ toate taxele, inclusiv TVA.",
+        "Seria de opțiuni „World” este disponibilă pentru toți abonații de Telefonie mobilă Postpay, Voce și Date și Prepay.",
+        "După consumarea conținutului în Roaming inclus în opțiune, convorbirile și traficul internet vor fi taxate conform tarifelor standard în roaming pentru fiecare operator.",
+        "Viteza de acces la internet este conform condițiilor de prestare a serviciului în vigoare de către operator și în funcție de terminalul utilizat.",
+        "Minutele incluse în opțiunea Apeluri World pot fi utilizate pentru „apeluri de ieșire locale”, „apeluri de ieșire către MD”."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ],
+      "deactivationTitle": "Dezactivarea opțiune:",
+      "deactivation": [
+        "Prin aplicația mobilă “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin apel la nr. <a href=\"tel:+37322200200\">+373 22 200 200</a> Serviciul Suport Clienți;",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru clienții Prepay și urmărirea instrucțiunilor meniului.",
+        "Dezactivarea serviciului este gratuită."
+      ]
+    },
+    "f7": {
+      "title": "Viteza 4G+",
+      "paragraph": "Opțiunea viteza 4G+ presupune majorarea vitezei de transport date download până la 175 Mbps și upload până la 50 Mbps.",
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Activarea este gratuită.",
+        "Este necesar să ai terminal compatibil cu tehnologia LTE, frecvență de 1800 MHz (Band 3).",
+        "Activarea/dezactivarea se efectuează în orice zi a lunii."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Pentru activarea expediază un SMS la nr. 500 cu textul: <b>4G</b>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ],
+      "deactivationTitle": "Dezactivarea opțiune:",
+      "deactivation": [
+        "Pentru dezactivare expediază un SMS la nr. 500 cu textul: <b>STOP4G</b>",
+        "Prin aplicația mobilă “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului."
+      ]
+    },
+    "f8": {
+      "title": "Upload Maxim",
+      "paragraph": "Opțiunea \"Upload Maxim\" presupune acordarea vitezei de upload de 5,76 Mbps.",
+      "table": {
+        "headers": ["Descriere opțiune", "Tarif"],
+        "rows": [["<span>Upload Maxim</span>", "<span>20 lei</span>"]]
+      },
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Activarea/dezactivarea se efectuează în orice zi a lunii.",
+        "La schimbul de abonament, titular sau migrare opțiunea va fi păstrată.",
+        "Opțiunea este disponibilă pentru toţi abonații Moldtelecom, deținători de abonamente - telefonie mobilă sau internet mobil.",
+        "Viteza de acces la internet este în funcţie de terminalul utilizat."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ]
+    }
   }
 }

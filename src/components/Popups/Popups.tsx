@@ -1,5 +1,5 @@
 // components/Popup/Popups.tsx
-import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Popup from '../Popup/Popup';
 
 interface PopupsProps {
@@ -8,7 +8,9 @@ interface PopupsProps {
   width?: string;
 }
 
-const Popups: React.FC<PopupsProps> = ({ content, onClose, width }) => {
+export default function Popups({ content, onClose, width }: PopupsProps) {
+  const { t } = useTranslation();
+
   return (
     <>
       {/* Popup pentru f1 */}
@@ -19,183 +21,245 @@ const Popups: React.FC<PopupsProps> = ({ content, onClose, width }) => {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>Internet Mobil</h2>
+          <h2>{t('popups.f1.title')}</h2>
 
           <table className="popup_table">
             <thead>
               <tr>
-                <td>Descriere opțiune</td>
-                <td>SMS Cod</td>
-                <td>Trafic&nbsp;</td>
-                <td>Tarif</td>
-                <td>Valabilitate</td>
+                <td>{t('popups.f1.table.headers.0')}</td>
+                <td>{t('popups.f1.table.headers.1')}</td>
+                <td>{t('popups.f1.table.headers.2')}</td>
+                <td>{t('popups.f1.table.headers.3')}</td>
+                <td>{t('popups.f1.table.headers.4')}</td>
               </tr>
             </thead>
             <tbody>
+              {/*
+                row 0
+              */}
               <tr>
-                <td>
-                  <span>Internet Nelimitat 1 zi</span>
+                <td
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.0.0'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.0.1'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.0.2'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.0.3'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.0.4'),
+                  }}
+                />
+              </tr>
+              {/*
+                row 1
+              */}
+              <tr>
+                <td
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.1.0'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.1.1'),
+                  }}
+                />
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f1.table.rows.1.2')}
                 </td>
                 <td style={{ textAlign: 'center' }}>
-                  <span>Nelimitat1zi</span>
+                  {t('popups.f1.table.rows.1.3')}
                 </td>
                 <td style={{ textAlign: 'center' }}>
-                  <span>nelimitat</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>20 lei</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>1 zi&nbsp;</span>
+                  {t('popups.f1.table.rows.1.4')}
                 </td>
               </tr>
+              {/*
+                row 2
+              */}
               <tr>
-                <td>
-                  <span>Internet Nelimitat 7 zile</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>Nelimitat/7</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>nelimitat</td>
-                <td style={{ textAlign: 'center' }}>100 lei</td>
-                <td style={{ textAlign: 'center' }}>7 zile</td>
+                <td
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.2.0'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.2.1'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.2.2'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.2.3'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.2.4'),
+                  }}
+                />
               </tr>
-              <tr></tr>
+              {/*
+                row 3
+              */}
               <tr>
-                <td>
-                  <span>Internet 10 GB 15 zile</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>10GB/15</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>10 GB</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>50 lei</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>15 zile</span>
-                </td>
+                <td
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.3.0'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.3.1'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.3.2'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.3.3'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.3.4'),
+                  }}
+                />
               </tr>
-              <tr></tr>
+              {/*
+                row 4
+              */}
               <tr>
-                <td>
-                  <span>
-                    Internet 5 GB 30<span>&nbsp;zile</span>
-                  </span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>5GB/30</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>5 GB</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>60 lei</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>30 zile</span>
-                </td>
+                <td
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.4.0'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.4.1'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.4.2'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.4.3'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.4.4'),
+                  }}
+                />
               </tr>
-              <tr></tr>
+              {/*
+                row 5
+              */}
               <tr>
-                <td>
-                  <span>
-                    Internet 10 GB&nbsp;
-                    <span>
-                      30<span>&nbsp;zile</span>
-                    </span>
-                  </span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>10GB</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>10 GB</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>100 lei</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>30 zile</span>
-                </td>
-              </tr>
-              <tr></tr>
-              <tr>
-                <td>
-                  <span>
-                    Internet 20 GB&nbsp;
-                    <span>
-                      30<span>&nbsp;zile</span>
-                    </span>
-                  </span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span></span>20GB
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>20 GB&nbsp;</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>150 lei</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>30 zile</span>
-                </td>
+                <td
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.5.0'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.5.1'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.5.2'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.5.3'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f1.table.rows.5.4'),
+                  }}
+                />
               </tr>
             </tbody>
           </table>
 
-          <h3>Condiții de utilizare opțiune:</h3>
-
+          <h3>{t('popups.f1.conditionsTitle')}</h3>
           <ul>
-            <li>
-              Opțiunile pentru 1 zi sunt valabile 24 ore din momentul activării.
-            </li>
-            <li>
-              Opțiunea poate fi activată în orice zi, de mai multe ori pe lună.
-            </li>
-            <li>
-              Viteza de acces la internet este în funcţie de terminalul
-              utilizat.
-            </li>
-            <li>
-              Pot fi activate până la 5 opțiuni concomitent, diferite sau de
-              același fel.&nbsp;
-            </li>
-            <li>Opțiunile sunt valabile&nbsp;doar în perioada activă.</li>
-            <li>
-              Opțiunea este disponibilă pentru toţi abonații Moldtelecom,
-              deținători de abonamente sau cartela Prepay, telefonie mobilă sau
-              internet mobil.
-              <br />
-              &nbsp;
-            </li>
+            <li>{t('popups.f1.conditions.0')}</li>
+            <li>{t('popups.f1.conditions.1')}</li>
+            <li>{t('popups.f1.conditions.2')}</li>
+            <li>{t('popups.f1.conditions.3')}</li>
+            <li>{t('popups.f1.conditions.4')}</li>
+            <li>{t('popups.f1.conditions.5')}</li>
           </ul>
 
-          <h3>Activare opțiune:</h3>
-
+          <h3>{t('popups.f1.activationTitle')}</h3>
           <ul>
-            <li>
-              prin{' '}
-              <a href="https://www.moldtelecom.md/ro/personal/sms-100-abonament">
-                SMS la numărul 100
-              </a>
-            </li>
-            <li>
-              prin aplicația "
-              <a href="https://www.moldtelecom.md/ro/personal/My Moldtelecom">
-                My Moldtelecom
-              </a>
-              "
-            </li>
-            <li>
-              Prin meniul USSD, la formare <a href="tel:*500#">*500#</a> pentru
-              abonații Postpay și <a href="*200#">*200#</a> pentru utilizatorii
-              Prepay și se vor urmări instrucțiunile meniului.
-            </li>
-            <li>prin cerere depusă la orice reprezentață SA Moldtelecom</li>
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f1.activation.0'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f1.activation.1'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f1.activation.2'),
+              }}
+            />
+            <li>{t('popups.f1.activation.3')}</li>
           </ul>
         </div>
       </Popup>
@@ -208,85 +272,95 @@ const Popups: React.FC<PopupsProps> = ({ content, onClose, width }) => {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>Minute Naționale</h2>
+          <h2>{t('popups.f2.title')}</h2>
           <table className="popup_table">
             <thead>
               <tr>
-                <td>
-                  <strong>Descriere opțiune</strong>
-                </td>
-                <td>
-                  <strong>SMS cod</strong>
-                </td>
-                <td>
-                  <strong>Tarif</strong>
-                </td>
-                <td>
-                  <strong>Valabilitate</strong>
-                </td>
+                <td>{t('popups.f2.table.headers.0')}</td>
+                <td>{t('popups.f2.table.headers.1')}</td>
+                <td>{t('popups.f2.table.headers.2')}</td>
+                <td>{t('popups.f2.table.headers.3')}</td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>50 minute naționale</td>
-                <td style={{ textAlign: 'center' }}>50min</td>
-                <td style={{ textAlign: 'center' }}>15 lei</td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f2.table.rows.0.0'),
+                  }}
+                />
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f2.table.rows.0.1')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f2.table.rows.0.2')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f2.table.rows.0.3')}
+                </td>
               </tr>
               <tr>
-                <td>100 minute naționale</td>
-                <td style={{ textAlign: 'center' }}>100min</td>
-                <td style={{ textAlign: 'center' }}>40 lei</td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f2.table.rows.1.0'),
+                  }}
+                />
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f2.table.rows.1.1')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f2.table.rows.1.2')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f2.table.rows.1.3')}
+                </td>
               </tr>
               <tr>
-                <td>200 minute naționale</td>
-                <td style={{ textAlign: 'center' }}>200min</td>
-                <td style={{ textAlign: 'center' }}>70 lei</td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f2.table.rows.2.0'),
+                  }}
+                />
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f2.table.rows.2.1')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f2.table.rows.2.2')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f2.table.rows.2.3')}
+                </td>
               </tr>
             </tbody>
           </table>
-          <h3>Condițiile de utilizare a opţiunii</h3>
+
+          <h3>{t('popups.f2.conditionsTitle')}</h3>
           <ul>
-            <li>Opțiunea este valabilă 30 zile calendaristice.</li>
-            <li>
-              Minutele naționale oferite în cadrul opțiunii, nu se vor cumula cu
-              minutele incluse in abonament, și se vor utiliza doar ca minute
-              naționale.
-            </li>
-            <li>
-              În cazul în care abonamentul deținut include deja minute naţionale
-              în pachet, minutele din opţiune au prioritate la utilizare.
-            </li>
-            <li>
-              Opțiunea poate fi activată în orice zi, de mai multe ori pe lună.
-            </li>
-            <li>La schimbul de pachet opțiunea va fi păstrată.</li>
+            <li>{t('popups.f2.conditions.0')}</li>
+            <li>{t('popups.f2.conditions.1')}</li>
+            <li>{t('popups.f2.conditions.2')}</li>
+            <li>{t('popups.f2.conditions.3')}</li>
+            <li>{t('popups.f2.conditions.4')}</li>
           </ul>
 
-          <h3>Activare opțiune:</h3>
-
+          <h3>{t('popups.f2.activationTitle')}</h3>
           <ul>
-            <li>
-              prin{' '}
-              <a href="https://www.moldtelecom.md/ro/personal/sms-100-abonament">
-                SMS la numărul 100
-              </a>
-            </li>
-            <li>
-              prin aplicația "
-              <a href="https://www.moldtelecom.md/ro/personal/My Moldtelecom">
-                My Moldtelecom
-              </a>
-              "
-            </li>
-            <li>
-              Prin meniul USSD, la formare <a href="tel:*500#">*500#</a> pentru
-              abonații Postpay și <a href="tel:*200#">*200#</a> pentru
-              utilizatorii Prepay și se vor urmări instrucțiunile meniului.
-            </li>
-            <li>prin cerere depusă la orice reprezentanță S.A. Moldtelecom.</li>
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f2.activation.0'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f2.activation.1'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f2.activation.2'),
+              }}
+            />
+            <li>{t('popups.f2.activation.3')}</li>
           </ul>
         </div>
       </Popup>
@@ -299,124 +373,108 @@ const Popups: React.FC<PopupsProps> = ({ content, onClose, width }) => {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>Minute Internaționale</h2>
+          <h2>{t('popups.f3.title')}</h2>
           <table className="popup_table">
             <thead>
               <tr>
-                <td>
-                  <strong>Descriere opțiune</strong>
-                </td>
-                <td>
-                  <strong> SMS cod</strong>
-                </td>
-                <td>
-                  <strong>Tarif&nbsp;&nbsp;</strong>
-                </td>
-                <td>
-                  <strong>Conținut</strong>
-                </td>
-                <td>
-                  <strong>Valabilitate</strong>
-                </td>
+                <td>{t('popups.f3.table.headers.0')}</td>
+                <td>{t('popups.f3.table.headers.1')}</td>
+                <td>{t('popups.f3.table.headers.2')}</td>
+                <td>{t('popups.f3.table.headers.3')}</td>
+                <td>{t('popups.f3.table.headers.4')}</td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Activare România și Ucraina</td>
-                <td style={{ textAlign: 'center' }}>Int30</td>
-                <td style={{ textAlign: 'center' }}>50 lei</td>
+                <td>{t('popups.f3.table.rows.0.0')}</td>
                 <td style={{ textAlign: 'center' }}>
-                  30 min.
-                  <br />
-                  internationale&nbsp;
+                  {t('popups.f3.table.rows.0.1')}
                 </td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f3.table.rows.0.2')}
+                </td>
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f3.table.rows.0.3'),
+                  }}
+                />
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f3.table.rows.0.4')}
+                </td>
               </tr>
               <tr>
-                <td>Activare Europa, Israel, SUA, Canada</td>
-                <td style={{ textAlign: 'center' }}>Int25</td>
-                <td style={{ textAlign: 'center' }}>50 lei</td>
+                <td>{t('popups.f3.table.rows.1.0')}</td>
                 <td style={{ textAlign: 'center' }}>
-                  25 min.
-                  <br />
-                  internationale
+                  {t('popups.f3.table.rows.1.1')}
                 </td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f3.table.rows.1.2')}
+                </td>
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f3.table.rows.1.3'),
+                  }}
+                />
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f3.table.rows.1.4')}
+                </td>
               </tr>
               <tr>
-                <td>Activare orice țară</td>
-                <td style={{ textAlign: 'center' }}>Int10</td>
-                <td style={{ textAlign: 'center' }}>50 lei</td>
+                <td>{t('popups.f3.table.rows.2.0')}</td>
                 <td style={{ textAlign: 'center' }}>
-                  10 min.
-                  <br />
-                  internationale
+                  {t('popups.f3.table.rows.2.1')}
                 </td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f3.table.rows.2.2')}
+                </td>
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f3.table.rows.2.3'),
+                  }}
+                />
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f3.table.rows.2.4')}
+                </td>
               </tr>
             </tbody>
           </table>
-          <h3>Condițiile de utilizare a opţiunii</h3>
+
+          <h3>{t('popups.f3.conditionsTitle')}</h3>
           <ul>
-            <li>Opțiunea este valabilă 30 zile.&nbsp;</li>
-            <li>
-              Opțiunea „Europa, Israel, SUA, Canada” conține următoarele
-              destinatii internaționale: Ucraina, Italia, Romania, Germania,
-              Franța, Cehia, Marea Britanie, Polonia, Grecia, Portugalia,
-              Spania, Belarusia, Estonia, Belgia, Turcia, Israel, USA, Canada.
-              <br />
-              Destinație națională: regiunea transnistreană.
-            </li>
-            <li>
-              Opțiunea Orice Țară conține destinațiile din Zona 1, Zona 2, Zona
-              3.
-            </li>
-            <li>
-              Minutele incluse în opțiune sunt destinate pentru apeluri spre
-              orice rețea mobilă sau fixă.
-            </li>
-            <li>
-              După consumarea Minutelor internaționale incluse în opțiune,
-              convorbirile vor fi taxate la tarifele standard aplicate pentru
-              fiecare țară în parte.&nbsp;
-            </li>
-            <li>
-              Pot fi activate până la 5 opțiuni concomitent, diferite sau de
-              același fel.&nbsp;
-            </li>
-            <li>Opțiunile sunt valabile doar în perioada activă.&nbsp;</li>
-            <li>La schimbul de pachet opțiunea va fi păstrată.</li>
-            <li>
-              Opțiunea este disponibilă pentru toţi abonații Moldtelecom,
-              deținători de abonamente sau cartela Prepay, telefonie mobilă sau
-              internet mobil.
-              <br />
-              &nbsp;
-            </li>
+            <li>{t('popups.f3.conditions.0')}</li>
+            <li>{t('popups.f3.conditions.1')}</li>
+            <li>{t('popups.f3.conditions.2')}</li>
+            <li>{t('popups.f3.conditions.3')}</li>
+            <li>{t('popups.f3.conditions.4')}</li>
+            <li>{t('popups.f3.conditions.5')}</li>
+            <li>{t('popups.f3.conditions.6')}</li>
           </ul>
 
-          <h3>Activare opțiune:</h3>
-
+          <h3>{t('popups.f3.activationTitle')}</h3>
           <ul>
-            <li>
-              prin{' '}
-              <a href="https://www.moldtelecom.md/ro/personal/sms-100-abonament">
-                SMS la numărul 100
-              </a>
-            </li>
-            <li>
-              prin aplicația "
-              <a href="https://www.moldtelecom.md/ro/personal/My Moldtelecom">
-                My Moldtelecom
-              </a>
-              "
-            </li>
-            <li>
-              Prin meniul USSD, la formare <a href="tel:*500#">*500#</a> pentru
-              abonații Postpay și <a href="*200#">*200#</a> pentru utilizatorii
-              Prepay și se vor urmări instrucțiunile meniului.
-            </li>
-            <li>prin cerere depusă la orice reprezentață SA Moldtelecom</li>
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f3.activation.0'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f3.activation.1'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f3.activation.2'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f3.activation.3'),
+              }}
+            />
           </ul>
         </div>
       </Popup>
@@ -429,96 +487,90 @@ const Popups: React.FC<PopupsProps> = ({ content, onClose, width }) => {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>Pachete SMS</h2>
+          <h2>{t('popups.f4.title')}</h2>
           <table className="popup_table">
             <thead>
               <tr>
-                <td>
-                  <strong>Descriere opțiune</strong>
-                </td>
-                <td>
-                  <strong>SMS cod</strong>
-                </td>
-                <td>
-                  <strong>Tarif</strong>
-                </td>
-                <td>
-                  <strong>Valabilitate</strong>
-                </td>
+                <td>{t('popups.f4.table.headers.0')}</td>
+                <td>{t('popups.f4.table.headers.1')}</td>
+                <td>{t('popups.f4.table.headers.2')}</td>
+                <td>{t('popups.f4.table.headers.3')}</td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>50 SMS Naţionale</td>
-                <td style={{ textAlign: 'center' }}>SMS50</td>
-                <td style={{ textAlign: 'center' }}>10 lei</td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td>{t('popups.f4.table.rows.0.0')}</td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f4.table.rows.0.1')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f4.table.rows.0.2')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f4.table.rows.0.3')}
+                </td>
               </tr>
               <tr>
-                <td>20 SMS Internaționale</td>
-                <td style={{ textAlign: 'center' }}>SMS35</td>
-                <td style={{ textAlign: 'center' }}>35 lei</td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td>{t('popups.f4.table.rows.1.0')}</td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f4.table.rows.1.1')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f4.table.rows.1.2')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f4.table.rows.1.3')}
+                </td>
               </tr>
               <tr>
-                <td>100 SMS Naţionale</td>
-                <td style={{ textAlign: 'center' }}>SMS15</td>
-                <td style={{ textAlign: 'center' }}>15 lei</td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td>{t('popups.f4.table.rows.2.0')}</td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f4.table.rows.2.1')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f4.table.rows.2.2')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f4.table.rows.2.3')}
+                </td>
               </tr>
             </tbody>
           </table>
-          <h3>Condițiile de utilizare a opţiunii</h3>
+
+          <h3>{t('popups.f4.conditionsTitle')}</h3>
           <ul>
-            <li>Opțiunea este valabilă 30 zile calendaristice.</li>
-            <li>
-              Conținutul de SMS neconsumat nu se va raporta în perioda
-              următoare.
-            </li>
-            <li>
-              Opțiunea poate fi activată în orice zi, de mai multe ori pe lună.
-            </li>
-            <li>
-              Opțiunile ”SMS” activate se vor consuma prioritar conținutului din
-              abonament sau cartelă.
-            </li>
-            <li>La schimbul de pachet opțiunea va fi păstrată.</li>
-            <li>
-              După consumarea SMS-urilor incluse în opțiune, SMS-urile expediate
-              vor fi taxate la tarifele aferente planului tarifar.
-            </li>
-            <li>
-              Opțiunile sunt valabile cînd abonatul se afla în perioada activă.
-            </li>
-            <li>
-              Opțiunea este disponibilă pentru toţi abonații Moldtelecom,
-              deținători de abonamente sau cartela Prepay, telefonie mobilă sau
-              internet mobil.
-            </li>
+            <li>{t('popups.f4.conditions.0')}</li>
+            <li>{t('popups.f4.conditions.1')}</li>
+            <li>{t('popups.f4.conditions.2')}</li>
+            <li>{t('popups.f4.conditions.3')}</li>
+            <li>{t('popups.f4.conditions.4')}</li>
+            <li>{t('popups.f4.conditions.5')}</li>
+            <li>{t('popups.f4.conditions.6')}</li>
+            <li>{t('popups.f4.conditions.7')}</li>
           </ul>
 
-          <h3>Activare opțiune:</h3>
-
+          <h3>{t('popups.f4.activationTitle')}</h3>
           <ul>
-            <li>
-              prin{' '}
-              <a href="https://www.moldtelecom.md/ro/personal/sms-100-abonament">
-                SMS la numărul 100
-              </a>
-            </li>
-            <li>
-              prin aplicația "
-              <a href="https://www.moldtelecom.md/ro/personal/My Moldtelecom">
-                My Moldtelecom
-              </a>
-              "
-            </li>
-            <li>
-              Prin meniul USSD, la formare <a href="tel:*500#">*500#</a> pentru
-              abonații Postpay și <a href="*200#">*200#</a> pentru utilizatorii
-              Prepay și se vor urmări instrucțiunile meniului.
-            </li>
-            <li>prin cerere depusă la orice reprezentață SA Moldtelecom</li>
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f4.activation.0'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f4.activation.1'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f4.activation.2'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f4.activation.3'),
+              }}
+            />
           </ul>
         </div>
       </Popup>
@@ -531,122 +583,117 @@ const Popups: React.FC<PopupsProps> = ({ content, onClose, width }) => {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>Roaming Europe</h2>
+          <h2>{t('popups.f5.title')}</h2>
           <table className="popup_table">
             <thead>
               <tr>
-                <td>
-                  <strong>Descriere opțiune</strong>
-                </td>
-                <td>
-                  <strong>SMS cod</strong>
-                </td>
-                <td>Trafic internet</td>
-                <td>
-                  <strong>Tarif</strong>
-                </td>
-                <td>
-                  <strong>Valabilitate</strong>
-                </td>
+                <td>{t('popups.f5.table.headers.0')}</td>
+                <td>{t('popups.f5.table.headers.1')}</td>
+                <td>{t('popups.f5.table.headers.2')}</td>
+                <td>{t('popups.f5.table.headers.3')}</td>
+                <td>{t('popups.f5.table.headers.4')}</td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Apeluri Roaming UE</td>
-                <td style={{ textAlign: 'center' }}>UE70apel</td>
-                <td style={{ textAlign: 'center' }}>70 lei</td>
-                <td style={{ textAlign: 'center' }}>100 min</td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td>{t('popups.f5.table.rows.0.0')}</td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f5.table.rows.0.1')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f5.table.rows.0.2')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f5.table.rows.0.3')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f5.table.rows.0.4')}
+                </td>
               </tr>
               <tr>
-                <td>Internet Roaming UE</td>
-                <td style={{ textAlign: 'center' }}>UE100net</td>
-                <td style={{ textAlign: 'center' }}>100 lei</td>
-                <td style={{ textAlign: 'center' }}>2 GB</td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td>{t('popups.f5.table.rows.1.0')}</td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f5.table.rows.1.1')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f5.table.rows.1.2')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f5.table.rows.1.3')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f5.table.rows.1.4')}
+                </td>
               </tr>
               <tr>
-                <td>Combo Roaming UE</td>
-                <td style={{ textAlign: 'center' }}>UE100</td>
-                <td style={{ textAlign: 'center' }}>100 lei</td>
-                <td style={{ textAlign: 'center' }}>50 min/ 1 GB</td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td>{t('popups.f5.table.rows.2.0')}</td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f5.table.rows.2.1')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f5.table.rows.2.2')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f5.table.rows.2.3')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f5.table.rows.2.4')}
+                </td>
               </tr>
             </tbody>
           </table>
-          <h3>Condițiile de utilizare a opţiunii</h3>
+
+          <h3>{t('popups.f5.conditionsTitle')}</h3>
           <ul>
-            <li>Tarifele includ toate taxele, inclusiv TVA.</li>
-            <li>
-              Seria de opțiuni „Roaming UE” este disponibilă pentru toți
-              abonații de Telefonie mobilă Postpay, Voce și Date și Prepay
-            </li>
-            <li>
-              După consumarea conținutului în Roaming inclus în opțiune,
-              convorbirile și traficul internet vor fi taxate conform tarifelor
-              standard în roaming pentru fiecare operator.
-            </li>
-            <li>
-              Conținutul opțiunilor este destinat pentru utilizarea în Roaming
-              în rețeaua operatorilor, conform listei
-            </li>
-            <li>
-              Minutele incluse în opțiunile “Internet Roaming UE” și “Combo
-              Roaming UE” repartizate după cum urmează:
-              <ul>
-                <li>
-                  “Apeluri Roaming UE” – 100 min de iesire locale, de iesire
-                  către MD;
-                </li>
-                <li>
-                  “Combo Roaming UE”– 50 min de iesire locale, de iesire către
-                  MD;
-                </li>
-              </ul>
-            </li>
+            <li>{t('popups.f5.conditions.0')}</li>
+            <li>{t('popups.f5.conditions.1')}</li>
+            <li>{t('popups.f5.conditions.2')}</li>
+            <li>{t('popups.f5.conditions.3')}</li>
+            <li>{t('popups.f5.conditions.4')}</li>
           </ul>
-          <h3>Activare opțiune:</h3>
+
+          <h3>{t('popups.f5.activationTitle')}</h3>
           <ul>
-            <li>
-              prin{' '}
-              <a href="https://www.moldtelecom.md/ro/personal/sms-100-abonament">
-                SMS la numărul 100
-              </a>
-            </li>
-            <li>
-              prin aplicația "
-              <a href="https://www.moldtelecom.md/ro/personal/My Moldtelecom">
-                My Moldtelecom
-              </a>
-              "
-            </li>
-            <li>
-              Prin meniul USSD, la formare <a href="tel:*500#">*500#</a> pentru
-              abonații Postpay și <a href="*200#">*200#</a> pentru utilizatorii
-              Prepay și se vor urmări instrucțiunile meniului.
-            </li>
-            <li>prin cerere depusă la orice reprezentață SA Moldtelecom</li>
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f5.activation.0'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f5.activation.1'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f5.activation.2'),
+              }}
+            />
           </ul>
-          <h3>Dezactivarea opțiune:</h3>
+
+          <h3>{t('popups.f5.deactivationTitle')}</h3>
           <ul>
-            <li>
-              Prin aplicația mobilă „
-              <a href="https://www.moldtelecom.md/ro/personal/My Moldtelecom">
-                My Moldtelecom
-              </a>
-              ”
-            </li>
-            <li>
-              Prin apel la nr. <a href="tel:+37322200200">+373 22 200 200</a>{' '}
-              Serviciul Suport Clienți;
-            </li>
-            <li>
-              Prin meniul USSD, la formare <a href="tel:*500#">*500#</a> pentru
-              abonații Postpay și <a href="tel:*200#"></a> pentru clienții
-              Prepay și urmărirea instrucțiunilor meniului.
-            </li>
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f5.deactivation.0'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f5.deactivation.1'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f5.deactivation.2'),
+              }}
+            />
           </ul>
-          Dezactivarea serviciului este gratuită.
+          <span
+            dangerouslySetInnerHTML={{
+              __html: t('popups.f5.deactivation.3'),
+            }}
+          />
         </div>
       </Popup>
 
@@ -658,108 +705,102 @@ const Popups: React.FC<PopupsProps> = ({ content, onClose, width }) => {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>Roaming World</h2>
+          <h2>{t('popups.f6.title')}</h2>
           <table className="popup_table">
             <thead>
               <tr>
-                <td>
-                  <strong>Descriere opțiune</strong>
-                </td>
-                <td>
-                  <strong>SMS cod</strong>
-                </td>
-                <td>
-                  <strong>Tarif&nbsp;</strong>
-                </td>
-                <td>
-                  <strong>Conținut</strong>
-                </td>
-                <td>
-                  <strong>Valabilitate</strong>
-                </td>
+                <td>{t('popups.f6.table.headers.0')}</td>
+                <td>{t('popups.f6.table.headers.1')}</td>
+                <td>{t('popups.f6.table.headers.2')}</td>
+                <td>{t('popups.f6.table.headers.3')}</td>
+                <td>{t('popups.f6.table.headers.4')}</td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Apeluri World</td>
-                <td style={{ textAlign: 'center' }}>Wapel</td>
-                <td style={{ textAlign: 'center' }}>70 lei&nbsp;</td>
-                <td style={{ textAlign: 'center' }}>10 min</td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td>{t('popups.f6.table.rows.0.0')}</td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f6.table.rows.0.1')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f6.table.rows.0.2')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f6.table.rows.0.3')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f6.table.rows.0.4')}
+                </td>
               </tr>
               <tr>
-                <td>Internet World</td>
-                <td style={{ textAlign: 'center' }}>Wnet</td>
-                <td style={{ textAlign: 'center' }}>100 lei</td>
-                <td style={{ textAlign: 'center' }}>1 GB</td>
-                <td style={{ textAlign: 'center' }}>30 zile</td>
+                <td>{t('popups.f6.table.rows.1.0')}</td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f6.table.rows.1.1')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f6.table.rows.1.2')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f6.table.rows.1.3')}
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  {t('popups.f6.table.rows.1.4')}
+                </td>
               </tr>
             </tbody>
           </table>
-          <h3>Condițiile de utilizare a opţiunii</h3>
+
+          <h3>{t('popups.f6.conditionsTitle')}</h3>
           <ul>
-            <li>Tarifele includ toate taxele, inclusiv TVA.</li>
-            <li>
-              Seria de opțiuni „World” este disponibilă pentru toți abonații de
-              Telefonie mobilă Postpay, Voce și Date și Prepay.
-            </li>
-            <li>
-              După consumarea conținutului în Roaming inclus în opțiune,
-              convorbirile și traficul internet vor fi taxate conform tarifelor
-              standard în roaming pentru fiecare operator.
-            </li>
-            <li>
-              Viteza de acces la internet este conform condițiilor de prestare a
-              serviciului în vigoare de către operator și în funcție de
-              terminalul utilizat.
-            </li>
-            <li>
-              Minutele incluse în opțiunea Apeluri Word pot fi utilizate pentru
-              , „apeluri de ieșire locale”, „apeluri de ieșire către MD”{' '}
-            </li>
+            <li>{t('popups.f6.conditions.0')}</li>
+            <li>{t('popups.f6.conditions.1')}</li>
+            <li>{t('popups.f6.conditions.2')}</li>
+            <li>{t('popups.f6.conditions.3')}</li>
           </ul>
-          <h3>Activare opțiune:</h3>
+
+          <h3>{t('popups.f6.activationTitle')}</h3>
           <ul>
-            <li>
-              prin{' '}
-              <a href="https://www.moldtelecom.md/ro/personal/sms-100-abonament">
-                SMS la numărul 100
-              </a>
-            </li>
-            <li>
-              prin aplicația "
-              <a href="https://www.moldtelecom.md/ro/personal/My Moldtelecom">
-                My Moldtelecom
-              </a>
-              "
-            </li>
-            <li>
-              Prin meniul USSD, la formare <a href="tel:*500#">*500#</a> pentru
-              abonații Postpay și <a href="*200#">*200#</a> pentru utilizatorii
-              Prepay și se vor urmări instrucțiunile meniului.
-            </li>
-            <li>prin cerere depusă la orice reprezentață SA Moldtelecom</li>
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f6.activation.0'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f6.activation.1'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f6.activation.2'),
+              }}
+            />
           </ul>
-          <h3>Dezactivarea opțiune:</h3>
+
+          <h3>{t('popups.f6.deactivationTitle')}</h3>
           <ul>
-            <li>
-              Prin aplicația mobilă „
-              <a href="https://www.moldtelecom.md/ro/personal/My Moldtelecom">
-                My Moldtelecom
-              </a>
-              ”
-            </li>
-            <li>
-              Prin apel la nr. <a href="tel:+37322200200">+373 22 200 200</a>{' '}
-              Serviciul Suport Clienți;
-            </li>
-            <li>
-              Prin meniul USSD, la formare <a href="tel:*500#">*500#</a> pentru
-              abonații Postpay și <a href="tel:*200#"></a> pentru clienții
-              Prepay și urmărirea instrucțiunilor meniului.
-            </li>
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f6.deactivation.0'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f6.deactivation.1'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f6.deactivation.2'),
+              }}
+            />
           </ul>
-          Dezactivarea serviciului este gratuită.
+
+          <span
+            dangerouslySetInnerHTML={{
+              __html: t('popups.f6.deactivation.3'),
+            }}
+          />
         </div>
       </Popup>
 
@@ -771,64 +812,56 @@ const Popups: React.FC<PopupsProps> = ({ content, onClose, width }) => {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>VITEZA 4G+</h2>
-          <p>
-            Opțiunea viteza 4G+ presupune majorarea vitezei de transport date
-            download până la 175 Mbps și upload până la 50 Mbps.
-          </p>
+          <h2>{t('popups.f7.title')}</h2>
+          <p>{t('popups.f7.paragraph')}</p>
 
-          <h3>Condițiile de utilizare a opţiunii</h3>
+          <h3>{t('popups.f7.conditionsTitle')}</h3>
           <ul>
-            <li>Activarea este gratuită.</li>
-            <li>
-              Este necesar să ai terminal compatibil cu tehnologia LTE,
-              frecvență de 1800 MHz (Band 3)
-            </li>
-            <li>Activarea/dezactivarea se efectuează în orice zi a lunii.</li>
+            <li>{t('popups.f7.conditions.0')}</li>
+            <li>{t('popups.f7.conditions.1')}</li>
+            <li>{t('popups.f7.conditions.2')}</li>
           </ul>
 
-          <h3>Activare opțiune:</h3>
+          <h3>{t('popups.f7.activationTitle')}</h3>
           <ul>
-            <li>
-              Pentru activarea expediază un SMS la nr. 500 cu textul: <b>4G</b>
-            </li>
-            <li>
-              prin aplicația "
-              <a href="https://www.moldtelecom.md/ro/personal/My Moldtelecom">
-                My Moldtelecom
-              </a>
-              "
-            </li>
-            <li>
-              Prin meniul USSD, la formare <a href="tel:*500#">*500#</a> pentru
-              abonații Postpay și <a href="*200#">*200#</a> pentru utilizatorii
-              Prepay și se vor urmări instrucțiunile meniului.
-            </li>
-            <li>prin cerere depusă la orice reprezentață SA Moldtelecom</li>
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f7.activation.0'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f7.activation.1'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f7.activation.2'),
+              }}
+            />
           </ul>
 
-          <h3>Dezactivarea opțiune:</h3>
-
+          <h3>{t('popups.f7.deactivationTitle')}</h3>
           <ul>
-            <li>
-              Pentru dezactivare expediază un SMS la nr. 500 cu textul:{' '}
-              <b>STOP4G</b>
-            </li>
-            <li>
-              Prin aplicația mobilă „
-              <a href="https://www.moldtelecom.md/ro/personal/My Moldtelecom">
-                My Moldtelecom
-              </a>
-              ”
-            </li>
-            <li>
-              Prin meniul USSD, la formare <a href="tel:*500#">*500#</a> pentru
-              abonații Postpay și <a href="*200#">*200#</a> pentru utilizatorii
-              Prepay și se vor urmări instrucțiunile meniului.
-            </li>
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f7.deactivation.0'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f7.deactivation.1'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f7.deactivation.2'),
+              }}
+            />
           </ul>
         </div>
       </Popup>
+
       {/* Popup pentru f8 */}
       <Popup
         id="f8"
@@ -837,68 +870,57 @@ const Popups: React.FC<PopupsProps> = ({ content, onClose, width }) => {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>Upload Maxim</h2>
-          <p>
-            Opțiunea "Upload Maxim" presupune acordarea vitezei de upload de
-            5,76 Mbps.
-          </p>
+          <h2>{t('popups.f8.title')}</h2>
+          <p>{t('popups.f8.paragraph')}</p>
 
           <table className="popup_table">
             <thead>
               <tr>
-                <td>Descriere opțiune</td>
-                <td>Tarif</td>
+                <td>{t('popups.f8.table.headers.0')}</td>
+                <td>{t('popups.f8.table.headers.1')}</td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>
-                  <span>Upload Maxim</span>
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  <span>20 lei</span>
-                </td>
+                <td
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f8.table.rows.0.0'),
+                  }}
+                />
+                <td
+                  style={{ textAlign: 'center' }}
+                  dangerouslySetInnerHTML={{
+                    __html: t('popups.f8.table.rows.0.1'),
+                  }}
+                />
               </tr>
             </tbody>
           </table>
 
-          <h3>Condițiile de utilizare a opţiunii</h3>
+          <h3>{t('popups.f8.conditionsTitle')}</h3>
           <ul>
-            <li>Activarea/dezactivarea se efectuează în orice zi a lunii.</li>
-            <li>
-              La schimbul de abonament, titular sau migrare opţiunea va fi
-              păstrată
-            </li>
-            <li>
-              Opțiunea este disponibilă pentru toţi abonații Moldtelecom,
-              deținători de abonamente -&nbsp;telefonie mobilă sau internet
-              mobil.
-            </li>
-            <li>
-              Viteza de acces la internet este în funcţie de terminalul
-              utilizat.
-            </li>
+            <li>{t('popups.f8.conditions.0')}</li>
+            <li>{t('popups.f8.conditions.1')}</li>
+            <li>{t('popups.f8.conditions.2')}</li>
+            <li>{t('popups.f8.conditions.3')}</li>
           </ul>
-          <h3>Activare opțiune:</h3>
+
+          <h3>{t('popups.f8.activationTitle')}</h3>
           <ul>
-            <li>
-              prin aplicația "
-              <a href="https://www.moldtelecom.md/ro/personal/My Moldtelecom">
-                My Moldtelecom
-              </a>
-              "
-            </li>
-            <li>
-              Prin meniul USSD, la formare <a href="tel:*500#">*500#</a> pentru
-              abonații Postpay și <a href="*200#">*200#</a> pentru utilizatorii
-              Prepay și se vor urmări instrucțiunile meniului.
-            </li>
-            <li>prin cerere depusă la orice reprezentață SA Moldtelecom</li>
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f8.activation.0'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f8.activation.1'),
+              }}
+            />
+            <li>{t('popups.f8.activation.2')}</li>
           </ul>
         </div>
       </Popup>
     </>
   );
-};
-
-export default Popups;
+}

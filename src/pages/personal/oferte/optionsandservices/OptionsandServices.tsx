@@ -1,5 +1,5 @@
 // src/pages/OptionsandServices/OptionsandServices.tsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Navbar from '../../../../components/navbar/Navbar';
 import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb';
