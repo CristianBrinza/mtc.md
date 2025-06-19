@@ -1,27 +1,44 @@
 // src/pages/OptionsandServices/OptionsandServices.tsx
-import Navbar from '../../../../components/navbar/Navbar.tsx';
-import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb.tsx';
-import Hero from '../../../../components/hero/Hero.tsx';
-import styles from './OptionsandServices.module.css';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Chat from '../../../../components/chat/Chat.tsx';
-import Feedback from '../../../../components/feedback/Feedback.tsx';
-import Footer from '../../../../components/footer/Footer.tsx';
-import Icon from '../../../../components/Icon.tsx';
-import MyApp from '../../../../components/app/MyApp.tsx';
-import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
-import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
-import { useState } from 'react';
-import Popups from '../../../../components/Popups/Popups.tsx';
+import Navbar from '../../../../components/navbar/Navbar';
+import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb';
+import Hero from '../../../../components/hero/Hero';
+import Chat from '../../../../components/chat/Chat';
+import Feedback from '../../../../components/feedback/Feedback';
+import Footer from '../../../../components/footer/Footer';
+import Icon from '../../../../components/Icon';
+import MyApp from '../../../../components/app/MyApp';
+import FaqV2 from '../../../../components/faqV2/FaqV2';
+import FaqQAV2 from '../../../../components/faqV2/FaqQAV2';
+import Popups from '../../../../components/Popups/Popups';
+import styles from './OptionsandServices.module.css';
 
 export default function OptionsandServices() {
   const { t } = useTranslation();
+  const [activePopup, setActivePopup] = useState<string | null>(null);
   const breadcrumbItems = [
     { label: t('optionsandservices.breadcrumb.mobile'), url: ' ' },
     { label: t('optionsandservices.breadcrumb.optionsandservices') },
   ];
 
-  const [activePopup, setActivePopup] = useState<string | null>(null);
+  const renderItems = (key: string) => {
+    const items = t(key, { returnObjects: true }) as Array<{
+      label: string;
+      price: string;
+    }>;
+    return items.map((item, idx) => (
+      <div key={idx} className={styles.optionsandservices_block_list}>
+        <div
+          className={styles.optionsandservices_block_list_left}
+          dangerouslySetInnerHTML={{ __html: item.label }}
+        />
+        <div className={styles.optionsandservices_block_list_right}>
+          {item.price}
+        </div>
+      </div>
+    ));
+  };
 
   return (
     <>
@@ -29,492 +46,283 @@ export default function OptionsandServices() {
       <Chat />
       <Feedback />
       <Breadcrumb items={breadcrumbItems} />
-
       <Hero color="#F7F7F7" classname={styles.hero}>
         <div className={styles.hero_img_block}>
           <img
             className={styles.hero_img}
             src={`/images/landings/15074512${t('lang')}.png`}
-            alt={t('wifi_plus.hero.alt')}
+            alt="Moldtelecom"
           />
           <img
             className={styles.hero_img_tablet}
             src={`/images/landings/90296512${t('lang')}.png`}
-            alt={t('wifi_plus.hero.alt')}
+            alt="Moldtelecom"
           />
         </div>
       </Hero>
-
-      <div className={`title title_3  ${styles.optionsandservices_title} `}>
-        Conectează una din opțiunile dorite
+      <div className={`title title_3 ${styles.optionsandservices_title}`}>
+        {t('optionsandservices.titles.select')}
       </div>
-
       <div className={styles.optionsandservices_blocks}>
         <div className={styles.optionsandservices_block}>
           <div className={styles.optionsandservices_block_left}>
             <div className={styles.optionsandservices_block_title}>
-              Internet Mobil
+              {t('optionsandservices.blocks.internet_mobile.title')}
             </div>
             <div className={styles.optionsandservices_block_subtitle}>
-              Soluția ideală pentru momentele în care traficul tău de internet
-              nu îți ajunge.
+              {t('optionsandservices.blocks.internet_mobile.subtitle')}
             </div>
             <div
               className={`${styles.optionsandservices_block_inside} ${styles.optionsandservices_block_inside_1}`}
             >
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  Nelimitat <span>/ 1 zi</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  20 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  Nelimitat <span> / 7 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  100 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  10GB <span> / 15 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  50 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  5GB <span> / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  60 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  10GB <span> / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  100 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  20GB <span> / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  150 lei
-                </div>
-              </div>
+              {renderItems('optionsandservices.blocks.internet_mobile.items')}
             </div>
-
             <div
               className={styles.optionsandservices_block_btn}
               onClick={() => setActivePopup('f1')}
             >
-              Condițiile de utilizare{' '}
-              <Icon type={'arrow_right'} color={'#212a55'} />
+              {t('optionsandservices.usage_conditions')}{' '}
+              <Icon type="arrow_right" color="#212a55" />
             </div>
           </div>
           <img
             className={styles.optionsandservices_block_img}
             src="/images/landings/35974512.png"
-            alt="Moldteleocm"
+            alt="Moldtelecom"
           />
           <img
             className={styles.optionsandservices_block_img_mob}
             src="/images/landings/15994011.png"
-            alt="Moldteleocm"
+            alt="Moldtelecom"
           />
         </div>
         <div className={styles.optionsandservices_block}>
           <div className={styles.optionsandservices_block_left}>
             <div className={styles.optionsandservices_block_title}>
-              Minute Naționale
+              {t('optionsandservices.blocks.national_minutes.title')}
             </div>
             <div className={styles.optionsandservices_block_subtitle}>
-              Vorbește nelimitat în rețea și național, fără griji și
-              întreruperi.
+              {t('optionsandservices.blocks.national_minutes.subtitle')}
             </div>
-            <div className={`${styles.optionsandservices_block_inside}`}>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  50 minute <span> / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  100 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  100 minute <span> / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  20 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  200 minute<span> / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  50 lei
-                </div>
-              </div>
+            <div className={styles.optionsandservices_block_inside}>
+              {renderItems('optionsandservices.blocks.national_minutes.items')}
             </div>
-
             <div
               className={styles.optionsandservices_block_btn}
               onClick={() => setActivePopup('f2')}
             >
-              Condițiile de utilizare{' '}
-              <Icon type={'arrow_right'} color={'#212a55'} />
+              {t('optionsandservices.usage_conditions')}{' '}
+              <Icon type="arrow_right" color="#212a55" />
             </div>
           </div>
           <img
             className={styles.optionsandservices_block_img}
             src="/images/landings/35974011.png"
-            alt="Moldteleocm"
+            alt="Moldtelecom"
           />
         </div>
         <div className={styles.optionsandservices_block}>
           <div className={styles.optionsandservices_block_left}>
             <div className={styles.optionsandservices_block_title}>
-              Minute Internaționale
+              {t('optionsandservices.blocks.international_minutes.title')}
             </div>
             <div className={styles.optionsandservices_block_subtitle}>
-              Comunică ușor cu cei dragi din afara țării, la tarife avantajoase.
+              {t('optionsandservices.blocks.international_minutes.subtitle')}
             </div>
-            <div className={`${styles.optionsandservices_block_inside}`}>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  30 minute <br />
-                  <span>România și Ucraina / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  50 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  25 minute <br />{' '}
-                  <span> Europa, Israel, SUA, Canada / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  50 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  Orice Țară<span> / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  50 lei
-                </div>
-              </div>
+            <div className={styles.optionsandservices_block_inside}>
+              {renderItems(
+                'optionsandservices.blocks.international_minutes.items'
+              )}
             </div>
-
             <div
               className={styles.optionsandservices_block_btn}
               onClick={() => setActivePopup('f3')}
             >
-              Condițiile de utilizare{' '}
-              <Icon type={'arrow_right'} color={'#212a55'} />
+              {t('optionsandservices.usage_conditions')}{' '}
+              <Icon type="arrow_right" color="#212a55" />
             </div>
           </div>
           <img
             className={styles.optionsandservices_block_img}
             src="/images/landings/75974512.png"
-            alt="Moldteleocm"
+            alt="Moldtelecom"
           />
         </div>
         <div className={styles.optionsandservices_block}>
           <div className={styles.optionsandservices_block_left}>
-            <div className={styles.optionsandservices_block_title}>SMS</div>
+            <div className={styles.optionsandservices_block_title}>
+              {t('optionsandservices.blocks.sms.title')}
+            </div>
             <div className={styles.optionsandservices_block_subtitle}>
-              Trimite rapid mesaje celor dragi, oriunde s-ar afla.
+              {t('optionsandservices.blocks.sms.subtitle')}
             </div>
-            <div className={`${styles.optionsandservices_block_inside}`}>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  50 SMS naționale
-                  <span> / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  10 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  100 SMS naționale <span> / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  15 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  20 SMS internaționale<span> / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  35 lei
-                </div>
-              </div>
+            <div className={styles.optionsandservices_block_inside}>
+              {renderItems('optionsandservices.blocks.sms.items')}
             </div>
-
             <div
               className={styles.optionsandservices_block_btn}
               onClick={() => setActivePopup('f4')}
             >
-              Condițiile de utilizare{' '}
-              <Icon type={'arrow_right'} color={'#212a55'} />
+              {t('optionsandservices.usage_conditions')}{' '}
+              <Icon type="arrow_right" color="#212a55" />
             </div>
           </div>
           <img
             className={styles.optionsandservices_block_img}
             src="/images/landings/95944014.png"
-            alt="Moldteleocm"
+            alt="Moldtelecom"
           />
         </div>
       </div>
-
-      <div className={`title title_3  ${styles.optionsandservices_title} `}>
-        Opțiuni Roaming
+      <div className={`title title_3 ${styles.optionsandservices_title}`}>
+        {t('optionsandservices.titles.roaming')}
       </div>
-
       <div className={styles.optionsandservices_blocks}>
         <div className={styles.optionsandservices_block}>
           <div className={styles.optionsandservices_block_left}>
             <div className={styles.optionsandservices_block_title}>
-              Roaming Europe
+              {t('optionsandservices.blocks.roaming_europe.title')}
             </div>
             <div className={styles.optionsandservices_block_subtitle}>
-              Comunică în Europa fără griji, la tarife ca acasă.
+              {t('optionsandservices.blocks.roaming_europe.subtitle')}
             </div>
-            <div className={`${styles.optionsandservices_block_inside}`}>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  Apeluri <span> (100min) / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  100 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  Internet <span>(2GB) / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  100 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  Combo <span>(1GB / 50min) / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  100 lei
-                </div>
-              </div>
+            <div className={styles.optionsandservices_block_inside}>
+              {renderItems('optionsandservices.blocks.roaming_europe.items')}
             </div>
-
             <div
               className={styles.optionsandservices_block_btn}
               onClick={() => setActivePopup('f5')}
             >
-              Condițiile de utilizare{' '}
-              <Icon type={'arrow_right'} color={'#212a55'} />
+              {t('optionsandservices.usage_conditions')}{' '}
+              <Icon type="arrow_right" color="#212a55" />
             </div>
           </div>
           <img
             className={styles.optionsandservices_block_img}
             src="/images/landings/39974511.png"
-            alt="Moldteleocm"
+            alt="Moldtelecom"
           />
         </div>
         <div className={styles.optionsandservices_block}>
           <div className={styles.optionsandservices_block_left}>
             <div className={styles.optionsandservices_block_title}>
-              Roaming World
+              {t('optionsandservices.blocks.roaming_world.title')}
             </div>
             <div className={styles.optionsandservices_block_subtitle}>
-              Comunicarea și accesul la internet sunt prioritățile noastre.
+              {t('optionsandservices.blocks.roaming_world.subtitle')}
             </div>
-            <div className={`${styles.optionsandservices_block_inside}`}>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  Apeluri World <span> (10 min) / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  70 lei
-                </div>
-              </div>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  Internet World <span> (1GB) / 30 zile</span>
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  100 lei
-                </div>
-              </div>
+            <div className={styles.optionsandservices_block_inside}>
+              {renderItems('optionsandservices.blocks.roaming_world.items')}
             </div>
-
             <div
               className={styles.optionsandservices_block_btn}
               onClick={() => setActivePopup('f6')}
             >
-              Condițiile de utilizare{' '}
-              <Icon type={'arrow_right'} color={'#212a55'} />
+              {t('optionsandservices.usage_conditions')}{' '}
+              <Icon type="arrow_right" color="#212a55" />
             </div>
           </div>
           <img
             className={styles.optionsandservices_block_img}
             src="/images/landings/36974511.png"
-            alt="Moldteleocm"
+            alt="Moldtelecom"
           />
         </div>
       </div>
-
-      <div className={`title title_3  ${styles.optionsandservices_title} `}>
-        Alte Opțiuni
+      <div className={`title title_3 ${styles.optionsandservices_title}`}>
+        {t('optionsandservices.titles.other')}
       </div>
-
       <div className={styles.optionsandservices_blocks}>
         <div className={styles.optionsandservices_block}>
           <div className={styles.optionsandservices_block_left}>
             <div className={styles.optionsandservices_block_title}>
-              Viteza 4G+
+              {t('optionsandservices.blocks.speed_4g_plus.title')}
             </div>
             <div className={styles.optionsandservices_block_subtitle}>
-              Majorarea vitezei de transport date download până la 175 Mbps și
-              upload până la 50 Mbps.
+              {t('optionsandservices.blocks.speed_4g_plus.subtitle')}
             </div>
-            <div className={`${styles.optionsandservices_block_inside}`}>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  30 zile
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  Gratuit
-                </div>
-              </div>
+            <div className={styles.optionsandservices_block_inside}>
+              {renderItems('optionsandservices.blocks.speed_4g_plus.items')}
             </div>
-
             <div
               className={styles.optionsandservices_block_btn}
               onClick={() => setActivePopup('f7')}
             >
-              Condițiile de utilizare{' '}
-              <Icon type={'arrow_right'} color={'#212a55'} />
+              {t('optionsandservices.usage_conditions')}{' '}
+              <Icon type="arrow_right" color="#212a55" />
             </div>
           </div>
           <img
             className={styles.optionsandservices_block_img}
             src="/images/landings/15979001.png"
-            alt="Moldteleocm"
+            alt="Moldtelecom"
           />
         </div>
         <div className={styles.optionsandservices_block}>
           <div className={styles.optionsandservices_block_left}>
             <div className={styles.optionsandservices_block_title}>
-              Upload Maxim
+              {t('optionsandservices.blocks.upload_max.title')}
             </div>
             <div className={styles.optionsandservices_block_subtitle}>
-              Acordarea vitezei de upload de 5,76 Mbps.
+              {t('optionsandservices.blocks.upload_max.subtitle')}
             </div>
-            <div className={`${styles.optionsandservices_block_inside}`}>
-              <div className={styles.optionsandservices_block_list}>
-                <div className={styles.optionsandservices_block_list_left}>
-                  30 zile
-                </div>
-                <div className={styles.optionsandservices_block_list_right}>
-                  20 lei
-                </div>
-              </div>
+            <div className={styles.optionsandservices_block_inside}>
+              {renderItems('optionsandservices.blocks.upload_max.items')}
             </div>
-
             <div
               className={styles.optionsandservices_block_btn}
               onClick={() => setActivePopup('f8')}
             >
-              Condițiile de utilizare{' '}
-              <Icon type={'arrow_right'} color={'#212a55'} />
+              {t('optionsandservices.usage_conditions')}{' '}
+              <Icon type="arrow_right" color="#212a55" />
             </div>
           </div>
           <img
             className={styles.optionsandservices_block_img}
             src="/images/landings/15779001.png"
-            alt="Moldteleocm"
+            alt="Moldtelecom"
           />
         </div>
       </div>
-      <MyApp style_type={'blue_white'} />
-      {/* FAQ */}
+      <MyApp style_type="blue_white" />
       <FaqV2 max_faq={6}>
-        <FaqQAV2 question={'Cum pot să-mi verific starea contului?'}>
+        <FaqQAV2 question={t('optionsandservices.faq.q1')}>
           <div>
-            Cu ajutorul serviciului CostControl în orice moment vei putea afla
-            care este stare contului tău. Pentru aceasta este necesar de a forma{' '}
-            <b>500</b>, tasta de apel şi alege cifra <b>1</b>.
-            <br /> <br /> De asemenea poţi utiliza acest serviciu prin
-            expedierea unui mesaj scurt la nr. <b>500</b> cu cifra <b>1</b> sau
-            poţi forma <b>*500*1#</b> şi <b>OK</b>.
-            <br /> <br /> Mai mult, starea contului și alte detalii sunt
-            disponibile prin intermediul aplicației ”MyMoldtelecom”.
+            {t('optionsandservices.faq.a1')
+              .split('\n\n')
+              .map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
           </div>
         </FaqQAV2>
-        {/*<FaqQAV2 question={'Cum pot reîncărca contul?'}>*/}
-        {/*  <div>*/}
-        {/*    <ul>*/}
-        {/*      <li>Pentru reîncărcare, trimite un SMS cu „R_************” (unde * reprezintă codul PIN de pe cartela de reîncărcare) la 100.</li>*/}
-        {/*      <li>Pentru a cere unui prieten să îți reîncarce contul, trimite un SMS cu „RM_0xxxxxxxx” la 100 (unde „0xxxxxxxx” este numărul destinatarului).</li>*/}
-        {/*    </ul>*/}
-        {/*  </div>*/}
-        {/*</FaqQAV2>*/}
-        <FaqQAV2 question={'De ce nu pot recepţiona apeluri?'}>
-          <div>
-            Nu poţi efectua apeluri din unul din următoarele motive:
-            <ul>
-              <li>Ai activată redirecţionarea apelurilor de intrare;</li>
-              <li>Serviciile tale sunt suspendate temporar;</li>
-              <li>Cartela USIM nu este valabilă sau este deteriorată;</li>
-              <li>Nu te afli în aria de acoperire a reţelei Moldtelecom.</li>
-            </ul>
-          </div>
+        <FaqQAV2 question={t('optionsandservices.faq.q2')}>
+          <ul>
+            {t('optionsandservices.faq.a2')
+              .split('\n')
+              .filter(l => l.startsWith('•'))
+              .map((l, i) => (
+                <li key={i}>{l.slice(2)}</li>
+              ))}
+          </ul>
         </FaqQAV2>
-        <FaqQAV2 question={'De ce nu pot efectua apeluri?'}>
-          <div>
-            Nu poţi efectua apeluri din unul din următoarele motive:
-            <ul>
-              <li>
-                Balanţa contului tău nu este suficientă pentru a efectua
-                apeluri;
-              </li>
-              <li>Serviciile tale sunt suspendate temporar;</li>
-              <li>Cartela USIM nu este valabilă sau este deteriorată;</li>
-              <li>Nu te afli în aria de acoperire a reţelei Moldtelecom.</li>
-            </ul>
-          </div>
+        <FaqQAV2 question={t('optionsandservices.faq.q3')}>
+          <ul>
+            {t('optionsandservices.faq.a3')
+              .split('\n')
+              .filter(l => l.startsWith('•'))
+              .map((l, i) => (
+                <li key={i}>{l.slice(2)}</li>
+              ))}
+          </ul>
         </FaqQAV2>
-        <FaqQAV2
-          question={'Care este procedura de activare a Cartelei Moldtelecom?'}
-        >
-          <div>
-            Pentru a activa Cartela Moldtelecom este nevoie să o introduci în
-            telefonul tău mobil şi să formezi <b>200</b> apoi <b>OK</b> sau{' '}
-            <b>*200#OK</b>.
-          </div>
+        <FaqQAV2 question={t('optionsandservices.faq.q4')}>
+          <div>{t('optionsandservices.faq.a4')}</div>
         </FaqQAV2>
-        <FaqQAV2 question={'Cât costă restabilirea/înlocuirea cartelei USIM?'}>
-          <div>Înlocuirea cartelei USIM este GRATUITĂ.</div>
+        <FaqQAV2 question={t('optionsandservices.faq.q5')}>
+          <div>{t('optionsandservices.faq.a5')}</div>
         </FaqQAV2>
       </FaqV2>
-      <Footer disclaimer={true} />
-
+      <Footer disclaimer />
       <Popups content={activePopup} onClose={() => setActivePopup(null)} />
     </>
   );

@@ -80,7 +80,7 @@
       "optionsandservices": "Opțiuni și Servicii"
     },
     "titles": {
-      "select": "Conectează-te la una din opțiuni",
+      "select": "Conectează una din opțiunile dorite",
       "roaming": "Opțiuni Roaming",
       "other": "Alte Opțiuni"
     },
@@ -89,21 +89,21 @@
         "title": "Internet Mobil",
         "subtitle": "Soluția ideală pentru momentele în care traficul tău de internet nu îți ajunge.",
         "items": [
-          { "label": "Nelimitat / 1 zi", "price": "20 lei" },
-          { "label": "Nelimitat / 7 zile", "price": "100 lei" },
-          { "label": "10 GB / 15 zile", "price": "50 lei" },
-          { "label": "5 GB / 30 zile", "price": "60 lei" },
-          { "label": "10 GB / 30 zile", "price": "100 lei" },
-          { "label": "20 GB / 30 zile", "price": "150 lei" }
+          { "label": "Nelimitat<span> / 1 zi</span>", "price": "20 lei" },
+          { "label": "Nelimitat<span> / 7 zile</span>", "price": "100 lei" },
+          { "label": "10 GB<span> / 15 zile</span>", "price": "50 lei" },
+          { "label": "5 GB<span> / 30 zile</span>", "price": "60 lei" },
+          { "label": "10 GB<span> / 30 zile</span>", "price": "100 lei" },
+          { "label": "20 GB<span> / 30 zile</span>", "price": "150 lei" }
         ]
       },
       "national_minutes": {
         "title": "Minute Naționale",
         "subtitle": "Vorbește nelimitat în rețea și național, fără griji și întreruperi.",
         "items": [
-          { "label": "50 minute / 30 zile", "price": "100 lei" },
-          { "label": "100 minute / 30 zile", "price": "20 lei" },
-          { "label": "200 minute / 30 zile", "price": "50 lei" }
+          { "label": "50 minute<span> / 30 zile</span>", "price": "100 lei" },
+          { "label": "100 minute<span> / 30 zile</span>", "price": "20 lei" },
+          { "label": "200 minute<span> / 30 zile</span>", "price": "50 lei" }
         ]
       },
       "international_minutes": {
@@ -111,40 +111,64 @@
         "subtitle": "Comunică ușor cu cei dragi din afara țării, la tarife avantajoase.",
         "items": [
           {
-            "label": "30 minute România și Ucraina / 30 zile",
+            "label": "30 minute<br/><span>România și Ucraina / 30 zile</span>",
             "price": "50 lei"
           },
           {
-            "label": "25 minute Europa, Israel, SUA, Canada / 30 zile",
+            "label": "25 minute<br/><span>Europa, Israel, SUA, Canada / 30 zile</span>",
             "price": "50 lei"
           },
-          { "label": "Orice Țară / 30 zile", "price": "50 lei" }
+          { "label": "Orice Țară<span> / 30 zile</span>", "price": "50 lei" }
         ]
       },
       "sms": {
         "title": "SMS",
         "subtitle": "Trimite rapid mesaje celor dragi, oriunde s-ar afla.",
         "items": [
-          { "label": "50 SMS naționale / 30 zile", "price": "10 lei" },
-          { "label": "100 SMS naționale / 30 zile", "price": "15 lei" },
-          { "label": "20 SMS internaționale / 30 zile", "price": "35 lei" }
+          {
+            "label": "50 SMS naționale<span> / 30 zile</span>",
+            "price": "10 lei"
+          },
+          {
+            "label": "100 SMS naționale<span> / 30 zile</span>",
+            "price": "15 lei"
+          },
+          {
+            "label": "20 SMS internaționale<span> / 30 zile</span>",
+            "price": "35 lei"
+          }
         ]
       },
       "roaming_europe": {
         "title": "Roaming Europe",
         "subtitle": "Comunică în Europa fără griji, la tarife ca acasă.",
         "items": [
-          { "label": "Apeluri (100 min) / 30 zile", "price": "100 lei" },
-          { "label": "Internet (2 GB) / 30 zile", "price": "100 lei" },
-          { "label": "Combo (1 GB / 50 min) / 30 zile", "price": "100 lei" }
+          {
+            "label": "Apeluri (100 min)<span> / 30 zile</span>",
+            "price": "100 lei"
+          },
+          {
+            "label": "Internet (2 GB)<span> / 30 zile</span>",
+            "price": "100 lei"
+          },
+          {
+            "label": "Combo (1 GB / 50 min)<span> / 30 zile</span>",
+            "price": "100 lei"
+          }
         ]
       },
       "roaming_world": {
         "title": "Roaming World",
         "subtitle": "Comunicarea și accesul la internet sunt prioritățile noastre.",
         "items": [
-          { "label": "Apeluri World (10 min) / 30 zile", "price": "70 lei" },
-          { "label": "Internet World (1 GB) / 30 zile", "price": "100 lei" }
+          {
+            "label": "Apeluri World (10 min)<span> / 30 zile</span>",
+            "price": "70 lei"
+          },
+          {
+            "label": "Internet World (1 GB)<span> / 30 zile</span>",
+            "price": "100 lei"
+          }
         ]
       },
       "speed_4g_plus": {
@@ -158,7 +182,19 @@
         "items": [{ "label": "30 zile", "price": "20 lei" }]
       }
     },
-    "usage_conditions": "Condițiile de utilizare"
+    "usage_conditions": "Condițiile de utilizare",
+    "faq": {
+      "q1": "Cum pot să-mi verific starea contului?",
+      "a1": "Cu ajutorul serviciului CostControl în orice moment vei putea afla care este starea contului tău. Pentru aceasta formează 500, alege cifra 1 și apasă OK.\n\nPoți, de asemenea, să trimiți un SMS la 500 cu cifra 1 sau să formezi *500*1# și să apeși OK.\n\nMai multe detalii le găsești și în aplicația „MyMoldtelecom”.",
+      "q2": "De ce nu pot recepționa apeluri?",
+      "a2": "Nu poți recepționa apeluri deoarece:\n• ai activată redirecționarea apelurilor de intrare;\n• serviciile tale sunt suspendate temporar;\n• cartela USIM nu este valabilă sau este deteriorată;\n• nu ești în aria de acoperire a rețelei Moldtelecom.",
+      "q3": "De ce nu pot efectua apeluri?",
+      "a3": "Nu poți efectua apeluri deoarece:\n• balanța contului tău nu este suficientă;\n• serviciile tale sunt suspendate temporar;\n• cartela USIM nu este valabilă sau deteriorată;\n• nu ești în aria de acoperire a rețelei Moldtelecom.",
+      "q4": "Care este procedura de activare a Cartelei Moldtelecom?",
+      "a4": "Pentru activarea cartelei, introdu-o în telefon și formează 200, apoi OK sau *200#OK.",
+      "q5": "Cât costă restabilirea/înlocuirea cartelei USIM?",
+      "a5": "Înlocuirea cartelei USIM este gratuită."
+    }
   },
   "wifi_plus": {
     "breadcrumb": {

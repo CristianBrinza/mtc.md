@@ -87,11 +87,18 @@
   bottom: 20px;
   left: 20px;
   background: rgba(255, 255, 255, 0.4);
+  background: #dfe4fd;
   padding: 4px 10px;
   border-radius: 100px;
 }
+.optionsandservices_block_btn svg {
+  transition: all 0.1s ease-in-out;
+}
 .optionsandservices_block_btn:hover svg {
   margin: 0 -2px 0 2px;
+}
+.optionsandservices_block_btn:hover {
+  background: #d7dbff;
 }
 .optionsandservices_block_inside_1 .optionsandservices_block_list {
   padding: 2px 0;
