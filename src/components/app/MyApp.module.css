@@ -73,7 +73,7 @@
     height: 48px;
   }
 }
-@media (max-width: 940px) {
+@media (max-width: 950px) {
   .MyApp {
     width: 580px;
     padding: 30px 45px 20px 45px;

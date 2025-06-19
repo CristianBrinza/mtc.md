@@ -82,3 +82,36 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.popup_table {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #f2f5ff;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+.popup_table thead {
+  background: #fff;
+  border-radius: 8px;
+}
+.popup_table thead td {
+  padding: 5px 5px 5px 10px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  text-align: center;
+  background: #f2f5ff;
+}
+.popup_table tbody td {
+  box-sizing: border-box;
+  padding: 1px 10px;
+  border-bottom: 1px solid #eceffa;
+}
+.popup_table tbody tr:last-child td {
+  border-bottom: 1px solid transparent;
+}
+
+@media (max-width: 440px) {
+  .popup_block_inside {
+    padding: 40px 20px;
+  }
+}

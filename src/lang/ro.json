@@ -76,9 +76,89 @@
   },
   "optionsandservices": {
     "breadcrumb": {
-      "mobile": "Mobile",
-      "optionsandservices": "Options & Services"
-    }
+      "mobile": "Mobil",
+      "optionsandservices": "Opțiuni și Servicii"
+    },
+    "titles": {
+      "select": "Conectează-te la una din opțiuni",
+      "roaming": "Opțiuni Roaming",
+      "other": "Alte Opțiuni"
+    },
+    "blocks": {
+      "internet_mobile": {
+        "title": "Internet Mobil",
+        "subtitle": "Soluția ideală pentru momentele în care traficul tău de internet nu îți ajunge.",
+        "items": [
+          { "label": "Nelimitat / 1 zi", "price": "20 lei" },
+          { "label": "Nelimitat / 7 zile", "price": "100 lei" },
+          { "label": "10 GB / 15 zile", "price": "50 lei" },
+          { "label": "5 GB / 30 zile", "price": "60 lei" },
+          { "label": "10 GB / 30 zile", "price": "100 lei" },
+          { "label": "20 GB / 30 zile", "price": "150 lei" }
+        ]
+      },
+      "national_minutes": {
+        "title": "Minute Naționale",
+        "subtitle": "Vorbește nelimitat în rețea și național, fără griji și întreruperi.",
+        "items": [
+          { "label": "50 minute / 30 zile", "price": "100 lei" },
+          { "label": "100 minute / 30 zile", "price": "20 lei" },
+          { "label": "200 minute / 30 zile", "price": "50 lei" }
+        ]
+      },
+      "international_minutes": {
+        "title": "Minute Internaționale",
+        "subtitle": "Comunică ușor cu cei dragi din afara țării, la tarife avantajoase.",
+        "items": [
+          {
+            "label": "30 minute România și Ucraina / 30 zile",
+            "price": "50 lei"
+          },
+          {
+            "label": "25 minute Europa, Israel, SUA, Canada / 30 zile",
+            "price": "50 lei"
+          },
+          { "label": "Orice Țară / 30 zile", "price": "50 lei" }
+        ]
+      },
+      "sms": {
+        "title": "SMS",
+        "subtitle": "Trimite rapid mesaje celor dragi, oriunde s-ar afla.",
+        "items": [
+          { "label": "50 SMS naționale / 30 zile", "price": "10 lei" },
+          { "label": "100 SMS naționale / 30 zile", "price": "15 lei" },
+          { "label": "20 SMS internaționale / 30 zile", "price": "35 lei" }
+        ]
+      },
+      "roaming_europe": {
+        "title": "Roaming Europe",
+        "subtitle": "Comunică în Europa fără griji, la tarife ca acasă.",
+        "items": [
+          { "label": "Apeluri (100 min) / 30 zile", "price": "100 lei" },
+          { "label": "Internet (2 GB) / 30 zile", "price": "100 lei" },
+          { "label": "Combo (1 GB / 50 min) / 30 zile", "price": "100 lei" }
+        ]
+      },
+      "roaming_world": {
+        "title": "Roaming World",
+        "subtitle": "Comunicarea și accesul la internet sunt prioritățile noastre.",
+        "items": [
+          { "label": "Apeluri World (10 min) / 30 zile", "price": "70 lei" },
+          { "label": "Internet World (1 GB) / 30 zile", "price": "100 lei" }
+        ]
+      },
+      "speed_4g_plus": {
+        "title": "Viteza 4G+",
+        "subtitle": "Majorarea vitezei de download până la 175 Mbps și upload până la 50 Mbps.",
+        "items": [{ "label": "30 zile", "price": "Gratuit" }]
+      },
+      "upload_max": {
+        "title": "Upload Maxim",
+        "subtitle": "Acordarea vitezei de upload de 5,76 Mbps.",
+        "items": [{ "label": "30 zile", "price": "20 lei" }]
+      }
+    },
+    "usage_conditions": "Condițiile de utilizare"
   },
   "wifi_plus": {
     "breadcrumb": {

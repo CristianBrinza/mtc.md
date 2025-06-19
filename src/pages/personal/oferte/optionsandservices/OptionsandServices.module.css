@@ -31,6 +31,7 @@
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  justify-content: space-between;
 }
 .optionsandservices_block_img {
   width: 40%;
@@ -83,8 +84,10 @@
   bottom: 24px;
   left: 24px;
   cursor: pointer;
-  /*background:  rgba(255, 255, 255, 0.3);*/
-  /*padding: 4px 10px;*/
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 4px 10px;
   border-radius: 100px;
 }
 .optionsandservices_block_btn:hover svg {
@@ -92,4 +95,94 @@
 }
 .optionsandservices_block_inside_1 .optionsandservices_block_list {
   padding: 2px 0;
+}
+.optionsandservices_block_img_mob {
+  display: none;
+}
+.optionsandservices_block_list_left_br {
+  display: none;
+}
+
+@media (max-width: 1300px) {
+  .hero {
+    width: 1300px;
+    margin-left: calc((1300px - 100vw) / -2);
+  }
+  .optionsandservices_block {
+    width: 100%;
+    background: #eef1ff;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  .optionsandservices_blocks {
+    max-width: 880px;
+  }
+  .optionsandservices_block_img {
+    width: 30%;
+  }
+  .optionsandservices_block_left {
+    width: 68%;
+  }
+}
+@media (max-width: 1150px) {
+  .hero {
+    width: 1150px;
+    margin-left: calc((1150px - 100vw) / -2);
+  }
+}
+
+@media (max-width: 950px) {
+  .hero {
+    width: 1000px;
+    margin-left: calc((1000px - 100vw) / -2);
+  }
+  .hero_img_tablet {
+    display: block;
+    width: 1400px;
+    margin-left: calc((1400px - 100vw) / -2);
+  }
+  .hero {
+    margin-left: 0;
+    width: 100%;
+  }
+  .hero_img {
+    display: none;
+  }
+  .optionsandservices_block {
+    display: flex;
+    width: 580px;
+  }
+  .optionsandservices_blocks {
+    max-width: 580px;
+  }
+  .optionsandservices_block_img {
+    width: 40%;
+  }
+  .optionsandservices_block_left {
+    width: 58%;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero_img_tablet {
+    display: block;
+    width: calc(100vw * 2.3);
+    margin-left: calc(((100vw * 2.3) - 100vw) / -2);
+  }
+  .optionsandservices_block_img {
+    display: none;
+  }
+  .optionsandservices_block_left {
+    width: 100%;
+  }
+  .optionsandservices_block_inside {
+    margin-bottom: 60px;
+  }
+  .optionsandservices_blocks {
+    max-width: calc(100vw - 40px);
+  }
+  .optionsandservices_block_list_left_br {
+    display: block;
+  }
 }
