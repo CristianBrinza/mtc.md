@@ -72,7 +72,7 @@ export const routesConfig: RouteConfig[] = [
     element: React.createElement(OptionsandServices),
   },
   {
-    path: '/:lang/razuieste',
+    path: '/:lang/weekend-cu-beneficii',
     i18nKey: 'not_found.title',
     element: React.createElement(PromoRazuieste),
   },
