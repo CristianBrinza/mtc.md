@@ -185,7 +185,7 @@
     "usage_conditions": "Condițiile de utilizare",
     "faq": {
       "q1": "Cum pot să-mi verific starea contului?",
-      "a1": "Cu ajutorul serviciului CostControl în orice moment vei putea afla care este starea contului tău. Pentru aceasta formează 500, alege cifra 1 și apasă OK.\n\nPoți, de asemenea, să trimiți un SMS la 500 cu cifra 1 sau să formezi *500*1# și să apeși OK.\n\nMai multe detalii le găsești și în aplicația „MyMoldtelecom”.",
+      "a1": "Cu ajutorul serviciului CostControl în orice moment vei putea afla care este starea contului tău. Pentru aceasta formează 500, alege cifra 1 și apasă OK.\n\nPoți, de asemenea, să trimiți un SMS la 500 cu cifra 1 sau să formezi *500*1# și să apeși OK.\n\nMai multe detalii le găsești și în aplicația „My Moldtelecom”.",
       "q2": "De ce nu pot recepționa apeluri?",
       "a2": "Nu poți recepționa apeluri deoarece:\n• ai activată redirecționarea apelurilor de intrare;\n• serviciile tale sunt suspendate temporar;\n• cartela USIM nu este valabilă sau este deteriorată;\n• nu ești în aria de acoperire a rețelei Moldtelecom.",
       "q3": "De ce nu pot efectua apeluri?",
@@ -722,9 +722,9 @@
     "period": "Campania se desfășoară între 21.06.2025 – 30.09.2025 (inclusiv).",
     "faq": {
       "q1": "Ce este campania „Weekend cu beneficii”?",
-      "a1": "Este o tombolă digitală în aplicația MyMoldtelecom, prin care abonații eligibili pot răzui un scratch-card în fiecare sâmbătă sau duminică pentru a primi instant trafic internet sau minute naționale gratuite.",
+      "a1": "Este o tombolă digitală în aplicația My Moldtelecom, prin care abonații eligibili pot răzui un scratch-card în fiecare sâmbătă sau duminică pentru a primi instant trafic internet sau minute naționale gratuite.",
       "q2": "Cine poate participa la campanie?",
-      "a2": "<li>Abonații persoane fizice (prepaid sau postpaid) ai serviciilor de telefonie mobilă Moldtelecom, cu vârsta minimă de 18 ani.</li><li>Este necesară instalarea sau actualizarea la ultima versiune a aplicației MyMoldtelecom din Play Market sau App Store.</li><li>Angajații S.A. Moldtelecom NU pot participa.</li>",
+      "a2": "<li>Abonații persoane fizice (prepaid sau postpaid) ai serviciilor de telefonie mobilă Moldtelecom, cu vârsta minimă de 18 ani.</li><li>Este necesară instalarea sau actualizarea la ultima versiune a aplicației My Moldtelecom din Play Market sau App Store.</li><li>Angajații S.A. Moldtelecom NU pot participa.</li>",
       "q3": "De câte ori pot participa la campanie?",
       "a3": "Poți răzui o singură dată în fiecare weekend: fie sâmbătă, fie duminică.",
       "q4": "Participarea costă ceva?",
@@ -735,7 +735,7 @@
       "section1": {
         "title": "1. ORGANIZATORUL CAMPANIEI",
         "p1": {
-          "part1": "1.1. Organizatorul Campaniei în aplicația MyMoldtelecom este S.A. „Moldtelecom”, persoană juridică înregistrată în Registrul de Stat al persoanelor juridice al Republicii Moldova cu IDNO (cod fiscal) ",
+          "part1": "1.1. Organizatorul Campaniei în aplicația My Moldtelecom este S.A. „Moldtelecom”, persoană juridică înregistrată în Registrul de Stat al persoanelor juridice al Republicii Moldova cu IDNO (cod fiscal) ",
           "idno": "1002600048836",
           "part2": ", cu sediul în ",
           "address": "MD-2001, bd. Ştefan cel Mare şi Sfânt, 10, mun. Chişinău, Republica Moldova",
@@ -753,12 +753,12 @@
         "p1_1": "2.1. Perioada de desfășurare a Campaniei este ",
         "p1_2": "21.06.2025 – 30.09.2025 ",
         "p1_3": "(inclusiv).",
-        "p2": "2.2. Campania este destinată abonaților de telefonie mobilă Voce/Date (prepaid/postpaid), persoane fizice, cu vârsta minimă de 18 ani și care au instalată/actualizată aplicația MyMoldtelecom.",
+        "p2": "2.2. Campania este destinată abonaților de telefonie mobilă Voce/Date (prepaid/postpaid), persoane fizice, cu vârsta minimă de 18 ani și care au instalată/actualizată aplicația My Moldtelecom.",
         "p3": "2.3. Nu pot participa persoanele cu statut de angajat S.A. Moldtelecom."
       },
       "section3": {
         "title": "3. MECANISMUL DESFĂȘURĂRII CAMPANIEI",
-        "p1": "3.1. Abonații eligibili trebuie să deschidă aplicația MyMoldtelecom și să acceseze pagina „Contul meu”, unde vor găsi un scratch card de răzuit pentru a primi un premiu instant.",
+        "p1": "3.1. Abonații eligibili trebuie să deschidă aplicația My Moldtelecom și să acceseze pagina „Contul meu”, unde vor găsi un scratch card de răzuit pentru a primi un premiu instant.",
         "p2": "3.2. Fondul de premii include:",
         "li1_1": "Carduri cu trafic mobil: ",
         "li1_2": " 100MB, 500MB, 1GB, 5GB, 10GB",

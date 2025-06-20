@@ -89,7 +89,7 @@ export default function PromoRazuieste() {
               className={styles.promorazuieste_btn}
               href="https://mtc.md/my-mtc"
             >
-              MyMoldtelecom
+              My Moldtelecom
             </a>{' '}
             {t('promorazuieste.intro.part2_1')}{' '}
             <b>{t('promorazuieste.intro.part2_2')}</b>

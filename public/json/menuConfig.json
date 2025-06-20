@@ -259,6 +259,10 @@
         "small": true,
         "items": [
           {
+            "label": "promorazuieste.breadcrumb.name",
+            "to": "/weekend-cu-beneficii"
+          },
+          {
             "label": "navbar.mergi_castigi",
             "to": "/personal/mergi_si_castigi"
           }
