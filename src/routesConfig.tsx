@@ -1,6 +1,6 @@
 // routesConfig.tsx
 import React from 'react';
-import Home from './pages/home/Home';
+// import Home from './pages/home/Home';
 import Triple from './pages/personal/oferte/triple/Triple';
 import NotFound from './pages/not_found/NotFound';
 import Mobile from './pages/personal/oferte/mobile/Mobile.tsx';
@@ -9,6 +9,7 @@ import IconShowcase from './pages/technical/IconShowcase.tsx';
 import WifiPlus from './pages/personal/oferte/wifiplus/WifiPlus.tsx';
 import OptionsandServices from './pages/personal/oferte/optionsandservices/OptionsandServices.tsx';
 import PromoRazuieste from './pages/personal/oferte/promo_razuieste/PromoRazuieste.tsx';
+import HomeTemplink from './pages/home/Home_templink.tsx';
 // import { TestPage } from './pages/test/Test.tsx';
 
 export interface RouteConfig {
@@ -27,7 +28,8 @@ export const routesConfig: RouteConfig[] = [
   {
     path: '/:lang/home',
     i18nKey: 'home.title',
-    element: React.createElement(Home),
+    // element: React.createElement(Home),
+    element: React.createElement(HomeTemplink),
   },
   {
     path: '/:lang/newsite',
