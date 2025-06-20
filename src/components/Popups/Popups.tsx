@@ -650,6 +650,10 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
             <li>{t('popups.f5.conditions.2')}</li>
             <li>{t('popups.f5.conditions.3')}</li>
             <li>{t('popups.f5.conditions.4')}</li>
+            <ul>
+              <li>{t('popups.f5.conditions_sub.0')}</li>
+              <li>{t('popups.f5.conditions_sub.1')}</li>
+            </ul>
           </ul>
 
           <h3>{t('popups.f5.activationTitle')}</h3>

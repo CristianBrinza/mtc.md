@@ -580,7 +580,11 @@
         "Seria de opțiuni „Roaming UE” este disponibilă pentru toți abonații de Telefonie mobilă Postpay, Voce și Date și Prepay.",
         "După consumarea conținutului în Roaming inclus în opțiune, convorbirile și traficul internet vor fi taxate conform tarifelor standard în roaming pentru fiecare operator.",
         "Conținutul opțiunilor este destinat pentru utilizarea în Roaming în rețeaua operatorilor, conform listei.",
-        "Minutele incluse în opțiunile “Internet Roaming UE” și “Combo Roaming UE” repartizate după cum urmează:\n  • “Apeluri Roaming UE” – 100 min de ieșire locale, de ieșire către MD;\n  • “Combo Roaming UE” – 50 min de ieșire locale, de ieșire către MD."
+        "Minutele incluse în opțiunile “Internet Roaming UE” și “Combo Roaming UE” repartizate după cum urmează:"
+      ],
+      "conditions_sub": [
+        "“Apeluri Roaming UE“ – 100 min de ieșire locale, de ieșire către MD",
+        "“Combo Roaming UE” – 50 min de ieșire locale, de ieșire către MD."
       ],
       "activationTitle": "Activare opțiune:",
       "activation": [
@@ -689,6 +693,108 @@
     "breadcrumb": {
       "app": "Promo",
       "name": "Răzuiește"
+    },
+    "title": "Câștigă în fiecare săptămână cu My Moldtelecom",
+    "buttons": {
+      "scratch": "Răzuiește acum",
+      "rules": "Regulament concurs"
+    },
+    "intro": {
+      "part1": "Intră în aplicația",
+      "part2_1": "în ",
+      "part2_2": " fiecare weekend ",
+      "part2_3": "și răzuiește cartonașul pentru a câștiga premii!",
+      "part3": "Nu mai aștepta norocul să vină de la sine – ia-l tu acum în mâini și transformă fiecare răzuire într-un premiu garantat!",
+      "part4": "Poți câștiga beneficii plăcute în formă de trafic Internet sau minute naționale, fără efort și absolut gratuit."
+    },
+    "winTitle": "Iată ce poți câștiga:",
+    "wins": {
+      "100MB": { "label": "100MB", "desc": "pentru o zi" },
+      "500MB": { "label": "500MB", "desc": "pentru o zi" },
+      "1GB": { "label": "1GB", "desc": "pentru o zi" },
+      "5GB": { "label": "5GB", "desc": "pentru 3 zile" },
+      "10GB": { "label": "10GB", "desc": "pentru 3 zile" },
+      "20min": { "label": "25 minute", "desc": "pentru 3 zile" },
+      "50min": { "label": "50 minute", "desc": "pentru 3 zile" },
+      "100min": { "label": "100 minute", "desc": "pentru 3 zile" }
+    },
+    "activation": "Premiul câștigat se activează automat în contul tău – gata de utilizare imediat!",
+    "period": "Campania se desfășoară între 21.06.2025 – 30.09.2025 (inclusiv).",
+    "faq": {
+      "q1": "Ce este campania „Weekend cu beneficii”?",
+      "a1": "Este o tombolă digitală în aplicația MyMoldtelecom, prin care abonații eligibili pot răzui un scratch-card în fiecare sâmbătă sau duminică pentru a primi instant trafic internet sau minute naționale gratuite.",
+      "q2": "Cine poate participa la campanie?",
+      "a2": "<li>Abonații persoane fizice (prepaid sau postpaid) ai serviciilor de telefonie mobilă Moldtelecom, cu vârsta minimă de 18 ani.</li><li>Este necesară instalarea sau actualizarea la ultima versiune a aplicației MyMoldtelecom din Play Market sau App Store.</li><li>Angajații S.A. Moldtelecom NU pot participa.</li>",
+      "q3": "De câte ori pot participa la campanie?",
+      "a3": "Poți răzui o singură dată în fiecare weekend: fie sâmbătă, fie duminică.",
+      "q4": "Participarea costă ceva?",
+      "a4": "Participarea este gratuită; trebuie doar să ai aplicația instalată sau actualizată."
+    },
+    "popup": {
+      "title": "Regulamentul campaniei „Weekend cu beneficii”",
+      "section1": {
+        "title": "1. ORGANIZATORUL CAMPANIEI",
+        "p1": {
+          "part1": "1.1. Organizatorul Campaniei în aplicația MyMoldtelecom este S.A. „Moldtelecom”, persoană juridică înregistrată în Registrul de Stat al persoanelor juridice al Republicii Moldova cu IDNO (cod fiscal) ",
+          "idno": "1002600048836",
+          "part2": ", cu sediul în ",
+          "address": "MD-2001, bd. Ştefan cel Mare şi Sfânt, 10, mun. Chişinău, Republica Moldova",
+          "part3": " (numit în continuare „Moldtelecom” sau „Organizator”)."
+        },
+        "p2": "1.2. Prezentul Regulament este obligatoriu pentru toți participanții. Regulamentul este disponibil gratuit oricărui participant pe site-ul www.moldtelecom.md și în Reprezentanțele Moldtelecom (inclusiv dealeri) pe durata întregii Campanii.",
+        "p3": "1.3. Participanții la Campanie vor putea obține informații suplimentare apelând gratuit:",
+        "li1": "din rețeaua Moldtelecom: ",
+        "li2": "din rețeaua mobilă Moldtelecom: ",
+        "li3": "de pe telefon fix/mobil din alte rețele: ",
+        "li4": "în reprezentanțele Companiei din întreaga țară"
+      },
+      "section2": {
+        "title": "2. REGULILE DE PARTICIPARE",
+        "p1_1": "2.1. Perioada de desfășurare a Campaniei este ",
+        "p1_2": "21.06.2025 – 30.09.2025 ",
+        "p1_3": "(inclusiv).",
+        "p2": "2.2. Campania este destinată abonaților de telefonie mobilă Voce/Date (prepaid/postpaid), persoane fizice, cu vârsta minimă de 18 ani și care au instalată/actualizată aplicația MyMoldtelecom.",
+        "p3": "2.3. Nu pot participa persoanele cu statut de angajat S.A. Moldtelecom."
+      },
+      "section3": {
+        "title": "3. MECANISMUL DESFĂȘURĂRII CAMPANIEI",
+        "p1": "3.1. Abonații eligibili trebuie să deschidă aplicația MyMoldtelecom și să acceseze pagina „Contul meu”, unde vor găsi un scratch card de răzuit pentru a primi un premiu instant.",
+        "p2": "3.2. Fondul de premii include:",
+        "li1_1": "Carduri cu trafic mobil: ",
+        "li1_2": " 100MB, 500MB, 1GB, 5GB, 10GB",
+        "li2_1": "Carduri cu minute naționale: ",
+        "li2_2": " 20, 50, 100 minute",
+        "p3": "3.3. Valabilitatea premiilor:",
+        "li3_1": "100MB, 500MB, 1GB ",
+        "li3_2": "– valabile 1 zi",
+        "li4_1": "5GB, 10GB ",
+        "li4_2": "– valabile 3 zile",
+        "li5_1": "20, 50, 100 minute",
+        "li5_2": " – valabile 3 zile",
+        "p4": "3.4. Un participant poate răzui un card o singură dată în fiecare sâmbătă sau duminică.",
+        "p5": "3.5. Premiile se activează automat și se consumă prioritar față de alte opțiuni."
+      },
+      "section4": {
+        "title": "4. PRELUCRAREA DATELOR CU CARACTER PERSONAL",
+        "p1": "4.1. Participarea implică acordul privind prelucrarea datelor personale în scopul desfășurării Campaniei.",
+        "p2": "4.2. Procesarea presupune orice acțiune asupra datelor: colectare, stocare, adaptare, consultare, utilizare, combinare, ștergere sau distrugere."
+      },
+      "section5": {
+        "title": "5. MODIFICARE, SUSPENDARE ȘI ANULARE",
+        "p1": "5.1. Organizatorul poate modifica sau completa Regulamentul.",
+        "p2": "5.2. Modificările devin valabile la publicarea lor pe site-ul Organizatorului.",
+        "p3": "5.3. În cazuri excepționale, Campania poate fi suspendată, anulată sau extinsă."
+      },
+      "section6": {
+        "title": "6. RECLAMAȚII ȘI LITIGII",
+        "p1": "6.1. Reclamațiile trebuie trimise în scris la sediul Organizatorului în termen de 5 zile lucrătoare de la producerea evenimentului.",
+        "p2": "6.2. Litigiile vor fi soluționate pe cale amiabilă sau de către instanțele competente din Republica Moldova."
+      },
+      "section7": {
+        "title": "7. DISPOZIȚII FINALE",
+        "p1": "7.1. Regulamentul este reglementat de legislația în vigoare a Republicii Moldova.",
+        "p2": "7.2. Invalidarea unei prevederi nu afectează valabilitatea celorlalte."
+      }
     }
   }
 }
