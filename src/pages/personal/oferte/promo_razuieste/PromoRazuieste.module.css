@@ -70,15 +70,15 @@
   line-height: 12px;
   font-weight: 400;
 }
-.wincard svg{
+.wincard svg {
   position: absolute;
   top: -8px;
   right: -11px;
   z-index: 9999;
   transform: scale(1);
-  transition: transform .1s;
+  transition: transform 0.1s;
 }
-.wincard:hover svg{
+.wincard:hover svg {
   transform: scale(1.05);
 }
 .promorazuieste_down {

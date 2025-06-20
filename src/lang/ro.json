@@ -692,7 +692,7 @@
   "promorazuieste": {
     "breadcrumb": {
       "app": "Promo",
-      "name": "Răzuiește"
+      "name": "Weekend cu beneficii"
     },
     "title": "Câștigă în fiecare săptămână cu My Moldtelecom",
     "buttons": {
@@ -796,5 +796,13 @@
         "p2": "7.2. Invalidarea unei prevederi nu afectează valabilitatea celorlalte."
       }
     }
+  },
+  "notfound": {
+    "breadcrumb": {
+      "title": "Pagină inexistentă"
+    },
+    "subtitle": "Pagină inexistentă - Oooops!",
+    "text": "Ne pare rău, pagina pe care o cauți nu a fost găsită",
+    "btn": "Înapoi acasă"
   }
 }
