@@ -40,16 +40,43 @@ export default function PromoRazuieste() {
 
       <Hero color="#F7F7F7" classname={styles.hero}>
         <div className={styles.hero_img_block}>
-          <img
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className={styles.hero_img}
-            src={`/images/landings/15094512${t('lang')}.png`}
-            alt={'Moldtelecom'}
-          />
-          <img
+            poster={`/images/landings/15094512${t('lang')}.webp`}
+          >
+            <source
+              src={`/images/landings/15094512${t('lang')}.webm`}
+              type="video/webm"
+            />
+            <img
+              className={styles.hero_img}
+              src={`/images/landings/15094512${t('lang')}.webp`}
+              alt={'Moldtelecom'}
+            />
+          </video>
+
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className={styles.hero_img_tablet}
-            src={`/images/landings/15994522${t('lang')}.png`}
-            alt={'Moldtelecom'}
-          />
+            poster={`/images/landings/15994522${t('lang')}.webp`}
+          >
+            <source
+              src={`/images/landings/15994522${t('lang')}.webm`}
+              type="video/webm"
+            />
+            <img
+              className={styles.hero_img_tablet}
+              src={`/images/landings/15994522${t('lang')}.webp`}
+              alt={'Moldtelecom'}
+            />
+          </video>
         </div>
       </Hero>
 

@@ -635,13 +635,17 @@ const Navbar: React.FC = () => {
                   className={styles.navbar_bottom_menu_right_lang_btn_select}
                   onClick={() => handleChangeLanguage('ro')}
                 >
-                  RO
+                  <Icon type="ro" size="22px" />
+                  &nbsp;&nbsp;
+                  {t('navbar.romanian')}
                 </div>
                 <div
                   className={styles.navbar_bottom_menu_right_lang_btn_select}
                   onClick={() => handleChangeLanguage('ru')}
                 >
-                  RU
+                  <Icon type="ru" size="22px" />
+                  &nbsp;&nbsp;
+                  {t('navbar.russian')}
                 </div>
                 {/*<div*/}
                 {/*  className={styles.navbar_bottom_menu_right_lang_btn_select}*/}

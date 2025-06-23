@@ -181,11 +181,11 @@
 }
 .navbar_bottom_menu_right_lang {
   position: absolute;
-  right: 0;
+  right: -15px;
   top: 40px;
   display: flex;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   gap: 3px;
   box-sizing: border-box;
   border-radius: 10px;
@@ -204,10 +204,11 @@
 }
 
 .navbar_bottom_menu_right_lang_btn_select {
+  width: 80%;
   /*width: 120px;*/
-  text-align: right;
+  text-align: left;
   height: 30px;
-  padding: 2px 10px;
+  padding: 4px 15px;
   /*background: var(--theme_primary_color_light_gray);*/
   border-radius: 8px;
   border: 1px solid var(--theme_primary_color_gray);
@@ -217,7 +218,7 @@
   font-weight: 600;
   line-height: 16px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   cursor: pointer;
   transition: background 0.2s ease-in-out;
