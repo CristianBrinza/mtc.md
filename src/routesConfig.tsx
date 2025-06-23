@@ -1,6 +1,5 @@
 // routesConfig.tsx
 import React from 'react';
-// import Home from './pages/home/Home';
 import Triple from './pages/personal/oferte/triple/Triple';
 import NotFound from './pages/not_found/NotFound';
 import Mobile from './pages/personal/oferte/mobile/Mobile.tsx';
@@ -10,6 +9,8 @@ import WifiPlus from './pages/personal/oferte/wifiplus/WifiPlus.tsx';
 import OptionsandServices from './pages/personal/oferte/optionsandservices/OptionsandServices.tsx';
 import PromoRazuieste from './pages/personal/oferte/promo_razuieste/PromoRazuieste.tsx';
 import HomeTemplink from './pages/home/Home_templink.tsx';
+import Home from './pages/home/Home.tsx';
+import OneNumber from './pages/personal/oferte/one_number/OneNumber.tsx';
 // import { TestPage } from './pages/test/Test.tsx';
 
 export interface RouteConfig {
@@ -26,10 +27,21 @@ export const routesConfig: RouteConfig[] = [
   //   element: React.createElement(Home),
   // },
   {
-    path: '/:lang/home',
+    path: '',
     i18nKey: 'home.title',
     // element: React.createElement(Home),
     element: React.createElement(HomeTemplink),
+  },
+  {
+    path: '/:lang',
+    i18nKey: 'home.title',
+    // element: React.createElement(Home),
+    element: React.createElement(HomeTemplink),
+  },
+  {
+    path: '/:lang/home',
+    i18nKey: 'home.title',
+    element: React.createElement(Home),
   },
   {
     path: '/:lang/newsite',
@@ -77,6 +89,11 @@ export const routesConfig: RouteConfig[] = [
     path: '/:lang/weekend-cu-beneficii',
     i18nKey: 'not_found.title',
     element: React.createElement(PromoRazuieste),
+  },
+  {
+    path: '/:lang/one-number',
+    i18nKey: 'not_found.title',
+    element: React.createElement(OneNumber),
   },
   {
     path: '*',
