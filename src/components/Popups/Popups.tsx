@@ -1,6 +1,7 @@
 // components/Popup/Popups.tsx
 import { useTranslation } from 'react-i18next';
 import Popup from '../Popup/Popup';
+import ScrollableWrapper from '../Popup/ScrollableWrapper.tsx';
 
 interface PopupsProps {
   content: string | null;
@@ -20,218 +21,218 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
         isVisible={content === 'f1'}
         onClose={onClose}
       >
-        <div className="popup_content">
+        <ScrollableWrapper>
           <h2>{t('popups.f1.title')}</h2>
-
-          <table className="popup_table">
-            <thead>
-              <tr>
-                <td>{t('popups.f1.table.headers.0')}</td>
-                <td>{t('popups.f1.table.headers.1')}</td>
-                <td>{t('popups.f1.table.headers.2')}</td>
-                <td>{t('popups.f1.table.headers.3')}</td>
-                <td>{t('popups.f1.table.headers.4')}</td>
-              </tr>
-            </thead>
-            <tbody>
-              {/*
+          <ScrollableWrapper>
+            <table className="popup_table">
+              <thead>
+                <tr>
+                  <td>{t('popups.f1.table.headers.0')}</td>
+                  <td>{t('popups.f1.table.headers.1')}</td>
+                  <td>{t('popups.f1.table.headers.2')}</td>
+                  <td>{t('popups.f1.table.headers.3')}</td>
+                  <td>{t('popups.f1.table.headers.4')}</td>
+                </tr>
+              </thead>
+              <tbody>
+                {/*
                 row 0
               */}
-              <tr>
-                <td
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.0.0'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.0.1'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.0.2'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.0.3'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.0.4'),
-                  }}
-                />
-              </tr>
-              {/*
+                <tr>
+                  <td
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.0.0'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.0.1'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.0.2'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.0.3'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.0.4'),
+                    }}
+                  />
+                </tr>
+                {/*
                 row 1
               */}
-              <tr>
-                <td
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.1.0'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.1.1'),
-                  }}
-                />
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f1.table.rows.1.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f1.table.rows.1.3')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f1.table.rows.1.4')}
-                </td>
-              </tr>
-              {/*
+                <tr>
+                  <td
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.1.0'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.1.1'),
+                    }}
+                  />
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f1.table.rows.1.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f1.table.rows.1.3')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f1.table.rows.1.4')}
+                  </td>
+                </tr>
+                {/*
                 row 2
               */}
-              <tr>
-                <td
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.2.0'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.2.1'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.2.2'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.2.3'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.2.4'),
-                  }}
-                />
-              </tr>
-              {/*
+                <tr>
+                  <td
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.2.0'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.2.1'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.2.2'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.2.3'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.2.4'),
+                    }}
+                  />
+                </tr>
+                {/*
                 row 3
               */}
-              <tr>
-                <td
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.3.0'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.3.1'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.3.2'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.3.3'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.3.4'),
-                  }}
-                />
-              </tr>
-              {/*
+                <tr>
+                  <td
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.3.0'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.3.1'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.3.2'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.3.3'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.3.4'),
+                    }}
+                  />
+                </tr>
+                {/*
                 row 4
               */}
-              <tr>
-                <td
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.4.0'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.4.1'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.4.2'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.4.3'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.4.4'),
-                  }}
-                />
-              </tr>
-              {/*
+                <tr>
+                  <td
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.4.0'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.4.1'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.4.2'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.4.3'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.4.4'),
+                    }}
+                  />
+                </tr>
+                {/*
                 row 5
               */}
-              <tr>
-                <td
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.5.0'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.5.1'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.5.2'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.5.3'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f1.table.rows.5.4'),
-                  }}
-                />
-              </tr>
-            </tbody>
-          </table>
-
+                <tr>
+                  <td
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.5.0'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.5.1'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.5.2'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.5.3'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f1.table.rows.5.4'),
+                    }}
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </ScrollableWrapper>
           <h3>{t('popups.f1.conditionsTitle')}</h3>
           <ul>
             <li>{t('popups.f1.conditions.0')}</li>
@@ -262,7 +263,7 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
             />
             <li>{t('popups.f1.activation.3')}</li>
           </ul>
-        </div>
+        </ScrollableWrapper>
       </Popup>
 
       {/* Popup pentru f2 */}
@@ -274,67 +275,68 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
       >
         <div className="popup_content">
           <h2>{t('popups.f2.title')}</h2>
-          <table className="popup_table">
-            <thead>
-              <tr>
-                <td>{t('popups.f2.table.headers.0')}</td>
-                <td>{t('popups.f2.table.headers.1')}</td>
-                <td>{t('popups.f2.table.headers.2')}</td>
-                <td>{t('popups.f2.table.headers.3')}</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f2.table.rows.0.0'),
-                  }}
-                />
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f2.table.rows.0.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f2.table.rows.0.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f2.table.rows.0.3')}
-                </td>
-              </tr>
-              <tr>
-                <td
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f2.table.rows.1.0'),
-                  }}
-                />
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f2.table.rows.1.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f2.table.rows.1.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f2.table.rows.1.3')}
-                </td>
-              </tr>
-              <tr>
-                <td
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f2.table.rows.2.0'),
-                  }}
-                />
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f2.table.rows.2.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f2.table.rows.2.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f2.table.rows.2.3')}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
+          <ScrollableWrapper>
+            <table className="popup_table">
+              <thead>
+                <tr>
+                  <td>{t('popups.f2.table.headers.0')}</td>
+                  <td>{t('popups.f2.table.headers.1')}</td>
+                  <td>{t('popups.f2.table.headers.2')}</td>
+                  <td>{t('popups.f2.table.headers.3')}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f2.table.rows.0.0'),
+                    }}
+                  />
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f2.table.rows.0.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f2.table.rows.0.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f2.table.rows.0.3')}
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f2.table.rows.1.0'),
+                    }}
+                  />
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f2.table.rows.1.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f2.table.rows.1.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f2.table.rows.1.3')}
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f2.table.rows.2.0'),
+                    }}
+                  />
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f2.table.rows.2.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f2.table.rows.2.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f2.table.rows.2.3')}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </ScrollableWrapper>
           <h3>{t('popups.f2.conditionsTitle')}</h3>
           <ul>
             <li>{t('popups.f2.conditions.0')}</li>
@@ -378,74 +380,75 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
       >
         <div className="popup_content">
           <h2>{t('popups.f3.title')}</h2>
-          <table className="popup_table">
-            <thead>
-              <tr>
-                <td>{t('popups.f3.table.headers.0')}</td>
-                <td>{t('popups.f3.table.headers.1')}</td>
-                <td>{t('popups.f3.table.headers.2')}</td>
-                <td>{t('popups.f3.table.headers.3')}</td>
-                <td>{t('popups.f3.table.headers.4')}</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{t('popups.f3.table.rows.0.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f3.table.rows.0.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f3.table.rows.0.2')}
-                </td>
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f3.table.rows.0.3'),
-                  }}
-                />
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f3.table.rows.0.4')}
-                </td>
-              </tr>
-              <tr>
-                <td>{t('popups.f3.table.rows.1.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f3.table.rows.1.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f3.table.rows.1.2')}
-                </td>
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f3.table.rows.1.3'),
-                  }}
-                />
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f3.table.rows.1.4')}
-                </td>
-              </tr>
-              <tr>
-                <td>{t('popups.f3.table.rows.2.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f3.table.rows.2.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f3.table.rows.2.2')}
-                </td>
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f3.table.rows.2.3'),
-                  }}
-                />
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f3.table.rows.2.4')}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
+          <ScrollableWrapper>
+            <table className="popup_table">
+              <thead>
+                <tr>
+                  <td>{t('popups.f3.table.headers.0')}</td>
+                  <td>{t('popups.f3.table.headers.1')}</td>
+                  <td>{t('popups.f3.table.headers.2')}</td>
+                  <td>{t('popups.f3.table.headers.3')}</td>
+                  <td>{t('popups.f3.table.headers.4')}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{t('popups.f3.table.rows.0.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f3.table.rows.0.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f3.table.rows.0.2')}
+                  </td>
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f3.table.rows.0.3'),
+                    }}
+                  />
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f3.table.rows.0.4')}
+                  </td>
+                </tr>
+                <tr>
+                  <td>{t('popups.f3.table.rows.1.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f3.table.rows.1.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f3.table.rows.1.2')}
+                  </td>
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f3.table.rows.1.3'),
+                    }}
+                  />
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f3.table.rows.1.4')}
+                  </td>
+                </tr>
+                <tr>
+                  <td>{t('popups.f3.table.rows.2.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f3.table.rows.2.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f3.table.rows.2.2')}
+                  </td>
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f3.table.rows.2.3'),
+                    }}
+                  />
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f3.table.rows.2.4')}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </ScrollableWrapper>
           <h3>{t('popups.f3.conditionsTitle')}</h3>
           <ul>
             <li>{t('popups.f3.conditions.0')}</li>
@@ -497,55 +500,56 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
       >
         <div className="popup_content">
           <h2>{t('popups.f4.title')}</h2>
-          <table className="popup_table">
-            <thead>
-              <tr>
-                <td>{t('popups.f4.table.headers.0')}</td>
-                <td>{t('popups.f4.table.headers.1')}</td>
-                <td>{t('popups.f4.table.headers.2')}</td>
-                <td>{t('popups.f4.table.headers.3')}</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{t('popups.f4.table.rows.0.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f4.table.rows.0.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f4.table.rows.0.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f4.table.rows.0.3')}
-                </td>
-              </tr>
-              <tr>
-                <td>{t('popups.f4.table.rows.1.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f4.table.rows.1.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f4.table.rows.1.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f4.table.rows.1.3')}
-                </td>
-              </tr>
-              <tr>
-                <td>{t('popups.f4.table.rows.2.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f4.table.rows.2.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f4.table.rows.2.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f4.table.rows.2.3')}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
+          <ScrollableWrapper>
+            <table className="popup_table">
+              <thead>
+                <tr>
+                  <td>{t('popups.f4.table.headers.0')}</td>
+                  <td>{t('popups.f4.table.headers.1')}</td>
+                  <td>{t('popups.f4.table.headers.2')}</td>
+                  <td>{t('popups.f4.table.headers.3')}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{t('popups.f4.table.rows.0.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f4.table.rows.0.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f4.table.rows.0.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f4.table.rows.0.3')}
+                  </td>
+                </tr>
+                <tr>
+                  <td>{t('popups.f4.table.rows.1.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f4.table.rows.1.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f4.table.rows.1.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f4.table.rows.1.3')}
+                  </td>
+                </tr>
+                <tr>
+                  <td>{t('popups.f4.table.rows.2.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f4.table.rows.2.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f4.table.rows.2.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f4.table.rows.2.3')}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </ScrollableWrapper>
           <h3>{t('popups.f4.conditionsTitle')}</h3>
           <ul>
             <li>{t('popups.f4.conditions.0')}</li>
@@ -594,65 +598,66 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
       >
         <div className="popup_content">
           <h2>{t('popups.f5.title')}</h2>
-          <table className="popup_table">
-            <thead>
-              <tr>
-                <td>{t('popups.f5.table.headers.0')}</td>
-                <td>{t('popups.f5.table.headers.1')}</td>
-                <td>{t('popups.f5.table.headers.2')}</td>
-                <td>{t('popups.f5.table.headers.3')}</td>
-                <td>{t('popups.f5.table.headers.4')}</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{t('popups.f5.table.rows.0.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.0.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.0.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.0.3')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.0.4')}
-                </td>
-              </tr>
-              <tr>
-                <td>{t('popups.f5.table.rows.1.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.1.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.1.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.1.3')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.1.4')}
-                </td>
-              </tr>
-              <tr>
-                <td>{t('popups.f5.table.rows.2.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.2.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.2.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.2.3')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.2.4')}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
+          <ScrollableWrapper>
+            <table className="popup_table">
+              <thead>
+                <tr>
+                  <td>{t('popups.f5.table.headers.0')}</td>
+                  <td>{t('popups.f5.table.headers.1')}</td>
+                  <td>{t('popups.f5.table.headers.2')}</td>
+                  <td>{t('popups.f5.table.headers.3')}</td>
+                  <td>{t('popups.f5.table.headers.4')}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{t('popups.f5.table.rows.0.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.0.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.0.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.0.3')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.0.4')}
+                  </td>
+                </tr>
+                <tr>
+                  <td>{t('popups.f5.table.rows.1.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.1.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.1.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.1.3')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.1.4')}
+                  </td>
+                </tr>
+                <tr>
+                  <td>{t('popups.f5.table.rows.2.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.2.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.2.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.2.3')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.2.4')}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </ScrollableWrapper>
           <h3>{t('popups.f5.conditionsTitle')}</h3>
           <ul>
             <li>{t('popups.f5.conditions.0')}</li>
@@ -722,50 +727,51 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
       >
         <div className="popup_content">
           <h2>{t('popups.f6.title')}</h2>
-          <table className="popup_table">
-            <thead>
-              <tr>
-                <td>{t('popups.f6.table.headers.0')}</td>
-                <td>{t('popups.f6.table.headers.1')}</td>
-                <td>{t('popups.f6.table.headers.2')}</td>
-                <td>{t('popups.f6.table.headers.3')}</td>
-                <td>{t('popups.f6.table.headers.4')}</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{t('popups.f6.table.rows.0.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f6.table.rows.0.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f6.table.rows.0.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f6.table.rows.0.3')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f6.table.rows.0.4')}
-                </td>
-              </tr>
-              <tr>
-                <td>{t('popups.f6.table.rows.1.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f6.table.rows.1.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f6.table.rows.1.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f6.table.rows.1.3')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f6.table.rows.1.4')}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
+          <ScrollableWrapper>
+            <table className="popup_table">
+              <thead>
+                <tr>
+                  <td>{t('popups.f6.table.headers.0')}</td>
+                  <td>{t('popups.f6.table.headers.1')}</td>
+                  <td>{t('popups.f6.table.headers.2')}</td>
+                  <td>{t('popups.f6.table.headers.3')}</td>
+                  <td>{t('popups.f6.table.headers.4')}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{t('popups.f6.table.rows.0.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f6.table.rows.0.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f6.table.rows.0.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f6.table.rows.0.3')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f6.table.rows.0.4')}
+                  </td>
+                </tr>
+                <tr>
+                  <td>{t('popups.f6.table.rows.1.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f6.table.rows.1.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f6.table.rows.1.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f6.table.rows.1.3')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f6.table.rows.1.4')}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </ScrollableWrapper>
           <h3>{t('popups.f6.conditionsTitle')}</h3>
           <ul>
             <li>{t('popups.f6.conditions.0')}</li>
@@ -891,31 +897,31 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
         <div className="popup_content">
           <h2>{t('popups.f8.title')}</h2>
           <p>{t('popups.f8.paragraph')}</p>
-
-          <table className="popup_table">
-            <thead>
-              <tr>
-                <td>{t('popups.f8.table.headers.0')}</td>
-                <td>{t('popups.f8.table.headers.1')}</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f8.table.rows.0.0'),
-                  }}
-                />
-                <td
-                  style={{ textAlign: 'center' }}
-                  dangerouslySetInnerHTML={{
-                    __html: t('popups.f8.table.rows.0.1'),
-                  }}
-                />
-              </tr>
-            </tbody>
-          </table>
-
+          <ScrollableWrapper>
+            <table className="popup_table">
+              <thead>
+                <tr>
+                  <td>{t('popups.f8.table.headers.0')}</td>
+                  <td>{t('popups.f8.table.headers.1')}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f8.table.rows.0.0'),
+                    }}
+                  />
+                  <td
+                    style={{ textAlign: 'center' }}
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f8.table.rows.0.1'),
+                    }}
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </ScrollableWrapper>
           <h3>{t('popups.f8.conditionsTitle')}</h3>
           <ul>
             <li>{t('popups.f8.conditions.0')}</li>

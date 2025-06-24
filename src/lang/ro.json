@@ -580,7 +580,7 @@
           "Valabilitate"
         ],
         "rows": [
-          ["Apeluri Roaming UE", "UE70apel", "100 min", "100 lei", "30 zile"],
+          ["Apeluri Roaming UE", "UE70apel", "100 min", "70 lei", "30 zile"],
           ["Internet Roaming UE", "UE100net", "2 GB", "100 lei", "30 zile"],
           ["Combo Roaming UE", "UE100", "1 GB / 50 min", "100 lei", "30 zile"]
         ]
@@ -593,7 +593,7 @@
         "Conținutul opțiunilor este destinat pentru utilizarea în Roaming în rețeaua operatorilor, conform listei.",
         "La schimb de abonament opțiunile activate se vor pastra;",
         "La schimb de titular  opțiunile activate nu se vor pastra;",
-        "Minutele incluse în opțiunile “Internet Roaming UE” și “Combo Roaming UE” repartizate după cum urmează:"
+        "Minutele incluse în opțiunile “Apeluri Roaming UE” și “Combo Roaming UE” repartizate după cum urmează:"
       ],
       "conditions_sub": [
         "“Apeluri Roaming UE“ – 100 min de ieșire locale, de ieșire către MD",
