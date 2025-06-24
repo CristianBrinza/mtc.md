@@ -50,12 +50,12 @@ export default function OptionsandServices() {
         <div className={styles.hero_img_block}>
           <img
             className={styles.hero_img}
-            src={`/images/landings/15074512${t('lang')}.png`}
+            src={`/images/landings/15074512${t('lang')}.webp`}
             alt="Moldtelecom"
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/90296512${t('lang')}.png`}
+            src={`/images/landings/16074571${t('lang')}.webp`}
             alt="Moldtelecom"
           />
         </div>
