@@ -3,23 +3,242 @@
   "navbar": {
     "romanian": "Romanian",
     "english": "English",
-    "russian": "Russian"
+    "russian": "Russian",
+    "internet_tv": "Internet + TV",
+    "mobil": "Mobil",
+    "portare": "Portare",
+    "double": "Double",
+    "triple": "Triple",
+    "internet_tv_only": "Internet + TV",
+    "internet_tv_mobil": "Internet + TV + Mobil",
+    "ab_internet": "Abonamente Internet",
+    "ab_tv": "Abonamente TV",
+    "2_1_gbps": "2.1 Gbps",
+    "apps": "Aplicatii",
+    "descopera": "Descoperă",
+    "mt_tv": "Moldtelecom TV",
+    "mt_tv_go": "Moldtelecom TV GO",
+    "cinema": "Cinematografe online",
+    "wifi_plus": "Wi-Fi Plus",
+    "canale_tv": "Canale TV",
+    "echipament_tv": "Echipament TV",
+    "echipament_wifi": "Echipament Wi-Fi",
+    "wifi6": "Wi-Fi 6",
+    "safeweb": "Safe-web",
+    "recomanda": "Recomandă un prieten",
+    "verifica_adresa": "Verifică adresa",
+    "test_viteza": "Testează viteza",
+    "faq": "FAQ",
+    "promo": "Promo",
+    "verifica_acoperirea": "Verifică acoperirea",
+    "ab_mobile": "Abonamente mobile",
+    "modem_wifi": "Modem Wi-Fi",
+    "modem_4g": "Modem 4G Acasă",
+    "servicii_digitale": "Servicii digitale",
+    "esim": "eSIM",
+    "esim_acasa": "eSIM Acasă",
+    "prepay": "Prepay",
+    "prepay_digital": "Prepay Digital",
+    "onenumber": "One Number",
+    "cartela": "Cartela Moldtelecom",
+    "mymt": "MyMoldtelecom",
+    "roaming": "Roaming",
+    "international": "Apeluri internaționale",
+    "fidelitate": "Programul de fidelitate",
+    "altele": "Altele",
+    "fix": "Telefonie fixă",
+    "ab_fix": "Abonamente telefonie fixă",
+    "optiuni_retea": "Opțiuni & servicii de rețea",
+    "fax_email": "Fax to E-mail",
+    "eshop": "M-eShop",
+    "ajutor": "Ajutor",
+    "oferte": "Oferte",
+    "mergi_castigi": "Mergi și câștigi",
+    "challenge": "Challenge",
+    "transfer_credit": "Transfer credit",
+    "plus": "Plus"
   },
   "general": {
     "faq_more": "show more",
     "faq_less": "show less",
-    "videos": "Video"
+    "videos": "Video",
+    "more": " Ai nevoie de ajutor?",
+    "functions": "Funcții interactive",
+    "recommended_options": "Opțiuni recomandate",
+    "leu": "leu",
+    "lei": "lei",
+    "news": "Noutati",
+    "see_all": " Vezi toate"
   },
   "search": {
     "breadcrumb": {
       "title": "Search"
     },
-    "show_more": "show more"
+    "show_more": "show more",
+    "search": "Caută",
+    "text": "Găsește rapid serviciile, planurile tarifare și opțiuni Moldtelecom. Introdu un cuvânt-cheie și descoperă exact ce ai nevoie!",
+    "show_less": "mai puține"
   },
   "optionsandservices": {
     "breadcrumb": {
       "mobile": "Mobile",
       "optionsandservices": "Options & Services"
+    },
+    "titles": {
+      "select": "Conectează una din opțiunile dorite",
+      "roaming": "Opțiuni Roaming",
+      "other": "Alte Opțiuni"
+    },
+    "blocks": {
+      "internet_mobile": {
+        "title": "Internet Mobil",
+        "subtitle": "Soluția ideală pentru momentele în care traficul tău de internet nu îți ajunge.",
+        "items": [
+          {
+            "label": "Nelimitat<span> / 1 zi</span>",
+            "price": "20 lei"
+          },
+          {
+            "label": "Nelimitat<span> / 7 zile</span>",
+            "price": "100 lei"
+          },
+          {
+            "label": "10 GB<span> / 15 zile</span>",
+            "price": "50 lei"
+          },
+          {
+            "label": "5 GB<span> / 30 zile</span>",
+            "price": "60 lei"
+          },
+          {
+            "label": "10 GB<span> / 30 zile</span>",
+            "price": "100 lei"
+          },
+          {
+            "label": "20 GB<span> / 30 zile</span>",
+            "price": "150 lei"
+          }
+        ]
+      },
+      "national_minutes": {
+        "title": "Minute Naționale",
+        "subtitle": "Vorbește nelimitat în rețea și național, fără griji și întreruperi.",
+        "items": [
+          {
+            "label": "50 minute<span> / 30 zile</span>",
+            "price": "100 lei"
+          },
+          {
+            "label": "100 minute<span> / 30 zile</span>",
+            "price": "20 lei"
+          },
+          {
+            "label": "200 minute<span> / 30 zile</span>",
+            "price": "50 lei"
+          }
+        ]
+      },
+      "international_minutes": {
+        "title": "Minute Internaționale",
+        "subtitle": "Comunică ușor cu cei dragi din afara țării, la tarife avantajoase.",
+        "items": [
+          {
+            "label": "30 minute<br/><span>România și Ucraina / 30 zile</span>",
+            "price": "50 lei"
+          },
+          {
+            "label": "25 minute<br/><span>Europa, Israel, SUA, Canada / 30 zile</span>",
+            "price": "50 lei"
+          },
+          {
+            "label": "Orice Țară<span> / 30 zile</span>",
+            "price": "50 lei"
+          }
+        ]
+      },
+      "sms": {
+        "title": "SMS",
+        "subtitle": "Trimite rapid mesaje celor dragi, oriunde s-ar afla.",
+        "items": [
+          {
+            "label": "50 SMS naționale<span> / 30 zile</span>",
+            "price": "10 lei"
+          },
+          {
+            "label": "100 SMS naționale<span> / 30 zile</span>",
+            "price": "15 lei"
+          },
+          {
+            "label": "20 SMS internaționale<span> / 30 zile</span>",
+            "price": "35 lei"
+          }
+        ]
+      },
+      "roaming_europe": {
+        "title": "Roaming Europe",
+        "subtitle": "Comunică în Europa fără griji, la tarife ca acasă.",
+        "items": [
+          {
+            "label": "Apeluri (100 min)<span> / 30 zile</span>",
+            "price": "70 lei"
+          },
+          {
+            "label": "Internet (2 GB)<span> / 30 zile</span>",
+            "price": "100 lei"
+          },
+          {
+            "label": "Combo (1 GB / 50 min)<span> / 30 zile</span>",
+            "price": "100 lei"
+          }
+        ]
+      },
+      "roaming_world": {
+        "title": "Roaming World",
+        "subtitle": "Comunicarea și accesul la internet sunt prioritățile noastre.",
+        "items": [
+          {
+            "label": "Apeluri World (10 min)<span> / 30 zile</span>",
+            "price": "70 lei"
+          },
+          {
+            "label": "Internet World (1 GB)<span> / 30 zile</span>",
+            "price": "100 lei"
+          }
+        ]
+      },
+      "speed_4g_plus": {
+        "title": "Viteza 4G+",
+        "subtitle": "Majorarea vitezei de download până la 175 Mbps și upload până la 50 Mbps.",
+        "items": [
+          {
+            "label": "30 zile",
+            "price": "Gratuit"
+          }
+        ]
+      },
+      "upload_max": {
+        "title": "Upload Maxim",
+        "subtitle": "Acordarea vitezei de upload de 5,76 Mbps.",
+        "items": [
+          {
+            "label": "30 zile",
+            "price": "20 lei"
+          }
+        ]
+      }
+    },
+    "usage_conditions": "Condițiile de utilizare",
+    "faq": {
+      "q1": "Cum pot să-mi verific starea contului?",
+      "a1": "Cu ajutorul serviciului CostControl în orice moment vei putea afla care este starea contului tău. Pentru aceasta formează 500, alege cifra 1 și apasă OK.\n\nPoți, de asemenea, să trimiți un SMS la 500 cu cifra 1 sau să formezi *500*1# și să apeși OK.\n\nMai multe detalii le găsești și în aplicația „My Moldtelecom”.",
+      "q2": "De ce nu pot recepționa apeluri?",
+      "a2": "Nu poți recepționa apeluri deoarece:\n• ai activată redirecționarea apelurilor de intrare;\n• serviciile tale sunt suspendate temporar;\n• cartela USIM nu este valabilă sau este deteriorată;\n• nu ești în aria de acoperire a rețelei Moldtelecom.",
+      "q3": "De ce nu pot efectua apeluri?",
+      "a3": "Nu poți efectua apeluri deoarece:\n• balanța contului tău nu este suficientă;\n• serviciile tale sunt suspendate temporar;\n• cartela USIM nu este valabilă sau deteriorată;\n• nu ești în aria de acoperire a rețelei Moldtelecom.",
+      "q4": "Care este procedura de activare a Cartelei Moldtelecom?",
+      "a4": "Pentru activarea cartelei, introdu-o în telefon și formează 200, apoi OK sau *200#OK.",
+      "q5": "Cât costă restabilirea/înlocuirea cartelei USIM?",
+      "a5": "Înlocuirea cartelei USIM este gratuită."
     }
   },
   "wifi_plus": {
@@ -92,7 +311,11 @@
             "mesh": "Mesh"
           },
           "rows": [
-            { "key": "Wifi spectrum", "basic": "2.4 Ghz", "mesh": "2.4/5 Ghz" },
+            {
+              "key": "Wifi spectrum",
+              "basic": "2.4 Ghz",
+              "mesh": "2.4/5 Ghz"
+            },
             {
               "key": "Standard",
               "basic": "802.11n (wifi4)",
@@ -103,7 +326,11 @@
               "basic": "2x2 Mimo",
               "mesh": "2x2 Mu-mimo"
             },
-            { "key": "Max link-speed", "basic": "300", "mesh": "2400" },
+            {
+              "key": "Max link-speed",
+              "basic": "300",
+              "mesh": "2400"
+            },
             {
               "key": "Effective max speed",
               "basic": "90/45 Mbps",
@@ -114,8 +341,16 @@
               "basic": "cable (switch)",
               "mesh": "wireless (transparent bridge)"
             },
-            { "key": "Signal", "basic": "normal", "mesh": "good" },
-            { "key": "Roaming", "basic": "N/A", "mesh": "802.11 k/v" },
+            {
+              "key": "Signal",
+              "basic": "normal",
+              "mesh": "good"
+            },
+            {
+              "key": "Roaming",
+              "basic": "N/A",
+              "mesh": "802.11 k/v"
+            },
             {
               "key": "Max channel bandwidth",
               "basic": "40 Mhz",
@@ -141,7 +376,9 @@
       "a2": "Yes, you can disconnect the Wi-Fi PLUS service at any time without penalties. Return the device at any Moldtelecom store.",
       "q3": "How is Wi-Fi PLUS billed?",
       "a3": "Billing starts from the service activation moment and is included in your monthly Internet bill until it’s disconnected."
-    }
+    },
+    "thx": "Mulțumim că ai ales Moldtelecom",
+    "txt_1": " Serviciul Wi-Fi PLUS poate fi activat prin contactarea Serviciului. Suport Clienți sau cerere online."
   },
   "footer": {
     "maimult": "More",
@@ -156,7 +393,12 @@
       "locations": "Locations",
       "divertisment": "Entertainment",
       "reclamation": "Submit complaint",
-      "guides": "Video guides"
+      "guides": "Video guides",
+      "mdix": "Internet Exchange MD-IX",
+      "frephone": "Freephone",
+      "supraveghere": "Supravegherea lucrărilor",
+      "eliberate_proiecte": "Coordonarea proiectelor",
+      "plata": "Modalități de achitare"
     },
     "legal": {
       "title": "Legal",
@@ -166,7 +408,14 @@
       "dates": "Data security",
       "procedure": "Partner selection procedure",
       "plan": "Procurement forecast plan 2025",
-      "security": "Data security"
+      "security": "Data security",
+      "admins_serv": "Servicii administrative",
+      "instruction": "Instrucțiune de lucru acte corupție",
+      "declaration": "Declarația privind politica de mediu",
+      "interdiction": "Lista de interdicție a agenților economici",
+      "regulament": "Regulament achiziționari",
+      "mecanism": "Mecanismul de gestionare a listei e interdicție",
+      "quality": "Declarația în domeniul calității"
     },
     "about": {
       "title": "About us",
@@ -179,7 +428,11 @@
       "etic": "Code of ethics",
       "status": "Moldtelecom status",
       "sructure": "Organizational structure",
-      "consul": "Company board"
+      "consul": "Company board",
+      "inima_codrilor": "Inima Codrilor",
+      "gov_code": "Codul de guvernanță",
+      "quality": "Parametrii de calitate",
+      "certified": "Certificat de conformitate a SMC"
     }
   },
   "pages": {
@@ -227,6 +480,1272 @@
       "title": "Search",
       "description": "Find Moldtelecom services, plans and options quickly using keywords.",
       "keywords": "search, moldtelecom, services, plans, options, internet, tv, mobile, Moldova"
+    }
+  },
+  "home": {
+    "exclusive_online": "Descoperă cele mai tari oferte exclusiv online",
+    "only_digital": "Servicii digitale"
+  },
+  "feedback": {
+    "title": "Mulțumim pentru feedback",
+    "question": "Cum evaluezi experiența ta pe www.moldtelecom.md?",
+    "comment": "Te rugăm să lași un mesaj:",
+    "placeholder": "Lasă-ne mesajul și/sau numărul de contact dacă dorești să fii contactat",
+    "submit": "Trimite"
+  },
+  "popups": {
+    "f1": {
+      "title": "Internet Mobil",
+      "table": {
+        "headers": [
+          "Descriere opțiune",
+          "SMS Cod",
+          "Trafic ",
+          "Tarif",
+          "Valabilitate"
+        ],
+        "rows": [
+          [
+            "<span>Internet Nelimitat 1 zi</span>",
+            "<span>Nelimitat1zi</span>",
+            "<span>nelimitat</span>",
+            "<span>20 lei</span>",
+            "<span>1 zi</span>"
+          ],
+          [
+            "<span>Internet Nelimitat 7 zile</span>",
+            "<span>Nelimitat/7 zile</span>",
+            "nelimitat",
+            "100 lei",
+            "7 zile"
+          ],
+          [
+            "<span>Internet 10 GB 15 zile</span>",
+            "<span>10GB/15</span>",
+            "<span>10 GB</span>",
+            "<span>50 lei</span>",
+            "<span>15 zile</span>"
+          ],
+          [
+            "<span>Internet 5 GB <span>30 zile</span></span>",
+            "<span>5GB/30</span>",
+            "<span>5 GB</span>",
+            "<span>60 lei</span>",
+            "<span>30 zile</span>"
+          ],
+          [
+            "<span>Internet 10 GB <span>30<span> zile</span></span></span>",
+            "<span>10GB</span>",
+            "<span>10 GB</span>",
+            "<span>100 lei</span>",
+            "<span>30 zile</span>"
+          ],
+          [
+            "<span>Internet 20 GB <span>30<span> zile</span></span></span>",
+            "20GB",
+            "<span>20 GB</span>",
+            "<span>150 lei</span>",
+            "<span>30 zile</span>"
+          ]
+        ]
+      },
+      "conditionsTitle": "Condiții de utilizare opțiune:",
+      "conditions": [
+        "Opțiunile pentru 1 zi sunt valabile 24 ore din momentul activării.",
+        "Opțiunea poate fi activată în orice zi, de mai multe ori pe lună.",
+        "Viteza de acces la internet este în funcţie de terminalul utilizat.",
+        "Utilizatori Postpay pot activa până la 5 opțiuni concomitent, diferite sau de același fel. ",
+        "Utilizatorii Prepay pot beneficia de un numar nelimitat de optiuni concomitent active.",
+        "Opțiunile sunt valabile doar în perioada activă.",
+        "Optiunile sunt disponibile pentru toți  abonații Postpay și utilizatorii Prepay Moldtelecom, indiferent de planul tarif deținut."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru Postpay și <a href=\"tel:*200#\">*200#</a> pentru Prepay, urmând instrucțiunile.",
+        "Prin cerere depusă la orice reprezentanță SA Moldtelecom"
+      ]
+    },
+    "f2": {
+      "title": "Minute Naționale",
+      "table": {
+        "headers": [
+          "Descriere opțiune",
+          "SMS Cod",
+          "Tarif",
+          "Valabilitate"
+        ],
+        "rows": [
+          [
+            "50 minute<span> / 30 zile</span>",
+            "50min",
+            "15 lei",
+            "30 zile"
+          ],
+          [
+            "100 minute<span> / 30 zile</span>",
+            "100min",
+            "30 lei",
+            "30 zile"
+          ],
+          [
+            "200 minute<span> / 30 zile</span>",
+            "200min",
+            "60 lei",
+            "30 zile"
+          ]
+        ]
+      },
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Opțiunea este valabilă 30 zile calendaristice.",
+        "Minutele opțiunii nu se cumulează cu cele din abonament.",
+        "În caz de abonament deja cu minute incluse, opțiunea are prioritate.",
+        "Opțiunea poate fi activată în orice zi, de mai multe ori pe lună.",
+        "La schimb de abonament opțiunile activate se vor pastra;",
+        "La schimb de titular  opțiunile activate nu se vor pastra.",
+        "Utilizatori Postpay pot activa până la 5 opțiuni concomitent, diferite sau de același fel.",
+        "Utilizatorii Prepay pot beneficia de un numar nelimitat de optiuni concomitent active"
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere la orice reprezentanță SA Moldtelecom"
+      ]
+    },
+    "f3": {
+      "title": "Minute Internaționale",
+      "table": {
+        "headers": [
+          "Descriere opțiune",
+          "SMS Cod",
+          "Tarif",
+          "Conținut",
+          "Valabilitate"
+        ],
+        "rows": [
+          [
+            "Activare România și Ucraina",
+            "Int30",
+            "50 lei",
+            "30 min.<br/><span>internationale</span>",
+            "30 zile"
+          ],
+          [
+            "Activare Europa, Israel, SUA, Canada",
+            "Int25",
+            "50 lei",
+            "25 min.<br/><span>internationale</span>",
+            "30 zile"
+          ],
+          [
+            "Activare orice țară",
+            "Int10",
+            "50 lei",
+            "10 min.<br/><span>internationale</span>",
+            "30 zile"
+          ]
+        ]
+      },
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Opțiunile sunt valabile 30 zile.",
+        "Opțiunea „Europa, Israel, SUA, Canada” conține următoarele destinații internaționale: Ucraina, Italia, România, Germania, Franța, Cehia, Marea Britanie, Polonia, Grecia, Portugalia, Spania, Belarus, Estonia, Belgia, Turcia, Israel, SUA, Canada. Destinație națională: regiunea transnistreană.",
+        "Opțiunea România și Ucraina include 30 minute în rețeaua fixă și mobilă spre România și Ucraina.",
+        "Opțiunea Orice Țară conține destinațiile din Zona 1, Zona 2, Zona 3.",
+        "Minutele incluse în opțiune sunt destinate pentru apeluri spre orice rețea mobilă sau fixă.",
+        "După consumarea minutelor internaționale incluse în opțiune, convorbirile vor fi taxate la tarifele standard aplicate pentru fiecare țară în parte.",
+        "Opțiunile sunt valabile doar în perioada activă.",
+        "Opțiunile sunt disponibile pentru toți abonații Postpay și utilizatorii Prepay, indiferent de planul tarifar deținut.",
+        "La schimb de abonament, opțiunile activate se vor păstra.",
+        "La schimb de titular, opțiunile activate nu se vor păstra.",
+        "Utilizatorii Prepay pot beneficia de un număr nelimitat de opțiuni concomitent active.",
+        "Utilizatorii Postpay pot activa până la 5 opțiuni concomitent, diferite sau de același fel."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ]
+    },
+    "f4": {
+      "title": "Pachete SMS",
+      "table": {
+        "headers": [
+          "Descriere opțiune",
+          "SMS Cod",
+          "Tarif",
+          "Valabilitate"
+        ],
+        "rows": [
+          [
+            "50 SMS Naționale",
+            "SMS50",
+            "10 lei",
+            "30 zile"
+          ],
+          [
+            "20 SMS Internaționale",
+            "SMS35",
+            "35 lei",
+            "30 zile"
+          ],
+          [
+            "100 SMS Naționale",
+            "SMS15",
+            "15 lei",
+            "30 zile"
+          ]
+        ]
+      },
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Opțiunile sunt valabile 30 zile calendaristice.",
+        "Conținutul de SMS neconsumat nu se va raporta în perioada următoare.",
+        "Opțiunea poate fi activată în orice zi, de mai multe ori pe lună.",
+        "Opțiunile „SMS” activate se vor consuma prioritar conținutului din abonament sau cartelă.",
+        "După consumarea SMS-urilor incluse în opțiune, SMS-urile expediate vor fi taxate la tarifele aferente planului tarifar.",
+        "Opțiunile sunt valabile când abonatul se află în perioada activă.",
+        "Opțiunile sunt disponibile pentru toți abonații Postpay și utilizatorii Prepay Moldtelecom, indiferent de planul tarifar deținut.",
+        "La schimb de abonament, opțiunile activate se vor păstra.",
+        "La schimb de titular, opțiunile activate nu se vor păstra."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ]
+    },
+    "f5": {
+      "title": "Roaming Europe",
+      "table": {
+        "headers": [
+          "Descriere opțiune",
+          "SMS Cod",
+          "Trafic internet",
+          "Tarif",
+          "Valabilitate"
+        ],
+        "rows": [
+          [
+            "Apeluri Roaming UE",
+            "UE70apel",
+            "100 min",
+            "70 lei",
+            "30 zile"
+          ],
+          [
+            "Internet Roaming UE",
+            "UE100net",
+            "2 GB",
+            "100 lei",
+            "30 zile"
+          ],
+          [
+            "Combo Roaming UE",
+            "UE100",
+            "1 GB / 50 min",
+            "100 lei",
+            "30 zile"
+          ]
+        ]
+      },
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Tarifele includ toate taxele, inclusiv TVA.",
+        "Seria de opțiuni „Roaming UE” este disponibilă pentru toți abonații de Telefonie mobilă Postpay, Voce și Date și utilizatori Prepay.",
+        "După consumarea conținutului în Roaming inclus în opțiune, convorbirile și traficul internet vor fi taxate conform tarifelor standard în roaming pentru fiecare operator.",
+        "Conținutul opțiunilor este destinat pentru utilizarea în Roaming în rețeaua operatorilor, conform listei.",
+        "La schimb de abonament opțiunile activate se vor pastra;",
+        "La schimb de titular  opțiunile activate nu se vor pastra;",
+        "Minutele incluse în opțiunile “Apeluri Roaming UE” și “Combo Roaming UE” repartizate după cum urmează:"
+      ],
+      "conditions_sub": [
+        "“Apeluri Roaming UE“ – 100 min de ieșire locale, de ieșire către MD",
+        "“Combo Roaming UE” – 50 min de ieșire locale, de ieșire către MD."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ],
+      "deactivationTitle": "Dezactivarea opțiune:",
+      "deactivation": [
+        "Prin aplicația mobilă “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin apel la nr. <a href=\"tel:+37322200200\">+373 22 200 200</a> Serviciul Suport Clienți;",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru clienții Prepay și urmărirea instrucțiunilor meniului.",
+        "Dezactivarea serviciului este gratuită."
+      ]
+    },
+    "f6": {
+      "title": "Roaming World",
+      "table": {
+        "headers": [
+          "Descriere opțiune",
+          "SMS Cod",
+          "Tarif",
+          "Conținut",
+          "Valabilitate"
+        ],
+        "rows": [
+          [
+            "Apeluri World",
+            "Wapel",
+            "70 lei",
+            "10 min",
+            "30 zile"
+          ],
+          [
+            "Internet World",
+            "Wnet",
+            "100 lei",
+            "1 GB",
+            "30 zile"
+          ]
+        ]
+      },
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Tarifele includ toate taxele, inclusiv TVA.",
+        "Seria de opțiuni „World” este disponibilă pentru toți abonații de Telefonie mobilă Postpay, Voce și Date și utilizatori Prepay.",
+        "După consumarea conținutului în Roaming inclus în opțiune, convorbirile și traficul internet vor fi taxate conform tarifelor standard în roaming pentru fiecare operator.",
+        "Viteza de acces la internet este conform condițiilor de prestare a serviciului în vigoare de către operator și în funcție de terminalul utilizat.",
+        "Minutele incluse în opțiunea Apeluri World pot fi utilizate pentru „apeluri de ieșire locale” și „apeluri de ieșire către MD”.",
+        "La schimb de abonament, opțiunile activate se vor păstra.",
+        "La schimb de titular, opțiunile activate nu se vor păstra."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ],
+      "deactivationTitle": "Dezactivarea opțiune:",
+      "deactivation": [
+        "Prin aplicația mobilă “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin apel la nr. <a href=\"tel:+37322200200\">+373 22 200 200</a> Serviciul Suport Clienți;",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru clienții Prepay și urmărirea instrucțiunilor meniului.",
+        "Dezactivarea serviciului este gratuită."
+      ]
+    },
+    "f7": {
+      "title": "Viteza 4G+",
+      "paragraph": "Opțiunea viteza 4G+ presupune majorarea vitezei de transport date download până la 175 Mbps și upload până la 50 Mbps.",
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Activarea este gratuită.",
+        "Este necesar să ai terminal compatibil cu tehnologia LTE, frecvență de 1800 MHz (Band 3).",
+        "Activarea/dezactivarea se efectuează în orice zi a lunii."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Pentru activarea expediază un SMS la nr. 500 cu textul: <b>4G</b>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ],
+      "deactivationTitle": "Dezactivarea opțiune:",
+      "deactivation": [
+        "Pentru dezactivare expediază un SMS la nr. 500 cu textul: <b>STOP4G</b>",
+        "Prin aplicația mobilă “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului."
+      ]
+    },
+    "f8": {
+      "title": "Upload Maxim",
+      "paragraph": "Opțiunea \"Upload Maxim\" presupune acordarea vitezei de upload de 5,76 Mbps.",
+      "table": {
+        "headers": [
+          "Descriere opțiune",
+          "Tarif"
+        ],
+        "rows": [
+          [
+            "<span>Upload Maxim</span>",
+            "<span>20 lei</span>"
+          ]
+        ]
+      },
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Activarea/dezactivarea se efectuează în orice zi a lunii.",
+        "La schimbul de abonament, titular sau migrare opțiunea va fi păstrată.",
+        "Opțiunea este disponibilă pentru toţi abonații Moldtelecom, deținători de abonamente - telefonie mobilă sau internet mobil.",
+        "Viteza de acces la internet este în funcţie de terminalul utilizat."
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ]
+    }
+  },
+  "myapp": {
+    "title": "Descarcă aplicația My Moldtelecom",
+    "text": "Gestionează conturile și serviciile, achită facturile, transferă bani pe contul altor persoane sau activează opțiuni adiționale, oricând și oriunde",
+    "btn": "Descarcă aplicația"
+  },
+  "promorazuieste": {
+    "breadcrumb": {
+      "app": "Promo",
+      "name": "Weekend cu beneficii"
+    },
+    "title": "Câștigă în fiecare săptămână cu My Moldtelecom",
+    "buttons": {
+      "scratch": "Răzuiește acum",
+      "rules": "Regulament concurs"
+    },
+    "intro": {
+      "part1": "Intră în aplicația",
+      "part2_1": "în ",
+      "part2_2": " fiecare weekend ",
+      "part2_3": "și răzuiește cartonașul pentru a câștiga premii!",
+      "part3": "Nu mai aștepta norocul să vină de la sine – ia-l tu acum în mâini și transformă fiecare răzuire într-un premiu garantat!",
+      "part4": "Poți câștiga beneficii plăcute în formă de trafic Internet sau minute naționale, fără efort și absolut gratuit."
+    },
+    "winTitle": "Iată ce poți câștiga:",
+    "wins": {
+      "100MB": {
+        "label": "100MB",
+        "desc": "pentru o zi"
+      },
+      "500MB": {
+        "label": "500MB",
+        "desc": "pentru o zi"
+      },
+      "1GB": {
+        "label": "1GB",
+        "desc": "pentru o zi"
+      },
+      "5GB": {
+        "label": "5GB",
+        "desc": "pentru 3 zile"
+      },
+      "10GB": {
+        "label": "10GB",
+        "desc": "pentru 3 zile"
+      },
+      "20min": {
+        "label": "25 minute",
+        "desc": "pentru 3 zile"
+      },
+      "50min": {
+        "label": "50 minute",
+        "desc": "pentru 3 zile"
+      },
+      "100min": {
+        "label": "100 minute",
+        "desc": "pentru 3 zile"
+      }
+    },
+    "activation": "Premiul câștigat se activează automat în contul tău – gata de utilizare imediat!",
+    "period": "Campania se desfășoară între 21.06.2025 – 30.09.2025 (inclusiv).",
+    "faq": {
+      "q1": "Ce este campania „Weekend cu beneficii”?",
+      "a1": "Este o tombolă digitală în aplicația My Moldtelecom, prin care abonații eligibili pot răzui un scratch-card în fiecare sâmbătă sau duminică pentru a primi instant trafic internet sau minute naționale gratuite.",
+      "q2": "Cine poate participa la campanie?",
+      "a2": "<li>Abonații persoane fizice (prepaid sau postpaid) ai serviciilor de telefonie mobilă Moldtelecom, cu vârsta minimă de 18 ani.</li><li>Este necesară instalarea sau actualizarea la ultima versiune a aplicației My Moldtelecom din Play Market sau App Store.</li><li>Angajații S.A. Moldtelecom NU pot participa.</li>",
+      "q3": "De câte ori pot participa la campanie?",
+      "a3": "Poți răzui o singură dată în fiecare weekend: fie sâmbătă, fie duminică.",
+      "q4": "Participarea costă ceva?",
+      "a4": "Participarea este gratuită; trebuie doar să ai aplicația instalată sau actualizată."
+    },
+    "popup": {
+      "title": "Regulamentul campaniei „Weekend cu beneficii”",
+      "section1": {
+        "title": "1. ORGANIZATORUL CAMPANIEI",
+        "p1": {
+          "part1": "1.1. Organizatorul Campaniei în aplicația My Moldtelecom este S.A. „Moldtelecom”, persoană juridică înregistrată în Registrul de Stat al persoanelor juridice al Republicii Moldova cu IDNO (cod fiscal) ",
+          "idno": "1002600048836",
+          "part2": ", cu sediul în ",
+          "address": "MD-2001, bd. Ştefan cel Mare şi Sfânt, 10, mun. Chişinău, Republica Moldova",
+          "part3": " (numit în continuare „Moldtelecom” sau „Organizator”)."
+        },
+        "p2": "1.2. Prezentul Regulament este obligatoriu pentru toți participanții. Regulamentul este disponibil gratuit oricărui participant pe site-ul www.moldtelecom.md și în Reprezentanțele Moldtelecom (inclusiv dealeri) pe durata întregii Campanii.",
+        "p3": "1.3. Participanții la Campanie vor putea obține informații suplimentare apelând gratuit:",
+        "li1": "din rețeaua Moldtelecom: ",
+        "li2": "din rețeaua mobilă Moldtelecom: ",
+        "li3": "de pe telefon fix/mobil din alte rețele: ",
+        "li4": "în reprezentanțele Companiei din întreaga țară"
+      },
+      "section2": {
+        "title": "2. REGULILE DE PARTICIPARE",
+        "p1_1": "2.1. Perioada de desfășurare a Campaniei este ",
+        "p1_2": "21.06.2025 – 30.09.2025 ",
+        "p1_3": "(inclusiv).",
+        "p2": "2.2. Campania este destinată abonaților de telefonie mobilă Voce/Date (prepaid/postpaid), persoane fizice, cu vârsta minimă de 18 ani și care au instalată/actualizată aplicația My Moldtelecom.",
+        "p3": "2.3. Nu pot participa persoanele cu statut de angajat S.A. Moldtelecom."
+      },
+      "section3": {
+        "title": "3. MECANISMUL DESFĂȘURĂRII CAMPANIEI",
+        "p1": "3.1. Abonații eligibili trebuie să deschidă aplicația My Moldtelecom și să acceseze pagina „Contul meu”, unde vor găsi un scratch card de răzuit pentru a primi un premiu instant.",
+        "p2": "3.2. Fondul de premii include:",
+        "li1_1": "Carduri cu trafic mobil: ",
+        "li1_2": " 100MB, 500MB, 1GB, 5GB, 10GB",
+        "li2_1": "Carduri cu minute naționale: ",
+        "li2_2": " 20, 50, 100 minute",
+        "p3": "3.3. Valabilitatea premiilor:",
+        "li3_1": "100MB, 500MB, 1GB ",
+        "li3_2": "– valabile 1 zi",
+        "li4_1": "5GB, 10GB ",
+        "li4_2": "– valabile 3 zile",
+        "li5_1": "20, 50, 100 minute",
+        "li5_2": " – valabile 3 zile",
+        "p4": "3.4. Un participant poate răzui un card o singură dată în fiecare sâmbătă sau duminică.",
+        "p5": "3.5. Premiile se activează automat și se consumă prioritar față de alte opțiuni."
+      },
+      "section4": {
+        "title": "4. PRELUCRAREA DATELOR CU CARACTER PERSONAL",
+        "p1": "4.1. Participarea implică acordul privind prelucrarea datelor personale în scopul desfășurării Campaniei.",
+        "p2": "4.2. Procesarea presupune orice acțiune asupra datelor: colectare, stocare, adaptare, consultare, utilizare, combinare, ștergere sau distrugere."
+      },
+      "section5": {
+        "title": "5. MODIFICARE, SUSPENDARE ȘI ANULARE",
+        "p1": "5.1. Organizatorul poate modifica sau completa Regulamentul.",
+        "p2": "5.2. Modificările devin valabile la publicarea lor pe site-ul Organizatorului.",
+        "p3": "5.3. În cazuri excepționale, Campania poate fi suspendată, anulată sau extinsă."
+      },
+      "section6": {
+        "title": "6. RECLAMAȚII ȘI LITIGII",
+        "p1": "6.1. Reclamațiile trebuie trimise în scris la sediul Organizatorului în termen de 5 zile lucrătoare de la producerea evenimentului.",
+        "p2": "6.2. Litigiile vor fi soluționate pe cale amiabilă sau de către instanțele competente din Republica Moldova."
+      },
+      "section7": {
+        "title": "7. DISPOZIȚII FINALE",
+        "p1": "7.1. Regulamentul este reglementat de legislația în vigoare a Republicii Moldova.",
+        "p2": "7.2. Invalidarea unei prevederi nu afectează valabilitatea celorlalte."
+      }
+    }
+  },
+  "notfound": {
+    "breadcrumb": {
+      "title": "Pagină inexistentă"
+    },
+    "subtitle": "Pagină inexistentă - Oooops!",
+    "text": "Ne pare rău, pagina pe care o cauți nu a fost găsită",
+    "btn": "Înapoi acasă"
+  },
+  "operatorsTableRoamingEurope": {
+    "title": "Lista operatorilor",
+    "header": {
+      "country": "ȚARA",
+      "operator": "OPERATOR"
+    },
+    "rows": [
+      {
+        "country": "Austria",
+        "operators": [
+          "3 Austria (Hutchison Drei Austria)",
+          "T-Mobile Austria (Magenta)"
+        ]
+      },
+      {
+        "country": "Belgia",
+        "operators": [
+          "Proximus",
+          "Telenet Group (Base)"
+        ]
+      },
+      {
+        "country": "Bulgaria",
+        "operators": [
+          "Vivacom Bulgaria",
+          "Yettel Bulgaria"
+        ]
+      },
+      {
+        "country": "Cehia",
+        "operators": [
+          "Vodafone Czech Republic",
+          "O2 Czech Republic"
+        ]
+      },
+      {
+        "country": "Cipru",
+        "operators": [
+          "Epic",
+          "PrimeTel"
+        ]
+      },
+      {
+        "country": "Croația",
+        "operators": [
+          "Hrvatski Telekom",
+          "Telemach Croatia"
+        ]
+      },
+      {
+        "country": "Danemarca",
+        "operators": [
+          "3 Denmark (Hi3G Denmark)",
+          "Telenor Denmark"
+        ]
+      },
+      {
+        "country": "Estonia",
+        "operators": [
+          "AS Eesti Telekom EMT",
+          "Telia Eesti AS",
+          "Tele2 Eesti AS"
+        ]
+      },
+      {
+        "country": "Finlanda",
+        "operators": [
+          "DNA"
+        ]
+      },
+      {
+        "country": "Franța",
+        "operators": [
+          "Bouygues Telecom",
+          "Free Mobile",
+          "SFR"
+        ]
+      },
+      {
+        "country": "Germania",
+        "operators": [
+          "Telekom Deutschland",
+          "Vodafone"
+        ]
+      },
+      {
+        "country": "Grecia",
+        "operators": [
+          "Cosmote Mobile",
+          "Vodafone Greece"
+        ]
+      },
+      {
+        "country": "Irlanda",
+        "operators": [
+          "3 Ireland (Hutchison 3G Ireland)",
+          "Meteor Mobile Communications",
+          "Vodafone Ireland"
+        ]
+      },
+      {
+        "country": "Islanda",
+        "operators": [
+          "Nova"
+        ]
+      },
+      {
+        "country": "Italia",
+        "operators": [
+          "3 Italia (Wind Tre S.p.A.)",
+          "Vodafone Italia",
+          "ILIAD Italia"
+        ]
+      },
+      {
+        "country": "Letonia",
+        "operators": [
+          "Bite Latvija",
+          "Tele2"
+        ]
+      },
+      {
+        "country": "Liechtenstein",
+        "operators": [
+          "Salt Liechtenstein"
+        ]
+      },
+      {
+        "country": "Lituania",
+        "operators": [
+          "Bite Lietuva",
+          "Tele2"
+        ]
+      },
+      {
+        "country": "Luxemburg",
+        "operators": [
+          "POST Luxembourg",
+          "Proximus Luxembourg (Tango)"
+        ]
+      },
+      {
+        "country": "Malta",
+        "operators": [
+          "Go Malta",
+          "Melita",
+          "Epic"
+        ]
+      },
+      {
+        "country": "Norvegia",
+        "operators": [
+          "Telenor"
+        ]
+      },
+      {
+        "country": "Polonia",
+        "operators": [
+          "PLAY (P4)",
+          "Polkomtel (PLUS)",
+          "Orange Polska"
+        ]
+      },
+      {
+        "country": "Portugalia",
+        "operators": [
+          "Vodafone Portugal",
+          "MEO"
+        ]
+      },
+      {
+        "country": "România",
+        "operators": [
+          "Orange Romania",
+          "Telekom Romania Mobile",
+          "RCS&amp;RDS (Digi Mobil)",
+          "Vodafone Romania"
+        ]
+      },
+      {
+        "country": "Slovacia",
+        "operators": [
+          "Slovak Telekom",
+          "O2 Slovakia"
+        ]
+      },
+      {
+        "country": "Slovenia",
+        "operators": [
+          "Telemach"
+        ]
+      },
+      {
+        "country": "Spania",
+        "operators": [
+          "Vodafone España"
+        ]
+      },
+      {
+        "country": "Suedia",
+        "operators": [
+          "Hi3G (3 Sweden)",
+          "Tele2",
+          "Telenor Sverige (VIMLA)"
+        ]
+      },
+      {
+        "country": "Țările de jos",
+        "operators": [
+          "KPN Mobile",
+          "Vodafone (Ziggo)"
+        ]
+      },
+      {
+        "country": "Ungaria",
+        "operators": [
+          "Magyar Telekom",
+          "Yettel Magyarország",
+          "Vodafone Hungary"
+        ]
+      }
+    ]
+  },
+  "operatorsTableRoamingApeluriWorld": {
+    "title": "Lista operatorilor ”Apeluri World”",
+    "header": {
+      "country": "ȚARA",
+      "operator": "OPERATOR"
+    },
+    "rows": [
+      {
+        "country": "Austria",
+        "operators": [
+          "3 Austria (Hutchison Drei Austria)",
+          "T-Mobile Austria (Magenta)"
+        ]
+      },
+      {
+        "country": "Belgia",
+        "operators": [
+          "Proximus",
+          "Telenet Group (Base)"
+        ]
+      },
+      {
+        "country": "Bulgaria",
+        "operators": [
+          "Vivacom Bulgaria",
+          "Yettel Bulgaria"
+        ]
+      },
+      {
+        "country": "Cehia",
+        "operators": [
+          "Vodafone Czech Republic",
+          "O2 Czech Republic"
+        ]
+      },
+      {
+        "country": "Cipru",
+        "operators": [
+          "Epic",
+          "PrimeTel"
+        ]
+      },
+      {
+        "country": "Croația",
+        "operators": [
+          "Hrvatski Telecom",
+          "Telemach Croatia"
+        ]
+      },
+      {
+        "country": "Danemarca",
+        "operators": [
+          "3 Denmark (Hi3G Denmark)",
+          "Telenor Denmark"
+        ]
+      },
+      {
+        "country": "Estonia",
+        "operators": [
+          "AS Eesti Telekom EMT",
+          "Telia Eesti AS",
+          "Tele2 Eesti AS"
+        ]
+      },
+      {
+        "country": "Finlanda",
+        "operators": [
+          "DNA"
+        ]
+      },
+      {
+        "country": "Franța",
+        "operators": [
+          "Bouygues Telecom",
+          "Free Mobile",
+          "SFR"
+        ]
+      },
+      {
+        "country": "Germania",
+        "operators": [
+          "Telekom Deutschland",
+          "Vodafone"
+        ]
+      },
+      {
+        "country": "Grecia",
+        "operators": [
+          "Cosmote Mobile",
+          "Vodafone Greece"
+        ]
+      },
+      {
+        "country": "Irlanda",
+        "operators": [
+          "3 Ireland (Hutchison 3G Ireland)",
+          "Meteor Mobile Communications",
+          "Vodafone Ireland"
+        ]
+      },
+      {
+        "country": "Islanda",
+        "operators": [
+          "Nova"
+        ]
+      },
+      {
+        "country": "Italia",
+        "operators": [
+          "3 Italia (Wind Tre S.p.A.)",
+          "Vodafone Italia",
+          "ILIAD Italia"
+        ]
+      },
+      {
+        "country": "Letonia",
+        "operators": [
+          "Bite Latvija",
+          "Tele2"
+        ]
+      },
+      {
+        "country": "Liechtenstein",
+        "operators": [
+          "Salt Liechtenstein"
+        ]
+      },
+      {
+        "country": "Lituania",
+        "operators": [
+          "Bite Lietuva",
+          "Tele2"
+        ]
+      },
+      {
+        "country": "Luxemburg",
+        "operators": [
+          "POST Luxembourg",
+          "Proximus Luxembourg (Tango)"
+        ]
+      },
+      {
+        "country": "Malta",
+        "operators": [
+          "Go Malta",
+          "Melita",
+          "Epic"
+        ]
+      },
+      {
+        "country": "Norvegia",
+        "operators": [
+          "Telenor"
+        ]
+      },
+      {
+        "country": "Polonia",
+        "operators": [
+          "PLAY (P4)",
+          "Polkomtel (PLUS)",
+          "Orange Polska"
+        ]
+      },
+      {
+        "country": "Portugalia",
+        "operators": [
+          "Vodafone Portugal",
+          "MEO"
+        ]
+      },
+      {
+        "country": "România",
+        "operators": [
+          "Orange Romania",
+          "Telekom Romania Mobile",
+          "RCS&amp;RDS (Digi Mobil)",
+          "Vodafone Romania"
+        ]
+      },
+      {
+        "country": "Slovacia",
+        "operators": [
+          "Slovak Telekom",
+          "O2 Slovakia"
+        ]
+      },
+      {
+        "country": "Slovenia",
+        "operators": [
+          "Telemach"
+        ]
+      },
+      {
+        "country": "Spania",
+        "operators": [
+          "Vodafone España"
+        ]
+      },
+      {
+        "country": "Suedia",
+        "operators": [
+          "Hi3G (3 Sweden)",
+          "Tele2",
+          "Telenor Sverige (VIMLA)"
+        ]
+      },
+      {
+        "country": "Țările de jos",
+        "operators": [
+          "KPN Mobile",
+          "Vodafone (Ziggo)"
+        ]
+      },
+      {
+        "country": "Ungaria",
+        "operators": [
+          "Magyar Telekom",
+          "Yettel Magyarország",
+          "Vodafone Hungary"
+        ]
+      }
+    ]
+  },
+  "operatorsTableRoamingInternetWorld": {
+    "title": "Lista operatorilor ”Internet World”",
+    "header": {
+      "country": "ȚARA",
+      "operator": "OPERATOR"
+    },
+    "rows": [
+      {
+        "country": "Albania",
+        "operators": [
+          "One Albania",
+          "Vodafone Albania"
+        ]
+      },
+      {
+        "country": "Austria",
+        "operators": [
+          "3 Austria (Hutchison Drei Austria)",
+          "T-Mobile Austria (Magenta)"
+        ]
+      },
+      {
+        "country": "Belgia",
+        "operators": [
+          "Proximus",
+          "Telenet Group (Base)"
+        ]
+      },
+      {
+        "country": "Bulgaria",
+        "operators": [
+          "Vivacom Bulgaria",
+          "Yettel Bulgaria"
+        ]
+      },
+      {
+        "country": "Cehia",
+        "operators": [
+          "Vodafone Czech Republic",
+          "O2 Czech Republic"
+        ]
+      },
+      {
+        "country": "Croația",
+        "operators": [
+          "Hrvatski Telecom",
+          "Telemach Croatia"
+        ]
+      },
+      {
+        "country": "Danemarca",
+        "operators": [
+          "3 Denmark (Hi3G Denmark)",
+          "Telenor Denmark"
+        ]
+      },
+      {
+        "country": "Elveția",
+        "operators": [
+          "Salt Mobile SA"
+        ]
+      },
+      {
+        "country": "Finlanda",
+        "operators": [
+          "DNA"
+        ]
+      },
+      {
+        "country": "Franța",
+        "operators": [
+          "Free Mobile",
+          "SFR",
+          "Bouygues Telecom"
+        ]
+      },
+      {
+        "country": "Germania",
+        "operators": [
+          "Telekom Deutschland",
+          "Vodafone"
+        ]
+      },
+      {
+        "country": "Grecia",
+        "operators": [
+          "Vodafone Greece",
+          "Cosmote"
+        ]
+      },
+      {
+        "country": "Irlanda",
+        "operators": [
+          "3 Ireland (Hutchison 3G Ireland)",
+          "Vodafone Ireland",
+          "Meteor Mobile Communications"
+        ]
+      },
+      {
+        "country": "Islanda",
+        "operators": [
+          "Nova"
+        ]
+      },
+      {
+        "country": "Israel",
+        "operators": [
+          "Hot Mobile"
+        ]
+      },
+      {
+        "country": "Italia",
+        "operators": [
+          "Wind Tre",
+          "Vodafone Italia",
+          "ILIAD Italia"
+        ]
+      },
+      {
+        "country": "Letonia",
+        "operators": [
+          "Bite Latvija",
+          "Tele2"
+        ]
+      },
+      {
+        "country": "Liechtenstein",
+        "operators": [
+          "Salt Liechtenstein"
+        ]
+      },
+      {
+        "country": "Lituania",
+        "operators": [
+          "Bite Lietuva",
+          "Tele2"
+        ]
+      },
+      {
+        "country": "Luxembourg",
+        "operators": [
+          "POST Luxembourg",
+          "Tango"
+        ]
+      },
+      {
+        "country": "Malta",
+        "operators": [
+          "Melita",
+          "Epic",
+          "Go"
+        ]
+      },
+      {
+        "country": "Marea Britanie",
+        "operators": [
+          "Hutchison 3G UK (Three UK)",
+          "Vodafone UK"
+        ]
+      },
+      {
+        "country": "Norvegia",
+        "operators": [
+          "Telenor"
+        ]
+      },
+      {
+        "country": "Noua Zeelanda",
+        "operators": [
+          "One NZ"
+        ]
+      },
+      {
+        "country": "Polonia",
+        "operators": [
+          "PLAY (P4)",
+          "Polkomtel (PLUS)",
+          "Orange Polska"
+        ]
+      },
+      {
+        "country": "Portugalia",
+        "operators": [
+          "Vodafone Portugal",
+          "MEO"
+        ]
+      },
+      {
+        "country": "România",
+        "operators": [
+          "Digi Mobil",
+          "Orange Romania",
+          "Telekom Romania Mobile",
+          "Vodafone Romania"
+        ]
+      },
+      {
+        "country": "Slovacia",
+        "operators": [
+          "Slovak Telekom",
+          "O2 Slovakia"
+        ]
+      },
+      {
+        "country": "Slovenia",
+        "operators": [
+          "Telemach"
+        ]
+      },
+      {
+        "country": "SUA",
+        "operators": [
+          "AT&T Mobility"
+        ]
+      },
+      {
+        "country": "Suedia",
+        "operators": [
+          "Hi3G (3 Sweden)",
+          "Tele2",
+          "Telenor Sverige (VIMLA)"
+        ]
+      },
+      {
+        "country": "Țările de jos",
+        "operators": [
+          "Vodafone (Ziggo)",
+          "KPN Mobile"
+        ]
+      },
+      {
+        "country": "Thailanda",
+        "operators": [
+          "True Move H Universal Communication Co (True)"
+        ]
+      },
+      {
+        "country": "Turcia",
+        "operators": [
+          "Turkcell Iletisim Hizmetleri (Turkcell)",
+          "Vodafone Telekomunikasyon"
+        ]
+      },
+      {
+        "country": "Ucraina",
+        "operators": [
+          "Kyivstar",
+          "Vodafone UA",
+          "TriMob UA"
+        ]
+      },
+      {
+        "country": "Ungaria",
+        "operators": [
+          "Vodafone Hungary",
+          "Magyar Telekom (Telekom HU)",
+          "Yettel Magyarország"
+        ]
+      }
+    ]
+  },
+  "contacts": {
+    "breadcrumb": {
+      "title": "Contacte"
     }
   }
 }
