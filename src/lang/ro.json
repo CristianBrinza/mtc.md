@@ -1182,7 +1182,8 @@
   "search": {
     "breadcrumb": {
       "title": "Cautare"
-    }
+    },
+    "show_more": "mai multe"
   },
   "pages": {
     "wifi_plus": {
