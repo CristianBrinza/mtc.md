@@ -21,7 +21,7 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
         isVisible={content === 'f1'}
         onClose={onClose}
       >
-        <ScrollableWrapper>
+        <div className="popup_content">
           <h2>{t('popups.f1.title')}</h2>
           <ScrollableWrapper>
             <table className="popup_table">
@@ -263,7 +263,7 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
             />
             <li>{t('popups.f1.activation.3')}</li>
           </ul>
-        </ScrollableWrapper>
+        </div>
       </Popup>
 
       {/* Popup pentru f2 */}

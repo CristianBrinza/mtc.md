@@ -1,4 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+// src/components/Popup/ScrollableWrapper.tsx
+import React, {
+  useLayoutEffect,
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+} from 'react';
 import './Popup.css';
 
 interface Props {
@@ -15,69 +22,76 @@ export default function ScrollableWrapper({ children }: Props) {
   const [thumbWidth, setThumbWidth] = useState(0);
   const [thumbLeft, setThumbLeft] = useState(0);
 
+  const updateScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const scrollable = el.scrollWidth - el.clientWidth > 1;
+    setHasLeftScroll(el.scrollLeft > 0);
+    setHasRightScroll(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+    setShowFakeScrollbar(scrollable);
+    if (scrollable) {
+      setThumbWidth((el.clientWidth / el.scrollWidth) * 100);
+      setThumbLeft((el.scrollLeft / el.scrollWidth) * 100);
+    }
+  }, []);
+
+  // run immediately after DOM mutations (i.e. popup becoming visible + children rendered)
+  useLayoutEffect(() => {
+    updateScroll();
+  });
+
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
-    const updateScroll = () => {
-      const scrollable = el.scrollWidth > el.clientWidth;
-      setHasLeftScroll(el.scrollLeft > 0);
-      setHasRightScroll(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
-      setShowFakeScrollbar(scrollable);
-      if (scrollable) {
-        setThumbWidth((el.clientWidth / el.scrollWidth) * 100);
-        setThumbLeft((el.scrollLeft / el.scrollWidth) * 100);
-      }
-    };
-
-    updateScroll();
     el.addEventListener('scroll', updateScroll);
     window.addEventListener('resize', updateScroll);
+
+    // observe size/content changes (translations, images, font loads, etc)
+    const ro = new ResizeObserver(updateScroll);
+    ro.observe(el);
+    // also observe inner wrapper so that table width changes fire
+    if (el.firstElementChild) ro.observe(el.firstElementChild);
 
     return () => {
       el.removeEventListener('scroll', updateScroll);
       window.removeEventListener('resize', updateScroll);
+      ro.disconnect();
     };
-  }, []);
+  }, [updateScroll]);
 
-  // Drag logic
+  // fake‐scrollbar drag logic
   useEffect(() => {
     let isDragging = false;
     let startX = 0;
-    let startScrollLeft = 0;
+    let startLeft = 0;
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const onMove = (e: MouseEvent) => {
       if (!isDragging || !scrollRef.current) return;
       const el = scrollRef.current;
-      const scrollRatio = el.scrollWidth / el.clientWidth;
-      const deltaX = e.clientX - startX;
-      el.scrollLeft = startScrollLeft + deltaX * scrollRatio;
+      const ratio = el.scrollWidth / el.clientWidth;
+      el.scrollLeft = startLeft + (e.clientX - startX) * ratio;
     };
-
-    const handleMouseUp = () => {
+    const onUp = () => {
       isDragging = false;
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
     };
-
-    const handleMouseDown = (e: MouseEvent) => {
+    const onDown = (e: MouseEvent) => {
       if (!scrollRef.current) return;
       isDragging = true;
       startX = e.clientX;
-      startScrollLeft = scrollRef.current.scrollLeft;
-      document.addEventListener('mousemove', handleMouseMove);
-      document.addEventListener('mouseup', handleMouseUp);
+      startLeft = scrollRef.current.scrollLeft;
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseup', onUp);
     };
 
     const thumb = thumbRef.current;
-    if (thumb) {
-      thumb.addEventListener('mousedown', handleMouseDown);
-    }
-
+    thumb?.addEventListener('mousedown', onDown);
     return () => {
-      if (thumb) thumb.removeEventListener('mousedown', handleMouseDown);
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseup', handleMouseUp);
+      thumb?.removeEventListener('mousedown', onDown);
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
     };
   }, []);
 
