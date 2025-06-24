@@ -12,35 +12,34 @@ import SearchPage from './pages/search/Search.tsx';
 
 import Home from './pages/home/Home_v2.tsx';
 import OneNumber from './pages/personal/oferte/one_number/OneNumber.tsx';
+import Contacts from './pages/personal/contacts/Contacts.tsx';
 // import { TestPage } from './pages/test/Test.tsx';
 
 export interface RouteConfig {
   path: string;
-  i18nKey: string;
+  i18nKey?: string;
   element: React.ReactNode;
 }
 
 export const routesConfig: RouteConfig[] = [
-  { path: '/', i18nKey: 'home.title', element: React.createElement(Home) },
+  { path: '/', element: React.createElement(Home) },
   {
     path: '/:lang/',
-    i18nKey: 'home.title',
+    // i18nKey: 'home.title',
     element: React.createElement(Home),
   },
   {
     path: '/:lang/newsite',
-    i18nKey: 'navbar.internet_tv',
+
     element: React.createElement(Triple),
   },
   {
     path: '/:lang/triple',
-    i18nKey: 'navbar.internet_tv',
     element: React.createElement(Triple),
   },
 
   {
     path: '/:lang/mobile',
-    i18nKey: 'navbar.internet_tv',
     element: React.createElement(Mobile),
   },
   // {
@@ -50,43 +49,39 @@ export const routesConfig: RouteConfig[] = [
   // },
   {
     path: '/:lang/magazine',
-    i18nKey: 'navbar.internet_tv',
     element: React.createElement(Magazine),
   },
   {
     path: '/:lang/wifi-plus',
-    i18nKey: 'navbar.internet_tv',
     element: React.createElement(WifiPlus),
   },
   //technical
   {
     path: '/:lang/icons',
-    i18nKey: 'navbar.internet_tv',
     element: React.createElement(IconShowcase),
   },
   {
     path: '/:lang/mobile-options',
-    i18nKey: 'not_found.title',
     element: React.createElement(OptionsandServices),
   },
   {
     path: '/:lang/weekend-cu-beneficii',
-    i18nKey: 'not_found.title',
     element: React.createElement(PromoRazuieste),
   },
   {
     path: '/:lang/one-number',
-    i18nKey: 'not_found.title',
     element: React.createElement(OneNumber),
   },
   {
     path: '/:lang/search',
-    i18nKey: 'not_found.title',
     element: React.createElement(SearchPage),
   },
   {
+    path: '/:lang/contacts',
+    element: React.createElement(Contacts),
+  },
+  {
     path: '*',
-    i18nKey: 'not_found.title',
     element: React.createElement(NotFound),
   },
 ];

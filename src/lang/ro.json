@@ -1188,6 +1188,11 @@
     "show_more": "mai multe",
     "show_less": "mai puține"
   },
+  "contacts": {
+    "breadcrumb": {
+      "title": "Contacte"
+    }
+  },
   "pages": {
     "wifi_plus": {
       "title": "WiFi Plus",

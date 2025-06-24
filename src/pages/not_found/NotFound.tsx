@@ -1,4 +1,3 @@
-//import styles from './NotFound.module.css';
 import { useTranslation } from 'react-i18next';
 import Navbar from '../../components/navbar/Navbar.tsx';
 import Chat from '../../components/chat/Chat.tsx';
