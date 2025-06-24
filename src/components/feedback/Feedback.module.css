@@ -8,8 +8,10 @@
 }
 .feedback_title {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 20px;
+  color: #212a55;
+  font-family: Poppins, sans-serif;
 }
 .feedback_subtitle {
   font-size: 12px;

@@ -96,7 +96,7 @@ const Button: React.FC<ButtonProps> = ({
     flexDirection: 'row',
     minHeight: '48px',
     textDecoration: 'none',
-    opacity: disabled ? 0.1 : 1,
+    opacity: disabled ? 0.3 : 1,
     pointerEvents: disabled ? 'none' : 'auto',
     boxSizing: 'border-box',
     gap: '7px',

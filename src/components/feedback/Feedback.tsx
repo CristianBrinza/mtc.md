@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styles from './Feedback.module.css';
 import Popup from '../Popup/Popup.tsx';
 import Button from '../Button.tsx';
@@ -7,30 +7,56 @@ import { useTranslation } from 'react-i18next';
 
 const Feedback: React.FC = () => {
   const [showPopup, setShowPopup] = useState<boolean>(false);
-  const closePopup = () => {
-    setShowPopup(false);
-  };
+  const [submitted, setSubmitted] = useState<boolean>(false);
   const { t } = useTranslation();
 
-  const [answers, setAnswers] = useState<{ [key: string]: number }>({
-    good: 0,
-  });
+  // Local state for rating and comment
+  const [rating, setRating] = useState<number>(0);
+  const [improvement, setImprovement] = useState<string>('');
 
-  const choseStars = (question: string, rating: number) => {
-    setAnswers(prev => {
-      const updatedAnswers = { ...prev, [question]: rating };
-      localStorage.setItem('feedbackAnswers', JSON.stringify(updatedAnswers));
-      return updatedAnswers;
-    });
+  // Ref to the hidden Google Form
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const openPopup = () => {
+    setShowPopup(true);
+    setSubmitted(false);
   };
 
-  const [improvement, setImprovement] = useState<string>('');
+  const closePopup = () => {
+    setShowPopup(false);
+    // Clear inputs after closing
+    setRating(0);
+    setImprovement('');
+    setSubmitted(false);
+  };
+
+  const choseStars = (value: number) => {
+    setRating(value);
+  };
+
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setImprovement(e.target.value);
   };
+
+  const handleSubmit = (): void => {
+    if (!formRef.current) return;
+    const formEl = formRef.current;
+    const ratingInput = formEl.elements.namedItem(
+      'entry.766145240'
+    ) as HTMLInputElement;
+    const commentInput = formEl.elements.namedItem(
+      'entry.125673189'
+    ) as HTMLTextAreaElement;
+    ratingInput.value = rating.toString();
+    commentInput.value = improvement;
+    formEl.submit(); // submits to hidden iframe
+    setSubmitted(true);
+    // keep popup open to show message
+  };
+
   return (
     <>
-      <div className={styles.feedback_icon} onClick={() => setShowPopup(true)}>
+      <div className={styles.feedback_icon} onClick={openPopup}>
         <svg
           width="36"
           height="96"
@@ -49,34 +75,70 @@ const Feedback: React.FC = () => {
         </svg>
       </div>
 
-      <Popup id="1284768" isVisible={showPopup} onClose={closePopup}>
-        <div className={`popup_content ${styles.feedback_form}`}>
+      <Popup id="feedback-popup" isVisible={showPopup} onClose={closePopup}>
+        {/* Hidden iframe to avoid redirect */}
+        <iframe name="hidden_iframe" style={{ display: 'none' }} />
+
+        <form
+          ref={formRef}
+          id="bootstrapForm"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSfqtUvGPJzI-T77VdgRXu47Zo0ev3wtZahmc6H-ibknUdWftw/formResponse"
+          method="POST"
+          target="hidden_iframe"
+        >
+          <input type="hidden" name="entry.766145240" value="" />
+          <textarea
+            name="entry.125673189"
+            style={{ display: 'none' }}
+            defaultValue=""
+          />
+          <input type="hidden" name="fvv" value="1" />
+          <input type="hidden" name="fbzx" value="-985493008485687144" />
+          <input type="hidden" name="pageHistory" value="0" />
+
           <div className={styles.feedback_title}>{t('feedback.title')}</div>
           <span style={{ color: '#2f2f2f' }}>{t('feedback.question')}</span>
-          {/*<span className={styles.feedback_subtitle}> Părerea ta e foarte importantă pentru noi ❤️</span> <br/><br/>*/}
 
           <div className={styles.FeedbackMenu_stars}>
             {[1, 2, 3, 4, 5].map(star => (
               <Icon
                 key={star}
-                onClick={() => choseStars('design', star)}
-                type={star <= answers.design ? 'star_fill' : 'star'}
-                color={star <= answers.design ? '#3a3a3a' : '#939393'}
+                onClick={() => choseStars(star)}
+                type={star <= rating ? 'star_fill' : 'star'}
+                color={star <= rating ? '#3a3a3a' : '#939393'}
               />
             ))}
           </div>
 
-          <span style={{ color: '#2f2f2f' }}> {t('feedback.comment')}</span>
-
+          <span style={{ color: '#2f2f2f' }}>{t('feedback.comment')}</span>
           <textarea
             value={improvement}
             onChange={handleTextChange}
             placeholder={t('feedback.placeholder')}
             className={styles.feedback_textarea}
-          ></textarea>
+          />
 
-          <Button>{t('feedback.submit')}</Button>
-        </div>
+          <Button
+            type="button"
+            disabled={submitted}
+            color="var(--theme_primary_color_blue_4)"
+            bgcolor="var(--theme_primary_color_blue_3)"
+            border="var(--theme_primary_color_blue_3)"
+            hover_border="var(--theme_primary_color_blue_2)"
+            hover_bgcolor="var(--theme_primary_color_blue_2)"
+            icon="arrow_right"
+            onClick={handleSubmit}
+          >
+            {t('feedback.submit')}
+          </Button>
+
+          {submitted && (
+            <div style={{ marginTop: '12px', color: 'green' }}>
+              {' '}
+              Sent successfully
+            </div>
+          )}
+        </form>
       </Popup>
     </>
   );
