@@ -8,6 +8,7 @@ import IconShowcase from './pages/technical/IconShowcase.tsx';
 import WifiPlus from './pages/personal/oferte/wifiplus/WifiPlus.tsx';
 import OptionsandServices from './pages/personal/oferte/optionsandservices/OptionsandServices.tsx';
 import PromoRazuieste from './pages/personal/oferte/promo_razuieste/PromoRazuieste.tsx';
+import SearchPage from './pages/search/Search.tsx';
 
 import Home from './pages/home/Home_v2.tsx';
 import OneNumber from './pages/personal/oferte/one_number/OneNumber.tsx';
@@ -77,6 +78,11 @@ export const routesConfig: RouteConfig[] = [
     path: '/:lang/one-number',
     i18nKey: 'not_found.title',
     element: React.createElement(OneNumber),
+  },
+  {
+    path: '/:lang/search',
+    i18nKey: 'not_found.title',
+    element: React.createElement(SearchPage),
   },
   {
     path: '*',

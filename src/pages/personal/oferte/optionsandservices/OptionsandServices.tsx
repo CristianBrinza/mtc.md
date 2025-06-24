@@ -13,10 +13,16 @@ import FaqV2 from '../../../../components/faqV2/FaqV2';
 import FaqQAV2 from '../../../../components/faqV2/FaqQAV2';
 import Popups from '../../../../components/Popups/Popups';
 import styles from './OptionsandServices.module.css';
+import SEO from '../../../../components/SEO';
 
 export default function OptionsandServices() {
   const { t } = useTranslation();
   const [activePopup, setActivePopup] = useState<string | null>(null);
+  const seo = {
+    title: t('pages.optionsandservices.title'),
+    description: t('pages.optionsandservices.description'),
+    keywords: t('pages.optionsandservices.keywords'),
+  };
   const breadcrumbItems = [
     { label: t('optionsandservices.breadcrumb.mobile'), url: ' ' },
     { label: t('optionsandservices.breadcrumb.optionsandservices') },
@@ -42,6 +48,7 @@ export default function OptionsandServices() {
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Chat />
       <Feedback />

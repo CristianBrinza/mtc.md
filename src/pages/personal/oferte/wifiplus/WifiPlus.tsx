@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next';
 import Popup from '../../../../components/Popup/Popup.tsx';
 import Chat from '../../../../components/chat/Chat.tsx';
 import Feedback from '../../../../components/feedback/Feedback.tsx';
+import SEO from '../../../../components/SEO';
 
 const ArrowIcon: React.FC<{ rotated?: boolean }> = ({ rotated = false }) => (
   <svg
@@ -35,6 +36,11 @@ const ArrowIcon: React.FC<{ rotated?: boolean }> = ({ rotated = false }) => (
 
 export default function WifiPlus() {
   const { t } = useTranslation();
+  const seo = {
+    title: t('pages.wifi_plus.title'),
+    description: t('pages.wifi_plus.description'),
+    keywords: t('pages.wifi_plus.keywords'),
+  };
   const breadcrumbItems = [
     { label: t('wifi_plus.breadcrumb.internet'), url: ' ' },
     { label: t('wifi_plus.breadcrumb.wifi_plus') },
@@ -84,6 +90,7 @@ export default function WifiPlus() {
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Chat />
       <Feedback />
