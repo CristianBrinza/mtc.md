@@ -29,7 +29,7 @@ const FaqQA: React.FC<FaqQAProps> = ({
             style_type === '1'
               ? 'var(--theme_primary_color_blue_3)'
               : style_type === '2'
-                ? 'var(----theme_primary_color_gray)'
+                ? 'var(--theme_primary_color_gray)'
                 : 'var(--theme_primary_color_gray)',
         }}
       >
@@ -52,7 +52,7 @@ const FaqQA: React.FC<FaqQAProps> = ({
             style_type === '1'
               ? 'var(--theme_primary_color_blue_3)'
               : style_type === '2'
-                ? 'var(----theme_primary_color_gray)'
+                ? 'var(--theme_primary_color_gray)'
                 : 'var(--theme_primary_color_gray)',
         }}
       >
