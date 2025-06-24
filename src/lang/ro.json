@@ -1181,9 +1181,12 @@
   },
   "search": {
     "breadcrumb": {
-      "title": "Cautare"
+      "title": "Căutare"
     },
-    "show_more": "mai multe"
+    "search": "Caută",
+    "text": "Găsește rapid serviciile, planurile tarifare și opțiuni Moldtelecom. Introdu un cuvânt-cheie și descoperă exact ce ai nevoie!",
+    "show_more": "mai multe",
+    "show_less": "mai puține"
   },
   "pages": {
     "wifi_plus": {

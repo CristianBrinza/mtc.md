@@ -1,3 +1,4 @@
+// Input.tsx
 import { FC } from 'react';
 import Icon, { icons } from '../Icon.tsx';
 import styles from './Input.module.css';
@@ -5,50 +6,52 @@ import styles from './Input.module.css';
 interface InputProps {
   placeholder?: string;
   value: string;
-  onChange: (value: string) => void;
-  icon?: keyof typeof icons; // Make the icon prop optional
+  /** now the full DOM event */
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
+  icon?: keyof typeof icons;
   name?: string;
   required?: boolean;
   className?: string;
-  type?: string; // Add type as an optional prop
-  min?: string; // Add min as an optional prop
-  max?: string; // Add max as an optional prop
+  type?: string;
+  min?: string;
+  max?: string;
 }
 
 const Input: FC<InputProps> = ({
   placeholder,
   value,
   onChange,
+  onKeyDown,
   icon,
   name,
   required = false,
   className = '',
-  type = 'text', // Default type to "text"
+  type = 'text',
   min,
   max,
-}) => {
-  return (
-    <div className={`${styles.costume_input_block} ${className}`}>
-      <input
-        type={type} // Use the type prop
-        name={name}
-        value={value}
-        placeholder={placeholder}
-        required={required}
-        className={styles.costume_input}
-        onChange={e => onChange(e.target.value)}
-        min={min} // Pass the min attribute
-        max={max} // Pass the max attribute
+}) => (
+  <div className={`${styles.costume_input_block} ${className}`}>
+    <input
+      type={type}
+      name={name}
+      value={value}
+      placeholder={placeholder}
+      required={required}
+      className={styles.costume_input}
+      onChange={onChange}
+      onKeyDown={onKeyDown}
+      min={min}
+      max={max}
+    />
+    {icon && (
+      <Icon
+        className={styles.costume_input_svg}
+        type={icon}
+        color="var(--theme_primary_color_darkest_gray)"
       />
-      {icon && (
-        <Icon
-          className={styles.costume_input_svg}
-          type={icon}
-          color="var(--theme_primary_color_darkest_gray)"
-        />
-      )}
-    </div>
-  );
-};
+    )}
+  </div>
+);
 
 export default Input;

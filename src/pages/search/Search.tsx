@@ -8,6 +8,8 @@ import Chat from '../../components/chat/Chat.tsx';
 import Feedback from '../../components/feedback/Feedback.tsx';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb.tsx';
 import styles from './Search.module.css';
+import Input from '../../components/input/Input.tsx';
+import Button from '../../components/Button.tsx';
 
 const PREFIX_TO_ROUTE: Record<string, string> = {
   home: '/',
@@ -127,14 +129,32 @@ export default function SearchPage() {
       <Breadcrumb items={breadcrumbItems} />
 
       <div className={styles.search}>
-        <input
-          type="text"
-          value={query}
-          onChange={e => setQuery(e.target.value)}
-          onKeyDown={e => e.key === 'Enter' && onSearch()}
-          placeholder="Search..."
-        />
-        <button onClick={onSearch}>Search</button>
+        <h1 className={`title ${styles.search_page_title}`}>
+          {t('search.breadcrumb.title')}
+        </h1>
+        <p className={styles.search_page_text}>{t('search.text')}</p>
+
+        <div className={styles.seach_top}>
+          <Input
+            type="text"
+            value={query}
+            onChange={e => setQuery(e.target.value)} // e is ChangeEvent, .target.value is string
+            onKeyDown={e => e.key === 'Enter' && onSearch()}
+            placeholder="Search..."
+          />
+
+          <Button
+            color={'var(--theme_primary_color_blue_4)'}
+            bgcolor={'var(--theme_primary_color_blue_3)'}
+            border={'var(--theme_primary_color_blue_1)'}
+            hover_border={'var(--theme_primary_color_blue_2)'}
+            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+            icon={'arrow_right'}
+            onClick={onSearch}
+          >
+            {t('search.search')}
+          </Button>
+        </div>
         <ul>
           {results.map((r, idx) => {
             const showAll = expanded[idx];
@@ -155,11 +175,12 @@ export default function SearchPage() {
                 ))}
                 {r.snippets.length > 3 && (
                   <button
+                    className={styles.search_more}
                     onClick={() =>
                       setExpanded(prev => ({ ...prev, [idx]: !prev[idx] }))
                     }
                   >
-                    {showAll ? t('general.faq_less') : t('search.show_more')}
+                    {showAll ? t('search.show_less') : t('search.show_more')}
                   </button>
                 )}
               </li>

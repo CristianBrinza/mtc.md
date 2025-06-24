@@ -3,7 +3,26 @@
   max-width: 1210px;
   padding: 0 20px;
   box-sizing: border-box;
-  height: calc(100vh - 240px);
+  min-height: calc(100vh - 240px);
   margin: 0 auto;
-
+}
+.seach_top {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.search_page_text {
+  margin-top: 5px;
+  max-width: 650px;
+  margin-bottom: 20px;
+}
+.search_more {
+  border: 0;
+  background: transparent;
+  text-decoration: underline;
+  color: #777ad0;
+  padding: 0px;
+}
+.search_page_title {
+  margin-top: 30px;
 }
