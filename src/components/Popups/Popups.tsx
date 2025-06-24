@@ -2,6 +2,8 @@
 import { useTranslation } from 'react-i18next';
 import Popup from '../Popup/Popup';
 import ScrollableWrapper from '../Popup/ScrollableWrapper.tsx';
+import styles from './Popups.module.css';
+import React, { useState } from 'react';
 
 interface PopupsProps {
   content: string | null;
@@ -9,8 +11,51 @@ interface PopupsProps {
   width?: string;
 }
 
+const ArrowIcon: React.FC<{ rotated?: boolean }> = ({ rotated = false }) => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    className={rotated ? styles.rotated : ''}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M3 8.5L12 17.5L21 8.5"
+      stroke="#B7B7B7"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+interface Row {
+  country: string;
+  operators: string[];
+}
+
 export default function Popups({ content, onClose, width }: PopupsProps) {
   const { t } = useTranslation();
+
+  const [openBlocks, setOpenBlocks] = useState<boolean[]>([]);
+
+  const toggleBlock = (index: number) => {
+    setOpenBlocks(prev => {
+      const copy = [...prev];
+      copy[index] = !copy[index];
+      return copy;
+    });
+  };
+  const rows_1 = t('operatorsTableRoamingEurope.rows', {
+    returnObjects: true,
+  }) as Row[];
+  const rows_2 = t('operatorsTableRoamingApeluriWorld.rows', {
+    returnObjects: true,
+  }) as Row[];
+  const rows_3 = t('operatorsTableRoamingInternetWorld.rows', {
+    returnObjects: true,
+  }) as Row[];
 
   return (
     <>
@@ -715,6 +760,57 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
               __html: t('popups.f5.deactivation.3'),
             }}
           />
+
+          <div
+            className={`${styles.wifi_carousell_btns_detalii_v2} ${styles.wifi_carousell_btns_detalii_v2_first}`}
+          >
+            {/* Block 0 */}
+            <div className={styles.wifi_carousell_btns_detalii_line}>
+              <div
+                className={styles.wifi_carousell_btns_detalii_line_title}
+                onClick={() => toggleBlock(0)}
+              >
+                {t('operatorsTableRoamingEurope.title')}
+                <ArrowIcon rotated={!!openBlocks[0]} />
+              </div>
+              <div
+                className={`${styles.wifi_carousell_btns_detalii_line_inside} ${
+                  openBlocks[0]
+                    ? styles.wifi_carousell_btns_detalii_line_inside_open
+                    : ''
+                }`}
+              >
+                <table className="popup_table">
+                  <thead>
+                    <tr>
+                      <td>
+                        <span>
+                          {t('operatorsTableRoamingEurope.header.country')}
+                        </span>
+                      </td>
+                      <td>
+                        <span>
+                          {t('operatorsTableRoamingEurope.header.operator')}
+                        </span>
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {rows_1.map(({ country, operators }, i) =>
+                      operators.map((op, j) => (
+                        <tr key={`${i}-${j}`}>
+                          {j === 0 && (
+                            <td rowSpan={operators.length}>{country}</td>
+                          )}
+                          <td>{op}</td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </Popup>
 
@@ -826,6 +922,111 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
               __html: t('popups.f6.deactivation.3'),
             }}
           />
+
+          <div
+            className={`${styles.wifi_carousell_btns_detalii_v2} ${styles.wifi_carousell_btns_detalii_v2_first}`}
+          >
+            {/* Block 0 */}
+            <div className={styles.wifi_carousell_btns_detalii_line}>
+              <div
+                className={styles.wifi_carousell_btns_detalii_line_title}
+                onClick={() => toggleBlock(2)}
+              >
+                {t('operatorsTableRoamingApeluriWorld.title')}
+                <ArrowIcon rotated={!!openBlocks[2]} />
+              </div>
+              <div
+                className={`${styles.wifi_carousell_btns_detalii_line_inside} ${
+                  openBlocks[2]
+                    ? styles.wifi_carousell_btns_detalii_line_inside_open
+                    : ''
+                }`}
+              >
+                <table className="popup_table">
+                  <thead>
+                    <tr>
+                      <td>
+                        <span>
+                          {t(
+                            'operatorsTableRoamingApeluriWorld.header.country'
+                          )}
+                        </span>
+                      </td>
+                      <td>
+                        <span>
+                          {t(
+                            'operatorsTableRoamingApeluriWorld.header.operator'
+                          )}
+                        </span>
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {rows_2.map(({ country, operators }, i) =>
+                      operators.map((op, j) => (
+                        <tr key={`${i}-${j}`}>
+                          {j === 0 && (
+                            <td rowSpan={operators.length}>{country}</td>
+                          )}
+                          <td>{op}</td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            {/* Block 1 */}
+            <div className={styles.wifi_carousell_btns_detalii_line}>
+              <div
+                className={styles.wifi_carousell_btns_detalii_line_title}
+                onClick={() => toggleBlock(3)}
+              >
+                {t('operatorsTableRoamingInternetWorld.title')}
+                <ArrowIcon rotated={!!openBlocks[3]} />
+              </div>
+              <div
+                className={`${styles.wifi_carousell_btns_detalii_line_inside} ${
+                  openBlocks[3]
+                    ? styles.wifi_carousell_btns_detalii_line_inside_open
+                    : ''
+                }`}
+              >
+                <table className="popup_table">
+                  <thead>
+                    <tr>
+                      <td>
+                        <span>
+                          {t(
+                            'operatorsTableRoamingInternetWorld.header.country'
+                          )}
+                        </span>
+                      </td>
+                      <td>
+                        <span>
+                          {t(
+                            'operatorsTableRoamingInternetWorld.header.operator'
+                          )}
+                        </span>
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {rows_3.map(({ country, operators }, i) =>
+                      operators.map((op, j) => (
+                        <tr key={`${i}-${j}`}>
+                          {j === 0 && (
+                            <td rowSpan={operators.length}>{country}</td>
+                          )}
+                          <td>{op}</td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </Popup>
 

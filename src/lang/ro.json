@@ -820,5 +820,363 @@
     "subtitle": "Pagină inexistentă - Oooops!",
     "text": "Ne pare rău, pagina pe care o cauți nu a fost găsită",
     "btn": "Înapoi acasă"
+  },
+  "operatorsTableRoamingEurope": {
+    "title": "Lista operatorilor",
+    "header": {
+      "country": "ȚARA",
+      "operator": "OPERATOR"
+    },
+    "rows": [
+      {
+        "country": "Austria",
+        "operators": [
+          "3 Austria (Hutchison Drei Austria)",
+          "T-Mobile Austria (Magenta)"
+        ]
+      },
+      {
+        "country": "Belgia",
+        "operators": ["Proximus", "Telenet Group (Base)"]
+      },
+      {
+        "country": "Bulgaria",
+        "operators": ["Vivacom Bulgaria", "Yettel Bulgaria"]
+      },
+      {
+        "country": "Cehia",
+        "operators": ["Vodafone Czech Republic", "O2 Czech Republic"]
+      },
+      { "country": "Cipru", "operators": ["Epic", "PrimeTel"] },
+      {
+        "country": "Croația",
+        "operators": ["Hrvatski Telekom", "Telemach Croatia"]
+      },
+      {
+        "country": "Danemarca",
+        "operators": ["3 Denmark (Hi3G Denmark)", "Telenor Denmark"]
+      },
+      {
+        "country": "Estonia",
+        "operators": [
+          "AS Eesti Telekom EMT",
+          "Telia Eesti AS",
+          "Tele2 Eesti AS"
+        ]
+      },
+      { "country": "Finlanda", "operators": ["DNA"] },
+      {
+        "country": "Franța",
+        "operators": ["Bouygues Telecom", "Free Mobile", "SFR"]
+      },
+      {
+        "country": "Germania",
+        "operators": ["Telekom Deutschland", "Vodafone"]
+      },
+      {
+        "country": "Grecia",
+        "operators": ["Cosmote Mobile", "Vodafone Greece"]
+      },
+      {
+        "country": "Irlanda",
+        "operators": [
+          "3 Ireland (Hutchison 3G Ireland)",
+          "Meteor Mobile Communications",
+          "Vodafone Ireland"
+        ]
+      },
+      { "country": "Islanda", "operators": ["Nova"] },
+      {
+        "country": "Italia",
+        "operators": [
+          "3 Italia (Wind Tre S.p.A.)",
+          "Vodafone Italia",
+          "ILIAD Italia"
+        ]
+      },
+      { "country": "Letonia", "operators": ["Bite Latvija", "Tele2"] },
+      { "country": "Liechtenstein", "operators": ["Salt Liechtenstein"] },
+      { "country": "Lituania", "operators": ["Bite Lietuva", "Tele2"] },
+      {
+        "country": "Luxemburg",
+        "operators": ["POST Luxembourg", "Proximus Luxembourg (Tango)"]
+      },
+      { "country": "Malta", "operators": ["Go Malta", "Melita", "Epic"] },
+      { "country": "Norvegia", "operators": ["Telenor"] },
+      {
+        "country": "Polonia",
+        "operators": ["PLAY (P4)", "Polkomtel (PLUS)", "Orange Polska"]
+      },
+      { "country": "Portugalia", "operators": ["Vodafone Portugal", "MEO"] },
+      {
+        "country": "România",
+        "operators": [
+          "Orange Romania",
+          "Telekom Romania Mobile",
+          "RCS&amp;RDS (Digi Mobil)",
+          "Vodafone Romania"
+        ]
+      },
+      { "country": "Slovacia", "operators": ["Slovak Telekom", "O2 Slovakia"] },
+      { "country": "Slovenia", "operators": ["Telemach"] },
+      { "country": "Spania", "operators": ["Vodafone España"] },
+      {
+        "country": "Suedia",
+        "operators": ["Hi3G (3 Sweden)", "Tele2", "Telenor Sverige (VIMLA)"]
+      },
+      {
+        "country": "Țările de jos",
+        "operators": ["KPN Mobile", "Vodafone (Ziggo)"]
+      },
+      {
+        "country": "Ungaria",
+        "operators": [
+          "Magyar Telekom",
+          "Yettel Magyarország",
+          "Vodafone Hungary"
+        ]
+      }
+    ]
+  },
+  "operatorsTableRoamingApeluriWorld": {
+    "title": "Lista operatorilor ”Apeluri World”",
+    "header": {
+      "country": "ȚARA",
+      "operator": "OPERATOR"
+    },
+    "rows": [
+      {
+        "country": "Austria",
+        "operators": [
+          "3 Austria (Hutchison Drei Austria)",
+          "T-Mobile Austria (Magenta)"
+        ]
+      },
+      {
+        "country": "Belgia",
+        "operators": ["Proximus", "Telenet Group (Base)"]
+      },
+      {
+        "country": "Bulgaria",
+        "operators": ["Vivacom Bulgaria", "Yettel Bulgaria"]
+      },
+      {
+        "country": "Cehia",
+        "operators": ["Vodafone Czech Republic", "O2 Czech Republic"]
+      },
+      { "country": "Cipru", "operators": ["Epic", "PrimeTel"] },
+      {
+        "country": "Croația",
+        "operators": ["Hrvatski Telecom", "Telemach Croatia"]
+      },
+      {
+        "country": "Danemarca",
+        "operators": ["3 Denmark (Hi3G Denmark)", "Telenor Denmark"]
+      },
+      {
+        "country": "Estonia",
+        "operators": [
+          "AS Eesti Telekom EMT",
+          "Telia Eesti AS",
+          "Tele2 Eesti AS"
+        ]
+      },
+      { "country": "Finlanda", "operators": ["DNA"] },
+      {
+        "country": "Franța",
+        "operators": ["Bouygues Telecom", "Free Mobile", "SFR"]
+      },
+      {
+        "country": "Germania",
+        "operators": ["Telekom Deutschland", "Vodafone"]
+      },
+      {
+        "country": "Grecia",
+        "operators": ["Cosmote Mobile", "Vodafone Greece"]
+      },
+      {
+        "country": "Irlanda",
+        "operators": [
+          "3 Ireland (Hutchison 3G Ireland)",
+          "Meteor Mobile Communications",
+          "Vodafone Ireland"
+        ]
+      },
+      { "country": "Islanda", "operators": ["Nova"] },
+      {
+        "country": "Italia",
+        "operators": [
+          "3 Italia (Wind Tre S.p.A.)",
+          "Vodafone Italia",
+          "ILIAD Italia"
+        ]
+      },
+      { "country": "Letonia", "operators": ["Bite Latvija", "Tele2"] },
+      { "country": "Liechtenstein", "operators": ["Salt Liechtenstein"] },
+      { "country": "Lituania", "operators": ["Bite Lietuva", "Tele2"] },
+      {
+        "country": "Luxemburg",
+        "operators": ["POST Luxembourg", "Proximus Luxembourg (Tango)"]
+      },
+      { "country": "Malta", "operators": ["Go Malta", "Melita", "Epic"] },
+      { "country": "Norvegia", "operators": ["Telenor"] },
+      {
+        "country": "Polonia",
+        "operators": ["PLAY (P4)", "Polkomtel (PLUS)", "Orange Polska"]
+      },
+      { "country": "Portugalia", "operators": ["Vodafone Portugal", "MEO"] },
+      {
+        "country": "România",
+        "operators": [
+          "Orange Romania",
+          "Telekom Romania Mobile",
+          "RCS&amp;RDS (Digi Mobil)",
+          "Vodafone Romania"
+        ]
+      },
+      { "country": "Slovacia", "operators": ["Slovak Telekom", "O2 Slovakia"] },
+      { "country": "Slovenia", "operators": ["Telemach"] },
+      { "country": "Spania", "operators": ["Vodafone España"] },
+      {
+        "country": "Suedia",
+        "operators": ["Hi3G (3 Sweden)", "Tele2", "Telenor Sverige (VIMLA)"]
+      },
+      {
+        "country": "Țările de jos",
+        "operators": ["KPN Mobile", "Vodafone (Ziggo)"]
+      },
+      {
+        "country": "Ungaria",
+        "operators": [
+          "Magyar Telekom",
+          "Yettel Magyarország",
+          "Vodafone Hungary"
+        ]
+      }
+    ]
+  },
+  "operatorsTableRoamingInternetWorld": {
+    "title": "Lista operatorilor ”Internet World”",
+    "header": {
+      "country": "ȚARA",
+      "operator": "OPERATOR"
+    },
+    "rows": [
+      {
+        "country": "Albania",
+        "operators": ["One Albania", "Vodafone Albania"]
+      },
+      {
+        "country": "Austria",
+        "operators": [
+          "3 Austria (Hutchison Drei Austria)",
+          "T-Mobile Austria (Magenta)"
+        ]
+      },
+      {
+        "country": "Belgia",
+        "operators": ["Proximus", "Telenet Group (Base)"]
+      },
+      {
+        "country": "Bulgaria",
+        "operators": ["Vivacom Bulgaria", "Yettel Bulgaria"]
+      },
+      {
+        "country": "Cehia",
+        "operators": ["Vodafone Czech Republic", "O2 Czech Republic"]
+      },
+      {
+        "country": "Croația",
+        "operators": ["Hrvatski Telecom", "Telemach Croatia"]
+      },
+      {
+        "country": "Danemarca",
+        "operators": ["3 Denmark (Hi3G Denmark)", "Telenor Denmark"]
+      },
+      { "country": "Elveția", "operators": ["Salt Mobile SA"] },
+      { "country": "Finlanda", "operators": ["DNA"] },
+      {
+        "country": "Franța",
+        "operators": ["Free Mobile", "SFR", "Bouygues Telecom"]
+      },
+      {
+        "country": "Germania",
+        "operators": ["Telekom Deutschland", "Vodafone"]
+      },
+      { "country": "Grecia", "operators": ["Vodafone Greece", "Cosmote"] },
+      {
+        "country": "Irlanda",
+        "operators": [
+          "3 Ireland (Hutchison 3G Ireland)",
+          "Vodafone Ireland",
+          "Meteor Mobile Communications"
+        ]
+      },
+      { "country": "Islanda", "operators": ["Nova"] },
+      { "country": "Israel", "operators": ["Hot Mobile"] },
+      {
+        "country": "Italia",
+        "operators": ["Wind Tre", "Vodafone Italia", "ILIAD Italia"]
+      },
+      { "country": "Letonia", "operators": ["Bite Latvija", "Tele2"] },
+      { "country": "Liechtenstein", "operators": ["Salt Liechtenstein"] },
+      { "country": "Lituania", "operators": ["Bite Lietuva", "Tele2"] },
+      { "country": "Luxembourg", "operators": ["POST Luxembourg", "Tango"] },
+      { "country": "Malta", "operators": ["Melita", "Epic", "Go"] },
+      {
+        "country": "Marea Britanie",
+        "operators": ["Hutchison 3G UK (Three UK)", "Vodafone UK"]
+      },
+      { "country": "Norvegia", "operators": ["Telenor"] },
+      { "country": "Noua Zeelanda", "operators": ["One NZ"] },
+      {
+        "country": "Polonia",
+        "operators": ["PLAY (P4)", "Polkomtel (PLUS)", "Orange Polska"]
+      },
+      { "country": "Portugalia", "operators": ["Vodafone Portugal", "MEO"] },
+      {
+        "country": "România",
+        "operators": [
+          "Digi Mobil",
+          "Orange Romania",
+          "Telekom Romania Mobile",
+          "Vodafone Romania"
+        ]
+      },
+      { "country": "Slovacia", "operators": ["Slovak Telekom", "O2 Slovakia"] },
+      { "country": "Slovenia", "operators": ["Telemach"] },
+      { "country": "SUA", "operators": ["AT&T Mobility"] },
+      {
+        "country": "Suedia",
+        "operators": ["Hi3G (3 Sweden)", "Tele2", "Telenor Sverige (VIMLA)"]
+      },
+      {
+        "country": "Țările de jos",
+        "operators": ["Vodafone (Ziggo)", "KPN Mobile"]
+      },
+      {
+        "country": "Thailanda",
+        "operators": ["True Move H Universal Communication Co (True)"]
+      },
+      {
+        "country": "Turcia",
+        "operators": [
+          "Turkcell Iletisim Hizmetleri (Turkcell)",
+          "Vodafone Telekomunikasyon"
+        ]
+      },
+      {
+        "country": "Ucraina",
+        "operators": ["Kyivstar", "Vodafone UA", "TriMob UA"]
+      },
+      {
+        "country": "Ungaria",
+        "operators": [
+          "Vodafone Hungary",
+          "Magyar Telekom (Telekom HU)",
+          "Yettel Magyarország"
+        ]
+      }
+    ]
   }
 }

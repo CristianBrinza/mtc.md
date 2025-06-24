@@ -112,7 +112,7 @@
 }
 
 @media (max-width: 720px) {
-  .popup_table {
+  .popup_table_wrapper_outer .popup_table {
     min-width: 520px;
   }
 
