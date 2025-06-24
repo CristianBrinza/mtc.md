@@ -8,6 +8,7 @@ import Chat from '../../components/chat/Chat.tsx';
 import Feedback from '../../components/feedback/Feedback.tsx';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb.tsx';
 import styles from './Search.module.css';
+import SEO from '../../components/SEO';
 import Input from '../../components/input/Input.tsx';
 import Button from '../../components/Button.tsx';
 
@@ -71,12 +72,17 @@ function snippetAround(value: string, tokens: string[]): string {
 
 export default function SearchPage() {
   const { language } = useLanguage();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<
     { route: string; name: string; snippets: string[] }[]
   >([]);
   const [expanded, setExpanded] = useState<Record<number, boolean>>({});
+  const seo = {
+    title: t('pages.search.title'),
+    description: t('pages.search.description'),
+    keywords: t('pages.search.keywords'),
+  };
 
   const onSearch = () => {
     const bundle = i18n.getResourceBundle(language, 'translation') as Record<
@@ -123,6 +129,7 @@ export default function SearchPage() {
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Chat />
       <Feedback />

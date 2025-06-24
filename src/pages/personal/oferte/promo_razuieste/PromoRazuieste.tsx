@@ -13,9 +13,15 @@ import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
 import MyApp from '../../../../components/app/MyApp.tsx';
 import { useState } from 'react';
 import Popup from '../../../../components/Popup/Popup.tsx';
+import SEO from '../../../../components/SEO';
 
 export default function PromoRazuieste() {
   const { t } = useTranslation();
+  const seo = {
+    title: t('pages.promorazuieste.title'),
+    description: t('pages.promorazuieste.description'),
+    keywords: t('pages.promorazuieste.keywords'),
+  };
   const breadcrumbItems = [
     { label: t('promorazuieste.breadcrumb.app'), url: ' ' },
     { label: t('promorazuieste.breadcrumb.name') },
@@ -33,6 +39,7 @@ export default function PromoRazuieste() {
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Chat />
       <Feedback />

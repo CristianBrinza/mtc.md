@@ -1191,13 +1191,48 @@
   "pages": {
     "wifi_plus": {
       "title": "WiFi Plus",
-      "description": "Serviciu Wi-Fi performant pentru acoperire integrală a locuinței.",
-      "keywords": "wifi plus internet"
+      "description": "Serviciu Wi‑Fi performant care asigură acoperire continuă în toată locuința și control facil din aplicație.",
+      "keywords": "wifi plus, mesh, router, internet, wireless, acoperire, casă, semnal, viteză înaltă, conexiune"
     },
     "optionsandservices": {
       "title": "Opțiuni Mobile",
-      "description": "Informații despre opțiunile și serviciile mobile disponibile.",
-      "keywords": "optiuni mobile servicii"
+      "description": "Prezentare detaliată a planurilor mobile, funcțiilor de roaming și a serviciilor suplimentare oferite de Moldtelecom.",
+      "keywords": "mobil, opțiuni, servicii, tarife, roaming, prepaid, postpaid, internet, apeluri, sms"
+    },
+    "mobile": {
+      "title": "Telefonie Mobilă",
+      "description": "Descoperă cele mai noi smartphone‑uri și abonamente flexibile care te mențin conectat oriunde.",
+      "keywords": "mobil, smartphone, abonamente, tarife, prepaid, postpaid, oferte, 4G, 5G, Moldova"
+    },
+    "triple": {
+      "title": "Internet + TV + Mobil",
+      "description": "Pachete Triple Play ce includ internet rapid, televiziune digitală și servicii mobile într-un singur contract.",
+      "keywords": "triple play, internet, tv, mobil, pachete, bundle, viteză înaltă, digital, servicii, Moldtelecom"
+    },
+    "magazine": {
+      "title": "Magazine",
+      "description": "Găsește cel mai apropiat magazin Moldtelecom, verifică programul și obține indicații pentru asistență directă.",
+      "keywords": "magazin, moldtelecom, adresă, locații, program, orar, suport, dispozitive, servicii, hartă"
+    },
+    "promorazuieste": {
+      "title": "Weekend cu beneficii",
+      "description": "Răzuiește cartonașul în fiecare weekend în aplicația My Moldtelecom și câștigă instant bonusuri pentru serviciile mobile.",
+      "keywords": "weekend, răzuiește și câștigă, bonusuri, my moldtelecom, mobil, internet, gratuit, premii, campanie, Moldova"
+    },
+    "one_number": {
+      "title": "One Number",
+      "description": "Folosește același număr de telefon pe mai multe dispozitive și rămâi disponibil pe toate gadgeturile tale.",
+      "keywords": "one number, multi device, smartwatch, tabletă, telefon, partajare număr, mobil, apeluri, sms, Moldtelecom"
+    },
+    "home": {
+      "title": "Moldtelecom",
+      "description": "Site-ul oficial Moldtelecom cu informații despre servicii, oferte și ultimele noutăți.",
+      "keywords": "moldtelecom, internet, tv, mobil, oferte, servicii, companie, noutăți, Moldova"
+    },
+    "search": {
+      "title": "Căutare",
+      "description": "Găsește rapid serviciile, planurile și opțiunile Moldtelecom folosind cuvinte cheie.",
+      "keywords": "căutare, moldtelecom, servicii, planuri, opțiuni, internet, tv, mobil, Moldova"
     }
   }
 }

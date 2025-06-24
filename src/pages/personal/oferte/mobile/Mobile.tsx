@@ -20,8 +20,16 @@ import Button from '../../../../components/Button.tsx';
 import OptionsCards from '../../../../components/options_cards/OptionsCards.tsx';
 import Input from '../../../../components/input/Input.tsx';
 import Popup from '../../../../components/Popup/Popup.tsx';
+import { useTranslation } from 'react-i18next';
+import SEO from '../../../../components/SEO';
 
 export default function Mobile() {
+  const { t } = useTranslation();
+  const seo = {
+    title: t('pages.mobile.title'),
+    description: t('pages.mobile.description'),
+    keywords: t('pages.mobile.keywords'),
+  };
   const breadcrumbItems = [
     { label: 'Promo', url: ' ' },
     { label: 'Telefonie mobila' },
@@ -124,6 +132,7 @@ export default function Mobile() {
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Breadcrumb items={breadcrumbItems} />
       <Hero color=" #F7F7F7">
