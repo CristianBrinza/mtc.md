@@ -5,7 +5,7 @@ interface ScrollToTopProps {
   behavior?: ScrollBehavior; // 'auto' | 'smooth'
 }
 
-const ScrollToTop: React.FC<ScrollToTopProps> = ({ behavior = 'instant' }) => {
+const ScrollToTop: React.FC<ScrollToTopProps> = ({ behavior = 'auto' }) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
