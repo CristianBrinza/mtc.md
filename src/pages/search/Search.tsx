@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../../context/LanguageContext';
+import Footer from '../../components/footer/Footer.tsx';
+import Navbar from '../../components/navbar/Navbar.tsx';
+import Chat from '../../components/chat/Chat.tsx';
+import Feedback from '../../components/feedback/Feedback.tsx';
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumb.tsx';
+import styles from './Search.module.css';
 
 const PREFIX_TO_ROUTE: Record<string, string> = {
   home: '/',
@@ -19,7 +25,11 @@ interface Match {
   value: string;
 }
 
-function collectMatches(obj: Record<string, any>, query: string, path: string[] = []): Match[] {
+function collectMatches(
+  obj: Record<string, any>,
+  query: string,
+  path: string[] = []
+): Match[] {
   let matches: Match[] = [];
   for (const [key, value] of Object.entries(obj)) {
     if (path.length === 0 && key === 'pages') continue; // skip meta
@@ -29,7 +39,9 @@ function collectMatches(obj: Record<string, any>, query: string, path: string[] 
         matches.push({ path: newPath, value });
       }
     } else if (typeof value === 'object' && value) {
-      matches = matches.concat(collectMatches(value as Record<string, any>, query, newPath));
+      matches = matches.concat(
+        collectMatches(value as Record<string, any>, query, newPath)
+      );
     }
   }
   return matches;
@@ -54,13 +66,24 @@ export default function SearchPage() {
   const { language } = useLanguage();
   const { i18n } = useTranslation();
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<{ route: string; name: string; snippet: string }[]>([]);
+  const [results, setResults] = useState<
+    { route: string; name: string; snippet: string }[]
+  >([]);
 
   const onSearch = () => {
-    const bundle = i18n.getResourceBundle(language, 'translation') as Record<string, any>;
-    const meta = (bundle.pages || {}) as Record<string, { title: string; description: string; keywords: string }>;
+    const bundle = i18n.getResourceBundle(language, 'translation') as Record<
+      string,
+      any
+    >;
+    const meta = (bundle.pages || {}) as Record<
+      string,
+      { title: string; description: string; keywords: string }
+    >;
     const matches = collectMatches(bundle, query);
-    const grouped: Record<string, { route: string; name: string; snippets: string[] }> = {};
+    const grouped: Record<
+      string,
+      { route: string; name: string; snippets: string[] }
+    > = {};
     matches.forEach(({ path, value }) => {
       const prefix = path[0];
       const route = PREFIX_TO_ROUTE[prefix];
@@ -74,35 +97,50 @@ export default function SearchPage() {
         grouped[prefix].snippets.push(snippet);
       }
     });
-    const res = Object.values(grouped).map(g => ({ route: g.route, name: g.name, snippet: g.snippets.join('<br/>') }));
+    const res = Object.values(grouped).map(g => ({
+      route: g.route,
+      name: g.name,
+      snippet: g.snippets.join('<br/>'),
+    }));
     setResults(res);
   };
 
+  const { t } = useTranslation();
+  const breadcrumbItems = [{ label: t('search.breadcrumb.title') }];
+
   return (
-    <div style={{ padding: '1rem' }}>
-      <input
-        type="text"
-        value={query}
-        onChange={e => setQuery(e.target.value)}
-        onKeyDown={e => e.key === 'Enter' && onSearch()}
-        placeholder="Search..."
-      />
-      <button onClick={onSearch}>Search</button>
-      <ul>
-        {results.map((r, idx) => (
-          <li key={idx} style={{ marginBottom: '1rem' }}>
-            {r.route === '*' ? (
-              <span>{r.name}</span>
-            ) : (
-              <Link to={`/${language}${r.route}`}>{r.name}</Link>
-            )}
-            <div
-              style={{ fontSize: '0.9rem' }}
-              dangerouslySetInnerHTML={{ __html: r.snippet }}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <Navbar />
+      <Chat />
+      <Feedback />
+      <Breadcrumb items={breadcrumbItems} />
+
+      <div className={styles.search}>
+        <input
+          type="text"
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && onSearch()}
+          placeholder="Search..."
+        />
+        <button onClick={onSearch}>Search</button>
+        <ul>
+          {results.map((r, idx) => (
+            <li key={idx} style={{ marginBottom: '1rem' }}>
+              {r.route === '*' ? (
+                <span>{r.name}</span>
+              ) : (
+                <Link to={`/${language}${r.route}`}>{r.name}</Link>
+              )}
+              <div
+                style={{ fontSize: '0.9rem' }}
+                dangerouslySetInnerHTML={{ __html: r.snippet }}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+      <Footer disclaimer={true} />
+    </>
   );
 }

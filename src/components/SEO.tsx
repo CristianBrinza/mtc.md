@@ -11,7 +11,9 @@ export default function SEO({ title, description, keywords }: SEOProps) {
     document.title = title;
 
     const setMeta = (name: string, value: string) => {
-      let element = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
+      let element = document.querySelector(
+        `meta[name="${name}"]`
+      ) as HTMLMetaElement | null;
       if (!element) {
         element = document.createElement('meta');
         element.setAttribute('name', name);
@@ -21,7 +23,9 @@ export default function SEO({ title, description, keywords }: SEOProps) {
     };
 
     const setOG = (property: string, value: string) => {
-      let element = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
+      let element = document.querySelector(
+        `meta[property="${property}"]`
+      ) as HTMLMetaElement | null;
       if (!element) {
         element = document.createElement('meta');
         element.setAttribute('property', property);
