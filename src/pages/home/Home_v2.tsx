@@ -26,6 +26,10 @@ interface newsItem {
 }
 
 export default function Home() {
+  useEffect(() => {
+    window.location.href = `https://www.moldtelecom.md/${t('lang')}`;
+  });
+
   const settings = {
     dots: true,
     infinite: true,

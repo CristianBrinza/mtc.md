@@ -8,8 +8,8 @@ import IconShowcase from './pages/technical/IconShowcase.tsx';
 import WifiPlus from './pages/personal/oferte/wifiplus/WifiPlus.tsx';
 import OptionsandServices from './pages/personal/oferte/optionsandservices/OptionsandServices.tsx';
 import PromoRazuieste from './pages/personal/oferte/promo_razuieste/PromoRazuieste.tsx';
-import HomeTemplink from './pages/home/Home_templink.tsx';
-import Home from './pages/home/Home.tsx';
+
+import Home from './pages/home/Home_v2.tsx';
 import OneNumber from './pages/personal/oferte/one_number/OneNumber.tsx';
 // import { TestPage } from './pages/test/Test.tsx';
 
@@ -20,26 +20,9 @@ export interface RouteConfig {
 }
 
 export const routesConfig: RouteConfig[] = [
-  // { path: '/', i18nKey: 'home.title', element: React.createElement(Home) },
-  // {
-  //   path: '/:lang/',
-  //   i18nKey: 'home.title',
-  //   element: React.createElement(Home),
-  // },
+  { path: '/', i18nKey: 'home.title', element: React.createElement(Home) },
   {
-    path: '',
-    i18nKey: 'home.title',
-    // element: React.createElement(Home),
-    element: React.createElement(HomeTemplink),
-  },
-  {
-    path: '/:lang',
-    i18nKey: 'home.title',
-    // element: React.createElement(Home),
-    element: React.createElement(HomeTemplink),
-  },
-  {
-    path: '/:lang/home',
+    path: '/:lang/',
     i18nKey: 'home.title',
     element: React.createElement(Home),
   },
