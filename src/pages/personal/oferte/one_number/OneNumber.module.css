@@ -240,6 +240,24 @@
     width: 1300px;
     margin-left: calc((1300px - 100vw) / -2);
   }
+  .one_number_block_1 {
+    flex-direction: column;
+    max-width: 880px;
+  }
+  .one_number_block_1_inside {
+    width: 100%;
+    max-width: 100%;
+  }
+  .activate_img {
+    max-width: 280px;
+  }
+  .activate {
+    max-width: 880px;
+  }
+  .activate_how_explain {
+    width: 100%;
+    max-width: 420px;
+  }
 }
 @media (max-width: 1150px) {
   .hero {

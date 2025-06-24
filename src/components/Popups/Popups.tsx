@@ -240,6 +240,7 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
             <li>{t('popups.f1.conditions.3')}</li>
             <li>{t('popups.f1.conditions.4')}</li>
             <li>{t('popups.f1.conditions.5')}</li>
+            <li>{t('popups.f1.conditions.6')}</li>
           </ul>
 
           <h3>{t('popups.f1.activationTitle')}</h3>
@@ -341,6 +342,9 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
             <li>{t('popups.f2.conditions.2')}</li>
             <li>{t('popups.f2.conditions.3')}</li>
             <li>{t('popups.f2.conditions.4')}</li>
+            <li>{t('popups.f2.conditions.5')}</li>
+            <li>{t('popups.f2.conditions.6')}</li>
+            <li>{t('popups.f2.conditions.7')}</li>
           </ul>
 
           <h3>{t('popups.f2.activationTitle')}</h3>
@@ -451,6 +455,11 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
             <li>{t('popups.f3.conditions.4')}</li>
             <li>{t('popups.f3.conditions.5')}</li>
             <li>{t('popups.f3.conditions.6')}</li>
+            <li>{t('popups.f3.conditions.7')}</li>
+            <li>{t('popups.f3.conditions.8')}</li>
+            <li>{t('popups.f3.conditions.9')}</li>
+            <li>{t('popups.f3.conditions.10')}</li>
+            <li>{t('popups.f3.conditions.11')}</li>
           </ul>
 
           <h3>{t('popups.f3.activationTitle')}</h3>
@@ -547,6 +556,7 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
             <li>{t('popups.f4.conditions.5')}</li>
             <li>{t('popups.f4.conditions.6')}</li>
             <li>{t('popups.f4.conditions.7')}</li>
+            <li>{t('popups.f4.conditions.8')}</li>
           </ul>
 
           <h3>{t('popups.f4.activationTitle')}</h3>
@@ -650,6 +660,8 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
             <li>{t('popups.f5.conditions.2')}</li>
             <li>{t('popups.f5.conditions.3')}</li>
             <li>{t('popups.f5.conditions.4')}</li>
+            <li>{t('popups.f5.conditions.5')}</li>
+            <li>{t('popups.f5.conditions.6')}</li>
             <ul>
               <li>{t('popups.f5.conditions_sub.0')}</li>
               <li>{t('popups.f5.conditions_sub.1')}</li>
@@ -760,6 +772,9 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
             <li>{t('popups.f6.conditions.1')}</li>
             <li>{t('popups.f6.conditions.2')}</li>
             <li>{t('popups.f6.conditions.3')}</li>
+            <li>{t('popups.f6.conditions.4')}</li>
+            <li>{t('popups.f6.conditions.5')}</li>
+            <li>{t('popups.f6.conditions.6')}</li>
           </ul>
 
           <h3>{t('popups.f6.activationTitle')}</h3>

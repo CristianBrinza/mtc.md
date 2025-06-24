@@ -261,7 +261,7 @@ export default function OneNumber() {
             hover_bgcolor={'var(--theme_primary_color_blue_2)'}
             icon={'arrow_right'}
           >
-            Activează acum
+            Activează ONE NUMBER
           </Button>
         </div>
         <div className={styles.one_number_block_1_inside}>

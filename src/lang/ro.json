@@ -399,7 +399,7 @@
           ],
           [
             "<span>Internet Nelimitat 7 zile</span>",
-            "<span>Nelimitat/7</span>",
+            "<span>Nelimitat/7 zile</span>",
             "nelimitat",
             "100 lei",
             "7 zile"
@@ -439,9 +439,10 @@
         "Opțiunile pentru 1 zi sunt valabile 24 ore din momentul activării.",
         "Opțiunea poate fi activată în orice zi, de mai multe ori pe lună.",
         "Viteza de acces la internet este în funcţie de terminalul utilizat.",
-        "Pot fi activate până la 5 opțiuni concomitent, diferite sau de același fel.",
+        "Utilizatori Postpay pot activa până la 5 opțiuni concomitent, diferite sau de același fel. ",
+        "Utilizatorii Prepay pot beneficia de un numar nelimitat de optiuni concomitent active.",
         "Opțiunile sunt valabile doar în perioada activă.",
-        "Opțiunea este disponibilă pentru toţi abonații Moldtelecom, deținători de abonamente sau cartela Prepay, telefonie mobilă sau internet mobil."
+        "Optiunile sunt disponibile pentru toți  abonații Postpay și utilizatorii Prepay Moldtelecom, indiferent de planul tarif deținut."
       ],
       "activationTitle": "Activare opțiune:",
       "activation": [
@@ -457,8 +458,8 @@
         "headers": ["Descriere opțiune", "SMS Cod", "Tarif", "Valabilitate"],
         "rows": [
           ["50 minute<span> / 30 zile</span>", "50min", "15 lei", "30 zile"],
-          ["100 minute<span> / 30 zile</span>", "100min", "40 lei", "30 zile"],
-          ["200 minute<span> / 30 zile</span>", "200min", "70 lei", "30 zile"]
+          ["100 minute<span> / 30 zile</span>", "100min", "30 lei", "30 zile"],
+          ["200 minute<span> / 30 zile</span>", "200min", "60 lei", "30 zile"]
         ]
       },
       "conditionsTitle": "Condițiile de utilizare a opţiunii",
@@ -467,7 +468,10 @@
         "Minutele opțiunii nu se cumulează cu cele din abonament.",
         "În caz de abonament deja cu minute incluse, opțiunea are prioritate.",
         "Opțiunea poate fi activată în orice zi, de mai multe ori pe lună.",
-        "La schimb de pachet, opțiunea se păstrează."
+        "La schimb de abonament opțiunile activate se vor pastra;",
+        "La schimb de titular  opțiunile activate nu se vor pastra.",
+        "Utilizatori Postpay pot activa până la 5 opțiuni concomitent, diferite sau de același fel.",
+        "Utilizatorii Prepay pot beneficia de un numar nelimitat de optiuni concomitent active"
       ],
       "activationTitle": "Activare opțiune:",
       "activation": [
@@ -513,13 +517,18 @@
       },
       "conditionsTitle": "Condițiile de utilizare a opţiunii",
       "conditions": [
-        "Opțiunea este valabilă 30 zile.",
-        "Opțiunea „Europa, Israel, SUA, Canada” conține următoarele destinații internaționale: Ucraina, Italia, Romania, Germania, Franța, Cehia, Marea Britanie, Polonia, Grecia, Portugalia, Spania, Belarusia, Estonia, Belgia, Turcia, Israel, USA, Canada.",
+        "Opțiunile sunt valabile 30 zile.",
+        "Opțiunea „Europa, Israel, SUA, Canada” conține următoarele destinații internaționale: Ucraina, Italia, România, Germania, Franța, Cehia, Marea Britanie, Polonia, Grecia, Portugalia, Spania, Belarus, Estonia, Belgia, Turcia, Israel, SUA, Canada. Destinație națională: regiunea transnistreană.",
+        "Opțiunea România și Ucraina include 30 minute în rețeaua fixă și mobilă spre România și Ucraina.",
         "Opțiunea Orice Țară conține destinațiile din Zona 1, Zona 2, Zona 3.",
         "Minutele incluse în opțiune sunt destinate pentru apeluri spre orice rețea mobilă sau fixă.",
-        "După consumarea Minutelor internaționale incluse în opțiune, convorbirile vor fi taxate la tarifele standard aplicate pentru fiecare țară în parte.",
-        "Pot fi activate până la 5 opțiuni concomitent, diferite sau de același fel.",
-        "Opțiunea este disponibilă pentru toţi abonații Moldtelecom, deținători de abonamente sau cartela Prepay, telefonie mobilă sau internet mobil."
+        "După consumarea minutelor internaționale incluse în opțiune, convorbirile vor fi taxate la tarifele standard aplicate pentru fiecare țară în parte.",
+        "Opțiunile sunt valabile doar în perioada activă.",
+        "Opțiunile sunt disponibile pentru toți abonații Postpay și utilizatorii Prepay, indiferent de planul tarifar deținut.",
+        "La schimb de abonament, opțiunile activate se vor păstra.",
+        "La schimb de titular, opțiunile activate nu se vor păstra.",
+        "Utilizatorii Prepay pot beneficia de un număr nelimitat de opțiuni concomitent active.",
+        "Utilizatorii Postpay pot activa până la 5 opțiuni concomitent, diferite sau de același fel."
       ],
       "activationTitle": "Activare opțiune:",
       "activation": [
@@ -541,15 +550,17 @@
       },
       "conditionsTitle": "Condițiile de utilizare a opţiunii",
       "conditions": [
-        "Opțiunea este valabilă 30 zile calendaristice.",
+        "Opțiunile sunt valabile 30 zile calendaristice.",
         "Conținutul de SMS neconsumat nu se va raporta în perioada următoare.",
         "Opțiunea poate fi activată în orice zi, de mai multe ori pe lună.",
-        "Opțiunile ”SMS” activate se vor consuma prioritar conținutului din abonament sau cartelă.",
-        "La schimbul de pachet opțiunea va fi păstrată.",
+        "Opțiunile „SMS” activate se vor consuma prioritar conținutului din abonament sau cartelă.",
         "După consumarea SMS-urilor incluse în opțiune, SMS-urile expediate vor fi taxate la tarifele aferente planului tarifar.",
-        "Opțiunile sunt valabile când abonatul se afla în perioada activă.",
-        "Opțiunea este disponibilă pentru toţi abonații Moldtelecom, deținători de abonamente sau cartela Prepay, telefonie mobilă sau internet mobil."
+        "Opțiunile sunt valabile când abonatul se află în perioada activă.",
+        "Opțiunile sunt disponibile pentru toți abonații Postpay și utilizatorii Prepay Moldtelecom, indiferent de planul tarifar deținut.",
+        "La schimb de abonament, opțiunile activate se vor păstra.",
+        "La schimb de titular, opțiunile activate nu se vor păstra."
       ],
+
       "activationTitle": "Activare opțiune:",
       "activation": [
         "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
@@ -577,9 +588,11 @@
       "conditionsTitle": "Condițiile de utilizare a opţiunii",
       "conditions": [
         "Tarifele includ toate taxele, inclusiv TVA.",
-        "Seria de opțiuni „Roaming UE” este disponibilă pentru toți abonații de Telefonie mobilă Postpay, Voce și Date și Prepay.",
+        "Seria de opțiuni „Roaming UE” este disponibilă pentru toți abonații de Telefonie mobilă Postpay, Voce și Date și utilizatori Prepay.",
         "După consumarea conținutului în Roaming inclus în opțiune, convorbirile și traficul internet vor fi taxate conform tarifelor standard în roaming pentru fiecare operator.",
         "Conținutul opțiunilor este destinat pentru utilizarea în Roaming în rețeaua operatorilor, conform listei.",
+        "La schimb de abonament opțiunile activate se vor pastra;",
+        "La schimb de titular  opțiunile activate nu se vor pastra;",
         "Minutele incluse în opțiunile “Internet Roaming UE” și “Combo Roaming UE” repartizate după cum urmează:"
       ],
       "conditions_sub": [
@@ -619,11 +632,14 @@
       "conditionsTitle": "Condițiile de utilizare a opţiunii",
       "conditions": [
         "Tarifele includ toate taxele, inclusiv TVA.",
-        "Seria de opțiuni „World” este disponibilă pentru toți abonații de Telefonie mobilă Postpay, Voce și Date și Prepay.",
+        "Seria de opțiuni „World” este disponibilă pentru toți abonații de Telefonie mobilă Postpay, Voce și Date și utilizatori Prepay.",
         "După consumarea conținutului în Roaming inclus în opțiune, convorbirile și traficul internet vor fi taxate conform tarifelor standard în roaming pentru fiecare operator.",
         "Viteza de acces la internet este conform condițiilor de prestare a serviciului în vigoare de către operator și în funcție de terminalul utilizat.",
-        "Minutele incluse în opțiunea Apeluri World pot fi utilizate pentru „apeluri de ieșire locale”, „apeluri de ieșire către MD”."
+        "Minutele incluse în opțiunea Apeluri World pot fi utilizate pentru „apeluri de ieșire locale” și „apeluri de ieșire către MD”.",
+        "La schimb de abonament, opțiunile activate se vor păstra.",
+        "La schimb de titular, opțiunile activate nu se vor păstra."
       ],
+
       "activationTitle": "Activare opțiune:",
       "activation": [
         "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
