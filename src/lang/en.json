@@ -10,6 +10,12 @@
     "faq_less": "show less",
     "videos": "Video"
   },
+  "search": {
+    "breadcrumb": {
+      "title": "Search"
+    },
+    "show_more": "show more"
+  },
   "optionsandservices": {
     "breadcrumb": {
       "mobile": "Mobile",

@@ -25,33 +25,38 @@ interface Match {
   value: string;
 }
 
+function normalize(str: string): string {
+  return str.toLowerCase().replace(/[-\s]/g, '');
+}
+
 function collectMatches(
   obj: Record<string, any>,
-  query: string,
+  tokens: string[],
   path: string[] = []
 ): Match[] {
   let matches: Match[] = [];
   for (const [key, value] of Object.entries(obj)) {
-    if (path.length === 0 && key === 'pages') continue; // skip meta
     const newPath = [...path, key];
     if (typeof value === 'string') {
-      if (value.toLowerCase().includes(query.toLowerCase())) {
+      const normalizedValue = normalize(value);
+      const found = tokens.every(t => normalizedValue.includes(t));
+      if (found) {
         matches.push({ path: newPath, value });
       }
     } else if (typeof value === 'object' && value) {
       matches = matches.concat(
-        collectMatches(value as Record<string, any>, query, newPath)
+        collectMatches(value as Record<string, any>, tokens, newPath)
       );
     }
   }
   return matches;
 }
 
-function snippetAround(value: string, query: string): string {
+function snippetAround(value: string, tokens: string[]): string {
   const words = value.split(/\s+/);
-  const lowerQuery = query.toLowerCase();
   for (let i = 0; i < words.length; i++) {
-    if (words[i].toLowerCase().includes(lowerQuery)) {
+    const n = normalize(words[i]);
+    if (tokens.some(t => n.includes(t))) {
       const start = Math.max(0, i - 5);
       const end = Math.min(words.length, i + 6);
       const before = words.slice(start, i).join(' ');
@@ -67,8 +72,9 @@ export default function SearchPage() {
   const { i18n } = useTranslation();
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<
-    { route: string; name: string; snippet: string }[]
+    { route: string; name: string; snippets: string[] }[]
   >([]);
+  const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
   const onSearch = () => {
     const bundle = i18n.getResourceBundle(language, 'translation') as Record<
@@ -79,7 +85,11 @@ export default function SearchPage() {
       string,
       { title: string; description: string; keywords: string }
     >;
-    const matches = collectMatches(bundle, query);
+    const tokens = query.split(/\s+/).map(normalize).filter(Boolean);
+    const matches = [
+      ...collectMatches(bundle, tokens),
+      ...collectMatches(meta, tokens),
+    ];
     const grouped: Record<
       string,
       { route: string; name: string; snippets: string[] }
@@ -89,7 +99,7 @@ export default function SearchPage() {
       const route = PREFIX_TO_ROUTE[prefix];
       if (!route) return; // skip general content
       const name = meta[prefix]?.title || route;
-      const snippet = snippetAround(value, query);
+      const snippet = snippetAround(value, tokens);
       if (!grouped[prefix]) {
         grouped[prefix] = { route, name, snippets: [] };
       }
@@ -100,8 +110,9 @@ export default function SearchPage() {
     const res = Object.values(grouped).map(g => ({
       route: g.route,
       name: g.name,
-      snippet: g.snippets.join('<br/>'),
+      snippets: g.snippets,
     }));
+    setExpanded({});
     setResults(res);
   };
 
@@ -125,19 +136,35 @@ export default function SearchPage() {
         />
         <button onClick={onSearch}>Search</button>
         <ul>
-          {results.map((r, idx) => (
-            <li key={idx} style={{ marginBottom: '1rem' }}>
-              {r.route === '*' ? (
-                <span>{r.name}</span>
-              ) : (
-                <Link to={`/${language}${r.route}`}>{r.name}</Link>
-              )}
-              <div
-                style={{ fontSize: '0.9rem' }}
-                dangerouslySetInnerHTML={{ __html: r.snippet }}
-              />
-            </li>
-          ))}
+          {results.map((r, idx) => {
+            const showAll = expanded[idx];
+            const visible = showAll ? r.snippets : r.snippets.slice(0, 3);
+            return (
+              <li key={idx} style={{ marginBottom: '1rem' }}>
+                {r.route === '*' ? (
+                  <span>{r.name}</span>
+                ) : (
+                  <Link to={`/${language}${r.route}`}>{r.name}</Link>
+                )}
+                {visible.map((s, i) => (
+                  <div
+                    key={i}
+                    style={{ fontSize: '0.9rem' }}
+                    dangerouslySetInnerHTML={{ __html: s }}
+                  />
+                ))}
+                {r.snippets.length > 3 && (
+                  <button
+                    onClick={() =>
+                      setExpanded(prev => ({ ...prev, [idx]: !prev[idx] }))
+                    }
+                  >
+                    {showAll ? t('general.faq_less') : t('search.show_more')}
+                  </button>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
       <Footer disclaimer={true} />
