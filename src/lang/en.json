@@ -175,5 +175,17 @@
       "sructure": "Organizational structure",
       "consul": "Company board"
     }
-  }
+  },
+  "pages": {
+    "wifi_plus": {
+      "title": "WiFi Plus",
+      "description": "High performance mesh WiFi for whole home coverage.",
+      "keywords": "wifi plus mesh internet"
+    },
+    "optionsandservices": {
+      "title": "Mobile Options",
+      "description": "Overview of mobile options and extra services.",
+      "keywords": "mobile options services"
+    }
+  },
 }
