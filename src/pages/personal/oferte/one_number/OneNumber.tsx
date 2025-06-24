@@ -14,9 +14,15 @@ import Button from '../../../../components/Button.tsx';
 import CostumeFunctions from '../../../../components/functions/CostumeFunctions.tsx';
 import React from 'react';
 import Icon from '../../../../components/Icon.tsx';
+import SEO from '../../../../components/SEO';
 
 export default function OneNumber() {
   const { t } = useTranslation();
+  const seo = {
+    title: t('pages.one_number.title'),
+    description: t('pages.one_number.description'),
+    keywords: t('pages.one_number.keywords'),
+  };
   const breadcrumbItems = [
     // { label: t('promorazuieste.breadcrumb.app'), url: ' ' },
     // { label: t('promorazuieste.breadcrumb.name') },
@@ -31,6 +37,7 @@ export default function OneNumber() {
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Chat />
       <Feedback />

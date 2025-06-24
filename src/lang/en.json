@@ -185,13 +185,48 @@
   "pages": {
     "wifi_plus": {
       "title": "WiFi Plus",
-      "description": "High performance mesh WiFi for whole home coverage.",
-      "keywords": "wifi plus mesh internet"
+      "description": "High performance mesh WiFi with seamless coverage across your entire home and simple control through the app.",
+      "keywords": "wifi plus, mesh, router, internet, wireless, coverage, home, signal, high speed, connection"
     },
     "optionsandservices": {
       "title": "Mobile Options",
-      "description": "Overview of mobile options and extra services.",
-      "keywords": "mobile options services"
+      "description": "Detailed overview of mobile plans, roaming features and additional services for your Moldtelecom phone.",
+      "keywords": "mobile, options, services, tariffs, roaming, prepaid, postpaid, internet, calls, sms"
+    },
+    "mobile": {
+      "title": "Mobile Telephony",
+      "description": "Discover the latest smartphones and flexible mobile plans that keep you connected everywhere.",
+      "keywords": "mobile, smartphones, plans, tariffs, prepaid, postpaid, offers, 4G, 5G, Moldova"
+    },
+    "triple": {
+      "title": "Internet + TV + Mobile",
+      "description": "Triple play packages that combine high‑speed internet, digital TV and mobile services in one contract.",
+      "keywords": "triple play, internet, tv, mobile, packages, bundles, high speed, digital, services, Moldtelecom"
+    },
+    "magazine": {
+      "title": "Stores",
+      "description": "Find your nearest Moldtelecom store, view opening hours and get directions for in‑person assistance.",
+      "keywords": "moldtelecom store, shop, address, locations, schedule, opening hours, support, devices, services, map"
+    },
+    "promorazuieste": {
+      "title": "Weekend with Benefits",
+      "description": "Scratch the card each weekend in the My Moldtelecom app and instantly win bonuses for your mobile service.",
+      "keywords": "weekend, scratch and win, bonuses, my moldtelecom, mobile, internet, free, prizes, campaign, Moldova"
+    },
+    "one_number": {
+      "title": "One Number",
+      "description": "Use the same phone number on multiple devices and stay reachable on all your gadgets.",
+      "keywords": "one number, multi device, smartwatch, tablet, phone, number sharing, mobile, calls, sms, Moldtelecom"
+    },
+    "home": {
+      "title": "Moldtelecom",
+      "description": "Official Moldtelecom website with information about services, offers and the latest news.",
+      "keywords": "moldtelecom, internet, tv, mobile, offers, services, company, news, Moldova"
+    },
+    "search": {
+      "title": "Search",
+      "description": "Find Moldtelecom services, plans and options quickly using keywords.",
+      "keywords": "search, moldtelecom, services, plans, options, internet, tv, mobile, Moldova"
     }
   }
 }

@@ -14,8 +14,16 @@ import MyApp from '../../../../components/app/MyApp.tsx';
 import Popup from '../../../../components/Popup/Popup.tsx';
 import { useState } from 'react';
 import PopupBuy from '../../../../components/PopupBuy/PopupBuy.tsx';
+import { useTranslation } from 'react-i18next';
+import SEO from '../../../../components/SEO';
 
 export default function Triple() {
+  const { t } = useTranslation();
+  const seo = {
+    title: t('pages.triple.title'),
+    description: t('pages.triple.description'),
+    keywords: t('pages.triple.keywords'),
+  };
   const breadcrumbItems = [
     { label: 'Promo', url: ' ' },
     { label: 'Internet + TV + Mobil' },
@@ -56,6 +64,7 @@ export default function Triple() {
 
   return (
     <>
+      <SEO {...seo} />
       <Popup
         id="1281570"
         width="900px"

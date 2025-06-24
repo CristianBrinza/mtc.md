@@ -1,5 +1,6 @@
 // src/pages/magazine/Magazine.tsx
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Navbar from '../../../components/navbar/Navbar';
 import Chat from '../../../components/chat/Chat';
 import Feedback from '../../../components/feedback/Feedback';
@@ -7,6 +8,7 @@ import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb';
 import Footer from '../../../components/footer/Footer';
 import Button from '../../../components/Button';
 import styles from './Magazine.module.css';
+import SEO from '../../../components/SEO';
 
 //
 // 1) Raw shape coming from your endpoint
@@ -41,6 +43,12 @@ interface Mag {
 }
 
 export default function Magazine() {
+  const { t } = useTranslation();
+  const seo = {
+    title: t('pages.magazine.title'),
+    description: t('pages.magazine.description'),
+    keywords: t('pages.magazine.keywords'),
+  };
   const breadcrumbItems = [
     { label: 'Asistență', url: ' ' },
     { label: 'Magazine' },
@@ -142,6 +150,7 @@ export default function Magazine() {
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Breadcrumb items={breadcrumbItems} max_width={1180} />
 

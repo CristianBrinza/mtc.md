@@ -10,6 +10,7 @@ import Footer from '../../components/footer/Footer.tsx';
 import ShopCard from '../../components/shop_card/ShopCard.tsx';
 import Icon from '../../components/Icon.tsx';
 import Videos from '../../components/videos/Videos.tsx';
+import SEO from '../../components/SEO';
 
 interface videosItem {
   url_ro?: string;
@@ -41,6 +42,11 @@ export default function Home() {
   };
 
   const { t } = useTranslation();
+  const seo = {
+    title: t('pages.home.title'),
+    description: t('pages.home.description'),
+    keywords: t('pages.home.keywords'),
+  };
 
   const settings_phones = {
     dots: true,
@@ -132,6 +138,7 @@ export default function Home() {
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
 
       <Slider {...settings} className={styles.home_slider}>
