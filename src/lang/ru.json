@@ -1337,5 +1337,17 @@
         ]
       }
     ]
+  },
+  "pages": {
+    "wifi_plus": {
+      "title": "WiFi Plus",
+      "description": "Высокопроизводительный Wi-Fi для покрытия всего дома.",
+      "keywords": "wifi plus интернет"
+    },
+    "optionsandservices": {
+      "title": "Мобильные опции",
+      "description": "Информация о доступных мобильных опциях и сервисах.",
+      "keywords": "мобильные опции сервисы"
+    }
   }
 }

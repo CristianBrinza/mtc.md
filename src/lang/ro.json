@@ -1178,5 +1178,17 @@
         ]
       }
     ]
+  },
+  "pages": {
+    "wifi_plus": {
+      "title": "WiFi Plus",
+      "description": "Serviciu Wi-Fi performant pentru acoperire integrală a locuinței.",
+      "keywords": "wifi plus internet"
+    },
+    "optionsandservices": {
+      "title": "Opțiuni Mobile",
+      "description": "Informații despre opțiunile și serviciile mobile disponibile.",
+      "keywords": "optiuni mobile servicii"
+    }
   }
 }
