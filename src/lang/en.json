@@ -570,31 +570,11 @@
     "f2": {
       "title": "Minute Naționale",
       "table": {
-        "headers": [
-          "Descriere opțiune",
-          "SMS Cod",
-          "Tarif",
-          "Valabilitate"
-        ],
+        "headers": ["Descriere opțiune", "SMS Cod", "Tarif", "Valabilitate"],
         "rows": [
-          [
-            "50 minute<span> / 30 zile</span>",
-            "50min",
-            "15 lei",
-            "30 zile"
-          ],
-          [
-            "100 minute<span> / 30 zile</span>",
-            "100min",
-            "30 lei",
-            "30 zile"
-          ],
-          [
-            "200 minute<span> / 30 zile</span>",
-            "200min",
-            "60 lei",
-            "30 zile"
-          ]
+          ["50 minute<span> / 30 zile</span>", "50min", "15 lei", "30 zile"],
+          ["100 minute<span> / 30 zile</span>", "100min", "30 lei", "30 zile"],
+          ["200 minute<span> / 30 zile</span>", "200min", "60 lei", "30 zile"]
         ]
       },
       "conditionsTitle": "Condițiile de utilizare a opţiunii",
@@ -676,31 +656,11 @@
     "f4": {
       "title": "Pachete SMS",
       "table": {
-        "headers": [
-          "Descriere opțiune",
-          "SMS Cod",
-          "Tarif",
-          "Valabilitate"
-        ],
+        "headers": ["Descriere opțiune", "SMS Cod", "Tarif", "Valabilitate"],
         "rows": [
-          [
-            "50 SMS Naționale",
-            "SMS50",
-            "10 lei",
-            "30 zile"
-          ],
-          [
-            "20 SMS Internaționale",
-            "SMS35",
-            "35 lei",
-            "30 zile"
-          ],
-          [
-            "100 SMS Naționale",
-            "SMS15",
-            "15 lei",
-            "30 zile"
-          ]
+          ["50 SMS Naționale", "SMS50", "10 lei", "30 zile"],
+          ["20 SMS Internaționale", "SMS35", "35 lei", "30 zile"],
+          ["100 SMS Naționale", "SMS15", "15 lei", "30 zile"]
         ]
       },
       "conditionsTitle": "Condițiile de utilizare a opţiunii",
@@ -734,27 +694,9 @@
           "Valabilitate"
         ],
         "rows": [
-          [
-            "Apeluri Roaming UE",
-            "UE70apel",
-            "100 min",
-            "70 lei",
-            "30 zile"
-          ],
-          [
-            "Internet Roaming UE",
-            "UE100net",
-            "2 GB",
-            "100 lei",
-            "30 zile"
-          ],
-          [
-            "Combo Roaming UE",
-            "UE100",
-            "1 GB / 50 min",
-            "100 lei",
-            "30 zile"
-          ]
+          ["Apeluri Roaming UE", "UE70apel", "100 min", "70 lei", "30 zile"],
+          ["Internet Roaming UE", "UE100net", "2 GB", "100 lei", "30 zile"],
+          ["Combo Roaming UE", "UE100", "1 GB / 50 min", "100 lei", "30 zile"]
         ]
       },
       "conditionsTitle": "Condițiile de utilizare a opţiunii",
@@ -797,20 +739,8 @@
           "Valabilitate"
         ],
         "rows": [
-          [
-            "Apeluri World",
-            "Wapel",
-            "70 lei",
-            "10 min",
-            "30 zile"
-          ],
-          [
-            "Internet World",
-            "Wnet",
-            "100 lei",
-            "1 GB",
-            "30 zile"
-          ]
+          ["Apeluri World", "Wapel", "70 lei", "10 min", "30 zile"],
+          ["Internet World", "Wnet", "100 lei", "1 GB", "30 zile"]
         ]
       },
       "conditionsTitle": "Condițiile de utilizare a opţiunii",
@@ -865,16 +795,8 @@
       "title": "Upload Maxim",
       "paragraph": "Opțiunea \"Upload Maxim\" presupune acordarea vitezei de upload de 5,76 Mbps.",
       "table": {
-        "headers": [
-          "Descriere opțiune",
-          "Tarif"
-        ],
-        "rows": [
-          [
-            "<span>Upload Maxim</span>",
-            "<span>20 lei</span>"
-          ]
-        ]
+        "headers": ["Descriere opțiune", "Tarif"],
+        "rows": [["<span>Upload Maxim</span>", "<span>20 lei</span>"]]
       },
       "conditionsTitle": "Condițiile de utilizare a opţiunii",
       "conditions": [
@@ -1052,45 +974,27 @@
       },
       {
         "country": "Belgia",
-        "operators": [
-          "Proximus",
-          "Telenet Group (Base)"
-        ]
+        "operators": ["Proximus", "Telenet Group (Base)"]
       },
       {
         "country": "Bulgaria",
-        "operators": [
-          "Vivacom Bulgaria",
-          "Yettel Bulgaria"
-        ]
+        "operators": ["Vivacom Bulgaria", "Yettel Bulgaria"]
       },
       {
         "country": "Cehia",
-        "operators": [
-          "Vodafone Czech Republic",
-          "O2 Czech Republic"
-        ]
+        "operators": ["Vodafone Czech Republic", "O2 Czech Republic"]
       },
       {
         "country": "Cipru",
-        "operators": [
-          "Epic",
-          "PrimeTel"
-        ]
+        "operators": ["Epic", "PrimeTel"]
       },
       {
         "country": "Croația",
-        "operators": [
-          "Hrvatski Telekom",
-          "Telemach Croatia"
-        ]
+        "operators": ["Hrvatski Telekom", "Telemach Croatia"]
       },
       {
         "country": "Danemarca",
-        "operators": [
-          "3 Denmark (Hi3G Denmark)",
-          "Telenor Denmark"
-        ]
+        "operators": ["3 Denmark (Hi3G Denmark)", "Telenor Denmark"]
       },
       {
         "country": "Estonia",
@@ -1102,31 +1006,19 @@
       },
       {
         "country": "Finlanda",
-        "operators": [
-          "DNA"
-        ]
+        "operators": ["DNA"]
       },
       {
         "country": "Franța",
-        "operators": [
-          "Bouygues Telecom",
-          "Free Mobile",
-          "SFR"
-        ]
+        "operators": ["Bouygues Telecom", "Free Mobile", "SFR"]
       },
       {
         "country": "Germania",
-        "operators": [
-          "Telekom Deutschland",
-          "Vodafone"
-        ]
+        "operators": ["Telekom Deutschland", "Vodafone"]
       },
       {
         "country": "Grecia",
-        "operators": [
-          "Cosmote Mobile",
-          "Vodafone Greece"
-        ]
+        "operators": ["Cosmote Mobile", "Vodafone Greece"]
       },
       {
         "country": "Irlanda",
@@ -1138,9 +1030,7 @@
       },
       {
         "country": "Islanda",
-        "operators": [
-          "Nova"
-        ]
+        "operators": ["Nova"]
       },
       {
         "country": "Italia",
@@ -1152,59 +1042,35 @@
       },
       {
         "country": "Letonia",
-        "operators": [
-          "Bite Latvija",
-          "Tele2"
-        ]
+        "operators": ["Bite Latvija", "Tele2"]
       },
       {
         "country": "Liechtenstein",
-        "operators": [
-          "Salt Liechtenstein"
-        ]
+        "operators": ["Salt Liechtenstein"]
       },
       {
         "country": "Lituania",
-        "operators": [
-          "Bite Lietuva",
-          "Tele2"
-        ]
+        "operators": ["Bite Lietuva", "Tele2"]
       },
       {
         "country": "Luxemburg",
-        "operators": [
-          "POST Luxembourg",
-          "Proximus Luxembourg (Tango)"
-        ]
+        "operators": ["POST Luxembourg", "Proximus Luxembourg (Tango)"]
       },
       {
         "country": "Malta",
-        "operators": [
-          "Go Malta",
-          "Melita",
-          "Epic"
-        ]
+        "operators": ["Go Malta", "Melita", "Epic"]
       },
       {
         "country": "Norvegia",
-        "operators": [
-          "Telenor"
-        ]
+        "operators": ["Telenor"]
       },
       {
         "country": "Polonia",
-        "operators": [
-          "PLAY (P4)",
-          "Polkomtel (PLUS)",
-          "Orange Polska"
-        ]
+        "operators": ["PLAY (P4)", "Polkomtel (PLUS)", "Orange Polska"]
       },
       {
         "country": "Portugalia",
-        "operators": [
-          "Vodafone Portugal",
-          "MEO"
-        ]
+        "operators": ["Vodafone Portugal", "MEO"]
       },
       {
         "country": "România",
@@ -1217,37 +1083,23 @@
       },
       {
         "country": "Slovacia",
-        "operators": [
-          "Slovak Telekom",
-          "O2 Slovakia"
-        ]
+        "operators": ["Slovak Telekom", "O2 Slovakia"]
       },
       {
         "country": "Slovenia",
-        "operators": [
-          "Telemach"
-        ]
+        "operators": ["Telemach"]
       },
       {
         "country": "Spania",
-        "operators": [
-          "Vodafone España"
-        ]
+        "operators": ["Vodafone España"]
       },
       {
         "country": "Suedia",
-        "operators": [
-          "Hi3G (3 Sweden)",
-          "Tele2",
-          "Telenor Sverige (VIMLA)"
-        ]
+        "operators": ["Hi3G (3 Sweden)", "Tele2", "Telenor Sverige (VIMLA)"]
       },
       {
         "country": "Țările de jos",
-        "operators": [
-          "KPN Mobile",
-          "Vodafone (Ziggo)"
-        ]
+        "operators": ["KPN Mobile", "Vodafone (Ziggo)"]
       },
       {
         "country": "Ungaria",
@@ -1275,45 +1127,27 @@
       },
       {
         "country": "Belgia",
-        "operators": [
-          "Proximus",
-          "Telenet Group (Base)"
-        ]
+        "operators": ["Proximus", "Telenet Group (Base)"]
       },
       {
         "country": "Bulgaria",
-        "operators": [
-          "Vivacom Bulgaria",
-          "Yettel Bulgaria"
-        ]
+        "operators": ["Vivacom Bulgaria", "Yettel Bulgaria"]
       },
       {
         "country": "Cehia",
-        "operators": [
-          "Vodafone Czech Republic",
-          "O2 Czech Republic"
-        ]
+        "operators": ["Vodafone Czech Republic", "O2 Czech Republic"]
       },
       {
         "country": "Cipru",
-        "operators": [
-          "Epic",
-          "PrimeTel"
-        ]
+        "operators": ["Epic", "PrimeTel"]
       },
       {
         "country": "Croația",
-        "operators": [
-          "Hrvatski Telecom",
-          "Telemach Croatia"
-        ]
+        "operators": ["Hrvatski Telecom", "Telemach Croatia"]
       },
       {
         "country": "Danemarca",
-        "operators": [
-          "3 Denmark (Hi3G Denmark)",
-          "Telenor Denmark"
-        ]
+        "operators": ["3 Denmark (Hi3G Denmark)", "Telenor Denmark"]
       },
       {
         "country": "Estonia",
@@ -1325,31 +1159,19 @@
       },
       {
         "country": "Finlanda",
-        "operators": [
-          "DNA"
-        ]
+        "operators": ["DNA"]
       },
       {
         "country": "Franța",
-        "operators": [
-          "Bouygues Telecom",
-          "Free Mobile",
-          "SFR"
-        ]
+        "operators": ["Bouygues Telecom", "Free Mobile", "SFR"]
       },
       {
         "country": "Germania",
-        "operators": [
-          "Telekom Deutschland",
-          "Vodafone"
-        ]
+        "operators": ["Telekom Deutschland", "Vodafone"]
       },
       {
         "country": "Grecia",
-        "operators": [
-          "Cosmote Mobile",
-          "Vodafone Greece"
-        ]
+        "operators": ["Cosmote Mobile", "Vodafone Greece"]
       },
       {
         "country": "Irlanda",
@@ -1361,9 +1183,7 @@
       },
       {
         "country": "Islanda",
-        "operators": [
-          "Nova"
-        ]
+        "operators": ["Nova"]
       },
       {
         "country": "Italia",
@@ -1375,59 +1195,35 @@
       },
       {
         "country": "Letonia",
-        "operators": [
-          "Bite Latvija",
-          "Tele2"
-        ]
+        "operators": ["Bite Latvija", "Tele2"]
       },
       {
         "country": "Liechtenstein",
-        "operators": [
-          "Salt Liechtenstein"
-        ]
+        "operators": ["Salt Liechtenstein"]
       },
       {
         "country": "Lituania",
-        "operators": [
-          "Bite Lietuva",
-          "Tele2"
-        ]
+        "operators": ["Bite Lietuva", "Tele2"]
       },
       {
         "country": "Luxemburg",
-        "operators": [
-          "POST Luxembourg",
-          "Proximus Luxembourg (Tango)"
-        ]
+        "operators": ["POST Luxembourg", "Proximus Luxembourg (Tango)"]
       },
       {
         "country": "Malta",
-        "operators": [
-          "Go Malta",
-          "Melita",
-          "Epic"
-        ]
+        "operators": ["Go Malta", "Melita", "Epic"]
       },
       {
         "country": "Norvegia",
-        "operators": [
-          "Telenor"
-        ]
+        "operators": ["Telenor"]
       },
       {
         "country": "Polonia",
-        "operators": [
-          "PLAY (P4)",
-          "Polkomtel (PLUS)",
-          "Orange Polska"
-        ]
+        "operators": ["PLAY (P4)", "Polkomtel (PLUS)", "Orange Polska"]
       },
       {
         "country": "Portugalia",
-        "operators": [
-          "Vodafone Portugal",
-          "MEO"
-        ]
+        "operators": ["Vodafone Portugal", "MEO"]
       },
       {
         "country": "România",
@@ -1440,37 +1236,23 @@
       },
       {
         "country": "Slovacia",
-        "operators": [
-          "Slovak Telekom",
-          "O2 Slovakia"
-        ]
+        "operators": ["Slovak Telekom", "O2 Slovakia"]
       },
       {
         "country": "Slovenia",
-        "operators": [
-          "Telemach"
-        ]
+        "operators": ["Telemach"]
       },
       {
         "country": "Spania",
-        "operators": [
-          "Vodafone España"
-        ]
+        "operators": ["Vodafone España"]
       },
       {
         "country": "Suedia",
-        "operators": [
-          "Hi3G (3 Sweden)",
-          "Tele2",
-          "Telenor Sverige (VIMLA)"
-        ]
+        "operators": ["Hi3G (3 Sweden)", "Tele2", "Telenor Sverige (VIMLA)"]
       },
       {
         "country": "Țările de jos",
-        "operators": [
-          "KPN Mobile",
-          "Vodafone (Ziggo)"
-        ]
+        "operators": ["KPN Mobile", "Vodafone (Ziggo)"]
       },
       {
         "country": "Ungaria",
@@ -1491,10 +1273,7 @@
     "rows": [
       {
         "country": "Albania",
-        "operators": [
-          "One Albania",
-          "Vodafone Albania"
-        ]
+        "operators": ["One Albania", "Vodafone Albania"]
       },
       {
         "country": "Austria",
@@ -1505,72 +1284,43 @@
       },
       {
         "country": "Belgia",
-        "operators": [
-          "Proximus",
-          "Telenet Group (Base)"
-        ]
+        "operators": ["Proximus", "Telenet Group (Base)"]
       },
       {
         "country": "Bulgaria",
-        "operators": [
-          "Vivacom Bulgaria",
-          "Yettel Bulgaria"
-        ]
+        "operators": ["Vivacom Bulgaria", "Yettel Bulgaria"]
       },
       {
         "country": "Cehia",
-        "operators": [
-          "Vodafone Czech Republic",
-          "O2 Czech Republic"
-        ]
+        "operators": ["Vodafone Czech Republic", "O2 Czech Republic"]
       },
       {
         "country": "Croația",
-        "operators": [
-          "Hrvatski Telecom",
-          "Telemach Croatia"
-        ]
+        "operators": ["Hrvatski Telecom", "Telemach Croatia"]
       },
       {
         "country": "Danemarca",
-        "operators": [
-          "3 Denmark (Hi3G Denmark)",
-          "Telenor Denmark"
-        ]
+        "operators": ["3 Denmark (Hi3G Denmark)", "Telenor Denmark"]
       },
       {
         "country": "Elveția",
-        "operators": [
-          "Salt Mobile SA"
-        ]
+        "operators": ["Salt Mobile SA"]
       },
       {
         "country": "Finlanda",
-        "operators": [
-          "DNA"
-        ]
+        "operators": ["DNA"]
       },
       {
         "country": "Franța",
-        "operators": [
-          "Free Mobile",
-          "SFR",
-          "Bouygues Telecom"
-        ]
+        "operators": ["Free Mobile", "SFR", "Bouygues Telecom"]
       },
       {
         "country": "Germania",
-        "operators": [
-          "Telekom Deutschland",
-          "Vodafone"
-        ]
+        "operators": ["Telekom Deutschland", "Vodafone"]
       },
       {
         "country": "Grecia",
-        "operators": [
-          "Vodafone Greece",
-          "Cosmote"
-        ]
+        "operators": ["Vodafone Greece", "Cosmote"]
       },
       {
         "country": "Irlanda",
@@ -1582,92 +1332,55 @@
       },
       {
         "country": "Islanda",
-        "operators": [
-          "Nova"
-        ]
+        "operators": ["Nova"]
       },
       {
         "country": "Israel",
-        "operators": [
-          "Hot Mobile"
-        ]
+        "operators": ["Hot Mobile"]
       },
       {
         "country": "Italia",
-        "operators": [
-          "Wind Tre",
-          "Vodafone Italia",
-          "ILIAD Italia"
-        ]
+        "operators": ["Wind Tre", "Vodafone Italia", "ILIAD Italia"]
       },
       {
         "country": "Letonia",
-        "operators": [
-          "Bite Latvija",
-          "Tele2"
-        ]
+        "operators": ["Bite Latvija", "Tele2"]
       },
       {
         "country": "Liechtenstein",
-        "operators": [
-          "Salt Liechtenstein"
-        ]
+        "operators": ["Salt Liechtenstein"]
       },
       {
         "country": "Lituania",
-        "operators": [
-          "Bite Lietuva",
-          "Tele2"
-        ]
+        "operators": ["Bite Lietuva", "Tele2"]
       },
       {
         "country": "Luxembourg",
-        "operators": [
-          "POST Luxembourg",
-          "Tango"
-        ]
+        "operators": ["POST Luxembourg", "Tango"]
       },
       {
         "country": "Malta",
-        "operators": [
-          "Melita",
-          "Epic",
-          "Go"
-        ]
+        "operators": ["Melita", "Epic", "Go"]
       },
       {
         "country": "Marea Britanie",
-        "operators": [
-          "Hutchison 3G UK (Three UK)",
-          "Vodafone UK"
-        ]
+        "operators": ["Hutchison 3G UK (Three UK)", "Vodafone UK"]
       },
       {
         "country": "Norvegia",
-        "operators": [
-          "Telenor"
-        ]
+        "operators": ["Telenor"]
       },
       {
         "country": "Noua Zeelanda",
-        "operators": [
-          "One NZ"
-        ]
+        "operators": ["One NZ"]
       },
       {
         "country": "Polonia",
-        "operators": [
-          "PLAY (P4)",
-          "Polkomtel (PLUS)",
-          "Orange Polska"
-        ]
+        "operators": ["PLAY (P4)", "Polkomtel (PLUS)", "Orange Polska"]
       },
       {
         "country": "Portugalia",
-        "operators": [
-          "Vodafone Portugal",
-          "MEO"
-        ]
+        "operators": ["Vodafone Portugal", "MEO"]
       },
       {
         "country": "România",
@@ -1680,43 +1393,27 @@
       },
       {
         "country": "Slovacia",
-        "operators": [
-          "Slovak Telekom",
-          "O2 Slovakia"
-        ]
+        "operators": ["Slovak Telekom", "O2 Slovakia"]
       },
       {
         "country": "Slovenia",
-        "operators": [
-          "Telemach"
-        ]
+        "operators": ["Telemach"]
       },
       {
         "country": "SUA",
-        "operators": [
-          "AT&T Mobility"
-        ]
+        "operators": ["AT&T Mobility"]
       },
       {
         "country": "Suedia",
-        "operators": [
-          "Hi3G (3 Sweden)",
-          "Tele2",
-          "Telenor Sverige (VIMLA)"
-        ]
+        "operators": ["Hi3G (3 Sweden)", "Tele2", "Telenor Sverige (VIMLA)"]
       },
       {
         "country": "Țările de jos",
-        "operators": [
-          "Vodafone (Ziggo)",
-          "KPN Mobile"
-        ]
+        "operators": ["Vodafone (Ziggo)", "KPN Mobile"]
       },
       {
         "country": "Thailanda",
-        "operators": [
-          "True Move H Universal Communication Co (True)"
-        ]
+        "operators": ["True Move H Universal Communication Co (True)"]
       },
       {
         "country": "Turcia",
@@ -1727,11 +1424,7 @@
       },
       {
         "country": "Ucraina",
-        "operators": [
-          "Kyivstar",
-          "Vodafone UA",
-          "TriMob UA"
-        ]
+        "operators": ["Kyivstar", "Vodafone UA", "TriMob UA"]
       },
       {
         "country": "Ungaria",

@@ -124,7 +124,6 @@ export default function SearchPage() {
     setResults(res);
   };
 
-  const { t } = useTranslation();
   const breadcrumbItems = [{ label: t('search.breadcrumb.title') }];
 
   return (

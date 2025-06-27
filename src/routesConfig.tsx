@@ -13,7 +13,7 @@ import SearchPage from './pages/search/Search.tsx';
 import Home from './pages/home/Home_v2.tsx';
 import OneNumber from './pages/personal/oferte/one_number/OneNumber.tsx';
 import Contacts from './pages/personal/contacts/Contacts.tsx';
-// import { TestPage } from './pages/test/Test.tsx';
+import FormTestPage from './pages/test/Test.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -79,6 +79,10 @@ export const routesConfig: RouteConfig[] = [
   {
     path: '/:lang/contacts',
     element: React.createElement(Contacts),
+  },
+  {
+    path: '/:lang/form-test',
+    element: React.createElement(FormTestPage),
   },
   {
     path: '*',

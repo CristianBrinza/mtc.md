@@ -8,7 +8,10 @@ import Footer from '../../../components/footer/Footer.tsx';
 
 export default function Contacts() {
   const { t } = useTranslation();
-  const breadcrumbItems = [{ label: t('contacts.breadcrumb.title') }];
+  const breadcrumbItems = [
+    { label: t('contacts.breadcrumb.help'), url: ' ' },
+    { label: t('contacts.breadcrumb.title') },
+  ];
 
   return (
     <>
