@@ -34,7 +34,7 @@
   background: var(--theme_primary_color_light_gray);
   padding: 8px 0 3px;
   border-radius: 15px;
-  margin: 10px auto 0px;
+  margin: 10px auto 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,8 +173,8 @@
   line-height: 40px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  margin: 80px auto 25px;
-  margin: 80px auto 20px;
+  /*margin: 80px auto 25px;*/
+  margin: 20px auto 10px;
   width: 98vw;
   max-width: 1400px;
 }
@@ -185,6 +185,13 @@
   fill: #727272;
   cursor: pointer;
 }
+.home_deals_block {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.02);
+  margin: 0px 0 40px;
+  padding: 40px 0 1px;
+  box-sizing: border-box;
+}
 .home_deals_btns {
   width: 98vw;
   max-width: 1400px;
@@ -192,7 +199,7 @@
   gap: 15px;
   /*padding: 10px 0;*/
   /*box-sizing: border-box;*/
-  margin: 0 auto 70px;
+  margin: 0 auto 50px;
   align-items: center;
   justify-content: flex-end;
 }
@@ -222,7 +229,7 @@
 .home_promo {
   width: 100%;
   max-width: 1400px;
-  margin: 20px auto 0;
+  margin: 10px auto 0;
   display: flex;
   gap: 20px;
 }
@@ -274,7 +281,7 @@
   line-height: 40px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  margin: 30px auto 10px;
+  margin: 30px auto 0px;
   width: 98vw;
   max-width: 1400px;
 }
@@ -342,7 +349,7 @@
 
 .home_carousell {
   width: 100%;
-  margin: 30px auto 0px;
+  margin: 20px auto 0px;
 }
 .home_carousell {
   position: relative;
@@ -496,11 +503,12 @@
   height: 240px;
   overflow: hidden;
   display: flex;
-  border-radius: 15px;
   align-items: center;
   justify-content: center;
+  border-radius: 15px;
 }
 .news_inside_left_img {
+  border-radius: 15px;
   width: 100%;
   transform: scale(1);
   transition: transform 0.2s ease-in-out;
@@ -526,7 +534,7 @@
   line-height: 20px;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1490px) {
   .news {
     width: 100%;
     max-width: 880px;
@@ -540,5 +548,37 @@
   }
   .news_inside_right_block {
     height: 32%;
+  }
+  .home_deals_title {
+    max-width: 880px;
+  }
+  .home_deals {
+    margin: 10px 0 20px calc((100vw - 880px) / 2 - 10px);
+    width: calc(100vw - ((100vw - 880px) / 2 - 10px));
+    padding: 10px calc((100vw - 800px) / 2) 10px 10px;
+  }
+  .home_phones_inside {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .home_carousell_phone :global(.ShopCard) {
+    width: 280px;
+  }
+  .home_promo_card_3 {
+    width: 380px;
+  }
+  .home_promo_card_2 {
+    width: 380px;
+  }
+  .home_promo_title {
+    max-width: 880px;
+  }
+  .home_promo {
+    max-width: 880px;
+    justify-content: center;
+  }
+  .home_topbar_block {
+    width: 150px;
   }
 }

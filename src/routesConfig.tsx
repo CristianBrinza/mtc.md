@@ -14,6 +14,8 @@ import Home from './pages/home/Home_v2.tsx';
 import OneNumber from './pages/personal/oferte/one_number/OneNumber.tsx';
 import Contacts from './pages/personal/contacts/Contacts.tsx';
 import FormTestPage from './pages/test/Test.tsx';
+import Roaming from './pages/personal/oferte/roaming/Roaming.tsx';
+import M2M from './pages/business/m2m/M2M.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -81,8 +83,16 @@ export const routesConfig: RouteConfig[] = [
     element: React.createElement(Contacts),
   },
   {
+    path: '/:lang/roaming',
+    element: React.createElement(Roaming),
+  },
+  {
     path: '/:lang/form-test',
     element: React.createElement(FormTestPage),
+  },
+  {
+    path: '/:lang/business/m2m',
+    element: React.createElement(M2M),
   },
   {
     path: '*',

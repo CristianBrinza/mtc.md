@@ -150,7 +150,7 @@
   margin: 0 calc((100% - 260px) / 2);
   margin-top: 5px;
 }
-@media (max-width: 1300px) {
+@media (max-width: 1490px) {
   .videos {
     max-width: 880px;
   }

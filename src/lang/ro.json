@@ -1194,6 +1194,12 @@
       "title": "Contacte"
     }
   },
+  "roaming": {
+    "breadcrumb": {
+      "mobile": "Mobil",
+      "roaming": "Roaming"
+    }
+  },
   "pages": {
     "wifi_plus": {
       "title": "WiFi Plus",

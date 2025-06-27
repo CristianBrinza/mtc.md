@@ -31,7 +31,7 @@ const Videos: React.FC<videosProps> = ({ items }) => {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1300,
+        breakpoint: 1491,
         settings: {
           slidesToShow: 3,
         },

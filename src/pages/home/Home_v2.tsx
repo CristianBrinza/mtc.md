@@ -59,7 +59,7 @@ export default function Home() {
 
     responsive: [
       {
-        breakpoint: 1300,
+        breakpoint: 1491,
         settings: {
           slidesToShow: 3,
         },
@@ -456,22 +456,22 @@ export default function Home() {
               <ShopCard
                 device_id={194234497}
                 image="/images/shop/394534437.png"
-                price={1}
-                old_price={5099}
-                reducere="- 5098"
+                price={6799}
+                // old_price={5099}
+                // reducere="- 5098"
                 title="Hisense"
-                subtitle="43A4N (4k)"
-                characteristics='UHD VA / 4K / 43"'
-                tag={'DOAR 1 leu'}
+                subtitle="55A4N (4k)"
+                characteristics='UHD VA / 4K / 55"'
+                // tag={'DOAR 1 leu'}
               />
             </div>
             <div className={styles.home_carousell_phone}>
               <ShopCard
                 device_id={394514438}
-                image="/images/shop/394514438.png"
-                price={2999}
-                old_price={7299}
-                reducere="-40%"
+                image="/images/shop/394514438.webp"
+                price={28699}
+                // old_price={7299}
+                // reducere="-40%"
                 title="Samsung"
                 subtitle="Galaxy S25 Ultra"
                 characteristics='(12/512GB)"'
@@ -480,7 +480,7 @@ export default function Home() {
             <div className={styles.home_carousell_phone}>
               <ShopCard
                 device_id={383534569}
-                image="/images/shop/383534569.png"
+                image="/images/shop/383534569.webp"
                 price={7499}
                 old_price={8799}
                 reducere="- 1300"
@@ -506,14 +506,15 @@ export default function Home() {
             </div>
             <div className={styles.home_carousell_phone}>
               <ShopCard
-                device_id={5235345692}
-                image="/images/shop/523534569.png"
-                price={13499}
-                old_price={2999}
-                // reducere="-99%"
-                title="Apple"
-                subtitle="Iphone 16 Pro"
-                characteristics="(8/256GB)"
+                device_id={374514418}
+                image="/images/shop/374514418.webp"
+                price={3189}
+                old_price={3789}
+                reducere="- 600"
+                title="Samsung"
+                subtitle="A16"
+                characteristics="(4/128GB)"
+                link={`https://www.moldtelecom.md/${t('lang')}/eshop/telefoane/samsung-a16-4-gb-128-gb-black`}
               />
             </div>
           </Slider>
@@ -522,148 +523,150 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={`${styles.home_deals_title} ${''}`}>WOW! Deals</div>
-      <div className={styles.home_deals} ref={carouselRef}>
-        <div
-          className={`${styles.home_deals_card} ${styles.home_deals_card_1}`}
-        >
-          {/*<div className={`${styles.home_deals_card_special}`}>*/}
-          {/*</div>*/}
-          <div className={styles.home_deals_card_subtitle}>Home Deal</div>
-          <div className={styles.home_deals_card_title}>
-            Descoperă cea mai tare promoție.
-            <br />
-            <span>Internet fibră + TV acasă</span>
+      <div className={`${styles.home_deals_block}`}>
+        <div className={`${styles.home_deals_title} ${''}`}>WOW! Deals</div>
+        <div className={styles.home_deals} ref={carouselRef}>
+          <div
+            className={`${styles.home_deals_card} ${styles.home_deals_card_1}`}
+          >
+            {/*<div className={`${styles.home_deals_card_special}`}>*/}
+            {/*</div>*/}
+            <div className={styles.home_deals_card_subtitle}>Home Deal</div>
+            <div className={styles.home_deals_card_title}>
+              Descoperă cea mai tare promoție.
+              <br />
+              <span>Internet fibră + TV acasă</span>
+            </div>
+            <svg
+              className={styles.home_deals_card_btn}
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="36" height="36" rx="18" fill="#2D2D2F" />
+              <path
+                d="M10 18L26 18M26 18L19 11M26 18L19 25"
+                stroke="#D0D0D1"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </div>
+          <div
+            className={`${styles.home_deals_card} ${styles.home_deals_card_4}`}
+          >
+            <div className={styles.home_deals_card_subtitle}>One Number</div>
+            <div className={styles.home_deals_card_title}>
+              Ramai mereu conenctat.
+            </div>
+            <svg
+              className={styles.home_deals_card_btn}
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="36" height="36" rx="18" fill="#2D2D2F" />
+              <path
+                d="M10 18L26 18M26 18L19 11M26 18L19 25"
+                stroke="#D0D0D1"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div
+            className={`${styles.home_deals_card} ${styles.home_deals_card_2}`}
+          >
+            <div className={styles.home_deals_card_subtitle}>eSIMplu</div>
+            <div className={styles.home_deals_card_title}>
+              Cu eSIM te conectezi 100% digital.
+            </div>
+            <svg
+              className={styles.home_deals_card_btn}
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="36" height="36" rx="18" fill="#2D2D2F" />
+              <path
+                d="M10 18L26 18M26 18L19 11M26 18L19 25"
+                stroke="#D0D0D1"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div
+            className={`${styles.home_deals_card} ${styles.home_deals_card_3}`}
+          >
+            <div className={styles.home_deals_card_subtitle}>
+              Prepay 100% Digital
+            </div>
+            <div className={styles.home_deals_card_title}>
+              Ia-ți cartela Prepay <br /> la doar 10 lei.
+            </div>
+            <svg
+              className={styles.home_deals_card_btn}
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="36" height="36" rx="18" fill="#2D2D2F" />
+              <path
+                d="M10 18L26 18M26 18L19 11M26 18L19 25"
+                stroke="#D0D0D1"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div className={styles.home_deals_card}>{/* Card 5 content */}</div>
+        </div>
+        <div className={styles.home_deals_btns}>
           <svg
-            className={styles.home_deals_card_btn}
+            className={styles.home_deals_btns_svg}
+            onClick={() => scrollByCard('prev')}
+            style={{ transform: 'rotate(180deg)' }}
             width="36"
             height="36"
             viewBox="0 0 36 36"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <rect width="36" height="36" rx="18" fill="#2D2D2F" />
+            <rect width="36" height="36" rx="18" fill="#F2F2F3" />
             <path
-              d="M10 18L26 18M26 18L19 11M26 18L19 25"
-              stroke="#D0D0D1"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              d="M23.5587 16.916C24.1447 17.5 24.1467 18.446 23.5647 19.034L16.6077 26.056C16.3147 26.352 15.9287 26.5 15.5427 26.5C15.1607 26.5 14.7787 26.355 14.4867 26.065C13.8977 25.482 13.8947 24.533 14.4777 23.944L20.3818 17.984L14.4408 12.062C13.8548 11.478 13.8528 10.5279 14.4378 9.941C15.0218 9.354 15.9738 9.353 16.5588 9.938L23.5587 16.916Z"
+              fill="#BDBDBE"
             />
           </svg>
-        </div>
-        <div
-          className={`${styles.home_deals_card} ${styles.home_deals_card_4}`}
-        >
-          <div className={styles.home_deals_card_subtitle}>One Number</div>
-          <div className={styles.home_deals_card_title}>
-            Ramai mereu conenctat.
-          </div>
           <svg
-            className={styles.home_deals_card_btn}
+            className={styles.home_deals_btns_svg}
+            onClick={() => scrollByCard('next')}
             width="36"
             height="36"
             viewBox="0 0 36 36"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <rect width="36" height="36" rx="18" fill="#2D2D2F" />
+            <rect width="36" height="36" rx="18" fill="#F2F2F3" />
             <path
-              d="M10 18L26 18M26 18L19 11M26 18L19 25"
-              stroke="#D0D0D1"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              d="M23.5587 16.916C24.1447 17.5 24.1467 18.446 23.5647 19.034L16.6077 26.056C16.3147 26.352 15.9287 26.5 15.5427 26.5C15.1607 26.5 14.7787 26.355 14.4867 26.065C13.8977 25.482 13.8947 24.533 14.4777 23.944L20.3818 17.984L14.4408 12.062C13.8548 11.478 13.8528 10.5279 14.4378 9.941C15.0218 9.354 15.9738 9.353 16.5588 9.938L23.5587 16.916Z"
+              fill="#BDBDBE"
             />
           </svg>
         </div>
-        <div
-          className={`${styles.home_deals_card} ${styles.home_deals_card_2}`}
-        >
-          <div className={styles.home_deals_card_subtitle}>eSIMplu</div>
-          <div className={styles.home_deals_card_title}>
-            Cu eSIM te conectezi 100% digital.
-          </div>
-          <svg
-            className={styles.home_deals_card_btn}
-            width="36"
-            height="36"
-            viewBox="0 0 36 36"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="36" height="36" rx="18" fill="#2D2D2F" />
-            <path
-              d="M10 18L26 18M26 18L19 11M26 18L19 25"
-              stroke="#D0D0D1"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-        <div
-          className={`${styles.home_deals_card} ${styles.home_deals_card_3}`}
-        >
-          <div className={styles.home_deals_card_subtitle}>
-            Prepay 100% Digital
-          </div>
-          <div className={styles.home_deals_card_title}>
-            Ia-ți cartela Prepay <br /> la doar 10 lei.
-          </div>
-          <svg
-            className={styles.home_deals_card_btn}
-            width="36"
-            height="36"
-            viewBox="0 0 36 36"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="36" height="36" rx="18" fill="#2D2D2F" />
-            <path
-              d="M10 18L26 18M26 18L19 11M26 18L19 25"
-              stroke="#D0D0D1"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-        <div className={styles.home_deals_card}>{/* Card 5 content */}</div>
-      </div>
-      <div className={styles.home_deals_btns}>
-        <svg
-          className={styles.home_deals_btns_svg}
-          onClick={() => scrollByCard('prev')}
-          style={{ transform: 'rotate(180deg)' }}
-          width="36"
-          height="36"
-          viewBox="0 0 36 36"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="36" height="36" rx="18" fill="#F2F2F3" />
-          <path
-            d="M23.5587 16.916C24.1447 17.5 24.1467 18.446 23.5647 19.034L16.6077 26.056C16.3147 26.352 15.9287 26.5 15.5427 26.5C15.1607 26.5 14.7787 26.355 14.4867 26.065C13.8977 25.482 13.8947 24.533 14.4777 23.944L20.3818 17.984L14.4408 12.062C13.8548 11.478 13.8528 10.5279 14.4378 9.941C15.0218 9.354 15.9738 9.353 16.5588 9.938L23.5587 16.916Z"
-            fill="#BDBDBE"
-          />
-        </svg>
-        <svg
-          className={styles.home_deals_btns_svg}
-          onClick={() => scrollByCard('next')}
-          width="36"
-          height="36"
-          viewBox="0 0 36 36"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="36" height="36" rx="18" fill="#F2F2F3" />
-          <path
-            d="M23.5587 16.916C24.1447 17.5 24.1467 18.446 23.5647 19.034L16.6077 26.056C16.3147 26.352 15.9287 26.5 15.5427 26.5C15.1607 26.5 14.7787 26.355 14.4867 26.065C13.8977 25.482 13.8947 24.533 14.4777 23.944L20.3818 17.984L14.4408 12.062C13.8548 11.478 13.8528 10.5279 14.4378 9.941C15.0218 9.354 15.9738 9.353 16.5588 9.938L23.5587 16.916Z"
-            fill="#BDBDBE"
-          />
-        </svg>
       </div>
 
       <div className={styles.news}>
