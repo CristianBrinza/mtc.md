@@ -10,9 +10,6 @@ import Button from '../../../components/Button';
 import styles from './Magazine.module.css';
 import SEO from '../../../components/SEO';
 
-//
-// 1) Raw shape coming from your endpoint
-//
 interface RawMag {
   id: number;
   telefon: string;
@@ -25,12 +22,8 @@ interface RawMag {
   lng: string;
   status: string;
   type: string;
-  // …other fields we ignore
 }
 
-//
-// 2) Our internal shape for active stores
-//
 interface Mag {
   oras: string;
   adresa: string;
@@ -55,21 +48,25 @@ export default function Magazine() {
   ];
 
   const mapRef = useRef<HTMLDivElement>(null);
-
-  // view toggle
   const [view, setView] = useState<'map' | 'list'>('map');
-
-  // list of active stores
   const [magList, setMagList] = useState<Mag[]>([]);
 
-  //
-  // A) fetch + filter + normalize
-  //
   useEffect(() => {
-    fetch('https://www.moldtelecom.md/magasin_json')
-      .then(r => r.json())
-      .then((data: RawMag[]) => {
-        const active = data.map<Mag>(m => ({
+    (async () => {
+      try {
+        const res = await fetch('https://www.moldtelecom.md/magasin_json');
+        const rawData: unknown = await res.json();
+        const container = rawData as { data?: unknown };
+
+        if (!container.data || typeof container.data !== 'object') {
+          console.error('Unexpected format', rawData);
+          return;
+        }
+
+        const arr = Array.isArray(container.data) ? container.data : [];
+        const items = arr as RawMag[];
+
+        const active = items.map<Mag>(m => ({
           oras: m.oras_ro,
           adresa: m.adresa_ro,
           grafic: m.grafic_ro,
@@ -79,72 +76,58 @@ export default function Magazine() {
           lng: parseFloat(m.lng),
           telefon: m.telefon.trim(),
         }));
+
         setMagList(active);
-      })
-      .catch(err => {
+      } catch (err) {
         console.error('Nu s-au putut încărca magazinele:', err);
-      });
+      }
+    })();
   }, []);
 
-  //
-  // B) once we have data + a mount point, inject Maps script & init
-  //
   useEffect(() => {
     if (!mapRef.current || magList.length === 0) return;
 
-    // expose initMap globally so the ?callback=initMap works
-    (window as any).initMap = () => {
-      const google = (window as any).google;
-      const map = new google.maps.Map(mapRef.current, {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any;
+    w.initMap = () => {
+      const map = new w.google.maps.Map(mapRef.current, {
         center: { lat: 47.016974, lng: 28.844743 },
         zoom: 8,
       });
-      const infoWindow = new google.maps.InfoWindow();
+      const infoWindow = new w.google.maps.InfoWindow();
 
-      magList.forEach(m => {
-        const marker = new google.maps.Marker({
+      magList.forEach((m: Mag) => {
+        const marker = new w.google.maps.Marker({
           position: { lat: m.lat, lng: m.lng },
           map,
           icon: {
             url: '/images/general/pinpoint_marker.png',
-            scaledSize: new google.maps.Size(28, 36), // Scale to 0.5 (original size assumed to be ~50x80)
-            anchor: new google.maps.Point(12.5, 40), // Half width, full height to anchor from bottom
+            scaledSize: new w.google.maps.Size(28, 36),
+            anchor: new w.google.maps.Point(12.5, 40),
           },
         });
         marker.addListener('click', () => {
-          // 1) open the InfoWindow
-          const html = `
+          infoWindow.setContent(`
             <h3>${m.oras}</h3>
-                  <p>${m.adresa}</p>
-                  <p>
-                    <strong>Program:</strong> ${m.grafic}
-                  </p>
-                  <p>
-                    <strong>Sâmbătă:</strong> ${m.grafic_s}
-                  </p>
-                  <p>
-                    <strong>Duminică:</strong> ${m.grafic_d}
-                  </p>
-                  <p>
-                    <strong>Telefon:</strong> ${m.telefon}
-                  </p>
-          `;
-          infoWindow.setContent(html);
+            <p>${m.adresa}</p>
+            <p><strong>Program:</strong> ${m.grafic}</p>
+            <p><strong>Sâmbătă:</strong> ${m.grafic_s}</p>
+            <p><strong>Duminică:</strong> ${m.grafic_d}</p>
+            <p><strong>Telefon:</strong> ${m.telefon}</p>
+          `);
           infoWindow.open(map, marker);
         });
       });
     };
 
-    // only inject once
-    if (!(window as any).google) {
+    if (!w.google) {
       const script = document.createElement('script');
       script.src =
         'https://maps.googleapis.com/maps/api/js?key=AIzaSyCrW63ZFRth3we-4-5b9yLHnL12j-gf0k8&callback=initMap';
       script.async = true;
       document.head.appendChild(script);
     } else {
-      // if already loaded, just call initMap
-      (window as any).initMap();
+      w.initMap();
     }
   }, [magList]);
 
@@ -166,31 +149,31 @@ export default function Magazine() {
 
         <div className={styles.magazine_page_btns}>
           <Button
-            color={'var(--theme_primary_color_blue_4)'}
+            color="var(--theme_primary_color_blue_4)"
             bgcolor={
               view === 'map'
                 ? 'var(--theme_primary_color_blue_2)'
                 : 'var(--theme_primary_color_blue_3)'
             }
-            border={'var(--theme_primary_color_blue_1)'}
-            hover_border={'var(--theme_primary_color_blue_2)'}
-            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
-            icon={'arrow_right'}
+            border="var(--theme_primary_color_blue_1)"
+            hover_border="var(--theme_primary_color_blue_2)"
+            hover_bgcolor="var(--theme_primary_color_blue_2)"
+            icon="arrow_right"
             onClick={() => setView('map')}
           >
             Harta
           </Button>
           <Button
-            color={'var(--theme_primary_color_blue_4)'}
+            color="var(--theme_primary_color_blue_4)"
             bgcolor={
               view === 'list'
                 ? 'var(--theme_primary_color_blue_2)'
                 : 'var(--theme_primary_color_blue_3)'
             }
-            border={'var(--theme_primary_color_blue_1)'}
-            hover_border={'var(--theme_primary_color_blue_2)'}
-            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
-            icon={'arrow_right'}
+            border="var(--theme_primary_color_blue_1)"
+            hover_border="var(--theme_primary_color_blue_2)"
+            hover_bgcolor="var(--theme_primary_color_blue_2)"
+            icon="arrow_right"
             onClick={() => setView('list')}
           >
             Listă magazine
