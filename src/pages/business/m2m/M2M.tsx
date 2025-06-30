@@ -48,6 +48,26 @@ export default function M2M() {
       },
     ],
   };
+  const settings_2 = {
+    dots: true,
+    infinite: true,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 651,
+        settings: {
+          slidesToShow: 1,
+          autoplay: true,
+          autoplaySpeed: 1800,
+          arrows: true,
+        },
+      },
+    ],
+  };
 
   const [showPopup, setShowPopup] = useState<boolean>(false);
   const closePopup = (packet: string) => {
@@ -197,55 +217,34 @@ export default function M2M() {
       <Details>
         <DetailsBlock title={'Informații abonamente'}>
           <ul>
-            <li>Tarifele includ TVA;</li>
-            <li>
-              Seria de abonamente „M2M Moldtelecom” va avea inclusă, by default,
-              opțiunea 4G+;
-            </li>
-            <li>
-              Seria de abonamente „M2M Moldtelecom” este disponibilă pentru
-              abonații noi și existenți din categoria I, pentru tehnologiile 3G
-              și 4G;
-            </li>
+            <li>Tarifele includ TVA</li>
             <li>
               Traficul Internet inclus în abonament, dar neconsumat în luna
-              curentă, nu se va reporta în luna următoare;
+              curentă nu se va reporta în luna următoare
             </li>
             <li>
-              Pentru tarifarea traficului Internet se calculează totalul
+              Pentru tarifarea traficului internet se calculează totalul
               traficului de intrare și ieșire, din momentul începerii sesiunii,
-              per 100 KB (1 MB = 1024 KB, 1 GB = 1024 MB);
+              per 100 KB (1 MB = 1024 KB, 1 GB = 1024 MB)
             </li>
             <li>
-              Pentru traficul Internet, vitezele estimate de transfer vor fi:
-              <ul>
-                <li>
-                  pentru 3G: capacitate maximă download (descărcare) și până la
-                  512 Kbps upload (încărcare), în funcție de opțiunile
-                  suplimentare activate;
-                </li>
-                <li>
-                  pentru 4G: capacitate maximă download/upload
-                  (descărcare/încărcare).
-                </li>
-              </ul>
+              Pentru traficul Internet, vitezele de transfer a datelor estimate
+              vor fi la capacitate maximă download (descărcare) și de până la
+              512 Kbps upload (încărcare), în funcție de opțiunile suplimentare
+              activate – pentru tehnologia 3G, și la capacitate maximă
+              download/upload (descărcare/încărcare) – pentru tehnologia 4G
             </li>
             <li>
               La conectare la seria de abonamente „M2M Moldtelecom” se va aplica
-              prorata (la plata de abonament și trafic Internet);
+              prorata (la plata de abonament, trafic internet)
             </li>
             <li>
               La deconectare de la seria de abonamente „M2M Moldtelecom” nu se
-              va aplica prorata (la plata de abonament);
+              va aplica prorata (la plata de abonament)
             </li>
             <li>
               Seria de abonamente „M2M Moldtelecom” va fi valabilă doar pentru
-              conturile Postpay, categoria I;
-            </li>
-            <li>
-              Seria de abonamente „M2M Moldtelecom” va fi configurată astfel
-              încât abonații să aibă acces doar la traficul de date și SMS
-              out/in (voce out/in restricționate).
+              conturile Postpay, categoria I
             </li>
           </ul>
           <br />
@@ -283,6 +282,89 @@ export default function M2M() {
           </table>
         </DetailsBlock>
       </Details>
+
+      <div className={`title_3 ${styles.domenii}`}>Domenii de aplicare</div>
+      <Slider {...settings_2} className={styles.domenii_carousell}>
+        <div className={styles.domenii_carousell_block}>
+          <div
+            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_1}`}
+          >
+            <div className={styles.domenii_carousell_inside_title}>Comerț</div>
+            <div className={styles.domenii_carousell_inside_text}>
+              Gestionați automatele de vânzare, casele de marcat și terminalele
+              POS cu notificări instantanee pentru o funcționare fără
+              întreruperi.
+            </div>
+          </div>
+        </div>
+        <div className={styles.domenii_carousell_block}>
+          <div
+            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_2}`}
+          >
+            <div className={styles.domenii_carousell_inside_title}>
+              Securitate
+            </div>
+            <div className={styles.domenii_carousell_inside_text}>
+              Controlați de la distanță senzorii și camerele video prin SMS și
+              integrați datele în CRM pentru răspuns rapid la orice alertă.
+            </div>
+          </div>
+        </div>
+        <div className={styles.domenii_carousell_block}>
+          <div
+            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_3}`}
+          >
+            <div className={styles.domenii_carousell_inside_title}>
+              Logistică <br />
+              și Transport
+            </div>
+            <div className={styles.domenii_carousell_inside_text}>
+              Controlați de la distanță senzorii și camerele video prin SMS și
+              integrați datele în CRM pentru răspuns rapid la orice alertă.
+            </div>
+          </div>
+        </div>
+        <div className={styles.domenii_carousell_block}>
+          <div
+            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_4}`}
+          >
+            <div className={styles.domenii_carousell_inside_title}>
+              Energie <br />
+              și Utilități
+            </div>
+            <div className={styles.domenii_carousell_inside_text}>
+              Colectați automat datele de consum de la contoare inteligente
+              pentru o gestiune eficientă și intervenții rapide.
+            </div>
+          </div>
+        </div>
+        <div className={styles.domenii_carousell_block}>
+          <div
+            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_5}`}
+          >
+            <div className={styles.domenii_carousell_inside_title}>
+              Agricultură
+            </div>
+            <div className={styles.domenii_carousell_inside_text}>
+              Monitorizați starea culturilor și funcționarea echipamentelor
+              agricole pentru a crește productivitatea și a reduce costurile.
+            </div>
+          </div>
+        </div>
+        <div className={styles.domenii_carousell_block}>
+          <div
+            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_6}`}
+          >
+            <div className={styles.domenii_carousell_inside_title}>
+              Medicină
+            </div>
+            <div className={styles.domenii_carousell_inside_text}>
+              Transmiterea în timp real a datelor medicale pentru monitorizarea
+              pacienților și intervenții prompte în situații critice.
+            </div>
+          </div>
+        </div>
+      </Slider>
 
       {/* FAQ */}
       <FaqV2 max_faq={6}>
