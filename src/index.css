@@ -50,7 +50,7 @@ body {
   --theme_primary_color_gray: #ebebeb;
   --theme_primary_color_dark_gray: #ddd;
   --theme_primary_color_gray_1: #cbcbcb;
-  --theme_primary_color_gray_2: #a2a2a2;
+  --theme_primary_color_gray_2: rgba(0, 0, 0, 0.02);
   --theme_primary_color_gray_3: #f3f3f3;
   --theme_primary_color_gray_4: #f8f8f8;
   --theme_primary_color_gray_5: #fcfcfc;

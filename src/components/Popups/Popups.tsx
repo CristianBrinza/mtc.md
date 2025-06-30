@@ -700,6 +700,21 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
                     {t('popups.f5.table.rows.2.4')}
                   </td>
                 </tr>
+                <tr>
+                  <td>{t('popups.f5.table.rows.3.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.3.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.3.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.3.3')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.3.4')}
+                  </td>
+                </tr>
               </tbody>
             </table>
           </ScrollableWrapper>
@@ -1145,6 +1160,99 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
             />
             <li>{t('popups.f8.activation.2')}</li>
           </ul>
+        </div>
+      </Popup>
+      {/* Popup pentru 95 */}
+      <Popup
+        id="f9"
+        width={width || '1000px'}
+        isVisible={content === 'f9'}
+        onClose={onClose}
+      >
+        <div className="popup_content">
+          <h2>{t('popups.f9.title')}</h2>
+          <ScrollableWrapper>
+            <table className="popup_table">
+              <thead>
+                <tr>
+                  <td>{t('popups.f9.table.headers.0')}</td>
+                  <td>{t('popups.f9.table.headers.1')}</td>
+                  <td>{t('popups.f9.table.headers.2')}</td>
+                  <td>{t('popups.f9.table.headers.3')}</td>
+                  <td>{t('popups.f9.table.headers.4')}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{t('popups.f9.table.rows.0.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f9.table.rows.0.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f9.table.rows.0.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f9.table.rows.0.3')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f9.table.rows.0.4')}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </ScrollableWrapper>
+          <h3>{t('popups.f9.conditionsTitle')}</h3>
+          <ul>
+            <li>{t('popups.f9.conditions.0')}</li>
+            <li>{t('popups.f9.conditions.1')}</li>
+            <li>{t('popups.f9.conditions.2')}</li>
+            <li>{t('popups.f9.conditions.3')}</li>
+            <li>{t('popups.f9.conditions.4')}</li>
+            <li>{t('popups.f9.conditions.5')}</li>
+          </ul>
+
+          <h3>{t('popups.f9.activationTitle')}</h3>
+          <ul>
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f9.activation.0'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f9.activation.1'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f9.activation.2'),
+              }}
+            />
+          </ul>
+
+          <h3>{t('popups.f9.deactivationTitle')}</h3>
+          <ul>
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f9.deactivation.0'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f9.deactivation.1'),
+              }}
+            />
+            <li
+              dangerouslySetInnerHTML={{
+                __html: t('popups.f9.deactivation.2'),
+              }}
+            />
+          </ul>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: t('popups.f9.deactivation.3'),
+            }}
+          />
         </div>
       </Popup>
     </>

@@ -144,16 +144,20 @@
         "subtitle": "Comunică în Europa fără griji, la tarife ca acasă.",
         "items": [
           {
-            "label": "Apeluri (100 min)<span> / 30 zile</span>",
+            "label": "Apeluri <br class='br_roaming'/>(100 min)<span> / 30 zile</span>",
             "price": "70 lei"
           },
           {
-            "label": "Internet (2 GB)<span> / 30 zile</span>",
+            "label": "Internet <br class='br_roaming'/>(2 GB)<span> / 30 zile</span>",
             "price": "100 lei"
           },
           {
-            "label": "Combo (1 GB / 50 min)<span> / 30 zile</span>",
+            "label": "Combo <br class='br_roaming'/>(1 GB / 50 min)<span> / 30 zile</span>",
             "price": "100 lei"
+          },
+          {
+            "label": "Connect <br class='br_roaming'/>(5 GB / 50 min)<span> / 30 zile</span>",
+            "price": "180 lei"
           }
         ]
       },
@@ -162,12 +166,22 @@
         "subtitle": "Comunicarea și accesul la internet sunt prioritățile noastre.",
         "items": [
           {
-            "label": "Apeluri World (10 min)<span> / 30 zile</span>",
+            "label": "Apeluri World <br class='br_roaming'/>(10 min)<span> / 30 zile</span>",
             "price": "70 lei"
           },
           {
-            "label": "Internet World (1 GB)<span> / 30 zile</span>",
+            "label": "Internet World <br class='br_roaming'/>(1 GB)<span> / 30 zile</span>",
             "price": "100 lei"
+          }
+        ]
+      },
+      "roaming_ro": {
+        "title": "Roaming Romania",
+        "subtitle": "Internet în Romania ca și acasă.",
+        "items": [
+          {
+            "label": "Internet <br class='br_roaming'/>(5 GB)<span> / 30 zile</span>",
+            "price": "50 lei"
           }
         ]
       },
@@ -582,7 +596,8 @@
         "rows": [
           ["Apeluri Roaming UE", "UE70apel", "100 min", "70 lei", "30 zile"],
           ["Internet Roaming UE", "UE100net", "2 GB", "100 lei", "30 zile"],
-          ["Combo Roaming UE", "UE100", "1 GB / 50 min", "100 lei", "30 zile"]
+          ["Combo Roaming UE", "UE100", "1 GB / 50 min", "100 lei", "30 zile"],
+          ["Connect Roaming UE", "UE180", "5 GB / 50 min", "180 lei", "30 zile"]
         ]
       },
       "conditionsTitle": "Condițiile de utilizare a opţiunii",
@@ -697,6 +712,42 @@
         "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
         "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
         "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ]
+    },
+    "f9": {
+      "title": "Roaming România",
+      "table": {
+        "headers": [
+          "Descriere opțiune",
+          "SMS Cod",
+          "Trafic internet",
+          "Tarif",
+          "Valabilitate"
+        ],
+        "rows": [["Roaming RO", "RO50", "5 GB", "50 lei", "30 zile"]]
+      },
+      "conditionsTitle": "Condițiile de utilizare a opţiunii",
+      "conditions": [
+        "Tarifele includ toate taxele, inclusiv TVA.",
+        "Seria de opțiuni „Roaming RO” este disponibilă pentru toți abonații de Telefonie mobilă Postpay, Voce și Date și utilizatori Prepay.",
+        "După consumarea conținutului în Roaming inclus în opțiune, convorbirile și traficul internet vor fi taxate conform tarifelor standard în roaming pentru fiecare operator.",
+        "Conținutul opțiunilor este destinat pentru utilizarea în Roaming în rețeaua operatorilor, conform listei.",
+        "La schimb de abonament opțiunile activate se vor pastra;",
+        "La schimb de titular  opțiunile activate nu se vor pastra;"
+      ],
+      "activationTitle": "Activare opțiune:",
+      "activation": [
+        "Prin <a href=\"https://www.moldtelecom.md/ro/personal/sms-100-abonament\">SMS la numărul 100</a>",
+        "Prin aplicația “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru utilizatorii Prepay și se vor urmări instrucțiunile meniului.",
+        "Prin cerere depusă la orice reprezentață SA Moldtelecom"
+      ],
+      "deactivationTitle": "Dezactivarea opțiune:",
+      "deactivation": [
+        "Prin aplicația mobilă “<a href=\"https://www.moldtelecom.md/ro/personal/My Moldtelecom\">My Moldtelecom</a>”",
+        "Prin apel la nr. <a href=\"tel:+37322200200\">+373 22 200 200</a> Serviciul Suport Clienți;",
+        "Prin meniul USSD, la formare <a href=\"tel:*500#\">*500#</a> pentru abonații Postpay și <a href=\"tel:*200#\">*200#</a> pentru clienții Prepay și urmărirea instrucțiunilor meniului.",
+        "Dezactivarea serviciului este gratuită."
       ]
     }
   },
@@ -1198,6 +1249,80 @@
     "breadcrumb": {
       "mobile": "Mobil",
       "roaming": "Roaming"
+    },
+    "table": {
+      "headers": {
+        "country": "Țara",
+        "operator": "Operator",
+        "serviceType": "Tip serviciu"
+      }
+    },
+    "search": {
+      "title": "Unde mergeți?",
+      "description": "Alege țara în care vrei să călătorești și află operatorii disponibili și tarifele aplicate",
+      "cauta": "Caută țara"
+    },
+    "detalii": "Detalii ofertă",
+    "warning_1": "Opțiunile de Roaming sunt valabile exclusiv pentru operatorii indicați în opțiune.",
+    "warning_2": "Selectați operatorul specific în țara vizitată pentru a beneficia de avantajele oferite de opțiunea dvs. de roaming.",
+    "faq": [
+      {
+        "question": "Înainte să plec de acasă?",
+        "content": "<div>\n  <ul>\n    <li>Înainte de plecare, consultă site-ul <a href=\"https://moldtelecom.md/\">moldtelecom.md</a>, secțiunea Roaming sau apelează Serviciul Asistență Clienți la numărul (022)200200 pentru a te asigura că <span style=\"color: '#6f89fe'\">serviciul de Telefonie Mobilă </span>dispune de un acord Roaming încheiat cu cel puțin un operator de telefonie mobilă din țara unde planifici să mergi. Examinează și alege-ți tarifele convenabile după țară/operator.</li>\n    <li>Setează telefonul să funcționeze în regim <strong>Automat</strong> de selectare al operatorului<br /><em>(Meniu &gt; Setări &gt; Conexiuni&gt;Rețea&gt;Selectare Operator &gt; Selectare Automată).</em></li>\n    <li>Seteaza în meniul telefonului - tipul preferat de rețea.</li>\n    <li>Dacă telefonul este setat în regim „doar 3G” este necesar de a seta și regimul 2G și LTE. Setarea recomandată este ”<strong>2G/3G/LTE</strong>” sau <strong><b>„WCDMA/GSM/LTE” sau „auto”</b></strong>, deoarece ariile de acoperire ale operatorilor din roaming diferă în dependentă de tehnologiile utilizate.<br />Astfel telefonul se va conecta automat la rețeaua cu cel mai calitativ semnal identificat. </li>\n  </ul>\n\n  <p><em>   (Meniu &gt; Setări &gt; Wireless şi Retea &gt; Reţele mobile &gt; Tipul rețelei preferate).</em></p>\n\n  <p><span style=\"color: '#6f89fe'\">Verifică disponibilitatea operatorilor, lista acestora este diferită dacă ești la abonament sau utilizezi cartela prepay. </span></p>\n</div>"
+      },
+      {
+        "question": "Cum activez serviciul?",
+        "content": "<div>\n  <p>Pentru activarea serviciului Roaming, simplu și comod:</p>\n  <ul id=\"detalii_block_hiden_ul\">\n    <li>Folosește aplicația MyMoldtelecom</li>\n    <li>Apelează la Serviciul Asistență Clienți la numarul <a href=\"tel:022200200\">0(22) 200-200</a></li>\n    <li>Vizitează unul din magazinele Moldtelecom</li>\n    <li>Activarea serviciului nu costă nimic</li>\n    <li>Nu există un depozit minim obligatoriu, se recomandă doar ca în perioada în care te vei afla în afara ţării, pentru ca să nu-ți fie întrerupt serviciul de Roaming, să suplineşti contul cu un avans (suma în funcție de ce servicii intenţionezi să utilizați/sau să primești apeluri).</li>\n    <li>Dacă anterior deja ai beneficiat de Roaming, atunci la plecările ulterioare nu mai este necesar să activezi repetat, doar te poți asigura prin apel la Serviciul Asistență Clienți că serviciul Roaming este activ pentru numărul tău.</li>\n  </ul>\n</div>"
+      },
+      {
+        "question": "Cum dezactivez serviciul Roaming?",
+        "content": "<div>\n  <ul>\n    <li>Prin aplicația mobilă „My Moldtelecom”</li>\n    <li>Prin apel la nr. <a href=\"tel:+37322200200\">+373 (22) 200-200</a> Serviciul Suport Clienți;</li>\n    <li>Prin meniul USSD, la formare *500# pentru abonații Postpay și *200# pentru clienții Prepay și urmărirea instrucțiunilor meniului.</li>\n  </ul>\n  Dezactivarea serviciului este gratuită.\n</div>"
+      },
+      {
+        "question": "Cum suplinesc contul în roaming?",
+        "content": "<div className=\"mtc_evolution_qa_hiden\">\n  <ul>\n    <li>Prin intermediul paginii web <a href=\"https://achitari.moldtelecom.md/Pay\"><u>achitări.moldtelecom.md</u></a></li>\n    <li>Prin intermediul on-line banking</li>\n    <li>Prin intermediul paginii web <u>www.bpay.md</u></li>\n    <li>Prin intermediul sistemului internaţional de reîncărcare al conturilor – <strong>Ding</strong>.</li>\n  </ul>\n</div>"
+      }
+    ],
+    "tarifs": {
+      "title": "Tarife avantajoase în Roaming Europa:",
+      "cards": [
+        {
+          "top": "Apel de ieşire local/către MD",
+          "bottom": "2 lei / minut"
+        },
+        {
+          "top": "Apeluri de intrare",
+          "bottom": "2 lei / minut"
+        },
+        {
+          "top": "Apel de ieșire <br/>(UE/EEA)",
+          "bottom": "6 lei / minut"
+        },
+        {
+          "top": "Apel internațional",
+          "bottom": "12 lei / minut"
+        },
+        {
+          "top": "SMS de ieșire",
+          "bottom": "0,5 lei / SMS"
+        },
+        {
+          "top": "Trafic internet",
+          "bottom": "0,2 lei / MB"
+        }
+      ],
+      "text_1": "Tarifele de roaming sunt valabile exclusiv pentru operatorii indicați în",
+      "text_2": "listă"
+    },
+    "activate": {
+      "title": "Modalități de activare:",
+      "methods": [
+        "Activarea din aplicația mobilă MyMoldtelecom;",
+        "Prin intermediul SMS Service 100",
+        "Prin meniul USSD, *500# (Postpay) și *200# (Prepay)",
+        "Prin cerere depusă la orice reprezentanță S.A. Moldtelecom"
+      ],
+      "note": "<b> Notă:</b> Pentru activarea opțiunilor Roaming este necesar să supliniți în avans sau imediat la activare contul cu suma necesară. Dezactivarea serviciului este gratuită: prin „My Moldtelecom”, la <a href=\"tel:+37322200200\">+373 22 200 200</a>, meniul USSD, <a href=\"tel:*500#\">*500#</a> (Postpay) și <a href=\"tel:*200#\">*200#</a> (Prepay)."
     }
   },
   "pages": {

@@ -1,6 +1,7 @@
 .costume_input_block {
   display: flex;
   align-items: center;
+  border-radius: 1000px;
 }
 .costume_input {
   border-radius: 1000px;

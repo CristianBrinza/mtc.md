@@ -9,9 +9,45 @@ import { useTranslation } from 'react-i18next';
 import Chat from '../../../../components/chat/Chat.tsx';
 import Feedback from '../../../../components/feedback/Feedback.tsx';
 import SEO from '../../../../components/SEO';
+import Input from '../../../../components/input/Input.tsx';
+import { ChangeEvent, useEffect, useState } from 'react';
+import ScrollableWrapper from '../../../../components/Popup/ScrollableWrapper.tsx';
+import MyApp from '../../../../components/app/MyApp.tsx';
+import Icon from '../../../../components/Icon.tsx';
+import Slider from 'react-slick';
+import Button from '../../../../components/Button.tsx';
+import Popups from '../../../../components/Popups/Popups.tsx';
+import Popup from '../../../../components/Popup/Popup.tsx';
+
+type TarifCard = { top: string; bottom: string };
+type FaqEntry = { question: string; content: string };
+
+interface Country {
+  name_ro: string;
+  name_ru: string;
+}
+interface Operator {
+  id: number;
+  name_ro: string;
+  apel_intrare: string;
+  apel_iesire_local: string;
+  apel_iesire_moldova: string;
+  apel_iesire_int: string;
+  sms: string;
+  trafic: string;
+  abo: string;
+  prepay: string;
+  status: string;
+}
 
 export default function Roaming() {
   const { t } = useTranslation();
+  const tarifCards = t('roaming.tarifs.cards', {
+    returnObjects: true,
+  }) as TarifCard[];
+  const faqEntries = t('roaming.faq', { returnObjects: true }) as FaqEntry[];
+
+  const [activePopup, setActivePopup] = useState<string | null>(null);
   const seo = {
     title: t('pages.roaming.title'),
     description: t('pages.roaming.description'),
@@ -21,6 +57,98 @@ export default function Roaming() {
     { label: t('roaming.breadcrumb.mobile'), url: ' ' },
     { label: t('roaming.breadcrumb.roaming') },
   ];
+
+  const [country, setCountry] = useState('');
+  const [countries, setCountries] = useState<Country[]>([]);
+  const [filteredCountries, setFilteredCountries] = useState<string[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [operators, setOperators] = useState<Operator[]>([]);
+
+  // Fetch list of countries once
+  useEffect(() => {
+    fetch('https://www.moldtelecom.md/operators_countries')
+      .then(res => res.json())
+      .then((data: Country[]) => setCountries(data))
+      .catch(err => console.error('Failed to load countries', err));
+  }, []);
+
+  const handleCountryChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setCountry(value);
+    // Clear previous operators when typing a new search
+    setOperators([]);
+
+    if (value) {
+      const lower = value.toLowerCase();
+      const starts = countries
+        .map(c => c.name_ro)
+        .filter(name => name.toLowerCase().startsWith(lower));
+      const contains = countries
+        .map(c => c.name_ro)
+        .filter(
+          name =>
+            !name.toLowerCase().startsWith(lower) &&
+            name.toLowerCase().includes(lower)
+        );
+      const combined = [...starts, ...contains];
+      setFilteredCountries(combined.slice(0, 5));
+      setShowSuggestions(true);
+    } else {
+      setFilteredCountries([]);
+      setShowSuggestions(false);
+    }
+  };
+
+  const handleSuggestionClick = (name: string) => {
+    setCountry(name);
+    setFilteredCountries([]);
+    setShowSuggestions(false);
+
+    fetch(`https://moldtelecom.md/roaming/${encodeURIComponent(name)}`)
+      .then(res => res.json())
+      .then((data: { operators: Operator[] }) => setOperators(data.operators))
+      .catch(err => console.error('Failed to load operators', err));
+  };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    arrows: true,
+    autoplay: false,
+    autoplaySpeed: 2500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1301,
+        settings: {
+          slidesToShow: 2,
+          autoplay: true,
+          autoplaySpeed: 1800,
+          arrows: true,
+        },
+      },
+      { breakpoint: 1151, settings: { slidesToShow: 1 } },
+    ],
+  };
+
+  const renderItems = (key: string) => {
+    const items = t(key, { returnObjects: true }) as Array<{
+      label: string;
+      price: string;
+    }>;
+    return items.map((item, idx) => (
+      <div key={idx} className={styles.optionsandservices_block_list}>
+        <div
+          className={styles.optionsandservices_block_list_left}
+          dangerouslySetInnerHTML={{ __html: item.label }}
+        />
+        <div className={styles.optionsandservices_block_list_right}>
+          {item.price}
+        </div>
+      </div>
+    ));
+  };
 
   return (
     <>
@@ -39,140 +167,597 @@ export default function Roaming() {
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/90296512${t('lang')}.png`}
+            src={`/images/landings/18074013${t('lang')}.webp`}
             alt={t('wifi_plus.hero.alt')}
           />
         </div>
       </Hero>
 
+      <div className={styles.roaming_seach}>
+        <div className={`${styles.roaming_seach_title} title_3`}>
+          {t('roaming.search.title')}
+        </div>
+        <div>{t('roaming.search.description')}</div>
+
+        <Input
+          className={styles.roaming_seach_input}
+          value={country}
+          icon="search"
+          placeholder={t('roaming.search.cauta')}
+          onChange={handleCountryChange}
+        />
+
+        {showSuggestions && filteredCountries.length > 0 && (
+          <div className={styles.suggestions}>
+            {filteredCountries.map(name => (
+              <div
+                className={styles.suggestions_btn}
+                key={name}
+                onClick={() => handleSuggestionClick(name)}
+              >
+                {name}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Render table only after a country button is clicked */}
+        {operators.length > 0 && (
+          <div className={styles.operatorTableWrapper}>
+            <ScrollableWrapper>
+              <table className="popup_table">
+                <thead>
+                  <tr className={styles.rotate}>
+                    <th>
+                      <span className={styles.rotateText}>Operator</span>
+                    </th>
+                    <th>
+                      <span className={styles.rotateText}>Apel intrare</span>
+                    </th>
+                    <th>
+                      <span className={styles.rotateText}>
+                        Apel ieșire local
+                      </span>
+                    </th>
+                    <th>
+                      <span className={styles.rotateText}>
+                        Apel ieșire Moldova
+                      </span>
+                    </th>
+                    <th>
+                      <span className={styles.rotateText}>
+                        Apel ieșire int.
+                      </span>
+                    </th>
+                    <th>
+                      <span className={styles.rotateText}>SMS</span>
+                    </th>
+                    <th>
+                      <span className={styles.rotateText}>Trafic (MB)</span>
+                    </th>
+                    <th>
+                      <span className={styles.rotateText}>Abonament</span>
+                    </th>
+                    <th>
+                      <span className={styles.rotateText}>Prepay</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {operators.map(op => (
+                    <tr
+                      key={op.id}
+                      className={op.status === 'active' ? styles.activeRow : ''}
+                    >
+                      <td>{op.name_ro}</td>
+                      <td>{op.apel_intrare}</td>
+                      <td>{op.apel_iesire_local}</td>
+                      <td>{op.apel_iesire_moldova}</td>
+                      <td>{op.apel_iesire_int}</td>
+                      <td>{op.sms}</td>
+                      <td>{op.trafic}</td>
+                      <td>{op.abo}</td>
+                      <td>{op.prepay}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </ScrollableWrapper>
+          </div>
+        )}
+      </div>
+
+      <div className={styles.wifi_plus_full_block}>
+        <div className={styles.wifi_plus_full_block_inside}>
+          <div className="title_3">
+            {' '}
+            {t('optionsandservices.titles.roaming')}
+          </div>
+          <Slider {...settings} className={styles.roaming_carousell}>
+            <div className={styles.roaming_carousell_block}>
+              <div className={styles.roaming_carousell_block_inside}>
+                <div className={styles.optionsandservices_block_left}>
+                  <div className={styles.optionsandservices_block_title}>
+                    {t('optionsandservices.blocks.roaming_europe.title')}
+                  </div>
+                  <div className={styles.optionsandservices_block_subtitle}>
+                    {t('optionsandservices.blocks.roaming_europe.subtitle')}
+                  </div>
+                  <div className={styles.optionsandservices_block_inside}>
+                    {renderItems(
+                      'optionsandservices.blocks.roaming_europe.items'
+                    )}
+                  </div>
+                </div>
+
+                <div className={styles.roaming_carousell_block_inside_btns}>
+                  {/*<Button*/}
+                  {/*  to={'https://mtc.md/my-mtc'}*/}
+                  {/*  color="var(--theme_primary_color_blue_4)"*/}
+                  {/*  bgcolor="var(--theme_primary_color_blue_2)"*/}
+                  {/*  border="var(--theme_primary_color_blue_2)"*/}
+                  {/*  hover_border="var(--theme_primary_color_blue_2)"*/}
+                  {/*  hover_bgcolor="var(--theme_primary_color_blue_2)"*/}
+                  {/*  icon="arrow_right"*/}
+                  {/*>*/}
+                  {/*  Activează în aplicație*/}
+                  {/*</Button>*/}
+                  <Button
+                    onClick={() => setActivePopup('f5')}
+                    color="var(--theme_primary_color_blue_4)"
+                    bgcolor="var(--theme_primary_color_blue_3)"
+                    border="var(--theme_primary_color_blue_3)"
+                    hover_border="var(--theme_primary_color_blue_2)"
+                    hover_bgcolor="var(--theme_primary_color_blue_2)"
+                    icon="arrow_right"
+                  >
+                    {t('roaming.detalii')}
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className={styles.roaming_carousell_block}>
+              <div className={styles.roaming_carousell_block_inside}>
+                <div className={styles.optionsandservices_block_left}>
+                  <div className={styles.optionsandservices_block_title}>
+                    {t('optionsandservices.blocks.roaming_world.title')}
+                  </div>
+                  <div className={styles.optionsandservices_block_subtitle}>
+                    {t('optionsandservices.blocks.roaming_world.subtitle')}
+                  </div>
+                  <div className={styles.optionsandservices_block_inside}>
+                    {renderItems(
+                      'optionsandservices.blocks.roaming_world.items'
+                    )}
+                  </div>
+                </div>
+
+                <div className={styles.roaming_carousell_block_inside_btns}>
+                  {/*<Button*/}
+                  {/*  to={'https://mtc.md/my-mtc'}*/}
+                  {/*  color="var(--theme_primary_color_blue_4)"*/}
+                  {/*  bgcolor="var(--theme_primary_color_blue_2)"*/}
+                  {/*  border="var(--theme_primary_color_blue_2)"*/}
+                  {/*  hover_border="var(--theme_primary_color_blue_2)"*/}
+                  {/*  hover_bgcolor="var(--theme_primary_color_blue_2)"*/}
+                  {/*  icon="arrow_right"*/}
+                  {/*>*/}
+                  {/*  Activează în aplicație*/}
+                  {/*</Button>*/}
+                  <Button
+                    onClick={() => setActivePopup('f6')}
+                    color="var(--theme_primary_color_blue_4)"
+                    bgcolor="var(--theme_primary_color_blue_3)"
+                    border="var(--theme_primary_color_blue_3)"
+                    hover_border="var(--theme_primary_color_blue_2)"
+                    hover_bgcolor="var(--theme_primary_color_blue_2)"
+                    icon="arrow_right"
+                  >
+                    {t('roaming.detalii')}
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className={styles.roaming_carousell_block}>
+              <div className={styles.roaming_carousell_block_inside}>
+                <div className={styles.optionsandservices_block_left}>
+                  <div className={styles.optionsandservices_block_title}>
+                    {t('optionsandservices.blocks.roaming_ro.title')}
+                  </div>
+                  <div className={styles.optionsandservices_block_subtitle}>
+                    {t('optionsandservices.blocks.roaming_ro.subtitle')}
+                  </div>
+                  <div className={styles.optionsandservices_block_inside}>
+                    {renderItems('optionsandservices.blocks.roaming_ro.items')}
+                  </div>
+                </div>
+
+                <div className={styles.roaming_carousell_block_inside_btns}>
+                  {/*<Button*/}
+                  {/*  to={'https://mtc.md/my-mtc'}*/}
+                  {/*  color="var(--theme_primary_color_blue_4)"*/}
+                  {/*  bgcolor="var(--theme_primary_color_blue_2)"*/}
+                  {/*  border="var(--theme_primary_color_blue_2)"*/}
+                  {/*  hover_border="var(--theme_primary_color_blue_2)"*/}
+                  {/*  hover_bgcolor="var(--theme_primary_color_blue_2)"*/}
+                  {/*  icon="arrow_right"*/}
+                  {/*>*/}
+                  {/*  Activează în aplicație*/}
+                  {/*</Button>*/}
+                  <Button
+                    onClick={() => setActivePopup('f9')}
+                    color="var(--theme_primary_color_blue_4)"
+                    bgcolor="var(--theme_primary_color_blue_3)"
+                    border="var(--theme_primary_color_blue_3)"
+                    hover_border="var(--theme_primary_color_blue_2)"
+                    hover_bgcolor="var(--theme_primary_color_blue_2)"
+                    icon="arrow_right"
+                  >
+                    {t('roaming.detalii')}
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Slider>
+        </div>
+      </div>
+
+      <div className={styles.roaming_warning}>
+        <div className={`${styles.roaming_warning_red}`}></div>
+        <div className={styles.roaming_warning_inside}>
+          {t('roaming.warning_1')} <br />
+          {t('roaming.warning_2')}
+        </div>
+      </div>
+
+      {/* Tarife */}
+      <div className={styles.roaming_tarifs}>
+        <div className={styles.roaming_tarifs_inside}>
+          <div className={`${styles.roaming_tarifs_inside_title} title_3`}>
+            {t('roaming.tarifs.title')}
+          </div>
+
+          <div className={styles.roaming_tarifs_cards}>
+            {tarifCards.map((card, i) => (
+              <div className={styles.roaming_tarifs_card} key={i}>
+                <div
+                  className={styles.roaming_tarifs_card_top}
+                  dangerouslySetInnerHTML={{ __html: card.top }}
+                />
+                <div className={styles.roaming_tarifs_card_bottom}>
+                  {card.bottom}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.roaming_tarifs_card_text}>
+            {t('roaming.tarifs.text_1')}
+            <span onClick={() => setActivePopup('1281120')}>
+              {t('roaming.tarifs.text_2')}
+            </span>
+            .
+          </div>
+        </div>
+      </div>
+
+      {/* Activare */}
+      <div className={styles.roaming_activate}>
+        <div className={`${styles.roaming_activate_title} title_3`}>
+          {t('roaming.activate.title')}
+        </div>
+
+        <div className={styles.roaming_activate_inside}>
+          <div className={styles.roaming_activate_left}>
+            <div className={styles.roaming_activate_inside_card}>
+              <div className={styles.roaming_activate_inside_card_icon}>
+                <Icon type="user" color="#adbbff" />
+              </div>
+              <span>{t('roaming.activate.methods.0')}</span>
+            </div>
+            <div className={styles.roaming_activate_inside_card}>
+              <div className={styles.roaming_activate_inside_card_icon}>
+                <Icon type="message" color="#adbbff" />
+              </div>
+              <span>{t('roaming.activate.methods.1')}</span>
+            </div>
+            <div className={styles.roaming_activate_inside_card}>
+              <div className={styles.roaming_activate_inside_card_icon}>
+                <Icon type="message" color="#adbbff" />
+              </div>
+              <span>{t('roaming.activate.methods.2')}</span>
+            </div>
+            <div className={styles.roaming_activate_inside_card}>
+              <div className={styles.roaming_activate_inside_card_icon}>
+                <Icon type="cart" color="#adbbff" />
+              </div>
+              <span>{t('roaming.activate.methods.3')}</span>
+            </div>
+
+            <span
+              className={styles.roaming_activate_note}
+              dangerouslySetInnerHTML={{ __html: t('roaming.activate.note') }}
+            />
+          </div>
+        </div>
+      </div>
+      <MyApp style_type={'blue_white'} />
+
       {/* FAQ */}
       <FaqV2 max_faq={6}>
-        <FaqQAV2 question={'Înainte să plec de acasă?'}>
-          <div>
-            <ul>
-              <li>
-                Înainte de plecare, consultă site-ul{' '}
-                <a href="https://moldtelecom.md/">moldtelecom.md</a>, secțiunea
-                Roaming sau apelează Serviciul Asistență Clienți la
-                numărul&nbsp;(022)200200 pentru a te asigura că{' '}
-                <span style={{ color: '#6f89fe' }}>
-                  serviciul de Telefonie Mobilă&nbsp;
-                </span>
-                dispune de un acord Roaming încheiat cu cel puţin un operator de
-                telefonie mobilă din țara unde planifici să mergi.
-                Examinează&nbsp;și alege-ți tarifele convenabile după
-                țară/operator.
-              </li>
-              <li>
-                Setează telefonul să funcționeze în regim&nbsp;
-                <strong>Automat</strong>&nbsp;de selectare al operatorului
-                <br />
-                <em>
-                  (Meniu &gt; Setări &gt; Conexiuni&gt;Rețea&gt;Selectare
-                  Operator &gt; Selectare Automată).&nbsp;
-                </em>
-              </li>
-              <li>Seteaza în meniul telefonului - tipul preferat de rețea.</li>
-              <li>
-                Dacă telefonul este setat în regim „doar 3G” este necesar de a
-                seta și regimul 2G și LTE. Setarea recomandată este ”
-                <strong>2G/3G/LTE</strong>” sau{' '}
-                <strong>
-                  <b>„WCDMA/GSM/LTE” sau „auto”</b>
-                </strong>
-                , deoarece ariile de acoperire ale operatorilor din roaming
-                diferă în dependentă de tehnologiile utilizate.
-                <br />
-                Astfel telefonul se va conecta automat la rețeaua cu cel mai
-                calitativ semnal identificat.&nbsp;
-              </li>
-            </ul>
-
-            <p>
-              <em>
-                &nbsp; &nbsp; &nbsp; (Meniu &gt; Setări &gt; Wireless şi Retea
-                &gt; Reţele mobile &gt; Tipul rețelei preferate).&nbsp;
-              </em>
-            </p>
-
-            <p>
-              <span style={{ color: '#6f89fe' }}>
-                Verifică disponibilitatea operatorilor, lista acestora este
-                diferită dacă ești la abonament sau utilizezi cartela
-                prepay.&nbsp;
-              </span>
-            </p>
-          </div>
-        </FaqQAV2>
-        <FaqQAV2 question={'Cum activez serviciul?'}>
-          <div>
-            <p>Pentru activarea serviciului Roaming, simplu și comod:</p>
-
-            <ul id="detalii_block_hiden_ul">
-              <li>Folosește aplicația MyMoldtelecom</li>
-              <li>
-                Apelează la Serviciul Asistență Clienți la numarul{' '}
-                <a href="tel:022200200">0(22) 200-200</a>
-              </li>
-              <li>Vizitează unul din magazinele Moldtelecom</li>
-              <li>Activarea serviciului nu costă nimic</li>
-              <li>
-                Nu există un depozit minim obligatoriu, se recomandă doar ca în
-                perioada în care te vei afla în afara ţării, pentru ca să nu-ți
-                fie întrerupt serviciul de Roaming, să suplineşti contul cu un
-                avans (suma în funcție de ce servicii intenţionezi să
-                utilizezi/sau să primeşti apeluri).
-              </li>
-              <li>
-                Dacă anterior deja ai beneficiat de Roaming, atunci la plecările
-                ulterioare nu mai este necesar să activezi repetat, doar te poți
-                asigura prin apel la Serviciul Asistență Clienți că statutul
-                serviciul Roaming este activ pentru numărul tău.
-              </li>
-            </ul>
-          </div>
-        </FaqQAV2>
-        <FaqQAV2 question={'Cum dezactivez serviciul M2M?'}>
-          <div>
-            <ul>
-              <li>Prin aplicația mobilă „My Moldtelecom”</li>
-              <li>
-                Prin apel la nr.{' '}
-                <a href="tel:+37322200200">+373 (22) 200-200</a> Serviciul
-                Suport Clienți;
-              </li>
-              <li>
-                Prin meniul USSD, la formare *500# pentru abonații Postpay și
-                *200# pentru clienții Prepay și urmărirea instrucțiunilor
-                meniului.
-              </li>
-            </ul>
-            Dezactivarea serviciului este gratuită.
-          </div>
-        </FaqQAV2>
-        <FaqQAV2 question={'Cum suplinesc contul în roaming?'}>
-          <div className="mtc_evolution_qa_hiden">
-            <ul>
-              <li>
-                Prin intermediul paginii web{' '}
-                <a href="https://achitari.moldtelecom.md/Pay">
-                  <u>achitări.moldtelecom.md</u>
-                </a>
-              </li>
-              <li>Prin intermediul on-line banking</li>
-              <li>
-                Prin intermediul paginii web <u>www.bpay.md</u>
-              </li>
-              <li>
-                Prin intermediul sistemului internaţional de reîncărcare al
-                conturilor – <strong>Ding</strong>.
-              </li>
-            </ul>
-          </div>
-        </FaqQAV2>
+        {faqEntries.map((entry, idx) => (
+          <FaqQAV2 key={idx} question={entry.question}>
+            <div dangerouslySetInnerHTML={{ __html: entry.content }} />
+          </FaqQAV2>
+        ))}
       </FaqV2>
 
       <Footer disclaimer={true} />
+      <Popups content={activePopup} onClose={() => setActivePopup(null)} />
+
+      <Popup
+        id="1281120"
+        width="1000px"
+        isVisible={activePopup === '1281120'}
+        onClose={() => setActivePopup(null)}
+      >
+        <table className="popup_table">
+          <thead>
+            <tr>
+              <td>
+                <span>
+                  <strong>{t('roaming.table.headers.country')}</strong>
+                </span>
+              </td>
+              <td>
+                <span>
+                  <strong>{t('roaming.table.headers.operator')}</strong>
+                </span>
+              </td>
+              <td>
+                <span>
+                  <strong>{t('roaming.table.headers.serviceType')}</strong>
+                </span>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowSpan={2}>Austria</td>
+              <td>3 Austria (Hutchison Drei Austria)</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>T-Mobile Austria (Magenta)</td>
+              <td>Abonament</td>
+            </tr>
+            <tr>
+              <td>Belgia</td>
+              <td>Proximus</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td rowSpan={2}>Bulgaria</td>
+              <td>Vivacom Bulgaria (Vivatel)</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Yettel Bulgaria</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Cehia</td>
+              <td>O2 Czech Republic</td>
+              <td>Abonament</td>
+            </tr>
+            <tr>
+              <td>Cipru</td>
+              <td>Epic</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td rowSpan={2}>Croatia</td>
+              <td>Hrvatski Telecom</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Telemach Croatia</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td rowSpan={2}>Danemarka</td>
+              <td>3 Denmark (Hi3G Denmark)</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Telenor Denmark</td>
+              <td>Abonament</td>
+            </tr>
+            <tr>
+              <td>Estonia</td>
+              <td>Tele 2 Eesti AS</td>
+              <td>Abonament</td>
+            </tr>
+            <tr>
+              <td>Finlanda</td>
+              <td>DNA</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td rowSpan={3}>Franta</td>
+              <td>Bouygues Telecom</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Free Mobile</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>SFR</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Germania</td>
+              <td>Telekom Deutschland</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Grecia</td>
+              <td>Cosmote</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td rowSpan={2}>Irlanda</td>
+              <td>3 Ireland (Hutchison 3G Ireland)</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Meteor Mobile</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Islanda</td>
+              <td>Nova</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td rowSpan={2}>Italia</td>
+              <td>3 Italia (Wind Tre S.p.A.)</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>ILIAD Italia</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td rowSpan={2}>Letonia</td>
+              <td>Bite Latvija</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Tele2</td>
+              <td>Abonament</td>
+            </tr>
+            <tr>
+              <td>Liechtenstein</td>
+              <td>Salt Liechtenstein</td>
+              <td>Abonament</td>
+            </tr>
+            <tr>
+              <td rowSpan={2}>Lituania</td>
+              <td>Bite Lietuva</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>UAB Tele2</td>
+              <td>Abonament</td>
+            </tr>
+            <tr>
+              <td rowSpan={2}>Luxembourg</td>
+              <td>POST Luxembourg</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Tango</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td rowSpan={3}>Malta</td>
+              <td>Go</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Melita</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Epic Malta MLTTL</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Norvegia</td>
+              <td>Telenor</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td rowSpan={3}>Polonia</td>
+              <td>P4 SP.z.o.o. (PLAY)</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Polkomtel (PLUS)</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Orange Polska</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Portugalia</td>
+              <td>MEO</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td rowSpan={4}>România</td>
+              <td>Digi Mobil</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Orange Romania</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Telekom Romania Mobile</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Vodafone Romania</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td rowSpan={2}>Slovacia</td>
+              <td>O2 Slovakia</td>
+              <td>Abonament</td>
+            </tr>
+            <tr>
+              <td>Slovak Telekom</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Slovenia</td>
+              <td>Telemach</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td rowSpan={3}>Suedia</td>
+              <td>Hi3G Access</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Tele2 Sverige</td>
+              <td>Abonament</td>
+            </tr>
+            <tr>
+              <td>Telenor Sverige</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td>Țările de Jos</td>
+              <td>KPN Mobile</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+            <tr>
+              <td rowSpan={2}>Ungaria</td>
+              <td>Yettel Magyarorszag</td>
+              <td>Abonament</td>
+            </tr>
+            <tr>
+              <td>Magyar Telekom (Telekom HU)</td>
+              <td>Abonament / PrePay</td>
+            </tr>
+          </tbody>
+        </table>
+      </Popup>
     </>
   );
 }

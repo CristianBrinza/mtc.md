@@ -1,5 +1,5 @@
 // Input.tsx
-import { FC } from 'react';
+import React, { FC } from 'react';
 import Icon, { icons } from '../Icon.tsx';
 import styles from './Input.module.css';
 
@@ -15,6 +15,7 @@ interface InputProps {
   className?: string;
   type?: string;
   min?: string;
+  style?: React.CSSProperties;
   max?: string;
 }
 
@@ -25,33 +26,40 @@ const Input: FC<InputProps> = ({
   onKeyDown,
   icon,
   name,
+  style,
   required = false,
   className = '',
   type = 'text',
   min,
   max,
-}) => (
-  <div className={`${styles.costume_input_block} ${className}`}>
-    <input
-      type={type}
-      name={name}
-      value={value}
-      placeholder={placeholder}
-      required={required}
-      className={styles.costume_input}
-      onChange={onChange}
-      onKeyDown={onKeyDown}
-      min={min}
-      max={max}
-    />
-    {icon && (
-      <Icon
-        className={styles.costume_input_svg}
-        type={icon}
-        color="var(--theme_primary_color_darkest_gray)"
+}) => {
+  const inputStyle: React.CSSProperties = {
+    ...style,
+  };
+  return (
+    <div className={`${styles.costume_input_block} ${className}`}>
+      <input
+        type={type}
+        name={name}
+        value={value}
+        placeholder={placeholder}
+        required={required}
+        style={inputStyle}
+        className={styles.costume_input}
+        onChange={onChange}
+        onKeyDown={onKeyDown}
+        min={min}
+        max={max}
       />
-    )}
-  </div>
-);
+      {icon && (
+        <Icon
+          className={styles.costume_input_svg}
+          type={icon}
+          color="var(--theme_primary_color_darkest_gray)"
+        />
+      )}
+    </div>
+  );
+};
 
 export default Input;
