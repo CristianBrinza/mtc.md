@@ -12,7 +12,7 @@ import NavbarBusiness from '../../../components/navbar/NavbarBusiness.tsx';
 import Details, { DetailsBlock } from '../../../components/details/Details.tsx';
 import Slider from 'react-slick';
 import Button from '../../../components/Button.tsx';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Popup from '../../../components/Popup/Popup.tsx';
 import CostumeFunctions from '../../../components/functions/CostumeFunctions.tsx';
 
