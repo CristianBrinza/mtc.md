@@ -1440,5 +1440,38 @@
     "breadcrumb": {
       "title": "Contacte"
     }
+  },
+  "navbar_business": {
+    "businessoffice": "Business Office",
+    "internet": "Интернет",
+    "tv": "Tелевидение",
+    "test_viteza": "Проверьте скорость",
+    "2_1_gbps": "2,1 Гбит/с",
+    "abonamente_fibra_optica": "Подписки на оптоволокно",
+    "vpn": "VPN",
+    "safe_web": "Безопасный веб",
+    "echipamente_wifi": "Оборудование Wi-Fi",
+    "protectie_ddos": "Защита от DDOS",
+    "televiziune": "Телевидение",
+    "abonamente_tv": "Подписки на ТВ",
+    "canale_tv": "Каналы ТВ",
+    "mobil": "Мобильная связь",
+    "verifica_acoperirea": "Проверить покрытие",
+    "faq": "Часто задаваемые вопросы",
+    "telefonie_mobila": "Мобильная телефония",
+    "abonamente_nelimitat": "Безлимитные тарифы",
+    "optiuni_servicii": "Опции и услуги",
+    "roaming": "Роуминг",
+    "apeluri_internationale": "Международные звонки",
+    "internet_mobil": "Мобильный интернет",
+    "abonamente_internet": "Интернет-подписки",
+    "optiuni_servicii_internet": "Опции и услуги Интернета",
+    "fix": "Фиксированная связь",
+    "telefonie_fixa": "Стационарная телефония",
+    "abonamente_telefonie_fixa": "Подписки на стационарную телефонию",
+    "virtual_pbx": "Виртуальная АТС",
+    "servicii_suplimentare": "Дополнительные услуги",
+    "isdn": "ISDN",
+    "wildix": "Wildix"
   }
 }

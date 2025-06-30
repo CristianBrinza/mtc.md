@@ -415,6 +415,10 @@
   margin: -5px -5px -5px 5px;
   opacity: 1;
 }
+.navbar_bottom_menu_option_submenu_add_fake {
+  height: 404px;
+  width: 1px;
+}
 .navbar_bottom_menu_option_submenu_add {
   /*width: 330px;*/
   /*height: 460px;*/
@@ -556,6 +560,9 @@
   display: flex;
   gap: 20px;
 }
+.navbar_bottom_menu_option_submenu_bottom_bb {
+  width: 80%;
+}
 .navbar_bottom_menu_option_submenu_bottom_item {
   cursor: pointer;
 }
@@ -635,6 +642,9 @@
     padding-bottom: 2px;
   }
   .navbar_bottom_menu_option_submenu_add {
+    display: none !important;
+  }
+  .navbar_bottom_menu_option_submenu_add_fake {
     display: none !important;
   }
   .navbar {

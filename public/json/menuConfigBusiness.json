@@ -1,0 +1,142 @@
+[
+  {
+    "label": "navbar.internet_tv",
+    "bottom_menu": [
+      {
+        "label": "navbar.test_viteza",
+        "to": "/personal/speedtest"
+      }
+    ],
+    "submenu": [
+      {
+        "title": "navbar_business.internet",
+        "small": true,
+        "items": [
+          {
+            "label": "navbar_business.2_1_gbps",
+            "to": "/business/2gbps"
+          },
+          {
+            "label": "navbar_business.abonamente_fibra_optica",
+            "to": "/business/fibra"
+          },
+          {
+            "label": "navbar_business.vpn",
+            "to": "/business/vpn"
+          },
+          {
+            "label": "navbar_business.safe_web",
+            "to": "business/safe-web"
+          },
+          {
+            "label": "navbar_business.echipamente_wifi",
+            "to": "/business/Echipamente-Wi-Fi"
+          },
+          {
+            "label": "navbar_business.protectie_ddos",
+            "to": "/business/ddos"
+          }
+        ]
+      },
+      {
+        "title": "navbar_business.internet",
+        "small": true,
+        "items": [
+          {
+            "label": "navbar_business.abonamente_tv",
+            "to": "/business/Abonamente-TV"
+          },
+          { "label": "navbar_business.canale_tv", "to": "business/canale-tv" }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "navbar.mobil",
+    "bottom_menu": [
+      {
+        "label": "navbar.test_viteza",
+        "to": "/personal/speedtest"
+      },
+      {
+        "label": "navbar.verifica_acoperirea",
+        "to": "/personal/acoperire-3g"
+      },
+      {
+        "label": "navbar.faq",
+        "to": "/personal/FAQ_Telefonie_si_internet_mobil"
+      }
+    ],
+    "submenu": [
+      {
+        "title": "navbar_business.telefonie_mobila",
+        "small": true,
+        "items": [
+          {
+            "label": "navbar_business.abonamente_nelimitat",
+            "to": "/business/Abonament-Unite"
+          },
+          {
+            "label": "navbar_business.optiuni_servicii",
+            "to": "/business/Optiuni-telefonie-mobila"
+          },
+          {
+            "label": "navbar_business.roaming",
+            "to": "/business/roaming"
+          },
+          {
+            "label": "navbar_business.apeluri_internationale",
+            "to": "/business/apeluri-internationale"
+          }
+        ]
+      },
+      {
+        "title": "navbar_business.internet_mobil",
+        "small": true,
+        "items": [
+          {
+            "label": "navbar_business.abonamente_internet",
+            "to": "/business/netmobil"
+          },
+          {
+            "label": "navbar_business.optiuni_servicii_internet",
+            "to": "/business/optiuni-internet-mobil"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "navbar.fix",
+    "submenu": [
+      {
+        "title": "navbar.fix",
+        "small": true,
+        "items": [
+          {
+            "label": "navbar_business.telefonie_fixa",
+            "to": "/business/Telefonia-Fixa"
+          },
+          {
+            "label": "navbar_business.abonamente_telefonie_fixa",
+            "to": "/business/Abonamente-telefonia-fixa"
+          },
+          {
+            "label": "navbar_business.virtual_pbx",
+            "to": "/business/virtual-pbx"
+          },
+          {
+            "label": "navbar_business.servicii_suplimentare",
+            "to": "/business/Opțiuni și Servicii Suplimentare"
+          },
+          { "label": "navbar_business.isdn", "to": "/business/ISDN" },
+          { "label": "navbar_business.wildix", "to": "/business/wildix" }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "navbar_business.businessoffice",
+    "to": "/business/business-office"
+  }
+]

@@ -349,25 +349,9 @@ wifi_carousell_full_bg,
   .wifi_carousell_btns_detalii_v2 {
     max-width: 580px;
   }
-  .wifi_carousell_full_bg,
-  .wifi_carousell_full_bg_2,
-  .wifi_carousell_full_bg_3 {
-    width: 1000px;
-    height: 350px;
-  }
-  .wifi_plus_full_block_inside {
-    max-width: 580px;
-  }
 }
 
 @media (max-width: 650px) {
-  .wifi_carousell_btns_detalii_v2 {
-    max-width: calc(100vw - 40px);
-    padding: 0 0px;
-    margin-left: 20px;
-    box-sizing: border-box;
-  }
-
   .hero_img_tablet {
     display: block;
     width: calc(100vw * 2.3);
@@ -395,36 +379,5 @@ wifi_carousell_full_bg,
     text-align: start !important;
     padding: 0;
     line-height: 1;
-  }
-
-  .wifi_carousell_full_bg_block_2 {
-    text-align: start;
-    align-items: flex-start;
-  }
-
-  .wifi_carousell_full_bg {
-    /*width: calc(100% + 40px);*/
-    background: url('/images/landings/70294512.png');
-    background-size: cover;
-    border-radius: 0 0 20px 20px;
-  }
-
-  .wifi_carousell_full_bg_2 {
-    background: url('/images/landings/80290512.png');
-    background-size: cover;
-    border-radius: 0 0 20px 20px;
-  }
-
-  .wifi_carousell_full_bg,
-  .wifi_carousell_full_bg_2,
-  .wifi_carousell_full_bg_3 {
-    width: 840px;
-    height: 670px;
-    padding-top: 50px;
-    align-items: flex-start;
-  }
-  .wifi_carousell_full_bg_2 {
-    /*width: 690px;*/
-    /*height: 470px;*/
   }
 }

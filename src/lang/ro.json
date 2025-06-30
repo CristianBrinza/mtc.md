@@ -1246,5 +1246,45 @@
       "description": "Găsește rapid serviciile, planurile și opțiunile Moldtelecom folosind cuvinte cheie.",
       "keywords": "căutare, moldtelecom, servicii, planuri, opțiuni, internet, tv, mobil, Moldova"
     }
+  },
+  "navbar_business": {
+    "businessoffice": "Business Office",
+    "internet": "Internet",
+    "tv": "Televiziune",
+    "test_viteza": "Testează viteza",
+    "2_1_gbps": "2.1 Gbps",
+    "abonamente_fibra_optica": "Abonamente fibră optică",
+    "vpn": "VPN",
+    "safe_web": "Safe Web",
+    "echipamente_wifi": "Echipamente Wi-Fi",
+    "protectie_ddos": "Protecție DDOS",
+    "televiziune": "Televiziune",
+    "abonamente_tv": "Abonamente TV",
+    "canale_tv": "Canale TV",
+    "mobil": "Mobil",
+    "verifica_acoperirea": "Verifică acoperirea",
+    "faq": "Întrebări frecvente",
+    "telefonie_mobila": "Telefonie mobilă",
+    "abonamente_nelimitat": "Abonamente nelimitat",
+    "optiuni_servicii": "Opțiuni & servicii",
+    "roaming": "Roaming",
+    "apeluri_internationale": "Apeluri internaționale",
+    "internet_mobil": "Internet mobil",
+    "abonamente_internet": "Abonamente Internet",
+    "optiuni_servicii_internet": "Opțiuni & servicii Internet",
+    "fix": "Fix",
+    "telefonie_fixa": "Telefonie fixă",
+    "abonamente_telefonie_fixa": "Abonamente telefonie fixă",
+    "virtual_pbx": "Virtual PBX",
+    "servicii_suplimentare": "Servicii suplimentare",
+    "isdn": "ISDN",
+    "wildix": "Wildix"
+  },
+  "m2m": {
+    "carousel": {
+      "order_now": "Comandă acum",
+      "order_now_cerere": "Depune cerere",
+      "price_unit": "lei/lună"
+    }
   }
 }

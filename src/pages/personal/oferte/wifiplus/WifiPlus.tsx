@@ -56,6 +56,7 @@ export default function WifiPlus() {
     setShowPopup(true);
     console.log(packet);
   };
+  setShowPopup;
 
   const settings = {
     dots: true,

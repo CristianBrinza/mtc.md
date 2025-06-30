@@ -16,6 +16,7 @@ interface BreadcrumbProps {
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, max_width }) => {
   const { t } = useTranslation();
+  const isExternal = (url: string) => /^https?:\/\//.test(url);
   return (
     <div className="breadcrumb" style={{ maxWidth: max_width }}>
       <Link to={`/${t('lang')}/`}>
@@ -45,12 +46,22 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, max_width }) => {
               <span>{item.label}</span>
             ) : (
               <div className="breadcrumb-line">
-                <Link
-                  className="breadcrumb-item"
-                  to={`/${t('lang')}/${item.url}`}
-                >
-                  {item.label}
-                </Link>
+                {isExternal(item.url) ? (
+                  <a
+                    className="breadcrumb-item"
+                    href={item.url}
+                    rel="noopener noreferrer"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    className="breadcrumb-item"
+                    to={`/${t('lang')}/${item.url}`}
+                  >
+                    {item.label}
+                  </Link>
+                )}
                 <Icon
                   type="arrow_down"
                   rotate="270"

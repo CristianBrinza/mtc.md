@@ -142,7 +142,10 @@
         "title": "navbar.promo",
         "items": [
           { "label": "navbar.portare", "to": "/personal/Portare" },
-          { "label": "navbar.ab_mobile", "to": "/Abonamente_Telefonie_Mobila" },
+          {
+            "label": "navbar.ab_mobile",
+            "to": "/personal/Abonamente_Telefonie_Mobila"
+          },
           {
             "label": "navbar.modem_wifi",
             "to": "/personal/Abonamente-Internet-mobil"
