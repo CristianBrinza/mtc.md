@@ -41,7 +41,7 @@ interface PromoBlock {
 }
 
 const Navbar: React.FC = () => {
-  const currentHour = new Date().getHours();
+  // const currentHour = new Date().getHours();
   // const isAvailable = currentHour >= 6 && currentHour < 24;
 
   const { t, i18n } = useTranslation();
