@@ -559,6 +559,13 @@ const Footer: React.FC<FooterProps> = ({
                   >
                     {t('footer.legal.quality')}
                   </a>,
+                  <a
+                    key="10"
+                    href={`https://www.moldtelecom.md/files/Politica de salarizare MOLDTELECOM.pdf`}
+                    className={styles.footer_inside_middle_link}
+                  >
+                    {t('footer.legal.salary')}
+                  </a>,
                 ]}
               </div>
             </div>
