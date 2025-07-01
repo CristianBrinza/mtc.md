@@ -3,22 +3,24 @@ import React, { useState, useEffect } from 'react';
 import styles from './Details.module.css';
 
 const ArrowIcon: React.FC<{ rotated?: boolean }> = ({ rotated = false }) => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    className={rotated ? styles.rotated : ''}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M3 8.5L12 17.5L21 8.5"
-      stroke="#B7B7B7"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
+  <div className={styles.detalii_arrow}>
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={rotated ? styles.rotated : ''}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3 8.5L12 17.5L21 8.5"
+        stroke="#B7B7B7"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </div>
 );
 
 /**
@@ -44,17 +46,14 @@ export const DetailsBlock: React.FC<DetailsBlockProps> = ({
   isOpen = false,
   onToggle,
 }) => (
-  <div className={styles.wifi_carousell_btns_detalii_line}>
-    <div
-      className={styles.wifi_carousell_btns_detalii_line_title}
-      onClick={onToggle}
-    >
+  <div className={styles.detalii_btns_detalii_line}>
+    <div className={styles.detalii_btns_detalii_line_title} onClick={onToggle}>
       {title}
       {onToggle && <ArrowIcon rotated={isOpen} />}
     </div>
     <div
-      className={`${styles.wifi_carousell_btns_detalii_line_inside} ${
-        isOpen ? styles.wifi_carousell_btns_detalii_line_inside_open : ''
+      className={`${styles.detalii_btns_detalii_line_inside} ${
+        isOpen ? styles.detalii_btns_detalii_line_inside_open : ''
       }`}
     >
       {children}
@@ -91,8 +90,8 @@ const Details: React.FC<DetailsProps> = ({ children }) => {
   return (
     <div
       className={`
-        ${styles.wifi_carousell_btns_detalii_v2}
-        ${styles.wifi_carousell_btns_detalii_v2_first}
+        ${styles.detalii_btns_detalii_v2}
+        ${styles.detalii_btns_detalii_v2_first}
       `}
     >
       {React.Children.map(children, (child, idx) => {

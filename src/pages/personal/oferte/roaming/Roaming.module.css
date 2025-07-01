@@ -111,18 +111,13 @@
   margin: 0;
   padding: 0;
   text-align: left;
+  margin-bottom: 20px;
 }
 .roaming_activate_inside {
   width: 100%;
   display: flex;
   gap: 20px;
   margin: 10px auto 0px;
-}
-.roaming_activate_right {
-  width: 100%;
-  max-width: 580px;
-  height: auto;
-  border-radius: 20px;
 }
 /*.roaming_activate_left {*/
 /*  display: flex;*/
@@ -137,9 +132,8 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  max-width: 1180px;
+  max-width: 580px;
   gap: 6px;
-  margin-top: 20px;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: flex-start;
@@ -368,6 +362,65 @@
   display: none;
 }
 
+.roaming_activate_right {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  gap: 10px;
+}
+.roaming_activate_right_card {
+  position: relative;
+  width: 100%;
+  max-width: 285px;
+  /*height: 220px;*/
+  aspect-ratio: 1.35/1;
+  border-radius: 15px;
+  background: #e7e7e7;
+  padding: 24px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 19px;
+  line-height: 22px;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+}
+.roaming_activate_right_card_1 {
+  background-image: url('/images/landings/12170382.webp');
+  background-size: cover;
+}
+.roaming_activate_right_card_2 {
+  background-image: url('/images/landings/11633189.webp');
+  background-size: cover;
+}
+.roaming_activate_right_card_btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.roaming_activate_right_card:hover .roaming_activate_right_card_btn {
+  transform: scale(1.1);
+}
+
+.guide_title {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: Poppins, sans-serif;
+  text-align: center;
+  margin: 10px 0 20px;
+}
+.guide_subtitle {
+  font-size: 18px;
+  font-weight: 500;
+}
+.guide_img {
+  width: 100%;
+  max-width: 200px;
+}
+
 @media (max-width: 1300px) {
   .hero {
     width: 1300px;
@@ -423,6 +476,9 @@
   }
   .roaming_tarifs_card {
     width: 180px;
+  }
+  .roaming_activate_inside {
+    flex-direction: column;
   }
 }
 
@@ -494,4 +550,29 @@
   .optionsandservices_block_title {
     width: calc(100% * 1.2);
   }
+  .roaming_activate_right {
+    width: 100%;
+    max-width: 96vw;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.videos_popup_show {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.82);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999999999;
+}
+.videos_carousell_iframe_popup {
+  width: 100%;
+  aspect-ratio: 16/9;
+  max-width: 800px;
+  margin: 40px;
 }

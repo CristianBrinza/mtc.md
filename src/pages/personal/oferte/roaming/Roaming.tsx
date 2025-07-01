@@ -18,6 +18,9 @@ import Slider from 'react-slick';
 import Button from '../../../../components/Button.tsx';
 import Popups from '../../../../components/Popups/Popups.tsx';
 import Popup from '../../../../components/Popup/Popup.tsx';
+import Details, {
+  DetailsBlock,
+} from '../../../../components/details/Details.tsx';
 
 type TarifCard = { top: string; bottom: string };
 type FaqEntry = { question: string; content: string; id_faq: string };
@@ -131,7 +134,7 @@ export default function Roaming() {
       { breakpoint: 1151, settings: { slidesToShow: 1 } },
     ],
   };
-
+  const [showVideo, setShowVideo] = useState(false);
   const renderItems = (key: string) => {
     const items = t(key, { returnObjects: true }) as Array<{
       label: string;
@@ -480,12 +483,11 @@ export default function Roaming() {
 
       {/* Activare */}
       <div className={styles.roaming_activate}>
-        <div className={`${styles.roaming_activate_title} title_3`}>
-          {t('roaming.activate.title')}
-        </div>
-
         <div className={styles.roaming_activate_inside}>
           <div className={styles.roaming_activate_left}>
+            <div className={`${styles.roaming_activate_title} title_3`}>
+              {t('roaming.activate.title')}
+            </div>
             <div className={styles.roaming_activate_inside_card}>
               <div className={styles.roaming_activate_inside_card_icon}>
                 <Icon type="user" color="#adbbff" />
@@ -515,6 +517,54 @@ export default function Roaming() {
               className={styles.roaming_activate_note}
               dangerouslySetInnerHTML={{ __html: t('roaming.activate.note') }}
             />
+          </div>
+          <div className={styles.roaming_activate_right}>
+            <div
+              onClick={() => setActivePopup('1281124')}
+              className={`${styles.roaming_activate_right_card} ${styles.roaming_activate_right_card_1}`}
+            >
+              Vezi pașii de configurare APN
+              <svg
+                className={styles.roaming_activate_right_card_btn}
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="36" height="36" rx="18" fill="#D0D0D1"></rect>
+                <path
+                  d="M10 18L26 18M26 18L19 11M26 18L19 25"
+                  stroke="#2D2D2F"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <div
+              onClick={() => setShowVideo(true)}
+              className={`${styles.roaming_activate_right_card} ${styles.roaming_activate_right_card_2}`}
+            >
+              Ghidul de activare a serviciului Roaming
+              <svg
+                className={styles.roaming_activate_right_card_btn}
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="36" height="36" rx="18" fill="#D0D0D1"></rect>
+                <path
+                  d="M10 18L26 18M26 18L19 11M26 18L19 25"
+                  stroke="#2D2D2F"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -795,6 +845,108 @@ export default function Roaming() {
           </tbody>
         </table>
       </Popup>
+      <Popup
+        id="1281124"
+        width="1000px"
+        isVisible={activePopup === '1281124'}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className={styles.guide_title}>Urmează pașii:</div>
+        <div className={styles.guide_subtitle}>Ghid IOS:</div>
+        <Details>
+          <DetailsBlock title={'1. Deschide setările telefonului'}>
+            <img
+              className={styles.guide_img}
+              src="/images/landings/12170389.webp"
+              alt="Guide"
+            />
+          </DetailsBlock>
+          <DetailsBlock title={'2. Deschide meniul "Cellular"'}>
+            <img
+              className={styles.guide_img}
+              src="/images/landings/12170318.webp"
+              alt="Guide"
+            />
+          </DetailsBlock>
+          <DetailsBlock title={'3. Deschide meniul "Cellular Data Network"'}>
+            <img
+              className={styles.guide_img}
+              src="/images/landings/12126318.webp"
+              alt="Guide"
+            />
+          </DetailsBlock>
+          <DetailsBlock title={'4. Modifică setarile APN'}>
+            <img
+              className={styles.guide_img}
+              src="/images/landings/12100189.webp"
+              alt="Guide"
+            />
+          </DetailsBlock>
+        </Details>
+
+        <div className={styles.guide_subtitle}>Ghid Android:</div>
+        <Details>
+          <DetailsBlock title={'1. Deschide setările telefonului'}>
+            <img
+              className={styles.guide_img}
+              src="/images/landings/11100189.webp"
+              alt="Guide"
+            />
+          </DetailsBlock>
+          <DetailsBlock title={'2. Deschide meniul "Cellular"'}>
+            <img
+              className={styles.guide_img}
+              src="/images/landings/12100122.webp"
+              alt="Guide"
+            />
+          </DetailsBlock>
+          <DetailsBlock title={'3. Deschide meniul "Cellular Data Network"'}>
+            <img
+              className={styles.guide_img}
+              src="/images/landings/11230189.webp"
+              alt="Guide"
+            />
+          </DetailsBlock>
+          <DetailsBlock title={'4. Adaugă un APN nou'}>
+            <img
+              className={styles.guide_img}
+              src="/images/landings/19803122.webp"
+              alt="Guide"
+            />
+          </DetailsBlock>
+          <DetailsBlock title={'5. Configurează APN-ul nou'}>
+            <img
+              className={styles.guide_img}
+              src="/images/landings/16100689.webp"
+              alt="Guide"
+            />
+          </DetailsBlock>
+          <DetailsBlock title={'6. Alege APN-ul nou'}>
+            <img
+              className={styles.guide_img}
+              src="/images/landings/16130189.webp"
+              alt="Guide"
+            />
+          </DetailsBlock>
+        </Details>
+      </Popup>
+
+      {showVideo && (
+        <div
+          className={`${styles.videos_popup} ${styles.videos_popup_show}`}
+          onClick={() => setShowVideo(false)}
+        >
+          <iframe
+            className={styles.videos_carousell_iframe_popup}
+            src={'https://www.youtube.com/embed/rMYO3upF9mo'}
+            title={`YouTube video player Roaming`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+      )}
     </>
   );
 }
