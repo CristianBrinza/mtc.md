@@ -1370,6 +1370,11 @@
       "description": "Folosește același număr de telefon pe mai multe dispozitive și rămâi disponibil pe toate gadgeturile tale.",
       "keywords": "one number, multi device, smartwatch, tabletă, telefon, partajare număr, mobil, apeluri, sms, Moldtelecom"
     },
+    "roaming": {
+      "title": "Roaming",
+      "description": "Află cum activezi serviciul Roaming și consultă tarifele și operatorii disponibili pentru călătorii în străinătate.",
+      "keywords": "roaming, mobil, tarife, operatori, internet, apeluri, Moldtelecom"
+    },
     "home": {
       "title": "Moldtelecom",
       "description": "Site-ul oficial Moldtelecom cu informații despre servicii, oferte și ultimele noutăți.",
