@@ -548,18 +548,18 @@ export default function PromoRazuieste() {
       <MyApp style_type={'blue_white'} />
 
       <FaqV2 max_faq={7}>
-        <FaqQAV2 question={t('promorazuieste.faq.q1')}>
+        <FaqQAV2 id_faq={'196489101'} question={t('promorazuieste.faq.q1')}>
           {t('promorazuieste.faq.a1')}
         </FaqQAV2>
-        <FaqQAV2 question={t('promorazuieste.faq.q2')}>
+        <FaqQAV2 id_faq={'196489102'} question={t('promorazuieste.faq.q2')}>
           <ul
             dangerouslySetInnerHTML={{ __html: t('promorazuieste.faq.a2') }}
           />
         </FaqQAV2>
-        <FaqQAV2 question={t('promorazuieste.faq.q3')}>
+        <FaqQAV2 id_faq={'196489103'} question={t('promorazuieste.faq.q3')}>
           {t('promorazuieste.faq.a3')}
         </FaqQAV2>
-        <FaqQAV2 question={t('promorazuieste.faq.q4')}>
+        <FaqQAV2 id_faq={'196489104'} question={t('promorazuieste.faq.q4')}>
           {t('promorazuieste.faq.a4')}
         </FaqQAV2>
       </FaqV2>

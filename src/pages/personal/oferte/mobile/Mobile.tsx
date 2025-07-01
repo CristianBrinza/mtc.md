@@ -869,7 +869,10 @@ export default function Mobile() {
       <Chat />
       <Feedback />
       <FaqV2 max_faq={6}>
-        <FaqQAV2 question=" Unde pot achita factura mea pentru Internet?">
+        <FaqQAV2
+          id_faq={'196489301'}
+          question=" Unde pot achita factura mea pentru Internet?"
+        >
           <div>
             <span>
               <strong></strong>Cea mai rapidă și comodă modalitate de achitare a
@@ -904,7 +907,10 @@ export default function Mobile() {
             </ul>
           </div>
         </FaqQAV2>
-        <FaqQAV2 question="Cum pot să raportez o infracțiune sau o ilegalitate?">
+        <FaqQAV2
+          id_faq={'196489302'}
+          question="Cum pot să raportez o infracțiune sau o ilegalitate?"
+        >
           <p>
             <span></span>
             <span>
@@ -930,7 +936,10 @@ export default function Mobile() {
             <span></span>
           </p>
         </FaqQAV2>
-        <FaqQAV2 question="Ce este un atac DDoS și cum îți poate afecta afacerea?">
+        <FaqQAV2
+          id_faq={'196489303'}
+          question="Ce este un atac DDoS și cum îți poate afecta afacerea?"
+        >
           <div>
             Un atac DDoS (Distributed Denial of Service) este o amenințare
             cibernetică care poate paraliza activitatea online a afacerii tale.
@@ -958,7 +967,10 @@ export default function Mobile() {
             Nu lăsa atacurile cibernetice să îți pună afacerea în pericol!
           </div>
         </FaqQAV2>
-        <FaqQAV2 question="Cum pot să raportez o infracțiune sau o ilegalitate?">
+        <FaqQAV2
+          id_faq={'196489305'}
+          question="Cum pot să raportez o infracțiune sau o ilegalitate?"
+        >
           <p>
             <span></span>
             <span>
@@ -984,7 +996,10 @@ export default function Mobile() {
             <span></span>
           </p>
         </FaqQAV2>
-        <FaqQAV2 question="Cum pot să raportez o infracțiune sau o ilegalitate?">
+        <FaqQAV2
+          id_faq={'196489306'}
+          question="Cum pot să raportez o infracțiune sau o ilegalitate?"
+        >
           <p>
             <span></span>
             <span>

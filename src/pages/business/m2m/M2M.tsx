@@ -368,7 +368,7 @@ export default function M2M() {
 
       {/* FAQ */}
       <FaqV2 max_faq={6}>
-        <FaqQAV2 question={'---?'}>
+        <FaqQAV2 id_faq={'196489378'} question={'---?'}>
           <div className="mtc_evolution_qa_hiden">---</div>
         </FaqQAV2>
       </FaqV2>

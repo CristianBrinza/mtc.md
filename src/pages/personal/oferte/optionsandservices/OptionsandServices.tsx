@@ -293,7 +293,7 @@ export default function OptionsandServices() {
       </div>
       <MyApp style_type="blue_white" />
       <FaqV2 max_faq={6}>
-        <FaqQAV2 question={t('optionsandservices.faq.q1')}>
+        <FaqQAV2 id_faq={'196489106'} question={t('optionsandservices.faq.q1')}>
           <div>
             {t('optionsandservices.faq.a1')
               .split('\n\n')
@@ -302,7 +302,7 @@ export default function OptionsandServices() {
               ))}
           </div>
         </FaqQAV2>
-        <FaqQAV2 question={t('optionsandservices.faq.q2')}>
+        <FaqQAV2 id_faq={'196489107'} question={t('optionsandservices.faq.q2')}>
           <ul>
             {t('optionsandservices.faq.a2')
               .split('\n')
@@ -312,7 +312,7 @@ export default function OptionsandServices() {
               ))}
           </ul>
         </FaqQAV2>
-        <FaqQAV2 question={t('optionsandservices.faq.q3')}>
+        <FaqQAV2 id_faq={'196489108'} question={t('optionsandservices.faq.q3')}>
           <ul>
             {t('optionsandservices.faq.a3')
               .split('\n')
@@ -322,10 +322,10 @@ export default function OptionsandServices() {
               ))}
           </ul>
         </FaqQAV2>
-        <FaqQAV2 question={t('optionsandservices.faq.q4')}>
+        <FaqQAV2 id_faq={'196489109'} question={t('optionsandservices.faq.q4')}>
           <div>{t('optionsandservices.faq.a4')}</div>
         </FaqQAV2>
-        <FaqQAV2 question={t('optionsandservices.faq.q5')}>
+        <FaqQAV2 id_faq={'196489110'} question={t('optionsandservices.faq.q5')}>
           <div>{t('optionsandservices.faq.a5')}</div>
         </FaqQAV2>
       </FaqV2>

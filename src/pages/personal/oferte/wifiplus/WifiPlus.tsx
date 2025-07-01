@@ -368,13 +368,13 @@ export default function WifiPlus() {
 
       {/* FAQ */}
       <FaqV2 max_faq={6}>
-        <FaqQAV2 question={t('wifi_plus.faq.q1')}>
+        <FaqQAV2 id_faq={'196489379'} question={t('wifi_plus.faq.q1')}>
           <div>{t('wifi_plus.faq.a1')}</div>
         </FaqQAV2>
-        <FaqQAV2 question={t('wifi_plus.faq.q2')}>
+        <FaqQAV2 id_faq={'196489310'} question={t('wifi_plus.faq.q2')}>
           <div>{t('wifi_plus.faq.a2')}</div>
         </FaqQAV2>
-        <FaqQAV2 question={t('wifi_plus.faq.q3')}>
+        <FaqQAV2 id_faq={'196489311'} question={t('wifi_plus.faq.q3')}>
           <div>{t('wifi_plus.faq.a3')}</div>
         </FaqQAV2>
       </FaqV2>

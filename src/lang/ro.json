@@ -1308,18 +1308,22 @@
     "warning_2": "Selectați operatorul specific în țara vizitată pentru a beneficia de avantajele oferite de opțiunea dvs. de roaming.",
     "faq": [
       {
+        "id_faq": "196489314",
         "question": "Înainte să plec de acasă?",
         "content": "<div>\n  <ul>\n    <li>Înainte de plecare, consultă site-ul <a href=\"https://moldtelecom.md/\">moldtelecom.md</a>, secțiunea Roaming sau apelează Serviciul Asistență Clienți la numărul (022)200200 pentru a te asigura că <span style=\"color: '#6f89fe'\">serviciul de Telefonie Mobilă </span>dispune de un acord Roaming încheiat cu cel puțin un operator de telefonie mobilă din țara unde planifici să mergi. Examinează și alege-ți tarifele convenabile după țară/operator.</li>\n    <li>Setează telefonul să funcționeze în regim <strong>Automat</strong> de selectare al operatorului<br /><em>(Meniu &gt; Setări &gt; Conexiuni&gt;Rețea&gt;Selectare Operator &gt; Selectare Automată).</em></li>\n    <li>Seteaza în meniul telefonului - tipul preferat de rețea.</li>\n    <li>Dacă telefonul este setat în regim „doar 3G” este necesar de a seta și regimul 2G și LTE. Setarea recomandată este ”<strong>2G/3G/LTE</strong>” sau <strong><b>„WCDMA/GSM/LTE” sau „auto”</b></strong>, deoarece ariile de acoperire ale operatorilor din roaming diferă în dependentă de tehnologiile utilizate.<br />Astfel telefonul se va conecta automat la rețeaua cu cel mai calitativ semnal identificat. </li>\n  </ul>\n\n  <p><em>   (Meniu &gt; Setări &gt; Wireless şi Retea &gt; Reţele mobile &gt; Tipul rețelei preferate).</em></p>\n\n  <p><span style=\"color: '#6f89fe'\">Verifică disponibilitatea operatorilor, lista acestora este diferită dacă ești la abonament sau utilizezi cartela prepay. </span></p>\n</div>"
       },
       {
+        "id_faq": "196489315",
         "question": "Cum activez serviciul?",
         "content": "<div>\n  <p>Pentru activarea serviciului Roaming, simplu și comod:</p>\n  <ul id=\"detalii_block_hiden_ul\">\n    <li>Folosește aplicația MyMoldtelecom</li>\n    <li>Apelează la Serviciul Asistență Clienți la numarul <a href=\"tel:022200200\">0(22) 200-200</a></li>\n    <li>Vizitează unul din magazinele Moldtelecom</li>\n    <li>Activarea serviciului nu costă nimic</li>\n    <li>Nu există un depozit minim obligatoriu, se recomandă doar ca în perioada în care te vei afla în afara ţării, pentru ca să nu-ți fie întrerupt serviciul de Roaming, să suplineşti contul cu un avans (suma în funcție de ce servicii intenţionezi să utilizați/sau să primești apeluri).</li>\n    <li>Dacă anterior deja ai beneficiat de Roaming, atunci la plecările ulterioare nu mai este necesar să activezi repetat, doar te poți asigura prin apel la Serviciul Asistență Clienți că serviciul Roaming este activ pentru numărul tău.</li>\n  </ul>\n</div>"
       },
       {
+        "id_faq": "196489316",
         "question": "Cum dezactivez serviciul Roaming?",
         "content": "<div>\n  <ul>\n    <li>Prin aplicația mobilă „My Moldtelecom”</li>\n    <li>Prin apel la nr. <a href=\"tel:+37322200200\">+373 (22) 200-200</a> Serviciul Suport Clienți;</li>\n    <li>Prin meniul USSD, la formare *500# pentru abonații Postpay și *200# pentru clienții Prepay și urmărirea instrucțiunilor meniului.</li>\n  </ul>\n  Dezactivarea serviciului este gratuită.\n</div>"
       },
       {
+        "id_faq": "196489317",
         "question": "Cum suplinesc contul în roaming?",
         "content": "<div className=\"mtc_evolution_qa_hiden\">\n  <ul>\n    <li>Prin intermediul paginii web <a href=\"https://achitari.moldtelecom.md/Pay\"><u>achitări.moldtelecom.md</u></a></li>\n    <li>Prin intermediul on-line banking</li>\n    <li>Prin intermediul paginii web <u>www.bpay.md</u></li>\n    <li>Prin intermediul sistemului internaţional de reîncărcare al conturilor – <strong>Ding</strong>.</li>\n  </ul>\n</div>"
       }

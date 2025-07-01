@@ -20,7 +20,7 @@ import Popups from '../../../../components/Popups/Popups.tsx';
 import Popup from '../../../../components/Popup/Popup.tsx';
 
 type TarifCard = { top: string; bottom: string };
-type FaqEntry = { question: string; content: string };
+type FaqEntry = { question: string; content: string; id_faq: string };
 
 interface Country {
   name_ro: string;
@@ -523,7 +523,7 @@ export default function Roaming() {
       {/* FAQ */}
       <FaqV2 max_faq={6}>
         {faqEntries.map((entry, idx) => (
-          <FaqQAV2 key={idx} question={entry.question}>
+          <FaqQAV2 id_faq={entry.id_faq} key={idx} question={entry.question}>
             <div dangerouslySetInnerHTML={{ __html: entry.content }} />
           </FaqQAV2>
         ))}

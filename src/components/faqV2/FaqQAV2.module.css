@@ -25,6 +25,25 @@
   line-height: 18px;
   letter-spacing: 0.18px;
 }
+.count {
+  background-color: #ececec;
+  border-radius: 100px;
+  padding: 2px 5px;
+  box-sizing: border-box;
+  font-size: 10px;
+  line-height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: #969696;
+}
+.FaqQA_title_right {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-end;
+}
 @keyframes fadeIn {
   0% {
     transform: rotate(0deg);

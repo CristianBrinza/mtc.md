@@ -315,7 +315,10 @@ export default function OneNumber() {
       <MyApp style_type={'blue_white'} />
 
       <FaqV2 max_faq={7}>
-        <FaqQAV2 question={'Pentru cine este disponibil One Number?'}>
+        <FaqQAV2
+          id_faq={'196489201'}
+          question={'Pentru cine este disponibil One Number?'}
+        >
           <div>
             Serviciul One Number este disponibil pentru toți clienții care au un
             abonament mobil de la Moldtelecom și sunt deținători de
@@ -323,7 +326,10 @@ export default function OneNumber() {
             disponibile.
           </div>
         </FaqQAV2>
-        <FaqQAV2 question={'Este posibilă dezactivarea One Number?'}>
+        <FaqQAV2
+          id_faq={'196489202'}
+          question={'Este posibilă dezactivarea One Number?'}
+        >
           <div>
             Da, este posibilă dezactivarea opțiunii One Number din aplicația My
             Moldtelecom (opțiunea One Number) și o poți dezactiva oricând
@@ -331,6 +337,7 @@ export default function OneNumber() {
           </div>
         </FaqQAV2>
         <FaqQAV2
+          id_faq={'196489203'}
           question={
             'Cum procedez dacă smartwatch-ul a fost pierdut sau furat?\n'
           }
@@ -341,6 +348,7 @@ export default function OneNumber() {
           </div>
         </FaqQAV2>
         <FaqQAV2
+          id_faq={'196489204'}
           question={'Voi putea folosi SIM-ul suplimentar și în roaming?\n'}
         >
           <div>
