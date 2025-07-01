@@ -729,7 +729,7 @@
         "Через приложение «<a href=\"https://www.moldtelecom.md/ru/personal/My Moldtelecom\">My Moldtelecom</a>»",
         "по звонку +373 22 200 200",
         "Через USSD-меню наберите <a href=\"tel:*500#\">*500#</a> для Postpay и <a href=;tel:\"*200#\">*200#</a>, затем следуйте инструкциям.",
-        "Dezactivarea serviciului este gratuită."
+        "Деактивация услуги бесплатна."
       ]
     },
     "f7": {
@@ -1450,8 +1450,8 @@
     },
     "triple": {
       "title": "Интернет + ТВ + Мобайл",
-      "description": "Triple Play пакеты, объединяющие быстрый интернет, цифровое телевидение и мобильные услуги в одном договоре.",
-      "keywords": "triple play, интернет, тв, мобайл, пакеты, bundle, высокая скорость, цифровой, услуги, Moldtelecom"
+      "description": "Интернет + ТВ + Мобайл, пакеты, объединяющие быстрый интернет, цифровое телевидение и мобильные услуги в одном договоре.",
+      "keywords": "triple, интернет, тв, мобайл, пакеты, bundle, высокая скорость, цифровой, услуги, Moldtelecom"
     },
     "magazine": {
       "title": "Магазины",
@@ -1485,7 +1485,7 @@
     }
   },
   "home": {
-    "exclusive_online": "Descoperă cele mai tari oferte exclusiv online",
+    "exclusive_online": "Открой самые крутые предложения исключительно онлайн",
     "only_digital": "Servicii digitale"
   },
   "contacts": {
@@ -1498,6 +1498,7 @@
       "mobile": "Мобильный",
       "roaming": "Роуминг"
     },
+    "calatoreste": "Путешествуй, общайся и пользуйся интернетом без ограничений!",
     "table": {
       "headers": {
         "country": "Страна",

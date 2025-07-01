@@ -177,7 +177,7 @@
       },
       "roaming_ro": {
         "title": "Roaming Romania",
-        "subtitle": "Internet în Romania ca și acasă.",
+        "subtitle": "Seteaza Digi Mobile pentru Super Oferta",
         "items": [
           {
             "label": "Internet <br class='br_roaming'/>(5 GB)<span> / 30 zile</span>",
@@ -1282,6 +1282,7 @@
       "mobile": "Mobil",
       "roaming": "Roaming"
     },
+    "calatoreste": "Călătorește, comunică și navighează fără limite!",
     "table": {
       "headers": {
         "country": "Țara",
@@ -1384,8 +1385,8 @@
     },
     "triple": {
       "title": "Internet + TV + Mobil",
-      "description": "Pachete Triple Play ce includ internet rapid, televiziune digitală și servicii mobile într-un singur contract.",
-      "keywords": "triple play, internet, tv, mobil, pachete, bundle, viteză înaltă, digital, servicii, Moldtelecom"
+      "description": "Pachetul Triple, ce include internet rapid, televiziune digitală și servicii mobile într-un singur contract.",
+      "keywords": "triple, internet, tv, mobil, pachete, bundle, viteză înaltă, digital, servicii, Moldtelecom"
     },
     "magazine": {
       "title": "Magazine",

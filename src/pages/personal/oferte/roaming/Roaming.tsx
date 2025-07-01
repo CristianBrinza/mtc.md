@@ -298,8 +298,10 @@ export default function Roaming() {
       <div className={styles.wifi_plus_full_block}>
         <div className={styles.wifi_plus_full_block_inside}>
           <div className="title_3">
-            {' '}
             {t('optionsandservices.titles.roaming')}
+          </div>
+          <div className={styles.wifi_plus_full_block_inside_sutitle}>
+            {t('roaming.calatoreste')}
           </div>
           <Slider {...settings} className={styles.roaming_carousell}>
             <div className={styles.roaming_carousell_block}>
@@ -387,42 +389,49 @@ export default function Roaming() {
               </div>
             </div>
             <div className={styles.roaming_carousell_block}>
-              <div className={styles.roaming_carousell_block_inside}>
-                <div className={styles.optionsandservices_block_left}>
-                  <div className={styles.optionsandservices_block_title}>
-                    {t('optionsandservices.blocks.roaming_ro.title')}
-                  </div>
-                  <div className={styles.optionsandservices_block_subtitle}>
-                    {t('optionsandservices.blocks.roaming_ro.subtitle')}
-                  </div>
-                  <div className={styles.optionsandservices_block_inside}>
-                    {renderItems('optionsandservices.blocks.roaming_ro.items')}
-                  </div>
+              <div className={styles.roaming_carousell_block_sp}>
+                <div className={styles.roaming_carousell_block_sp_title}>
+                  NEW
                 </div>
+                <div className={styles.roaming_carousell_block_inside}>
+                  <div className={styles.optionsandservices_block_left}>
+                    <div className={styles.optionsandservices_block_title}>
+                      {t('optionsandservices.blocks.roaming_ro.title')}
+                    </div>
+                    <div className={styles.optionsandservices_block_subtitle}>
+                      {t('optionsandservices.blocks.roaming_ro.subtitle')}
+                    </div>
+                    <div className={styles.optionsandservices_block_inside}>
+                      {renderItems(
+                        'optionsandservices.blocks.roaming_ro.items'
+                      )}
+                    </div>
+                  </div>
 
-                <div className={styles.roaming_carousell_block_inside_btns}>
-                  {/*<Button*/}
-                  {/*  to={'https://mtc.md/my-mtc'}*/}
-                  {/*  color="var(--theme_primary_color_blue_4)"*/}
-                  {/*  bgcolor="var(--theme_primary_color_blue_2)"*/}
-                  {/*  border="var(--theme_primary_color_blue_2)"*/}
-                  {/*  hover_border="var(--theme_primary_color_blue_2)"*/}
-                  {/*  hover_bgcolor="var(--theme_primary_color_blue_2)"*/}
-                  {/*  icon="arrow_right"*/}
-                  {/*>*/}
-                  {/*  Activează în aplicație*/}
-                  {/*</Button>*/}
-                  <Button
-                    onClick={() => setActivePopup('f9')}
-                    color="var(--theme_primary_color_blue_4)"
-                    bgcolor="var(--theme_primary_color_blue_3)"
-                    border="var(--theme_primary_color_blue_3)"
-                    hover_border="var(--theme_primary_color_blue_2)"
-                    hover_bgcolor="var(--theme_primary_color_blue_2)"
-                    icon="arrow_right"
-                  >
-                    {t('roaming.detalii')}
-                  </Button>
+                  <div className={styles.roaming_carousell_block_inside_btns}>
+                    {/*<Button*/}
+                    {/*  to={'https://mtc.md/my-mtc'}*/}
+                    {/*  color="var(--theme_primary_color_blue_4)"*/}
+                    {/*  bgcolor="var(--theme_primary_color_blue_2)"*/}
+                    {/*  border="var(--theme_primary_color_blue_2)"*/}
+                    {/*  hover_border="var(--theme_primary_color_blue_2)"*/}
+                    {/*  hover_bgcolor="var(--theme_primary_color_blue_2)"*/}
+                    {/*  icon="arrow_right"*/}
+                    {/*>*/}
+                    {/*  Activează în aplicație*/}
+                    {/*</Button>*/}
+                    <Button
+                      onClick={() => setActivePopup('f9')}
+                      color="var(--theme_primary_color_blue_4)"
+                      bgcolor="var(--theme_primary_color_blue_3)"
+                      border="var(--theme_primary_color_blue_3)"
+                      hover_border="var(--theme_primary_color_blue_2)"
+                      hover_bgcolor="var(--theme_primary_color_blue_2)"
+                      icon="arrow_right"
+                    >
+                      {t('roaming.detalii')}
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>

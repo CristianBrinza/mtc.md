@@ -269,10 +269,28 @@
 .roaming_carousell {
   width: 100%;
   max-width: 1180px;
-  margin-top: 20px;
+  margin-top: 5px;
+}
+.roaming_carousell_block_sp {
+  background: #dfe4fd;
+  padding: 2px;
+  box-sizing: border-box;
+  width: 384px;
+  border-radius: 22px;
+}
+.roaming_carousell_block_sp_title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: Poppins, sans-serif;
+  text-align: center;
+  width: 100%;
+  margin: 3px auto -28px;
+}
+.roaming_carousell_block_sp .roaming_carousell_block_inside {
 }
 .roaming_carousell_block_inside {
-  margin: 0 auto;
+  margin: 30px auto 0;
   background-color: #f2f3f7;
   border: 1.25px transparent var(--theme_primary_color_gray_3);
   width: 380px;
@@ -298,6 +316,11 @@
   align-items: center;
   padding: 20px 0;
   box-sizing: border-box;
+}
+.wifi_plus_full_block_inside_sutitle {
+  width: 100%;
+  max-width: 96vw;
+  text-align: center;
 }
 .wifi_plus_full_block_inside {
   width: 100%;
@@ -396,7 +419,7 @@
     max-width: 580px;
   }
   .roaming_carousell {
-    max-width: 380px;
+    max-width: 390px;
   }
   .roaming_tarifs_card {
     width: 180px;
@@ -447,8 +470,11 @@
   .roaming_carousell_block_inside {
     width: 280px;
   }
+  .roaming_carousell_block_sp {
+    width: 284px;
+  }
   .roaming_carousell {
-    max-width: 280px;
+    max-width: 290px;
   }
 
   .roaming_carousell :global(.slick-next) {
