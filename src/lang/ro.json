@@ -1254,7 +1254,15 @@
       "headers": {
         "country": "Țara",
         "operator": "Operator",
-        "serviceType": "Tip serviciu"
+        "serviceType": "Tip serviciu",
+        "incoming": "Apel intrare",
+        "localExit": "Apel ieșire local",
+        "mdExit": "Apel ieșire MD",
+        "intExit": "Apel ieșire int.",
+        "sms": "SMS",
+        "traffic": "Trafic/MB",
+        "subscription": "Abonament",
+        "prepay": "Prepay"
       }
     },
     "search": {
@@ -1312,7 +1320,8 @@
         }
       ],
       "text_1": "Tarifele de roaming sunt valabile exclusiv pentru operatorii indicați în",
-      "text_2": "listă"
+      "text_2": "listă",
+      "text_3": "Tarifele sunt afisate in MDL."
     },
     "activate": {
       "title": "Modalități de activare:",

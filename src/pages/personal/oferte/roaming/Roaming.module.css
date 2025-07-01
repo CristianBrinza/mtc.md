@@ -56,7 +56,7 @@
   background-color: var(--theme_primary_color_gray_4);
 }
 .operatorTableWrapper table thead tr th {
-  padding: 5px 0;
+  padding: 5px 3px;
 }
 
 .hero_img_block {
@@ -192,15 +192,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #cecece;
+  background-color: #e8e8e8;
   border-radius: 5px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .roaming_tarifs_card_bottom {
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.operatorTableWrapper_text {
+  font-size: 10px;
+  line-height: 12px;
+  color: #8c8c8c;
+  text-align: left;
+  margin: -10px auto 0;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 .roaming_tarifs_card_text {
   font-size: 10px;

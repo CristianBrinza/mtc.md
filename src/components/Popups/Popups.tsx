@@ -718,6 +718,15 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
               </tbody>
             </table>
           </ScrollableWrapper>
+
+          <div className={styles.roaming_warning}>
+            <div className={`${styles.roaming_warning_red}`}></div>
+            <div className={styles.roaming_warning_inside}>
+              {t('roaming.warning_1')} <br />
+              {t('roaming.warning_2')}
+            </div>
+          </div>
+
           <h3>{t('popups.f5.conditionsTitle')}</h3>
           <ul>
             <li>{t('popups.f5.conditions.0')}</li>
@@ -883,6 +892,15 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
               </tbody>
             </table>
           </ScrollableWrapper>
+
+          <div className={styles.roaming_warning}>
+            <div className={`${styles.roaming_warning_red}`}></div>
+            <div className={styles.roaming_warning_inside}>
+              {t('roaming.warning_1')} <br />
+              {t('roaming.warning_2')}
+            </div>
+          </div>
+
           <h3>{t('popups.f6.conditionsTitle')}</h3>
           <ul>
             <li>{t('popups.f6.conditions.0')}</li>
@@ -1201,6 +1219,39 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
               </tbody>
             </table>
           </ScrollableWrapper>
+
+          <ScrollableWrapper>
+            <table className="popup_table">
+              <thead>
+                <tr>
+                  <td>
+                    <span>
+                      {t('operatorsTableRoamingApeluriWorld.header.country')}
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      {t('operatorsTableRoamingApeluriWorld.header.operator')}
+                    </span>
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style={{ textAlign: 'center' }}>România</td>
+                  <td style={{ textAlign: 'center' }}>Digi Mobil</td>
+                </tr>
+              </tbody>
+            </table>
+          </ScrollableWrapper>
+          <div className={styles.roaming_warning}>
+            <div className={`${styles.roaming_warning_red}`}></div>
+            <div className={styles.roaming_warning_inside}>
+              {t('roaming.warning_1')} <br />
+              {t('roaming.warning_2')}
+            </div>
+          </div>
+
           <h3>{t('popups.f9.conditionsTitle')}</h3>
           <ul>
             <li>{t('popups.f9.conditions.0')}</li>

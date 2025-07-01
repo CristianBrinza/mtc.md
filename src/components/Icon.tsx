@@ -628,6 +628,17 @@ export const icons = {
       />
     </>
   ),
+  tick: (
+    <>
+      <path
+        d="M5 13.0588L9.41176 17.4706L20 6"
+        stroke="currentColor"
+        stroke-width="2.64706"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </>
+  ),
 };
 const Icon: React.FC<IconProps> = ({
   type,

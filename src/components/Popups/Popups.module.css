@@ -67,6 +67,31 @@
   padding-bottom: 20px;
 }
 
+.roaming_warning {
+  width: 100%;
+  max-width: 1180px;
+  border-radius: 10px;
+  margin: 0px auto;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #f3f5ff;
+  display: flex;
+  align-items: stretch;
+  gap: 0px;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+.roaming_warning_red {
+  width: 8px;
+  height: auto;
+  background-color: #f8af43;
+}
+.roaming_warning_inside {
+  padding: 10px 20px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
 .rotated {
   transform: rotate(180deg);
   transition: transform 0.3s ease;

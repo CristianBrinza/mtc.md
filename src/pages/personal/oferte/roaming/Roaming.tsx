@@ -209,40 +209,53 @@ export default function Roaming() {
                 <thead>
                   <tr className={styles.rotate}>
                     <th>
-                      <span className={styles.rotateText}>Operator</span>
-                    </th>
-                    <th>
-                      <span className={styles.rotateText}>Apel intrare</span>
-                    </th>
-                    <th>
                       <span className={styles.rotateText}>
-                        Apel ieșire local
+                        {t('roaming.table.headers.operator')}
                       </span>
                     </th>
                     <th>
                       <span className={styles.rotateText}>
-                        Apel ieșire Moldova
+                        {t('roaming.table.headers.incoming')}
                       </span>
                     </th>
                     <th>
                       <span className={styles.rotateText}>
-                        Apel ieșire int.
+                        {t('roaming.table.headers.localExit')}
                       </span>
                     </th>
                     <th>
-                      <span className={styles.rotateText}>SMS</span>
+                      <span className={styles.rotateText}>
+                        {t('roaming.table.headers.mdExit')}
+                      </span>
                     </th>
                     <th>
-                      <span className={styles.rotateText}>Trafic (MB)</span>
+                      <span className={styles.rotateText}>
+                        {t('roaming.table.headers.intExit')}
+                      </span>
                     </th>
                     <th>
-                      <span className={styles.rotateText}>Abonament</span>
+                      <span className={styles.rotateText}>
+                        {t('roaming.table.headers.sms')}
+                      </span>
                     </th>
                     <th>
-                      <span className={styles.rotateText}>Prepay</span>
+                      <span className={styles.rotateText}>
+                        {t('roaming.table.headers.traffic')}
+                      </span>
+                    </th>
+                    <th>
+                      <span className={styles.rotateText}>
+                        {t('roaming.table.headers.subscription')}
+                      </span>
+                    </th>
+                    <th>
+                      <span className={styles.rotateText}>
+                        {t('roaming.table.headers.prepay')}
+                      </span>
                     </th>
                   </tr>
                 </thead>
+
                 <tbody>
                   {operators.map(op => (
                     <tr
@@ -256,13 +269,28 @@ export default function Roaming() {
                       <td>{op.apel_iesire_int}</td>
                       <td>{op.sms}</td>
                       <td>{op.trafic}</td>
-                      <td>{op.abo}</td>
-                      <td>{op.prepay}</td>
+                      <td style={{ textAlign: 'center' }}>
+                        {op.abo == 'Abonament' ? (
+                          <Icon color={'#adbbff'} type={'tick'} />
+                        ) : (
+                          ''
+                        )}
+                      </td>
+                      <td style={{ textAlign: 'center' }}>
+                        {op.prepay == 'Prepay' ? (
+                          <Icon color={'#adbbff'} type={'tick'} />
+                        ) : (
+                          ''
+                        )}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </ScrollableWrapper>
+            <div className={styles.operatorTableWrapper_text}>
+              {t('roaming.tarifs.text_3')}
+            </div>
           </div>
         )}
       </div>
@@ -432,7 +460,7 @@ export default function Roaming() {
           </div>
 
           <div className={styles.roaming_tarifs_card_text}>
-            {t('roaming.tarifs.text_1')}
+            {t('roaming.tarifs.text_1')}{' '}
             <span onClick={() => setActivePopup('1281120')}>
               {t('roaming.tarifs.text_2')}
             </span>
