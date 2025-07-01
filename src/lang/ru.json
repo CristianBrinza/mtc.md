@@ -986,7 +986,7 @@
       },
       {
         "country": "Кипр",
-        "operators": ["Epic", "PrimeTel"]
+        "operators": ["Epic"]
       },
       {
         "country": "Хорватия",
@@ -998,11 +998,7 @@
       },
       {
         "country": "Эстония",
-        "operators": [
-          "AS Eesti Telekom EMT",
-          "Telia Eesti AS",
-          "Tele2 Eesti AS"
-        ]
+        "operators": ["Tele 2 Eesti AS"]
       },
       {
         "country": "Финляндия",
@@ -1077,7 +1073,7 @@
         "operators": [
           "Orange Romania",
           "Telekom Romania Mobile",
-          "RCS&amp;RDS (Digi Mobil)",
+          "Digi Mobil",
           "Vodafone Romania"
         ]
       },
@@ -1091,7 +1087,7 @@
       },
       {
         "country": "Испания",
-        "operators": ["Vodafone España"]
+        "operators": ["Vodafone Espana"]
       },
       {
         "country": "Швеция",
@@ -1105,7 +1101,7 @@
         "country": "Венгрия",
         "operators": [
           "Magyar Telekom",
-          "Yettel Magyarország",
+          "Yettel Magyarorszag",
           "Vodafone Hungary"
         ]
       }
