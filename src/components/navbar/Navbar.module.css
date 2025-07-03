@@ -566,6 +566,9 @@
 .navbar_bottom_menu_option_submenu_bottom_item {
   cursor: pointer;
 }
+.navbar_bottom_svg_main {
+  /*transform: scale(0.95);*/
+}
 
 @media (max-width: 1250px) {
   .topbnav_menu_mobile_block {

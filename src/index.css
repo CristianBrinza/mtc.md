@@ -61,6 +61,7 @@ body {
   --theme_primary_color_blue_3: #dfe4fd;
   --theme_primary_color_blue_4: #2f3043;
   --theme_primary_color_blue_5: #adbbff10;
+  --theme_primary_color_blue_6: #2d327f;
 
   --theme_primary_color_red_2: #ef4d6c;
 
@@ -152,7 +153,8 @@ body {
   line-height: 32px;
 }
 .title_3 {
-  color: rgba(0, 0, 0, 0.85);
+  /*color: rgba(0, 0, 0, 0.85);*/
+  color: var(--theme_primary_color_blue_4);
   font-family: Poppins, sans-serif;
   font-size: 30px;
   font-style: normal;
