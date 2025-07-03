@@ -448,11 +448,11 @@ export default function M2M() {
           </div>
         </FaqQAV2>
 
-        <FaqQAV2 id_faq={'196489380'} question={t('bussines_m2m.faq.q2')}>
-          <div className="mtc_evolution_qa_hiden">
-            {t('bussines_m2m.faq.a2')}
-          </div>
-        </FaqQAV2>
+        {/*<FaqQAV2 id_faq={'196489380'} question={t('bussines_m2m.faq.q2')}>*/}
+        {/*  <div className="mtc_evolution_qa_hiden">*/}
+        {/*    {t('bussines_m2m.faq.a2')}*/}
+        {/*  </div>*/}
+        {/*</FaqQAV2>*/}
 
         <FaqQAV2 id_faq={'196489381'} question={t('bussines_m2m.faq.q3')}>
           <div className="mtc_evolution_qa_hiden">
