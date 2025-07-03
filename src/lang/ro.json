@@ -1463,6 +1463,108 @@
     "wildix": "Wildix"
   },
   "bussines_m2m": {
+    "breadcrumb": {
+      "business": "Business",
+      "m2m": "M2M"
+    },
+    "hero": { "alt": "Moldtelecom" },
+    "benefits": {
+      "cards": [
+        {
+          "title": "Monitorizare non-stop, <br />fără efort fizic",
+          "text": "Obține date precise în timp real, 24/7, fără a fi nevoie de intervenție manuală sau prezență la fața locului."
+        },
+        {
+          "title": "Control centralizat, <br />simplu și eficient",
+          "text": "Administrează toate dispozitivele dintr-un singur panou intuitiv, accesibil oricând și de oriunde."
+        },
+        {
+          "title": "Prevenirea problemelor, <br />reducerea riscurilor",
+          "text": "Primești alerte automate la primele semne de eroare, pentru intervenții rapide care minimizează întreruperile operaționale."
+        }
+      ]
+    },
+    "about": {
+      "title": "Ce este M2M?",
+      "text": "<b> Machine to Machine (M2M)</b> permite transmiterea automată și securizată a datelor între echipamente, fără intervenție umană, prin rețeaua mobilă Moldtelecom 3G/4G și cartele USIM special configurate.<br /> <br /> Este soluția ideală pentru afaceri care vizează automatizarea, controlul la distanță și optimizarea proceselor prin conectivitate fiabilă și continuă."
+    },
+    "plans": {
+      "title": "Abonamente M2M",
+      "desc": "Trafic inclus la viteză înaltă"
+    },
+    "details": {
+      "blocks": [
+        {
+          "title": "Informații abonamente",
+          "items": [
+            "Tarifele includ TVA",
+            "Traficul Internet inclus în abonament, dar neconsumat în luna curentă nu se va reporta în luna următoare",
+            "Pentru tarifarea traficului internet se calculează totalul traficului de intrare și ieșire, din momentul începerii sesiunii, per 100 KB (1 MB = 1024 KB, 1 GB = 1024 MB)",
+            "Pentru traficul Internet, vitezele de transfer a datelor estimate vor fi la capacitate maximă download (descărcare) și de până la 512 Kbps upload (încărcare), în funcție de opțiunile suplimentare activate – pentru tehnologia 3G, și la capacitate maximă download/upload (descărcare/încărcare) – pentru tehnologia 4G",
+            "La conectare la seria de abonamente „M2M Moldtelecom” se va aplica prorata (la plata de abonament, trafic internet)",
+            "La deconectare de la seria de abonamente „M2M Moldtelecom” nu se va aplica prorata (la plata de abonament)",
+            "Seria de abonamente „M2M Moldtelecom” va fi valabilă doar pentru conturile Postpay, categoria I"
+          ]
+        },
+        {
+          "title": "Tarife extra",
+          "headers": {
+            "nr": "Nr.",
+            "name": "Denumirea abonament în sistemul de billing",
+            "sms": "SMS (lei/SMS)",
+            "sms_mtc": "în rețeaua mobilă MTC",
+            "sms_other": "către alți operatori naționali",
+            "traffic": "Trafic internet (lei/MB)"
+          }
+        }
+      ]
+    },
+    "domains": {
+      "title": "Domenii de aplicare",
+      "items": [
+        {
+          "title": "Comerț",
+          "text": "Gestionați automate, POS-uri și case de marcat cu alerte rapide, asigurând funcționarea continuă și control total în timp real."
+        },
+        {
+          "title": "Securitate",
+          "text": "Monitorizați camerele și senzorii la distanță, cu integrare CRM și alerte automate pentru reacție imediată la orice incident."
+        },
+        {
+          "title": "Logistică",
+          "text": "Urmăriți flotele în timp real, reduceți costurile de roaming și evitați utilizarea neautorizată a vehiculelor sau dispozitivelor."
+        },
+        {
+          "title": "Energie",
+          "text": "Gestionați eficient contoarele inteligente și colectați automat datele de consum pentru optimizarea intervențiilor operative."
+        },
+        {
+          "title": "Agricultură",
+          "text": "Supravegheați culturile și echipamentele agricole în timp real pentru a maximiza randamentul și a minimiza pierderile."
+        },
+        {
+          "title": "Medicină",
+          "text": "Transmiteți datele pacienților în timp real, pentru monitorizare continuă și intervenții rapide în situații medicale critice."
+        }
+      ]
+    },
+    "offer": "Solicită oferta",
+    "faq": {
+      "q1": "Ce este Machine to Machine (M2M) și cum funcționează?",
+      "a1": "Machine to Machine (M2M) este schimbul automatizat de date între dispozitive, fără intervenție umană. Funcționează prin cartele USIM speciale și rețele celulare 3G/4G care transmit informațiile în mod securizat și continuu.",
+      "q2": "Ce tip de cartele SIM M2M utilizează Moldtelecom și care sunt caracteristicile lor?",
+      "a2": "Moldtelecom folosește cartele USIM optimizate pentru M2M, rezistente la variații de temperatură, umiditate şi vibrații, cu durată de viață extinsă (până la 10 ani) și suport pentru un număr mare de cicluri de citire/scriere.",
+      "q3": "Cum pot administra și monitoriza dispozitivele și cartelele SIM M2M?",
+      "a3": "Prin platforma de management M2M Moldtelecom poți vedea în timp real starea fiecărei cartele SIM, poți diagnostica automat și primi alerte proactive, generând rapoarte detaliate pentru optimizarea costurilor și prevenirea întreruperilor.",
+      "q4": "Care este aria de acoperire a serviciului M2M în Republica Moldova?",
+      "a4": "Moldtelecom asigură acoperire națională prin rețeaua 3G (peste 97% din teritoriu) și 4G, cu harta de acoperire interactivă disponibilă pe site-ul oficial în secțiunea \u201EHartă acoperire\u201D.",
+      "q5": "Ce avantaje oferă serviciul M2M Moldtelecom pentru afacerea mea?",
+      "a5": "Serviciul M2M permite automatizarea proceselor, controlul de la distanță și monitorizarea continuă 24/7, reducând costurile cu mentenanța și forța de muncă, și oferind intervenții prompte prin alerte automate la primele semne de eroare."
+    },
+    "popup": {
+      "title": "Mulțumim că ai ales Moldtelecom",
+      "text": "Soluția ideală pentru afaceri care vizează automatizarea, controlul la distanță și optimizarea proceselor prin conectivitate fiabilă și continuă."
+    },
     "carousel": {
       "order_now": "Comandă acum",
       "order_now_cerere": "Depune cerere",

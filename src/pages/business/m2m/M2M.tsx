@@ -22,11 +22,11 @@ export default function M2M() {
   const seo = {
     title: t('pages.bussines_m2m.title'),
     description: t('pages.bussines_m2m.description'),
-    keywords: t('pages.bussines_m2mbussines_m2m.keywords'),
+    keywords: t('pages.bussines_m2m.keywords'),
   };
   const breadcrumbItems = [
-    { label: 'Business', url: 'https://www.moldtelecom.md/ro/business' },
-    { label: 'M2M' },
+    { label: t('bussines_m2m.breadcrumb.business'), url: 'https://www.moldtelecom.md/ro/business' },
+    { label: t('bussines_m2m.breadcrumb.m2m') },
   ];
 
   const settings = {
@@ -96,12 +96,12 @@ export default function M2M() {
           <img
             className={styles.hero_img}
             src={`/images/landings/18774032${t('lang')}.webp`}
-            alt={t('m2m.hero.alt')}
+            alt={t('bussines_m2m.hero.alt')}
           />
           <img
             className={styles.hero_img_tablet}
             src={`/images/landings/58774032${t('lang')}.png`}
-            alt={t('m2m.hero.alt')}
+            alt={t('bussines_m2m.hero.alt')}
           />
         </div>
       </Hero>
@@ -109,30 +109,33 @@ export default function M2M() {
       <div className={styles.beneficii}>
         <div className={styles.beneficii_card}>
           <Icon type={'watch'} size={'36px'} color={'#adbbff'} />
-          <div className={styles.beneficii_card_title}>
-            Monitorizare non-stop, <br />
-            fără efort fizic
-          </div>
-          Obține date precise în timp real, 24/7, fără a fi nevoie de
-          intervenție manuală sau prezență la fața locului.
+          <div
+            className={styles.beneficii_card_title}
+            dangerouslySetInnerHTML={{
+              __html: t('bussines_m2m.benefits.cards.0.title'),
+            }}
+          ></div>
+          {t('bussines_m2m.benefits.cards.0.text')}
         </div>
         <div className={styles.beneficii_card}>
           <Icon type={'devices'} size={'36px'} color={'#adbbff'} />
-          <div className={styles.beneficii_card_title}>
-            Control centralizat, <br />
-            simplu și eficient
-          </div>
-          Administrează toate dispozitivele dintr-un singur panou intuitiv,
-          accesibil oricând și de oriunde.
+          <div
+            className={styles.beneficii_card_title}
+            dangerouslySetInnerHTML={{
+              __html: t('bussines_m2m.benefits.cards.1.title'),
+            }}
+          ></div>
+          {t('bussines_m2m.benefits.cards.1.text')}
         </div>
         <div className={styles.beneficii_card}>
           <Icon type={'repair'} size={'36px'} color={'#adbbff'} />
-          <div className={styles.beneficii_card_title}>
-            Prevenirea problemelor, <br />
-            reducerea riscurilor
-          </div>
-          Primești alerte automate la primele semne de eroare, pentru
-          intervenții rapide care minimizează întreruperile operaționale.
+          <div
+            className={styles.beneficii_card_title}
+            dangerouslySetInnerHTML={{
+              __html: t('bussines_m2m.benefits.cards.2.title'),
+            }}
+          ></div>
+          {t('bussines_m2m.benefits.cards.2.text')}
         </div>
       </div>
 
@@ -146,17 +149,12 @@ export default function M2M() {
         </div>
 
         <div className={styles.about_text}>
-          <div className={`title_3 ${styles.about_title}`}>Ce este M2M?</div>
-          <span>
-            <b> Machine to Machine (M2M)</b> permite transmiterea automată și
-            securizată a datelor între echipamente, fără intervenție umană, prin
-            rețeaua mobilă Moldtelecom 3G/4G și cartele USIM special
-            configurate.
-            <br /> <br />
-            Este soluția ideală pentru afaceri care vizează automatizarea,
-            controlul la distanță și optimizarea proceselor prin conectivitate
-            fiabilă și continuă.
-          </span>
+          <div className={`title_3 ${styles.about_title}`}>{t('bussines_m2m.about.title')}</div>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: t('bussines_m2m.about.text'),
+            }}
+          ></span>
         </div>
       </div>
       {/*<CostumeFunctions*/}
@@ -195,7 +193,7 @@ export default function M2M() {
 
       <div className={styles.m2m_full_block}>
         <div className={styles.m2m_full_block_inside}>
-          <div className="title_3"> Abonamente M2M</div>
+          <div className="title_3">{t('bussines_m2m.plans.title')}</div>
           <Slider {...settings} className={styles.wifi_carousell}>
             <div className={styles.wifi_carousell_block}>
               <div className={styles.wifi_carousell_block_inside}>
@@ -204,7 +202,7 @@ export default function M2M() {
                   M2M 29
                 </div>
                 <div className={styles.wifi_carousell_block_inside_subtitle}>
-                  Trafic inclus la viteză înaltă
+                  {t('bussines_m2m.plans.desc')}
                   <br />
                   <span> 500 MB</span>
                 </div>
@@ -239,7 +237,7 @@ export default function M2M() {
                   M2M 49
                 </div>
                 <div className={styles.wifi_carousell_block_inside_subtitle}>
-                  Trafic inclus la viteză înaltă
+                  {t('bussines_m2m.plans.desc')}
                   <br />
                   <span> 1024 MB</span>
                 </div>
@@ -271,52 +269,28 @@ export default function M2M() {
         </div>
       </div>
       <Details>
-        <DetailsBlock title={'Informații abonamente'}>
+        <DetailsBlock title={t('bussines_m2m.details.blocks.0.title')}>
           <ul>
-            <li>Tarifele includ TVA</li>
-            <li>
-              Traficul Internet inclus în abonament, dar neconsumat în luna
-              curentă nu se va reporta în luna următoare
-            </li>
-            <li>
-              Pentru tarifarea traficului internet se calculează totalul
-              traficului de intrare și ieșire, din momentul începerii sesiunii,
-              per 100 KB (1 MB = 1024 KB, 1 GB = 1024 MB)
-            </li>
-            <li>
-              Pentru traficul Internet, vitezele de transfer a datelor estimate
-              vor fi la capacitate maximă download (descărcare) și de până la
-              512 Kbps upload (încărcare), în funcție de opțiunile suplimentare
-              activate – pentru tehnologia 3G, și la capacitate maximă
-              download/upload (descărcare/încărcare) – pentru tehnologia 4G
-            </li>
-            <li>
-              La conectare la seria de abonamente „M2M Moldtelecom” se va aplica
-              prorata (la plata de abonament, trafic internet)
-            </li>
-            <li>
-              La deconectare de la seria de abonamente „M2M Moldtelecom” nu se
-              va aplica prorata (la plata de abonament)
-            </li>
-            <li>
-              Seria de abonamente „M2M Moldtelecom” va fi valabilă doar pentru
-              conturile Postpay, categoria I
-            </li>
+            {(
+              t('bussines_m2m.details.blocks.0.items', { returnObjects: true }) as string[]
+            ).map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
           </ul>
           <br />
         </DetailsBlock>
-        <DetailsBlock title={'Tarife extra'}>
+        <DetailsBlock title={t('bussines_m2m.details.blocks.1.title')}>
           <table>
             <thead>
               <tr>
-                <th rowSpan={2}>Nr.</th>
-                <th rowSpan={2}>Denumirea abonament în sistemul de billing</th>
-                <th colSpan={2}>SMS (lei/SMS)</th>
-                <th rowSpan={2}>Trafic internet (lei/MB)</th>
+                <th rowSpan={2}>{t('bussines_m2m.details.blocks.1.headers.nr')}</th>
+                <th rowSpan={2}>{t('bussines_m2m.details.blocks.1.headers.name')}</th>
+                <th colSpan={2}>{t('bussines_m2m.details.blocks.1.headers.sms')}</th>
+                <th rowSpan={2}>{t('bussines_m2m.details.blocks.1.headers.traffic')}</th>
               </tr>
               <tr>
-                <th>în rețeaua mobilă MTC</th>
-                <th>către alți operatori naționali</th>
+                <th>{t('bussines_m2m.details.blocks.1.headers.sms_mtc')}</th>
+                <th>{t('bussines_m2m.details.blocks.1.headers.sms_other')}</th>
               </tr>
             </thead>
             <tbody>
@@ -339,16 +313,17 @@ export default function M2M() {
         </DetailsBlock>
       </Details>
 
-      <div className={`title_3 ${styles.domenii}`}>Domenii de aplicare</div>
+      <div className={`title_3 ${styles.domenii}`}>{t('bussines_m2m.domains.title')}</div>
       <Slider {...settings_2} className={styles.domenii_carousell}>
         <div className={styles.domenii_carousell_block}>
           <div
             className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_1}`}
           >
-            <div className={styles.domenii_carousell_inside_title}>Comerț</div>
+            <div className={styles.domenii_carousell_inside_title}>
+              {t('bussines_m2m.domains.items.0.title')}
+            </div>
             <div className={styles.domenii_carousell_inside_text}>
-              Gestionați automate, POS-uri și case de marcat cu alerte rapide,
-              asigurând funcționarea continuă și control total în timp real.
+              {t('bussines_m2m.domains.items.0.text')}
             </div>
           </div>
         </div>
@@ -357,11 +332,10 @@ export default function M2M() {
             className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_2}`}
           >
             <div className={styles.domenii_carousell_inside_title}>
-              Securitate
+              {t('bussines_m2m.domains.items.1.title')}
             </div>
             <div className={styles.domenii_carousell_inside_text}>
-              Monitorizați camerele și senzorii la distanță, cu integrare CRM și
-              alerte automate pentru reacție imediată la orice incident.
+              {t('bussines_m2m.domains.items.1.text')}
             </div>
           </div>
         </div>
@@ -370,11 +344,10 @@ export default function M2M() {
             className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_3}`}
           >
             <div className={styles.domenii_carousell_inside_title}>
-              Logistică
+              {t('bussines_m2m.domains.items.2.title')}
             </div>
             <div className={styles.domenii_carousell_inside_text}>
-              Urmăriți flotele în timp real, reduceți costurile de roaming și
-              evitați utilizarea neautorizată a vehiculelor sau dispozitivelor.
+              {t('bussines_m2m.domains.items.2.text')}
             </div>
           </div>
         </div>
@@ -382,10 +355,11 @@ export default function M2M() {
           <div
             className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_4}`}
           >
-            <div className={styles.domenii_carousell_inside_title}>Energie</div>
+            <div className={styles.domenii_carousell_inside_title}>
+              {t('bussines_m2m.domains.items.3.title')}
+            </div>
             <div className={styles.domenii_carousell_inside_text}>
-              Gestionați eficient contoarele inteligente și colectați automat
-              datele de consum pentru optimizarea intervențiilor operative.
+              {t('bussines_m2m.domains.items.3.text')}
             </div>
           </div>
         </div>
@@ -394,11 +368,10 @@ export default function M2M() {
             className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_5}`}
           >
             <div className={styles.domenii_carousell_inside_title}>
-              Agricultură
+              {t('bussines_m2m.domains.items.4.title')}
             </div>
             <div className={styles.domenii_carousell_inside_text}>
-              Supravegheați culturile și echipamentele agricole în timp real
-              pentru a maximiza randamentul și a minimiza pierderile.
+              {t('bussines_m2m.domains.items.4.text')}
             </div>
           </div>
         </div>
@@ -407,11 +380,10 @@ export default function M2M() {
             className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_6}`}
           >
             <div className={styles.domenii_carousell_inside_title}>
-              Medicină
+              {t('bussines_m2m.domains.items.5.title')}
             </div>
             <div className={styles.domenii_carousell_inside_text}>
-              Transmiteți datele pacienților în timp real, pentru monitorizare
-              continuă și intervenții rapide în situații medicale critice.
+              {t('bussines_m2m.domains.items.5.text')}
             </div>
           </div>
         </div>
@@ -433,76 +405,39 @@ export default function M2M() {
           // hover_color="#fff"
           icon="arrow_right"
         >
-          Solicită oferta
+          {t('bussines_m2m.offer')}
         </Button>
       </div>
 
       {/* FAQ */}
       <FaqV2 max_faq={6}>
-        <FaqQAV2
-          id_faq={'196489385'}
-          question={'Ce este Machine to Machine (M2M) și cum funcționează?'}
-        >
+        <FaqQAV2 id_faq={'196489385'} question={t('bussines_m2m.faq.q1')}>
           <div className="mtc_evolution_qa_hiden">
-            Machine to Machine (M2M) este schimbul automatizat de date între
-            dispozitive, fără intervenție umană. Funcționează prin cartele USIM
-            speciale și rețele celulare 3G/4G care transmit informațiile în mod
-            securizat și continuu.
+            {t('bussines_m2m.faq.a1')}
           </div>
         </FaqQAV2>
 
-        <FaqQAV2
-          id_faq={'196489380'}
-          question={
-            'Ce tip de cartele SIM M2M utilizează Moldtelecom și care sunt caracteristicile lor?'
-          }
-        >
+        <FaqQAV2 id_faq={'196489380'} question={t('bussines_m2m.faq.q2')}>
           <div className="mtc_evolution_qa_hiden">
-            Moldtelecom folosește cartele USIM optimizate pentru M2M, rezistente
-            la variații de temperatură, umiditate şi vibrații, cu durată de
-            viață extinsă (până la 10 ani) și suport pentru un număr mare de
-            cicluri de citire/scriere.
+            {t('bussines_m2m.faq.a2')}
           </div>
         </FaqQAV2>
 
-        <FaqQAV2
-          id_faq={'196489381'}
-          question={
-            'Cum pot administra și monitoriza dispozitivele și cartelele SIM M2M?'
-          }
-        >
+        <FaqQAV2 id_faq={'196489381'} question={t('bussines_m2m.faq.q3')}>
           <div className="mtc_evolution_qa_hiden">
-            Prin platforma de management M2M Moldtelecom poți vedea în timp real
-            starea fiecărei cartele SIM, poți diagnostica automat și primi
-            alerte proactive, generând rapoarte detaliate pentru optimizarea
-            costurilor și prevenirea întreruperilor.
+            {t('bussines_m2m.faq.a3')}
           </div>
         </FaqQAV2>
 
-        <FaqQAV2
-          id_faq={'196489382'}
-          question={
-            'Care este aria de acoperire a serviciului M2M în Republica Moldova?'
-          }
-        >
+        <FaqQAV2 id_faq={'196489382'} question={t('bussines_m2m.faq.q4')}>
           <div className="mtc_evolution_qa_hiden">
-            Moldtelecom asigură acoperire națională prin rețeaua 3G (peste 97%
-            din teritoriu) și 4G, cu harta de acoperire interactivă disponibilă
-            pe site-ul oficial în secțiunea „Hartă acoperire”.
+            {t('bussines_m2m.faq.a4')}
           </div>
         </FaqQAV2>
 
-        <FaqQAV2
-          id_faq={'196489383'}
-          question={
-            'Ce avantaje oferă serviciul M2M Moldtelecom pentru afacerea mea?'
-          }
-        >
+        <FaqQAV2 id_faq={'196489383'} question={t('bussines_m2m.faq.q5')}>
           <div className="mtc_evolution_qa_hiden">
-            Serviciul M2M permite automatizarea proceselor, controlul de la
-            distanță și monitorizarea continuă 24/7, reducând costurile cu
-            mentenanța și forța de muncă, și oferind intervenții prompte prin
-            alerte automate la primele semne de eroare.
+            {t('bussines_m2m.faq.a5')}
           </div>
         </FaqQAV2>
       </FaqV2>
@@ -515,10 +450,8 @@ export default function M2M() {
         width={'800px'}
       >
         <div className={styles.popup_div}>
-          <span className={styles.popup_div_title}>{t('wifi_plus.thx')}</span>
-          Soluția ideală pentru afaceri care vizează automatizarea, controlul la
-          distanță și optimizarea proceselor prin conectivitate fiabilă și
-          continuă.
+          <span className={styles.popup_div_title}>{t('bussines_m2m.popup.title')}</span>
+          {t('bussines_m2m.popup.text')}
           <div className={styles.popup_btns}>
             <Button
               to={'tel:022200200'}
