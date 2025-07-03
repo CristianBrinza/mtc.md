@@ -308,7 +308,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
+  padding: 5px 0 20px;
   box-sizing: border-box;
 }
 .wifi_plus_full_block_inside_sutitle {

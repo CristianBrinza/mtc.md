@@ -358,6 +358,81 @@
   cursor: pointer;
 }
 
+.beneficii {
+  width: 100%;
+  max-width: 1180px;
+  display: flex;
+  gap: 20px;
+  margin: 0 auto;
+}
+.beneficii_card {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 10px;
+  /*border: 1px solid #adbbff;*/
+  background: #f3f5ff;
+  /*border: 1.5px solid #dfe4fd;*/
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  color: var(--theme_primary_color_black);
+  font-family: 'Source Sans Pro';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+.beneficii_card_title {
+  font-family: 'Source Sans Pro';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.about {
+  width: 100%;
+  max-width: 1180px;
+  display: flex;
+  gap: 20px;
+  margin: -10px auto;
+}
+.about_img_block {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about_img {
+  width: 500px;
+  height: auto;
+}
+.about_text {
+  width: 500px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.about_title {
+  margin: 0;
+  padding: 0;
+}
+
+.solicita {
+  width: 100%;
+  margin: 0 auto -30px;
+  background-color: #eff2ff;
+  padding: 38px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 1300px) {
   .hero {
     width: 1300px;
@@ -381,6 +456,21 @@
     /*max-width: 950px; */
     max-width: 900px;
   }
+  .beneficii {
+    max-width: 900px;
+  }
+  .about {
+    max-width: 900px;
+  }
+  .about_img {
+    margin: -20px -30px 10px;
+  }
+  .about_img_block {
+    max-width: fit-content;
+  }
+  .domenii_carousell {
+    max-width: 900px;
+  }
 }
 @media (max-width: 1150px) {
   .hero {
@@ -394,8 +484,6 @@
     width: 1000px;
     margin-left: calc((1000px - 100vw) / -2);
   }
-}
-@media (max-width: 950px) {
   .hero_img_tablet {
     display: block;
     width: 1400px;
@@ -429,6 +517,43 @@
   }
   .m2m_full_block_inside {
     max-width: 580px;
+  }
+  .beneficii {
+    max-width: calc(100vw - 40px);
+    flex-direction: column;
+  }
+  .beneficii_card {
+    max-width: 100%;
+  }
+  .beneficii_card_title br {
+    display: none;
+  }
+  .about {
+    max-width: calc(100vw - 40px);
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0px auto 35px;
+  }
+
+  .about_img {
+    margin: -10px 0px -10px;
+    width: 100vw;
+    max-width: 500px;
+  }
+  .about_text {
+    max-width: calc(100vw - 40px);
+  }
+  .domenii_carousell {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 705px) {
+  .domenii_carousell {
+    width: calc(100vw - 40px);
+    max-width: 290px;
   }
 }
 

@@ -14,7 +14,8 @@ import Slider from 'react-slick';
 import Button from '../../../components/Button.tsx';
 import { useState } from 'react';
 import Popup from '../../../components/Popup/Popup.tsx';
-import CostumeFunctions from '../../../components/functions/CostumeFunctions.tsx';
+// import CostumeFunctions from '../../../components/functions/CostumeFunctions.tsx';
+import Icon from '../../../components/Icon.tsx';
 
 export default function M2M() {
   const { t } = useTranslation();
@@ -43,7 +44,7 @@ export default function M2M() {
           slidesToShow: 1,
           autoplay: true,
           autoplaySpeed: 1800,
-          arrows: true,
+          arrows: false,
         },
       },
     ],
@@ -58,14 +59,16 @@ export default function M2M() {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 651,
+        breakpoint: 1301,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           autoplay: true,
           autoplaySpeed: 1800,
           arrows: true,
         },
       },
+      { breakpoint: 951, settings: { slidesToShow: 2 } },
+      { breakpoint: 705, settings: { slidesToShow: 1 } },
     ],
   };
 
@@ -103,39 +106,92 @@ export default function M2M() {
         </div>
       </Hero>
 
-      <CostumeFunctions
-        style_type="blue"
-        costume={[
-          {
-            id: 'custom0',
-            icon: 'speed',
-            title: 'Monitorizare şi mentenanţă',
-            text: 'Diagnostică și control la distanță a proceselor și dispozitivelor ',
-            popupId: 'customPopup1',
-          },
-          {
-            id: 'custom1',
-            icon: 'money',
-            title: 'Reducerea costurilor',
-            text: 'Scăderea costurilor cu energia, mentenanța și forța de muncă',
-            popupId: 'customPopup1',
-          },
-          {
-            id: 'custom2',
-            icon: 'ai',
-            title: 'Automatizare și eficiență',
-            text: 'Automatizarea proceselor și optimizarea resurselor ',
-            popupId: 'customPopup1',
-          },
-          {
-            id: 'custom3',
-            icon: 'car',
-            title: 'Mobilitate',
-            text: 'Monitorizarea și controlul dispozitivelor indiferent de locație',
-            popupId: 'customPopup1',
-          },
-        ]}
-      />
+      <div className={styles.beneficii}>
+        <div className={styles.beneficii_card}>
+          <Icon type={'watch'} size={'36px'} color={'#adbbff'} />
+          <div className={styles.beneficii_card_title}>
+            Monitorizare non-stop, <br />
+            fără efort fizic
+          </div>
+          Obține date precise în timp real, 24/7, fără a fi nevoie de
+          intervenție manuală sau prezență la fața locului.
+        </div>
+        <div className={styles.beneficii_card}>
+          <Icon type={'devices'} size={'36px'} color={'#adbbff'} />
+          <div className={styles.beneficii_card_title}>
+            Control centralizat, <br />
+            simplu și eficient
+          </div>
+          Administrează toate dispozitivele dintr-un singur panou intuitiv,
+          accesibil oricând și de oriunde.
+        </div>
+        <div className={styles.beneficii_card}>
+          <Icon type={'repair'} size={'36px'} color={'#adbbff'} />
+          <div className={styles.beneficii_card_title}>
+            Prevenirea problemelor, <br />
+            reducerea riscurilor
+          </div>
+          Primești alerte automate la primele semne de eroare, pentru
+          intervenții rapide care minimizează întreruperile operaționale.
+        </div>
+      </div>
+
+      <div className={styles.about}>
+        <div className={styles.about_img_block}>
+          <img
+            src="/images/landings/16170083.webp"
+            alt="SIM"
+            className={styles.about_img}
+          />
+        </div>
+
+        <div className={styles.about_text}>
+          <div className={`title_3 ${styles.about_title}`}>Ce este M2M?</div>
+          <span>
+            <b> Machine to Machine (M2M)</b> permite transmiterea automată și
+            securizată a datelor între echipamente, fără intervenție umană, prin
+            rețeaua mobilă Moldtelecom 3G/4G și cartele USIM special
+            configurate.
+            <br /> <br />
+            Este soluția ideală pentru afaceri care vizează automatizarea,
+            controlul la distanță și optimizarea proceselor prin conectivitate
+            fiabilă și continuă.
+          </span>
+        </div>
+      </div>
+      {/*<CostumeFunctions*/}
+      {/*  style_type="blue"*/}
+      {/*  costume={[*/}
+      {/*    {*/}
+      {/*      id: 'custom0',*/}
+      {/*      icon: 'speed',*/}
+      {/*      title: 'Monitorizare şi mentenanţă',*/}
+      {/*      text: 'Diagnostică și control la distanță a proceselor și dispozitivelor ',*/}
+      {/*      popupId: 'customPopup1',*/}
+      {/*    },*/}
+      {/*    {*/}
+      {/*      id: 'custom1',*/}
+      {/*      icon: 'money',*/}
+      {/*      title: 'Reducerea costurilor',*/}
+      {/*      text: 'Scăderea costurilor cu energia, mentenanța și forța de muncă',*/}
+      {/*      popupId: 'customPopup1',*/}
+      {/*    },*/}
+      {/*    {*/}
+      {/*      id: 'custom2',*/}
+      {/*      icon: 'ai',*/}
+      {/*      title: 'Automatizare și eficiență',*/}
+      {/*      text: 'Automatizarea proceselor și optimizarea resurselor ',*/}
+      {/*      popupId: 'customPopup1',*/}
+      {/*    },*/}
+      {/*    {*/}
+      {/*      id: 'custom3',*/}
+      {/*      icon: 'car',*/}
+      {/*      title: 'Mobilitate',*/}
+      {/*      text: 'Monitorizarea și controlul dispozitivelor indiferent de locație',*/}
+      {/*      popupId: 'customPopup1',*/}
+      {/*    },*/}
+      {/*  ]}*/}
+      {/*/>*/}
 
       <div className={styles.m2m_full_block}>
         <div className={styles.m2m_full_block_inside}>
@@ -291,9 +347,8 @@ export default function M2M() {
           >
             <div className={styles.domenii_carousell_inside_title}>Comerț</div>
             <div className={styles.domenii_carousell_inside_text}>
-              Gestionați automatele de vânzare, casele de marcat și terminalele
-              POS cu notificări instantanee pentru o funcționare fără
-              întreruperi.
+              Gestionați automate, POS-uri și case de marcat cu alerte rapide,
+              asigurând funcționarea continuă și control total în timp real.
             </div>
           </div>
         </div>
@@ -305,8 +360,8 @@ export default function M2M() {
               Securitate
             </div>
             <div className={styles.domenii_carousell_inside_text}>
-              Controlați de la distanță senzorii și camerele video prin SMS și
-              integrați datele în CRM pentru răspuns rapid la orice alertă.
+              Monitorizați camerele și senzorii la distanță, cu integrare CRM și
+              alerte automate pentru reacție imediată la orice incident.
             </div>
           </div>
         </div>
@@ -315,12 +370,11 @@ export default function M2M() {
             className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_3}`}
           >
             <div className={styles.domenii_carousell_inside_title}>
-              Logistică <br />
-              și Transport
+              Logistică
             </div>
             <div className={styles.domenii_carousell_inside_text}>
-              Controlați de la distanță senzorii și camerele video prin SMS și
-              integrați datele în CRM pentru răspuns rapid la orice alertă.
+              Urmăriți flotele în timp real, reduceți costurile de roaming și
+              evitați utilizarea neautorizată a vehiculelor sau dispozitivelor.
             </div>
           </div>
         </div>
@@ -328,13 +382,10 @@ export default function M2M() {
           <div
             className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_4}`}
           >
-            <div className={styles.domenii_carousell_inside_title}>
-              Energie <br />
-              și Utilități
-            </div>
+            <div className={styles.domenii_carousell_inside_title}>Energie</div>
             <div className={styles.domenii_carousell_inside_text}>
-              Colectați automat datele de consum de la contoare inteligente
-              pentru o gestiune eficientă și intervenții rapide.
+              Gestionați eficient contoarele inteligente și colectați automat
+              datele de consum pentru optimizarea intervențiilor operative.
             </div>
           </div>
         </div>
@@ -346,8 +397,8 @@ export default function M2M() {
               Agricultură
             </div>
             <div className={styles.domenii_carousell_inside_text}>
-              Monitorizați starea culturilor și funcționarea echipamentelor
-              agricole pentru a crește productivitatea și a reduce costurile.
+              Supravegheați culturile și echipamentele agricole în timp real
+              pentru a maximiza randamentul și a minimiza pierderile.
             </div>
           </div>
         </div>
@@ -359,17 +410,100 @@ export default function M2M() {
               Medicină
             </div>
             <div className={styles.domenii_carousell_inside_text}>
-              Transmiterea în timp real a datelor medicale pentru monitorizarea
-              pacienților și intervenții prompte în situații critice.
+              Transmiteți datele pacienților în timp real, pentru monitorizare
+              continuă și intervenții rapide în situații medicale critice.
             </div>
           </div>
         </div>
       </Slider>
 
+      <div className={styles.solicita}>
+        <Button
+          onClick={() => setShowPopupFunction('aaa')}
+          color="var(--theme_primary_color_blue_4)"
+          bgcolor="var(--theme_primary_color_blue_3)"
+          border="var(--theme_primary_color_blue_3)"
+          hover_border="var(--theme_primary_color_blue_2)"
+          hover_bgcolor="var(--theme_primary_color_blue_2)"
+          // color="#fff"
+          // bgcolor="var(--theme_primary_color_blue_2)"
+          // border="var(--theme_primary_color_blue_2)"
+          // hover_border="var(--theme_primary_color_blue_4)"
+          // hover_bgcolor="var(--theme_primary_color_blue_4)"
+          // hover_color="#fff"
+          icon="arrow_right"
+        >
+          Solicită oferta
+        </Button>
+      </div>
+
       {/* FAQ */}
       <FaqV2 max_faq={6}>
-        <FaqQAV2 id_faq={'196489378'} question={'---?'}>
-          <div className="mtc_evolution_qa_hiden">---</div>
+        <FaqQAV2
+          id_faq={'196489385'}
+          question={'Ce este Machine to Machine (M2M) și cum funcționează?'}
+        >
+          <div className="mtc_evolution_qa_hiden">
+            Machine to Machine (M2M) este schimbul automatizat de date între
+            dispozitive, fără intervenție umană. Funcționează prin cartele USIM
+            speciale și rețele celulare 3G/4G care transmit informațiile în mod
+            securizat și continuu.
+          </div>
+        </FaqQAV2>
+
+        <FaqQAV2
+          id_faq={'196489380'}
+          question={
+            'Ce tip de cartele SIM M2M utilizează Moldtelecom și care sunt caracteristicile lor?'
+          }
+        >
+          <div className="mtc_evolution_qa_hiden">
+            Moldtelecom folosește cartele USIM optimizate pentru M2M, rezistente
+            la variații de temperatură, umiditate şi vibrații, cu durată de
+            viață extinsă (până la 10 ani) și suport pentru un număr mare de
+            cicluri de citire/scriere.
+          </div>
+        </FaqQAV2>
+
+        <FaqQAV2
+          id_faq={'196489381'}
+          question={
+            'Cum pot administra și monitoriza dispozitivele și cartelele SIM M2M?'
+          }
+        >
+          <div className="mtc_evolution_qa_hiden">
+            Prin platforma de management M2M Moldtelecom poți vedea în timp real
+            starea fiecărei cartele SIM, poți diagnostica automat și primi
+            alerte proactive, generând rapoarte detaliate pentru optimizarea
+            costurilor și prevenirea întreruperilor.
+          </div>
+        </FaqQAV2>
+
+        <FaqQAV2
+          id_faq={'196489382'}
+          question={
+            'Care este aria de acoperire a serviciului M2M în Republica Moldova?'
+          }
+        >
+          <div className="mtc_evolution_qa_hiden">
+            Moldtelecom asigură acoperire națională prin rețeaua 3G (peste 97%
+            din teritoriu) și 4G, cu harta de acoperire interactivă disponibilă
+            pe site-ul oficial în secțiunea „Hartă acoperire”.
+          </div>
+        </FaqQAV2>
+
+        <FaqQAV2
+          id_faq={'196489383'}
+          question={
+            'Ce avantaje oferă serviciul M2M Moldtelecom pentru afacerea mea?'
+          }
+        >
+          <div className="mtc_evolution_qa_hiden">
+            Serviciul M2M permite automatizarea proceselor, controlul de la
+            distanță și monitorizarea continuă 24/7, reducând costurile cu
+            mentenanța și forța de muncă, și oferind intervenții prompte prin
+            alerte automate la primele semne de eroare.
+          </div>
         </FaqQAV2>
       </FaqV2>
 
@@ -382,8 +516,9 @@ export default function M2M() {
       >
         <div className={styles.popup_div}>
           <span className={styles.popup_div_title}>{t('wifi_plus.thx')}</span>
-
-          {t('wifi_plus.txt_1')}
+          Soluția ideală pentru afaceri care vizează automatizarea, controlul la
+          distanță și optimizarea proceselor prin conectivitate fiabilă și
+          continuă.
           <div className={styles.popup_btns}>
             <Button
               to={'tel:022200200'}
