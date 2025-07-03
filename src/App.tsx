@@ -8,6 +8,8 @@ import i18n from './i18n.tsx';
 import Triple from './pages/personal/oferte/triple/Triple.tsx';
 import { routesConfig } from './routesConfig.tsx';
 import ScrollToTop from './components/scroll_to_top/ScrollToTop.tsx';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function App() {
   return (
