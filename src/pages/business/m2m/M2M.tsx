@@ -20,9 +20,9 @@ import Icon from '../../../components/Icon.tsx';
 export default function M2M() {
   const { t } = useTranslation();
   const seo = {
-    title: t('pages.roaming.title'),
-    description: t('pages.roaming.description'),
-    keywords: t('pages.roaming.keywords'),
+    title: t('pages.bussines_m2m.title'),
+    description: t('pages.bussines_m2m.description'),
+    keywords: t('pages.bussines_m2mbussines_m2m.keywords'),
   };
   const breadcrumbItems = [
     { label: 'Business', url: 'https://www.moldtelecom.md/ro/business' },
@@ -219,14 +219,14 @@ export default function M2M() {
                     hover_bgcolor="var(--theme_primary_color_blue_2)"
                     icon="arrow_right"
                   >
-                    {t('m2m.carousel.order_now')}
+                    {t('bussines_m2m.carousel.order_now')}
                   </Button>
                   <span className={styles.wifi_carousell_block_inside_price}>
                     29
                     <span
                       className={styles.wifi_carousell_block_inside_subprice}
                     >
-                      {` ${t('m2m.carousel.price_unit')}`}
+                      {` ${t('bussines_m2m.carousel.price_unit')}`}
                     </span>
                   </span>
                 </div>
@@ -254,14 +254,14 @@ export default function M2M() {
                     hover_bgcolor="var(--theme_primary_color_blue_2)"
                     icon="arrow_right"
                   >
-                    {t('m2m.carousel.order_now')}
+                    {t('bussines_m2m.carousel.order_now')}
                   </Button>
                   <span className={styles.wifi_carousell_block_inside_price}>
                     49
                     <span
                       className={styles.wifi_carousell_block_inside_subprice}
                     >
-                      {` ${t('m2m.carousel.price_unit')}`}
+                      {` ${t('bussines_m2m.carousel.price_unit')}`}
                     </span>
                   </span>
                 </div>

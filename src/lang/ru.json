@@ -1483,6 +1483,11 @@
       "title": "Поиск",
       "description": "Быстро находите услуги, тарифы и опции Moldtelecom по ключевым словам.",
       "keywords": "поиск, moldtelecom, услуги, тарифы, опции, интернет, тв, мобильная связь, Молдова"
+    },
+    "bussines_m2m": {
+      "title": "M2M",
+      "description": "Бизнес-решение M2M обеспечивает удаленный мониторинг и контроль устройств.",
+      "keywords": "m2m, бизнес, iot, мониторинг, контроль"
     }
   },
   "home": {
@@ -1620,5 +1625,12 @@
     "servicii_suplimentare": "Дополнительные услуги",
     "isdn": "ISDN",
     "wildix": "Wildix"
+  },
+  "bussines_m2m": {
+    "carousel": {
+      "order_now": "Закажи",
+      "order_now_cerere": "Подай заявку",
+      "price_unit": "лей/месяц"
+    }
   }
 }

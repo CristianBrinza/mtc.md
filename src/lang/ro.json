@@ -1422,6 +1422,11 @@
       "title": "Căutare",
       "description": "Găsește rapid serviciile, planurile și opțiunile Moldtelecom folosind cuvinte cheie.",
       "keywords": "căutare, moldtelecom, servicii, planuri, opțiuni, internet, tv, mobil, Moldova"
+    },
+    "bussines_m2m": {
+      "title": "M2M",
+      "description": "Soluția Business M2M oferă monitorizare și control avansat al dispozitivelor.",
+      "keywords": "m2m, business, iot, monitorizare, control"
     }
   },
   "navbar_business": {
@@ -1457,7 +1462,7 @@
     "isdn": "ISDN",
     "wildix": "Wildix"
   },
-  "m2m": {
+  "bussines_m2m": {
     "carousel": {
       "order_now": "Comandă acum",
       "order_now_cerere": "Depune cerere",
