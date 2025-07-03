@@ -25,7 +25,10 @@ export default function M2M() {
     keywords: t('pages.bussines_m2m.keywords'),
   };
   const breadcrumbItems = [
-    { label: t('bussines_m2m.breadcrumb.business'), url: 'https://www.moldtelecom.md/ro/business' },
+    {
+      label: t('bussines_m2m.breadcrumb.business'),
+      url: 'https://www.moldtelecom.md/ro/business',
+    },
     { label: t('bussines_m2m.breadcrumb.m2m') },
   ];
 
@@ -149,7 +152,9 @@ export default function M2M() {
         </div>
 
         <div className={styles.about_text}>
-          <div className={`title_3 ${styles.about_title}`}>{t('bussines_m2m.about.title')}</div>
+          <div className={`title_3 ${styles.about_title}`}>
+            {t('bussines_m2m.about.title')}
+          </div>
           <span
             dangerouslySetInnerHTML={{
               __html: t('bussines_m2m.about.text'),
@@ -272,7 +277,9 @@ export default function M2M() {
         <DetailsBlock title={t('bussines_m2m.details.blocks.0.title')}>
           <ul>
             {(
-              t('bussines_m2m.details.blocks.0.items', { returnObjects: true }) as string[]
+              t('bussines_m2m.details.blocks.0.items', {
+                returnObjects: true,
+              }) as string[]
             ).map((item, i) => (
               <li key={i}>{item}</li>
             ))}
@@ -283,10 +290,18 @@ export default function M2M() {
           <table>
             <thead>
               <tr>
-                <th rowSpan={2}>{t('bussines_m2m.details.blocks.1.headers.nr')}</th>
-                <th rowSpan={2}>{t('bussines_m2m.details.blocks.1.headers.name')}</th>
-                <th colSpan={2}>{t('bussines_m2m.details.blocks.1.headers.sms')}</th>
-                <th rowSpan={2}>{t('bussines_m2m.details.blocks.1.headers.traffic')}</th>
+                <th rowSpan={2}>
+                  {t('bussines_m2m.details.blocks.1.headers.nr')}
+                </th>
+                <th rowSpan={2}>
+                  {t('bussines_m2m.details.blocks.1.headers.name')}
+                </th>
+                <th colSpan={2}>
+                  {t('bussines_m2m.details.blocks.1.headers.sms')}
+                </th>
+                <th rowSpan={2}>
+                  {t('bussines_m2m.details.blocks.1.headers.traffic')}
+                </th>
               </tr>
               <tr>
                 <th>{t('bussines_m2m.details.blocks.1.headers.sms_mtc')}</th>
@@ -313,7 +328,9 @@ export default function M2M() {
         </DetailsBlock>
       </Details>
 
-      <div className={`title_3 ${styles.domenii}`}>{t('bussines_m2m.domains.title')}</div>
+      <div className={`title_3 ${styles.domenii}`}>
+        {t('bussines_m2m.domains.title')}
+      </div>
       <Slider {...settings_2} className={styles.domenii_carousell}>
         <div className={styles.domenii_carousell_block}>
           <div
@@ -450,7 +467,9 @@ export default function M2M() {
         width={'800px'}
       >
         <div className={styles.popup_div}>
-          <span className={styles.popup_div_title}>{t('bussines_m2m.popup.title')}</span>
+          <span className={styles.popup_div_title}>
+            {t('bussines_m2m.popup.title')}
+          </span>
           {t('bussines_m2m.popup.text')}
           <div className={styles.popup_btns}>
             <Button

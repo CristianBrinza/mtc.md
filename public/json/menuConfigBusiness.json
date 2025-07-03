@@ -138,5 +138,20 @@
   {
     "label": "navbar_business.businessoffice",
     "to": "/business/business-office"
+  },
+  {
+    "label": "IOT",
+    "submenu": [
+      {
+        "title": "navbar_business.solutii",
+        "small": true,
+        "items": [
+          {
+            "label": "M2M Moldtelecom",
+            "to": "/m2m"
+          }
+        ]
+      }
+    ]
   }
 ]

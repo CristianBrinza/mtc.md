@@ -1460,7 +1460,8 @@
     "virtual_pbx": "Virtual PBX",
     "servicii_suplimentare": "Servicii suplimentare",
     "isdn": "ISDN",
-    "wildix": "Wildix"
+    "wildix": "Wildix",
+    "solutii": "Soluții"
   },
   "bussines_m2m": {
     "breadcrumb": {
@@ -1550,15 +1551,15 @@
     },
     "offer": "Solicită oferta",
     "faq": {
-      "q1": "Ce este Machine to Machine (M2M) și cum funcționează?",
+      "q1": "Ce este M2M și cum funcționează?",
       "a1": "Machine to Machine (M2M) este schimbul automatizat de date între dispozitive, fără intervenție umană. Funcționează prin cartele USIM speciale și rețele celulare 3G/4G care transmit informațiile în mod securizat și continuu.",
-      "q2": "Ce tip de cartele SIM M2M utilizează Moldtelecom și care sunt caracteristicile lor?",
+      "q2": "Ce tip de cartele SIM M2M utilizează Moldtelecom?",
       "a2": "Moldtelecom folosește cartele USIM optimizate pentru M2M, rezistente la variații de temperatură, umiditate şi vibrații, cu durată de viață extinsă (până la 10 ani) și suport pentru un număr mare de cicluri de citire/scriere.",
-      "q3": "Cum pot administra și monitoriza dispozitivele și cartelele SIM M2M?",
+      "q3": "Cum pot administra și monitoriza  SIM M2M?",
       "a3": "Prin platforma de management M2M Moldtelecom poți vedea în timp real starea fiecărei cartele SIM, poți diagnostica automat și primi alerte proactive, generând rapoarte detaliate pentru optimizarea costurilor și prevenirea întreruperilor.",
-      "q4": "Care este aria de acoperire a serviciului M2M în Republica Moldova?",
+      "q4": "Care este aria de acoperire M2M?",
       "a4": "Moldtelecom asigură acoperire națională prin rețeaua 3G (peste 97% din teritoriu) și 4G, cu harta de acoperire interactivă disponibilă pe site-ul oficial în secțiunea \u201EHartă acoperire\u201D.",
-      "q5": "Ce avantaje oferă serviciul M2M Moldtelecom pentru afacerea mea?",
+      "q5": "Ce avantaje oferă serviciul M2M?",
       "a5": "Serviciul M2M permite automatizarea proceselor, controlul de la distanță și monitorizarea continuă 24/7, reducând costurile cu mentenanța și forța de muncă, și oferind intervenții prompte prin alerte automate la primele semne de eroare."
     },
     "popup": {

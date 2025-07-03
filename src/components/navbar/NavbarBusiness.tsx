@@ -432,7 +432,7 @@ const Navbar: React.FC = () => {
                                 href={
                                   block.to.includes('/business')
                                     ? `https://www.moldtelecom.md/${t('lang')}${block.to}`
-                                    : block.to
+                                    : `/${t('lang')}/business${block.to}`
                                 }
                                 key={blockIndex}
                                 className={`
@@ -477,7 +477,7 @@ const Navbar: React.FC = () => {
                                     href={
                                       subItem.to.includes('/business')
                                         ? `https://www.moldtelecom.md/${t('lang')}${subItem.to}`
-                                        : subItem.to
+                                        : `/${t('lang')}/business${subItem.to}`
                                     }
                                     className={
                                       block.small
@@ -587,7 +587,7 @@ const Navbar: React.FC = () => {
                         href={
                           item.to.includes('/business')
                             ? `https://www.moldtelecom.md/${t('lang')}${item.to}`
-                            : item.to
+                            : `business/${t('lang')}${item.to}`
                         }
                       >
                         {t(item.label)}
