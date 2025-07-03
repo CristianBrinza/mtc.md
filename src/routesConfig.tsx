@@ -24,11 +24,11 @@ export interface RouteConfig {
 }
 
 export const routesConfig: RouteConfig[] = [
-  { path: '/', element: React.createElement(Home) },
+  { path: '/', element: React.createElement(NotFound) },
   {
     path: '/:lang/',
     // i18nKey: 'home.title',
-    element: React.createElement(Home),
+    element: React.createElement(NotFound),
   },
   {
     path: '/:lang/newsite',

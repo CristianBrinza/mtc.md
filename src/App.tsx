@@ -17,8 +17,8 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Navigate to="/ro" replace />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/:lang/" element={<Home />} />
+            <Route path="/" element={<NotFound />} />
+            <Route path="/:lang/" element={<NotFound />} />
             <Route path="/:lang/triple" element={<Triple />} />
             <Route path="*" element={<NotFound />} />
 
