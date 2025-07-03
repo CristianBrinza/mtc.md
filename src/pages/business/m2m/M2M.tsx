@@ -112,6 +112,11 @@ export default function M2M() {
       <div className={styles.beneficii}>
         <div className={styles.beneficii_card}>
           <Icon type={'watch'} size={'36px'} color={'#adbbff'} />
+          {/*<img*/}
+          {/*  src="/images/3d_icons/visible.webp"*/}
+          {/*  alt="3d_icon"*/}
+          {/*  className={styles.beneficii_card_3d_icon}*/}
+          {/*/>*/}
           <div
             className={styles.beneficii_card_title}
             dangerouslySetInnerHTML={{
@@ -141,25 +146,26 @@ export default function M2M() {
           {t('bussines_m2m.benefits.cards.2.text')}
         </div>
       </div>
-
-      <div className={styles.about}>
-        <div className={styles.about_img_block}>
-          <img
-            src="/images/landings/16170083.webp"
-            alt="SIM"
-            className={styles.about_img}
-          />
-        </div>
-
-        <div className={styles.about_text}>
-          <div className={`title_3 ${styles.about_title}`}>
-            {t('bussines_m2m.about.title')}
+      <div className={styles.about_block}>
+        <div className={styles.about}>
+          <div className={styles.about_img_block}>
+            <img
+              src="/images/landings/16170083.webp"
+              alt="SIM"
+              className={styles.about_img}
+            />
           </div>
-          <span
-            dangerouslySetInnerHTML={{
-              __html: t('bussines_m2m.about.text'),
-            }}
-          ></span>
+
+          <div className={styles.about_text}>
+            <div className={`title_3 ${styles.about_title}`}>
+              {t('bussines_m2m.about.title')}
+            </div>
+            <span
+              dangerouslySetInnerHTML={{
+                __html: t('bussines_m2m.about.text'),
+              }}
+            ></span>
+          </div>
         </div>
       </div>
       {/*<CostumeFunctions*/}
@@ -195,6 +201,84 @@ export default function M2M() {
       {/*    },*/}
       {/*  ]}*/}
       {/*/>*/}
+
+      <div className={`title_3 ${styles.domenii}`}>
+        {t('bussines_m2m.domains.title')}
+      </div>
+      <Slider {...settings_2} className={styles.domenii_carousell}>
+        <div className={styles.domenii_carousell_block}>
+          <div
+            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_1}`}
+          >
+            <div className={styles.domenii_carousell_inside_title}>
+              {t('bussines_m2m.domains.items.0.title')}
+            </div>
+            <div className={styles.domenii_carousell_inside_text}>
+              {t('bussines_m2m.domains.items.0.text')}
+            </div>
+          </div>
+        </div>
+        <div className={styles.domenii_carousell_block}>
+          <div
+            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_2}`}
+          >
+            <div className={styles.domenii_carousell_inside_title}>
+              {t('bussines_m2m.domains.items.1.title')}
+            </div>
+            <div className={styles.domenii_carousell_inside_text}>
+              {t('bussines_m2m.domains.items.1.text')}
+            </div>
+          </div>
+        </div>
+        <div className={styles.domenii_carousell_block}>
+          <div
+            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_3}`}
+          >
+            <div className={styles.domenii_carousell_inside_title}>
+              {t('bussines_m2m.domains.items.2.title')}
+            </div>
+            <div className={styles.domenii_carousell_inside_text}>
+              {t('bussines_m2m.domains.items.2.text')}
+            </div>
+          </div>
+        </div>
+        <div className={styles.domenii_carousell_block}>
+          <div
+            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_4}`}
+          >
+            <div className={styles.domenii_carousell_inside_title}>
+              {t('bussines_m2m.domains.items.3.title')}
+            </div>
+            <div className={styles.domenii_carousell_inside_text}>
+              {t('bussines_m2m.domains.items.3.text')}
+            </div>
+          </div>
+        </div>
+        <div className={styles.domenii_carousell_block}>
+          <div
+            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_5}`}
+          >
+            <div className={styles.domenii_carousell_inside_title}>
+              {t('bussines_m2m.domains.items.4.title')}
+            </div>
+            <div className={styles.domenii_carousell_inside_text}>
+              {t('bussines_m2m.domains.items.4.text')}
+            </div>
+          </div>
+        </div>
+        <div className={styles.domenii_carousell_block}>
+          <div
+            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_6}`}
+          >
+            <div className={styles.domenii_carousell_inside_title}>
+              {t('bussines_m2m.domains.items.5.title')}
+            </div>
+            <div className={styles.domenii_carousell_inside_text}>
+              {t('bussines_m2m.domains.items.5.text')}
+            </div>
+          </div>
+        </div>
+      </Slider>
 
       <div className={styles.m2m_full_block}>
         <div className={styles.m2m_full_block_inside}>
@@ -328,103 +412,33 @@ export default function M2M() {
         </DetailsBlock>
       </Details>
 
-      <div className={`title_3 ${styles.domenii}`}>
-        {t('bussines_m2m.domains.title')}
-      </div>
-      <Slider {...settings_2} className={styles.domenii_carousell}>
-        <div className={styles.domenii_carousell_block}>
-          <div
-            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_1}`}
-          >
-            <div className={styles.domenii_carousell_inside_title}>
-              {t('bussines_m2m.domains.items.0.title')}
-            </div>
-            <div className={styles.domenii_carousell_inside_text}>
-              {t('bussines_m2m.domains.items.0.text')}
-            </div>
-          </div>
-        </div>
-        <div className={styles.domenii_carousell_block}>
-          <div
-            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_2}`}
-          >
-            <div className={styles.domenii_carousell_inside_title}>
-              {t('bussines_m2m.domains.items.1.title')}
-            </div>
-            <div className={styles.domenii_carousell_inside_text}>
-              {t('bussines_m2m.domains.items.1.text')}
-            </div>
-          </div>
-        </div>
-        <div className={styles.domenii_carousell_block}>
-          <div
-            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_3}`}
-          >
-            <div className={styles.domenii_carousell_inside_title}>
-              {t('bussines_m2m.domains.items.2.title')}
-            </div>
-            <div className={styles.domenii_carousell_inside_text}>
-              {t('bussines_m2m.domains.items.2.text')}
-            </div>
-          </div>
-        </div>
-        <div className={styles.domenii_carousell_block}>
-          <div
-            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_4}`}
-          >
-            <div className={styles.domenii_carousell_inside_title}>
-              {t('bussines_m2m.domains.items.3.title')}
-            </div>
-            <div className={styles.domenii_carousell_inside_text}>
-              {t('bussines_m2m.domains.items.3.text')}
-            </div>
-          </div>
-        </div>
-        <div className={styles.domenii_carousell_block}>
-          <div
-            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_5}`}
-          >
-            <div className={styles.domenii_carousell_inside_title}>
-              {t('bussines_m2m.domains.items.4.title')}
-            </div>
-            <div className={styles.domenii_carousell_inside_text}>
-              {t('bussines_m2m.domains.items.4.text')}
-            </div>
-          </div>
-        </div>
-        <div className={styles.domenii_carousell_block}>
-          <div
-            className={`${styles.domenii_carousell_inside} ${styles.domenii_carousell_inside_6}`}
-          >
-            <div className={styles.domenii_carousell_inside_title}>
-              {t('bussines_m2m.domains.items.5.title')}
-            </div>
-            <div className={styles.domenii_carousell_inside_text}>
-              {t('bussines_m2m.domains.items.5.text')}
-            </div>
-          </div>
-        </div>
-      </Slider>
+      {/*<div className={styles.solicita}>*/}
+      {/*  <Button*/}
+      {/*    onClick={() => setShowPopupFunction('aaa')}*/}
+      {/*    // color="var(--theme_primary_color_blue_4)"*/}
+      {/*    // bgcolor="var(--theme_primary_color_blue_3)"*/}
+      {/*    // border="var(--theme_primary_color_blue_3)"*/}
+      {/*    // hover_border="var(--theme_primary_color_blue_2)"*/}
+      {/*    // hover_bgcolor="var(--theme_primary_color_blue_2)"*/}
 
-      <div className={styles.solicita}>
-        <Button
-          onClick={() => setShowPopupFunction('aaa')}
-          color="var(--theme_primary_color_blue_4)"
-          bgcolor="var(--theme_primary_color_blue_3)"
-          border="var(--theme_primary_color_blue_3)"
-          hover_border="var(--theme_primary_color_blue_2)"
-          hover_bgcolor="var(--theme_primary_color_blue_2)"
-          // color="#fff"
-          // bgcolor="var(--theme_primary_color_blue_2)"
-          // border="var(--theme_primary_color_blue_2)"
-          // hover_border="var(--theme_primary_color_blue_4)"
-          // hover_bgcolor="var(--theme_primary_color_blue_4)"
-          // hover_color="#fff"
-          icon="arrow_right"
-        >
-          {t('bussines_m2m.offer')}
-        </Button>
-      </div>
+      {/*    // color="#fff"*/}
+      {/*    // bgcolor="var(--theme_primary_color_blue_2)"*/}
+      {/*    // border="var(--theme_primary_color_blue_2)"*/}
+      {/*    // hover_border="var(--theme_primary_color_blue_4)"*/}
+      {/*    // hover_bgcolor="var(--theme_primary_color_blue_4)"*/}
+      {/*    // hover_color="#fff"*/}
+
+      {/*    color="var(--theme_primary_color_blue_4)"*/}
+      {/*    bgcolor="transparent"*/}
+      {/*    border="var(--theme_primary_color_blue_4)"*/}
+      {/*    hover_border="var(--theme_primary_color_blue_4)"*/}
+      {/*    hover_bgcolor="var(--theme_primary_color_blue_4)"*/}
+      {/*    hover_color="#fff"*/}
+      {/*    icon="arrow_right"*/}
+      {/*  >*/}
+      {/*    {t('bussines_m2m.offer')}*/}
+      {/*  </Button>*/}
+      {/*</div>*/}
 
       {/* FAQ */}
       <FaqV2 max_faq={6}>
@@ -473,7 +487,7 @@ export default function M2M() {
           {t('bussines_m2m.popup.text')}
           <div className={styles.popup_btns}>
             <Button
-              to={'tel:022200200'}
+              to={'tel:022570570'}
               color="var(--theme_primary_color_white)"
               bgcolor="var(--theme_primary_color_blue_4)"
               border="var(--theme_primary_color_blue_4)"
@@ -481,7 +495,7 @@ export default function M2M() {
               hover_bgcolor="var(--theme_primary_color_blue_2)"
               icon="arrow_right"
             >
-              022 200 200
+              0(22) 570-570
             </Button>
           </div>
         </div>
