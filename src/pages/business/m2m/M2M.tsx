@@ -103,7 +103,7 @@ export default function M2M() {
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/58774032${t('lang')}.png`}
+            src={`/images/landings/58774032${t('lang')}.webp`}
             alt={t('bussines_m2m.hero.alt')}
           />
         </div>
