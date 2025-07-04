@@ -16,7 +16,7 @@ export default function GpsTrack() {
   const { t } = useTranslation();
   const seo = {
     title: t('pages.bussines_gps.title'),
-    description: t('pages.bussines_m2m.description'),
+    description: t('pages.bussines_gps.description'),
     keywords: t('pages.bussines_gps.keywords'),
   };
   const breadcrumbItems = [
@@ -74,25 +74,20 @@ export default function GpsTrack() {
           </div>
 
           <div className={styles.about_text}>
-            <div className={`title_3 ${styles.about_title}`}>
-              Ce este GPS Track?
-            </div>
-            <span>
-              GPS Track este soluția completă de management al flotelor auto,
-              care oferă monitorizare și control în timp real al vehiculelor.
-              <br /> <br />
-              Prin platforma web MTrack, companiile pot urmări traseele, timpul
-              de staționare, viteza și pot primi alerte personalizate, pentru o
-              administrare eficientă, transparentă și optimizată a parcului
-              auto. Ideală pentru firme din logistică, transport, construcții și
-              instituții publice.
-            </span>
+          <div className={`title_3 ${styles.about_title}`}>
+            {t('bussines_gps.about.title')}
           </div>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: t('bussines_gps.about.text'),
+            }}
+          ></span>
         </div>
       </div>
+    </div>
 
-      <div className={`title_3 ${styles.why_title}`}>
-        De ce să alegi MTrack?
+    <div className={`title_3 ${styles.why_title}`}>
+        {t('bussines_gps.why.title')}
       </div>
 
       <div className={styles.why}>
@@ -102,40 +97,36 @@ export default function GpsTrack() {
             onClick={() => setActiveCard('68178083')}
           >
             <div className={styles.why_card_title}>
-              Monitorizare GPS 24/7 în timp real
+              {t('bussines_gps.why.cards.0.title')}
             </div>
-            Urmărești vehiculele flotei non-stop, de pe orice dispozitiv, pentru
-            control complet și reacții rapide.
+            {t('bussines_gps.why.cards.0.text')}
           </div>
           <div
             className={`${styles.why_card} ${activeCard === '68178084' ? styles.active : ''}`}
             onClick={() => setActiveCard('68178084')}
           >
             <div className={styles.why_card_title}>
-              Rapoarte detaliate și istoric extins
+              {t('bussines_gps.why.cards.1.title')}
             </div>
-            Primești analize clare despre trasee, staționări și distanțe, cu
-            acces la date din ultimul an.
+            {t('bussines_gps.why.cards.1.text')}
           </div>
           <div
             className={`${styles.why_card} ${activeCard === '68178085' ? styles.active : ''}`}
             onClick={() => setActiveCard('68178085')}
           >
             <div className={styles.why_card_title}>
-              Alerte inteligente complet configurabile
+              {t('bussines_gps.why.cards.2.title')}
             </div>
-            Activezi notificări pentru viteză, rute greșite sau folosire ilegală
-            – totul setat după nevoile tale.
+            {t('bussines_gps.why.cards.2.text')}
           </div>
           <div
             className={`${styles.why_card} ${activeCard === '68178086' ? styles.active : ''}`}
             onClick={() => setActiveCard('68178086')}
           >
             <div className={styles.why_card_title}>
-              Funcționează și cu dispozitive existente
+              {t('bussines_gps.why.cards.3.title')}
             </div>
-            Nu este necesar hardware nou – MTrack e compatibil cu echipamente
-            GPS deja instalate în flotă.
+            {t('bussines_gps.why.cards.3.text')}
           </div>
         </div>
         <img
@@ -155,11 +146,10 @@ export default function GpsTrack() {
         </div>
         <div className={styles.download_right}>
           <div className={`title_3 ${styles.download_right_title}`}>
-            Alege GPS Track
+            {t('bussines_gps.download.title')}
           </div>
           <div className={styles.download_right_text}>
-            pentru a transforma modul în care îți administrezi parcul auto –
-            simplu, sigur și eficient.
+            {t('bussines_gps.download.text')}
           </div>
 
           <Button
@@ -171,7 +161,7 @@ export default function GpsTrack() {
             hover_bgcolor="var(--theme_primary_color_blue_2)"
             icon="arrow_right"
           >
-            {t('bussines_m2m.carousel.order_now')}
+            {t('bussines_gps.carousel.order_now')}
           </Button>
         </div>
       </div>
@@ -185,9 +175,9 @@ export default function GpsTrack() {
       >
         <div className={styles.popup_div}>
           <span className={styles.popup_div_title}>
-            {t('bussines_m2m.popup.title')}
+            {t('bussines_gps.popup.title')}
           </span>
-          {t('bussines_m2m.popup.text')}
+          {t('bussines_gps.popup.text')}
           <div className={styles.popup_btns}>
             <Button
               to={'tel:022570570'}

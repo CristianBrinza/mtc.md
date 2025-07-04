@@ -1427,6 +1427,11 @@
       "title": "M2M",
       "description": "Soluția Business M2M oferă monitorizare și control avansat al dispozitivelor.",
       "keywords": "m2m, business, iot, monitorizare, control"
+    },
+    "bussines_gps": {
+      "title": "GPS Track",
+      "description": "Soluție avansată de monitorizare GPS pentru flote, cu control în timp real și rapoarte detaliate.",
+      "keywords": "gps track, flotă, monitorizare, localizare vehicule, mtrack"
     }
   },
   "navbar_business": {
@@ -1576,6 +1581,41 @@
     "breadcrumb": {
       "business": "Business",
       "gps": "GPS Track"
-    }
+    },
+    "hero": { "alt": "GPS Track" },
+    "about": {
+      "title": "Ce este GPS Track?",
+      "text": "GPS Track este soluția completă de management al flotelor auto, care oferă monitorizare și control în timp real al vehiculelor.<br /> <br />Prin platforma web MTrack, companiile pot urmări traseele, timpul de staționare, viteza și pot primi alerte personalizate, pentru o administrare eficientă, transparentă și optimizată a parcului auto. Ideală pentru firme din logistică, transport, construcții și instituții publice."
+    },
+    "why": {
+      "title": "De ce să alegi MTrack?",
+      "cards": [
+        {
+          "title": "Monitorizare GPS 24/7 în timp real",
+          "text": "Urmărești vehiculele flotei non-stop, de pe orice dispozitiv, pentru control complet și reacții rapide."
+        },
+        {
+          "title": "Rapoarte detaliate și istoric extins",
+          "text": "Primești analize clare despre trasee, staționări și distanțe, cu acces la date din ultimul an."
+        },
+        {
+          "title": "Alerte inteligente complet configurabile",
+          "text": "Activezi notificări pentru viteză, rute greșite sau folosire ilegală – totul setat după nevoile tale."
+        },
+        {
+          "title": "Funcționează și cu dispozitive existente",
+          "text": "Nu este necesar hardware nou – MTrack e compatibil cu echipamente GPS deja instalate în flotă."
+        }
+      ]
+    },
+    "download": {
+      "title": "Alege GPS Track",
+      "text": "pentru a transforma modul în care îți administrezi parcul auto – simplu, sigur și eficient."
+    },
+    "popup": {
+      "title": "Mulțumim că ai ales Moldtelecom",
+      "text": "Soluția ideală pentru afaceri care vizează automatizarea, controlul la distanță și optimizarea proceselor prin conectivitate fiabilă și continuă."
+    },
+    "carousel": { "order_now": "Comandă acum" }
   }
 }
