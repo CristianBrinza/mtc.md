@@ -1571,5 +1571,11 @@
       "order_now_cerere": "Depune cerere",
       "price_unit": "lei/lună"
     }
+  },
+  "bussines_gps": {
+    "breadcrumb": {
+      "business": "Business",
+      "gps": "GPS Track"
+    }
   }
 }

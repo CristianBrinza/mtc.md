@@ -180,7 +180,9 @@ export default function Roaming() {
         <div className={`${styles.roaming_seach_title} title_3`}>
           {t('roaming.search.title')}
         </div>
-        <div>{t('roaming.search.description')}</div>
+        <div className={`${styles.roaming_seach_subtitle}`}>
+          {t('roaming.search.description')}
+        </div>
 
         <Input
           className={styles.roaming_seach_input}
@@ -442,6 +444,30 @@ export default function Roaming() {
         </div>
       </div>
 
+      <div className={styles.roaming_btns}>
+        <Button
+          to={`https://www.moldtelecom.md/${t('lang')}/personal/Abonamente_Telefonie_Mobila`}
+          color="var(--theme_primary_color_blue_4)"
+          bgcolor="var(--theme_primary_color_blue_3)"
+          border="var(--theme_primary_color_blue_3)"
+          hover_border="var(--theme_primary_color_blue_2)"
+          hover_bgcolor="var(--theme_primary_color_blue_2)"
+          icon="arrow_right"
+        >
+          Abonamente Mobile
+        </Button>
+        <Button
+          to={`https:/mtc.md/my-mtc`}
+          color="var(--theme_primary_color_blue_4)"
+          bgcolor="transparent"
+          border="var(--theme_primary_color_blue_3)"
+          hover_border="var(--theme_primary_color_blue_2)"
+          hover_bgcolor="var(--theme_primary_color_blue_2)"
+          icon="arrow_right"
+        >
+          My Moldtelecom
+        </Button>
+      </div>
       <div className={styles.roaming_warning}>
         <div className={`${styles.roaming_warning_red}`}></div>
         <div className={styles.roaming_warning_inside}>

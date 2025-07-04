@@ -16,6 +16,7 @@ import Contacts from './pages/personal/contacts/Contacts.tsx';
 import FormTestPage from './pages/test/Test.tsx';
 import Roaming from './pages/personal/oferte/roaming/Roaming.tsx';
 import M2M from './pages/business/m2m/M2M.tsx';
+import GpsTrack from './pages/business/gps_track/GpsTrack.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -93,6 +94,10 @@ export const routesConfig: RouteConfig[] = [
   {
     path: '/:lang/business/m2m',
     element: React.createElement(M2M),
+  },
+  {
+    path: '/:lang/business/gps-track',
+    element: React.createElement(GpsTrack),
   },
   {
     path: '*',

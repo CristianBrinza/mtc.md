@@ -55,7 +55,7 @@ const Input: FC<InputProps> = ({
         <Icon
           className={styles.costume_input_svg}
           type={icon}
-          color="var(--theme_primary_color_darkest_gray)"
+          color="var(--theme_primary_color_blue_2)"
         />
       )}
     </div>
