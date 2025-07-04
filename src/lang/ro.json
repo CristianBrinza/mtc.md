@@ -1585,7 +1585,7 @@
     "hero": { "alt": "GPS Track" },
     "about": {
       "title": "Ce este GPS Track?",
-      "text": "GPS Track este soluția completă de management al flotelor auto, care oferă monitorizare și control în timp real al vehiculelor.<br /> <br />Prin platforma web MTrack, companiile pot urmări traseele, timpul de staționare, viteza și pot primi alerte personalizate, pentru o administrare eficientă, transparentă și optimizată a parcului auto. Ideală pentru firme din logistică, transport, construcții și instituții publice."
+      "text": "<b>GPS Track</b> este soluția completă de management al flotelor auto, care oferă monitorizare și control în timp real al vehiculelor.<br /> <br />Prin platforma web <b>MTrack</b>, companiile pot urmări traseele, timpul de staționare, viteza și pot primi alerte personalizate, pentru o administrare eficientă, transparentă și optimizată a parcului auto. Ideală pentru firme din logistică, transport, construcții și instituții publice."
     },
     "why": {
       "title": "De ce să alegi MTrack?",
@@ -1610,7 +1610,7 @@
     },
     "download": {
       "title": "Alege GPS Track",
-      "text": "pentru a transforma modul în care îți administrezi parcul auto – simplu, sigur și eficient."
+      "text": "Pentru a transforma modul în care îți administrezi parcul auto – simplu, sigur și eficient."
     },
     "popup": {
       "title": "Mulțumim că ai ales Moldtelecom",

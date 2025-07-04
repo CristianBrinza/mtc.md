@@ -92,6 +92,10 @@ export const routesConfig: RouteConfig[] = [
     element: React.createElement(FormTestPage),
   },
   {
+    path: '/:lang/business/roaming',
+    element: React.createElement(Roaming),
+  },
+  {
     path: '/:lang/business/m2m',
     element: React.createElement(M2M),
   },

@@ -140,7 +140,7 @@
     "to": "/business/business-office"
   },
   {
-    "label": "IOT",
+    "label": "IoT",
     "submenu": [
       {
         "title": "navbar_business.solutii",
@@ -149,6 +149,10 @@
           {
             "label": "M2M Moldtelecom",
             "to": "/m2m"
+          },
+          {
+            "label": "GPS Track",
+            "to": "/gps-track"
           }
         ]
       }
