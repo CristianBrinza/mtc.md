@@ -58,11 +58,12 @@ const Button: React.FC<ButtonProps> = ({
 
     if (to) {
       if (
+        to.startsWith('tel:') ||
         to.startsWith('http://') ||
         to.startsWith('https://') ||
         to.startsWith('www.')
       ) {
-        // Handle external links
+        // Handle external links including phone links
         window.location.href = to;
       } else if (!to.startsWith('/files/')) {
         // Handle internal links
@@ -104,7 +105,8 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const buttonIconColor = isHovered ? hover_color || color : color;
-  const isExternalLink = to && to.startsWith('/files/');
+  const isPhoneLink = to?.startsWith('tel:');
+  const isExternalLink = to && (to.startsWith('/files/') || isPhoneLink);
 
   return isExternalLink ? (
     <a
