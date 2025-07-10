@@ -457,7 +457,7 @@ export default function Roaming() {
           Abonamente Mobile
         </Button>
         <Button
-          to={`https:/mtc.md/my-mtc`}
+          to={`https://mtc.md/my-mtc`}
           color="var(--theme_primary_color_blue_4)"
           bgcolor="transparent"
           border="var(--theme_primary_color_blue_3)"

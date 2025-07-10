@@ -18,6 +18,7 @@ import Roaming from './pages/personal/oferte/roaming/Roaming.tsx';
 import M2M from './pages/business/m2m/M2M.tsx';
 import GpsTrack from './pages/business/gps_track/GpsTrack.tsx';
 import AppRedirect from './components/app/AppRedirect.tsx';
+import SmsServices from './pages/personal/oferte/sms_services/SmsServices.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -77,6 +78,11 @@ export const routesConfig: RouteConfig[] = [
     path: '/:lang/mobile-options',
     element: React.createElement(OptionsandServices),
   },
+  {
+    path: '/:lang/sms-services',
+    element: React.createElement(SmsServices),
+  },
+
   {
     path: '/:lang/weekend-cu-beneficii',
     element: React.createElement(PromoRazuieste),

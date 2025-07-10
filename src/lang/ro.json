@@ -1617,5 +1617,11 @@
       "text": "Soluția ideală pentru afaceri care vizează automatizarea, controlul la distanță și optimizarea proceselor prin conectivitate fiabilă și continuă."
     },
     "carousel": { "order_now": "Comandă acum" }
+  },
+  "sms_services": {
+    "breadcrumb": {
+      "mobile": "Mobil",
+      "optionsandservices": "SMS Service"
+    }
   }
 }
