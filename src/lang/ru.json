@@ -1636,7 +1636,7 @@
     "breadcrumb": {
       "business": "Business",
       "m2m": "M2M"
-  },
+    },
     "hero": { "alt": "Moldtelecom" },
     "benefits": {
       "cards": [

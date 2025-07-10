@@ -17,6 +17,7 @@ import FormTestPage from './pages/test/Test.tsx';
 import Roaming from './pages/personal/oferte/roaming/Roaming.tsx';
 import M2M from './pages/business/m2m/M2M.tsx';
 import GpsTrack from './pages/business/gps_track/GpsTrack.tsx';
+import AppRedirect from './components/app/AppRedirect.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -63,6 +64,15 @@ export const routesConfig: RouteConfig[] = [
     path: '/:lang/icons',
     element: React.createElement(IconShowcase),
   },
+  {
+    path: '/:lang/mymtc',
+    element: React.createElement(AppRedirect),
+  },
+  {
+    path: '/mymtc',
+    element: React.createElement(AppRedirect),
+  },
+  //landings
   {
     path: '/:lang/mobile-options',
     element: React.createElement(OptionsandServices),

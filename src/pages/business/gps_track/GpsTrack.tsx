@@ -74,19 +74,19 @@ export default function GpsTrack() {
           </div>
 
           <div className={styles.about_text}>
-          <div className={`title_3 ${styles.about_title}`}>
-            {t('bussines_gps.about.title')}
+            <div className={`title_3 ${styles.about_title}`}>
+              {t('bussines_gps.about.title')}
+            </div>
+            <span
+              dangerouslySetInnerHTML={{
+                __html: t('bussines_gps.about.text'),
+              }}
+            ></span>
           </div>
-          <span
-            dangerouslySetInnerHTML={{
-              __html: t('bussines_gps.about.text'),
-            }}
-          ></span>
         </div>
       </div>
-    </div>
 
-    <div className={`title_3 ${styles.why_title}`}>
+      <div className={`title_3 ${styles.why_title}`}>
         {t('bussines_gps.why.title')}
       </div>
 

@@ -83,7 +83,7 @@
   box-sizing: border-box;
   color: rgba(0, 0, 0, 0.58);
 }
-.why_card:hover{
+.why_card:hover {
   background-color: #efefef;
 }
 .why_card.active {
