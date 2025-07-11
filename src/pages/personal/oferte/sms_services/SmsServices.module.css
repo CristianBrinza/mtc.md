@@ -79,16 +79,16 @@
     width: 1300px;
     margin-left: calc((1300px - 100vw) / -2);
   }
-  .sms_text{
+  .sms_text {
     max-width: 900px;
   }
-  .cards{
+  .cards {
     max-width: 900px;
   }
   .card {
     max-width: 438px;
   }
-  .card_title{
+  .card_title {
     width: 240px;
   }
 }
@@ -116,16 +116,16 @@
   .hero_img {
     display: none;
   }
-  .sms_text{
+  .sms_text {
     max-width: calc(100vw - 40px);
   }
-  .cards{
+  .cards {
     max-width: 900px;
   }
   .card {
     max-width: 438px;
   }
-  .card_title{
+  .card_title {
     width: 240px;
   }
 
@@ -160,10 +160,9 @@
   }
   .card_title {
     width: calc(100% - 107px - 70px);
-    margin-left:0px;
+    margin-left: 0px;
   }
-  .cards :global(.mtc_button){
+  .cards :global(.mtc_button) {
     margin-right: 15px;
   }
-
 }

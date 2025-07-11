@@ -43,7 +43,7 @@ export default function SmsServices() {
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/16074571${t('lang')}.webp`}
+            src={`/images/landings/34074332${t('lang')}.webp`}
             alt="Moldtelecom"
           />
         </div>
