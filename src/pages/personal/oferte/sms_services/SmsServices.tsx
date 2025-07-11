@@ -226,24 +226,24 @@ export default function SmsServices() {
             {''}
           </Button>
         </div>
-        <div className={styles.card}>
-          <img src="/images/landings/33171083.webp" alt="Moldtelecom" />
-          <div className={styles.card_title}>Moldtelecom Talk</div>
+        {/*<div className={styles.card}>*/}
+        {/*  <img src="/images/landings/33171083.webp" alt="Moldtelecom" />*/}
+        {/*  <div className={styles.card_title}>Moldtelecom Talk</div>*/}
 
-          <Button
-            onClick={() => {
-              setActivePopup('1251128');
-            }}
-            color={'var(--theme_primary_color_blue_4)'}
-            bgcolor={'var(--theme_primary_color_blue_3)'}
-            border={'var(--theme_primary_color_blue_3)'}
-            hover_border={'var(--theme_primary_color_blue_2)'}
-            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
-            icon={'arrow_right'}
-          >
-            {''}
-          </Button>
-        </div>
+        {/*  <Button*/}
+        {/*    onClick={() => {*/}
+        {/*      setActivePopup('1251128');*/}
+        {/*    }}*/}
+        {/*    color={'var(--theme_primary_color_blue_4)'}*/}
+        {/*    bgcolor={'var(--theme_primary_color_blue_3)'}*/}
+        {/*    border={'var(--theme_primary_color_blue_3)'}*/}
+        {/*    hover_border={'var(--theme_primary_color_blue_2)'}*/}
+        {/*    hover_bgcolor={'var(--theme_primary_color_blue_2)'}*/}
+        {/*    icon={'arrow_right'}*/}
+        {/*  >*/}
+        {/*    {''}*/}
+        {/*  </Button>*/}
+        {/*</div>*/}
 
         <div className={`${styles.card} ${styles.card_white}`}>
           <img src="/images/landings/18171083.webp" alt="Moldtelecom" />

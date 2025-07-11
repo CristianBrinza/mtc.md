@@ -17,6 +17,7 @@ interface InputProps {
   min?: string;
   style?: React.CSSProperties;
   max?: string;
+  color?: string;
 }
 
 const Input: FC<InputProps> = ({
@@ -32,8 +33,10 @@ const Input: FC<InputProps> = ({
   type = 'text',
   min,
   max,
+  color = 'var(--theme_primary_color_blue_2)',
 }) => {
   const inputStyle: React.CSSProperties = {
+    border: `1px solid ${color}`,
     ...style,
   };
   return (
@@ -52,11 +55,7 @@ const Input: FC<InputProps> = ({
         max={max}
       />
       {icon && (
-        <Icon
-          className={styles.costume_input_svg}
-          type={icon}
-          color="var(--theme_primary_color_blue_2)"
-        />
+        <Icon className={styles.costume_input_svg} type={icon} color={color} />
       )}
     </div>
   );

@@ -5,7 +5,7 @@
 }
 .costume_input {
   border-radius: 1000px;
-  border: 1px solid var(--theme_primary_color_blue_2);
+  /*border: 1px solid var(--theme_primary_color_blue_3);*/
   height: 46px;
   padding: 0px 45px 0px 20px;
   box-sizing: border-box;

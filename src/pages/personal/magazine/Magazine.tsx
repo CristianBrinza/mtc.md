@@ -1,5 +1,5 @@
 // src/pages/magazine/Magazine.tsx
-import { useEffect, useRef, useState } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Navbar from '../../../components/navbar/Navbar';
 import Chat from '../../../components/chat/Chat';
@@ -9,6 +9,8 @@ import Footer from '../../../components/footer/Footer';
 import Button from '../../../components/Button';
 import styles from './Magazine.module.css';
 import SEO from '../../../components/SEO';
+import Input from '../../../components/input/Input.tsx';
+import ScrollableWrapper from '../../../components/Popup/ScrollableWrapper.tsx';
 
 interface RawMag {
   id: number;
@@ -131,6 +133,30 @@ export default function Magazine() {
     }
   }, [magList]);
 
+  const [search, setSearch] = useState('');
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+
+  function HighlightParentheses({ text }: { text: string }) {
+    // split into “outside” and “(inside)” pieces
+    const parts = text.split(/(\([^)]*\))/g);
+    return (
+      <div className={styles.small_span_div}>
+        {parts.map((part, i) =>
+          part.startsWith('(') ? (
+            <span className={styles.small_span} key={i}>
+              <br />
+              {part}
+            </span>
+          ) : (
+            part
+          )
+        )}
+      </div>
+    );
+  }
+
   return (
     <>
       <SEO {...seo} />
@@ -178,6 +204,17 @@ export default function Magazine() {
           >
             Listă magazine
           </Button>
+
+          {view === 'list' && (
+            <Input
+              className={styles.seach_input}
+              value={search}
+              icon="search"
+              placeholder={'Caută'}
+              onChange={handleSearch}
+              color="var(--theme_primary_color_blue_3)"
+            />
+          )}
         </div>
 
         <div
@@ -192,35 +229,70 @@ export default function Magazine() {
         />
 
         {view === 'list' && (
-          <div id="mag_list">
-            <table className={`magazine_mtc ${styles.magazine_table}`}>
-              <thead>
-                <tr>
-                  <th>Magazin</th>
-                  <th>Luni–Vineri</th>
-                  <th>Sâmbătă</th>
-                  <th>Duminică</th>
-                </tr>
-              </thead>
-              <tbody>
-                {magList.length > 0 ? (
-                  magList.map((m, i) => (
-                    <tr key={i}>
-                      <td>
-                        <span>{m.oras}</span>, {m.adresa}
-                      </td>
-                      <td>{m.grafic}</td>
-                      <td>{m.grafic_s}</td>
-                      <td>{m.grafic_d}</td>
+          <div>
+            {/*<Input*/}
+            {/*  className={styles.seach_input}*/}
+            {/*  value={search}*/}
+            {/*  icon="search"*/}
+            {/*  placeholder={"Caută"}*/}
+            {/*  onChange={handleSearch}*/}
+            {/*/>*/}
+            <div id="mag_list" className={styles.magazine_page_table}>
+              <ScrollableWrapper>
+                {/*<table className="popup_table">*/}
+                <table className={`magazine_mtc ${styles.magazine_table}`}>
+                  <thead>
+                    <tr>
+                      <th>Magazin</th>
+                      <th>Luni–Vineri</th>
+                      <th>Sâmbătă</th>
+                      <th>Duminică</th>
                     </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan={4}>Nu există magazine</td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
+                  </thead>
+                  <tbody>
+                    {magList
+                      .filter(
+                        m =>
+                          m.oras.toLowerCase().includes(search.toLowerCase()) ||
+                          m.adresa.toLowerCase().includes(search.toLowerCase())
+                      )
+                      .map((m, i) => (
+                        <tr key={i}>
+                          <td>
+                            <span>{m.oras}</span>, {m.adresa}
+                          </td>
+                          <td>
+                            <HighlightParentheses text={m.grafic} />
+                          </td>
+                          <td>
+                            <HighlightParentheses text={m.grafic_s} />
+                          </td>
+                          <td>
+                            <HighlightParentheses text={m.grafic_d} />
+                          </td>
+                        </tr>
+                      ))}
+                    {magList.filter(
+                      m =>
+                        m.oras.toLowerCase().includes(search.toLowerCase()) ||
+                        m.adresa.toLowerCase().includes(search.toLowerCase())
+                    ).length === 0 && (
+                      <tr>
+                        <td
+                          style={{
+                            textAlign: 'center',
+                            padding: '25px 0 15px',
+                          }}
+                          colSpan={4}
+                        >
+                          Nu există magazine
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </ScrollableWrapper>
+            </div>
           </div>
         )}
       </div>
