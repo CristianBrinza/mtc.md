@@ -45,8 +45,8 @@ export default function Magazine() {
     keywords: t('pages.magazine.keywords'),
   };
   const breadcrumbItems = [
-    { label: 'Asistență', url: ' ' },
-    { label: 'Magazine' },
+    { label: t('magazine.breadcrumb.help'), url: ' ' },
+    { label: t('magazine.breadcrumb.magazine') },
   ];
 
   const mapRef = useRef<HTMLDivElement>(null);
@@ -112,10 +112,10 @@ export default function Magazine() {
           infoWindow.setContent(`
             <h3>${m.oras}</h3>
             <p>${m.adresa}</p>
-            <p><strong>Program:</strong> ${m.grafic}</p>
-            <p><strong>Sâmbătă:</strong> ${m.grafic_s}</p>
-            <p><strong>Duminică:</strong> ${m.grafic_d}</p>
-            <p><strong>Telefon:</strong> ${m.telefon}</p>
+            <p><strong>${t('magazine.info.program')}</strong> ${m.grafic}</p>
+            <p><strong>${t('magazine.info.saturday')}</strong> ${m.grafic_s}</p>
+            <p><strong>${t('magazine.info.sunday')}</strong> ${m.grafic_d}</p>
+            <p><strong>${t('magazine.info.phone')}</strong> ${m.telefon}</p>
           `);
           infoWindow.open(map, marker);
         });
@@ -165,13 +165,9 @@ export default function Magazine() {
 
       <div className={styles.magazine_page}>
         <h1 className={`title ${styles.magazine_page_title}`}>
-          Magazine Moldtelecom
+          {t('magazine.title')}
         </h1>
-        <p className={styles.magazine_page_text}>
-          Descoperă în magazinele Moldtelecom gadgeturi smart, telefoane de top
-          și accesorii moderne! Beneficiază de oferte exclusive și suport
-          dedicat. Te așteptăm să conectăm viitorul împreună!
-        </p>
+        <p className={styles.magazine_page_text}>{t('magazine.text')}</p>
 
         <div className={styles.magazine_page_btns}>
           <Button
@@ -187,7 +183,7 @@ export default function Magazine() {
             icon="arrow_right"
             onClick={() => setView('map')}
           >
-            Harta
+            {t('magazine.buttons.map')}
           </Button>
           <Button
             color="var(--theme_primary_color_blue_4)"
@@ -202,7 +198,7 @@ export default function Magazine() {
             icon="arrow_right"
             onClick={() => setView('list')}
           >
-            Listă magazine
+            {t('magazine.buttons.list')}
           </Button>
 
           {view === 'list' && (
@@ -210,7 +206,7 @@ export default function Magazine() {
               className={styles.seach_input}
               value={search}
               icon="search"
-              placeholder={'Caută'}
+              placeholder={t('magazine.search.cauta')}
               onChange={handleSearch}
               color="var(--theme_primary_color_blue_3)"
             />
@@ -243,10 +239,10 @@ export default function Magazine() {
                 <table className={`magazine_mtc ${styles.magazine_table}`}>
                   <thead>
                     <tr>
-                      <th>Magazin</th>
-                      <th>Luni–Vineri</th>
-                      <th>Sâmbătă</th>
-                      <th>Duminică</th>
+                      <th>{t('magazine.table.magazin')}</th>
+                      <th>{t('magazine.table.weekdays')}</th>
+                      <th>{t('magazine.table.saturday')}</th>
+                      <th>{t('magazine.table.sunday')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -285,7 +281,7 @@ export default function Magazine() {
                           }}
                           colSpan={4}
                         >
-                          Nu există magazine
+                          {t('magazine.table.no_magazines')}
                         </td>
                       </tr>
                     )}
