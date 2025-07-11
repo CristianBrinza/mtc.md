@@ -127,4 +127,7 @@
     padding-left: 10px;
     padding-right: 10px;
   }
+  .roaming_warning_red {
+    width: 10px;
+  }
 }

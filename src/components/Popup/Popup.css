@@ -217,7 +217,8 @@
   width: 100%;
   background-color: #eeeeee;
   position: relative;
-  margin-top: 4px;
+  margin-top: -16px;
+  margin-bottom: 22px;
   border-radius: 5px;
   overflow: hidden;
   cursor: pointer;

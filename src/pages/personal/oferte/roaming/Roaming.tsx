@@ -267,7 +267,7 @@ export default function Roaming() {
                       key={op.id}
                       className={op.status === 'active' ? styles.activeRow : ''}
                     >
-                      <td>{op.name_ro}</td>
+                      <td style={{ minWidth: 'max-content' }}>{op.name_ro}</td>
                       <td>{op.apel_intrare}</td>
                       <td>{op.apel_iesire_local}</td>
                       <td>{op.apel_iesire_moldova}</td>
