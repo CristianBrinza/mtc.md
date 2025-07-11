@@ -79,7 +79,7 @@ export const routesConfig: RouteConfig[] = [
     element: React.createElement(OptionsandServices),
   },
   {
-    path: '/:lang/sms-services',
+    path: '/:lang/sms-service',
     element: React.createElement(SmsServices),
   },
 
