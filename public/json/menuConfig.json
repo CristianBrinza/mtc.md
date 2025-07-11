@@ -180,6 +180,7 @@
             "label": "navbar.international",
             "to": "/personal/apeluri-internationale"
           },
+          { "label": "navbar.sms_service", "to": "/personal/sms-100-abonament" },
           { "label": "navbar.fidelitate", "to": "/personal/loialitate" }
         ]
       }

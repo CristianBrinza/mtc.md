@@ -79,6 +79,18 @@
     width: 1300px;
     margin-left: calc((1300px - 100vw) / -2);
   }
+  .sms_text{
+    max-width: 900px;
+  }
+  .cards{
+    max-width: 900px;
+  }
+  .card {
+    max-width: 438px;
+  }
+  .card_title{
+    width: 240px;
+  }
 }
 @media (max-width: 1150px) {
   .hero {
@@ -104,6 +116,32 @@
   .hero_img {
     display: none;
   }
+  .sms_text{
+    max-width: calc(100vw - 40px);
+  }
+  .cards{
+    max-width: 900px;
+  }
+  .card {
+    max-width: 438px;
+  }
+  .card_title{
+    width: 240px;
+  }
+
+  .cards {
+    max-width: calc(100vw - 40px);
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+  }
+  /*.card {*/
+  /*  max-width: 378px;*/
+  /*}*/
+  /*.card_title {*/
+  /*  width: 190px;*/
+  /*}*/
 }
 
 @media (max-width: 650px) {
@@ -112,4 +150,20 @@
     width: calc(100vw * 2.3);
     margin-left: calc(((100vw * 2.3) - 100vw) / -2);
   }
+}
+
+@media (max-width: 500px) {
+  .card {
+    max-width: 100%;
+    height: 90px;
+    justify-content: space-between;
+  }
+  .card_title {
+    width: calc(100% - 107px - 70px);
+    margin-left:0px;
+  }
+  .cards :global(.mtc_button){
+    margin-right: 15px;
+  }
+
 }
