@@ -1494,6 +1494,11 @@
       "title": "GPS Track",
       "description": "Современное GPS-решение для мониторинга автопарков с контролем в реальном времени и подробными отчётами.",
       "keywords": "gps track, автопарк, мониторинг, отслеживание транспорта, mtrack"
+    },
+    "sms_services": {
+      "title": "SMS Service 100",
+      "description": "Быстро активируйте опции и услуги Moldtelecom, отправляя SMS‑коды на номер 100.",
+      "keywords": "sms service, опции, пакеты, интернет, минуты, роуминг, moldtelecom, 100"
     }
   },
   "home": {
@@ -1813,6 +1818,94 @@
     "breadcrumb": {
       "mobile": "Мобильный",
       "optionsandservices": "SMS Услуги"
+    },
+    "hero": { "alt": "Moldtelecom" },
+    "title_1": "Для использования услуги SMS Service 100 достаточно отправить с телефона SMS-код на короткий номер 100.",
+    "cards": {
+      "internet_packages": "Пакеты интернета",
+      "national_minutes": "Пакеты национальных минут",
+      "international_packages": "Международные пакеты",
+      "roaming_world": "Роуминг World",
+      "roaming_europe": "Роуминг Европа",
+      "roaming_romania": "Роуминг Румыния",
+      "sms_packages": "Пакеты SMS",
+      "account_status": "Состояние счета",
+      "language_change": "Смена языка",
+      "fly_prepay_series": "Опции Fly Prepay",
+      "other_possibilities": "Другие возможности"
+    },
+    "sms_text_html": "<br />Объяснение символов, используемых в таблице:<br /><b>«n/a»</b> – не применяется;<br /><b>«*»</b> - цифры PIN-кода с карты пополнения Moldtelecom;<br /><b>«x»</b> - цифры телефонного номера абонента, для которого будет применена услуга, номер вводится с префиксом «0»;<br /><b>«< >»</b> - поля, для которых не задан ключ, и их не нужно использовать при отправке сообщения;<br /><b>«&nbsp;_»</b> - пробел.<br />По дополнительным вопросам обращайтесь в Службу поддержки клиентов по номеру <a href=\"tel:1181\">1181</a> или <a href=\"tel:022200200\">(022) 200 200</a>.",
+    "faq": {
+      "q1": "Как узнать свой номер телефона?",
+      "a1": "Отправьте SMS с текстом «NUMBER» на номер 100 и получите сообщение с вашим номером.",
+      "q2": "Как пополнить счет?",
+      "a2": "<ul><li>Чтобы пополнить счет, отправьте SMS с «R_************» (где * — PIN-код с карты пополнения) на 100.</li><li>Чтобы попросить друга пополнить ваш счет, отправьте SMS с «RM_0xxxxxxxx» на 100 (где «0xxxxxxxx» — номер получателя).</li></ul>",
+      "q3": "Как активировать роуминг UE или World?",
+      "a3": "<div>Отправьте соответствующий SMS на 100, например:<ul><li>«UE100net» для 2GB интернет‑роуминга в ЕС (100 лей, 30 дней)</li><li>«Int30» для 30 международных минут в Румынию и Украину (50 лей, 30 дней).</li></ul></div>",
+      "q4": "Как оплатить счета Moldtelecom?",
+      "a4": "Счета можно оплатить онлайн на сайте Moldtelecom, через мобильное приложение, в платежных терминалах, партнерских банках или магазинах Moldtelecom."
+    },
+    "tables": {
+      "internet": {
+        "title": "Пакеты интернета:",
+        "head_html": "<tr><td><strong>SMS код</strong></td><td><strong>Описание опции</strong></td><td><strong>Тариф</strong></td><td><strong>Срок действия</strong></td></tr>",
+        "body_html": "<tr><td>Nelimitat1zi</td><td>Активация безлимитного интернета на 1 день</td><td>20 лей</td><td>1 день</td></tr><tr><td>Nelimitat/7</td><td>Активация безлимитного интернета на 7 дней</td><td>100 лей</td><td>7 дней</td></tr><tr><td>10GB/15</td><td>Интернет 10 ГБ 15 дней</td><td>50 лей</td><td>15 дней</td></tr><tr><td>5GB/30</td><td>Интернет 5 ГБ 30 дней</td><td>60 лей</td><td>30 дней</td></tr><tr><td>10GB</td><td>Интернет 10 ГБ 30 дней</td><td>100 лей</td><td>30 дней</td></tr><tr><td>20GB</td><td>Интернет 20 ГБ 30 дней</td><td>150 лей</td><td>30 дней</td></tr>"
+      },
+      "national_minutes": {
+        "title": "Пакеты национальных минут:",
+        "head_html": "<tr><td><strong>SMS код</strong></td><td><strong>Описание опции</strong></td><td><strong>Тариф</strong></td><td><strong>Срок действия</strong></td></tr>",
+        "body_html": "<tr><td>50min</td><td>50 национальных минут</td><td>15 лей</td><td>30 дней</td></tr><tr><td>100min</td><td>100 национальных минут</td><td>40 лей</td><td>30 дней</td></tr><tr><td>200min</td><td>200 национальных минут</td><td>70 лей</td><td>30 дней</td></tr>"
+      },
+      "international": {
+        "title": "Международные пакеты:",
+        "head_html": "<tr><td><strong> SMS код</strong></td><td><strong>Описание опции</strong></td><td><strong>Тариф&nbsp;&nbsp;</strong></td><td><strong>Содержание</strong></td><td><strong>Срок действия</strong></td></tr>",
+        "body_html": "<tr><td>Int30</td><td>Активация Румыния и Украина</td><td>50 лей</td><td>30 мин.<br />международные&nbsp;</td><td>30 дней</td></tr><tr><td>Int25</td><td>Активация Европа, Израиль, США, Канада&nbsp; &nbsp;<br /><a href=\"https://moldtelecom.md/ru/Optiuni-telefonie-mobila\">(Подробнее)</a></td><td>50 лей</td><td>25 мин.<br />международные</td><td>30 дней</td></tr><tr><td>Int10</td><td>Активация любая страна<br /><a href=\"https://moldtelecom.md/ro/apeluri-internationale\">(зона 1, зона 2, зона 3)</a></td><td>50 лей</td><td>10 мин.<br />международные</td><td>30 дней</td></tr>"
+      },
+      "roaming_world": {
+        "title": "РОУМИНГ WORLD:",
+        "head_html": "<tr><td><strong>SMS код</strong></td><td><strong>Описание опции</strong></td><td><strong>Тариф&nbsp;</strong></td><td>Содержание</td><td><strong>Срок действия</strong></td></tr>",
+        "body_html": "<tr><td>Wapel</td><td>Звонки World</td><td>70 лей&nbsp;</td><td>10 мин</td><td>30 дней</td></tr><tr><td>Wnet</td><td>Интернет World</td><td>100 лей</td><td>1 ГБ</td><td>30 дней</td></tr>"
+      },
+      "roaming_europe": {
+        "title": "РОУМИНГ Европа:",
+        "head_html": "<tr><td><strong>SMS код</strong></td><td><strong>Описание опции</strong></td><td>Трафик интернет</td><td><strong>Тариф</strong></td><td><strong>Срок действия</strong></td></tr>",
+        "body_html": "<tr><td>UE70apel</td><td>Звонки Roaming ЕС</td><td>70 лей</td><td>100 мин</td><td>30 дней</td></tr><tr><td>UE100net</td><td>Интернет Roaming ЕС</td><td>100 лей</td><td>2 ГБ</td><td>30 дней</td></tr><tr><td>UE100</td><td>Комбо Roaming ЕС</td><td>100 лей</td><td>50 мин / 1 ГБ</td><td>30 дней</td></tr><tr><td>UE180</td><td>Connect Roaming ЕС</td><td>180 лей</td><td>50 мин / 5 ГБ</td><td>30 дней</td></tr>"
+      },
+      "sms_packages": {
+        "title": "Пакеты SMS:",
+        "head_html": "<tr><td><strong>SMS код</strong></td><td><strong>Описание опции</strong></td><td><strong>Тариф</strong></td><td><strong>Срок действия</strong></td></tr>",
+        "body_html": "<tr><td>SMS50</td><td>50 национальных SMS</td><td>10 лей</td><td>30 дней</td></tr><tr><td>SMS35</td><td>20 международных SMS</td><td>35 лей</td><td>30 дней</td></tr><tr><td>SMS15</td><td>100 национальных SMS</td><td>15 лей</td><td>30 дней</td></tr>"
+      },
+      "account_status": {
+        "title": "Состояние счета:",
+        "head_html": "<tr><td><strong>SMS код</strong></td><td><strong>Описание опции</strong></td><td><strong>Тариф, лей</strong></td><td><strong>Срок действия</strong></td></tr>",
+        "body_html": "<tr><td>OPTION</td><td>Проверка активированных опций</td><td>n/a</td><td>n/a</td></tr><tr><td>BONUS</td><td>Проверка бонуса</td><td>n/a</td><td>n/a</td></tr><tr><td>LASTREC</td><td>Информация о последнем пополнении</td><td>n/a</td><td>n/a</td></tr><tr><td>NUMBER</td><td>Узнать свой номер телефона</td><td>n/a</td><td>n/a</td></tr>"
+      },
+      "language_change": {
+        "title": "Смена языка:",
+        "head_html": "<tr><td><strong>SMS код</strong></td><td><strong>Описание опции</strong></td><td><strong>Тариф, лей</strong></td><td><strong>Срок действия</strong></td></tr>",
+        "body_html": "<tr><td>Lang_1</td><td>Английский язык</td><td>n/a</td><td>n/a</td></tr><tr><td>Lang_2</td><td>Румынский язык</td><td>n/a</td><td>n/a</td></tr><tr><td>Lang_3</td><td>Русский язык</td><td>n/a</td><td>n/a</td></tr>"
+      },
+      "roaming_romania": {
+        "title": "Роуминг Румыния:",
+        "head_html": "<tr><td><strong>SMS код</strong></td><td><strong>Описание опции</strong></td><td>Трафик интернет</td><td><strong>Тариф</strong></td><td><strong>Срок действия</strong></td></tr>",
+        "body_html": "<tr><td>RO50</td><td>Роуминг RO</td><td>50 лей</td><td>5 ГБ</td><td>30 дней</td></tr>"
+      },
+      "fly_prepay_series": {
+        "title": "Опции Fly Prepay:",
+        "head_html": "<tr><td><strong>SMS код</strong></td><td><strong>Описание опции&nbsp; &nbsp;</strong></td><td><strong>Национальные минуты</strong></td><td><strong>Трафик интернет</strong></td><td><strong>Тариф</strong></td><td><strong>Срок действия</strong></td></tr>",
+        "body_html": "<tr><td><span><span><span>Fly 30</span></span></span></td><td>Fly Prepay 30</td><td>Безлимит мин. сеть Moldtelecom + 100 минут другим операторам&nbsp;</td><td>5 GB</td><td>30 лей</td><td>30 дней</td></tr><tr><td><span><span><span>Fly 50</span></span></span></td><td>Fly Prepay 50</td><td>250 минут сеть Moldtelecom + 250 минут другим операторам&nbsp;</td><td>20 GB</td><td>50 лей</td><td>15 дней</td></tr><tr><td><span><span><span>Fly 70</span></span></span></td><td>Fly Prepay 70</td><td>300 минут сеть Moldtelecom + 300 минут другим операторам&nbsp;</td><td>25 GB</td><td>70 лей</td><td>30 дней</td></tr><tr><td><span><span><span>Fly&nbsp;100</span></span></span></td><td>Fly Prepay 100</td><td>Безлимит минут сеть Moldtelecom + 300 минут другим операторам</td><td>Безлимит</td><td>100 лей</td><td>15 дней</td></tr>"
+      },
+      "moldtelecom_talk": {
+        "title": "Moldtelecom Talk:",
+        "head_html": "<tr><td>SMS код</td><td>Описание опции</td><td>Тариф, лей</td><td>Срок действия</td></tr>",
+        "body_html": "<tr><td>UT1</td><td>Активация Moldtelecom Talk</td><td>0</td><td>n/a</td></tr><tr><td>STOPUT1</td><td>Деактивация Moldtelecom Talk</td><td>0</td><td>n/a</td></tr><tr><td>UT</td><td>Активация Moldtelecom Talk</td><td>0</td><td>n/a</td></tr><tr><td>STOPUT</td><td>Деактивация Moldtelecom Talk</td><td>0</td><td>n/a</td></tr>"
+      },
+      "other_possibilities": {
+        "title": "Другие возможности:",
+        "head_html": "<tr><td><strong>SMS код</strong></td><td><strong>Описание опции</strong></td><td><strong>Тариф, лей</strong></td><td><strong>Срок действия</strong></td></tr>",
+        "body_html": "<tr><td>R_************</td><td>Пополнение счёта картой пополнения</td><td>n/a</td><td>n/a</td></tr><tr><td>RM_0xxxxxxxx</td><td>Отправить SMS «Пополните мой счёт» другу (только номера Moldtelecom), лимит 5 sms/день</td><td>n/a</td><td>n/a</td></tr><tr><td>Callme_0xxxxxxxx</td><td>Отправить SMS «Позвони мне» другу (только номера Moldtelecom), лимит 5 sms/день</td><td>n/a</td><td>n/a</td></tr><tr><td>43_1</td><td>Активировать отправку счета по email, изменение будет применено в следующем биллинговом цикле.</td><td>n/a</td><td>n/a</td></tr>"
+      }
     }
   }
 }
