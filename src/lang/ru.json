@@ -1823,7 +1823,7 @@
     "title_1": "Для использования услуги SMS Service 100 достаточно отправить с телефона SMS-код на короткий номер 100.",
     "cards": {
       "internet_packages": "Пакеты интернета",
-      "national_minutes": "Пакеты национальных минут",
+      "national_minutes": "Hациональные минут",
       "international_packages": "Международные пакеты",
       "roaming_world": "Роуминг World",
       "roaming_europe": "Роуминг Европа",
@@ -1862,12 +1862,12 @@
         "body_html": "<tr><td>Int30</td><td>Активация Румыния и Украина</td><td>50 лей</td><td>30 мин.<br />международные&nbsp;</td><td>30 дней</td></tr><tr><td>Int25</td><td>Активация Европа, Израиль, США, Канада&nbsp; &nbsp;<br /><a href=\"https://moldtelecom.md/ru/Optiuni-telefonie-mobila\">(Подробнее)</a></td><td>50 лей</td><td>25 мин.<br />международные</td><td>30 дней</td></tr><tr><td>Int10</td><td>Активация любая страна<br /><a href=\"https://moldtelecom.md/ro/apeluri-internationale\">(зона 1, зона 2, зона 3)</a></td><td>50 лей</td><td>10 мин.<br />международные</td><td>30 дней</td></tr>"
       },
       "roaming_world": {
-        "title": "РОУМИНГ WORLD:",
+        "title": "Роуминг World:",
         "head_html": "<tr><td><strong>SMS код</strong></td><td><strong>Описание опции</strong></td><td><strong>Тариф&nbsp;</strong></td><td>Содержание</td><td><strong>Срок действия</strong></td></tr>",
         "body_html": "<tr><td>Wapel</td><td>Звонки World</td><td>70 лей&nbsp;</td><td>10 мин</td><td>30 дней</td></tr><tr><td>Wnet</td><td>Интернет World</td><td>100 лей</td><td>1 ГБ</td><td>30 дней</td></tr>"
       },
       "roaming_europe": {
-        "title": "РОУМИНГ Европа:",
+        "title": "Роуминг Европа:",
         "head_html": "<tr><td><strong>SMS код</strong></td><td><strong>Описание опции</strong></td><td>Трафик интернет</td><td><strong>Тариф</strong></td><td><strong>Срок действия</strong></td></tr>",
         "body_html": "<tr><td>UE70apel</td><td>Звонки Roaming ЕС</td><td>70 лей</td><td>100 мин</td><td>30 дней</td></tr><tr><td>UE100net</td><td>Интернет Roaming ЕС</td><td>100 лей</td><td>2 ГБ</td><td>30 дней</td></tr><tr><td>UE100</td><td>Комбо Roaming ЕС</td><td>100 лей</td><td>50 мин / 1 ГБ</td><td>30 дней</td></tr><tr><td>UE180</td><td>Connect Roaming ЕС</td><td>180 лей</td><td>50 мин / 5 ГБ</td><td>30 дней</td></tr>"
       },
