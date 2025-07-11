@@ -1278,6 +1278,32 @@
       "title": "Contacte"
     }
   },
+  "magazine": {
+    "breadcrumb": {
+      "help": "Asistență",
+      "magazine": "Magazine"
+    },
+    "title": "Magazine Moldtelecom",
+    "text": "Descoperă în magazinele Moldtelecom gadgeturi smart, telefoane de top și accesorii moderne! Beneficiază de oferte exclusive și suport dedicat. Te așteptăm să conectăm viitorul împreună!",
+    "buttons": {
+      "map": "Harta",
+      "list": "Listă magazine"
+    },
+    "search": { "cauta": "Caută" },
+    "table": {
+      "magazin": "Magazin",
+      "weekdays": "Luni–Vineri",
+      "saturday": "Sâmbătă",
+      "sunday": "Duminică",
+      "no_magazines": "Nu există magazine"
+    },
+    "info": {
+      "program": "Program:",
+      "saturday": "Sâmbătă:",
+      "sunday": "Duminică:",
+      "phone": "Telefon:"
+    }
+  },
   "roaming": {
     "breadcrumb": {
       "mobile": "Mobil",
