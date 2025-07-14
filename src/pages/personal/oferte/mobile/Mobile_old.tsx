@@ -3,7 +3,7 @@ import Chat from '../../../../components/chat/Chat.tsx';
 import Feedback from '../../../../components/feedback/Feedback.tsx';
 import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb.tsx';
 import Hero from '../../../../components/hero/Hero.tsx';
-import styles from './Mobile.module.css';
+import styles from './Mobile_old.module.css';
 import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
 import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
 import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
@@ -23,7 +23,7 @@ import Popup from '../../../../components/Popup/Popup.tsx';
 import { useTranslation } from 'react-i18next';
 import SEO from '../../../../components/SEO';
 
-export default function Mobile() {
+export default function MobileOld() {
   const { t } = useTranslation();
   const seo = {
     title: t('pages.mobile.title'),

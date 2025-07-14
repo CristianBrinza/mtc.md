@@ -10,7 +10,7 @@ import OptionsandServices from './pages/personal/oferte/optionsandservices/Optio
 import PromoRazuieste from './pages/personal/oferte/promo_razuieste/PromoRazuieste.tsx';
 import SearchPage from './pages/search/Search.tsx';
 
-// import Home from './pages/home/Home_v2.tsx';
+import Home from './pages/home/Home_v2.tsx';
 import OneNumber from './pages/personal/oferte/one_number/OneNumber.tsx';
 import Contacts from './pages/personal/contacts/Contacts.tsx';
 import FormTestPage from './pages/test/Test.tsx';
@@ -19,6 +19,7 @@ import M2M from './pages/business/m2m/M2M.tsx';
 import GpsTrack from './pages/business/gps_track/GpsTrack.tsx';
 import AppRedirect from './components/app/AppRedirect.tsx';
 import SmsServices from './pages/personal/oferte/sms_services/SmsServices.tsx';
+import MobileOld from './pages/personal/oferte/mobile/Mobile_old.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -39,6 +40,11 @@ export const routesConfig: RouteConfig[] = [
     element: React.createElement(Triple),
   },
   {
+    path: '/:lang/home',
+
+    element: React.createElement(Home),
+  },
+  {
     path: '/:lang/triple',
     element: React.createElement(Triple),
   },
@@ -46,6 +52,10 @@ export const routesConfig: RouteConfig[] = [
   {
     path: '/:lang/mobile',
     element: React.createElement(Mobile),
+  },
+  {
+    path: '/:lang/mobile_old',
+    element: React.createElement(MobileOld),
   },
   // {
   //   path: '/:lang/test',

@@ -6,7 +6,13 @@ import Footer from '../../../../components/footer/Footer.tsx';
 import { useTranslation } from 'react-i18next';
 import SEO from '../../../../components/SEO';
 import Hero from '../../../../components/hero/Hero.tsx';
-import styles from '../roaming/Roaming.module.css';
+import styles from './Mobile.module.css';
+import Button from '../../../../components/Button.tsx';
+import MyApp from '../../../../components/app/MyApp.tsx';
+import Details, { DetailsBlock } from '../../../../components/details/Details.tsx';
+import Slider from 'react-slick';
+import Icon from '../../../../components/Icon.tsx';
+import TableRoaming from '../../../../components/Popups/TableRoaming.tsx';
 
 export default function Mobile() {
   const { t } = useTranslation();
@@ -20,6 +26,28 @@ export default function Mobile() {
     { label: 'Telefonie mobila' },
   ];
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    arrows: true,
+    autoplay: false,
+    autoplaySpeed: 2500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1301,
+        settings: {
+          slidesToShow: 2,
+          autoplay: true,
+          autoplaySpeed: 1800,
+          arrows: true,
+        },
+      },
+      { breakpoint: 1151, settings: { slidesToShow: 1 } },
+    ],
+  };
+
   return (
     <>
       <SEO {...seo} />
@@ -32,7 +60,7 @@ export default function Mobile() {
         <div className={styles.hero_img_block}>
           <img
             className={styles.hero_img}
-            src={`/images/landings/18074012${t('lang')}.webp`}
+            src={`/images/landings/68074012${t('lang')}.webp`}
             alt={t('wifi_plus.hero.alt')}
           />
           <img
@@ -42,6 +70,757 @@ export default function Mobile() {
           />
         </div>
       </Hero>
+
+      <div className={`title title_5 ${styles.title2}`}>
+        Alege abonamentul care ți se potrivește cel mai bine
+      </div>
+
+      <div className={`${styles.btns_select}`}>
+        <Button
+          color={'var(--theme_primary_color_blue_4)'}
+          bgcolor={'var(--theme_primary_color_blue_3)'}
+          border={'var(--theme_primary_color_blue_3)'}
+          hover_border={'var(--theme_primary_color_blue_2)'}
+          hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+        >
+          Nu sunt client
+        </Button>
+        <Button
+          color={'var(--theme_primary_color_blue_4)'}
+          bgcolor={'transparent'}
+          border={'var(--theme_primary_color_blue_3)'}
+          hover_border={'var(--theme_primary_color_blue_2)'}
+          hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+        >
+          Sunt client
+        </Button>
+      </div>
+      <Slider {...settings} className={styles.mobile_carousell}>
+        <div>
+          <div className={styles.mobile_carousell_block}>
+            <div className={styles.mobile_carousell_tags}>
+              {/*<div className={styles.mobile_carousell_tag}>*/}
+              {/*  New*/}
+              {/*</div>*/}
+              <div
+                className={styles.mobile_carousell_tag}
+                style={{ background: '#E7EBFF' }}
+              >
+                Budget
+              </div>
+            </div>
+            <div className={styles.mobile_carousell_title}>Start 95</div>
+
+            <div className={styles.tm_carousell_block_rows}>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'call_mess'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>Nelimitat</b> <br />
+                  min. și SMS în rețea
+                </span>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'call'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>250 min</b>
+                    <br />
+                   naționale
+                  </span>{' '}
+                  +
+                  <span>
+                    <b>25 min </b>
+                    <br /> internaționale
+                  </span>
+                </div>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'internet'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>25 GB</b> <br /> Trafic internet
+                </span>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'sms'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>25 SMS</b> <br /> naționale
+                </span>
+              </div>
+            </div>
+            <div className={styles.wifi_carousell_block_inside_btns}>
+              <div className={styles.tm_carousell_block_row_tags} style={{opacity:"0"}}>
+                <div className={styles.tm_carousell_block_row_tag}>
+                  35% reducere pentru 2 ani
+                </div>
+              </div>
+              <div className={styles.mobile_carousell_price}>
+                <div>95</div>
+                <div>
+                  <div className={styles.mobile_carousell_price_valuta}>
+                    lei/lună
+                  </div>
+                  <div className={styles.mobile_carousell_price_old}>
+                    <span>&nbsp;</span>
+                    {/*<span>120 lei/lună</span>*/}
+                  </div>
+                </div>
+              </div>
+              <Button
+                // onClick={() => setShowPopupFunction('aaa')}
+                color="#fff"
+                bgcolor="var(--theme_primary_color_blue_4)"
+                border="var(--theme_primary_color_blue_4)"
+                hover_border="var(--theme_primary_color_blue_2)"
+                hover_bgcolor="var(--theme_primary_color_blue_2)"
+                hover_color="var(--theme_primary_color_blue_4)"
+                icon="arrow_right"
+                className={styles.mobile_carousell_block_btn_buy}
+              >
+                Comandă acum
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className={styles.mobile_carousell_block}>
+            <div className={styles.mobile_carousell_tags}>
+              <div className={styles.mobile_carousell_tag}>New</div>
+              <div
+                className={styles.mobile_carousell_tag}
+                style={{ background: '#E7EBFF' }}
+              >
+                Top Sales
+              </div>
+            </div>
+            <div className={styles.mobile_carousell_title}>Star 120</div>
+
+            <div className={styles.tm_carousell_block_rows}>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'call_mess'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>Nelimitat</b> <br />
+                  min. și SMS în rețea
+                </span>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'call'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>350 min</b>
+                    <br />
+                   naționale
+                  </span>{' '}
+                  +
+                  <span>
+                    <b>35 min </b>
+                    <br /> internaționale
+                  </span>
+                </div>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'internet'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>35 GB</b> <br /> Trafic internet
+                </span>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'sms'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>35 SMS</b> <br /> naționale
+                </span>
+              </div>
+            </div>
+            <div className={styles.wifi_carousell_block_inside_btns}>
+              <div className={styles.tm_carousell_block_row_tags}>
+                <div className={styles.tm_carousell_block_row_tag}>
+                  35% reducere pentru 2 ani
+                </div>
+              </div>
+              <div className={styles.mobile_carousell_price}>
+                <div>78</div>
+                <div>
+                  <div className={styles.mobile_carousell_price_valuta}>
+                    lei/lună
+                  </div>
+                  <div className={styles.mobile_carousell_price_old}>
+                    <span>120 lei/lună</span>
+                  </div>
+                </div>
+              </div>
+              <Button
+                // onClick={() => setShowPopupFunction('aaa')}
+                color="#fff"
+                bgcolor="var(--theme_primary_color_blue_4)"
+                border="var(--theme_primary_color_blue_4)"
+                hover_border="var(--theme_primary_color_blue_2)"
+                hover_bgcolor="var(--theme_primary_color_blue_2)"
+                hover_color="var(--theme_primary_color_blue_4)"
+                icon="arrow_right"
+                className={styles.mobile_carousell_block_btn_buy}
+              >
+                Comandă acum
+              </Button>
+            </div>
+          </div>
+          <img className={styles.mobile_carousell_block_test} src="/images/landings/90971083.webp" alt="Moldtelecom" />
+        </div>
+        <div>
+          <div className={styles.mobile_carousell_block}>
+            <div className={styles.mobile_carousell_tags}>
+              {/*<div className={styles.mobile_carousell_tag}>*/}
+              {/*  New*/}
+              {/*</div>*/}
+              <div
+                className={styles.mobile_carousell_tag}
+                style={{ background: '#E7EBFF', opacity: '0' }}
+              >
+                Roaming
+              </div>
+            </div>
+            <div className={styles.mobile_carousell_title}>Star 150</div>
+
+            <div className={styles.tm_carousell_block_rows}>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'call_mess'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>Nelimitat</b> <br />
+                  min. și SMS în rețea
+                </span>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'call'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>450 min</b>
+                    <br />
+                   naționale
+                  </span>{' '}
+                  +
+                  <span>
+                    <b>45 min </b>
+                    <br /> internaționale
+                  </span>
+                </div>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'internet'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>45 GB</b> <br /> Trafic internet
+                </span>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'sms'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>45 SMS</b> <br /> naționale
+                </span>
+              </div>
+            </div>
+            <div className={styles.wifi_carousell_block_inside_btns}>
+              <div className={styles.tm_carousell_block_row_tags}>
+                <div className={styles.tm_carousell_block_row_tag}>
+                  35% reducere pentru 2 ani
+                </div>
+              </div>
+              <div className={styles.mobile_carousell_price}>
+                <div>97.5</div>
+                <div>
+                  <div className={styles.mobile_carousell_price_valuta}>
+                    lei/lună
+                  </div>
+                  <div className={styles.mobile_carousell_price_old}>
+                    <span>150 lei/lună</span>
+                  </div>
+                </div>
+              </div>
+              <Button
+                // onClick={() => setShowPopupFunction('aaa')}
+                color="#fff"
+                bgcolor="var(--theme_primary_color_blue_4)"
+                border="var(--theme_primary_color_blue_4)"
+                hover_border="var(--theme_primary_color_blue_2)"
+                hover_bgcolor="var(--theme_primary_color_blue_2)"
+                hover_color="var(--theme_primary_color_blue_4)"
+                icon="arrow_right"
+                className={styles.mobile_carousell_block_btn_buy}
+              >
+                Comandă acum
+              </Button>
+            </div>
+          </div>
+          <img className={styles.mobile_carousell_block_test} src="/images/landings/90971083.webp" alt="Moldtelecom" />
+        </div>
+        <div>
+          <div className={styles.mobile_carousell_block}>
+            <div className={styles.mobile_carousell_tags}>
+              {/*<div className={styles.mobile_carousell_tag}>*/}
+              {/*  New*/}
+              {/*</div>*/}
+              <div
+                className={styles.mobile_carousell_tag}
+                style={{ background: '#E7EBFF' }}
+              >
+                Roaming
+              </div>
+            </div>
+            <div className={styles.mobile_carousell_title}>Liberty 190</div>
+
+            <div className={styles.tm_carousell_block_rows}>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'call_mess'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>Nelimitat</b> <br />
+                  min. și SMS în rețea
+                </span>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'call'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>850 min</b>
+                    <br />
+                   naționale
+                  </span>{' '}
+                  +
+                  <span>
+                    <b>85 min </b>
+                    <br /> internaționale
+                  </span>
+                </div>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'internet'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>85 GB</b> <br /> Trafic internet
+                </span>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'sms'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>85 SMS</b> <br /> naționale
+                </span>
+              </div>
+              <div
+                // ${styles.tm_carousell_block_row_sp}
+                className={`${styles.tm_carousell_block_row} 
+               
+                `}
+              >
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'roaming'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>7 GB</b>
+                    <br />
+                    Roaming EU
+                  </span>{' '}
+                  +
+                  <span>
+                    <b>850 min </b>
+                    <br /> Roaming EU
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.wifi_carousell_block_inside_btns}>
+              <div className={styles.tm_carousell_block_row_tags}>
+                <div className={styles.tm_carousell_block_row_tag}>
+                  35% reducere pentru 2 ani
+                </div>
+              </div>
+              <div className={styles.mobile_carousell_price}>
+                <div>123.5</div>
+                <div>
+                  <div className={styles.mobile_carousell_price_valuta}>
+                    lei/lună
+                  </div>
+                  <div className={styles.mobile_carousell_price_old}>
+                    <span>190 lei/lună</span>
+                  </div>
+                </div>
+              </div>
+              <Button
+                // onClick={() => setShowPopupFunction('aaa')}
+                color="#fff"
+                bgcolor="var(--theme_primary_color_blue_4)"
+                border="var(--theme_primary_color_blue_4)"
+                hover_border="var(--theme_primary_color_blue_2)"
+                hover_bgcolor="var(--theme_primary_color_blue_2)"
+                hover_color="var(--theme_primary_color_blue_4)"
+                icon="arrow_right"
+                className={styles.mobile_carousell_block_btn_buy}
+              >
+                Comandă acum
+              </Button>
+            </div>
+          </div>
+          <img className={styles.mobile_carousell_block_test} src="/images/landings/90971083.webp" alt="Moldtelecom" />
+        </div>
+        <div>
+          <div className={styles.mobile_carousell_block}>
+            <div className={styles.mobile_carousell_tags}>
+              <div className={styles.mobile_carousell_tag}>
+                Top
+              </div>
+              <div
+                className={styles.mobile_carousell_tag}
+                style={{ background: '#E7EBFF' }}
+              >
+                Roaming
+              </div>
+            </div>
+            <div className={styles.mobile_carousell_title}>Liberty 250+</div>
+
+            <div className={styles.tm_carousell_block_rows}>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'call_mess'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>Nelimitat</b> <br />
+                  min. și SMS în rețea
+                </span>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'call'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>Nelimitat</b>
+                    <br />
+                   min naționale
+                  </span>{' '}
+                  +
+                  <span>
+                    <b>50 min </b>
+                    <br /> internaționale
+                  </span>
+                </div>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'internet'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>Nelimitat GB</b> <br /> Trafic internet
+                </span>
+              </div>
+              <div className={styles.tm_carousell_block_row}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'sms'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  <b>Nelimitat SMS</b> <br /> naționale
+                </span>
+              </div>
+              <div
+                // ${styles.tm_carousell_block_row_sp}
+                className={`${styles.tm_carousell_block_row} 
+               
+                `}
+              >
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'roaming'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>10 GB</b>
+                    <br />
+                    Roaming EU
+                  </span>{' '}
+                  +
+                  <span>
+                    <b>Nelimitat </b>
+                    <br />min Roaming EU
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.wifi_carousell_block_inside_btns}>
+              <div className={styles.tm_carousell_block_row_tags}>
+                <div className={styles.tm_carousell_block_row_tag}>
+                  35% reducere pentru 2 ani
+                </div>
+              </div>
+              <div className={styles.mobile_carousell_price}>
+                <div>162.5</div>
+                <div>
+                  <div className={styles.mobile_carousell_price_valuta}>
+                    lei/lună
+                  </div>
+                  <div className={styles.mobile_carousell_price_old}>
+                    <span>250 lei/lună</span>
+                  </div>
+                </div>
+              </div>
+              <Button
+                // onClick={() => setShowPopupFunction('aaa')}
+                color="#fff"
+                bgcolor="var(--theme_primary_color_blue_4)"
+                border="var(--theme_primary_color_blue_4)"
+                hover_border="var(--theme_primary_color_blue_2)"
+                hover_bgcolor="var(--theme_primary_color_blue_2)"
+                hover_color="var(--theme_primary_color_blue_4)"
+                icon="arrow_right"
+                className={styles.mobile_carousell_block_btn_buy}
+              >
+                Comandă acum
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Slider>
+      <Details>
+        <DetailsBlock title={'Promoția „Testează gratuit”'}>
+          <ul>
+            <li>
+              Promoția „Testează gratuit” oferă o reducere de 100% la costul
+              abonamentului pentru o perioadă de testare de până la 30 de zile.
+            </li>
+            <li>
+              După perioada de testare, clienții beneficiază de o reducere de
+              35% la abonament, până la finalizarea perioadei minime
+              contractuale. Perioada minimă contractuală este de 24 de luni,
+              inclusiv luna de testare.
+            </li>
+            <li>
+              Oferta este disponibilă exclusiv pentru abonații noi și abonații
+              care portează numărul la unul din abonamentele Star 120, Star 150
+              și Liberty 190
+            </li>
+            <li>Promoția este valabilă între 02.05.2025 și 31.07.2025.</li>
+          </ul>
+        </DetailsBlock>
+        <DetailsBlock title={'Condiții de utilizare Abonamente'}>
+          <ul>
+            <li>
+              Oferta promoțională constă în acordarea unei reduceri de 35% la
+              plata lunare a abonamentelor Star 120, Star150, Liberty 190 și
+              Liberty Plus 250, valabilă pe întreaga perioadă contractuală de 24
+              de luni.
+            </li>
+            <li>
+              Perioada minimă contractuală pentru abonamentul Start 95 este de 6
+              luni
+            </li>
+            <li>
+              Oferta este destinată pentru clienții noi, la conectare, portare
+              din altă rețea sau pentru cei existenți, la reperfectarea
+              contractului sau migrarea de la Prepay.
+            </li>
+            <li>
+              Oferta promo include și posibilitatea de a beneficia gratuit de
+              serviciul „Alege Număr Frumos”. Oferirea gratuită a serviciului
+              „Alege Număr Frumos” este disponibilă pentru categoria „Aur” sau
+              „Argint”.
+            </li>
+            <li>
+              Perioada de comercializare a ofertei: 03.03.205 – 25.08.2025
+              (inclusiv).
+            </li>
+            <li>
+              Abonații conectați la abonamentele Liberty 190 și Liberty Plus 250
+              pot comunica în Roaming UE+SEE din contul minutelor naționale
+              incluse în abonament. In plus, abonamentul Liberty 190 oferă 7 GB,
+              iar abonamentul Liberty Plus 250 – 10 GB disponibili spre
+              utilizare în Roaming în rețeaua operatorilor incluși în grupul
+              UE+SEE.
+            </li>
+            <li>
+              Pentru apelurile internaționale, destinațiile spre rețeaua fixă și
+              mobilă sunt următoarele țări: Marea Britanie, Franța, Germania,
+              Italia, Spania, Romania, Israel, Rusia, Cehia, Ucraina.
+            </li>
+            <li>
+              Abonații conectați la abonamentul ”Liberty Plus 250” sunt obligați
+              să evite folosirea abuzivă a serviciilor incluse în abonament.
+              Prin ”folosire abuzivă a serviciilor incluse în abonament” se
+              înțelege efectuarea de apeluri de ieșire spre „alți operatori
+              naționali” și/sau expedierea SMS-urilor spre „alți operatori
+              naționali” către mai mult de 200 numere telefonice unice, în
+              decursul unei perioade de facturare, și/sau efectuarea, în
+              decursul unei perioade de facturare, de apeluri nelimitate spre
+              „alți operatori naționali” în volum ce depășește 3000 minute, cu
+              condiția că numărul de minute de ieșire spre „alți operatori
+              naționali” depășește de cel puțin două ori numărul minutelor de
+              intrare dinspre „alți operatori naționali” în aceeași perioadă.
+              Abonații care vor fi identificați că au utilizat abuziv serviciile
+              incluse în abonamentul ”Liberty Plus 250” vor beneficia în
+              continuare de conținutul standard de 1000 Minute și 245 SMS
+              naționale la abonamentul respectiv;
+            </li>
+            <li>
+              Viteza la internet se oferă în funcție de posibilitățile tehnice.
+            </li>
+            <li>
+              Traficul Internet va avea viteza de transfer a datelor la
+              capacitate maximă download (descarcare) și de până la 512 Kbps
+              upload (încarcare), în dependenta de opțiunile suplimentare
+              activate – pentru tehnologia 3G, și la capacitate maximă
+              download/upload (descarcare/încarcare) – pentru tehnologia 4G.
+            </li>
+            <li>
+              Rezoluțiunea anticipată (inclusiv migrarea spre PrePay, schimbul
+              de abonament către unul cu valoare mai mica sau port out) până la
+              expirarea perioadei minime contractuale implică achitarea unei
+              plăți cu titlu de prejudiciu, conform formulei de calcul: 35% din
+              plata de abonament * nr. de luni acordare reducere.
+            </li>
+          </ul>
+        </DetailsBlock>
+        <DetailsBlock title={'Condiții speciale serviciului „Roaming Europa”'}>
+          <ul>
+            <li>
+              Tarifarea apelurilor se efectuează per minut din prima secunda de
+              apel;
+            </li>
+            <li>
+              Viteza de acces la internet este conform condițiilor de prestare a
+              serviciului în vigoare de către operator și în funcție de
+              terminalul utilizat;
+            </li>
+            <li>
+              Tarifarea traficului Internet consumat se efectuează din momentul
+              începerii sesiunii per 10 KByte (1MB=1024 KB);
+            </li>
+            <li>
+              După consumarea conținutului în Roaming UE, convorbirile și
+              traficul internet vor fi taxate conform tarifelor standard în
+              Roaming pentru fiecare operator;
+            </li>
+            <li>
+              Abonatul va utiliza conținutul în Roaming UE+SEE cu condiția că va
+              avea activ serviciul Roaming;
+            </li>
+            <li>
+              Abonații conectați la abonamentele ”Liberty 190” și ”Liberty Plus
+              250” sunt obligați să evite folosirea abuzivă a serviciilor
+              Roaming UE+SEE incluse în abonament. Pentru a analiza ”folosirea
+              abuzivă a serviciilor Roaming UE+SEE incluse în abonament” se va
+              monitoriza, în mod cumulat, pe parcursul a fiecăror patru luni
+              consecutive din momentul conectării dacă consumul oricărui
+              serviciu în Roaming în Europa este mai mare decât consumul
+              respectivului serviciu la nivel naţional;
+            </li>
+          </ul>
+          <br />
+          <b>
+            Lista operatorilor în rețeaua cărora este disponibil conținutul
+            Roaming UE:
+          </b>
+
+          <TableRoaming />
+        </DetailsBlock>
+      </Details>
+      <MyApp style_type={'blue_white'} />
 
       <Footer disclaimer={true} />
     </>
