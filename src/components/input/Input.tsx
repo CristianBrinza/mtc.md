@@ -1,59 +1,40 @@
-// Input.tsx
-import React, { FC } from 'react';
-import Icon, { icons } from '../Icon.tsx';
+// src/components/input/Input.tsx
+import { FC, InputHTMLAttributes, CSSProperties } from 'react';
+import Icon, { icons } from '../Icon';
 import styles from './Input.module.css';
 
-interface InputProps {
-  placeholder?: string;
-  value: string;
-  /** now the full DOM event */
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
-  onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  /** key of the icon to render inside the input (optional) */
   icon?: keyof typeof icons;
-  name?: string;
-  required?: boolean;
-  className?: string;
-  type?: string;
-  min?: string;
-  style?: React.CSSProperties;
-  max?: string;
+  /** border & icon color (defaults to theme blue) */
   color?: string;
+  /** additional wrapper class names */
+  className?: string;
+  /** additional inline styles for the wrapper */
+  style?: CSSProperties;
 }
 
 const Input: FC<InputProps> = ({
-  placeholder,
-  value,
-  onChange,
-  onKeyDown,
   icon,
-  name,
-  style,
-  required = false,
-  className = '',
-  type = 'text',
-  min,
-  max,
   color = 'var(--theme_primary_color_blue_2)',
+  className = '',
+  style,
+  ...rest
 }) => {
-  const inputStyle: React.CSSProperties = {
-    border: `1px solid ${color}`,
+  const wrapperStyle: CSSProperties = {
     ...style,
   };
+
+  const inputStyle: CSSProperties = {
+    border: `1px solid ${color}`,
+  };
+
   return (
-    <div className={`${styles.costume_input_block} ${className}`}>
-      <input
-        type={type}
-        name={name}
-        value={value}
-        placeholder={placeholder}
-        required={required}
-        style={inputStyle}
-        className={styles.costume_input}
-        onChange={onChange}
-        onKeyDown={onKeyDown}
-        min={min}
-        max={max}
-      />
+    <div
+      className={`${styles.costume_input_block} ${className}`}
+      style={wrapperStyle}
+    >
+      <input {...rest} style={inputStyle} className={styles.costume_input} />
       {icon && (
         <Icon className={styles.costume_input_svg} type={icon} color={color} />
       )}

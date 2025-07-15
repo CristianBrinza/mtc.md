@@ -180,7 +180,7 @@ export default function GpsTrack() {
           {t('bussines_gps.popup.text')}
           <div className={styles.popup_btns}>
             <Button
-              to={'tel:022570570'}
+              to={'tel:022570707'}
               color="var(--theme_primary_color_white)"
               bgcolor="var(--theme_primary_color_blue_4)"
               border="var(--theme_primary_color_blue_4)"
@@ -188,7 +188,7 @@ export default function GpsTrack() {
               hover_bgcolor="var(--theme_primary_color_blue_2)"
               icon="arrow_right"
             >
-              0(22) 570-570
+              0(22) 570-707
             </Button>
           </div>
         </div>

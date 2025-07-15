@@ -7,6 +7,7 @@ interface PopupProps {
   width?: string;
   children: React.ReactNode;
   isVisible: boolean;
+  className?: string;
   onClose: () => void;
 }
 
@@ -15,6 +16,7 @@ const Popup: React.FC<PopupProps> = ({
   children,
   isVisible,
   onClose,
+  className,
   width = '600px',
 }) => {
   const popupRef = useRef<HTMLDivElement | null>(null);
@@ -47,7 +49,7 @@ const Popup: React.FC<PopupProps> = ({
 
   return (
     <div
-      className={`popup_block ${isVisible ? 'show' : ''}`}
+      className={`popup_block ${isVisible ? 'show' : ''} ${className}`}
       id={`popup_block_${id}`}
       style={{ display: isVisible ? 'flex' : 'none' }}
       onClick={handleOutsideClick}

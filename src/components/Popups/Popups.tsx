@@ -644,75 +644,75 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
           <ScrollableWrapper>
             <table className="popup_table">
               <thead>
-              <tr>
-                <td>{t('popups.f5.table.headers.0')}</td>
-                <td>{t('popups.f5.table.headers.1')}</td>
-                <td>{t('popups.f5.table.headers.2')}</td>
-                <td>{t('popups.f5.table.headers.3')}</td>
-                <td>{t('popups.f5.table.headers.4')}</td>
-              </tr>
+                <tr>
+                  <td>{t('popups.f5.table.headers.0')}</td>
+                  <td>{t('popups.f5.table.headers.1')}</td>
+                  <td>{t('popups.f5.table.headers.2')}</td>
+                  <td>{t('popups.f5.table.headers.3')}</td>
+                  <td>{t('popups.f5.table.headers.4')}</td>
+                </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>{t('popups.f5.table.rows.0.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.0.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.0.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.0.3')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.0.4')}
-                </td>
-              </tr>
-              <tr>
-                <td>{t('popups.f5.table.rows.1.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.1.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.1.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.1.3')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.1.4')}
-                </td>
-              </tr>
-              <tr>
-                <td>{t('popups.f5.table.rows.2.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.2.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.2.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.2.3')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.2.4')}
-                </td>
-              </tr>
-              <tr>
-                <td>{t('popups.f5.table.rows.3.0')}</td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.3.1')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.3.2')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.3.3')}
-                </td>
-                <td style={{ textAlign: 'center' }}>
-                  {t('popups.f5.table.rows.3.4')}
-                </td>
-              </tr>
+                <tr>
+                  <td>{t('popups.f5.table.rows.0.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.0.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.0.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.0.3')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.0.4')}
+                  </td>
+                </tr>
+                <tr>
+                  <td>{t('popups.f5.table.rows.1.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.1.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.1.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.1.3')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.1.4')}
+                  </td>
+                </tr>
+                <tr>
+                  <td>{t('popups.f5.table.rows.2.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.2.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.2.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.2.3')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.2.4')}
+                  </td>
+                </tr>
+                <tr>
+                  <td>{t('popups.f5.table.rows.3.0')}</td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.3.1')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.3.2')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.3.3')}
+                  </td>
+                  <td style={{ textAlign: 'center' }}>
+                    {t('popups.f5.table.rows.3.4')}
+                  </td>
+                </tr>
               </tbody>
             </table>
           </ScrollableWrapper>
@@ -801,7 +801,7 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
                     : ''
                 }`}
               >
-                <TableRoaming/>
+                <TableRoaming />
               </div>
             </div>
           </div>

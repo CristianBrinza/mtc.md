@@ -9,10 +9,18 @@ import Hero from '../../../../components/hero/Hero.tsx';
 import styles from './Mobile.module.css';
 import Button from '../../../../components/Button.tsx';
 import MyApp from '../../../../components/app/MyApp.tsx';
-import Details, { DetailsBlock } from '../../../../components/details/Details.tsx';
+import Details, {
+  DetailsBlock,
+} from '../../../../components/details/Details.tsx';
 import Slider from 'react-slick';
 import Icon from '../../../../components/Icon.tsx';
 import TableRoaming from '../../../../components/Popups/TableRoaming.tsx';
+import Functions from '../../../../components/functions/Functions.tsx';
+import React, { useState } from 'react';
+import Popup from '../../../../components/Popup/Popup.tsx';
+import Input from '../../../../components/input/Input.tsx';
+import Toggle from '../../../../components/toggle/Toggle.tsx';
+import popupBuy from '../../../../components/PopupBuy/PopupBuy.tsx';
 
 export default function Mobile() {
   const { t } = useTranslation();
@@ -25,6 +33,29 @@ export default function Mobile() {
     { label: 'Promo', url: ' ' },
     { label: 'Telefonie mobila' },
   ];
+  const [activePopup, setActivePopup] = useState<string | null>(null);
+  const [activePopupConfig, setActivePopupConfig] = useState<string>('');
+  const handleConfigClick = (name: string) => {
+    setActivePopupConfig(name);
+    setActivePopup('1280520');
+  };
+
+  const [phone, setPhone] = useState('');
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Allow only digits
+    if (/^\d*$/.test(value)) {
+      setPhone(value);
+    }
+  };
+
+  const [selected, setSelected] = useState<'sim' | 'esim'>('sim');
+
+  const handleClick = (type: 'sim' | 'esim') => {
+    setSelected(type);
+    console.log(type);
+  };
 
   const settings = {
     dots: true,
@@ -48,6 +79,11 @@ export default function Mobile() {
     ],
   };
 
+  const [activeConfig, setActiveConfig] = useState<string>('1');
+
+  const goToPage = (link: string) => {
+    window.location.href = link;
+  };
   return (
     <>
       <SEO {...seo} />
@@ -71,6 +107,35 @@ export default function Mobile() {
         </div>
       </Hero>
 
+      <div className={styles.select_type}>
+        <div
+          className={`${styles.select_type_card} ${styles.select_type_card_active}`}
+        >
+          <div className={styles.select_type_card_top}>Abonament</div>
+          <div className={styles.select_type_card_bottom}></div>
+        </div>
+        <div
+          className={styles.select_type_card}
+          onClick={() =>
+            goToPage(`https://www.moldtelecom.md/${t('lang')}/personal/Portare`)
+          }
+        >
+          <div className={styles.select_type_card_top}>Portare</div>
+          <div className={styles.select_type_card_bottom}></div>
+        </div>
+        <div
+          className={styles.select_type_card}
+          onClick={() =>
+            goToPage(
+              `https://www.moldtelecom.md/${t('lang')}/personal/prepay-cartela`
+            )
+          }
+        >
+          <div className={styles.select_type_card_top}>Prepay</div>
+          <div className={styles.select_type_card_bottom}></div>
+        </div>
+      </div>
+
       <div className={`title title_5 ${styles.title2}`}>
         Alege abonamentul care ți se potrivește cel mai bine
       </div>
@@ -82,6 +147,9 @@ export default function Mobile() {
           border={'var(--theme_primary_color_blue_3)'}
           hover_border={'var(--theme_primary_color_blue_2)'}
           hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+          onClick={() => {
+            setActiveConfig('1');
+          }}
         >
           Nu sunt client
         </Button>
@@ -91,9 +159,22 @@ export default function Mobile() {
           border={'var(--theme_primary_color_blue_3)'}
           hover_border={'var(--theme_primary_color_blue_2)'}
           hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+          onClick={() => {
+            setActiveConfig('2');
+          }}
         >
           Sunt client
         </Button>
+        {/*<Button*/}
+        {/*  color={'var(--theme_primary_color_blue_4)'}*/}
+        {/*  bgcolor={'transparent'}*/}
+        {/*  border={'var(--theme_primary_color_blue_3)'}*/}
+        {/*  hover_border={'var(--theme_primary_color_blue_2)'}*/}
+        {/*  hover_bgcolor={'var(--theme_primary_color_blue_2)'}*/}
+        {/*  onClick={() => {setActiveConfig('3')}}*/}
+        {/*>*/}
+        {/* Device*/}
+        {/*</Button>*/}
       </div>
       <Slider {...settings} className={styles.mobile_carousell}>
         <div>
@@ -136,7 +217,7 @@ export default function Mobile() {
                     {' '}
                     <b>250 min</b>
                     <br />
-                   naționale
+                    naționale
                   </span>{' '}
                   +
                   <span>
@@ -169,13 +250,16 @@ export default function Mobile() {
               </div>
             </div>
             <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags} style={{opacity:"0"}}>
+              <div
+                className={styles.tm_carousell_block_row_tags}
+                style={{ opacity: '0' }}
+              >
                 <div className={styles.tm_carousell_block_row_tag}>
                   35% reducere pentru 2 ani
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
-                <div>95</div>
+                <div>{activeConfig == '1' ? '95' : '95'}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     lei/lună
@@ -188,6 +272,7 @@ export default function Mobile() {
               </div>
               <Button
                 // onClick={() => setShowPopupFunction('aaa')}
+                onClick={() => handleConfigClick('start 95')}
                 color="#fff"
                 bgcolor="var(--theme_primary_color_blue_4)"
                 border="var(--theme_primary_color_blue_4)"
@@ -240,7 +325,7 @@ export default function Mobile() {
                     {' '}
                     <b>350 min</b>
                     <br />
-                   naționale
+                    naționale
                   </span>{' '}
                   +
                   <span>
@@ -279,7 +364,7 @@ export default function Mobile() {
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
-                <div>78</div>
+                <div> {activeConfig == '1' ? '87' : '87'}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     lei/lună
@@ -291,6 +376,7 @@ export default function Mobile() {
               </div>
               <Button
                 // onClick={() => setShowPopupFunction('aaa')}
+                onClick={() => handleConfigClick('star 120')}
                 color="#fff"
                 bgcolor="var(--theme_primary_color_blue_4)"
                 border="var(--theme_primary_color_blue_4)"
@@ -304,7 +390,13 @@ export default function Mobile() {
               </Button>
             </div>
           </div>
-          <img className={styles.mobile_carousell_block_test} src="/images/landings/90971083.webp" alt="Moldtelecom" />
+          {activeConfig == '1' && (
+            <img
+              className={styles.mobile_carousell_block_test}
+              src="/images/landings/90971083.webp"
+              alt="Moldtelecom"
+            />
+          )}
         </div>
         <div>
           <div className={styles.mobile_carousell_block}>
@@ -346,7 +438,7 @@ export default function Mobile() {
                     {' '}
                     <b>450 min</b>
                     <br />
-                   naționale
+                    naționale
                   </span>{' '}
                   +
                   <span>
@@ -385,7 +477,7 @@ export default function Mobile() {
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
-                <div>97.5</div>
+                <div> {activeConfig == '1' ? '97.5' : '100'}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     lei/lună
@@ -397,6 +489,7 @@ export default function Mobile() {
               </div>
               <Button
                 // onClick={() => setShowPopupFunction('aaa')}
+                onClick={() => handleConfigClick('star 150')}
                 color="#fff"
                 bgcolor="var(--theme_primary_color_blue_4)"
                 border="var(--theme_primary_color_blue_4)"
@@ -410,7 +503,13 @@ export default function Mobile() {
               </Button>
             </div>
           </div>
-          <img className={styles.mobile_carousell_block_test} src="/images/landings/90971083.webp" alt="Moldtelecom" />
+          {activeConfig == '1' && (
+            <img
+              className={styles.mobile_carousell_block_test}
+              src="/images/landings/90971083.webp"
+              alt="Moldtelecom"
+            />
+          )}
         </div>
         <div>
           <div className={styles.mobile_carousell_block}>
@@ -452,7 +551,7 @@ export default function Mobile() {
                     {' '}
                     <b>850 min</b>
                     <br />
-                   naționale
+                    naționale
                   </span>{' '}
                   +
                   <span>
@@ -530,6 +629,7 @@ export default function Mobile() {
               </div>
               <Button
                 // onClick={() => setShowPopupFunction('aaa')}
+                onClick={() => handleConfigClick('liberty 190')}
                 color="#fff"
                 bgcolor="var(--theme_primary_color_blue_4)"
                 border="var(--theme_primary_color_blue_4)"
@@ -543,14 +643,18 @@ export default function Mobile() {
               </Button>
             </div>
           </div>
-          <img className={styles.mobile_carousell_block_test} src="/images/landings/90971083.webp" alt="Moldtelecom" />
+          {activeConfig == '1' && (
+            <img
+              className={styles.mobile_carousell_block_test}
+              src="/images/landings/90971083.webp"
+              alt="Moldtelecom"
+            />
+          )}
         </div>
         <div>
           <div className={styles.mobile_carousell_block}>
             <div className={styles.mobile_carousell_tags}>
-              <div className={styles.mobile_carousell_tag}>
-                Top
-              </div>
+              <div className={styles.mobile_carousell_tag}>Top</div>
               <div
                 className={styles.mobile_carousell_tag}
                 style={{ background: '#E7EBFF' }}
@@ -585,7 +689,7 @@ export default function Mobile() {
                     {' '}
                     <b>Nelimitat</b>
                     <br />
-                   min naționale
+                    min naționale
                   </span>{' '}
                   +
                   <span>
@@ -638,7 +742,8 @@ export default function Mobile() {
                   +
                   <span>
                     <b>Nelimitat </b>
-                    <br />min Roaming EU
+                    <br />
+                    min Roaming EU
                   </span>
                 </div>
               </div>
@@ -663,6 +768,7 @@ export default function Mobile() {
               </div>
               <Button
                 // onClick={() => setShowPopupFunction('aaa')}
+                onClick={() => handleConfigClick('liberty 150 +')}
                 color="#fff"
                 bgcolor="var(--theme_primary_color_blue_4)"
                 border="var(--theme_primary_color_blue_4)"
@@ -820,9 +926,110 @@ export default function Mobile() {
           <TableRoaming />
         </DetailsBlock>
       </Details>
+
+      <Functions
+        style_type={'blue'}
+        title={'general.recommended_options'}
+        functions={['Internet', 'TV', 'MTC', 'APP']}
+      />
       <MyApp style_type={'blue_white'} />
 
       <Footer disclaimer={true} />
+      <Popup
+        id="1280520"
+        width="1000px"
+        isVisible={activePopup === '1280520'}
+        onClose={() => setActivePopup(null)}
+        className={styles.popupBuy}
+      >
+        {/*<div className={styles.popup_div_title}>*/}
+        {/*  Mulțumim că ai ales Moldtelecom*/}
+        {/*</div>*/}
+
+        <div className={styles.buy_popup}>
+          <img
+            className={styles.buy_popup_img}
+            src="/images/landings/22271083.webp"
+            alt="Moldtelecom"
+          />
+          <div>
+            <div>Abonamentul ales:</div>
+            <div className={styles.selected_popup_subcription}>
+              <div className={styles.popup_selected}>{activePopupConfig}</div>
+
+              <div className={styles.tm_carousell_block_row_tag}>
+                35% reducere pentru 2 ani
+              </div>
+            </div>
+
+            <div className={styles.popup_optional}>Optional:</div>
+            <div className={styles.popup_optional_block}>
+              <div className={styles.popup_sim_block}>
+                <div
+                  className={`
+          ${styles.popup_sim} 
+          ${styles.popup_sim_1} 
+          ${selected === 'sim' ? styles.popup_sim_active : ''}
+        `}
+                  onClick={() => handleClick('sim')}
+                >
+                  SIM
+                </div>
+                <div
+                  className={`
+          ${styles.popup_sim} 
+          ${styles.popup_sim_2} 
+          ${selected === 'esim' ? styles.popup_sim_active : ''}
+        `}
+                  onClick={() => handleClick('esim')}
+                >
+                  eSIM
+                </div>
+              </div>
+              <div className={styles.popup_option}>
+                <Toggle />
+                Testeaza o lună <b>GRATUIT</b>
+              </div>
+            </div>
+            <form
+              action="https://www.moldtelecom.md/comanda_marketing"
+              data-type="thankyou-page-form"
+              method="post"
+              className={styles.popup_form}
+            >
+              <Input
+                type="tel"
+                inputMode="numeric"
+                maxLength={9}
+                name="phone"
+                pattern="[0]{1}[2,6,7]{1}[0-9]{7}"
+                placeholder="0 ( - - ) - - -  - - -"
+                required
+                value={phone}
+                onChange={handlePhoneChange}
+                icon={'call'}
+              />
+              <Button
+                color={'var(--theme_primary_color_blue_4)'}
+                bgcolor={'var(--theme_primary_color_blue_3)'}
+                border={'var(--theme_primary_color_blue_3)'}
+                hover_border={'var(--theme_primary_color_blue_2)'}
+                hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+                icon={'arrow_right'}
+                type="submit"
+              >
+                Comandă acum
+              </Button>
+            </form>
+            <div className={styles.popup_discalmer}>
+              După expedierea solicitării vei fi apelat de un consultant
+              Moldtelecom. Mulțumim! <br />
+              Solicitările parvenite duminică, vor fi procesate luni. |
+              Câmpurile marcate cu * sunt obligatorii.
+            </div>
+          </div>
+        </div>
+      </Popup>
     </>
   );
 }
