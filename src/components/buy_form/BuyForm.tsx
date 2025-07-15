@@ -10,6 +10,8 @@ interface BuyFormProps {
   config: string;
   tag: string;
   service: string;
+  onSuccess?: () => void;
+  onError?: () => void;
 }
 
 declare global {
@@ -18,7 +20,13 @@ declare global {
   }
 }
 
-const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service }) => {
+const BuyForm: React.FC<BuyFormProps> = ({
+  config,
+  tag,
+  service,
+  onSuccess,
+  onError,
+}) => {
   const { t } = useTranslation();
   const [phone, setPhone] = useState('');
   const [source, setSource] = useState('');
@@ -28,7 +36,7 @@ const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service }) => {
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (/^\d*$/.test(value)) setPhone(value); // allow digits only
+    if (/^\d*$/.test(value)) setPhone(value);
   };
 
   useEffect(() => {
@@ -38,32 +46,63 @@ const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service }) => {
       console.error('Missing reCAPTCHA site key – skipping script injection.');
       return;
     }
+
     const scriptId = 'recaptcha-script';
     if (!document.getElementById(scriptId)) {
       const script = document.createElement('script');
       script.id = scriptId;
       script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
       script.async = true;
+      script.onload = () => {
+        if (window.grecaptcha) {
+          window.grecaptcha.ready(() => {
+            window.grecaptcha
+              .execute(siteKey, { action: 'contact' })
+              .then((token: string) => {
+                if (recaptchaInput.current)
+                  recaptchaInput.current.value = token;
+              });
+          });
+        }
+      };
       document.body.appendChild(script);
     }
   }, [siteKey]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // if we don’t have a key or grecaptcha isn’t ready, just fall back to a normal submit
-    if (!siteKey || !window.grecaptcha) {
-      (e.target as HTMLFormElement).submit();
-      return;
-    }
 
-    window.grecaptcha.ready(() => {
-      window.grecaptcha
-        .execute(siteKey, { action: 'submit' })
-        .then((token: string) => {
-          if (recaptchaInput.current) recaptchaInput.current.value = token;
-          (e.target as HTMLFormElement).submit();
+    const doFetch = async (token?: string) => {
+      const form = e.target as HTMLFormElement;
+      const data = new FormData(form);
+      if (token && recaptchaInput.current)
+        data.set('recaptcha_response', token);
+
+      try {
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: data,
         });
-    });
+        if (res.ok) {
+          onSuccess?.();
+        } else {
+          onError?.();
+        }
+      } catch {
+        onError?.();
+      }
+    };
+
+    if (!siteKey || !window.grecaptcha) {
+      doFetch();
+    } else {
+      window.grecaptcha.ready(() => {
+        window.grecaptcha
+          .execute(siteKey, { action: 'submit' })
+          .then(doFetch)
+          .catch(() => onError?.());
+      });
+    }
   };
 
   return (
@@ -100,7 +139,12 @@ const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service }) => {
       <input type="hidden" name="lang" value={t('lang')} />
       <input type="hidden" name="source" value={source} />
       <input type="hidden" name="service" value={service} />
-      <input type="hidden" name="recaptcha_response" ref={recaptchaInput} />
+      <input
+        type="hidden"
+        id="recaptchaResponse"
+        name="recaptcha_response"
+        ref={recaptchaInput}
+      />
       <input type="hidden" name="tag" value={tag} />
       <input type="hidden" name="info" value={config} />
       {/*<input type="hidden" name="_token" value={csrfToken} />*/}

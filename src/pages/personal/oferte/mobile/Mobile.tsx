@@ -23,6 +23,7 @@ import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
 
 export default function Mobile() {
   const { t } = useTranslation();
+  const [testGratis, setTestGratis] = useState(false);
   const seo = {
     title: t('pages.mobile.title'),
     description: t('pages.mobile.description'),
@@ -34,16 +35,19 @@ export default function Mobile() {
   ];
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [activePopupConfig, setActivePopupConfig] = useState<string>('');
-  const handleConfigClick = (name: string) => {
+  const [activePriceConfig, setActivePriceConfig] = useState<string>('');
+  const handleConfigClick = (name: string, price: string) => {
     setActivePopupConfig(name);
+    setActivePriceConfig(price);
     setActivePopup('1280520');
   };
-
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
   const [selected, setSelected] = useState<'sim' | 'esim'>('sim');
 
   const handleClick = (type: 'sim' | 'esim') => {
     setSelected(type);
-    console.log(type);
+    // console.log(type);
   };
 
   const settings = {
@@ -261,7 +265,12 @@ export default function Mobile() {
               </div>
               <Button
                 // onClick={() => setShowPopupFunction('aaa')}
-                onClick={() => handleConfigClick('start 95')}
+                onClick={() =>
+                  handleConfigClick(
+                    'start 95',
+                    activeConfig == '1' ? '95' : '95'
+                  )
+                }
                 color="#fff"
                 bgcolor="var(--theme_primary_color_blue_4)"
                 border="var(--theme_primary_color_blue_4)"
@@ -365,7 +374,12 @@ export default function Mobile() {
               </div>
               <Button
                 // onClick={() => setShowPopupFunction('aaa')}
-                onClick={() => handleConfigClick('star 120')}
+                onClick={() =>
+                  handleConfigClick(
+                    'star 120',
+                    activeConfig == '1' ? '87' : '87'
+                  )
+                }
                 color="#fff"
                 bgcolor="var(--theme_primary_color_blue_4)"
                 border="var(--theme_primary_color_blue_4)"
@@ -478,7 +492,12 @@ export default function Mobile() {
               </div>
               <Button
                 // onClick={() => setShowPopupFunction('aaa')}
-                onClick={() => handleConfigClick('star 150')}
+                onClick={() =>
+                  handleConfigClick(
+                    'star 150',
+                    activeConfig == '1' ? '97.5' : '100'
+                  )
+                }
                 color="#fff"
                 bgcolor="var(--theme_primary_color_blue_4)"
                 border="var(--theme_primary_color_blue_4)"
@@ -606,7 +625,7 @@ export default function Mobile() {
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
-                <div>123.5</div>
+                <div>{activeConfig == '1' ? '123.5' : '115'}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     lei/lună
@@ -618,7 +637,12 @@ export default function Mobile() {
               </div>
               <Button
                 // onClick={() => setShowPopupFunction('aaa')}
-                onClick={() => handleConfigClick('liberty 190')}
+                onClick={() =>
+                  handleConfigClick(
+                    'liberty 190',
+                    activeConfig == '1' ? '123.5' : '115'
+                  )
+                }
                 color="#fff"
                 bgcolor="var(--theme_primary_color_blue_4)"
                 border="var(--theme_primary_color_blue_4)"
@@ -745,7 +769,7 @@ export default function Mobile() {
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
-                <div>162.5</div>
+                <div>{activeConfig == '1' ? '162.5' : '150'}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     lei/lună
@@ -757,7 +781,12 @@ export default function Mobile() {
               </div>
               <Button
                 // onClick={() => setShowPopupFunction('aaa')}
-                onClick={() => handleConfigClick('liberty 150 +')}
+                onClick={() =>
+                  handleConfigClick(
+                    'liberty 150 +',
+                    activeConfig == '1' ? '162.5' : '150'
+                  )
+                }
                 color="#fff"
                 bgcolor="var(--theme_primary_color_blue_4)"
                 border="var(--theme_primary_color_blue_4)"
@@ -934,67 +963,101 @@ export default function Mobile() {
         {/*<div className={styles.popup_div_title}>*/}
         {/*  Mulțumim că ai ales Moldtelecom*/}
         {/*</div>*/}
+        {error ? (
+          <div className={styles.buy_popup_error}>
+            <Icon
+              type={'repair'}
+              size={'48px'}
+              color={'var(--theme_primary_color_blue_3)'}
+            />
+            <span>
+              A apărut o eroare la trimiterea cererii. <br />
+              Te rugăm să încerci din nou.
+            </span>
+          </div>
+        ) : submitted ? (
+          <div className={styles.buy_popup_success}>
+            <Icon
+              type={'tick'}
+              size={'48px'}
+              color={'var(--theme_primary_color_blue_3)'}
+            />
+            <span>
+              Solicitarea ta a fost trimisă cu succes! <br />
+              Un consultant Moldtelecom te va contacta în curând.
+            </span>
+          </div>
+        ) : (
+          <div className={styles.buy_popup}>
+            <img
+              className={styles.buy_popup_img}
+              src="/images/landings/22271083.webp"
+              alt="Moldtelecom"
+            />
+            <div>
+              <div>Abonamentul ales:</div>
+              <div className={styles.selected_popup_subcription}>
+                <div className={styles.popup_selected}>{activePopupConfig}</div>
 
-        <div className={styles.buy_popup}>
-          <img
-            className={styles.buy_popup_img}
-            src="/images/landings/22271083.webp"
-            alt="Moldtelecom"
-          />
-          <div>
-            <div>Abonamentul ales:</div>
-            <div className={styles.selected_popup_subcription}>
-              <div className={styles.popup_selected}>{activePopupConfig}</div>
-
-              <div className={styles.tm_carousell_block_row_tag}>
-                35% reducere pentru 2 ani
+                <div className={styles.tm_carousell_block_row_tag}>
+                  35% reducere pentru 2 ani
+                </div>
               </div>
-            </div>
 
-            <div className={styles.popup_optional}>Optional:</div>
-            <div className={styles.popup_optional_block}>
-              <div className={styles.popup_sim_block}>
-                <div
-                  className={`
+              <div className={styles.popup_optional}>Optional:</div>
+              <div className={styles.popup_optional_block}>
+                <div className={styles.popup_sim_block}>
+                  <div
+                    className={`
           ${styles.popup_sim} 
           ${styles.popup_sim_1} 
           ${selected === 'sim' ? styles.popup_sim_active : ''}
         `}
-                  onClick={() => handleClick('sim')}
-                >
-                  SIM
-                </div>
-                <div
-                  className={`
+                    onClick={() => handleClick('sim')}
+                  >
+                    SIM
+                  </div>
+                  <div
+                    className={`
           ${styles.popup_sim} 
           ${styles.popup_sim_2} 
           ${selected === 'esim' ? styles.popup_sim_active : ''}
         `}
-                  onClick={() => handleClick('esim')}
-                >
-                  eSIM
+                    onClick={() => handleClick('esim')}
+                  >
+                    eSIM
+                  </div>
+                </div>
+                <div className={styles.popup_option}>
+                  <Toggle
+                    checked={testGratis}
+                    onChange={() => setTestGratis(prev => !prev)}
+                  />
+                  Testeaza o lună <b>GRATUIT</b>
                 </div>
               </div>
-              <div className={styles.popup_option}>
-                <Toggle />
-                Testeaza o lună <b>GRATUIT</b>
+
+              <BuyForm
+                config={`TM - ${activeConfig === '1' ? 'nu sunt client' : 'sunt client'}, tip - ${selected}, testează- ${testGratis}, pachet selectat- ${activePopupConfig} , pret- ${activePriceConfig}`}
+                tag={'tm'}
+                service={'campain[tm_2025_b2s], place[abonament]'}
+                onSuccess={() => {
+                  setSubmitted(true);
+                  setError(false);
+                }}
+                onError={() => {
+                  setError(true);
+                }}
+              />
+              <div className={styles.popup_discalmer}>
+                După expedierea solicitării vei fi apelat de un consultant
+                Moldtelecom. Mulțumim! <br />
+                Solicitările parvenite duminică, vor fi procesate luni. |
+                Câmpurile marcate cu * sunt obligatorii.
               </div>
             </div>
-
-            <BuyForm
-              config={`TM - ${activePopupConfig === '1' ? 'nu sunt client' : 'sunt client'}`}
-              tag={'tm'}
-              service={'campain[tm_2025_b2s], place[abonament]'}
-            />
-
-            <div className={styles.popup_discalmer}>
-              După expedierea solicitării vei fi apelat de un consultant
-              Moldtelecom. Mulțumim! <br />
-              Solicitările parvenite duminică, vor fi procesate luni. |
-              Câmpurile marcate cu * sunt obligatorii.
-            </div>
           </div>
-        </div>
+        )}
       </Popup>
     </>
   );

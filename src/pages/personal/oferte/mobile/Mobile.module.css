@@ -276,6 +276,17 @@
   justify-content: flex-start;
   margin: 10px 0;
 }
+.buy_popup_error,
+.buy_popup_success {
+  width: 100%;
+  min-height: 150px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
 
 .popup_discalmer {
   max-width: 620px;
