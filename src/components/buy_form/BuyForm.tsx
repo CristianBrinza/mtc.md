@@ -42,17 +42,28 @@ const BuyForm: React.FC<BuyFormProps> = ({
   useEffect(() => {
     setSource(window.location.href);
 
-    if (!siteKey) {
-      console.error('Missing reCAPTCHA site key – skipping script injection.');
-      return;
-    }
-    const scriptId = 'recaptcha-script';
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
-      script.async = true;
-      document.body.appendChild(script);
+    if (!siteKey) return;
+    const populateToken = () => {
+      if (window.grecaptcha && recaptchaInput.current) {
+        window.grecaptcha.ready(() => {
+          window.grecaptcha
+            .execute(siteKey, { action: 'contact' })
+            .then((token: string) => {
+              recaptchaInput.current!.value = token;
+            })
+            .catch(console.error);
+        });
+      }
+    };
+
+    if (window.grecaptcha) {
+      populateToken();
+    } else {
+      const scriptEl = document.getElementById('recaptcha-script');
+      scriptEl?.addEventListener('load', populateToken);
+      return () => {
+        scriptEl?.removeEventListener('load', populateToken);
+      };
     }
   }, [siteKey]);
 

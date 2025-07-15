@@ -79,6 +79,15 @@ export default function Mobile() {
   const goToPage = (link: string) => {
     window.location.href = link;
   };
+
+  const handlePopupClose = () => {
+    setActivePopup(null);
+    setSubmitted(false);
+    setError(false);
+    setSelected('sim');
+    setTestGratis(false);
+  };
+
   return (
     <>
       <SEO {...seo} />
@@ -964,8 +973,9 @@ export default function Mobile() {
         id="1280520"
         width="1000px"
         isVisible={activePopup === '1280520'}
-        onClose={() => setActivePopup(null)}
+        onClose={handlePopupClose}
         className={styles.popupBuy}
+        key={activePopup ?? 'popup-closed'}
       >
         {/*<div className={styles.popup_div_title}>*/}
         {/*  Mulțumim că ai ales Moldtelecom*/}
