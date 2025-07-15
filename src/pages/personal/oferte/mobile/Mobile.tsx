@@ -115,7 +115,14 @@ export default function Mobile() {
         <div
           className={`${styles.select_type_card} ${styles.select_type_card_active}`}
         >
-          <div className={styles.select_type_card_top}>Abonament</div>
+          <div className={styles.select_type_card_top}>
+            <Icon
+              size={'22px'}
+              type={'plus'}
+              color={'var(--theme_primary_color_blue_2)'}
+            />
+            Abonament
+          </div>
           <div className={styles.select_type_card_bottom}></div>
         </div>
         <div
@@ -124,7 +131,14 @@ export default function Mobile() {
             goToPage(`https://www.moldtelecom.md/${t('lang')}/personal/Portare`)
           }
         >
-          <div className={styles.select_type_card_top}>Portare</div>
+          <div className={styles.select_type_card_top}>
+            <Icon
+              size={'22px'}
+              type={'retry'}
+              color={'var(--theme_primary_color_blue_2)'}
+            />
+            Portare
+          </div>
           <div className={styles.select_type_card_bottom}></div>
         </div>
         <div
@@ -135,7 +149,14 @@ export default function Mobile() {
             )
           }
         >
-          <div className={styles.select_type_card_top}>Prepay</div>
+          <div className={styles.select_type_card_top}>
+            <Icon
+              size={'22px'}
+              type={'sim'}
+              color={'var(--theme_primary_color_blue_2)'}
+            />
+            Prepay
+          </div>
           <div className={styles.select_type_card_bottom}></div>
         </div>
       </div>
@@ -147,7 +168,11 @@ export default function Mobile() {
       <div className={`${styles.btns_select}`}>
         <Button
           color={'var(--theme_primary_color_blue_4)'}
-          bgcolor={'var(--theme_primary_color_blue_3)'}
+          bgcolor={
+            activeConfig == '1'
+              ? 'var(--theme_primary_color_blue_3)'
+              : 'transparent'
+          }
           border={'var(--theme_primary_color_blue_3)'}
           hover_border={'var(--theme_primary_color_blue_2)'}
           hover_bgcolor={'var(--theme_primary_color_blue_2)'}
@@ -159,7 +184,11 @@ export default function Mobile() {
         </Button>
         <Button
           color={'var(--theme_primary_color_blue_4)'}
-          bgcolor={'transparent'}
+          bgcolor={
+            activeConfig == '2'
+              ? 'var(--theme_primary_color_blue_3)'
+              : 'transparent'
+          }
           border={'var(--theme_primary_color_blue_3)'}
           hover_border={'var(--theme_primary_color_blue_2)'}
           hover_bgcolor={'var(--theme_primary_color_blue_2)'}
@@ -798,7 +827,7 @@ export default function Mobile() {
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
-                    'liberty 150 +',
+                    'liberty 250+',
                     activeConfig == '1' ? '162.5' : '150',
                     '35% reducere pentru 2 ani'
                   )
