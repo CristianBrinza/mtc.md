@@ -1,10 +1,9 @@
 // src/components/BuyForm.tsx
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './BuyForm.module.css';
 import Input from '../input/Input';
 import Button from '../Button';
-import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-// import { laravelRandom } from '../../utils/laravelCsrf';
 
 interface BuyFormProps {
   config: string;
@@ -20,95 +19,61 @@ declare global {
   }
 }
 
-const BuyForm: React.FC<BuyFormProps> = ({
+export default function BuyForm({
   config,
   tag,
   service,
   onSuccess,
   onError,
-}) => {
+}: BuyFormProps) {
   const { t } = useTranslation();
   const [phone, setPhone] = useState('');
   const [source, setSource] = useState('');
   const recaptchaInput = useRef<HTMLInputElement>(null);
-  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '';
-  // const [csrfToken] = useState(() => laravelRandom());
 
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    if (/^\d*$/.test(value)) setPhone(value); // allow digits only
-  };
+  // grab CSRF token from the page’s meta tag
+  const csrfToken =
+    document
+      .querySelector('meta[name="csrf-token"]')
+      ?.getAttribute('content') || '';
 
   useEffect(() => {
     setSource(window.location.href);
+    if (!window.grecaptcha) return;
 
-    if (!siteKey) return;
-    const populateToken = () => {
-      if (window.grecaptcha && recaptchaInput.current) {
-        window.grecaptcha.ready(() => {
-          window.grecaptcha
-            .execute(siteKey, { action: 'contact' })
-            .then((token: string) => {
-              recaptchaInput.current!.value = token;
-            })
-            .catch(console.error);
+    const populate = () =>
+      window.grecaptcha
+        .execute(import.meta.env.VITE_RECAPTCHA_SITE_KEY, { action: 'contact' })
+        .then((token: string) => {
+          if (recaptchaInput.current) recaptchaInput.current.value = token;
         });
-      }
-    };
 
-    if (window.grecaptcha) {
-      populateToken();
-    } else {
-      const scriptEl = document.getElementById('recaptcha-script');
-      scriptEl?.addEventListener('load', populateToken);
-      return () => {
-        scriptEl?.removeEventListener('load', populateToken);
-      };
-    }
-  }, [siteKey]);
+    window.grecaptcha.ready(populate);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
 
-    const doFetch = async (token?: string) => {
-      const form = e.target as HTMLFormElement;
-      const data = new FormData(form);
-      if (token && recaptchaInput.current) {
-        recaptchaInput.current.value = token;
-        data.set('recaptcha_response', token);
-      }
-
-      try {
-        const res = await fetch(form.action, {
-          method: form.method,
-          body: data,
-        });
-        if (res.ok) {
-          onSuccess?.();
-        } else {
-          onError?.();
-        }
-      } catch {
-        onError?.();
-      }
+    const send = (token?: string) => {
+      if (token) data.set('recaptcha_response', token);
+      fetch(form.action, { method: form.method, body: data })
+        .then(res => (res.ok ? onSuccess?.() : onError?.()))
+        .catch(() => onError?.());
     };
 
-    if (!siteKey || !window.grecaptcha) {
-      doFetch();
+    if (!window.grecaptcha) {
+      send();
     } else {
-      window.grecaptcha.ready(() => {
-        window.grecaptcha
-          .execute(siteKey, { action: 'submit' })
-          .then((token: string) => {
-            // populate the hidden input
-            if (recaptchaInput.current) {
-              recaptchaInput.current.value = token;
-            }
-            // now submit
-            doFetch(token);
+      window.grecaptcha
+        .ready(() =>
+          window.grecaptcha.execute(import.meta.env.VITE_RECAPTCHA_SITE_KEY, {
+            action: 'submit',
           })
-          .catch(() => onError?.());
-      });
+        )
+        .then(send)
+        .catch(() => onError?.());
     }
   };
 
@@ -128,21 +93,14 @@ const BuyForm: React.FC<BuyFormProps> = ({
         placeholder="0 ( - - ) - - -  - - -"
         required
         value={phone}
-        onChange={handlePhoneChange}
+        onChange={e => /^\d*$/.test(e.target.value) && setPhone(e.target.value)}
         icon="call"
       />
-      <Button
-        color="var(--theme_primary_color_blue_4)"
-        bgcolor="var(--theme_primary_color_blue_3)"
-        border="var(--theme_primary_color_blue_3)"
-        hover_border="var(--theme_primary_color_blue_2)"
-        hover_bgcolor="var(--theme_primary_color_blue_2)"
-        icon="arrow_right"
-        type="submit"
-      >
+      <Button type="submit" icon="arrow_right">
         Comandă acum
       </Button>
 
+      <input type="hidden" name="_token" value={csrfToken} />
       <input type="hidden" name="lang" value={t('lang')} />
       <input type="hidden" name="source" value={source} />
       <input type="hidden" name="service" value={service} />
@@ -154,9 +112,6 @@ const BuyForm: React.FC<BuyFormProps> = ({
       />
       <input type="hidden" name="tag" value={tag} />
       <input type="hidden" name="info" value={config} />
-      {/*<input type="hidden" name="_token" value={csrfToken} />*/}
     </form>
   );
-};
-
-export default BuyForm;
+}
