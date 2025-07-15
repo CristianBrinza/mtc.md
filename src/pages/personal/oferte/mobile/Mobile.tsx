@@ -37,7 +37,7 @@ export default function Mobile() {
   const [activePopupConfig, setActivePopupConfig] = useState<string>('');
   const [activePriceConfig, setActivePriceConfig] = useState<string>('');
   const [activeReducereConfig, setActiveReducereConfig] = useState<string>('');
-  const handleConfigClick = (name: string, price: string, reducere) => {
+  const handleConfigClick = (name: string, price: string, reducere: string) => {
     setActivePopupConfig(name);
     setActivePriceConfig(price);
     setActiveReducereConfig(reducere);
