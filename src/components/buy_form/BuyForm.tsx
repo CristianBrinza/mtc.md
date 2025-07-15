@@ -34,6 +34,10 @@ const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service }) => {
   useEffect(() => {
     setSource(window.location.href);
 
+    if (!siteKey) {
+      console.error('Missing reCAPTCHA site key – skipping script injection.');
+      return;
+    }
     const scriptId = 'recaptcha-script';
     if (!document.getElementById(scriptId)) {
       const script = document.createElement('script');
@@ -46,18 +50,20 @@ const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (window.grecaptcha) {
-      window.grecaptcha.ready(() => {
-        window.grecaptcha
-          .execute(siteKey, { action: 'submit' })
-          .then((token: string) => {
-            if (recaptchaInput.current) recaptchaInput.current.value = token;
-            (e.target as HTMLFormElement).submit();
-          });
-      });
-    } else {
+    // if we don’t have a key or grecaptcha isn’t ready, just fall back to a normal submit
+    if (!siteKey || !window.grecaptcha) {
       (e.target as HTMLFormElement).submit();
+      return;
     }
+
+    window.grecaptcha.ready(() => {
+      window.grecaptcha
+        .execute(siteKey, { action: 'submit' })
+        .then((token: string) => {
+          if (recaptchaInput.current) recaptchaInput.current.value = token;
+          (e.target as HTMLFormElement).submit();
+        });
+    });
   };
 
   return (
