@@ -1,86 +1,58 @@
-// src/components/BuyForm.tsx
-import React, { useEffect, useRef, useState } from 'react';
-import styles from './BuyForm.module.css';
-import Input from '../input/Input';
-import Button from '../Button';
-import { useTranslation } from 'react-i18next';
+import React, { useEffect, useRef, useState } from 'react'
+import styles from './BuyForm.module.css'
+import Input from '../input/Input'
+import Button from '../Button'
+import { useTranslation } from 'react-i18next'
 
 interface BuyFormProps {
-  config: string;
-  tag: string;
-  service: string;
-  onSuccess?: () => void;
-  onError?: () => void;
+  config: string
+  tag: string
+  service: string
+  onSuccess?: () => void
+  onError?: () => void
 }
 
 declare global {
   interface Window {
-    grecaptcha: any;
+    grecaptcha: any
   }
 }
 
-export default function BuyForm({
-  config,
-  tag,
-  service,
-  onSuccess,
-  onError,
-}: BuyFormProps) {
-  const { t } = useTranslation();
-  const [phone, setPhone] = useState('');
-  const [source, setSource] = useState('');
-  const recaptchaInput = useRef<HTMLInputElement>(null);
-
-  // grab CSRF token from the page’s meta tag
-  const csrfToken =
-    document
-      .querySelector('meta[name="csrf-token"]')
-      ?.getAttribute('content') || '';
+export default function BuyForm({ config, tag, service, onSuccess, onError }: BuyFormProps) {
+  const { t } = useTranslation()
+  const [phone, setPhone] = useState('')
+  const [source, setSource] = useState('')
+  const recaptchaInput = useRef<HTMLInputElement>(null)
+  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || ''
 
   useEffect(() => {
-    setSource(window.location.href);
-    if (!window.grecaptcha) return;
+    setSource(window.location.href)
+    window.grecaptcha?.ready(() => {
+      window.grecaptcha.execute(siteKey, { action: tag }).then((token: string) => {
+        if (recaptchaInput.current) recaptchaInput.current.value = token
+      })
+    })
+  }, [])
 
-    const populate = () =>
-      window.grecaptcha
-        .execute(import.meta.env.VITE_RECAPTCHA_SITE_KEY, { action: 'contact' })
-        .then((token: string) => {
-          if (recaptchaInput.current) recaptchaInput.current.value = token;
-        });
-
-    window.grecaptcha.ready(populate);
-  }, []);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
-
-    const send = (token?: string) => {
-      if (token) data.set('recaptcha_response', token);
-      fetch(form.action, { method: form.method, body: data })
-        .then(res => (res.ok ? onSuccess?.() : onError?.()))
-        .catch(() => onError?.());
-    };
-
-    if (!window.grecaptcha) {
-      send();
-    } else {
-      window.grecaptcha
-        .ready(() =>
-          window.grecaptcha.execute(import.meta.env.VITE_RECAPTCHA_SITE_KEY, {
-            action: 'submit',
-          })
-        )
-        .then(send)
-        .catch(() => onError?.());
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    const data = new FormData(form)
+    try {
+      const res = await fetch(form.action, { method: form.method, body: data })
+      if (res.ok) onSuccess?.()
+      else onError?.()
+    } catch {
+      onError?.()
     }
-  };
+  }
 
   return (
     <form
+      id="web_sms"
       action="https://dev3.moldtelecom.md/new_comanda_marketing/"
       method="post"
+      autoComplete="off"
       className={styles.popup_form}
       onSubmit={handleSubmit}
     >
@@ -96,22 +68,25 @@ export default function BuyForm({
         onChange={e => /^\d*$/.test(e.target.value) && setPhone(e.target.value)}
         icon="call"
       />
-      <Button type="submit" icon="arrow_right">
-        Comandă acum
+      <Button
+        className="details g-recaptcha"
+        type="submit"
+        color="var(--theme_primary_color_blue_4)"
+        bgcolor="var(--theme_primary_color_blue_3)"
+        border="var(--theme_primary_color_blue_3)"
+        hover_border="var(--theme_primary_color_blue_2)"
+        hover_bgcolor="var(--theme_primary_color_blue_2)"
+        icon="arrow_right"
+      >
+        {t('trans.sms_send')}
       </Button>
-
-      <input type="hidden" name="_token" value={csrfToken} />
       <input type="hidden" name="lang" value={t('lang')} />
       <input type="hidden" name="source" value={source} />
       <input type="hidden" name="service" value={service} />
-      <input
-        type="hidden"
-        name="recaptcha_response"
-        ref={recaptchaInput}
-        id="recaptchaResponse"
-      />
       <input type="hidden" name="tag" value={tag} />
       <input type="hidden" name="info" value={config} />
+      <input type="hidden" name="recaptcha_response" id="recaptchaResponse" ref={recaptchaInput} />
+      <input type="hidden" name="_token" value="{{ csrf_token() }}" />
     </form>
-  );
+  )
 }
