@@ -20,7 +20,13 @@ declare global {
   }
 }
 
-const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service, onSuccess, onError}) => {
+const BuyForm: React.FC<BuyFormProps> = ({
+  config,
+  tag,
+  service,
+  onSuccess,
+  onError,
+}) => {
   const { t } = useTranslation();
   const [phone, setPhone] = useState('');
   const [source, setSource] = useState('');
@@ -56,7 +62,10 @@ const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service, onSuccess, onEr
     const doFetch = async (token?: string) => {
       const form = e.target as HTMLFormElement;
       const data = new FormData(form);
-      if (token && recaptchaInput.current) data.set('recaptcha_response', token);
+      if (token && recaptchaInput.current) {
+        recaptchaInput.current.value = token;
+        data.set('recaptcha_response', token);
+      }
 
       try {
         const res = await fetch(form.action, {
@@ -79,7 +88,14 @@ const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service, onSuccess, onEr
       window.grecaptcha.ready(() => {
         window.grecaptcha
           .execute(siteKey, { action: 'submit' })
-          .then(doFetch)
+          .then((token: string) => {
+            // populate the hidden input
+            if (recaptchaInput.current) {
+              recaptchaInput.current.value = token;
+            }
+            // now submit
+            doFetch(token);
+          })
           .catch(() => onError?.());
       });
     }
@@ -119,7 +135,12 @@ const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service, onSuccess, onEr
       <input type="hidden" name="lang" value={t('lang')} />
       <input type="hidden" name="source" value={source} />
       <input type="hidden" name="service" value={service} />
-      <input type="hidden" name="recaptcha_response" ref={recaptchaInput} />
+      <input
+        type="hidden"
+        name="recaptcha_response"
+        ref={recaptchaInput}
+        id="recaptchaResponse"
+      />
       <input type="hidden" name="tag" value={tag} />
       <input type="hidden" name="info" value={config} />
       {/*<input type="hidden" name="_token" value={csrfToken} />*/}

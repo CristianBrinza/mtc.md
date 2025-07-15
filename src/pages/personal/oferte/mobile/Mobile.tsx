@@ -36,9 +36,11 @@ export default function Mobile() {
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [activePopupConfig, setActivePopupConfig] = useState<string>('');
   const [activePriceConfig, setActivePriceConfig] = useState<string>('');
-  const handleConfigClick = (name: string, price: string) => {
+  const [activeReducereConfig, setActiveReducereConfig] = useState<string>('');
+  const handleConfigClick = (name: string, price: string, reducere) => {
     setActivePopupConfig(name);
     setActivePriceConfig(price);
+    setActiveReducereConfig(reducere);
     setActivePopup('1280520');
   };
   const [submitted, setSubmitted] = useState(false);
@@ -268,7 +270,8 @@ export default function Mobile() {
                 onClick={() =>
                   handleConfigClick(
                     'start 95',
-                    activeConfig == '1' ? '95' : '95'
+                    activeConfig == '1' ? '95' : '95',
+                    ''
                   )
                 }
                 color="#fff"
@@ -377,7 +380,8 @@ export default function Mobile() {
                 onClick={() =>
                   handleConfigClick(
                     'star 120',
-                    activeConfig == '1' ? '87' : '87'
+                    activeConfig == '1' ? '87' : '87',
+                    '35% reducere pentru 2 ani'
                   )
                 }
                 color="#fff"
@@ -495,7 +499,8 @@ export default function Mobile() {
                 onClick={() =>
                   handleConfigClick(
                     'star 150',
-                    activeConfig == '1' ? '97.5' : '100'
+                    activeConfig == '1' ? '97.5' : '100',
+                    '35% reducere pentru 2 ani'
                   )
                 }
                 color="#fff"
@@ -640,7 +645,8 @@ export default function Mobile() {
                 onClick={() =>
                   handleConfigClick(
                     'liberty 190',
-                    activeConfig == '1' ? '123.5' : '115'
+                    activeConfig == '1' ? '123.5' : '115',
+                    '35% reducere pentru 2 ani'
                   )
                 }
                 color="#fff"
@@ -784,7 +790,8 @@ export default function Mobile() {
                 onClick={() =>
                   handleConfigClick(
                     'liberty 150 +',
-                    activeConfig == '1' ? '162.5' : '150'
+                    activeConfig == '1' ? '162.5' : '150',
+                    '35% reducere pentru 2 ani'
                   )
                 }
                 color="#fff"
@@ -999,9 +1006,11 @@ export default function Mobile() {
               <div className={styles.selected_popup_subcription}>
                 <div className={styles.popup_selected}>{activePopupConfig}</div>
 
-                <div className={styles.tm_carousell_block_row_tag}>
-                  35% reducere pentru 2 ani
-                </div>
+                {activeReducereConfig != '' && (
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    {activeReducereConfig}
+                  </div>
+                )}
               </div>
 
               <div className={styles.popup_optional}>Optional:</div>
