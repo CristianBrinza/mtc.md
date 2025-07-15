@@ -20,13 +20,7 @@ declare global {
   }
 }
 
-const BuyForm: React.FC<BuyFormProps> = ({
-  config,
-  tag,
-  service,
-  onSuccess,
-  onError,
-}) => {
+const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service, onSuccess, onError}) => {
   const { t } = useTranslation();
   const [phone, setPhone] = useState('');
   const [source, setSource] = useState('');
@@ -36,7 +30,7 @@ const BuyForm: React.FC<BuyFormProps> = ({
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (/^\d*$/.test(value)) setPhone(value);
+    if (/^\d*$/.test(value)) setPhone(value); // allow digits only
   };
 
   useEffect(() => {
@@ -46,25 +40,12 @@ const BuyForm: React.FC<BuyFormProps> = ({
       console.error('Missing reCAPTCHA site key – skipping script injection.');
       return;
     }
-
     const scriptId = 'recaptcha-script';
     if (!document.getElementById(scriptId)) {
       const script = document.createElement('script');
       script.id = scriptId;
       script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
       script.async = true;
-      script.onload = () => {
-        if (window.grecaptcha) {
-          window.grecaptcha.ready(() => {
-            window.grecaptcha
-              .execute(siteKey, { action: 'contact' })
-              .then((token: string) => {
-                if (recaptchaInput.current)
-                  recaptchaInput.current.value = token;
-              });
-          });
-        }
-      };
       document.body.appendChild(script);
     }
   }, [siteKey]);
@@ -75,8 +56,7 @@ const BuyForm: React.FC<BuyFormProps> = ({
     const doFetch = async (token?: string) => {
       const form = e.target as HTMLFormElement;
       const data = new FormData(form);
-      if (token && recaptchaInput.current)
-        data.set('recaptcha_response', token);
+      if (token && recaptchaInput.current) data.set('recaptcha_response', token);
 
       try {
         const res = await fetch(form.action, {
@@ -139,12 +119,7 @@ const BuyForm: React.FC<BuyFormProps> = ({
       <input type="hidden" name="lang" value={t('lang')} />
       <input type="hidden" name="source" value={source} />
       <input type="hidden" name="service" value={service} />
-      <input
-        type="hidden"
-        id="recaptchaResponse"
-        name="recaptcha_response"
-        ref={recaptchaInput}
-      />
+      <input type="hidden" name="recaptcha_response" ref={recaptchaInput} />
       <input type="hidden" name="tag" value={tag} />
       <input type="hidden" name="info" value={config} />
       {/*<input type="hidden" name="_token" value={csrfToken} />*/}
