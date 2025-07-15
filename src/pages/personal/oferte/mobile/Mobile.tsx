@@ -16,10 +16,10 @@ import Slider from 'react-slick';
 import Icon from '../../../../components/Icon.tsx';
 import TableRoaming from '../../../../components/Popups/TableRoaming.tsx';
 import Functions from '../../../../components/functions/Functions.tsx';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Popup from '../../../../components/Popup/Popup.tsx';
-import Input from '../../../../components/input/Input.tsx';
 import Toggle from '../../../../components/toggle/Toggle.tsx';
+import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
 
 export default function Mobile() {
   const { t } = useTranslation();
@@ -37,16 +37,6 @@ export default function Mobile() {
   const handleConfigClick = (name: string) => {
     setActivePopupConfig(name);
     setActivePopup('1280520');
-  };
-
-  const [phone, setPhone] = useState('');
-
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    // Allow only digits
-    if (/^\d*$/.test(value)) {
-      setPhone(value);
-    }
   };
 
   const [selected, setSelected] = useState<'sim' | 'esim'>('sim');
@@ -990,36 +980,13 @@ export default function Mobile() {
                 Testeaza o lună <b>GRATUIT</b>
               </div>
             </div>
-            <form
-              action="https://www.moldtelecom.md/comanda_marketing"
-              data-type="thankyou-page-form"
-              method="post"
-              className={styles.popup_form}
-            >
-              <Input
-                type="tel"
-                inputMode="numeric"
-                maxLength={9}
-                name="phone"
-                pattern="[0]{1}[2,6,7]{1}[0-9]{7}"
-                placeholder="0 ( - - ) - - -  - - -"
-                required
-                value={phone}
-                onChange={handlePhoneChange}
-                icon={'call'}
-              />
-              <Button
-                color={'var(--theme_primary_color_blue_4)'}
-                bgcolor={'var(--theme_primary_color_blue_3)'}
-                border={'var(--theme_primary_color_blue_3)'}
-                hover_border={'var(--theme_primary_color_blue_2)'}
-                hover_bgcolor={'var(--theme_primary_color_blue_2)'}
-                icon={'arrow_right'}
-                type="submit"
-              >
-                Comandă acum
-              </Button>
-            </form>
+
+            <BuyForm
+              config={''}
+              tag={'tm'}
+              service={'campain[tm_2025_b2s], place[abonament]'}
+            />
+
             <div className={styles.popup_discalmer}>
               După expedierea solicitării vei fi apelat de un consultant
               Moldtelecom. Mulțumim! <br />

@@ -1,0 +1,105 @@
+// src/components/BuyForm.tsx
+import styles from './BuyForm.module.css';
+import Input from '../input/Input';
+import Button from '../Button';
+import React, { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { laravelRandom } from '../../utils/laravelCsrf';
+
+interface BuyFormProps {
+  config: string;
+  tag: string;
+  service: string;
+}
+
+declare global {
+  interface Window {
+    grecaptcha: any;
+  }
+}
+
+const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service }) => {
+  const { t } = useTranslation();
+  const [phone, setPhone] = useState('');
+  const [source, setSource] = useState('');
+  const recaptchaInput = useRef<HTMLInputElement>(null);
+  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '';
+  const [csrfToken] = useState(() => laravelRandom());
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) setPhone(value); // allow digits only
+  };
+
+  useEffect(() => {
+    setSource(window.location.href);
+
+    const scriptId = 'recaptcha-script';
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, [siteKey]);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (window.grecaptcha) {
+      window.grecaptcha.ready(() => {
+        window.grecaptcha
+          .execute(siteKey, { action: 'submit' })
+          .then((token: string) => {
+            if (recaptchaInput.current) recaptchaInput.current.value = token;
+            (e.target as HTMLFormElement).submit();
+          });
+      });
+    } else {
+      (e.target as HTMLFormElement).submit();
+    }
+  };
+
+  return (
+    <form
+      action="https://www.moldtelecom.md/comanda_marketing"
+      method="post"
+      className={styles.popup_form}
+      onSubmit={handleSubmit}
+    >
+      <Input
+        type="tel"
+        inputMode="numeric"
+        maxLength={9}
+        name="phone"
+        pattern="[0]{1}[2,6,7]{1}[0-9]{7}"
+        placeholder="0 ( - - ) - - -  - - -"
+        required
+        value={phone}
+        onChange={handlePhoneChange}
+        icon="call"
+      />
+      <Button
+        color="var(--theme_primary_color_blue_4)"
+        bgcolor="var(--theme_primary_color_blue_3)"
+        border="var(--theme_primary_color_blue_3)"
+        hover_border="var(--theme_primary_color_blue_2)"
+        hover_bgcolor="var(--theme_primary_color_blue_2)"
+        icon="arrow_right"
+        type="submit"
+      >
+        Comandă acum
+      </Button>
+
+      <input type="hidden" name="lang" value={t('lang')} />
+      <input type="hidden" name="source" value={source} />
+      <input type="hidden" name="service" value={service} />
+      <input type="hidden" name="recaptcha_response" ref={recaptchaInput} />
+      <input type="hidden" name="tag" value={tag} />
+      <input type="hidden" name="info" value={config} />
+      <input type="hidden" name="_token" value={csrfToken} />
+    </form>
+  );
+};
+
+export default BuyForm;

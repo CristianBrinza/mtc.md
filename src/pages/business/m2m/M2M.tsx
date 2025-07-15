@@ -487,6 +487,17 @@ export default function M2M() {
           {t('bussines_m2m.popup.text')}
           <div className={styles.popup_btns}>
             <Button
+              to={'tel:11855'}
+              color="var(--theme_primary_color_white)"
+              bgcolor="var(--theme_primary_color_blue_4)"
+              border="var(--theme_primary_color_blue_4)"
+              hover_border="var(--theme_primary_color_blue_2)"
+              hover_bgcolor="var(--theme_primary_color_blue_2)"
+              icon="arrow_right"
+            >
+              11855
+            </Button>
+            <Button
               to={'tel:022570707'}
               color="var(--theme_primary_color_white)"
               bgcolor="var(--theme_primary_color_blue_4)"
@@ -497,6 +508,9 @@ export default function M2M() {
             >
               0(22) 570-707
             </Button>
+          </div>
+          <div className={styles.popup_discalmer}>
+            {t('bussines_gps.disclaimer')}
           </div>
         </div>
       </Popup>

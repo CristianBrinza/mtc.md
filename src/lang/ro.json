@@ -1601,7 +1601,8 @@
     },
     "popup": {
       "title": "Mulțumim că ai ales Moldtelecom",
-      "text": "Soluția ideală pentru afaceri care vizează automatizarea, controlul la distanță și optimizarea proceselor prin conectivitate fiabilă și continuă."
+      "text": "Soluția ideală pentru afaceri care vizează automatizarea, controlul la distanță și optimizarea proceselor prin conectivitate fiabilă și continuă.",
+      "disclaimer": "Persoanele juridice pot beneficia de suport informațional apelând la numărul 11855 (pentru abonații Moldtelecom) sau 022570707 (pentru abonații altor operatori, la tariful operatorului, sau din Roaming, ca apel spre Republica Moldova)."
     },
     "carousel": {
       "order_now": "Comandă acum",
@@ -1614,6 +1615,7 @@
       "business": "Business",
       "gps": "GPS Track"
     },
+    "disclaimer": "Persoanele juridice pot beneficia de suport informațional apelând la numărul 11855 (pentru abonații Moldtelecom) sau 022570707 (pentru abonații altor operatori, la tariful operatorului, sau din Roaming, ca apel spre Republica Moldova).",
     "hero": { "alt": "GPS Track" },
     "about": {
       "title": "Ce este GPS Track?",
