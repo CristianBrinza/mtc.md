@@ -982,7 +982,7 @@ export default function Mobile() {
             </div>
 
             <BuyForm
-              config={''}
+              config={`TM - ${activePopupConfig === '1' ? 'nu sunt client' : 'sunt client'}`}
               tag={'tm'}
               service={'campain[tm_2025_b2s], place[abonament]'}
             />

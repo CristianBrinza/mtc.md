@@ -4,7 +4,7 @@ import Input from '../input/Input';
 import Button from '../Button';
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { laravelRandom } from '../../utils/laravelCsrf';
+// import { laravelRandom } from '../../utils/laravelCsrf';
 
 interface BuyFormProps {
   config: string;
@@ -24,7 +24,7 @@ const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service }) => {
   const [source, setSource] = useState('');
   const recaptchaInput = useRef<HTMLInputElement>(null);
   const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '';
-  const [csrfToken] = useState(() => laravelRandom());
+  // const [csrfToken] = useState(() => laravelRandom());
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -62,7 +62,7 @@ const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service }) => {
 
   return (
     <form
-      action="https://www.moldtelecom.md/comanda_marketing"
+      action="https://dev3.moldtelecom.md/new_comanda_marketing/"
       method="post"
       className={styles.popup_form}
       onSubmit={handleSubmit}
@@ -97,7 +97,7 @@ const BuyForm: React.FC<BuyFormProps> = ({ config, tag, service }) => {
       <input type="hidden" name="recaptcha_response" ref={recaptchaInput} />
       <input type="hidden" name="tag" value={tag} />
       <input type="hidden" name="info" value={config} />
-      <input type="hidden" name="_token" value={csrfToken} />
+      {/*<input type="hidden" name="_token" value={csrfToken} />*/}
     </form>
   );
 };
