@@ -20,7 +20,6 @@ import React, { useState } from 'react';
 import Popup from '../../../../components/Popup/Popup.tsx';
 import Input from '../../../../components/input/Input.tsx';
 import Toggle from '../../../../components/toggle/Toggle.tsx';
-import popupBuy from '../../../../components/PopupBuy/PopupBuy.tsx';
 
 export default function Mobile() {
   const { t } = useTranslation();
