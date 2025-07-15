@@ -22,23 +22,30 @@ export default function BuyForm({ config, tag, service, onSuccess, onError }: Bu
   const { t } = useTranslation()
   const [phone, setPhone] = useState('')
   const [source, setSource] = useState('')
-  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || ''
+  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '6LchGPEhAAAAAMDKsieZ9yCLdtGOMYho5UnJdsKU'
 
   useEffect(() => {
     setSource(window.location.href)
+    if (!window.grecaptcha) {
+      const script = document.createElement('script')
+      script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
+      script.async = true
+      document.body.appendChild(script)
+    }
   }, [])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (!window.grecaptcha) {
-      onError?.()
-      return
+    const form = e.currentTarget
+    const data = new FormData(form)
+    let token = ''
+    if (window.grecaptcha) {
+      try {
+        token = await window.grecaptcha.execute(siteKey, { action: tag })
+      } catch {}
     }
+    data.set('recaptcha_response', token)
     try {
-      const token = await window.grecaptcha.execute(siteKey, { action: tag })
-      const form = e.currentTarget
-      const data = new FormData(form)
-      data.set('recaptcha_response', token)
       const res = await fetch(form.action, { method: form.method, body: data })
       if (res.ok) onSuccess?.()
       else onError?.()
@@ -48,7 +55,12 @@ export default function BuyForm({ config, tag, service, onSuccess, onError }: Bu
   }
 
   return (
-    <form action="https://dev3.moldtelecom.md/new_comanda_marketing/" method="post" className={styles.popup_form} onSubmit={handleSubmit}>
+    <form
+      action="https://dev3.moldtelecom.md/new_comanda_marketing/"
+      method="post"
+      className={styles.popup_form}
+      onSubmit={handleSubmit}
+    >
       <Input
         type="tel"
         inputMode="numeric"
@@ -77,7 +89,7 @@ export default function BuyForm({ config, tag, service, onSuccess, onError }: Bu
       <input type="hidden" name="service" value={service} />
       <input type="hidden" name="tag" value={tag} />
       <input type="hidden" name="info" value={config} />
-      <input type="hidden" name="recaptcha_response" value="" />
+      <input type="hidden" name="recaptcha_response" />
     </form>
   )
 }
