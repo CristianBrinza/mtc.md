@@ -904,7 +904,19 @@ export default function Mobile() {
               <li key={i}>{text}</li>
             ))}
           </ul>
-          {/* restul code‑ului tău */}
+          <br />
+          <div className={styles.roaming_warning}>
+            <div className={`${styles.roaming_warning_red}`}></div>
+            <div className={styles.roaming_warning_inside}>
+              {t('roaming.warning_1')} <br />
+              {t('roaming.warning_2')}
+            </div>
+          </div>
+          <br />
+          <b>{t('tm.details.list')}</b>
+          <br />
+          <br />
+          <TableRoaming />
         </DetailsBlock>
       </Details>
 

@@ -1781,14 +1781,17 @@
           "Perioada de comercializare a ofertei: 03.03.2025 – 25.08.2025 (inclusiv)."
         ],
         "commonItems": [
-          "Oferta promo include și posibilitatea de a beneficia gratuit de serviciul „Alege Număr Frumos” pentru categoria „Aur” sau „Argint”.",
-          "Abonații conectați la abonamentele Liberty 190 și Liberty Plus 250 pot comunica în Roaming UE+SEE din contul minutelor naționale incluse (7 GB, respectiv 10 GB).",
-          "Pentru apelurile internaționale, destinațiile sunt: Marea Britanie, Franța, Germania, Italia, Spania, România, Israel, Rusia, Cehia, Ucraina.",
-          "Abonații Liberty Plus 250 trebuie să evite folosirea abuzivă a serviciilor incluse; în caz contrar vor reveni la 1000 minute și 245 SMS naționale.",
-          "Viteza internet 3G: maxim download, până la 512 Kbps upload; 4G: download/upload la capacitate maximă.",
-          "Rezilierea anticipată implică o plată de prejudiciu: 35% din abonament × nr. luni de reducere."
+          "Oferta promo include și posibilitatea de a beneficia gratuit de serviciul „Alege Număr Frumos”. Oferirea gratuită a serviciului „Alege Număr Frumos” este disponibilă pentru categoria „Aur” sau „Argint”.",
+          "Perioada de comercializare a ofertei: 03.03.205 – 25.08.2025 (inclusiv).",
+          "Abonații conectați la abonamentele Liberty 190 și Liberty Plus 250 pot comunica în Roaming UE+SEE din contul minutelor naționale incluse în abonament. In plus, abonamentul Liberty 190 oferă 7 GB, iar abonamentul Liberty Plus 250 – 10 GB disponibili spre utilizare în Roaming în rețeaua operatorilor incluși în grupul UE+SEE.",
+          "Pentru apelurile internaționale, destinațiile spre rețeaua fixă și mobilă sunt următoarele țări: Marea Britanie, Franța, Germania, Italia, Spania, Romania, Israel, Rusia, Cehia, Ucraina.",
+          "Abonații conectați la abonamentul ”Liberty Plus 250” sunt obligați să evite folosirea abuzivă a serviciilor incluse în abonament. Prin ”folosire abuzivă a serviciilor incluse în abonament” se înțelege efectuarea de apeluri de ieșire spre „alți operatori naționali” și/sau expedierea SMS-urilor spre „alți operatori naționali” către mai mult de 200 numere telefonice unice, în decursul unei perioade de facturare, și/sau efectuarea, în decursul unei perioade de facturare, de apeluri nelimitate spre „alți operatori naționali” în volum ce depășește 3000 minute, cu condiția că numărul de minute de ieșire spre „alți operatori naționali” depășește de cel puțin două ori numărul minutelor de intrare dinspre „alți operatori naționali” în aceeași perioadă. Abonații care vor fi identificați că au utilizat abuziv serviciile incluse în abonamentul ”Liberty Plus 250” vor beneficia în continuare de conținutul standard de 1000 Minute și 245 SMS naționale la abonamentul respectiv;",
+          "Viteza la internet se oferă în funcție de posibilitățile tehnice.",
+          "Traficul Internet va avea viteza de transfer a datelor la capacitate maximă download (descarcare) și de până la 512 Kbps upload (încarcare), în dependenta de opțiunile suplimentare activate – pentru tehnologia 3G, și la capacitate maximă download/upload (descarcare/încarcare) – pentru tehnologia 4G.",
+          "Rezoluțiunea anticipată (inclusiv migrarea spre PrePay, schimbul de abonament către unul cu valoare mai mica sau port out) până la expirarea perioadei minime contractuale implică achitarea unei plăți cu titlu de prejudiciu, conform formulei de calcul: 35% din plata de abonament * nr. de luni acordare reducere."
         ]
       },
+      "list": "Lista operatorilor în rețeaua cărora este disponibil conținutul Roaming UE:",
       "roaming": {
         "title": "Condiții speciale serviciului „Roaming Europa”",
         "items": [

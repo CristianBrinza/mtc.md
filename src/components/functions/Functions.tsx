@@ -3,7 +3,6 @@ import styles from './Functions.module.css';
 import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import Icon, { icons } from '../Icon.tsx';
-import Popup from '../Popup/Popup.tsx';
 import Popups from '../Popups/Popups.tsx';
 
 interface FunctionsProps {
