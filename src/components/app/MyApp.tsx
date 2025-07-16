@@ -5,9 +5,10 @@ import { useTranslation } from 'react-i18next';
 
 interface MyAppProps {
   style_type?: string;
+  className?: string;
 }
 
-const MyApp: React.FC<MyAppProps> = ({ style_type }) => {
+const MyApp: React.FC<MyAppProps> = ({ style_type, className }) => {
   const MyAppStyle: React.CSSProperties = {
     background:
       style_type === 'gray'
@@ -26,7 +27,7 @@ const MyApp: React.FC<MyAppProps> = ({ style_type }) => {
   const { t } = useTranslation();
 
   return (
-    <div className={styles.MyApp} style={MyAppStyle}>
+    <div className={`${styles.MyApp} ${className}`} style={MyAppStyle}>
       <div className={`title title_3 ${styles.MyApp_title}`}>
         {t('myapp.title')}
       </div>

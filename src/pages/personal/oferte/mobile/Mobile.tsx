@@ -64,13 +64,14 @@ export default function Mobile() {
       {
         breakpoint: 1301,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           autoplay: true,
           autoplaySpeed: 1800,
           arrows: true,
         },
       },
-      { breakpoint: 1151, settings: { slidesToShow: 1 } },
+      { breakpoint: 951, settings: { slidesToShow: 2 } },
+      { breakpoint: 651, settings: { slidesToShow: 1 } },
     ],
   };
 
@@ -105,7 +106,7 @@ export default function Mobile() {
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/18074013${t('lang')}.webp`}
+            src={`/images/landings/81074012${t('lang')}.webp`}
             alt={t('wifi_plus.hero.alt')}
           />
         </div>
@@ -288,7 +289,7 @@ export default function Mobile() {
                 style={{ opacity: '0' }}
               >
                 <div className={styles.tm_carousell_block_row_tag}>
-                  35% reducere pentru 2 ani
+                  {activeConfig == '1' ? '35% reducere pentru 2 ani' : ''}
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
@@ -399,7 +400,9 @@ export default function Mobile() {
             <div className={styles.wifi_carousell_block_inside_btns}>
               <div className={styles.tm_carousell_block_row_tags}>
                 <div className={styles.tm_carousell_block_row_tag}>
-                  35% reducere pentru 2 ani
+                  {activeConfig == '1'
+                    ? '35% reducere pentru 2 ani'
+                    : '35% reducere pentru 2 ani'}
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
@@ -518,7 +521,9 @@ export default function Mobile() {
             <div className={styles.wifi_carousell_block_inside_btns}>
               <div className={styles.tm_carousell_block_row_tags}>
                 <div className={styles.tm_carousell_block_row_tag}>
-                  35% reducere pentru 2 ani
+                  {activeConfig == '1'
+                    ? '35% reducere pentru 2 ani'
+                    : '-50 lei reducere'}
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
@@ -538,7 +543,9 @@ export default function Mobile() {
                   handleConfigClick(
                     'star 150',
                     activeConfig == '1' ? '97.5' : '100',
-                    '35% reducere pentru 2 ani'
+                    activeConfig == '1'
+                      ? '35% reducere pentru 2 ani'
+                      : '-50 lei reducere'
                   )
                 }
                 color="#fff"
@@ -664,7 +671,9 @@ export default function Mobile() {
             <div className={styles.wifi_carousell_block_inside_btns}>
               <div className={styles.tm_carousell_block_row_tags}>
                 <div className={styles.tm_carousell_block_row_tag}>
-                  35% reducere pentru 2 ani
+                  {activeConfig == '1'
+                    ? '35% reducere pentru 2 ani'
+                    : '-75 lei reducere'}
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
@@ -684,7 +693,9 @@ export default function Mobile() {
                   handleConfigClick(
                     'liberty 190',
                     activeConfig == '1' ? '123.5' : '115',
-                    '35% reducere pentru 2 ani'
+                    activeConfig == '1'
+                      ? '35% reducere pentru 2 ani'
+                      : '-75 lei reducere'
                   )
                 }
                 color="#fff"
@@ -809,7 +820,9 @@ export default function Mobile() {
             <div className={styles.wifi_carousell_block_inside_btns}>
               <div className={styles.tm_carousell_block_row_tags}>
                 <div className={styles.tm_carousell_block_row_tag}>
-                  35% reducere pentru 2 ani
+                  {activeConfig == '1'
+                    ? '35% reducere pentru 2 ani'
+                    : '-100 lei reducere'}
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
@@ -829,7 +842,9 @@ export default function Mobile() {
                   handleConfigClick(
                     'liberty 250+',
                     activeConfig == '1' ? '162.5' : '150',
-                    '35% reducere pentru 2 ani'
+                    activeConfig == '1'
+                      ? '35% reducere pentru 2 ani'
+                      : '-100 lei reducere'
                   )
                 }
                 color="#fff"
@@ -870,21 +885,50 @@ export default function Mobile() {
         </DetailsBlock>
         <DetailsBlock title={'Condiții de utilizare Abonamente'}>
           <ul>
-            <li>
-              Oferta promoțională constă în acordarea unei reduceri de 35% la
-              plata lunare a abonamentelor Star 120, Star150, Liberty 190 și
-              Liberty Plus 250, valabilă pe întreaga perioadă contractuală de 24
-              de luni.
-            </li>
-            <li>
-              Perioada minimă contractuală pentru abonamentul Start 95 este de 6
-              luni
-            </li>
-            <li>
-              Oferta este destinată pentru clienții noi, la conectare, portare
-              din altă rețea sau pentru cei existenți, la reperfectarea
-              contractului sau migrarea de la Prepay.
-            </li>
+            {activeConfig == '1' ? (
+              <>
+                <li>
+                  Oferta promoțională constă în acordarea unei reduceri de 35%
+                  la plata lunară a abonamentelor Star 120, Star 150,
+                  Liberty 190 și Liberty Plus 250, valabilă pe întreaga perioadă
+                  contractuală de 24 luni.
+                </li>
+                <li>
+                  Perioada minimă contractuală pentru abonamentul Start 95 este
+                  de 6 luni.
+                </li>
+                <li>
+                  Oferta este destinată pentru clienții noi (conectare, portare
+                  din altă rețea) sau pentru cei existenți, la reperfectarea
+                  contractului sau migrarea de la PrePay.
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  Oferta promo presupune acordarea unei reduceri 50 lei
+                  (abonament Star 150), 75 lei (abonament Liberty 190) sau 100
+                  lei (abonament Liberty Plus 250) reducere la plata lunară de
+                  abonament (în dependență de abonament), în combinație cu
+                  serviciul de Internet Fix sau Internet Fix+IPTV și se oferă pe
+                  toată durata contractuală la conectarea/deținerea unei linii
+                  de Internet Fix sau Internet Fix+IPTV.
+                </li>
+                <li>
+                  {' '}
+                  La promoție pot participa abonați toți abonații noi, abonații
+                  portați, abonații existenți de telefonie mobilă cu perioada
+                  contractuală promoțională expirată și utilizatorii PrePay,
+                  care migrează spre abonament.
+                </li>
+                <li>
+                  {' '}
+                  Perioada de comercializare a ofertei: 03.03.205 – 25.08.2025
+                  (inclusiv)
+                </li>
+              </>
+            )}
+
             <li>
               Oferta promo include și posibilitatea de a beneficia gratuit de
               serviciul „Alege Număr Frumos”. Oferirea gratuită a serviciului
@@ -981,11 +1025,19 @@ export default function Mobile() {
             </li>
           </ul>
           <br />
+          <div className={styles.roaming_warning}>
+            <div className={`${styles.roaming_warning_red}`}></div>
+            <div className={styles.roaming_warning_inside}>
+              {t('roaming.warning_1')} <br />
+              {t('roaming.warning_2')}
+            </div>
+          </div>
+          <br />
           <b>
             Lista operatorilor în rețeaua cărora este disponibil conținutul
             Roaming UE:
           </b>
-
+          <br />
           <TableRoaming />
         </DetailsBlock>
       </Details>
@@ -993,9 +1045,9 @@ export default function Mobile() {
       <Functions
         style_type={'blue'}
         title={'general.recommended_options'}
-        functions={['Internet', 'TV', 'MTC', 'APP']}
+        functions={['Internet', 'Minute', 'International', 'RoamingUE']}
       />
-      <MyApp style_type={'blue_white'} />
+      <MyApp style_type={'blue_white'} className={styles.myapp} />
 
       <Footer disclaimer={true} />
       <Popup
@@ -1081,7 +1133,10 @@ export default function Mobile() {
                     checked={testGratis}
                     onChange={() => setTestGratis(prev => !prev)}
                   />
-                  Testeaza o lună <b>GRATUIT</b>
+                  <span>
+                    {' '}
+                    Testeaza o lună <b>GRATUIT</b>
+                  </span>
                 </div>
               </div>
 

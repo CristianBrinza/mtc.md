@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import Icon, { icons } from '../Icon.tsx';
 import Popup from '../Popup/Popup.tsx';
+import Popups from '../Popups/Popups.tsx';
 
 interface FunctionsProps {
   title?: string;
@@ -148,34 +149,34 @@ const Functions: React.FC<FunctionsProps> = ({
               'cart', // Icon (must be a valid key from icons)
               'Internet',
               'Descară date cu viteză mare și vizita web-ul fără griji',
-              'menu1'
+              'f1'
             )}
 
-          {functions.includes('TV') &&
+          {functions.includes('Minute') &&
             renderFunctionBlock(
-              'TV',
-              'child',
-              '1 TV Suplimentar',
-              'Privește canalele tale preferate și bucură-te de divertisment',
-              'menu1'
+              'Minute',
+              'call',
+              'Minute Naționale',
+              'Comunică avantajos cu cei din alte rețele',
+              'f2'
             )}
 
-          {functions.includes('MTC') &&
+          {functions.includes('International') &&
             renderFunctionBlock(
-              'MTC',
-              'user',
-              'MTC',
-              'Comunică eficient și rapid prin rețeaua MTC',
-              'menu1'
+              'International',
+              'internet',
+              'Internaţional',
+              'Minute pentru conexiune mobilă sau fixă din alte țări',
+              'f3'
             )}
 
-          {functions.includes('APP') &&
+          {functions.includes('RoamingUE') &&
             renderFunctionBlock(
-              'APP',
-              'business',
-              'Aplicație',
-              'Gestionează-ți serviciile dintr-o singură aplicație',
-              'menu2'
+              'RoamingUE',
+              'roaming',
+              'Roaming UE',
+              'Tarife ca acasă, acum şi peste hotare',
+              'f5'
             )}
         </Slider>
       </div>
@@ -196,6 +197,8 @@ const Functions: React.FC<FunctionsProps> = ({
       >
         <div className="popup_content">test2</div>
       </Popup>
+
+      <Popups content={activePopup} onClose={() => setActivePopup(null)} />
     </div>
   );
 };
