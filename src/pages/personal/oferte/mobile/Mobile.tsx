@@ -406,7 +406,7 @@ export default function Mobile() {
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
-                <div> {activeConfig == '1' ? '87' : '87'}</div>
+                <div> {activeConfig == '1' ? '78' : '78'}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     lei/lună
@@ -421,7 +421,7 @@ export default function Mobile() {
                 onClick={() =>
                   handleConfigClick(
                     'star 120',
-                    activeConfig == '1' ? '87' : '87',
+                    activeConfig == '1' ? '78' : '78',
                     '35% reducere pentru 2 ani'
                   )
                 }
