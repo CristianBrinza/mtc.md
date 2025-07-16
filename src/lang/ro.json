@@ -1803,6 +1803,50 @@
           "Monitorizarea abuzului se face pe 4 luni consecutiv; consumul în roaming nu trebuie să depășească consumul național al aceluiași serviciu."
         ]
       }
+    },
+    "35_proc": "35% reducere pentru 2 ani",
+    "lei_reducere": "lei reducere",
+    "faq": {
+      "112489310": {
+        "question": "Pot să-mi portez numărul de la alt operator la Moldtelecom?",
+        "answer": "Da. Portarea numărului tău la Moldtelecom este gratuită și durează până la 3 zile lucrătoare. Poți solicita portarea online, în magazine sau prin intermediul echipei noastre de asistență."
+      },
+      "112489311": {
+        "question": "Ce rețea și ce tehnologie folosesc abonamentele Moldtelecom?",
+        "answer": "Toate abonamentele funcționează în rețeaua 4G+, cu acces gratuit la VoLTE. În zonele disponibile, poți beneficia și de acoperire 5G (în funcție de dispozitiv)."
+      },
+      "112489312": {
+        "question": "Ce se întâmplă când consum traficul de internet inclus?",
+        "answer": "După epuizarea traficului inclus, viteza de internet este redusă automat. Nu vei fi taxat suplimentar, decât dacă alegi opțional trafic adițional din MyMoldtelecom sau aplicație."
+      },
+      "112489313": {
+        "question": "Abonamentele includ trafic în roaming?",
+        "answer": " Da. Unele pachete includ GB disponibili în Uniunea Europeană. Vezi în descrierea fiecărui pachet câți GB ai pentru roaming UE.<br/><br/><b><i>Recomandăm să consulți și politica de utilizare rezonabilă în roaming.</i></b>"
+      },
+      "112489314": {
+        "question": "Ce tipuri de apeluri sunt incluse în minutele naționale?",
+        "answer": "Minutele incluse pot fi utilizate pentru apeluri către toate rețelele mobile și fixe din Moldova. În unele pachete, apelurile internaționale (ex: către România, Italia) pot fi incluse sau disponibile opțional."
+      },
+      "112489315": {
+        "question": "Care este durata minimă contractuală a unui abonament?",
+        "answer": "Majoritatea abonamentelor au durată contractuală de 12 sau 24 luni, în funcție de alegerea ta. Poți opta și pentru variante fără perioadă contractuală, dar cu prețuri puțin diferite."
+      },
+      "112489316": {
+        "question": "Pot anula sau modifica abonamentul înainte de finalul contractului?",
+        "answer": "Da, însă pot exista penalități în funcție de perioada rămasă. Îți recomandăm să contactezi Serviciul Clienți pentru detalii personalizate."
+      },
+      "112489317": {
+        "question": "Cum pot verifica și gestiona abonamentul meu?",
+        "answer": "Prin aplicația MyMoldtelecom sau prin contul de pe site, poți verifica consumul, factura, schimba opțiuni sau activa extraopțiuni."
+      },
+      "112489318": {
+        "question": "Pot testa rețeaua înainte de a mă abona?",
+        "answer": "Da! Îți oferim cartele de test gratuite în magazine sau la solicitare. Astfel, poți verifica calitatea rețelei Moldtelecom în zona ta."
+      },
+      "112489319": {
+        "question": "Pot activa un eSIM în loc de cartelă fizică?",
+        "answer": "Desigur. Moldtelecom oferă suport pentru eSIM pentru dispozitive compatibile. Poți solicita activarea din MyMoldtelecom sau în magazine."
+      }
     }
   },
   "order_now": "Comandă acum",

@@ -20,6 +20,8 @@ import { useState } from 'react';
 import Popup from '../../../../components/Popup/Popup.tsx';
 import Toggle from '../../../../components/toggle/Toggle.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
+import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
+import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
 
 export default function Mobile() {
   const { t } = useTranslation();
@@ -305,7 +307,7 @@ export default function Mobile() {
                 style={{ opacity: '0' }}
               >
                 <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1' ? '35% reducere pentru 2 ani' : ''}
+                  {activeConfig == '1' ? t('tm.35_proc') : ''}
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
@@ -416,9 +418,7 @@ export default function Mobile() {
             <div className={styles.wifi_carousell_block_inside_btns}>
               <div className={styles.tm_carousell_block_row_tags}>
                 <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1'
-                    ? '35% reducere pentru 2 ani'
-                    : '35% reducere pentru 2 ani'}
+                  {activeConfig == '1' ? t('tm.35_proc') : t('tm.35_proc')}
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
@@ -438,7 +438,7 @@ export default function Mobile() {
                   handleConfigClick(
                     'star 120',
                     activeConfig == '1' ? '78' : '78',
-                    '35% reducere pentru 2 ani'
+                    t('tm.35_proc')
                   )
                 }
                 color="#fff"
@@ -538,8 +538,8 @@ export default function Mobile() {
               <div className={styles.tm_carousell_block_row_tags}>
                 <div className={styles.tm_carousell_block_row_tag}>
                   {activeConfig == '1'
-                    ? '35% reducere pentru 2 ani'
-                    : '-50 lei reducere'}
+                    ? t('tm.35_proc')
+                    : `-50 ${t('tm.lei_reducere')}`}
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
@@ -560,8 +560,8 @@ export default function Mobile() {
                     'star 150',
                     activeConfig == '1' ? '97.5' : '100',
                     activeConfig == '1'
-                      ? '35% reducere pentru 2 ani'
-                      : '-50 lei reducere'
+                      ? t('tm.35_proc')
+                      : `-50 ${t('tm.lei_reducere')}`
                   )
                 }
                 color="#fff"
@@ -688,8 +688,8 @@ export default function Mobile() {
               <div className={styles.tm_carousell_block_row_tags}>
                 <div className={styles.tm_carousell_block_row_tag}>
                   {activeConfig == '1'
-                    ? '35% reducere pentru 2 ani'
-                    : '-75 lei reducere'}
+                    ? t('tm.35_proc')
+                    : `-75 ${t('tm.lei_reducere')}`}
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
@@ -710,8 +710,8 @@ export default function Mobile() {
                     'liberty 190',
                     activeConfig == '1' ? '123.5' : '115',
                     activeConfig == '1'
-                      ? '35% reducere pentru 2 ani'
-                      : '-75 lei reducere'
+                      ? t('tm.35_proc')
+                      : `-75 ${t('tm.lei_reducere')}`
                   )
                 }
                 color="#fff"
@@ -837,8 +837,8 @@ export default function Mobile() {
               <div className={styles.tm_carousell_block_row_tags}>
                 <div className={styles.tm_carousell_block_row_tag}>
                   {activeConfig == '1'
-                    ? '35% reducere pentru 2 ani'
-                    : '-100 lei reducere'}
+                    ? t('tm.35_proc')
+                    : `-100 ${t('tm.lei_reducere')}`}
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
@@ -859,8 +859,8 @@ export default function Mobile() {
                     'liberty 250+',
                     activeConfig == '1' ? '162.5' : '150',
                     activeConfig == '1'
-                      ? '35% reducere pentru 2 ani'
-                      : '-100 lei reducere'
+                      ? t('tm.35_proc')
+                      : `-100 '${t('tm.lei_reducere')}`
                   )
                 }
                 color="#fff"
@@ -926,6 +926,52 @@ export default function Mobile() {
         functions={['Internet', 'Minute', 'International', 'RoamingUE']}
       />
       <MyApp style_type={'blue_white'} className={styles.myapp} />
+
+      <FaqV2 max_faq={6}>
+        <FaqQAV2 id_faq="112489310" question={t('tm.faq.112489310.question')}>
+          {t('tm.faq.112489310.answer')}
+        </FaqQAV2>
+
+        <FaqQAV2 id_faq="112489311" question={t('tm.faq.112489311.question')}>
+          {t('tm.faq.112489311.answer')}
+        </FaqQAV2>
+
+        <FaqQAV2 id_faq="112489312" question={t('tm.faq.112489312.question')}>
+          {t('tm.faq.112489312.answer')}
+        </FaqQAV2>
+
+        <FaqQAV2 id_faq="112489313" question={t('tm.faq.112489313.question')}>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: t('tm.faq.112489313.answer'),
+            }}
+          />
+        </FaqQAV2>
+
+        <FaqQAV2 id_faq="112489314" question={t('tm.faq.112489314.question')}>
+          {t('tm.faq.112489314.answer')}
+        </FaqQAV2>
+
+        <FaqQAV2 id_faq="112489315" question={t('tm.faq.112489315.question')}>
+          {t('tm.faq.112489315.answer')}
+        </FaqQAV2>
+
+        <FaqQAV2 id_faq="112489316" question={t('tm.faq.112489316.question')}>
+          {t('tm.faq.112489316.answer')}
+        </FaqQAV2>
+
+        <FaqQAV2 id_faq="112489317" question={t('tm.faq.112489317.question')}>
+          {t('tm.faq.112489317.answer')}
+        </FaqQAV2>
+
+        <FaqQAV2 id_faq="112489318" question={t('tm.faq.112489318.question')}>
+          {t('tm.faq.112489318.answer')}
+        </FaqQAV2>
+
+        <FaqQAV2 id_faq="112489319" question={t('tm.faq.112489319.question')}>
+          {t('tm.faq.112489319.answer')}
+        </FaqQAV2>
+      </FaqV2>
 
       <Footer disclaimer={true} />
       <Popup
@@ -1019,7 +1065,7 @@ export default function Mobile() {
               </div>
 
               <BuyForm
-                config={`TM - ${activeConfig === '1' ? 'nu sunt client' : 'sunt client'}, tip - ${selected}, testează- ${testGratis}, pachet selectat- ${activePopupConfig} , pret- ${activePriceConfig}`}
+                config={`TM - ${activeConfig === '1' ? 'nu sunt client' : 'sunt client'}, tip sim - ${selected}, testează - ${testGratis}, pachet selectat - ${activePopupConfig} , pret - ${activePriceConfig}, lang - ${t('lang')}`}
                 tag={'tm'}
                 service={'campain[tm_2025_b2s], place[abonament]'}
                 onSuccess={() => {

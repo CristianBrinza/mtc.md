@@ -45,8 +45,8 @@ const FaqV2: React.FC<FaqProps> = ({
             <Button
               className={styles.faq_btn}
               onClick={toggleShowAll}
-              border={'transparent'}
-              bgcolor={'var(--theme_primary_color_gray_5)'}
+              border={'var(--theme_primary_color_gray_1)'}
+              bgcolor={'transparent'}
               hover_bgcolor={'var(--theme_primary_color_gray_1)'}
               hover_border="transparent"
             >
