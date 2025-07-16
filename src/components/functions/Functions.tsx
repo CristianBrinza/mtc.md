@@ -107,10 +107,10 @@ const Functions: React.FC<FunctionsProps> = ({
                   : 'var(--theme_primary_color_black)',
           }}
         >
-          {title}
+          {t(title)}
         </div>
         <div className={styles.functions_carousell_inside_block_text}>
-          {description}
+          {t(description)}
         </div>
         <div
           className={styles.functions_carousell_inside_block_btn}
@@ -119,7 +119,7 @@ const Functions: React.FC<FunctionsProps> = ({
           onMouseLeave={handleMouseLeave}
           onClick={() => togglePopup(popup)}
         >
-          <span>Detalii</span>{' '}
+          <span>{t('functions_optional.detalii')}</span>{' '}
           <Icon
             className="LinkButton_arrow"
             type="arrow_right"
@@ -147,8 +147,8 @@ const Functions: React.FC<FunctionsProps> = ({
             renderFunctionBlock(
               'Internet', // ID
               'cart', // Icon (must be a valid key from icons)
-              'Internet',
-              'Descară date cu viteză mare și vizita web-ul fără griji',
+              'functions_optional.Internet.title',
+              'functions_optional.Internet.description',
               'f1'
             )}
 
@@ -156,8 +156,8 @@ const Functions: React.FC<FunctionsProps> = ({
             renderFunctionBlock(
               'Minute',
               'call',
-              'Minute Naționale',
-              'Comunică avantajos cu cei din alte rețele',
+              'functions_optional.Minute.title',
+              'functions_optional.Minute.description',
               'f2'
             )}
 
@@ -165,8 +165,8 @@ const Functions: React.FC<FunctionsProps> = ({
             renderFunctionBlock(
               'International',
               'internet',
-              'Internaţional',
-              'Minute pentru conexiune mobilă sau fixă din alte țări',
+              'functions_optional.International.title',
+              'functions_optional.International.description',
               'f3'
             )}
 
@@ -174,29 +174,12 @@ const Functions: React.FC<FunctionsProps> = ({
             renderFunctionBlock(
               'RoamingUE',
               'roaming',
-              'Roaming UE',
-              'Tarife ca acasă, acum şi peste hotare',
+              'functions_optional.RoamingUE.title',
+              'functions_optional.RoamingUE.description',
               'f5'
             )}
         </Slider>
       </div>
-
-      <Popup
-        id="1281278"
-        width="900px"
-        isVisible={activePopup === 'menu1'}
-        onClose={() => setActivePopup(null)}
-      >
-        <div className="popup_content">test1</div>
-      </Popup>
-      <Popup
-        id="1281278"
-        width="900px"
-        isVisible={activePopup === 'menu2'}
-        onClose={() => setActivePopup(null)}
-      >
-        <div className="popup_content">test2</div>
-      </Popup>
 
       <Popups content={activePopup} onClose={() => setActivePopup(null)} />
     </div>

@@ -144,7 +144,7 @@
 
 .mobile_carousell_price {
   color: var(--theme_primary_color_black);
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-size: 38px;
   font-style: normal;
   font-weight: 600;
@@ -157,7 +157,7 @@
 }
 .mobile_carousell_price_valuta {
   color: var(--theme_primary_color_black);
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -165,7 +165,7 @@
 }
 .mobile_carousell_price_old {
   color: rgba(0, 0, 0, 0.25);
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;

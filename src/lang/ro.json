@@ -1410,7 +1410,7 @@
       "description": "Prezentare detaliată a planurilor mobile, funcțiilor de roaming și a serviciilor suplimentare oferite de Moldtelecom.",
       "keywords": "mobil, opțiuni, servicii, tarife, roaming, prepaid, postpaid, internet, apeluri, sms"
     },
-    "mobile": {
+    "tm": {
       "title": "Telefonie Mobilă",
       "description": "Descoperă cele mai noi smartphone‑uri și abonamente flexibile care te mențin conectat oriunde.",
       "keywords": "mobil, smartphone, abonamente, tarife, prepaid, postpaid, oferte, 4G, 5G, Moldova"
@@ -1744,6 +1744,83 @@
         "head_html": "<tr><td><strong>SMS cod</strong></td><td><strong>Descriere opțiune</strong></td><td><strong>Tarif, lei</strong></td><td><strong>Valabilitate</strong></td></tr>",
         "body_html": "<tr><td>R_************</td><td>Suplinirea contului cu cartela de reîncărcare</td><td>n/a</td><td>n/a</td></tr><tr><td>RM_0xxxxxxxx</td><td>Expedierea SMS «Reîncarcă-mi contul» la un prieten (numai numere Moldtelecom), limita 5 sms per/zi</td><td>n/a</td><td>n/a</td></tr><tr><td>Callme_0xxxxxxxx</td><td>Expedierea SMS «Sună-mă» la un prieten (numai numere Moldtelecom), limita 5 sms per/zi</td><td>n/a</td><td>n/a</td></tr><tr><td>43_1</td><td>Activarea expedierii facturii prin email, modificarea va fi aplicată la următorul billing ciclu.</td><td>n/a</td><td>n/a</td></tr>"
       }
+    }
+  },
+  "tm": {
+    "breadcrumb": {
+      "promo": "Promo",
+      "mobile": "Telefonie Mobilă"
+    },
+    "hero": { "alt": "Moldtelecom" },
+    "title_choose": "Alege abonamentul care ți se potrivește cel mai bine",
+    "abonament": "Abonament",
+    "portare": "Portare",
+    "prepay": "Prepay",
+    "btn_not_client": "Nu sunt client",
+    "btn_client": "Sunt client",
+    "details": {
+      "promo": {
+        "title": "Promoția „Testează gratuit”",
+        "items": [
+          "Promoția „Testează gratuit” oferă o reducere de 100% la costul abonamentului pentru o perioadă de testare de până la 30 de zile.",
+          "După perioada de testare, clienții beneficiază de o reducere de 35% la abonament, până la finalizarea perioadei minime contractuale. Perioada minimă contractuală este de 24 de luni, inclusiv luna de testare.",
+          "Oferta este disponibilă exclusiv pentru abonații noi și abonații care portează numărul la unul din abonamentele Star 120, Star 150 și Liberty 190.",
+          "Promoția este valabilă între 02.05.2025 și 31.07.2025."
+        ]
+      },
+      "conditii": {
+        "title": "Condiții de utilizare Abonamente",
+        "itemsConfig1": [
+          "Oferta promoțională constă în acordarea unei reduceri de 35% la plata lunară a abonamentelor Star 120, Star 150, Liberty 190 și Liberty Plus 250, valabilă pe întreaga perioadă contractuală de 24 luni.",
+          "Perioada minimă contractuală pentru abonamentul Start 95 este de 6 luni.",
+          "Oferta este destinată pentru clienții noi (conectare, portare din altă rețea) sau pentru cei existenți, la reperfectarea contractului sau migrarea de la PrePay."
+        ],
+        "itemsConfigElse": [
+          "Oferta promo presupune acordarea unei reduceri 50 lei (abonament Star 150), 75 lei (abonament Liberty 190) sau 100 lei (abonament Liberty Plus 250) la plata lunară de abonament, în combinație cu serviciul de Internet Fix sau Internet Fix+IPTV și se oferă pe toată durata contractuală la conectarea/deținerea unei linii de Internet Fix sau Internet Fix+IPTV.",
+          "La promoție pot participa abonați noi, abonați portați, abonați existenți de telefonie mobilă cu perioada contractuală promoțională expirată și utilizatorii PrePay care migrează spre abonament.",
+          "Perioada de comercializare a ofertei: 03.03.2025 – 25.08.2025 (inclusiv)."
+        ],
+        "commonItems": [
+          "Oferta promo include și posibilitatea de a beneficia gratuit de serviciul „Alege Număr Frumos” pentru categoria „Aur” sau „Argint”.",
+          "Abonații conectați la abonamentele Liberty 190 și Liberty Plus 250 pot comunica în Roaming UE+SEE din contul minutelor naționale incluse (7 GB, respectiv 10 GB).",
+          "Pentru apelurile internaționale, destinațiile sunt: Marea Britanie, Franța, Germania, Italia, Spania, România, Israel, Rusia, Cehia, Ucraina.",
+          "Abonații Liberty Plus 250 trebuie să evite folosirea abuzivă a serviciilor incluse; în caz contrar vor reveni la 1000 minute și 245 SMS naționale.",
+          "Viteza internet 3G: maxim download, până la 512 Kbps upload; 4G: download/upload la capacitate maximă.",
+          "Rezilierea anticipată implică o plată de prejudiciu: 35% din abonament × nr. luni de reducere."
+        ]
+      },
+      "roaming": {
+        "title": "Condiții speciale serviciului „Roaming Europa”",
+        "items": [
+          "Tarifarea apelurilor se efectuează per minut din prima secundă de apel.",
+          "Viteza de acces la internet depinde de condițiile de prestare și terminalul utilizat.",
+          "Tarifarea traficului internet în roaming se efectuează din momentul începerii sesiunii per 10 KByte.",
+          "După consumarea conținutului în Roaming UE, tarifele standard se aplică conform operatorului.",
+          "Serviciul Roaming UE+SEE trebuie activ pentru a beneficia de conținutul inclus.",
+          "Monitorizarea abuzului se face pe 4 luni consecutiv; consumul în roaming nu trebuie să depășească consumul național al aceluiași serviciu."
+        ]
+      }
+    }
+  },
+  "order_now": "Comandă acum",
+  "lei_luna": " lei/lună",
+  "functions_optional": {
+    "detalii": "Detalii",
+    "Internet": {
+      "title": "Internet",
+      "description": "Descarcă date cu viteză mare și navighează fără griji"
+    },
+    "Minute": {
+      "title": "Minute Naționale",
+      "description": "Comunică avantajos cu cei din alte rețele"
+    },
+    "International": {
+      "title": "Internațional",
+      "description": "Minute pentru conexiune mobilă sau fixă din alte țări"
+    },
+    "RoamingUE": {
+      "title": "Roaming UE",
+      "description": "Tarife ca acasă, acum și peste hotare"
     }
   }
 }

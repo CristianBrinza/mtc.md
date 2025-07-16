@@ -90,7 +90,7 @@ export default function BuyForm({
         icon="arrow_right"
         type="submit"
       >
-        Comandă acum
+        {t('order_now')}
       </Button>
       <input type="hidden" name="lang" value={t('lang')} />
       <input type="hidden" name="source" value={source} />
