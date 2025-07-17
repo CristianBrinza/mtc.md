@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ConsentBanner.css';
 import Button from '../Button.tsx';
-import { Link } from 'react-router-dom';
 
 declare global {
   interface Window {
