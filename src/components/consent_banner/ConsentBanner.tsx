@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './ConsentBanner.css';
 import Button from '../Button.tsx';
-import ReactGA from 'react-ga4';
 import { Link } from 'react-router-dom';
+
+declare global {
+  interface Window {
+    dataLayer: Record<string, any>[];
+    gtag?: (...args: any[]) => void;
+  }
+}
 
 interface ConsentBannerProps {
   visible: boolean;
@@ -15,19 +21,28 @@ const ConsentBanner: React.FC<ConsentBannerProps> = ({ visible }) => {
     const consentGiven = localStorage.getItem('userConsent');
     if (!consentGiven) {
       setShowBanner(true); // Show banner if no consent has been given
+    } else if (window.gtag) {
+      window.gtag('consent', 'update', {
+        ad_storage: consentGiven,
+        analytics_storage: consentGiven,
+      });
     }
   }, []);
 
   const handleAccept = () => {
     localStorage.setItem('userConsent', 'granted');
 
-    // Initialize GA without consentMode, and send a pageview manually
-    ReactGA.initialize(import.meta.env.VITE_GOOGLE_TRACKING_TAG);
-    ReactGA.gtag('consent', 'update', {
-      ad_storage: 'granted',
-      analytics_storage: 'granted',
-    });
-    ReactGA.send('pageview'); // Send an initial pageview event after consent is granted
+    if (window.gtag) {
+      window.gtag('consent', 'update', {
+        ad_storage: 'granted',
+        analytics_storage: 'granted',
+      });
+      window.gtag('event', 'page_view');
+    }
+
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'consent_granted' });
+    }
 
     setShowBanner(false);
   };
@@ -35,12 +50,16 @@ const ConsentBanner: React.FC<ConsentBannerProps> = ({ visible }) => {
   const handleDecline = () => {
     localStorage.setItem('userConsent', 'denied');
 
-    // Initialize GA and set consent as denied
-    ReactGA.initialize(import.meta.env.VITE_GOOGLE_TRACKING_TAG);
-    ReactGA.gtag('consent', 'update', {
-      ad_storage: 'denied',
-      analytics_storage: 'denied',
-    });
+    if (window.gtag) {
+      window.gtag('consent', 'update', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+      });
+    }
+
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'consent_denied' });
+    }
 
     setShowBanner(false);
   };
