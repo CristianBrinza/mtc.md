@@ -18,6 +18,7 @@ import Slider from 'react-slick';
 import Button from '../../../../components/Button.tsx';
 import Popups from '../../../../components/Popups/Popups.tsx';
 import Popup from '../../../../components/Popup/Popup.tsx';
+import { trackEvent } from '../../../../initAnalytics.ts';
 import Details, {
   DetailsBlock,
 } from '../../../../components/details/Details.tsx';
@@ -51,6 +52,11 @@ export default function Roaming() {
   const faqEntries = t('roaming.faq', { returnObjects: true }) as FaqEntry[];
 
   const [activePopup, setActivePopup] = useState<string | null>(null);
+
+  const openPopup = (id: string) => {
+    setActivePopup(id);
+    trackEvent('roaming_popup', id);
+  };
   const seo = {
     title: t('pages.roaming.title'),
     description: t('pages.roaming.description'),
@@ -106,6 +112,8 @@ export default function Roaming() {
     setCountry(name);
     setFilteredCountries([]);
     setShowSuggestions(false);
+
+    trackEvent('roaming_select_country', name);
 
     fetch(`https://moldtelecom.md/roaming/${encodeURIComponent(name)}`)
       .then(res => res.json())
@@ -338,7 +346,7 @@ export default function Roaming() {
                   {/*  Activează în aplicație*/}
                   {/*</Button>*/}
                   <Button
-                    onClick={() => setActivePopup('f5')}
+                    onClick={() => openPopup('f5')}
                     color="var(--theme_primary_color_blue_4)"
                     bgcolor="var(--theme_primary_color_blue_3)"
                     border="var(--theme_primary_color_blue_3)"
@@ -380,7 +388,7 @@ export default function Roaming() {
                   {/*  Activează în aplicație*/}
                   {/*</Button>*/}
                   <Button
-                    onClick={() => setActivePopup('f6')}
+                    onClick={() => openPopup('f6')}
                     color="var(--theme_primary_color_blue_4)"
                     bgcolor="var(--theme_primary_color_blue_3)"
                     border="var(--theme_primary_color_blue_3)"
@@ -426,7 +434,7 @@ export default function Roaming() {
                     {/*  Activează în aplicație*/}
                     {/*</Button>*/}
                     <Button
-                      onClick={() => setActivePopup('f9')}
+                      onClick={() => openPopup('f9')}
                       color="var(--theme_primary_color_blue_4)"
                       bgcolor="var(--theme_primary_color_blue_3)"
                       border="var(--theme_primary_color_blue_3)"
@@ -499,7 +507,7 @@ export default function Roaming() {
 
           <div className={styles.roaming_tarifs_card_text}>
             {t('roaming.tarifs.text_1')}{' '}
-            <span onClick={() => setActivePopup('1281120')}>
+            <span onClick={() => openPopup('1281120')}>
               {t('roaming.tarifs.text_2')}
             </span>
             .
@@ -546,7 +554,7 @@ export default function Roaming() {
           </div>
           <div className={styles.roaming_activate_right}>
             <div
-              onClick={() => setActivePopup('1281124')}
+              onClick={() => openPopup('1281124')}
               className={`${styles.roaming_activate_right_card} ${styles.roaming_activate_right_card_1}`}
             >
               Vezi pașii de configurare APN

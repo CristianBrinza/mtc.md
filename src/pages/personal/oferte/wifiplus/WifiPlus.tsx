@@ -14,6 +14,7 @@ import Popup from '../../../../components/Popup/Popup.tsx';
 import Chat from '../../../../components/chat/Chat.tsx';
 import Feedback from '../../../../components/feedback/Feedback.tsx';
 import SEO from '../../../../components/SEO';
+import { trackEvent } from '../../../../initAnalytics.ts';
 
 declare global {
   interface Window {
@@ -60,11 +61,13 @@ export default function WifiPlus() {
 
   const setShowPopupFunction = (packet: string) => {
     setShowPopup(true);
+    trackEvent('wifi_plus_popup', packet);
     console.log(packet);
   };
   setShowPopup;
 
   const trackButton = (label: string) => {
+    trackEvent('wifi_plus_button', label);
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'wifi_plus_button', label });
     }
