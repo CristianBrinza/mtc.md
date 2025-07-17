@@ -15,6 +15,12 @@ import Chat from '../../../../components/chat/Chat.tsx';
 import Feedback from '../../../../components/feedback/Feedback.tsx';
 import SEO from '../../../../components/SEO';
 
+declare global {
+  interface Window {
+    dataLayer: Record<string, any>[];
+  }
+}
+
 const ArrowIcon: React.FC<{ rotated?: boolean }> = ({ rotated = false }) => (
   <svg
     width="24"
@@ -57,6 +63,12 @@ export default function WifiPlus() {
     console.log(packet);
   };
   setShowPopup;
+
+  const trackButton = (label: string) => {
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'wifi_plus_button', label });
+    }
+  };
 
   const settings = {
     dots: true,
@@ -180,7 +192,10 @@ export default function WifiPlus() {
                 />
                 <div className={styles.wifi_carousell_block_inside_btns}>
                   <Button
-                    onClick={() => setShowPopupFunction('aaa')}
+                    onClick={() => {
+                      trackButton('router0_order');
+                      setShowPopupFunction('router0');
+                    }}
                     color="var(--theme_primary_color_blue_4)"
                     bgcolor="var(--theme_primary_color_blue_3)"
                     border="var(--theme_primary_color_blue_3)"
@@ -224,7 +239,10 @@ export default function WifiPlus() {
                 />
                 <div className={styles.wifi_carousell_block_inside_btns}>
                   <Button
-                    onClick={() => setShowPopupFunction('aaa')}
+                    onClick={() => {
+                      trackButton('router1_order');
+                      setShowPopupFunction('router1');
+                    }}
                     color="var(--theme_primary_color_blue_4)"
                     bgcolor="var(--theme_primary_color_blue_3)"
                     border="var(--theme_primary_color_blue_3)"
@@ -394,6 +412,7 @@ export default function WifiPlus() {
           <div className={styles.popup_btns}>
             <Button
               to={`https://moldtelecom.md/${t('lang')}/cereri`}
+              onClick={() => trackButton('popup_cereri')}
               color="var(--theme_primary_color_white)"
               bgcolor="var(--theme_primary_color_blue_4)"
               border="var(--theme_primary_color_blue_4)"
@@ -405,6 +424,7 @@ export default function WifiPlus() {
             </Button>
             <Button
               to={'tel:022200200'}
+              onClick={() => trackButton('popup_phone')}
               color="var(--theme_primary_color_blue_4)"
               bgcolor="var(--theme_primary_color_blue_3)"
               border="var(--theme_primary_color_blue_3)"
