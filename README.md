@@ -21,6 +21,7 @@ The official Moldtelecom website is built with **React 19**, **TypeScript** and 
 - i18next setup with Romanian, Russian and English translations
 - Progressive Web App configuration via `vite-plugin-pwa`
 - Invisible reCAPTCHA support (`VITE_RECAPTCHA_SITE_KEY`)
+- Google Tag Manager tracking (`VITE_GOOGLE_TRACKING_TAG`)
 - Production build and deployment script
 
 ## Requirements
@@ -33,10 +34,10 @@ The official Moldtelecom website is built with **React 19**, **TypeScript** and 
    ```bash
    yarn install
    ```
-2. Copy the example environment file and provide your reCAPTCHA key:
+2. Copy the example environment file and provide your environment variables(reCAPTCHA key, google tracking key,...):
    ```bash
    cp .env.template .env
-   # edit .env and set VITE_RECAPTCHA_SITE_KEY
+   # edit .env and set VITE_RECAPTCHA_SITE_KEY and VITE_GOOGLE_TRACKING_TAG
    ```
 
 ## Development
