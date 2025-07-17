@@ -16,12 +16,6 @@ import Feedback from '../../../../components/feedback/Feedback.tsx';
 import SEO from '../../../../components/SEO';
 import { trackEvent } from '../../../../initAnalytics.ts';
 
-declare global {
-  interface Window {
-    dataLayer: Record<string, any>[];
-  }
-}
-
 const ArrowIcon: React.FC<{ rotated?: boolean }> = ({ rotated = false }) => (
   <svg
     width="24"
@@ -68,9 +62,6 @@ export default function WifiPlus() {
 
   const trackButton = (label: string) => {
     trackEvent('wifi_plus_button', label);
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: 'wifi_plus_button', label });
-    }
   };
 
   const settings = {

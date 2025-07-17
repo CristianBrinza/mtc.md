@@ -6,9 +6,6 @@ import { useTranslation } from 'react-i18next';
 import Chat from '../../../../components/chat/Chat.tsx';
 import Feedback from '../../../../components/feedback/Feedback.tsx';
 
-
-
-
 export default function FiveGbps() {
   const { t } = useTranslation();
 
@@ -19,7 +16,6 @@ export default function FiveGbps() {
 
   return (
     <>
-
       <Navbar />
       <Chat />
       <Feedback />
@@ -39,8 +35,6 @@ export default function FiveGbps() {
           />
         </div>
       </Hero>
-
-
     </>
   );
 }

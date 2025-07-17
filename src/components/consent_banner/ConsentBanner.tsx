@@ -71,8 +71,11 @@ const ConsentBanner: React.FC<ConsentBannerProps> = ({ visible }) => {
   return showBanner ? (
     <div id="bannerStyles">
       <p>
-        This website uses <Link to="/privacy">cookies</Link> to improve your
-        experience.
+        This website uses{' '}
+        <a href="https://www.moldtelecom.md/files/Politica%20cookies%20Moldtelecom.pdf">
+          cookies
+        </a>{' '}
+        to improve your experience.
       </p>
       <div id="bannerStyles_buttons">
         <Button onClick={handleDecline}>Decline</Button>
