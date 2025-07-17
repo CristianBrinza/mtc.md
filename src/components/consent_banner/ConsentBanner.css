@@ -1,0 +1,47 @@
+#bannerStyles {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  /* start completely below its final spot and invisible */
+  transform: translate(-50%, 100px);
+  opacity: 0;
+
+  background-color: #fff;
+  color: var(--theme_primary_color_black);
+  text-align: center;
+  z-index: 9999;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1px solid var(--theme_primary_color_blue_3);
+
+  /* animation: name duration timing-function delay fill-mode */
+  animation: fadeInConsent 1s ease 3s forwards;
+}
+
+@keyframes fadeInConsent {
+  to {
+    /* end state: fully visible, in its natural spot */
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+
+#bannerStyles_buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 530px) {
+  #bannerStyles {
+    gap: 0;
+    flex-direction: column;
+  }
+}

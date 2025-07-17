@@ -10,6 +10,7 @@ import { routesConfig } from './routesConfig.tsx';
 import ScrollToTop from './components/scroll_to_top/ScrollToTop.tsx';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import ConsentBanner from './components/consent_banner/ConsentBanner.tsx';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route key={index} path={route.path} element={route.element} />
             ))}
           </Routes>
+          <ConsentBanner visible={true} />
         </LanguageProvider>
       </BrowserRouter>
     </I18nextProvider>

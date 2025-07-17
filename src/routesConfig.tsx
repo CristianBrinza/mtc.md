@@ -20,6 +20,7 @@ import GpsTrack from './pages/business/gps_track/GpsTrack.tsx';
 import AppRedirect from './components/app/AppRedirect.tsx';
 import SmsServices from './pages/personal/oferte/sms_services/SmsServices.tsx';
 import MobileOld from './pages/personal/oferte/mobile/Mobile_old.tsx';
+import FiveGbps from './pages/personal/oferte/5gbps/FiveGbps.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -112,6 +113,10 @@ export const routesConfig: RouteConfig[] = [
   {
     path: '/:lang/roaming',
     element: React.createElement(Roaming),
+  },
+  {
+    path: '/:lang/5gbps',
+    element: React.createElement(FiveGbps),
   },
   {
     path: '/:lang/form-test',
