@@ -106,6 +106,15 @@ export default function Mobile() {
   const roamingItems = t('tm.details.roaming.items', {
     returnObjects: true,
   }) as string[];
+  const warning1Items = t('tm.details.warning.items_1', {
+    returnObjects: true,
+  }) as string[];
+  const warning2Items = t('tm.details.warning.items_2', {
+    returnObjects: true,
+  }) as string[];
+  const warning3Items = t('tm.details.warning.items_3', {
+    returnObjects: true,
+  }) as string[];
 
   return (
     <>
@@ -917,6 +926,23 @@ export default function Mobile() {
           <br />
           <br />
           <TableRoaming />
+        </DetailsBlock>
+        <DetailsBlock title={t('tm.details.warning.title')}>
+          <ul>
+            {warning1Items.map((text, i) => (
+              <li key={i}>{text}</li>
+            ))}
+            <ul>
+              {warning2Items.map((text, i) => (
+                <li key={i}>{text}</li>
+              ))}
+            </ul>
+            {warning3Items.map((text, i) => (
+              <li key={i}>{text}</li>
+            ))}
+          </ul>
+
+          {t('tm.details.warning.warning_dis')}
         </DetailsBlock>
       </Details>
 

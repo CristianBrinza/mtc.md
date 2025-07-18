@@ -1768,6 +1768,23 @@
           "Promoția este valabilă între 02.05.2025 și 31.07.2025."
         ]
       },
+      "warning": {
+        "title": "Politica de utilizare rezonabilă a serviciului „Roaming Europa”",
+        "items_1": [
+          "Conținutul de minute și trafic internet inclus în abonamentele ”Liberty 190” și ”Liberty Plus 250”, disponibil în Roaming UE+SEE. este alocat în vederea asigrării necesarului de comunicare în călătoriile cu caracter periodic în Europa. ",
+          "Abonații conectați la abonamentele ”Liberty 190” și ”Liberty Plus 250” sunt obligați să evite folosirea abuzivă a serviciilor Roaming, UE+SEE incluse în abonament. Pentru a analiza folosirea abuzivă a serviciilor Roaming UE+SEE incluse în abonament” se va monitoriza, în mod cumulat, pe parcursul a fiecăror patru luni consecutive din momentul conectării dacă consumul oricărui serviciu în Roaming în Europa este mai mare decât consumul respectivului serviciu la nivel național;",
+          "Consumul la nivel național și consumul în Roaming în Europa se măsoară în mod separat pentru următoarele categorii de servicii:"
+        ],
+        "items_2": [
+          "apeluri primite din orice rețea și apeluri efectuate spre refele din Republica Moldova și Europa (minute);",
+          "trafic Internet generat în Republica Moldova, respectiv în Europa (MB/GB)."
+        ],
+        "items_3": [
+          "Consumul predominant a oricărui serviciu în Roaming în Europa în timpul perioadei de monitorizare stabilite se consideră ca fiind un indicator al riscului unei utilizări abuzive sau anormale, care nu servește scopului călătoriilor periodice în Europa.",
+          "Abonații care vor fi identificați că au utilizat abuziv serviciile incluse în abonamentele ”Liberty 190” și ”Liberty Plus 250”, nu vor mai beneficia de Trafic adițional inclus în pachet sub forma de FUB ”Liberty Minute și Trafic internet în Roaming UE+SEE”, la, abonamentul respectiv."
+        ],
+        "warning_dis": "*consumul în Republica Moldova și consumul în Roaming în alte state decât Europa se consideră consum la nivel național."
+      },
       "conditii": {
         "title": "Condiții de utilizare Abonamente",
         "itemsConfig1": [
@@ -1793,7 +1810,7 @@
       },
       "list": "Lista operatorilor în rețeaua cărora este disponibil conținutul Roaming UE:",
       "roaming": {
-        "title": "Condiții speciale serviciului „Roaming Europa”",
+        "title": "Condiții speciale ale serviciului „Roaming Europa”",
         "items": [
           "Tarifarea apelurilor se efectuează per minut din prima secundă de apel.",
           "Viteza de acces la internet depinde de condițiile de prestare și terminalul utilizat.",
