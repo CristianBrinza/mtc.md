@@ -13,6 +13,8 @@ import Details, {
 } from '../../../../components/details/Details.tsx';
 import Slider from 'react-slick';
 import Button from '../../../../components/Button.tsx';
+import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
+import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
 
 export default function FiveGbps() {
   const { t } = useTranslation();
@@ -113,6 +115,25 @@ export default function FiveGbps() {
             Conexiune ultra-fiabilă pentru gaming, productivitate, conferințe
             video și aplicații critice.
           </div>
+        </div>
+      </div>
+
+      <div className={styles.what}>
+        <img
+          src="/images/landings/88618812.webp"
+          alt="Moldtelecom"
+          className={styles.what_img}
+        />
+        <div className={styles.what_right}>
+          <div className={styles.what_title}>
+            Experimentează viteza supremă pentru o lume fără limite!
+          </div>
+          Explorează tehnologia care redefinește viitorul
+          <br />
+          Viteză maxima, latență ultra‑mică și stabilitate rock‑solid – deja
+          validat de profesioniști și pregătit să susțină simultan streaming{' '}
+          <b>8K impecabil</b>, <b>gaming hardcore</b>, <b>backup instant</b>,{' '}
+          <b>Cloud</b> și inovatie.
         </div>
       </div>
 
@@ -312,20 +333,50 @@ export default function FiveGbps() {
       </Details>
 
       <div className={styles.eco}>
-        <div className={styles.eco_icon}>
-          <Icon
-            type={'eco'}
-            color={'#82C84F'}
-            size={'68px'}
-          />
+        <div className={styles.eco_card}>
+          <div className={styles.eco_icon}>
+            <Icon type={'eco'} color={'#82C84F'} size={'68px'} />
+          </div>
+          <div className={styles.eco_card_text}>
+            Rețeaua <b>XGS-PON</b> are o arhitectura pasivă și eficientă, ce
+            reduce amprenta de carbon și costurile de energie
+          </div>
         </div>
-        <div>
-          Rețeaua XGS-PON are o arhitectura pasivă și eficientă, ce reduce
-          amprenta de carbon și costurile de energie
+        <div className={styles.eco_card}>
+          <div className={styles.eco_icon}>
+            <Icon type={'eco_sign'} color={'#82C84F'} size={'68px'} />
+          </div>
+          <div className={styles.eco_card_text}>
+            Acum poți semna contractul cu <b>M‑Sign</b> digital, fără hârtie,
+            contribuie la reducerea amprentei de carbon și la un mediu mai
+            sustenabil
+          </div>
         </div>
       </div>
 
       <MyApp style_type={'blue_white'} className={styles.myapp} />
+      <FaqV2 max_faq={6}>
+        <FaqQAV2
+          id_faq="112482310"
+          question={'Care e diferența dintre XGS-PON și GPON?'}
+        >
+          XGS‑PON reprezintă soluția de ultimă generație pentru cei care vor mai
+          mult de la conexiunea de internet: până la 10 Gbps, latență extrem de
+          scăzută și stabilitate de care te poți baza chiar și în cele mai
+          exigente aplicații. Este proiectat pentru un stil de viață permanent
+          conectat, putând susține simultan videoconferințe de înaltă calitate,
+          aplicații cloud complexe, sesiuni de gaming online fără întreruperi,
+          automatizări inteligente pentru casă și streaming 8K ultra-HD fără
+          compromisuri.
+          <br /> <br />
+          În schimb, GPON rămâne în continuare standardul folosit de mulți
+          furnizori, dar cu un profil asimetric care limitează semnificativ
+          viteza de upload. Aceasta poate deveni o problemă atunci când toți
+          membrii familiei sunt conectați în același timp, mai ales la streaming
+          video în direct, sincronizări de backup în cloud sau lucrul de acasă
+          care necesită transfer rapid de fișiere.
+        </FaqQAV2>
+      </FaqV2>
       <Footer disclaimer={true} />
     </>
   );

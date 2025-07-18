@@ -24,7 +24,7 @@
   max-width: 1180px;
   display: flex;
   gap: 10px;
-  margin: 40px auto 30px;
+  margin: 40px auto 70px;
   justify-content: center;
 }
 .why_card {
@@ -209,21 +209,62 @@
   flex-wrap: wrap;
 }
 
-.eco{
+.eco {
   width: 100%;
   max-width: 1180px;
   margin: 40px auto 30px;
-  background: rgba(130, 200, 79, 0.38);
-  /*border: 1px solid rgba(130, 200, 79, 0.38);*/
   display: flex;
-  border-radius: 24px;
-  height: 130px;
-  gap:20px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
 }
-.eco_icon{
+.eco_card {
+  border-radius: 24px;
+  background: rgba(130, 200, 79, 0.38);
+  padding: 30px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 580px;
+  text-align: center;
+  width: 100%;
+}
+.eco_card_text {
+  height: 78px;
+}
+.eco_icon {
+}
 
+.what {
+  width: 100%;
+  max-width: 1180px;
+  margin: 10px auto 0px;
+  display: flex;
+  gap: 20px;
+}
+.what_img {
+  width: 100%;
+  max-width: 580px;
+  border-radius: 24px;
+}
+.what_right {
+  width: 100%;
+  max-width: 580px;
+  background: var(--theme_primary_color_blue_3);
+  padding: 40px 100px 40px 30px;
+  border-radius: 24px;
+  box-sizing: border-box;
+}
+
+.what_title {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 20px;
 }
 @media (max-width: 1300px) {
   .hero {
