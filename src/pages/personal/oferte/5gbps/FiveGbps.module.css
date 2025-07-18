@@ -208,6 +208,23 @@
   box-sizing: border-box;
   flex-wrap: wrap;
 }
+
+.eco{
+  width: 100%;
+  max-width: 1180px;
+  margin: 40px auto 30px;
+  background: rgba(130, 200, 79, 0.38);
+  /*border: 1px solid rgba(130, 200, 79, 0.38);*/
+  display: flex;
+  border-radius: 24px;
+  height: 130px;
+  gap:20px;
+  align-items: center;
+  justify-content: center;
+}
+.eco_icon{
+
+}
 @media (max-width: 1300px) {
   .hero {
     width: 1300px;

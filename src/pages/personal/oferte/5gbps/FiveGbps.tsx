@@ -208,7 +208,7 @@ export default function FiveGbps() {
               <span>
                 x2 <b>Mesh Wi-Fi</b> inclus{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
-                  (49 lei/luna)
+                  (98 lei/luna)
                 </span>
               </span>
             </div>
@@ -311,7 +311,14 @@ export default function FiveGbps() {
         </DetailsBlock>
       </Details>
 
-      <div>
+      <div className={styles.eco}>
+        <div className={styles.eco_icon}>
+          <Icon
+            type={'eco'}
+            color={'#82C84F'}
+            size={'68px'}
+          />
+        </div>
         <div>
           Rețeaua XGS-PON are o arhitectura pasivă și eficientă, ce reduce
           amprenta de carbon și costurile de energie
