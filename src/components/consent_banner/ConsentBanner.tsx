@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ConsentBanner.css';
 import Button from '../Button.tsx';
 
 declare global {
   interface Window {
-    dataLayer: Record<string, any>[];
+    dataLayer: any[];
     gtag?: (...args: any[]) => void;
   }
 }
@@ -14,82 +14,75 @@ interface ConsentBannerProps {
 }
 
 const ConsentBanner: React.FC<ConsentBannerProps> = ({ visible }) => {
-  const [showBanner, setShowBanner] = useState<boolean>(false);
+  const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    const consentGiven = localStorage.getItem('userConsent');
-    if (!consentGiven) {
-      setShowBanner(true); // Show banner if no consent has been given
+    const saved = localStorage.getItem('userConsent');
+    if (!saved) {
+      setShowBanner(true);
     } else if (window.gtag) {
+      // Re-apply consent state on reload
       window.gtag('consent', 'update', {
-        ad_storage: consentGiven,
-        analytics_storage: consentGiven,
+        ad_storage: saved,
+        analytics_storage: saved,
+        ad_personalization: saved,
+        ad_user_data: saved,
       });
     }
   }, []);
 
-  const handleAccept = () => {
+  const accept = () => {
     localStorage.setItem('userConsent', 'granted');
-
-    if (window.gtag) {
-      window.gtag('consent', 'update', {
-        ad_storage: 'granted',
-        analytics_storage: 'granted',
-      });
-      window.gtag('event', 'page_view');
-    }
-
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: 'consent_granted' });
-    }
-
+    window.gtag?.('consent', 'update', {
+      ad_storage: 'granted',
+      analytics_storage: 'granted',
+      ad_personalization: 'granted',
+      ad_user_data: 'granted',
+    });
+    // Retrigger page_view now that analytics is enabled
+    window.gtag?.('event', 'page_view');
+    window.dataLayer?.push({ event: 'consent_granted' });
     setShowBanner(false);
   };
 
-  const handleDecline = () => {
+  const decline = () => {
     localStorage.setItem('userConsent', 'denied');
-
-    if (window.gtag) {
-      window.gtag('consent', 'update', {
-        ad_storage: 'denied',
-        analytics_storage: 'denied',
-      });
-    }
-
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: 'consent_denied' });
-    }
-
+    window.gtag?.('consent', 'update', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_personalization: 'denied',
+      ad_user_data: 'denied',
+    });
+    window.dataLayer?.push({ event: 'consent_denied' });
     setShowBanner(false);
   };
 
-  if (!visible) {
-    return null;
-  }
+  if (!visible || !showBanner) return null;
 
-  return showBanner ? (
+  return (
     <div id="bannerStyles">
       <p>
         This website uses{' '}
-        <a href="https://www.moldtelecom.md/files/Politica%20cookies%20Moldtelecom.pdf">
+        <a
+          href="https://www.moldtelecom.md/files/Politica%20cookies%20Moldtelecom.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           cookies
         </a>{' '}
         to improve your experience.
       </p>
       <div id="bannerStyles_buttons">
-        <Button onClick={handleDecline}>Decline</Button>
-        <Button
-          onClick={handleAccept}
-          color="#ffffff"
-          hover_bgcolor="var(--theme_primary_color_blue_4)"
-          bgcolor="var(--theme_primary_color_blue_2)"
-          hover_color="#ffffff"
-        >
-          Accept
-        </Button>
+        <Button onClick={decline}>Decline</Button>
+        <Button onClick={accept}
+                color="#ffffff"
+                hover_bgcolor="var(--theme_primary_color_blue_4)"
+                bgcolor="var(--theme_primary_color_blue_2)"
+                hover_color="#ffffff"
+        >Accept</Button>
       </div>
     </div>
-  ) : null;
+  );
 };
 
 export default ConsentBanner;
