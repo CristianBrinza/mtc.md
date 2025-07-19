@@ -136,6 +136,25 @@ export default function FiveGbps() {
           <b>Cloud</b> și inovatie.
         </div>
       </div>
+      <div className={styles.what}>
+
+        <div className={styles.what_right}>
+          <div className={styles.what_title}>
+            De ce ai nevoie de 2.1 Gbps ?
+          </div>
+          Explorează tehnologia care redefinește viitorul
+          <br />
+          Viteză maxima, latență ultra‑mică și stabilitate rock‑solid – deja
+          validat de profesioniști și pregătit să susțină simultan streaming{' '}
+          <b>8K impecabil</b>, <b>gaming hardcore</b>, <b>backup instant</b>,{' '}
+          <b>Cloud</b> și inovatie.
+        </div>
+        <img
+          src="/images/landings/88618812.webp"
+          alt="Moldtelecom"
+          className={styles.what_img}
+        />
+      </div>
 
       <div className={`title_3 ${styles.domenii}`}>Descoperă abonamentele</div>
       <Slider {...settings} className={styles.abonaments}>
