@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './ConsentBanner.css';
 import Button from '../Button.tsx';
+import { trackPageview } from '../../initAnalytics.ts';
 
 declare global {
   interface Window {
@@ -40,7 +41,7 @@ const ConsentBanner: React.FC<ConsentBannerProps> = ({ visible }) => {
       ad_user_data: 'granted',
     });
     // Retrigger page_view now that analytics is enabled
-    window.gtag?.('event', 'page_view');
+    trackPageview(window.location.pathname);
     window.dataLayer?.push({ event: 'consent_granted' });
     setShowBanner(false);
   };
