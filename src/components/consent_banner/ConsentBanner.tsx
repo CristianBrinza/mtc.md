@@ -1,64 +1,60 @@
-import React, { useEffect, useState } from 'react';
+// src/components/consent_banner/ConsentBanner.tsx
+import { useEffect, useState } from 'react';
 import './ConsentBanner.css';
-import Button from '../Button.tsx';
-import { trackPageview } from '../../initAnalytics.ts';
+import Button from '../Button';
+import { trackPageview } from '../../initAnalytics';
 
 declare global {
   interface Window {
     dataLayer: any[];
-    gtag?: (...args: any[]) => void;
+    gtag: (...args: any[]) => void;
   }
 }
 
-interface ConsentBannerProps {
+interface Props {
   visible: boolean;
+  onAccept?: () => void;
+  onDecline?: () => void;
 }
 
-const ConsentBanner: React.FC<ConsentBannerProps> = ({ visible }) => {
-  const [showBanner, setShowBanner] = useState(false);
+export default function ConsentBanner({ visible, onAccept, onDecline }: Props) {
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem('userConsent');
-    if (!saved) {
-      setShowBanner(true);
-    } else if (window.gtag) {
-      // Re-apply consent state on reload
+    if (!saved) setShow(true);
+    else {
       window.gtag('consent', 'update', {
         ad_storage: saved,
         analytics_storage: saved,
-        ad_personalization: saved,
-        ad_user_data: saved,
       });
     }
   }, []);
 
   const accept = () => {
     localStorage.setItem('userConsent', 'granted');
-    window.gtag?.('consent', 'update', {
+    window.gtag('consent', 'update', {
       ad_storage: 'granted',
       analytics_storage: 'granted',
-      ad_personalization: 'granted',
-      ad_user_data: 'granted',
     });
-    // Retrigger page_view now that analytics is enabled
     trackPageview(window.location.pathname);
-    window.dataLayer?.push({ event: 'consent_granted' });
-    setShowBanner(false);
+    window.dataLayer.push({ event: 'consent_granted' });
+    setShow(false);
+    onAccept?.();
   };
 
   const decline = () => {
     localStorage.setItem('userConsent', 'denied');
-    window.gtag?.('consent', 'update', {
+    window.gtag('consent', 'update', {
       ad_storage: 'denied',
       analytics_storage: 'denied',
-      ad_personalization: 'denied',
-      ad_user_data: 'denied',
     });
-    window.dataLayer?.push({ event: 'consent_denied' });
-    setShowBanner(false);
+    window.dataLayer.push({ event: 'consent_denied' });
+    setShow(false);
+    onDecline?.();
   };
 
-  if (!visible || !showBanner) return null;
+  if (!visible || !show) return null;
 
   return (
     <div id="bannerStyles">
@@ -75,15 +71,16 @@ const ConsentBanner: React.FC<ConsentBannerProps> = ({ visible }) => {
       </p>
       <div id="bannerStyles_buttons">
         <Button onClick={decline}>Decline</Button>
-        <Button onClick={accept}
-                color="#ffffff"
-                hover_bgcolor="var(--theme_primary_color_blue_4)"
-                bgcolor="var(--theme_primary_color_blue_2)"
-                hover_color="#ffffff"
-        >Accept</Button>
+        <Button
+          onClick={accept}
+          color="#ffffff"
+          bgcolor="var(--theme_primary_color_blue_2)"
+          hover_bgcolor="var(--theme_primary_color_blue_4)"
+          hover_color="#ffffff"
+        >
+          Accept
+        </Button>
       </div>
     </div>
   );
-};
-
-export default ConsentBanner;
+}

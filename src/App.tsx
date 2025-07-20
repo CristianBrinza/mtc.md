@@ -1,61 +1,69 @@
+// src/App.tsx
 import './App.css';
-import { LanguageProvider } from './context/LanguageContext.tsx';
+import { useEffect } from 'react';
 import {
   BrowserRouter,
-  Navigate,
-  Route,
   Routes,
+  Route,
+  Navigate,
   useLocation,
 } from 'react-router-dom';
-// import Home from './pages/home/Home_v2.tsx';
-import NotFound from './pages/not_found/NotFound.tsx';
+import './App.css';
 import { I18nextProvider } from 'react-i18next';
-import i18n from './i18n.tsx';
-import Triple from './pages/personal/oferte/triple/Triple.tsx';
-import { routesConfig } from './routesConfig.tsx';
-import ScrollToTop from './components/scroll_to_top/ScrollToTop.tsx';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import ConsentBanner from './components/consent_banner/ConsentBanner.tsx';
-import { useEffect } from 'react';
-import { initAnalytics, trackPageview } from './initAnalytics.ts';
+import i18n from './i18n';
+import { initAnalytics, grantConsent, trackPageview } from './initAnalytics';
+import ConsentBanner from './components/consent_banner/ConsentBanner';
+import ScrollToTop from './components/scroll_to_top/ScrollToTop';
+import NotFound from './pages/not_found/NotFound';
+import { routesConfig } from './routesConfig';
+import { LanguageProvider } from './context/LanguageContext';
 
 function AnalyticsListener() {
-  const location = useLocation();
+  const { pathname, search } = useLocation();
   useEffect(() => {
-    // Trimite page_view la fiecare schimbare de URL
-    trackPageview(location.pathname + location.search);
-  }, [location]);
+    trackPageview(pathname + search, document.title);
+  }, [pathname, search]);
   return null;
 }
 
-function App() {
+function AppContent() {
   useEffect(() => {
     initAnalytics();
+    if (localStorage.getItem('userConsent') === 'granted') {
+      grantConsent();
+    }
   }, []);
 
+  return (
+    <>
+      <AnalyticsListener />
+      <ConsentBanner
+        visible={true}
+        onAccept={() => grantConsent()}
+        onDecline={() => {}}
+      />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Navigate to="/ro" replace />} />
+        <Route path="/" element={<NotFound />} />
+        <Route path="/:lang/" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
+        {routesConfig.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
+        ))}
+      </Routes>
+    </>
+  );
+}
+
+export default function App() {
   return (
     <I18nextProvider i18n={i18n}>
       <BrowserRouter>
         <LanguageProvider>
-          <AnalyticsListener />
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Navigate to="/ro" replace />} />
-            <Route path="/" element={<NotFound />} />
-            <Route path="/:lang/" element={<NotFound />} />
-            <Route path="/:lang/triple" element={<Triple />} />
-            <Route path="*" element={<NotFound />} />
-
-            {routesConfig.map((route, index) => (
-              <Route key={index} path={route.path} element={route.element} />
-            ))}
-          </Routes>
-          <ConsentBanner visible={true} />
+          <AppContent />
         </LanguageProvider>
       </BrowserRouter>
     </I18nextProvider>
   );
 }
-
-export default App;

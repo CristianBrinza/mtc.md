@@ -1,23 +1,18 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { trackPageview } from '../../initAnalytics.ts';
+import { trackPageview } from '../../initAnalytics';
 
-interface ScrollToTopProps {
-  behavior?: ScrollBehavior; // 'auto' | 'smooth'
+interface Props {
+  behavior?: ScrollBehavior;
 }
 
-const ScrollToTop: React.FC<ScrollToTopProps> = ({ behavior = 'auto' }) => {
-  const { pathname } = useLocation();
+export default function ScrollToTop({ behavior = 'auto' }: Props) {
+  const { pathname, search } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior,
-    });
-    trackPageview(pathname);
-  }, [pathname, behavior]);
+    window.scrollTo({ top: 0, behavior });
+    trackPageview(pathname + search, document.title);
+  }, [pathname, search, behavior]);
 
   return null;
-};
-
-export default ScrollToTop;
+}

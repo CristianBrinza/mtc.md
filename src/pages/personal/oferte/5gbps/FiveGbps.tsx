@@ -137,11 +137,8 @@ export default function FiveGbps() {
         </div>
       </div>
       <div className={styles.what}>
-
         <div className={styles.what_right}>
-          <div className={styles.what_title}>
-            De ce ai nevoie de 2.1 Gbps ?
-          </div>
+          <div className={styles.what_title}>De ce ai nevoie de 2.1 Gbps ?</div>
           Explorează tehnologia care redefinește viitorul
           <br />
           Viteză maxima, latență ultra‑mică și stabilitate rock‑solid – deja
