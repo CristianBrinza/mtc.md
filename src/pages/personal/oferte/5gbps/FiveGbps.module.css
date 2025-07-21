@@ -24,7 +24,7 @@
   max-width: 1180px;
   display: flex;
   gap: 10px;
-  margin: 40px auto 70px;
+  margin: 40px auto 65px;
   justify-content: center;
 }
 .why_card {
@@ -54,8 +54,34 @@
   max-width: 780px;
   margin: 20px auto 10px;
 }
+
+.roaming_carousell {
+  width: 100%;
+  max-width: 1180px;
+  margin-top: 5px;
+}
+.roaming_carousell_block_sp {
+  background: #dfe4fd;
+  padding: 2px;
+  box-sizing: border-box;
+  width: 384px;
+  border-radius: 22px;
+}
+.roaming_carousell_block_sp_title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: Poppins, sans-serif;
+  text-align: center;
+  width: 100%;
+  margin: 3px auto -28px;
+}
+.roaming_carousell_block_sp .roaming_carousell_block_inside {
+}
+.roaming_carousell_block_inside {
+}
 .abonaments_block_inside {
-  margin: 0 auto;
+  margin: 30px 0 auto;
   background-color: #f2f3f7;
   border: 1.25px transparent var(--theme_primary_color_gray_3);
   width: 380px;
@@ -241,7 +267,7 @@
 .what {
   width: 100%;
   max-width: 1180px;
-  margin: 10px auto 0px;
+  margin: 15px auto 0px;
   display: flex;
   gap: 20px;
 }
@@ -284,30 +310,54 @@
   padding: 40px 30px 40px 30px;
 }
 
-
-.modem{
+.modem {
   width: 100%;
   height: 300px;
-  background: #001428;
+  /*background: #001428;*/
+  background: linear-gradient(90deg, #001428 0%, #00478e 100%);
   margin: 60px auto 0px;
 }
-.modem_inside{
+.modem_img {
+  position: absolute;
+  max-width: 580px;
+  top: 0;
+  right: 0;
+}
+.modem_inside {
+  position: relative;
   width: 100%;
   max-width: 1180px;
-  margin: 0 auto ;
-  padding: 40px 0 00px;
+  margin: 0 auto;
+  padding: 0px 0 0px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
 }
-.modem_inside_title{
-text-align: start;
-  padding:0;
+.modem_inside_title {
+  text-align: start;
+  padding: 0;
   margin: 0;
-  color:#ffffff;
+  color: #ffffff;
 }
-.modem_inside_text{
-  color:#ffffff;
+.modem_inside_text {
+  color: #ffffff;
   max-width: 580px;
   margin: 20px 0 0;
+}
+
+.modem_inside_list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 20px 0 0;
+}
+.modem_inside_row {
+  color: #ffffff;
+  display: flex;
+  gap: 5px;
 }
 @media (max-width: 1300px) {
   .hero {

@@ -207,19 +207,37 @@ export default function FiveGbps() {
       </div>
 
       <div className={styles.modem}>
-<div className={styles.modem_inside}>
-  <div className={`${styles.modem_inside_title} title_3`}>
-    Moldtelecom OptiXstar
-  </div>
+        <div className={styles.modem_inside}>
+          <img
+            className={styles.modem_img}
+            src="/images/landings/45271083.webp"
+            alt="Moldtelecom"
+          />
+          <div className={`${styles.modem_inside_title} title_3`}>
+            Moldtelecom OptiXstar
+          </div>
 
- <div className={styles.modem_inside_text}>
-  <b> XGS‑PON</b> & <b>Wi‑Fi6</b>: acces ultra‑broadband, acoperire totală și performanță de top pentru voce și date – soluția optică a viitorului.
- </div>
+          <div className={styles.modem_inside_text}>
+            <b> XGS‑PON</b> & <b>Wi‑Fi6</b>: acces ultra‑broadband, acoperire
+            totală și performanță de top pentru voce și date – soluția optică a
+            viitorului.
+          </div>
 
-  <div>
-    până la 10 Gbps la nivel tehnologic
-  </div>
-</div>
+          {/*<div className={styles.modem_inside_list}>*/}
+          {/*  <div className={styles.modem_inside_row}>*/}
+          {/*    <div  className={styles.modem_inside_icon}>*/}
+          {/*      <Icon type={'empty'}/>*/}
+          {/*    </div>*/}
+          {/*    până la 10 Gbps la nivel tehnologic*/}
+          {/*  </div>*/}
+          {/*  <div className={styles.modem_inside_row}>*/}
+          {/*    <div  className={styles.modem_inside_icon}>*/}
+          {/*      <Icon type={'empty'}/>*/}
+          {/*    </div>*/}
+          {/*    până la 10 Gbps la nivel tehnologic*/}
+          {/*  </div>*/}
+          {/*</div>*/}
+        </div>
       </div>
 
       <div className={`title_3 ${styles.domenii}`}>Descoperă abonamentele</div>
@@ -289,67 +307,74 @@ export default function FiveGbps() {
           </div>
         </div>
         <div className={styles.abonaments_block}>
-          <div className={styles.abonaments_block_inside}>
-            <div className={styles.abonaments_block_inside_pretitle}>
-              Fibră optică + Wi-Fi Mesh
-            </div>
-            <div className={styles.abonaments_block_inside_title}>5.5 Gbps</div>
+          <div className={styles.roaming_carousell_block_sp}>
+            <div className={styles.roaming_carousell_block_sp_title}>NEW</div>
+            <div className={styles.abonaments_block_inside}>
+              <div className={styles.abonaments_block_inside_pretitle}>
+                Fibră optică + Wi-Fi Mesh
+              </div>
+              <div className={styles.abonaments_block_inside_title}>
+                5.5 Gbps
+              </div>
 
-            <div className={styles.abonaments_block_inside_subtitle}>
-              <div className={styles.abonaments_block_inside_subtitle_icon}>
-                <Icon
-                  type={'modem'}
-                  color={'var(--theme_primary_color_blue_2)'}
-                />
+              <div className={styles.abonaments_block_inside_subtitle}>
+                <div className={styles.abonaments_block_inside_subtitle_icon}>
+                  <Icon
+                    type={'modem'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                Router Wi-Fi 6 inclus
               </div>
-              Router Wi-Fi 6 inclus
-            </div>
-            <div className={styles.abonaments_block_inside_subtitle}>
-              <div className={styles.abonaments_block_inside_subtitle_icon}>
-                <Icon
-                  type={'empty'}
-                  color={'var(--theme_primary_color_blue_2)'}
-                />
-              </div>
-              <span>
-                x2 <b>Mesh Wi-Fi</b> inclus{' '}
-                <span className={styles.abonaments_block_inside_subtitle_small}>
-                  (98 lei/luna)
+              <div className={styles.abonaments_block_inside_subtitle}>
+                <div className={styles.abonaments_block_inside_subtitle_icon}>
+                  <Icon
+                    type={'empty'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <span>
+                  x2 <b>Mesh Wi-Fi</b> inclus{' '}
+                  <span
+                    className={styles.abonaments_block_inside_subtitle_small}
+                  >
+                    (98 lei/luna)
+                  </span>
                 </span>
-              </span>
-            </div>
+              </div>
 
-            <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
-                  50% reducere pentru 2 ani
-                </div>
-              </div>
-              <div className={styles.mobile_carousell_price}>
-                <div>499</div>
-                <div>
-                  <div className={styles.mobile_carousell_price_valuta}>
-                    {t('lei_luna')}
-                  </div>
-                  <div className={styles.mobile_carousell_price_old}>
-                    <span>790 {t('lei_luna')}</span>
+              <div className={styles.wifi_carousell_block_inside_btns}>
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    50% reducere pentru 2 ani
                   </div>
                 </div>
+                <div className={styles.mobile_carousell_price}>
+                  <div>499</div>
+                  <div>
+                    <div className={styles.mobile_carousell_price_valuta}>
+                      {t('lei_luna')}
+                    </div>
+                    <div className={styles.mobile_carousell_price_old}>
+                      <span>790 {t('lei_luna')}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
+              <Button
+                // onClick={() => setShowPopupFunction('aaa')}
+                color="#fff"
+                bgcolor="var(--theme_primary_color_blue_4)"
+                border="var(--theme_primary_color_blue_4)"
+                hover_border="var(--theme_primary_color_blue_2)"
+                hover_bgcolor="var(--theme_primary_color_blue_2)"
+                hover_color="var(--theme_primary_color_blue_4)"
+                icon="arrow_right"
+                className={styles.mobile_carousell_block_btn_buy}
+              >
+                {t('order_now')}
+              </Button>
             </div>
-            <Button
-              // onClick={() => setShowPopupFunction('aaa')}
-              color="#fff"
-              bgcolor="var(--theme_primary_color_blue_4)"
-              border="var(--theme_primary_color_blue_4)"
-              hover_border="var(--theme_primary_color_blue_2)"
-              hover_bgcolor="var(--theme_primary_color_blue_2)"
-              hover_color="var(--theme_primary_color_blue_4)"
-              icon="arrow_right"
-              className={styles.mobile_carousell_block_btn_buy}
-            >
-              {t('order_now')}
-            </Button>
           </div>
         </div>
       </Slider>
