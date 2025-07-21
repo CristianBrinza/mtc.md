@@ -266,6 +266,24 @@
   line-height: 28px;
   margin-bottom: 20px;
 }
+.what_tsubitle {
+  margin: -10px 0 10px;
+}
+.what_list {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+.what_list_row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.what_right_2 {
+  padding: 40px 30px 40px 30px;
+}
+
 @media (max-width: 1300px) {
   .hero {
     width: 1300px;

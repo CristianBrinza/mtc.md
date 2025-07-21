@@ -133,18 +133,71 @@ export default function FiveGbps() {
           Viteză maxima, latență ultra‑mică și stabilitate rock‑solid – deja
           validat de profesioniști și pregătit să susțină simultan streaming{' '}
           <b>8K impecabil</b>, <b>gaming hardcore</b>, <b>backup instant</b>,{' '}
-          <b>Cloud</b> și inovatie.
+          <b>Cloud</b> și <b>inovatie</b>.
         </div>
       </div>
       <div className={styles.what}>
-        <div className={styles.what_right}>
-          <div className={styles.what_title}>De ce ai nevoie de 2.1 Gbps ?</div>
-          Explorează tehnologia care redefinește viitorul
-          <br />
-          Viteză maxima, latență ultra‑mică și stabilitate rock‑solid – deja
-          validat de profesioniști și pregătit să susțină simultan streaming{' '}
-          <b>8K impecabil</b>, <b>gaming hardcore</b>, <b>backup instant</b>,{' '}
-          <b>Cloud</b> și inovatie.
+        <div className={`${styles.what_right} ${styles.what_right_2}`}>
+          <div className={styles.what_title}>De ce ai nevoie de 5.5 Gbps ?</div>
+          <div className={styles.what_tsubitle}>
+            Performanță maxima, semnal puternic, în fiecare colț al locuinței!
+          </div>
+          <div className={styles.what_list}>
+            <div className={styles.what_list_row}>
+              <div className={styles.what_list_icon}>
+                <Icon
+                  type={'gaming'}
+                  size={'32px'}
+                  color={'var(--theme_primary_color_blue_2)'}
+                />
+              </div>
+              <span>
+                Dacă ești <b>gamer</b> sau <b>streamer</b> – <br />
+                fără laguri, fără întreruperi
+              </span>
+            </div>
+            <div className={styles.what_list_row}>
+              <div className={styles.what_list_icon}>
+                <Icon
+                  type={'home'}
+                  size={'32px'}
+                  color={'var(--theme_primary_color_blue_2)'}
+                />
+              </div>
+              <span>
+                {' '}
+                Dacă ai <b>Smart Home</b> și multe dispozitive IoT – <br />
+                fără întârzieri, conexiune instantă
+              </span>
+            </div>
+            <div className={styles.what_list_row}>
+              <div className={styles.what_list_icon}>
+                <Icon
+                  type={'family'}
+                  size={'32px'}
+                  color={'var(--theme_primary_color_blue_2)'}
+                />
+              </div>
+              <span>
+                Dacă ai <b>familie mare</b> și <b>activă</b> pe Internet –{' '}
+                <br />
+                joacă simultan și fă streaming în rezoluție 8K
+              </span>
+            </div>
+            <div className={styles.what_list_row}>
+              <div className={styles.what_list_icon}>
+                <Icon
+                  type={'office'}
+                  size={'32px'}
+                  color={'var(--theme_primary_color_blue_2)'}
+                />
+              </div>
+              <span>
+                Un <b>job remote</b> – <br />
+                lucrează fără griji cu aplicații critice
+              </span>
+            </div>
+          </div>
         </div>
         <img
           src="/images/landings/88618812.webp"
@@ -286,7 +339,7 @@ export default function FiveGbps() {
       </Slider>
       <div className={styles.roaming_btns}>
         <Button
-          to={`https://www.moldtelecom.md/${t('lang')}/personal/Abonamente_Telefonie_Mobila`}
+          to={`https://www.moldtelecom.md/${t('lang')}/personal/Promo_Abonamente-TV-Internet`}
           color="var(--theme_primary_color_blue_4)"
           bgcolor="var(--theme_primary_color_blue_3)"
           border="var(--theme_primary_color_blue_3)"
@@ -297,7 +350,7 @@ export default function FiveGbps() {
           Promo Abonamente
         </Button>
         <Button
-          to={`https://mtc.md/my-mtc`}
+          to={`https://www.moldtelecom.md/${t('lang')}/echipamente-wifi`}
           color="var(--theme_primary_color_blue_4)"
           bgcolor="transparent"
           border="var(--theme_primary_color_blue_3)"

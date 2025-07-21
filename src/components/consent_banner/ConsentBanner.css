@@ -9,7 +9,7 @@
   background-color: #fff;
   color: var(--theme_primary_color_black);
   text-align: center;
-  z-index: 999999999999;
+  z-index: 99999999999;
   display: flex;
   gap: 15px;
   align-items: center;
