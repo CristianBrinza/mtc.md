@@ -206,6 +206,22 @@ export default function FiveGbps() {
         />
       </div>
 
+      <div className={styles.modem}>
+<div className={styles.modem_inside}>
+  <div className={`${styles.modem_inside_title} title_3`}>
+    Moldtelecom OptiXstar
+  </div>
+
+ <div className={styles.modem_inside_text}>
+  <b> XGS‑PON</b> & <b>Wi‑Fi6</b>: acces ultra‑broadband, acoperire totală și performanță de top pentru voce și date – soluția optică a viitorului.
+ </div>
+
+  <div>
+    până la 10 Gbps la nivel tehnologic
+  </div>
+</div>
+      </div>
+
       <div className={`title_3 ${styles.domenii}`}>Descoperă abonamentele</div>
       <Slider {...settings} className={styles.abonaments}>
         <div className={styles.abonaments_block}>
