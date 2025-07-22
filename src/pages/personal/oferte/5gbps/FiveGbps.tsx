@@ -200,7 +200,7 @@ export default function FiveGbps() {
           </div>
         </div>
         <img
-          src="/images/landings/88618812.webp"
+          src="/images/landings/88618813.webp"
           alt="Moldtelecom"
           className={styles.what_img}
         />

@@ -364,6 +364,31 @@
     width: 1300px;
     margin-left: calc((1300px - 100vw) / -2);
   }
+  .why_card{
+    width: 300px
+  }
+  .what_right{
+    max-width: 510px;
+    padding: 40px 20px 40px 30px;
+  }
+  .what{
+    max-width: 930px;
+  }
+  .what_img{
+    max-width: 400px;
+  }
+  .modem_inside{
+    max-width: 900px;
+  }
+  .eco_card{
+    max-width: 430px;
+  }
+  .modem_inside_text {
+    max-width: 430px;
+  }
+  .modem_img{
+    right: -90px;
+  }
 }
 @media (max-width: 1150px) {
   .hero {
