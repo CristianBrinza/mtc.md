@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import './ConsentBanner.css';
 import Button from '../Button';
-import { trackPageview } from '../../initAnalytics';
 
 declare global {
   interface Window {
@@ -37,7 +36,6 @@ export default function ConsentBanner({ visible, onAccept, onDecline }: Props) {
       ad_storage: 'granted',
       analytics_storage: 'granted',
     });
-    trackPageview(window.location.pathname);
     window.dataLayer.push({ event: 'consent_granted' });
     setShow(false);
     onAccept?.();
