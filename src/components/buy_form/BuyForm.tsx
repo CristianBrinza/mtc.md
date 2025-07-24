@@ -46,17 +46,36 @@ export default function BuyForm({
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
+
     let token = '';
     if (window.grecaptcha) {
       try {
         token = await window.grecaptcha.execute(siteKey, { action: tag });
-      } catch {}
+      } catch {
+        // silently ignore recaptcha errors
+      }
     }
     data.set('recaptcha_response', token);
+
     try {
-      const res = await fetch(form.action, { method: form.method, body: data });
-      if (res.ok) onSuccess?.();
-      else onError?.();
+      const res = await fetch(form.action, {
+        method: form.method,
+        body: data,
+      });
+
+      if (!res.ok) {
+        onError?.();
+        return;
+      }
+
+      const result: { success: boolean; response: string } = await res.json();
+      const parsed = JSON.parse(result.response);
+
+      if (result.success && parsed.score > 0.6) {
+        onSuccess?.();
+      } else {
+        onError?.();
+      }
     } catch {
       onError?.();
     }
