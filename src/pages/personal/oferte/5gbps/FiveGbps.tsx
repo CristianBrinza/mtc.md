@@ -65,6 +65,29 @@ export default function FiveGbps() {
             alt={t('wifi_plus.hero.alt')}
           />
         </div>
+        <div className={styles.hero_btn}>
+          <Button
+            onClick={() => {
+              const section = document.getElementById('abonamente');
+              if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
+            }}
+            color="var(--theme_primary_color_blue_4)"
+            bgcolor="var(--theme_primary_color_blue_2)"
+            border="var(--theme_primary_color_blue_2)"
+            hover_border="var(--theme_primary_color_blue_2)"
+            hover_bgcolor="var(--theme_primary_color_blue_2)"
+            hover_color="var(--theme_primary_color_blue_1)"
+            icon="arrow_right"
+            className={styles.mobile_carousell_block_btn_buy}
+          >
+            <b>{t('order_now')}</b>
+          </Button>
+          <a href={'tel:022500500'}>
+            /0(22) 500-500
+          </a>
+        </div>
       </Hero>
 
       <div className={`title_3 ${styles.title_main}`}>
@@ -153,7 +176,7 @@ export default function FiveGbps() {
               </div>
               <span>
                 Dacă ești <b>gamer</b> sau <b>streamer</b> – <br />
-                fără laguri, fără întreruperi
+                VR/AR și multiplayer, fără laguri, fără întreruperi
               </span>
             </div>
             <div className={styles.what_list_row}>
@@ -242,7 +265,7 @@ export default function FiveGbps() {
 
       <div className={`title_3 ${styles.domenii}`}>Descoperă abonamentele</div>
       <Slider {...settings} className={styles.abonaments}>
-        <div className={styles.abonaments_block}>
+        <div id={'abonamente'} className={styles.abonaments_block}>
           <div className={styles.abonaments_block_inside}>
             <div className={styles.abonaments_block_inside_pretitle}>
               Fibră optică + Wi-Fi Mesh
@@ -442,6 +465,16 @@ export default function FiveGbps() {
         </DetailsBlock>
       </Details>
 
+      <div className={styles.roaming_warning}>
+        <div className={`${styles.roaming_warning_red}`}></div>
+        <div className={styles.roaming_warning_inside}>
+          Vitezele de 2,1 Gbps și 5,5 Gbps sunt posibile datorită tehnologiei XGS-PON — cea mai nouă generație de fibră optică, care permite viteze de până la 10 Gbps per port.
+          <br/>
+          {/*<br/>*/}
+          Totuși, pentru a beneficia efectiv de aceste viteze, dispozitivele terminale de acasă (PC, laptop, tabletă, router) trebuie să suporte conexiuni la aceste viteze. În caz contrar, viteza maximă va fi limitată de performanța echipamentului propriu.
+        </div>
+      </div>
+
       <div className={styles.eco}>
         <div className={styles.eco_card}>
           <div className={styles.eco_icon}>
@@ -486,6 +519,20 @@ export default function FiveGbps() {
           video în direct, sincronizări de backup în cloud sau lucrul de acasă
           care necesită transfer rapid de fișiere.
         </FaqQAV2>
+        <FaqQAV2
+          id_faq="112482910"
+          question={'Am deja GPON. Merită să trec la XGS‑PON?'}
+        >
+          Absolut. XGS‑PON nu e doar un upgrade – e o revoluție. Obții viteze simetrice de până la 10 Gbps, latență ultraredusă și stabilitate în orice scenariu: muncă remote, backup-uri masive, live streaming sau mai mulți utilizatori conectați simultan.
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112482910"
+          question={'Ce face Wi‑Fi 6 diferit față de versiunile anterioare?'}
+        >
+          Wi‑Fi 6 este mai rapid, mai stabil și mai eficient. Permite conectarea simultană a mai multor dispozitive fără congestie și oferă o acoperire mai bună în locuințe mari sau cu pereți groși.
+        </FaqQAV2>
+
+
       </FaqV2>
       <Footer disclaimer={true} />
     </>
