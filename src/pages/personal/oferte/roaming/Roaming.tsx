@@ -486,7 +486,11 @@ export default function Roaming() {
 
       <Details>
         <DetailsBlock title={t('roaming.fair_usage.title')}>
-          <div dangerouslySetInnerHTML={{ __html: t('roaming.fair_usage.content') }} />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: t('roaming.fair_usage.content'),
+            }}
+          />
         </DetailsBlock>
       </Details>
 

@@ -31,12 +31,6 @@ export default function ConsentBanner({ visible, onAccept, onDecline }: Props) {
   }, []);
 
   const accept = () => {
-    localStorage.setItem('userConsent', 'granted');
-    window.gtag('consent', 'update', {
-      ad_storage: 'granted',
-      analytics_storage: 'granted',
-    });
-    window.dataLayer.push({ event: 'consent_granted' });
     setShow(false);
     onAccept?.();
   };

@@ -11,7 +11,7 @@ import {
 import './App.css';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
-import { initAnalytics, grantConsent, trackPageview } from './initAnalytics';
+import { grantConsent, trackPageview } from './initAnalytics';
 import ConsentBanner from './components/consent_banner/ConsentBanner';
 import ScrollToTop from './components/scroll_to_top/ScrollToTop';
 import NotFound from './pages/not_found/NotFound';
@@ -21,14 +21,15 @@ import { LanguageProvider } from './context/LanguageContext';
 function AnalyticsListener() {
   const { pathname, search } = useLocation();
   useEffect(() => {
-    trackPageview(pathname + search, document.title);
+    if (localStorage.getItem('userConsent') === 'granted') {
+      trackPageview(pathname + search, document.title);
+    }
   }, [pathname, search]);
   return null;
 }
 
 function AppContent() {
   useEffect(() => {
-    initAnalytics();
     if (localStorage.getItem('userConsent') === 'granted') {
       grantConsent();
     }

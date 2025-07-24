@@ -84,9 +84,7 @@ export default function FiveGbps() {
           >
             <b>{t('order_now')}</b>
           </Button>
-          <a href={'tel:022500500'}>
-            /0(22) 500-500
-          </a>
+          <a href={'tel:022500500'}>/0(22) 500-500</a>
         </div>
       </Hero>
 
@@ -468,10 +466,15 @@ export default function FiveGbps() {
       <div className={styles.roaming_warning}>
         <div className={`${styles.roaming_warning_red}`}></div>
         <div className={styles.roaming_warning_inside}>
-          Vitezele de 2,1 Gbps și 5,5 Gbps sunt posibile datorită tehnologiei XGS-PON — cea mai nouă generație de fibră optică, care permite viteze de până la 10 Gbps per port.
-          <br/>
+          Vitezele de 2,1 Gbps și 5,5 Gbps sunt posibile datorită tehnologiei
+          XGS-PON — cea mai nouă generație de fibră optică, care permite viteze
+          de până la 10 Gbps per port.
+          <br />
           {/*<br/>*/}
-          Totuși, pentru a beneficia efectiv de aceste viteze, dispozitivele terminale de acasă (PC, laptop, tabletă, router) trebuie să suporte conexiuni la aceste viteze. În caz contrar, viteza maximă va fi limitată de performanța echipamentului propriu.
+          Totuși, pentru a beneficia efectiv de aceste viteze, dispozitivele
+          terminale de acasă (PC, laptop, tabletă, router) trebuie să suporte
+          conexiuni la aceste viteze. În caz contrar, viteza maximă va fi
+          limitată de performanța echipamentului propriu.
         </div>
       </div>
 
@@ -523,16 +526,19 @@ export default function FiveGbps() {
           id_faq="112482910"
           question={'Am deja GPON. Merită să trec la XGS‑PON?'}
         >
-          Absolut. XGS‑PON nu e doar un upgrade – e o revoluție. Obții viteze simetrice de până la 10 Gbps, latență ultraredusă și stabilitate în orice scenariu: muncă remote, backup-uri masive, live streaming sau mai mulți utilizatori conectați simultan.
+          Absolut. XGS‑PON nu e doar un upgrade – e o revoluție. Obții viteze
+          simetrice de până la 10 Gbps, latență ultraredusă și stabilitate în
+          orice scenariu: muncă remote, backup-uri masive, live streaming sau
+          mai mulți utilizatori conectați simultan.
         </FaqQAV2>
         <FaqQAV2
           id_faq="112482910"
           question={'Ce face Wi‑Fi 6 diferit față de versiunile anterioare?'}
         >
-          Wi‑Fi 6 este mai rapid, mai stabil și mai eficient. Permite conectarea simultană a mai multor dispozitive fără congestie și oferă o acoperire mai bună în locuințe mari sau cu pereți groși.
+          Wi‑Fi 6 este mai rapid, mai stabil și mai eficient. Permite conectarea
+          simultană a mai multor dispozitive fără congestie și oferă o acoperire
+          mai bună în locuințe mari sau cu pereți groși.
         </FaqQAV2>
-
-
       </FaqV2>
       <Footer disclaimer={true} />
     </>
