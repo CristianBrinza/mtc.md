@@ -58,11 +58,23 @@ export function initAnalytics() {
 
 export function grantConsent() {
   if (!initialized) return;
+  // update consent flags …
   window.gtag('consent', 'update', {
     ad_storage: 'granted',
     analytics_storage: 'granted',
   });
+  localStorage.setItem('userConsent', 'granted');
+  // then fire the first page‑view
   ReactGA.send('pageview');
+}
+
+/** call on mount to unlock route‑based pageviews **without** firing one */
+export function updateConsent() {
+  if (!initialized) return;
+  window.gtag('consent', 'update', {
+    ad_storage: 'granted',
+    analytics_storage: 'granted',
+  });
   localStorage.setItem('userConsent', 'granted');
 }
 

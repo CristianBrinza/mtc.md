@@ -1,43 +1,19 @@
 // src/App.tsx
 import './App.css';
-import { useEffect } from 'react';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate,
-  useLocation,
-} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
-import { grantConsent, trackPageview } from './initAnalytics';
+import { grantConsent } from './initAnalytics';
 import ConsentBanner from './components/consent_banner/ConsentBanner';
 import ScrollToTop from './components/scroll_to_top/ScrollToTop';
 import NotFound from './pages/not_found/NotFound';
 import { routesConfig } from './routesConfig';
 import { LanguageProvider } from './context/LanguageContext';
 
-function AnalyticsListener() {
-  const { pathname, search } = useLocation();
-  useEffect(() => {
-    if (localStorage.getItem('userConsent') === 'granted') {
-      trackPageview(pathname + search, document.title);
-    }
-  }, [pathname, search]);
-  return null;
-}
-
 function AppContent() {
-  useEffect(() => {
-    if (localStorage.getItem('userConsent') === 'granted') {
-      grantConsent();
-    }
-  }, []);
-
   return (
     <>
-      <AnalyticsListener />
       <ConsentBanner
         visible={true}
         onAccept={() => grantConsent()}
