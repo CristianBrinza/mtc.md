@@ -485,24 +485,8 @@ export default function Roaming() {
       </div>
 
       <Details>
-        <DetailsBlock title={'Condiții de utilizare rezonabilă a serviciilor Roaming'}>
-          (Condiții de utilizare rezonabilă a serviciilor Roaming în țările din Uniunea Europeană și Spațiul Economic European)
-<br/> <br/>
-          <b>Utilizatorul este responsabil pentru utilizarea abuzivă a ofertelor sau opțiunilor promoționale.</b> Prin „utilizare abuzivă a serviciilor incluse în abonament” se înțelege:
-         <ul>
-           <li>
-             	efectuarea de apeluri către alți operatori naționali și/sau trimiterea de SMS-uri către alți operatori naționali către mai mult de 200 de numere telefonice unice într-o perioadă de facturare;
-           </li> <li>	efectuarea de apeluri nelimitate către alți operatori naționali care depășesc 3000 de minute într-o perioadă de facturare, cu condiția ca numărul de minute efectuate să fie de cel puțin două ori mai mare decât numărul minutelor primite de la alți operatori naționali în aceeași perioadă;
-         </li> <li>	utilizarea, consumul sau numărul de zile în roaming care depășește utilizarea, consumul sau numărul de zile corespunzător la nivel național pentru același serviciu.
-
-           </li>
-         </ul>
-          Utilizarea serviciului de roaming este considerată rezonabilă atât timp cât acesta este folosit <b>exclusiv în cadrul călătoriilor ocazionale în afara teritoriului Republicii Moldova</b>.
-         <br/>
-          În cazul în care se constată dovezi de utilizare excesivă sau abuzivă a serviciului de roaming, <b>Moldtelecom va notifica Clientul cu privire la comportamentul identificat</b>, printr-o avertizare prealabilă.
-          <br/> <br/>
-          De asemenea, Moldtelecom își rezervă dreptul de a <b>restricționa sau suspenda utilizarea serviciului</b> în cazul continuării utilizării abuzive, ilegale și/sau contrare prevederilor Contractului de Abonament, inclusiv în situații de tentativă de fraudă care ar putea prejudicia Moldtelecom sau terți.
-
+        <DetailsBlock title={t('roaming.fair_usage.title')}>
+          <div dangerouslySetInnerHTML={{ __html: t('roaming.fair_usage.content') }} />
         </DetailsBlock>
       </Details>
 
