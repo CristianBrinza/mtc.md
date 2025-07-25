@@ -21,6 +21,7 @@ import AppRedirect from './components/app/AppRedirect.tsx';
 import SmsServices from './pages/personal/oferte/sms_services/SmsServices.tsx';
 import MobileOld from './pages/personal/oferte/mobile/Mobile_old.tsx';
 import FiveGbps from './pages/personal/oferte/5gbps/FiveGbps.tsx';
+import Fibra from './pages/business/fibra/Fibra.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -133,6 +134,10 @@ export const routesConfig: RouteConfig[] = [
   {
     path: '/:lang/business/gps-track',
     element: React.createElement(GpsTrack),
+  },
+  {
+    path: '/:lang/business/fibra',
+    element: React.createElement(Fibra),
   },
   {
     path: '*',

@@ -1037,12 +1037,15 @@ export default function Mobile() {
           </div>
         ) : (
           <div className={styles.buy_popup}>
-            <img
-              className={styles.buy_popup_img}
-              src="/images/landings/22271083.webp"
-              alt="Moldtelecom"
-            />
-            <div>
+            <div className={styles.buy_popup_img_div}>
+              {' '}
+              <img
+                className={styles.buy_popup_img}
+                src="/images/landings/22271083.webp"
+                alt="Moldtelecom"
+              />
+            </div>
+            <div className={styles.popupBuy_left}>
               <div>Abonamentul ales:</div>
               <div className={styles.selected_popup_subcription}>
                 <div className={styles.popup_selected}>{activePopupConfig}</div>

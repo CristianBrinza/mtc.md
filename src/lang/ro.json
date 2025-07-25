@@ -1890,5 +1890,12 @@
       "title": "Roaming UE",
       "description": "Tarife ca acasă, acum și peste hotare"
     }
+  },
+  "bussines_fibra": {
+    "breadcrumb": {
+      "internet": "Internet",
+      "fibra": "Fibra"
+    },
+    "hero": { "alt": "Moldtelecom" }
   }
 }

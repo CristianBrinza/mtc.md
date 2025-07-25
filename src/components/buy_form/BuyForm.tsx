@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 interface BuyFormProps {
   config: string;
+  className?: string;
   tag: string;
   service: string;
   onSuccess?: () => void;
@@ -24,6 +25,7 @@ export default function BuyForm({
   service,
   onSuccess,
   onError,
+  className,
 }: BuyFormProps) {
   const { t } = useTranslation();
   const [phone, setPhone] = useState('');
@@ -85,7 +87,7 @@ export default function BuyForm({
     <form
       action="https://dev3.moldtelecom.md/new_comanda_marketing/"
       method="post"
-      className={styles.popup_form}
+      className={`${styles.popup_form} ${className}`}
       onSubmit={handleSubmit}
     >
       <Input
