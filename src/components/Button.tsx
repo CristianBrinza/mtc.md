@@ -20,6 +20,7 @@ interface ButtonProps {
   disabled?: boolean;
   id?: string;
   icon?: string;
+  icon_side?: 'left' | 'right';
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -39,6 +40,7 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
   id,
   icon,
+  icon_side = 'right',
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
@@ -119,12 +121,15 @@ const Button: React.FC<ButtonProps> = ({
       className={`mtc_button ${className}`}
       rel="noopener noreferrer"
     >
+      {icon && icon_side === 'left' && (
+        <Icon type={icon as keyof typeof icons} color={buttonIconColor} />
+      )}
       {children}
-      {icon && (
+      {icon && icon_side === 'right' && (
         <Icon
           className="Button_icon"
           type={icon as keyof typeof icons}
-          color={color}
+          color={buttonIconColor}
         />
       )}
     </a>
@@ -138,12 +143,15 @@ const Button: React.FC<ButtonProps> = ({
       onClick={handleClick}
       className={`mtc_button ${className}`}
     >
+      {icon && icon_side === 'left' && (
+        <Icon type={icon as keyof typeof icons} color={buttonIconColor} />
+      )}
       {children}
-      {icon && (
+      {icon && icon_side === 'right' && (
         <Icon
           className="Button_icon"
           type={icon as keyof typeof icons}
-          color={color}
+          color={buttonIconColor}
         />
       )}
     </Link>
@@ -158,8 +166,11 @@ const Button: React.FC<ButtonProps> = ({
       className={`mtc_button ${className}`}
       disabled={disabled}
     >
+      {icon && icon_side === 'left' && (
+        <Icon type={icon as keyof typeof icons} color={buttonIconColor} />
+      )}
       {children}
-      {icon && (
+      {icon && icon_side === 'right' && (
         <Icon
           className="Button_icon"
           type={icon as keyof typeof icons}

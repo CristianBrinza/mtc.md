@@ -16,6 +16,7 @@ import FaqQAV2 from '../../../components/faqV2/FaqQAV2.tsx';
 import FaqV2 from '../../../components/faqV2/FaqV2.tsx';
 import Popup from '../../../components/Popup/Popup.tsx';
 import { useState } from 'react';
+import Details, { DetailsBlock } from '../../../components/details/Details.tsx';
 
 export default function Fibra() {
   const { t } = useTranslation();
@@ -95,7 +96,9 @@ export default function Fibra() {
 
       <Slider {...settings} className={styles.mobile_carousell}>
         <div>
-          <div className={styles.mobile_carousell_block}>
+          <div
+            className={`${styles.mobile_carousell_block} ${styles.mobile_carousell_block_sp} `}
+          >
             <div className={styles.mobile_carousell_tags}>
               {/*<div className={styles.mobile_carousell_tag}>*/}
               {/*  New*/}
@@ -568,7 +571,33 @@ export default function Fibra() {
           </div>
         </div>
       </Slider>
+      <Details>
+        <DetailsBlock title={'Condiții de utilizare Abonamente'}>
+          <ul>
+            <li>text</li>
+          </ul>
+        </DetailsBlock>
+      </Details>
 
+      <div className={styles.call_us}>
+        <div className={`${styles.call_us_title} title_3`}>
+          Căutați cele mai bune viteze de internet pentru afacerea ta?
+        </div>
+        Pentru abonamente cu viteze mai mari sau soluții personalizate
+        <div>
+          <Button
+            onClick={() => setShowPopupFunction('aaa')}
+            color={'var(--theme_primary_color_blue_4)'}
+            bgcolor={'var(--theme_primary_color_blue_3)'}
+            border={'var(--theme_primary_color_blue_3)'}
+            hover_border={'var(--theme_primary_color_blue_2)'}
+            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+            icon={'arrow_right'}
+          >
+            Contacteaza-ne
+          </Button>
+        </div>
+      </div>
       <MyApp style_type={'blue_white'} className={styles.myapp} />
 
       <FaqV2 max_faq={6}>
@@ -598,7 +627,8 @@ export default function Fibra() {
               border="var(--theme_primary_color_blue_4)"
               hover_border="var(--theme_primary_color_blue_2)"
               hover_bgcolor="var(--theme_primary_color_blue_2)"
-              icon="arrow_right"
+              icon="call"
+              icon_side={'left'}
             >
               11855
             </Button>
@@ -609,7 +639,8 @@ export default function Fibra() {
               border="var(--theme_primary_color_blue_4)"
               hover_border="var(--theme_primary_color_blue_2)"
               hover_bgcolor="var(--theme_primary_color_blue_2)"
-              icon="arrow_right"
+              icon="call"
+              icon_side={'left'}
             >
               0(22) 570-707
             </Button>

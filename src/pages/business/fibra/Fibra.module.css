@@ -74,6 +74,9 @@
   padding: 20px;
   box-sizing: border-box;
 }
+.mobile_carousell_block_sp {
+  border: 1.25px solid var(--theme_primary_color_blue_2);
+}
 .mobile_carousell_title {
   font-size: 26px;
   font-weight: 600;
@@ -247,6 +250,31 @@
   line-height: 10px;
   opacity: 0.5;
   margin-top: 10px;
+}
+
+.call_us {
+  width: 100%;
+  max-width: 1180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-direction: column;
+  background: #f5f6ff;
+  border-radius: 24px;
+  padding: 40px 20px 40px;
+  box-sizing: border-box;
+  margin: 10px auto;
+  color: rgba(69, 75, 82, 0.75);
+}
+.call_us_title {
+  width: 100%;
+  max-width: 700px;
+  /*font-weight: 700;*/
+  /*font-weight: bold;*/
+  font-size: 30px;
+  line-height: 32px;
+  margin-bottom: -5px;
 }
 
 @media (max-width: 1300px) {

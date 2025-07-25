@@ -493,7 +493,8 @@ export default function M2M() {
               border="var(--theme_primary_color_blue_4)"
               hover_border="var(--theme_primary_color_blue_2)"
               hover_bgcolor="var(--theme_primary_color_blue_2)"
-              icon="arrow_right"
+              icon="call"
+              icon_side={'left'}
             >
               11855
             </Button>
@@ -504,7 +505,8 @@ export default function M2M() {
               border="var(--theme_primary_color_blue_4)"
               hover_border="var(--theme_primary_color_blue_2)"
               hover_bgcolor="var(--theme_primary_color_blue_2)"
-              icon="arrow_right"
+              icon="call"
+              icon_side={'left'}
             >
               0(22) 570-707
             </Button>

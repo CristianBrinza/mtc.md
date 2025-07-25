@@ -1094,7 +1094,7 @@ export default function Mobile() {
               </div>
 
               <BuyForm
-                config={`TM - ${activeConfig === '1' ? 'nu sunt client' : 'sunt client'}, tip sim - ${selected}, testează - ${testGratis}, pachet selectat - ${activePopupConfig} , pret - ${activePriceConfig}, lang - ${t('lang')}`}
+                config={`TM - ${activeConfig === '1' ? 'nu sunt client' : 'sunt client'}, tip sim - ${selected}, testează - ${testGratis}, pachet selectat - ${activePopupConfig} , pret - ${activePriceConfig}`}
                 tag={'tm'}
                 service={'campain[tm_2025_b2s], place[abonament]'}
                 onSuccess={() => {

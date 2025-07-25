@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './BuyForm.module.css';
 import Input from '../input/Input';
 import Button from '../Button';
@@ -19,6 +19,15 @@ declare global {
   }
 }
 
+// Simple UUID generator
+function generateUUID() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    const r = (Math.random() * 16) | 0;
+    const v = c === 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
+
 export default function BuyForm({
   config,
   tag,
@@ -30,6 +39,14 @@ export default function BuyForm({
   const { t } = useTranslation();
   const [phone, setPhone] = useState('');
   const [source, setSource] = useState('');
+  const startTimeRef = useRef<number>(Date.now());
+  const infoRef = useRef<HTMLInputElement>(null);
+  const scrollDepthRef = useRef(0);
+  const [scrollDepth, setScrollDepth] = useState(0);
+  const clickCountRef = useRef(0);
+  const errorCountRef = useRef(0);
+  const [sessionId, setSessionId] = useState('');
+  const [pageViews, setPageViews] = useState(0);
   const siteKey =
     import.meta.env.VITE_RECAPTCHA_SITE_KEY ||
     '6LchGPEhAAAAAMDKsieZ9yCLdtGOMYho5UnJdsKU';
@@ -42,12 +59,67 @@ export default function BuyForm({
       script.async = true;
       document.body.appendChild(script);
     }
+    // Session ID
+    let sid = sessionStorage.getItem('session_id');
+    if (!sid) {
+      sid = generateUUID();
+      sessionStorage.setItem('session_id', sid);
+    }
+    setSessionId(sid);
+
+    // Page views
+    const pv = Number(sessionStorage.getItem('page_views') || '0') + 1;
+    sessionStorage.setItem('page_views', pv.toString());
+    setPageViews(pv);
+
+    // Scroll depth tracking
+    const onScroll = () => {
+      const depth = Math.round(
+        ((window.scrollY + window.innerHeight) /
+          document.documentElement.scrollHeight) *
+          100
+      );
+      if (depth > scrollDepthRef.current) {
+        scrollDepthRef.current = depth;
+        setScrollDepth(depth);
+      }
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
+
+    const elapsedSec = Math.round((Date.now() - startTimeRef.current) / 1000);
+    console.log(`Time on page: ${elapsedSec} seconds`);
+
+    const now = new Date();
+    const dateString = now.toLocaleString('ro-RO', {
+      weekday: 'long', // ziua săptămânii
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    });
+
+    const fullInfo = ` ${config}, lang - ${t('lang')}, date - ${dateString}, time on the page - ${elapsedSec} seconds, connection_type - ${(navigator as any).connection?.effectiveType || 'not found'},user_agent- ${navigator.userAgent} 
+      , session_id - ${sessionId}
+      , page_views - ${pageViews.toString()}
+      , order_clicks - ${clickCountRef.current.toString()}
+      , error_count - ${errorCountRef.current.toString()}
+      , scroll_depth - ${scrollDepth.toString()}
+      `;
+
+    // update hidden input value
+    if (infoRef.current) {
+      infoRef.current.value = fullInfo;
+    }
+    data.set('info', fullInfo);
 
     let token = '';
     if (window.grecaptcha) {
@@ -117,7 +189,7 @@ export default function BuyForm({
       <input type="hidden" name="source" value={source} />
       <input type="hidden" name="service" value={service} />
       <input type="hidden" name="tag" value={tag} />
-      <input type="hidden" name="info" value={config} />
+      <input type="hidden" name="info" ref={infoRef} value="" />
       <input type="hidden" name="recaptcha_response" />
     </form>
   );
