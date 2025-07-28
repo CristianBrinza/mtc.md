@@ -22,6 +22,7 @@ import SmsServices from './pages/personal/oferte/sms_services/SmsServices.tsx';
 import MobileOld from './pages/personal/oferte/mobile/Mobile_old.tsx';
 import FiveGbps from './pages/personal/oferte/5gbps/FiveGbps.tsx';
 import Fibra from './pages/business/fibra/Fibra.tsx';
+import Double from './pages/personal/oferte/double/Double.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -118,6 +119,10 @@ export const routesConfig: RouteConfig[] = [
   {
     path: '/:lang/5gbps',
     element: React.createElement(FiveGbps),
+  },
+  {
+    path: '/:lang/interent+tv',
+    element: React.createElement(Double),
   },
   {
     path: '/:lang/form-test',

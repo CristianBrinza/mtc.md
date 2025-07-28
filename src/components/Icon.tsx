@@ -795,6 +795,24 @@ export const icons = {
       />
     </>
   ),
+  change: (
+    <>
+      <path
+        d="M18.142 15L11.071 22.071L4 15"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M18.142 9.071L11.071 2L4 9.071"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </>
+  ),
 };
 const Icon: React.FC<IconProps> = ({
   type,

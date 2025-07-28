@@ -105,8 +105,11 @@ export default function FiveGbps() {
           />
           <div className={styles.why_card_text}>
             <div className={styles.why_card_title}>Semnal puternic</div>
-            <div className={styles.why_card_text_span}> Performanță constantă pe multiple dispozitive, fără pierderi de
-            viteză sau instabilitate.</div>
+            <div className={styles.why_card_text_span}>
+              {' '}
+              Performanță constantă pe multiple dispozitive, fără pierderi de
+              viteză sau instabilitate.
+            </div>
           </div>
         </div>
         <div className={styles.why_card}>
@@ -119,10 +122,10 @@ export default function FiveGbps() {
             <div className={styles.why_card_title}>
               Zero lag, zero buffering
             </div>
-           <div className={styles.why_card_text_span}>
-             Performanță impresionanta pentru gaming competitiv și streaming
-             4K/8K fără întreruperi.
-           </div>
+            <div className={styles.why_card_text_span}>
+              Performanță impresionanta pentru gaming competitiv și streaming
+              4K/8K fără întreruperi.
+            </div>
           </div>
         </div>
         <div className={styles.why_card}>
@@ -136,8 +139,8 @@ export default function FiveGbps() {
               Stabilitate și latență redusă
             </div>
             <div className={styles.why_card_text_span}>
-            Conexiune ultra-fiabilă pentru gaming, productivitate, conferințe
-            video și aplicații critice.
+              Conexiune ultra-fiabilă pentru gaming, productivitate, conferințe
+              video și aplicații critice.
             </div>
           </div>
         </div>

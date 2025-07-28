@@ -575,7 +575,41 @@ export default function Fibra() {
       <Details>
         <DetailsBlock title={'Condiții de utilizare Abonamente'}>
           <ul>
-            <li>text</li>
+            <li>Tarifele sunt exprimate în MDL și includ TVA.</li>
+            <li>
+              {' '}
+              Vitezele de acces sunt indicate în valori maximale și sunt oferite
+              în funcție de parametrii tehnici ai conexiunii.
+            </li>
+            <li>
+              {' '}
+              Planul tarifar MaxFiber include o adresă IP publică fixă. Clienții
+              pot achiziționa o subrețea suplimentară de adrese IP fixe după
+              formula 2x-3 adrese în funcție de posibilitățile tehnice la preț
+              de 50 lei lunar pentru fiecare adresă din subrețeaua acordată.
+            </li>
+            <li>
+              {' '}
+              Modificarea subrețelei de adrese IP fixe presupune o taxă de 60
+              lei/ IP adresă.
+            </li>
+            <li>
+              {' '}
+              Conectarea gratuită și router WiFi oferit în comodat gratuit în
+              cazul semnării unui contract pe o perioadă minimă contractuală de
+              12 luni pentru locațiile conectate la fibră optică de S.A.
+              Moldtelecom.
+            </li>
+            <li>
+              {' '}
+              Conectarea la serviciul MaxFiber în baza proiectelor individuale
+              va fi efectuată prin negocierea pachetelor cu reprezentanții
+              Serviciului Vânzări Corporative.
+            </li>
+            <li>
+              Planurile tarifare MaxFiber indicate sunt oferite în condiții și
+              parametri standard
+            </li>
           </ul>
         </DetailsBlock>
       </Details>
@@ -602,12 +636,73 @@ export default function Fibra() {
       <MyApp style_type={'blue_white'} className={styles.myapp} />
 
       <FaqV2 max_faq={6}>
-        <FaqQAV2 id_faq="117489310" question={'faq'}>
-          test
+        <FaqQAV2
+          id_faq="117489310"
+          question={
+            'Ce tipuri de conexiuni la internet oferiți pentru companii?'
+          }
+        >
+          Oferim conexiuni de internet prin fibră optică, conexiuni dedicate
+          (business), conexiuni wireless și soluții personalizate în funcție de
+          necesitățile organizației.
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="117489311"
+          question={'Ce viteză de internet este potrivită pentru afacerea mea?'}
+        >
+          Viteza ideală depinde de câți angajați și dispozitive folosesc
+          internetul și de activitatea firmei. Dacă folosiți aplicații online,
+          videoconferințe sau transferați fișiere mari, aveți nevoie de o
+          conexiune mai rapidă. Este important să verificați atât viteza de
+          descărcare, cât și cea de încărcare.
+          <br />
+          👉 Puteți testa viteza actuală a internetului aici:{' '}
+          <a href="https://moldtelecom.md/ro/personal/speedtest">
+            https://moldtelecom.md/ro/personal/speedtestt
+          </a>
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="117489312"
+          question={'În cât timp se realizează conectarea?'}
+        >
+          Conectarea pachetelor de Internet Fix se face în termen de până la 7
+          zile lucrătoare, dacă există posibilitate tehnică la adresă. În
+          situațiile care necesită lucrări suplimentare, termenul poate fi
+          extins până la 30 de zile lucrătoare.
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="117489313"
+          question={
+            'Este posibilă conectarea mai multor sedii ale companiei prin aceeași rețea?'
+          }
+        >
+          Da, se poate. Prin soluții precum VPN sau rețele dedicate, toate
+          sediile companiei pot fi conectate într-o rețea comună, sigură, cu
+          acces partajat la fișiere, servere și alte resurse interne.
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="117489314"
+          question={
+            'Pot adăuga servicii suplimentare la pachetul de internet ales?'
+          }
+        >
+          Da. În funcție de nevoile companiei, se pot adăuga: IP-uri
+          suplimentare, servicii de securitate cibernetică, firewall avansat,
+          soluții de backup, hosting sau chiar telefonie IP integrată.
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="117489315"
+          question={
+            'Este posibilă modernizarea sau extinderea conexiunii pe parcurs?'
+          }
+        >
+          Da, pachetele pot fi modificate oricând pe durata contractului, în
+          funcție de necesitățile de trafic sau dezvoltarea afacerii
+          dumneavoastră.
         </FaqQAV2>
       </FaqV2>
 
-      <Review service={'fibra_b2b'}/>
+      {/*<Review service={'fibra_b2b'} />*/}
       <Footer disclaimer={true} />
 
       <Popup

@@ -1,4 +1,4 @@
-import styles from './Review.module.css'
+import styles from './Review.module.css';
 import Button from '../Button.tsx';
 import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -7,7 +7,7 @@ import Icon from '../Icon.tsx';
 import Input from '../input/Input.tsx';
 
 interface ReviewProps {
-  service: string
+  service: string;
 }
 
 export default function Review({ service }: ReviewProps) {
@@ -15,7 +15,7 @@ export default function Review({ service }: ReviewProps) {
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [rating, setRating] = useState<number>(0);
   const [improvement, setImprovement] = useState<string>('');
-  const [email, setEmail] = useState<string>('');              // ← new state
+  const [email, setEmail] = useState<string>(''); // ← new state
   const formRef = useRef<HTMLFormElement>(null);
   const { t } = useTranslation();
 
@@ -28,7 +28,7 @@ export default function Review({ service }: ReviewProps) {
     setShowPopup(false);
     setRating(0);
     setImprovement('');
-    setEmail('');                                            // ← clear email too
+    setEmail(''); // ← clear email too
     setSubmitted(false);
   };
 
@@ -59,7 +59,7 @@ export default function Review({ service }: ReviewProps) {
       <div className={styles.review}>
         <div className={`${styles.review_title} title_3`}>
           Lasă o recenzie
-        {/*<span> <br/> Spune-ne mai multe despre</span>*/}
+          {/*<span> <br/> Spune-ne mai multe despre</span>*/}
         </div>
         <Button
           onClick={openPopup}
@@ -72,10 +72,14 @@ export default function Review({ service }: ReviewProps) {
         >
           {''}
         </Button>
-
       </div>
 
-      <Popup id="feedback-popup" isVisible={showPopup} onClose={closePopup} width="800px">
+      <Popup
+        id="feedback-popup"
+        isVisible={showPopup}
+        onClose={closePopup}
+        width="800px"
+      >
         <iframe name="hidden_iframe" style={{ display: 'none' }} />
 
         <form
@@ -88,7 +92,7 @@ export default function Review({ service }: ReviewProps) {
           <textarea name="entry.125673189" style={{ display: 'none' }} />
 
           <div className={styles.feedback_title}>{t('feedback.title')}</div>
-          <span style={{ color: '#2f2f2f', display:'none' }}>{service}</span>
+          <span style={{ color: '#2f2f2f', display: 'none' }}>{service}</span>
 
           <div className={styles.FeedbackMenu_stars}>
             {[1, 2, 3, 4, 5].map(star => (
@@ -108,9 +112,6 @@ export default function Review({ service }: ReviewProps) {
             placeholder="Părerea ta este foarte importantă pentru noi. Te rugăm să ne oferi detalii despre experiența ta."
             className={styles.feedback_textarea}
           />
-
-
-
 
           <div className={styles.feedback_btns}>
             <Input
@@ -139,12 +140,14 @@ export default function Review({ service }: ReviewProps) {
           </div>
 
           <div className={styles.popup_discalmer}>
-
-            Prin trimiterea feedback‑ului, îmi dau acordul ca acesta să fie folosit pentru îmbunătăţirea serviciilor.
+            Prin trimiterea feedback‑ului, îmi dau acordul ca acesta să fie
+            folosit pentru îmbunătăţirea serviciilor.
           </div>
 
           {submitted && (
-            <div style={{ marginTop: 12, color: 'green' }}>Sent successfully</div>
+            <div style={{ marginTop: 12, color: 'green' }}>
+              Sent successfully
+            </div>
           )}
         </form>
       </Popup>
