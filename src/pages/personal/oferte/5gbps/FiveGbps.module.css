@@ -66,13 +66,19 @@
 .why_card_text {
   width: 100%;
   text-align: center;
-  /*font-size: 14px;*/
+  color: #454b52;
+  font-size: 14px;
+  line-height: 18px;
 }
-
+.why_card_text_span{
+  max-width: 95%;
+  margin: 0 auto;
+}
 .why_card_title {
   font-weight: 600;
-  font-size: 20px;
-  margin: 5px 0 3px;
+  font-size: 24px;
+  margin: 5px 0 10px;
+  color: #222;
 }
 
 .domenii {

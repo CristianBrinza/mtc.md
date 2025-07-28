@@ -61,7 +61,7 @@ export default function FiveGbps() {
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/90296512${t('lang')}.png`}
+            src={`/images/landings/88678012${t('lang')}.png`}
             alt={t('wifi_plus.hero.alt')}
           />
         </div>
@@ -105,8 +105,8 @@ export default function FiveGbps() {
           />
           <div className={styles.why_card_text}>
             <div className={styles.why_card_title}>Semnal puternic</div>
-            Performanță constantă pe multiple dispozitive, fără pierderi de
-            viteză sau instabilitate.
+            <div className={styles.why_card_text_span}> Performanță constantă pe multiple dispozitive, fără pierderi de
+            viteză sau instabilitate.</div>
           </div>
         </div>
         <div className={styles.why_card}>
@@ -119,8 +119,10 @@ export default function FiveGbps() {
             <div className={styles.why_card_title}>
               Zero lag, zero buffering
             </div>
-            Performanță impresionanta pentru gaming competitiv și streaming
-            4K/8K fără întreruperi.
+           <div className={styles.why_card_text_span}>
+             Performanță impresionanta pentru gaming competitiv și streaming
+             4K/8K fără întreruperi.
+           </div>
           </div>
         </div>
         <div className={styles.why_card}>
@@ -133,8 +135,10 @@ export default function FiveGbps() {
             <div className={styles.why_card_title}>
               Stabilitate și latență redusă
             </div>
+            <div className={styles.why_card_text_span}>
             Conexiune ultra-fiabilă pentru gaming, productivitate, conferințe
             video și aplicații critice.
+            </div>
           </div>
         </div>
       </div>

@@ -15,6 +15,7 @@
   font-weight: 400;
   line-height: 16px;
   width: auto !important;
+  /*max-width: 100%;*/
   background: transparent;
 }
 .costume_input::placeholder {

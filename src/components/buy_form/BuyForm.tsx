@@ -107,12 +107,17 @@ export default function BuyForm({
       second: '2-digit',
     });
 
-    const fullInfo = ` ${config}, lang - ${t('lang')}, date - ${dateString}, time on the page - ${elapsedSec} seconds, connection_type - ${(navigator as any).connection?.effectiveType || 'not found'},user_agent- ${navigator.userAgent} 
-      , session_id - ${sessionId}
-      , page_views - ${pageViews.toString()}
-      , order_clicks - ${clickCountRef.current.toString()}
-      , error_count - ${errorCountRef.current.toString()}
-      , scroll_depth - ${scrollDepth.toString()}
+    const fullInfo = ` ${config}, 
+      lang - ${t('lang')}, 
+      date - ${dateString}, 
+      time on the page - ${elapsedSec} seconds, 
+      connection_type - ${(navigator as any).connection?.effectiveType || 'not found'}, 
+      user_agent- ${navigator.userAgent} , 
+      session_id - ${sessionId}, 
+      page_views - ${pageViews.toString()}, 
+      order_clicks - ${clickCountRef.current.toString()}, 
+      error_count - ${errorCountRef.current.toString()}, 
+      scroll_depth - ${scrollDepth.toString()}
       `;
 
     // update hidden input value

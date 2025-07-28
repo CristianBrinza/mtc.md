@@ -17,6 +17,7 @@ import FaqV2 from '../../../components/faqV2/FaqV2.tsx';
 import Popup from '../../../components/Popup/Popup.tsx';
 import { useState } from 'react';
 import Details, { DetailsBlock } from '../../../components/details/Details.tsx';
+import Review from '../../../components/review/Review.tsx';
 
 export default function Fibra() {
   const { t } = useTranslation();
@@ -484,7 +485,7 @@ export default function Fibra() {
               {/*</div>*/}
               <div
                 className={styles.mobile_carousell_tag}
-                style={{ background: '#E7EBFF', opacity: '0' }}
+                style={{ background: '#E7EBFF' }}
               >
                 Top
               </div>
@@ -605,6 +606,8 @@ export default function Fibra() {
           test
         </FaqQAV2>
       </FaqV2>
+
+      <Review service={'fibra_b2b'}/>
       <Footer disclaimer={true} />
 
       <Popup
