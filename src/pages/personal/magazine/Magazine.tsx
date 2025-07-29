@@ -245,40 +245,43 @@ export default function Magazine() {
               <ScrollableWrapper>
                 <table className={`magazine_mtc ${styles.magazine_table}`}>
                   <thead>
-                  <tr>
-                    <th>{t('magazine.table.magazin')}</th>
-                    <th>{t('magazine.table.weekdays')}</th>
-                    <th>{t('magazine.table.saturday')}</th>
-                    <th>{t('magazine.table.sunday')}</th>
-                  </tr>
+                    <tr>
+                      <th>{t('magazine.table.magazin')}</th>
+                      <th>{t('magazine.table.weekdays')}</th>
+                      <th>{t('magazine.table.saturday')}</th>
+                      <th>{t('magazine.table.sunday')}</th>
+                    </tr>
                   </thead>
                   <tbody>
-                  {filteredMagList.map((m, i) => (
-                    <tr key={i}>
-                      <td>
-                        <span>{m.oras}</span>, {m.adresa}
-                      </td>
-                      <td>
-                        <HighlightParentheses text={m.grafic} />
-                      </td>
-                      <td>
-                        <HighlightParentheses text={m.grafic_s} />
-                      </td>
-                      <td>
-                        <HighlightParentheses text={m.grafic_d} />
-                      </td>
-                    </tr>
-                  ))}
-                  {filteredMagList.length === 0 && (
-                    <tr>
-                      <td
-                        style={{ textAlign: 'center', padding: '25px 0 15px' }}
-                        colSpan={4}
-                      >
-                        {t('magazine.table.no_magazines')}
-                      </td>
-                    </tr>
-                  )}
+                    {filteredMagList.map((m, i) => (
+                      <tr key={i}>
+                        <td>
+                          <span>{m.oras}</span>, {m.adresa}
+                        </td>
+                        <td>
+                          <HighlightParentheses text={m.grafic} />
+                        </td>
+                        <td>
+                          <HighlightParentheses text={m.grafic_s} />
+                        </td>
+                        <td>
+                          <HighlightParentheses text={m.grafic_d} />
+                        </td>
+                      </tr>
+                    ))}
+                    {filteredMagList.length === 0 && (
+                      <tr>
+                        <td
+                          style={{
+                            textAlign: 'center',
+                            padding: '25px 0 15px',
+                          }}
+                          colSpan={4}
+                        >
+                          {t('magazine.table.no_magazines')}
+                        </td>
+                      </tr>
+                    )}
                   </tbody>
                 </table>
               </ScrollableWrapper>

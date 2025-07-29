@@ -225,6 +225,7 @@ export default function Double() {
       // 4️⃣ update the display
       setRegio(initialCity);
       setIsRegio(true);
+      console.log(isRegio);
     };
 
     script.onerror = () => {
