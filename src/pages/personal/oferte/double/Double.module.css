@@ -87,6 +87,7 @@
   gap: 10px;
   align-items: center;
   justify-content: flex-start;
+  font-size: 31px;
 }
 .abonaments_block_inside_title_tv_svg {
 }
@@ -256,6 +257,9 @@
   background-color: #ffffff;
   border-radius: 100px;
 }
+/*.tv_config_left_2 span{*/
+/*  font-size: 12px;*/
+/*}*/
 .tv_config_right {
   display: flex;
 }
@@ -338,6 +342,112 @@
 
 .popup_more_btn {
   margin-top: 20px;
+}
+
+.abonaments_block_tv_free {
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.abonaments_block_tv_free span {
+  text-decoration: underline;
+  font-size: 14px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.row_popup_options {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  line-height: 14px;
+  color: #a2a2a2;
+  margin: 0 0 7px;
+}
+.row_popup_options_title {
+  font-weight: 600;
+  color: #000;
+  font-size: 20px;
+  line-height: 22px;
+  margin: 5px 0;
+}
+.row_popup_options_title_price {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 24px;
+  padding: 10px 10px;
+  color: #000;
+  min-width: 60px;
+}
+
+.popup_subtitle_1 {
+  margin: 5px 0 10px;
+}
+
+.regio {
+  width: 100%;
+  /*max-width: 1500px;*/
+  background: #e6f4dc;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  margin: 0px auto 0px;
+  font-family: Poppins, sans-serif;
+  display: flex;
+  /*border-radius: 15px;*/
+  align-items: center;
+  justify-content: center;
+}
+.regio_select {
+  color: var(--theme_primary_color_blue_6);
+  cursor: pointer;
+}
+.regio_select:hover {
+  text-decoration: underline;
+}
+.popup_regio_selects {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin: 20px auto 10px;
+}
+.popup_regio_select {
+  /* 1) ascundem controlul nativ */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* 2) stil general */
+  height: 46px;
+  border-radius: 100px;
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 14px;
+
+  /* 3) spaţiu în dreapta pentru săgeată */
+  padding: 0 40px 0 20px;
+
+  /* 4) icon‑arrow custom poziţionat cu 20px mai la stânga de marginea dreaptă */
+  background-image: url('/images/svg/ui_svg/select_arrow.svg'); /* sau data‑uri SVG */
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) center;
+  background-size: 12px; /* ajustaţi după dimensiunea iconiţei */
+}
+.popup_regio_title{
+  margin: 0 auto;
+  padding: 0 0px;
 }
 
 @media (max-width: 1300px) {

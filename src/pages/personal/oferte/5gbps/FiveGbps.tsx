@@ -434,38 +434,17 @@ export default function FiveGbps() {
       <Details>
         <DetailsBlock title={'Condiții de utilizare Abonamente'}>
           <ul>
-            <li>
-              Conectarea la serviciul de Internet fix este gratuită, iar
-              contractul va fi semnat pe o perioadă de 24 de luni.
-            </li>
-            <li>
-              Planurile tarifare de Internet fix sunt disponibile pentru
-              conectările noi sau la reperfectare pentru abonați existenți cu
-              contract expirat.
-            </li>
-            <li>
-              Vitezele sunt indicate în valori maxime. Viteza obținută de client
-              acasă depinde de un șir de factori care nu pot fi controlați de
-              compania Moldtelecom.
-            </li>
-            <li>
-              Planul tarifar de Internet selectat de abonat poate fi conectat în
-              limita posibilităților tehnice.
-            </li>
-            <li>
-              Oferta promoțională include reduceri de până la 50% la abonamentul
-              de Internet fix în primele 24 de luni, în funcție de planul
-              tarifar selectat. După perioada de 24 de luni, se va aplica
-              tariful standard conform planului în vigoare.
-            </li>
-            <li>
-              La rezilierea serviciului de Internet fix înainte de expirarea
-              perioadei contractuale, se vor aplica plăți cu titlu de
-              prejudiciu.
-            </li>
-            <li>
-              Oferta promoțională se comercializează în anumite localități.
-            </li>
+            <li>Perioada de comercializare a ofertei: 21.08.2025 – 21.11.2025 (inclusiv). </li>
+            <li>Conectarea la serviciul de Internet fix este gratuită, iar contractul va fi semnat pe o perioadă de 24 de luni. </li>
+            <li>Planurile tarifare de Internet fix sunt disponibile pentru conectările noi sau la reperfectare pentru abonați existenți cu contract expirat. </li>
+            <li>Abonații serviciului de Internet fix pot beneficia de reduceri la anumite abonamente de telefonie mobilă. </li>
+            <li>Vitezele sunt indicate în valori maxime. Viteza obținută de client acasă depinde de un șir de factori care nu pot fi controlați de compania Moldtelecom. </li>
+            <li>Planul tarifar de Internet selectat de abonat poate fi conectat în limita posibilităților tehnice. </li>
+            <li>Oferta promoțională include reduceri de 300 lei la abonamentul de Internet fix în primele 24 de luni. După perioada de 24 de luni, se va aplica tariful standard conform planului în vigoare. </li>
+            <li>Echipamentele sunt oferite în condiții de comodat. </li>
+            <li>La rezilierea serviciului de Internet fix înainte de expirarea perioadei contractuale, se vor aplica plăți cu titlu de prejudiciu. </li>
+            <li>Oferta promoțională se comercializează în anumite localități. </li>
+
           </ul>
         </DetailsBlock>
       </Details>

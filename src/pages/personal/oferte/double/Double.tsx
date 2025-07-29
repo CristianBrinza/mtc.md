@@ -9,10 +9,19 @@ import Footer from '../../../../components/footer/Footer.tsx';
 import Icon from '../../../../components/Icon.tsx';
 import Button from '../../../../components/Button.tsx';
 import Slider from 'react-slick';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Toggle from '../../../../components/toggle/Toggle.tsx';
 import Popup from '../../../../components/Popup/Popup.tsx';
-
+import Details, {
+  DetailsBlock,
+} from '../../../../components/details/Details.tsx';
+import Functions from '../../../../components/functions/Functions.tsx';
+import MyApp from '../../../../components/app/MyApp.tsx';
+declare global {
+  interface Window {
+    regiuni: Record<string, Record<string, any[]>>;
+  }
+}
 const InfoIcon: React.FC<{ onClick?: () => void }> = ({ onClick }) => (
   <svg
     onClick={onClick}
@@ -43,17 +52,124 @@ const InfoIcon: React.FC<{ onClick?: () => void }> = ({ onClick }) => (
     />
   </svg>
 );
+const OptionsIcon: React.FC = () => (
+  <svg
+    width="65"
+    height="24"
+    viewBox="0 0 65 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect x="41" width="24" height="24" rx="12" fill="#DBE1FF" />
+    <path
+      d="M53.5 19.5C57.6421 19.5 61 16.1421 61 12C61 7.85786 57.6421 4.5 53.5 4.5C49.3579 4.5 46 7.85786 46 12C46 16.1421 49.3579 19.5 53.5 19.5Z"
+      stroke="white"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M53.502 16.4995C55.9872 16.4995 58.002 14.4848 58.002 11.9995C58.002 9.51423 55.9872 7.49951 53.502 7.49951C51.0167 7.49951 49.002 9.51423 49.002 11.9995C49.002 14.4848 51.0167 16.4995 53.502 16.4995Z"
+      fill="white"
+      stroke="white"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <rect x="28" width="24" height="24" rx="12" fill="#D1D8FF" />
+    <g clip-path="url(#clip0_13279_16679)">
+      <path
+        d="M40.5018 17.0285L43.8542 13.6761L42.6809 12.5027L41.3399 13.8437V10.3237H39.6638V13.8437L38.3228 12.5027L37.1495 13.6761L40.5018 17.0285ZM34.6352 8.64752V17.8665H46.3685V8.64752H34.6352ZM34.6352 19.5427C34.1742 19.5427 33.7798 19.3788 33.4518 19.0508C33.1238 18.7228 32.9595 18.3281 32.959 17.8665V7.41132C32.959 7.21576 32.9906 7.02719 33.0537 6.84561C33.1168 6.66402 33.211 6.4964 33.3361 6.34275L34.3837 5.06466C34.5374 4.8691 34.7293 4.7188 34.9595 4.61376C35.1897 4.50872 35.4308 4.45648 35.6828 4.45704H45.3209C45.5723 4.45704 45.8134 4.50956 46.0442 4.6146C46.2749 4.71964 46.4668 4.86966 46.6199 5.06466L47.6676 6.34275C47.7933 6.4964 47.8877 6.66402 47.9508 6.84561C48.014 7.02719 48.0452 7.21576 48.0447 7.41132V17.8665C48.0447 18.3275 47.8807 18.7223 47.5527 19.0508C47.2248 19.3793 46.83 19.5433 46.3685 19.5427H34.6352ZM34.9704 6.97132H46.0333L45.3209 6.13322H35.6828L34.9704 6.97132Z"
+        fill="white"
+        stroke="#D1D8FF"
+        stroke-width="0.32"
+      />
+    </g>
+    <rect x="15" width="24" height="24" rx="12" fill="#BFCAFF" />
+    <g clip-path="url(#clip1_13279_16679)">
+      <path
+        d="M31.6348 7.09262H32.4074V7.86525C32.4074 8.07017 32.4888 8.26669 32.6337 8.41159C32.7786 8.55649 32.9751 8.63787 33.18 8.63787C33.3849 8.63787 33.5814 8.55649 33.7263 8.41159C33.8712 8.26669 33.9526 8.07017 33.9526 7.86525V7.09262H34.7253C34.9302 7.09262 35.1267 7.01122 35.2716 6.86632C35.4165 6.72143 35.4979 6.5249 35.4979 6.31999C35.4979 6.11507 35.4165 5.91855 35.2716 5.77365C35.1267 5.62876 34.9302 5.54736 34.7253 5.54736H33.9526V4.77473C33.9526 4.56981 33.8712 4.37329 33.7263 4.22839C33.5814 4.08349 33.3849 4.00209 33.18 4.00209C32.9751 4.00209 32.7786 4.08349 32.6337 4.22839C32.4888 4.37329 32.4074 4.56981 32.4074 4.77473V5.54736H31.6348C31.4298 5.54736 31.2333 5.62876 31.0884 5.77365C30.9435 5.91855 30.8621 6.11507 30.8621 6.31999C30.8621 6.5249 30.9435 6.72143 31.0884 6.86632C31.2333 7.01122 31.4298 7.09262 31.6348 7.09262ZM23.1358 8.63787V16.3642C23.1358 16.5691 23.2172 16.7657 23.3621 16.9106C23.507 17.0554 23.7035 17.1368 23.9084 17.1368C24.1133 17.1368 24.3099 17.0554 24.4548 16.9106C24.5997 16.7657 24.681 16.5691 24.681 16.3642V8.63787C24.681 8.43297 24.5997 8.23645 24.4548 8.09155C24.3099 7.94665 24.1133 7.86525 23.9084 7.86525C23.7035 7.86525 23.507 7.94665 23.3621 8.09155C23.2172 8.23645 23.1358 8.43297 23.1358 8.63787ZM34.4162 10.1832C34.3168 10.2034 34.2223 10.2431 34.1382 10.2999C34.0541 10.3567 33.982 10.4295 33.926 10.5141C33.87 10.5988 33.8313 10.6937 33.812 10.7933C33.7927 10.893 33.7933 10.9954 33.8136 11.0949C34.1152 12.5599 33.9364 14.0832 33.3037 15.4386C32.671 16.794 31.6181 17.9093 30.3013 18.6188C28.9845 19.3284 27.474 19.5944 25.994 19.3774C24.514 19.1604 23.1434 18.4719 22.0858 17.4143C21.0281 16.3565 20.3396 14.986 20.1226 13.506C19.9056 12.026 20.1717 10.5155 20.8812 9.19869C21.5907 7.88191 22.706 6.829 24.0614 6.19628C25.4168 5.56356 26.9401 5.38477 28.4052 5.68643C28.6101 5.72741 28.8229 5.68532 28.9967 5.5694C29.1706 5.45348 29.2913 5.27324 29.3323 5.06832C29.3733 4.86341 29.3312 4.65061 29.2153 4.47673C29.0993 4.30286 28.9191 4.18215 28.7142 4.14117C28.1488 4.03582 27.574 3.98921 26.999 4.00209C25.318 4.00209 23.6748 4.50055 22.2772 5.43442C20.8795 6.3683 19.7902 7.69566 19.1469 9.24862C18.5037 10.8016 18.3354 12.5105 18.6633 14.1591C18.9912 15.8078 19.8007 17.3221 20.9893 18.5107C22.1779 19.6993 23.6923 20.5087 25.3409 20.8367C26.9895 21.1646 28.6984 20.9963 30.2514 20.3531C31.8044 19.7098 33.1317 18.6204 34.0656 17.2228C34.9995 15.8252 35.4979 14.182 35.4979 12.501C35.4995 11.9301 35.4426 11.3606 35.3279 10.8013C35.3094 10.7004 35.271 10.6043 35.215 10.5184C35.159 10.4326 35.0864 10.3588 35.0016 10.3012C34.9167 10.2437 34.8212 10.2036 34.7208 10.1833C34.6203 10.1631 34.5168 10.163 34.4162 10.1832ZM26.2263 10.1832V10.9558C26.2297 11.5276 26.4443 12.0779 26.829 12.501C26.4443 12.9242 26.2297 13.4745 26.2263 14.0463V14.8189C26.2263 15.4337 26.4705 16.0233 26.9052 16.458C27.3399 16.8926 27.9295 17.1368 28.5442 17.1368H29.3169C29.9316 17.1368 30.5212 16.8926 30.9558 16.458C31.3905 16.0233 31.6348 15.4337 31.6348 14.8189V14.0463C31.6314 13.4745 31.4167 12.9242 31.0321 12.501C31.4167 12.0779 31.6314 11.5276 31.6348 10.9558V10.1832C31.6348 9.5684 31.3905 8.97885 30.9558 8.54415C30.5212 8.10946 29.9316 7.86525 29.3169 7.86525H28.5442C27.9295 7.86525 27.3399 8.10946 26.9052 8.54415C26.4705 8.97885 26.2263 9.5684 26.2263 10.1832ZM30.0895 14.8189C30.0895 15.0239 30.0081 15.2204 29.8632 15.3653C29.7183 15.5102 29.5218 15.5916 29.3169 15.5916H28.5442C28.3393 15.5916 28.1428 15.5102 27.9979 15.3653C27.853 15.2204 27.7716 15.0239 27.7716 14.8189V14.0463C27.7716 13.8414 27.853 13.6449 27.9979 13.5C28.1428 13.3551 28.3393 13.2737 28.5442 13.2737H29.3169C29.5218 13.2737 29.7183 13.3551 29.8632 13.5C30.0081 13.6449 30.0895 13.8414 30.0895 14.0463V14.8189ZM30.0895 10.1832V10.9558C30.0895 11.1607 30.0081 11.3572 29.8632 11.5021C29.7183 11.647 29.5218 11.7284 29.3169 11.7284H28.5442C28.3393 11.7284 28.1428 11.647 27.9979 11.5021C27.853 11.3572 27.7716 11.1607 27.7716 10.9558V10.1832C27.7716 9.97823 27.853 9.7817 27.9979 9.6368C28.1428 9.49194 28.3393 9.41052 28.5442 9.41052H29.3169C29.5218 9.41052 29.7183 9.49194 29.8632 9.6368C30.0081 9.7817 30.0895 9.97823 30.0895 10.1832Z"
+        fill="white"
+      />
+    </g>
+    <rect width="24" height="24" rx="12" fill="#ADBBFF" />
+    <g clip-path="url(#clip2_13279_16679)">
+      <path
+        d="M10.0732 8.3113C10.2401 8.72307 10.5638 9.05167 10.973 9.22476C11.1756 9.31051 11.3931 9.35547 11.6131 9.35713C11.8331 9.35878 12.0513 9.31713 12.2552 9.23446C12.4591 9.15178 12.6447 9.02979 12.8014 8.87541C12.9581 8.72101 13.083 8.53726 13.1687 8.33465C13.2544 8.13203 13.2994 7.91451 13.301 7.69451C13.3027 7.47451 13.261 7.25634 13.1783 7.05245C12.507 5.37398 10.4928 4.53475 8.81433 5.20614C6.38056 6.21321 4.78601 8.3113 4.28247 10.6612C3.98424 10.7854 3.72946 10.9952 3.55024 11.264C3.37102 11.5328 3.27539 11.8487 3.27539 12.1718C3.27539 12.4949 3.37102 12.8107 3.55024 13.0795C3.72946 13.3483 3.98424 13.5581 4.28247 13.6824C4.69373 15.6086 5.83718 17.2997 7.47157 18.3989M15.9478 18.3821C17.6263 17.2911 18.7173 15.5287 19.1369 13.6824C19.4207 13.545 19.66 13.3304 19.8275 13.0632C19.9949 12.796 20.0837 12.4871 20.0837 12.1718C20.0837 11.8565 19.9949 11.5475 19.8275 11.2804C19.66 11.0132 19.4207 10.7986 19.1369 10.6612C18.6955 9.01907 17.7576 7.55353 16.4514 6.46498M8.31078 12.1718H8.31916M15.0247 12.1718H15.033"
+        stroke="white"
+        stroke-width="1.67846"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M11.6668 17.2073C12.5938 17.2073 13.3452 16.4558 13.3452 15.5288C13.3452 14.6018 12.5938 13.8503 11.6668 13.8503C10.7398 13.8503 9.98828 14.6018 9.98828 15.5288C9.98828 16.4558 10.7398 17.2073 11.6668 17.2073Z"
+        stroke="white"
+        stroke-width="1.67846"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M9.99035 15.5288H9.57074C9.01429 15.5288 8.48063 15.7498 8.08714 16.1433C7.69369 16.5368 7.47266 17.0704 7.47266 17.6269V18.4661C7.47266 19.0226 7.69369 19.5562 8.08714 19.9497C8.48063 20.3432 9.01429 20.5642 9.57074 20.5642H13.7669C14.3233 20.5642 14.857 20.3432 15.2505 19.9497C15.6439 19.5562 15.865 19.0226 15.865 18.4661V17.6269C15.865 17.0704 15.6439 16.5368 15.2505 16.1433C14.857 15.7498 14.3233 15.5288 13.7669 15.5288H13.3473"
+        stroke="white"
+        stroke-width="1.67846"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_13279_16679">
+        <rect
+          width="16"
+          height="16"
+          fill="white"
+          transform="translate(32.5 4)"
+        />
+      </clipPath>
+      <clipPath id="clip1_13279_16679">
+        <rect
+          width="17"
+          height="17"
+          fill="white"
+          transform="translate(18.5 4)"
+        />
+      </clipPath>
+      <clipPath id="clip2_13279_16679">
+        <rect
+          width="19"
+          height="17.5385"
+          fill="white"
+          transform="translate(2 4)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+);
 
 export default function Double() {
   const { t } = useTranslation();
-
   const breadcrumbItems = [
     { label: 'Promo', url: ' ' },
     { label: 'Internet + TV' },
   ];
   const [activeConfig, setActiveConfig] = useState<string>('1');
+  // whether user has explicitly chosen
+  const DEFAULT_REGION = 'Mun. Chișinău';
+  const DEFAULT_CITY = 'or. Chișinău';
+  const [regio, setRegio] = useState<string>(
+    () => localStorage.getItem('city') || DEFAULT_CITY
+  );
+  const [isRegio, setIsRegio] = useState<boolean>(() =>
+    Boolean(localStorage.getItem('city'))
+  );
+
+  const [regions, setRegions] = useState<string[]>([]);
+  const [cities, setCities] = useState<string[]>([]);
+  const [selRegion, setSelRegion] = useState<string>('');
+  const [selCity, setSelCity] = useState<string>('');
 
   const [activeTVConfig_1, setActiveTVConfig_1] = useState<string>('1');
+
+  const [numberTVConfig_1, setNumberTVConfig_1] = useState<number>(1);
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const settings = {
     dots: true,
@@ -76,9 +192,85 @@ export default function Double() {
     ],
   };
 
+  // populate <select> on mount
+  // load external regions_ro.js & then populate selects
+  useEffect(() => {
+    const SCRIPT_SRC = 'https://www.moldtelecom.md/js/regions_ro.js';
+    const script = document.createElement('script');
+    script.src = SCRIPT_SRC;
+    script.async = true;
+
+    script.onload = () => {
+      const obj = window.regiuni;
+      const allRegions = Object.keys(obj);
+
+      // 1️⃣ pick a starting region
+      const storedR = localStorage.getItem('region');
+      const initialRegion = storedR && obj[storedR] ? storedR : DEFAULT_REGION;
+      setSelRegion(initialRegion);
+      setRegions(allRegions);
+
+      // 2️⃣ build its city list
+      const validCities = Object.entries(obj[initialRegion])
+        .filter(([, arr]) => arr.length > 0)
+        .map(([city]) => city);
+      setCities(validCities);
+
+      // 3️⃣ pick a starting city
+      const storedC = localStorage.getItem('city');
+      const initialCity =
+        storedC && validCities.includes(storedC) ? storedC : DEFAULT_CITY;
+      setSelCity(initialCity);
+
+      // 4️⃣ update the display
+      setRegio(initialCity);
+      setIsRegio(true);
+    };
+
+    script.onerror = () => {
+      console.error(`failed to load ${SCRIPT_SRC}`);
+    };
+
+    document.head.appendChild(script);
+    return () => void document.head.removeChild(script);
+  }, []);
+
+  // when user picks a region
+  const handleRegionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const r = e.target.value;
+    setSelRegion(r);
+    setCities(
+      Object.entries(window.regiuni[r])
+        .filter(([, arr]) => arr.length > 0)
+        .map(([city]) => city)
+    );
+    // reset city selection to first valid city
+    const firstCity =
+      Object.keys(window.regiuni[r]).find(
+        c => window.regiuni[r][c].length > 0
+      ) || '';
+    setSelCity(firstCity);
+  };
+
+  // when user picks a city
+  const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelCity(e.target.value);
+  };
+
   return (
     <>
+      <div className={styles.regio}>
+        Oferta promotionala poate varia in dependenta de regiunea selectata (
+        <span
+          onClick={() => setActivePopup('1110116')}
+          className={styles.regio_select}
+        >
+          {regio}
+        </span>
+        ).
+      </div>
       <Navbar />
+
       <Chat />
       <Feedback />
       <Breadcrumb items={breadcrumbItems} />
@@ -202,9 +394,25 @@ export default function Double() {
 
             <div className={styles.tv_config}>
               <div className={styles.tv_config_left}>
-                <div className={styles.tv_config_left_1}>-</div>
-                <div className={styles.tv_config_left_2}>1 TV</div>
-                <div className={styles.tv_config_left_3}>+</div>
+                <div
+                  className={styles.tv_config_left_1}
+                  onClick={() =>
+                    setNumberTVConfig_1(prev => Math.max(1, prev - 1))
+                  }
+                >
+                  -
+                </div>
+                <div className={styles.tv_config_left_2}>
+                  {numberTVConfig_1} <span>TV</span>
+                </div>
+                <div
+                  className={styles.tv_config_left_3}
+                  onClick={() =>
+                    setNumberTVConfig_1(prev => Math.min(3, prev + 1))
+                  }
+                >
+                  +
+                </div>
               </div>
               <div className={styles.tv_config_right}>
                 <div
@@ -224,6 +432,36 @@ export default function Double() {
             <div
               className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
             >
+              <div className={styles.abonaments_block_inside_subtitle_icon}>
+                <Icon
+                  type={'gift'}
+                  color={'var(--theme_primary_color_blue_2)'}
+                />
+                {/*<Toggle />*/}
+              </div>
+              <span>
+                <b>Arhiva TV</b> inclus{' '}
+                <span
+                  className={styles.abonaments_block_inside_subtitle_small}
+                  style={{ textDecoration: 'line-through' }}
+                >
+                  (15 lei/luna)
+                </span>
+              </span>
+              <InfoIcon onClick={() => setActivePopup('1280116')} />
+            </div>
+
+            <div className={styles.abonaments_block_tv_free}>
+              <OptionsIcon />
+
+              <span onClick={() => setActivePopup('1280117')}>
+                {' '}
+                mai multe optiuni
+              </span>
+            </div>
+            <div
+              className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
+            >
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
                 <Toggle />
               </div>
@@ -235,26 +473,6 @@ export default function Double() {
                 </span>
               </span>
               <InfoIcon onClick={() => setActivePopup('1280113')} />
-            </div>
-
-            <div
-              className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
-            >
-              <div className={styles.abonaments_block_inside_subtitle_toggle}>
-                {/*<Icon*/}
-                {/*  type={'empty'}*/}
-                {/*  color={'var(--theme_primary_color_blue_2)'}*/}
-                {/*/>*/}
-                <Toggle />
-              </div>
-              <span>
-                <b>Safe-Web</b>
-                {/*inclus*/}{' '}
-                <span className={styles.abonaments_block_inside_subtitle_small}>
-                  (15 lei/luna)
-                </span>
-              </span>
-              <InfoIcon onClick={() => setActivePopup('1280112')} />
             </div>
 
             <div className={styles.abonaments_block_inside_line}></div>
@@ -278,17 +496,17 @@ export default function Double() {
             <div className={styles.wifi_carousell_block_inside_btns}>
               <div className={styles.tm_carousell_block_row_tags}>
                 <div className={styles.tm_carousell_block_row_tag}>
-                  50% reducere pentru 2 ani
+                  -100 lei reducere pentru 2 ani
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
-                <div>299</div>
+                <div>130</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     {t('lei_luna')}
                   </div>
                   <div className={styles.mobile_carousell_price_old}>
-                    <span>590 {t('lei_luna')}</span>
+                    <span>230 {t('lei_luna')}</span>
                   </div>
                 </div>
               </div>
@@ -311,6 +529,89 @@ export default function Double() {
         <div className={styles.abonaments_block}></div>
         <div className={styles.abonaments_block}></div>
       </Slider>
+
+      <Details>
+        <DetailsBlock title={'Condiții de utilizare Abonamente'}>
+          <ul>
+            <li>
+              Perioada de comercializare a ofertei: 03.03.2025 - 25.08.2025
+              (inclusiv).
+            </li>
+            <li>
+              Conectarea la serviciul de Internet fix cu IPTV este gratuită, iar
+              contractul va fi semnat pe o perioadă de 24 de luni.
+            </li>
+            <li>
+              Planurile tarifare de Internet fix și IPTV sunt disponibile pentru
+              conectările noi sau la reperfectare pentru abonați existenți cu
+              contract expirat.
+            </li>
+            <li>
+              Abonații serviciului de Internet fix cu IPTV pot beneficia de
+              reduceri la anumite abonamente de telefonie mobilă.
+            </li>
+            <li>
+              Vitezele sunt indicate în valori maxime. Viteza obținută de client
+              acasă depinde de un șir de factori care nu pot fi controlați de
+              compania Moldtelecom.
+            </li>
+            <li>
+              Planul tarifar de Internet selectat de abonat poate fi conectat în
+              limita posibilităților tehnice.
+            </li>
+            <li>
+              Moldtelecom poate modifica poziționarea și numărul de posturi TV
+              din abonamentul IPTV, în funcție de ofertele existente pe piață și
+              negocierile cu furnizorii de canale.
+            </li>
+            <li>
+              Serviciul IPTV poate fi utilizat prin Android TV-BOX sau Aplicația
+              Moldtelecom TV, în cazul în care abonatul deține un televizor
+              smart compatibil.
+            </li>
+            <li>
+              Oferta promoțională include:
+              <ul>
+                <li>
+                  Reduceri de până la 50% la abonamentul de Internet fix și IPTV
+                  în primele 24 de luni, în funcție de planul tarifar selectat.
+                  (După perioada de 24 de luni, se va aplica tariful standard
+                  conform planului în vigoare.)
+                </li>
+                <li>Preț promoțional la un televizor selectat.</li>
+              </ul>
+            </li>
+            <li>
+              La rezilierea serviciului de Internet fix cu IPTV înainte de
+              expirarea perioadei contractuale, se vor aplica:
+              <ul>
+                <li>Plăți cu titlu de prejudiciu.</li>
+                <li>
+                  Rambursarea reducerii acordate pentru dispozitiv, echivalentă
+                  cu diferența dintre prețul standard și prețul special al
+                  dispozitivului procurat.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Abonații nu pot beneficia concomitent de oferta promoțională și de
+              televizor la preț promoțional.
+            </li>
+            <li>Televizoarele se oferă în limita stocului disponibil.</li>
+            <li>
+              Oferta promoțională și prețul promoțional la TV sunt valabile în
+              anumite localități.
+            </li>
+          </ul>
+        </DetailsBlock>
+      </Details>
+
+      <Functions
+        style_type={'blue'}
+        title={'general.recommended_options'}
+        functions={['Internet', 'Minute', 'International', 'RoamingUE']}
+      />
+      <MyApp style_type={'blue_white'} className={styles.myapp} />
 
       {/* Wi-Fi PLUS */}
       <Popup
@@ -414,6 +715,128 @@ export default function Double() {
         onClose={() => setActivePopup(null)}
       >
         <b className={styles.popup_title_1}>Ce este Moldtelecom TV?</b>
+      </Popup>
+      <Popup
+        id="1280116"
+        width="1000px"
+        isVisible={activePopup === '1280116'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <b className={styles.popup_title_1}>Ce este Moldtelecom TV?</b>
+      </Popup>
+      <Popup
+        id="1280117"
+        width="1000px"
+        isVisible={activePopup === '1280117'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <b className={styles.popup_title_1}>Optiuni aditionale</b>
+        <br />
+        <div className={styles.popup_subtitle_1}>
+          Cu Moldtelecom ai libertatea
+        </div>
+
+        <div className={styles.row_popup_options}>
+          <div>
+            <div className={styles.row_popup_options_title}>Adult</div>
+            La activarea pachetului tematic Adult obțineți 4 posturi TV
+            destinate adulților. Canalele pachetului Adult sunt difuzate de la
+            00:00 pînă la 06:00, și pot fi restricționate prin parolă utilizînd
+            funcția Control parental.
+          </div>
+          <div className={styles.row_popup_options_title_price}>35 lei</div>
+        </div>
+        <div className={styles.row_popup_options}>
+          <div>
+            <div className={styles.row_popup_options_title}>Junior</div>
+            În exclusivitate, pentru abonații pachetului Premier, Moldtelecom
+            oferă posibilitatea conectării pachetului Junior. Activați pachetul
+            și obțineți 5 posturi TV distractiv – educative destinate copiilor
+            și adolescenților.
+          </div>
+          <div className={styles.row_popup_options_title_price}>10 lei</div>
+        </div>
+        <div className={styles.row_popup_options}>
+          <div>
+            <div className={styles.row_popup_options_title}>+1 TV Extra</div>
+            Plata de abonament pentru fiecare televizor suplimentar pentru
+            pachetul TV Simplu, Premier sau Univers este de 30 lei.
+            Mediabox-urile adiţionale se consideră al 2-lea, al 3-lea.
+          </div>
+          <div className={styles.row_popup_options_title_price}>30 lei</div>
+        </div>
+        <div className={styles.row_popup_options}>
+          <div>
+            <div className={styles.row_popup_options_title}>Arhiva TV</div>
+            Cu serviciul Arhiva TV aveți libertatea de a accesa emisiunile
+            preferate din arhiva programelor TV, care au fost difuzate cu până
+            la 7 zile în urmă, pentru a le viziona în timpul comod pentru
+            dumneavoastră.
+          </div>
+          <div className={styles.row_popup_options_title_price}>Gratiut</div>
+        </div>
+      </Popup>
+
+      <Popup
+        id="1110116"
+        width="400px"
+        isVisible={activePopup === '1110116'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className={`title_3 ${styles.popup_regio_title}`}>
+          Selecteaza regiunea si localitatea
+        </div>
+
+        <div className={styles.popup_regio_selects}>
+          <select
+            value={selRegion}
+            className={styles.popup_regio_select}
+            onChange={handleRegionChange}
+          >
+            {regions.map(r => (
+              <option key={r} value={r}>
+                {r}
+              </option>
+            ))}
+          </select>
+
+          <select
+            value={selCity}
+            className={styles.popup_regio_select}
+            onChange={handleCityChange}
+          >
+            {cities.map(c => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+
+          <Button
+            onClick={() => {
+              // store
+              localStorage.setItem('region', selRegion);
+              localStorage.setItem('city', selCity);
+
+              // update display
+              // set the chosen city (or fallback to region)
+              setRegio(selCity || selRegion);
+              setIsRegio(true);
+              setActivePopup(null);
+            }}
+            color="var(--theme_primary_color_blue_4)"
+            bgcolor="var(--theme_primary_color_blue_3)"
+            border="var(--theme_primary_color_blue_3)"
+            hover_border="var(--theme_primary_color_blue_2)"
+            hover_bgcolor="var(--theme_primary_color_blue_2)"
+            icon="arrow_right"
+          >
+            OK
+          </Button>
+        </div>
       </Popup>
 
       <Footer disclaimer={true} />

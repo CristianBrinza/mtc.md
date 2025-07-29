@@ -17,7 +17,6 @@ import FaqV2 from '../../../components/faqV2/FaqV2.tsx';
 import Popup from '../../../components/Popup/Popup.tsx';
 import { useState } from 'react';
 import Details, { DetailsBlock } from '../../../components/details/Details.tsx';
-import Review from '../../../components/review/Review.tsx';
 
 export default function Fibra() {
   const { t } = useTranslation();
@@ -658,7 +657,7 @@ export default function Fibra() {
           <br />
           👉 Puteți testa viteza actuală a internetului aici:{' '}
           <a href="https://moldtelecom.md/ro/personal/speedtest">
-            https://moldtelecom.md/ro/personal/speedtestt
+            https://moldtelecom.md/ro/personal/speedtest
           </a>
         </FaqQAV2>
         <FaqQAV2
