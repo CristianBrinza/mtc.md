@@ -37,6 +37,14 @@ interface Mag {
   telefon: string;
 }
 
+// Helper to remove accents/diacritics and lowercase
+function normalizeText(str: string) {
+  return str
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
 export default function Magazine() {
   const { t } = useTranslation();
   const seo = {
@@ -52,6 +60,7 @@ export default function Magazine() {
   const mapRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState<'map' | 'list'>('map');
   const [magList, setMagList] = useState<Mag[]>([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     (async () => {
@@ -131,15 +140,21 @@ export default function Magazine() {
     } else {
       w.initMap();
     }
-  }, [magList]);
+  }, [magList, t]);
 
-  const [search, setSearch] = useState('');
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
 
+  // Prepare filtered list without diacritics and case
+  const normalizedSearch = normalizeText(search);
+  const filteredMagList = magList.filter(m => {
+    const oras = normalizeText(m.oras);
+    const adresa = normalizeText(m.adresa);
+    return oras.includes(normalizedSearch) || adresa.includes(normalizedSearch);
+  });
+
   function HighlightParentheses({ text }: { text: string }) {
-    // split into “outside” and “(inside)” pieces
     const parts = text.split(/(\([^)]*\))/g);
     return (
       <div className={styles.small_span_div}>
@@ -226,65 +241,44 @@ export default function Magazine() {
 
         {view === 'list' && (
           <div>
-            {/*<Input*/}
-            {/*  className={styles.seach_input}*/}
-            {/*  value={search}*/}
-            {/*  icon="search"*/}
-            {/*  placeholder={"Caută"}*/}
-            {/*  onChange={handleSearch}*/}
-            {/*/>*/}
             <div id="mag_list" className={styles.magazine_page_table}>
               <ScrollableWrapper>
-                {/*<table className="popup_table">*/}
                 <table className={`magazine_mtc ${styles.magazine_table}`}>
                   <thead>
-                    <tr>
-                      <th>{t('magazine.table.magazin')}</th>
-                      <th>{t('magazine.table.weekdays')}</th>
-                      <th>{t('magazine.table.saturday')}</th>
-                      <th>{t('magazine.table.sunday')}</th>
-                    </tr>
+                  <tr>
+                    <th>{t('magazine.table.magazin')}</th>
+                    <th>{t('magazine.table.weekdays')}</th>
+                    <th>{t('magazine.table.saturday')}</th>
+                    <th>{t('magazine.table.sunday')}</th>
+                  </tr>
                   </thead>
                   <tbody>
-                    {magList
-                      .filter(
-                        m =>
-                          m.oras.toLowerCase().includes(search.toLowerCase()) ||
-                          m.adresa.toLowerCase().includes(search.toLowerCase())
-                      )
-                      .map((m, i) => (
-                        <tr key={i}>
-                          <td>
-                            <span>{m.oras}</span>, {m.adresa}
-                          </td>
-                          <td>
-                            <HighlightParentheses text={m.grafic} />
-                          </td>
-                          <td>
-                            <HighlightParentheses text={m.grafic_s} />
-                          </td>
-                          <td>
-                            <HighlightParentheses text={m.grafic_d} />
-                          </td>
-                        </tr>
-                      ))}
-                    {magList.filter(
-                      m =>
-                        m.oras.toLowerCase().includes(search.toLowerCase()) ||
-                        m.adresa.toLowerCase().includes(search.toLowerCase())
-                    ).length === 0 && (
-                      <tr>
-                        <td
-                          style={{
-                            textAlign: 'center',
-                            padding: '25px 0 15px',
-                          }}
-                          colSpan={4}
-                        >
-                          {t('magazine.table.no_magazines')}
-                        </td>
-                      </tr>
-                    )}
+                  {filteredMagList.map((m, i) => (
+                    <tr key={i}>
+                      <td>
+                        <span>{m.oras}</span>, {m.adresa}
+                      </td>
+                      <td>
+                        <HighlightParentheses text={m.grafic} />
+                      </td>
+                      <td>
+                        <HighlightParentheses text={m.grafic_s} />
+                      </td>
+                      <td>
+                        <HighlightParentheses text={m.grafic_d} />
+                      </td>
+                    </tr>
+                  ))}
+                  {filteredMagList.length === 0 && (
+                    <tr>
+                      <td
+                        style={{ textAlign: 'center', padding: '25px 0 15px' }}
+                        colSpan={4}
+                      >
+                        {t('magazine.table.no_magazines')}
+                      </td>
+                    </tr>
+                  )}
                   </tbody>
                 </table>
               </ScrollableWrapper>
