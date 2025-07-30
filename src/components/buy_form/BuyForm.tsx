@@ -162,7 +162,8 @@ export default function BuyForm({
 
   return (
     <form
-      action="https://dev3.moldtelecom.md/new_comanda_marketing/"
+      // action="https://dev3.moldtelecom.md/new_comanda_marketing/"
+      action="https://www.moldtelecom.md/new_comanda_marketing/"
       method="post"
       className={`${styles.popup_form} ${className}`}
       onSubmit={handleSubmit}
