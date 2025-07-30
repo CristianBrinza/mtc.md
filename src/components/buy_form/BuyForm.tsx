@@ -39,6 +39,7 @@ export default function BuyForm({
   const { t } = useTranslation();
   const [phone, setPhone] = useState('');
   const [source, setSource] = useState('');
+  const [loading, setLoading] = useState(false); // ← new
   const startTimeRef = useRef<number>(Date.now());
   const infoRef = useRef<HTMLInputElement>(null);
   const scrollDepthRef = useRef(0);
@@ -90,15 +91,16 @@ export default function BuyForm({
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (loading) return; // ← prevent re-submit
+    setLoading(true); // ← start loading
+
     const form = e.currentTarget;
     const data = new FormData(form);
-
     const elapsedSec = Math.round((Date.now() - startTimeRef.current) / 1000);
-    console.log(`Time on page: ${elapsedSec} seconds`);
 
     const now = new Date();
     const dateString = now.toLocaleString('ro-RO', {
-      weekday: 'long', // ziua săptămânii
+      weekday: 'long',
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',
@@ -157,12 +159,15 @@ export default function BuyForm({
       }
     } catch {
       onError?.();
+    } finally {
+      setLoading(false); // ← stop loading
     }
   };
 
   return (
     <form
-      action="https://dev3.moldtelecom.md/new_comanda_marketing/"
+      // action="https://dev3.moldtelecom.md/new_comanda_marketing/"
+      action="https://www.moldtelecom.md/new_comanda_marketing/"
       method="post"
       className={`${styles.popup_form} ${className}`}
       onSubmit={handleSubmit}
@@ -180,6 +185,8 @@ export default function BuyForm({
         icon="call"
       />
       <Button
+        loading={loading} // ← pass loading
+        disabled={loading} // ← disable while loading
         color="var(--theme_primary_color_blue_4)"
         bgcolor="var(--theme_primary_color_blue_3)"
         border="var(--theme_primary_color_blue_3)"

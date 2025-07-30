@@ -21,6 +21,7 @@ interface ButtonProps {
   id?: string;
   icon?: string;
   icon_side?: 'left' | 'right';
+  loading?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -41,6 +42,7 @@ const Button: React.FC<ButtonProps> = ({
   id,
   icon,
   icon_side = 'right',
+  loading = false,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
@@ -127,8 +129,8 @@ const Button: React.FC<ButtonProps> = ({
       {children}
       {icon && icon_side === 'right' && (
         <Icon
-          className="Button_icon"
-          type={icon as keyof typeof icons}
+          className={loading ? 'Button_icon_loading' : 'Button_icon'}
+          type={loading ? 'loading' : (icon as keyof typeof icons)}
           color={buttonIconColor}
         />
       )}
@@ -149,8 +151,8 @@ const Button: React.FC<ButtonProps> = ({
       {children}
       {icon && icon_side === 'right' && (
         <Icon
-          className="Button_icon"
-          type={icon as keyof typeof icons}
+          className={loading ? 'Button_icon_loading' : 'Button_icon'}
+          type={loading ? 'loading' : (icon as keyof typeof icons)}
           color={buttonIconColor}
         />
       )}
@@ -172,8 +174,8 @@ const Button: React.FC<ButtonProps> = ({
       {children}
       {icon && icon_side === 'right' && (
         <Icon
-          className="Button_icon"
-          type={icon as keyof typeof icons}
+          className={loading ? 'Button_icon_loading' : 'Button_icon'}
+          type={loading ? 'loading' : (icon as keyof typeof icons)}
           color={buttonIconColor}
         />
       )}

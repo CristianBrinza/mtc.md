@@ -275,6 +275,20 @@ body {
   transform: translateY(0);
   opacity: 1;
 }
+.Button_icon_loading {
+  margin: 0 -3px 0 3px;
+  animation: spin_svg_loading 3s linear infinite;
+}
+
+/* Define the keyframes for a full 360° rotation */
+@keyframes spin_svg_loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 .Button_icon {
   margin: 0 0 0 0;
