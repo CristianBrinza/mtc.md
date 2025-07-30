@@ -71,6 +71,10 @@ export const routesConfig: RouteConfig[] = [
     element: React.createElement(FormTestPage),
   },
   {
+    path: '/:lang/test_2313',
+    element: React.createElement(FormTestPage),
+  },
+  {
     path: '/:lang/magazine',
     element: React.createElement(Magazine),
   },
