@@ -170,7 +170,6 @@ export default function Double() {
   const [selRegion, setSelRegion] = useState<string>('');
   const [selCity, setSelCity] = useState<string>('');
 
-
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const settings = {
     dots: true,
@@ -259,7 +258,6 @@ export default function Double() {
     setSelCity(e.target.value);
   };
 
-
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [activePopupConfig, setActivePopupConfig] = useState<string>('');
@@ -271,21 +269,18 @@ export default function Double() {
     setError(false);
   };
 
-
   const [activeTVConfig_1, setActiveTVConfig_1] = useState<string>('smart_tv');
-  // const [activeMesh_1, setActiveMesh_1] = useState<boolean>(false);
+  const [activeMesh_1, setActiveMesh_1] = useState<boolean>(false);
   const [numberTVConfig_1, setNumberTVConfig_1] = useState<number>(1);
 
-
-  const setPopup =(name:string, subname:string)=> {
-    setActivePopup('1934567')
+  const setPopup = (name: string, subname: string) => {
+    setActivePopup('1934567');
     setActivePopupConfig(name);
-    setActivePopupSubConfig(subname)
-    setActiveBuyConfig(` 
-    
-    ''}
-    `)
-  }
+    setActivePopupSubConfig(subname);
+    setActiveBuyConfig(
+      `Double  - ${name} ${subname}, ${activeMesh_1 ? '+ Wi‑Fi Mesh, ' : ''} (Oferta Back 2 School 2025)`
+    );
+  };
   return (
     <>
       <div className={styles.regio}>
@@ -381,7 +376,10 @@ export default function Double() {
                 {/*  type={'empty'}*/}
                 {/*  color={'var(--theme_primary_color_blue_2)'}*/}
                 {/*/>*/}
-                <Toggle />
+                <Toggle
+                  checked={activeMesh_1}
+                  onChange={e => setActiveMesh_1(e.target.checked)}
+                />
               </div>
               <span>
                 x1 <b>Mesh Wi-Fi</b>
@@ -547,7 +545,9 @@ export default function Double() {
               </div>
             </div>
             <Button
-              onClick={() => setPopup('Internet + TV', '(300Mbps + Premier TV)')}
+              onClick={() =>
+                setPopup('Internet + TV', '(300Mbps + Premier TV)')
+              }
               color="#fff"
               bgcolor="var(--theme_primary_color_blue_4)"
               border="var(--theme_primary_color_blue_4)"
@@ -670,27 +670,30 @@ export default function Double() {
           lei/lună (TVA inclus).
         </FaqQAV2>
         <FaqQAV2 id_faq="112089312" question={'Ce este IPTV?'}>
-
-            <strong>IPTV&nbsp;</strong>este un serviciu de televiziune digitală
-            care presupune transmiterea semnalului TV cu imagini şi sunet de
-            înaltă calitate, printr-o conexiune de bandă largă, direct către
-            televizoarele abonaţilor, prin intermediul unui mediabox
-            (Set-Top-Box).
-            <br />
-            <br />
-            <strong>
-              Ce reprezintă conectarea serviciului de televiziune digitală?
-            </strong>
-            <br />
-            Serviciul de televiziune digitală se conectează prin linia
-            telefonică sau prin conexiunea de fibră optică şi nu necesită
-            pozarea unui cablu suplimentar pentru TV sau instalarea unei antene
-            pe acoperiş.
-
+          <strong>IPTV&nbsp;</strong>este un serviciu de televiziune digitală
+          care presupune transmiterea semnalului TV cu imagini şi sunet de
+          înaltă calitate, printr-o conexiune de bandă largă, direct către
+          televizoarele abonaţilor, prin intermediul unui mediabox
+          (Set-Top-Box).
+          <br />
+          <br />
+          <strong>
+            Ce reprezintă conectarea serviciului de televiziune digitală?
+          </strong>
+          <br />
+          Serviciul de televiziune digitală se conectează prin linia telefonică
+          sau prin conexiunea de fibră optică şi nu necesită pozarea unui cablu
+          suplimentar pentru TV sau instalarea unei antene pe acoperiş.
         </FaqQAV2>
-        <FaqQAV2 id_faq="112089313" question={'Pot beneficia de televiziune digitală?'}>
-          Televiziunea digitală este disponibilă în majoritatea localităţilor din republică. Pentru a verifica dacă în localitatea Dvs. există posibilitatea de prestare a serviciului, contactaţi reprezentanții celui mai apropiat Centru Comercial Moldtelecom, sau apelaţi Serviciul Asistenţa Clienți la tel. <a
-          href="tel:1181">1181</a>.
+        <FaqQAV2
+          id_faq="112089313"
+          question={'Pot beneficia de televiziune digitală?'}
+        >
+          Televiziunea digitală este disponibilă în majoritatea localităţilor
+          din republică. Pentru a verifica dacă în localitatea Dvs. există
+          posibilitatea de prestare a serviciului, contactaţi reprezentanții
+          celui mai apropiat Centru Comercial Moldtelecom, sau apelaţi Serviciul
+          Asistenţa Clienți la tel. <a href="tel:1181">1181</a>.
         </FaqQAV2>
       </FaqV2>
 
@@ -996,35 +999,32 @@ export default function Double() {
           </div>
         ) : (
           <div className={styles.buy_popup}>
-              <div>Abonamentul ales:</div>
-              <div className={styles.selected_popup_subcription}>
-                <div className={styles.popup_selected}>{activePopupConfig}&nbsp;<span>{activePopupSubConfig}</span>
-                </div>
-
+            <div>Abonamentul ales:</div>
+            <div className={styles.selected_popup_subcription}>
+              <div className={styles.popup_selected}>
+                {activePopupConfig}&nbsp;<span>{activePopupSubConfig}</span>
               </div>
+            </div>
 
-
-
-              <BuyForm
-                config={activeBuyConfig}
-                tag={'double'}
-                service={'campain[double_2025_b2s], place[abonament]'}
-                onSuccess={() => {
-                  setSubmitted(true);
-                  setError(false);
-                }}
-                onError={() => {
-                  setError(true);
-                }}
-              />
-              <div className={styles.popup_discalmer}>
-                După expedierea solicitării vei fi apelat de un consultant
-                Moldtelecom. Mulțumim! <br />
-                Solicitările parvenite duminică, vor fi procesate luni. |
-                Câmpurile marcate cu * sunt obligatorii.
-              </div>
+            <BuyForm
+              config={activeBuyConfig}
+              tag={'double'}
+              service={'campain[double_2025_b2s], place[abonament]'}
+              onSuccess={() => {
+                setSubmitted(true);
+                setError(false);
+              }}
+              onError={() => {
+                setError(true);
+              }}
+            />
+            <div className={styles.popup_discalmer}>
+              După expedierea solicitării vei fi apelat de un consultant
+              Moldtelecom. Mulțumim! <br />
+              Solicitările parvenite duminică, vor fi procesate luni. |
+              Câmpurile marcate cu * sunt obligatorii.
+            </div>
           </div>
-
         )}
       </Popup>
     </>

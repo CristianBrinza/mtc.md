@@ -451,7 +451,7 @@
   margin: 0 auto;
   padding: 0 0px;
 }
-.popupBuy :global(.popup_block_inside){
+.popupBuy :global(.popup_block_inside) {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -537,7 +537,7 @@
   .hero_img {
     display: none;
   }
-  .regio{
+  .regio {
     font-size: 14px;
     line-height: 16px;
   }
@@ -549,7 +549,7 @@
     width: calc(100vw * 2.3);
     margin-left: calc(((100vw * 2.3) - 100vw) / -2);
   }
-  .row_popup_options_title_price{
+  .row_popup_options_title_price {
     width: 100%;
     display: flex;
   }
