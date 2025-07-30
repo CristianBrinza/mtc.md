@@ -23,6 +23,7 @@ import MobileOld from './pages/personal/oferte/mobile/Mobile_old.tsx';
 import FiveGbps from './pages/personal/oferte/5gbps/FiveGbps.tsx';
 import Fibra from './pages/business/fibra/Fibra.tsx';
 import Double from './pages/personal/oferte/double/Double.tsx';
+import PoliticaRoaming from './pages/costume/PoliticaRoaming/PoliticaRoaming.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -143,6 +144,10 @@ export const routesConfig: RouteConfig[] = [
   {
     path: '/:lang/business/fibra',
     element: React.createElement(Fibra),
+  },
+  {
+    path: '/:lang/politica-de-utilizare-rezonabila-a-serviciului-roaming-europa',
+    element: React.createElement(PoliticaRoaming),
   },
   {
     path: '*',

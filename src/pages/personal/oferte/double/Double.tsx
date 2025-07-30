@@ -17,6 +17,9 @@ import Details, {
 } from '../../../../components/details/Details.tsx';
 import Functions from '../../../../components/functions/Functions.tsx';
 import MyApp from '../../../../components/app/MyApp.tsx';
+import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
+import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
+import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
 declare global {
   interface Window {
     regiuni: Record<string, Record<string, any[]>>;
@@ -167,9 +170,7 @@ export default function Double() {
   const [selRegion, setSelRegion] = useState<string>('');
   const [selCity, setSelCity] = useState<string>('');
 
-  const [activeTVConfig_1, setActiveTVConfig_1] = useState<string>('1');
 
-  const [numberTVConfig_1, setNumberTVConfig_1] = useState<number>(1);
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const settings = {
     dots: true,
@@ -258,17 +259,47 @@ export default function Double() {
     setSelCity(e.target.value);
   };
 
+
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+  const [activePopupConfig, setActivePopupConfig] = useState<string>('');
+  const [activePopupSubConfig, setActivePopupSubConfig] = useState<string>('');
+  const [activeBuyConfig, setActiveBuyConfig] = useState<string>('');
+  const handlePopupClose = () => {
+    setActivePopup(null);
+    setSubmitted(false);
+    setError(false);
+  };
+
+
+  const [activeTVConfig_1, setActiveTVConfig_1] = useState<string>('smart_tv');
+  const [activeMesh_1, setActiveMesh_1] = useState<boolean>(false);
+  const [numberTVConfig_1, setNumberTVConfig_1] = useState<number>(1);
+
+
+  const setPopup =(name:string, subname:string)=> {
+    setActivePopup('1934567')
+    setActivePopupConfig(name);
+    setActivePopupSubConfig(subname)
+    setActiveBuyConfig(` ${activeMesh_1==true && '+ Wi-Fi Mesh, '}`)
+  }
   return (
     <>
       <div className={styles.regio}>
-        Oferta promotionala poate varia in dependenta de regiunea selectata (
-        <span
-          onClick={() => setActivePopup('1110116')}
-          className={styles.regio_select}
-        >
-          {regio}
+        <span>
+          Oferta promotionala poate varia in dependenta de regiunea selectata
         </span>
-        ).
+        &nbsp;{' '}
+        <span>
+          (
+          <span
+            onClick={() => setActivePopup('1110116')}
+            className={styles.regio_select}
+          >
+            {regio}
+          </span>
+          ).
+        </span>
       </div>
       <Navbar />
 
@@ -417,14 +448,14 @@ export default function Double() {
               </div>
               <div className={styles.tv_config_right}>
                 <div
-                  onClick={() => setActiveTVConfig_1('1')}
-                  className={`${styles.tv_config_right_1} ${activeTVConfig_1 == '1' && styles.tv_config_right_active}`}
+                  onClick={() => setActiveTVConfig_1('smart_tv')}
+                  className={`${styles.tv_config_right_1} ${activeTVConfig_1 == 'smart_tv' && styles.tv_config_right_active}`}
                 >
                   Smart TV
                 </div>
                 <div
-                  onClick={() => setActiveTVConfig_1('2')}
-                  className={`${styles.tv_config_right_2} ${activeTVConfig_1 == '2' && styles.tv_config_right_active}`}
+                  onClick={() => setActiveTVConfig_1('tv_box')}
+                  className={`${styles.tv_config_right_2} ${activeTVConfig_1 == 'tv_box' && styles.tv_config_right_active}`}
                 >
                   TV Box
                 </div>
@@ -513,7 +544,7 @@ export default function Double() {
               </div>
             </div>
             <Button
-              // onClick={() => setShowPopupFunction('aaa')}
+              onClick={() => setPopup('Internet + TV', '(300Mbps + Premier TV)')}
               color="#fff"
               bgcolor="var(--theme_primary_color_blue_4)"
               border="var(--theme_primary_color_blue_4)"
@@ -614,7 +645,53 @@ export default function Double() {
       />
       <MyApp style_type={'blue_white'} className={styles.myapp} />
 
-      {/* Wi-Fi PLUS */}
+      <FaqV2 max_faq={6}>
+        <FaqQAV2
+          id_faq="112089310"
+          question={'De ce depinde viteza reală de transmisie a datelor?'}
+        >
+          Viteza depinde de planul tarifar ales, tehnologia de acces dintre
+          echipamentul abonatului și echipamentul de distribuție a furnizorului,
+          gradul de congestionare a infrastructurii magistrale internaționale și
+          de performantele serverului de deservire a resursei web accesate.
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089311"
+          question={'Cum suspendez temporar Internetului?'}
+        >
+          Abonaţii ce doresc sistarea temporară a serviciului Internet pe o
+          perioadă de la 1 lună până la maxim 3 luni, o pot face prin depunerea
+          în prealabil a unei cereri în centrele comerciale Moldtelecom.
+          <br />
+          Suspendarea temporară a serviciului se face pentru o taxă de 50
+          lei/lună (TVA inclus).
+        </FaqQAV2>
+        <FaqQAV2 id_faq="112089312" question={'Ce este IPTV?'}>
+
+            <strong>IPTV&nbsp;</strong>este un serviciu de televiziune digitală
+            care presupune transmiterea semnalului TV cu imagini şi sunet de
+            înaltă calitate, printr-o conexiune de bandă largă, direct către
+            televizoarele abonaţilor, prin intermediul unui mediabox
+            (Set-Top-Box).
+            <br />
+            <br />
+            <strong>
+              Ce reprezintă conectarea serviciului de televiziune digitală?
+            </strong>
+            <br />
+            Serviciul de televiziune digitală se conectează prin linia
+            telefonică sau prin conexiunea de fibră optică şi nu necesită
+            pozarea unui cablu suplimentar pentru TV sau instalarea unei antene
+            pe acoperiş.
+
+        </FaqQAV2>
+        <FaqQAV2 id_faq="112089313" question={'Pot beneficia de televiziune digitală?'}>
+          Televiziunea digitală este disponibilă în majoritatea localităţilor din republică. Pentru a verifica dacă în localitatea Dvs. există posibilitatea de prestare a serviciului, contactaţi reprezentanții celui mai apropiat Centru Comercial Moldtelecom, sau apelaţi Serviciul Asistenţa Clienți la tel. <a
+          href="tel:1181">1181</a>.
+        </FaqQAV2>
+      </FaqV2>
+
+      {/* Wi-Fi Mesh */}
       <Popup
         id="1280110"
         width="1000px"
@@ -622,19 +699,20 @@ export default function Double() {
         className={styles.popupBuy}
         onClose={() => setActivePopup(null)}
       >
-        <b className={styles.popup_title_1}>Ce este Wi-Fi PLUS?</b>
+        <b className={styles.popup_title_1}>Ce este Wi-Fi Mesh?</b>
         <p>
-          Wi-Fi PLUS extinde semnalul routerului principal în zonele unde
+          Wi-Fi Mesh extinde semnalul routerului principal în zonele unde
           acoperirea este slabă, preluând și retransmițând wireless pentru o
           conexiune stabilă și rapidă în toată locuința.
         </p>
-        <b className={styles.popup_title_1}>De ce să alegi Wi-Fi PLUS?</b>
+        <b className={styles.popup_title_1}>De ce să alegi Wi-Fi Mesh?</b>
         <ul>
           <li>Acoperire uniformă în fiecare colț al casei</li>
           <li>Conectezi toate dispozitivele fără să reintroduci parola</li>
           <li>Fără buffer sau drop-out în timpul streaming-ului</li>
         </ul>
         <Button
+          to={`https://new.moldtelecom.md/${t('lang')}/wifi-plus`}
           color="#fff"
           bgcolor="var(--theme_primary_color_blue_4)"
           border="var(--theme_primary_color_blue_4)"
@@ -736,7 +814,8 @@ export default function Double() {
         <b className={styles.popup_title_1}>Optiuni aditionale</b>
         <br />
         <div className={styles.popup_subtitle_1}>
-          Cu Moldtelecom ai libertatea
+          Cu Moldtelecom ai libertatea să îţi personalizezi pachetul şi
+          controlezi totul instant, cu un singur click.
         </div>
 
         <div className={styles.row_popup_options}>
@@ -778,6 +857,42 @@ export default function Double() {
           </div>
           <div className={styles.row_popup_options_title_price}>Gratiut</div>
         </div>
+        <div className={styles.popup_subtitle_1}>
+          {' '}
+          <br />
+          Cinema-online:
+        </div>
+        <div className={styles.row_popup_options}>
+          <div>
+            <div className={styles.row_popup_options_title}>MEGOGO</div>
+            Acces la o video bibliotecă de peste 4000 de filme, 700 seriale și
+            800 desene animate, toate fără pauze de publicitate.
+          </div>
+          <div className={styles.row_popup_options_title_price}>59 lei</div>
+        </div>
+        <div className={styles.row_popup_options}>
+          <div>
+            <div className={styles.row_popup_options_title}>PREMIER</div>O
+            experiență cinematografică care îți oferă acces nelimitat la filme,
+            emisiuni TV și multe altele.
+          </div>
+          <div className={styles.row_popup_options_title_price}>59 lei</div>
+        </div>
+        <div className={styles.row_popup_options}>
+          <div>
+            <div className={styles.row_popup_options_title}>ИВИ</div>
+            Acum ai cea mai tare experiență și cel mai bogat conținut de filme
+            și desene animate, disponibile pe orice dispozitiv.
+          </div>
+          <div className={styles.row_popup_options_title_price}>59 lei</div>
+        </div>
+        {/*<div className={styles.row_popup_options}>*/}
+        {/*  <div>*/}
+        {/*    <div className={styles.row_popup_options_title}>Moldtelecom TV</div>*/}
+        {/*    O aplicație care permite să accesezi pe orice dispozitiv toate canalele din grila Moldtelecom.*/}
+        {/*  </div>*/}
+        {/*  <div className={styles.row_popup_options_title_price}>30 lei</div>*/}
+        {/*</div>*/}
       </Popup>
 
       <Popup
@@ -841,6 +956,74 @@ export default function Double() {
       </Popup>
 
       <Footer disclaimer={true} />
+      <Popup
+        id="1934567"
+        width="550px"
+        isVisible={activePopup === '1934567'}
+        onClose={handlePopupClose}
+        className={styles.popupBuy}
+        key={activePopup ?? 'popup-closed'}
+      >
+        {/*<div className={styles.popup_div_title}>*/}
+        {/*  Mulțumim că ai ales Moldtelecom*/}
+        {/*</div>*/}
+        {error ? (
+          <div className={styles.buy_popup_error}>
+            <Icon
+              type={'repair'}
+              size={'48px'}
+              color={'var(--theme_primary_color_blue_3)'}
+            />
+            <span>
+              A apărut o eroare la trimiterea cererii. <br />
+              Te rugăm să încerci din nou.
+            </span>
+          </div>
+        ) : submitted ? (
+          <div className={styles.buy_popup_success}>
+            <Icon
+              type={'tick'}
+              size={'48px'}
+              color={'var(--theme_primary_color_blue_3)'}
+            />
+            <span>
+              Solicitarea ta a fost trimisă cu succes! <br />
+              Un consultant Moldtelecom te va contacta în curând.
+            </span>
+          </div>
+        ) : (
+          <div className={styles.buy_popup}>
+              <div>Abonamentul ales:</div>
+              <div className={styles.selected_popup_subcription}>
+                <div className={styles.popup_selected}>{activePopupConfig}&nbsp;<span>{activePopupSubConfig}</span>
+                </div>
+
+              </div>
+
+
+
+              <BuyForm
+                config={activeBuyConfig}
+                tag={'double'}
+                service={'campain[double_2025_b2s], place[abonament]'}
+                onSuccess={() => {
+                  setSubmitted(true);
+                  setError(false);
+                }}
+                onError={() => {
+                  setError(true);
+                }}
+              />
+              <div className={styles.popup_discalmer}>
+                După expedierea solicitării vei fi apelat de un consultant
+                Moldtelecom. Mulțumim! <br />
+                Solicitările parvenite duminică, vor fi procesate luni. |
+                Câmpurile marcate cu * sunt obligatorii.
+              </div>
+          </div>
+
+        )}
+      </Popup>
     </>
   );
 }
