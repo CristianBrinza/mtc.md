@@ -273,7 +273,7 @@ export default function Double() {
 
 
   const [activeTVConfig_1, setActiveTVConfig_1] = useState<string>('smart_tv');
-  const [activeMesh_1, setActiveMesh_1] = useState<boolean>(false);
+  // const [activeMesh_1, setActiveMesh_1] = useState<boolean>(false);
   const [numberTVConfig_1, setNumberTVConfig_1] = useState<number>(1);
 
 
@@ -281,7 +281,10 @@ export default function Double() {
     setActivePopup('1934567')
     setActivePopupConfig(name);
     setActivePopupSubConfig(subname)
-    setActiveBuyConfig(` ${activeMesh_1==true && '+ Wi-Fi Mesh, '}`)
+    setActiveBuyConfig(` 
+    
+    ''}
+    `)
   }
   return (
     <>
