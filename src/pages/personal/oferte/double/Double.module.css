@@ -38,10 +38,12 @@
   border: 1px solid var(--theme_primary_color_blue_3);
   cursor: pointer;
   font-weight: 600;
-  min-width: 280px;
+  /*min-width: 280px;*/
+  min-width: 230px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: -1px;
   /*font-family: Poppins, sans-serif;*/
 }
 .config_block:hover {
@@ -81,6 +83,9 @@
   /*border-radius: 100px;*/
   /*padding: 10px 30px;*/
   /*box-sizing: border-box;*/
+}
+.abonaments_block_inside_title_tv_hide {
+  display: none !important;
 }
 .abonaments_block_inside_title_tv {
   display: flex;
@@ -227,8 +232,8 @@
   display: flex;
   gap: 2px;
 }
-.tv_config_left_1,
-.tv_config_left_3 {
+.tv_config_left_t1,
+.tv_config_left_t3 {
   padding: 3px 9px;
   border: 1px solid var(--theme_primary_color_blue_3);
   /*color: #ffffff;*/
@@ -240,24 +245,24 @@
   /*align-items: center;*/
   /*justify-content: center;*/
 }
-.tv_config_left_1:hover,
-.tv_config_left_3:hover {
+.tv_config_left_t1:hover,
+.tv_config_left_t3:hover {
   border: 1px solid var(--theme_primary_color_blue_2);
   background-color: var(--theme_primary_color_blue_2);
 }
-.tv_config_left_1 {
+.tv_config_left_t1 {
   border-radius: 100px;
 }
-.tv_config_left_3 {
+.tv_config_left_t3 {
   border-radius: 100px;
 }
-.tv_config_left_2 {
+.tv_config_left_t2 {
   padding: 3px 18px;
   border: 1px solid #fff;
   background-color: #ffffff;
   border-radius: 100px;
 }
-/*.tv_config_left_2 span{*/
+/*.tv_config_left_t2 span{*/
 /*  font-size: 12px;*/
 /*}*/
 .tv_config_right {
@@ -266,19 +271,20 @@
 .tv_config_right_active {
   background-color: var(--theme_primary_color_blue_3) !important;
   border: 1px solid var(--theme_primary_color_blue_3) !important;
+  font-weight: 600;
 }
-.tv_config_right_1,
-.tv_config_right_2 {
+.tv_config_right_t1,
+.tv_config_right_t2 {
   border: 1px solid #fff;
   padding: 2px 12px;
   box-sizing: border-box;
   cursor: pointer;
   background-color: #fff;
 }
-.tv_config_right_1 {
+.tv_config_right_t1 {
   border-radius: 100px 0 0 100px;
 }
-.tv_config_right_2 {
+.tv_config_right_t2 {
   border-radius: 0 100px 100px 0;
 }
 
@@ -445,8 +451,12 @@
   background-image: url('/images/svg/ui_svg/select_arrow.svg'); /* sau data‑uri SVG */
   background-repeat: no-repeat;
   background-position: calc(100% - 20px) center;
-  background-size: 12px; /* ajustaţi după dimensiunea iconiţei */
+  background-size: 16px; /* ajustaţi după dimensiunea iconiţei */
   border: 1px transparent;
+}
+.calculaor_select {
+  background-color: var(--theme_primary_color_blue_3);
+  margin: 20px 0 20px;
 }
 .popup_regio_title {
   margin: 0 auto;
@@ -506,6 +516,32 @@
   line-height: 10px;
   opacity: 0.5;
   margin-top: 10px;
+}
+.abonaments_block_inside_tv_chose {
+  display: none;
+}
+.abonaments_block_inside_tv_chose_active {
+  display: flex;
+}
+.abonaments_block_inside_tv_chose_select {
+  border: 1px solid #fff;
+  padding: 8px 15px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: #fff;
+  margin: 0 0 9px;
+  font-size: 18px;
+}
+.abonaments_block_inside_tv_chose_select_left {
+  border-radius: 100px 0 0 100px;
+}
+.abonaments_block_inside_tv_chose_select_right {
+  border-radius: 0 100px 100px 0;
+}
+.abonaments_block_inside_tv_chose_select_active {
+  background-color: var(--theme_primary_color_blue_3) !important;
+  border: 1px solid var(--theme_primary_color_blue_3) !important;
+  font-weight: 600;
 }
 
 @media (max-width: 1300px) {
