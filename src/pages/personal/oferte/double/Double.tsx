@@ -265,7 +265,7 @@ export default function Double() {
   const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelCity(e.target.value);
   };
-
+  const [popupType, setPopupType] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [activePopupConfig, setActivePopupConfig] = useState<string>('');
@@ -275,6 +275,7 @@ export default function Double() {
     setActivePopup(null);
     setSubmitted(false);
     setError(false);
+    setPopupType(false);
   };
 
   const [activeTVConfig_1, setActiveTVConfig_1] = useState<string>('smart_tv');
@@ -2498,15 +2499,11 @@ export default function Double() {
             style_type={'gray'}
             show_like={false}
             show_comapre={false}
-            onClick={() =>
-              setPopup(
-                '1',
-                'Internet + TV',
-                `(300Mbps + ${activeSelectedTV_1 == 'premier' ? 'Premier TV' : activeSelectedTV_1 == 'univers' && 'Univers TV'})`
-              )
-            }
+            buy={() => {
+              setPopup('1', 'Hisense 32A4N', `(500Mbps + Univers TV)`);
+              setPopupType(true);
+            }}
           />
-
         </div>
         <div className={styles.tm_carousell_block}>
           <ShopCard
@@ -2523,6 +2520,10 @@ export default function Double() {
             style_type={'gray'}
             show_like={false}
             show_comapre={false}
+            buy={() => {
+              setPopup('1', 'Hisense 32A4N', `(500 Mbps + Univers TV)`);
+              setPopupType(true);
+            }}
           />
         </div>
         <div className={styles.tm_carousell_block}>
@@ -2540,6 +2541,10 @@ export default function Double() {
             style_type={'gray'}
             show_like={false}
             show_comapre={false}
+            buy={() => {
+              setPopup('1', 'Xiaomi Redmi Pad SE', `(1000 Mbps + Univers TV)`);
+              setPopupType(true);
+            }}
           />
         </div>
         <div className={styles.tm_carousell_block}>
@@ -2557,6 +2562,10 @@ export default function Double() {
             tag_color={'var(--theme_primary_color_blue_3)'}
             show_like={false}
             show_comapre={false}
+            buy={() => {
+              setPopup('1', 'Hisense 55A4N', `(2.1 Gbps + Univers TV)`);
+              setPopupType(true);
+            }}
           />
         </div>
         <div className={styles.tm_carousell_block}>
@@ -2568,12 +2577,20 @@ export default function Double() {
             reducere="- 99%"
             title="Microsoft"
             subtitle="Xbox Series S"
-            characteristics='1 TB /White'
+            characteristics="1 TB /White"
             style_type={'gray'}
             tag={'2.1 Gbps + TV'}
             tag_color={'var(--theme_primary_color_blue_3)'}
             show_like={false}
             show_comapre={false}
+            buy={() => {
+              setPopup(
+                '1',
+                'Microsoft Xbox Series S',
+                `(2.1 Gbps + Univers TV)`
+              );
+              setPopupType(true);
+            }}
           />
         </div>
         <div className={styles.tm_carousell_block}>
@@ -2585,15 +2602,22 @@ export default function Double() {
             reducere="- 99%"
             title="Sony"
             subtitle="PlayStation 5 Slim"
-            characteristics='Disc Edition /White'
+            characteristics="Disc Edition /White"
             style_type={'gray'}
             tag={'5.5 Gbps + TV'}
             tag_color={'var(--theme_primary_color_blue_3)'}
             show_like={false}
             show_comapre={false}
+            buy={() => {
+              setPopup(
+                '1',
+                'Sony PlayStation 5 Slim',
+                `(5.5 Gbps + Univers TV)`
+              );
+              setPopupType(true);
+            }}
           />
         </div>
-
       </Slider>
       <div className={styles.devices_disclailmer}>
         <span>
@@ -2960,7 +2984,11 @@ export default function Double() {
           </div>
         ) : (
           <div className={styles.buy_popup}>
-            <div>Abonamentul ales:</div>
+            {popupType == true ? (
+              <div>Dispozitivul ales:</div>
+            ) : (
+              <div>Abonamentul ales:</div>
+            )}
             <div className={styles.selected_popup_subcription}>
               <div className={styles.popup_selected}>
                 {activePopupConfig}&nbsp;<span>{activePopupSubConfig}</span>
