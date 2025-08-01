@@ -799,7 +799,7 @@ export default function Double() {
   const settings_devices = {
     dots: false,
     infinite: true,
-    arrows: false,
+    arrows: true,
     autoplay: true,
     autoplaySpeed: 2500,
     slidesToShow: 4,
@@ -2492,13 +2492,21 @@ export default function Double() {
             reducere="- 99%"
             title="Hisense "
             subtitle="32A4N (FHD)"
-            characteristics='Direct LED / Full HD / 32"'
+            characteristics='Direct LED /Full HD /32"'
             tag={'500 Mbps + TV'}
             tag_color={'var(--theme_primary_color_blue_3)'}
             style_type={'gray'}
             show_like={false}
             show_comapre={false}
+            onClick={() =>
+              setPopup(
+                '1',
+                'Internet + TV',
+                `(300Mbps + ${activeSelectedTV_1 == 'premier' ? 'Premier TV' : activeSelectedTV_1 == 'univers' && 'Univers TV'})`
+              )
+            }
           />
+
         </div>
         <div className={styles.tm_carousell_block}>
           <ShopCard
@@ -2506,10 +2514,10 @@ export default function Double() {
             image="/images/shop/394534437.png"
             price={1899}
             old_price={5160}
-            reducere="- 99%"
+            reducere="- 3 261"
             title="Hisense"
             subtitle="43A4N (4k)"
-            characteristics='UHD VA / 4K / 43"'
+            characteristics='UHD VA /4K /43"'
             tag={'1000 Mbps + TV'}
             tag_color={'var(--theme_primary_color_blue_3)'}
             style_type={'gray'}
@@ -2526,7 +2534,7 @@ export default function Double() {
             reducere="- 99%"
             title="Xiaomi"
             subtitle="Redmi Pad SE"
-            characteristics='UHD VA / 4K / 43"'
+            characteristics='11"/128 GB/ Wi-Fi'
             tag={'1000 Mbps + TV'}
             tag_color={'var(--theme_primary_color_blue_3)'}
             style_type={'gray'}
@@ -2543,7 +2551,7 @@ export default function Double() {
             reducere="-40%"
             title="Hisense"
             subtitle="55A4N (4k)"
-            characteristics='UHD VA / 4K / 55"'
+            characteristics='UHD VA /4K /55"'
             style_type={'gray'}
             tag={'2.1 Gbps + TV'}
             tag_color={'var(--theme_primary_color_blue_3)'}
@@ -2551,6 +2559,41 @@ export default function Double() {
             show_comapre={false}
           />
         </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={294594497}
+            image="/images/shop/283935269.webp"
+            price={1}
+            old_price={9369}
+            reducere="- 99%"
+            title="Microsoft"
+            subtitle="Xbox Series S"
+            characteristics='1 TB /White'
+            style_type={'gray'}
+            tag={'2.1 Gbps + TV'}
+            tag_color={'var(--theme_primary_color_blue_3)'}
+            show_like={false}
+            show_comapre={false}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={294594497}
+            image="/images/shop/183935269.webp"
+            price={1}
+            old_price={11040}
+            reducere="- 99%"
+            title="Sony"
+            subtitle="PlayStation 5 Slim"
+            characteristics='Disc Edition /White'
+            style_type={'gray'}
+            tag={'5.5 Gbps + TV'}
+            tag_color={'var(--theme_primary_color_blue_3)'}
+            show_like={false}
+            show_comapre={false}
+          />
+        </div>
+
       </Slider>
       <div className={styles.devices_disclailmer}>
         <span>
