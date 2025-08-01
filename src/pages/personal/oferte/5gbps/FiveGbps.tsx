@@ -74,8 +74,8 @@ export default function FiveGbps() {
               }
             }}
             color="var(--theme_primary_color_blue_4)"
-            bgcolor="var(--theme_primary_color_blue_2)"
-            border="var(--theme_primary_color_blue_2)"
+            bgcolor="#fff"
+            border="#fff"
             hover_border="var(--theme_primary_color_blue_2)"
             hover_bgcolor="var(--theme_primary_color_blue_2)"
             hover_color="var(--theme_primary_color_blue_1)"
@@ -84,7 +84,15 @@ export default function FiveGbps() {
           >
             <b>{t('order_now')}</b>
           </Button>
-          <a href={'tel:022500500'}>/0(22) 500-500</a>
+          <Button
+            to={'tel:022500500'}
+            hover_border="var(--theme_primary_color_blue_2)"
+            hover_bgcolor="var(--theme_primary_color_blue_2)"
+            hover_color="var(--theme_primary_color_blue_1)"
+            color="#fff"
+          >
+            0(22) 500-500
+          </Button>
         </div>
       </Hero>
 
@@ -314,7 +322,7 @@ export default function FiveGbps() {
                     {t('lei_luna')}
                   </div>
                   <div className={styles.mobile_carousell_price_old}>
-                    <span>590 {t('lei_luna')}</span>
+                    <span>599 {t('lei_luna')}</span>
                   </div>
                 </div>
               </div>
@@ -384,7 +392,7 @@ export default function FiveGbps() {
                       {t('lei_luna')}
                     </div>
                     <div className={styles.mobile_carousell_price_old}>
-                      <span>790 {t('lei_luna')}</span>
+                      <span>799 {t('lei_luna')}</span>
                     </div>
                   </div>
                 </div>

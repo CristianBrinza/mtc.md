@@ -20,6 +20,7 @@ import MyApp from '../../../../components/app/MyApp.tsx';
 import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
 import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
+import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 declare global {
   interface Window {
     regiuni: Record<string, Record<string, any[]>>;
@@ -286,50 +287,96 @@ export default function Double() {
   const [activeTelephone_1, setActiveTelephone_1] = useState<boolean>(false);
   const [numberTVConfig_1, setNumberTVConfig_1] = useState<number>(1);
 
-  const total_1 = useMemo(() => {
-    const base = activeConfig === '1' ? 130 : 230;
-    const mesh = activeMesh_1 ? 49 : 0;
-    const safe = activeSafeweb_1 ? 15 : 0;
-    const tel = activeTelephone_1 ? 10 : 0;
+  function calculateTotal_1(
+    config: ConfigType,
+    mesh: boolean,
+    safeweb: boolean,
+    telephone: boolean,
+    tvConfig: string,
+    selectedTV: string,
+    numberTV: number
+  ): number {
+    const base = config === '1' ? 130 : 230;
+    const meshVal = mesh ? 49 : 0;
+    const safeVal = safeweb ? 15 : 0;
+    const telVal = telephone ? 10 : 0;
 
-    let tv =
-      activeTVConfig_1 === 'smart_tv'
-        ? activeSelectedTV_1 === 'premier'
-          ? activeConfig === '1'
+    let tvVal = 0;
+    if (tvConfig === 'smart_tv') {
+      tvVal =
+        selectedTV === 'premier'
+          ? config === '1'
             ? 40
             : 60
-          : activeSelectedTV_1 === 'univers'
-            ? activeConfig === '1'
+          : selectedTV === 'univers'
+            ? config === '1'
               ? 50
               : 70
-            : 0
-        : activeTVConfig_1 === 'tv_box'
-          ? activeSelectedTV_1 === 'premier'
-            ? activeConfig === '1'
-              ? 50
-              : 70
-            : activeSelectedTV_1 === 'univers'
-              ? activeConfig === '1'
-                ? 60
-                : 80
-              : 0
-          : 0;
+            : 0;
+    } else if (tvConfig === 'tv_box') {
+      tvVal =
+        selectedTV === 'premier'
+          ? config === '1'
+            ? 50
+            : 70
+          : selectedTV === 'univers'
+            ? config === '1'
+              ? 60
+              : 80
+            : 0;
+    }
 
     const extraTV =
-      numberTVConfig_1 > 1
-        ? (numberTVConfig_1 - 1) * (activeTVConfig_1 === 'smart_tv' ? 20 : 30)
-        : 0;
+      numberTV > 1 ? (numberTV - 1) * (tvConfig === 'smart_tv' ? 20 : 30) : 0;
 
-    return base + mesh + safe + tel + tv + extraTV;
-  }, [
-    activeConfig,
-    activeMesh_1,
-    activeSafeweb_1,
-    activeTelephone_1,
-    activeTVConfig_1,
-    activeSelectedTV_1,
-    numberTVConfig_1,
-  ]);
+    return base + meshVal + safeVal + telVal + tvVal + extraTV;
+  }
+
+  const total_1 = useMemo(
+    () =>
+      calculateTotal_1(
+        activeConfig,
+        activeMesh_1,
+        activeSafeweb_1,
+        activeTelephone_1,
+        activeTVConfig_1,
+        activeSelectedTV_1,
+        numberTVConfig_1
+      ),
+    [
+      activeConfig,
+      activeMesh_1,
+      activeSafeweb_1,
+      activeTelephone_1,
+      activeTVConfig_1,
+      activeSelectedTV_1,
+      numberTVConfig_1,
+    ]
+  );
+
+  // and now your “other” total, for whichever config ≠ '1':
+  const altConfig_1 = activeConfig !== '1' ? activeConfig : ('2' as ConfigType);
+  const total_1_1 = useMemo(
+    () =>
+      calculateTotal_1(
+        altConfig_1,
+        activeMesh_1,
+        activeSafeweb_1,
+        activeTelephone_1,
+        activeTVConfig_1,
+        activeSelectedTV_1,
+        numberTVConfig_1
+      ),
+    [
+      altConfig_1,
+      activeMesh_1,
+      activeSafeweb_1,
+      activeTelephone_1,
+      activeTVConfig_1,
+      activeSelectedTV_1,
+      numberTVConfig_1,
+    ]
+  );
 
   const [activeTVConfig_2, setActiveTVConfig_2] = useState<string>('smart_tv');
   const [activeSelectedTV_2, setActiveSelectedTV_2] =
@@ -341,50 +388,96 @@ export default function Double() {
   const [activeTelephone_2, setActiveTelephone_2] = useState<boolean>(false);
   const [numberTVConfig_2, setNumberTVConfig_2] = useState<number>(1);
 
-  const total_2 = useMemo(() => {
-    const base = activeConfig === '1' ? 150 : 250;
-    const mesh = activeMesh_2 ? 49 : 0;
-    const safe = activeSafeweb_2 ? 15 : 0;
-    const tel = activeTelephone_2 ? 10 : 0;
+  function calculateTotal_2(
+    config: ConfigType,
+    mesh: boolean,
+    safeweb: boolean,
+    telephone: boolean,
+    tvConfig: string,
+    selectedTV: string,
+    numberTV: number
+  ): number {
+    const base = config === '1' ? 150 : 250;
+    const meshVal = mesh ? 49 : 0;
+    const safeVal = safeweb ? 15 : 0;
+    const telVal = telephone ? 10 : 0;
 
-    let tv =
-      activeTVConfig_2 === 'smart_tv'
-        ? activeSelectedTV_2 === 'premier'
-          ? activeConfig === '1'
+    let tvVal = 0;
+    if (tvConfig === 'smart_tv') {
+      tvVal =
+        selectedTV === 'premier'
+          ? config === '1'
             ? 40
             : 60
-          : activeSelectedTV_2 === 'univers'
-            ? activeConfig === '1'
+          : selectedTV === 'univers'
+            ? config === '1'
               ? 50
               : 70
-            : 0
-        : activeTVConfig_2 === 'tv_box'
-          ? activeSelectedTV_2 === 'premier'
-            ? activeConfig === '1'
-              ? 50
-              : 70
-            : activeSelectedTV_2 === 'univers'
-              ? activeConfig === '1'
-                ? 60
-                : 80
-              : 0
-          : 0;
+            : 0;
+    } else if (tvConfig === 'tv_box') {
+      tvVal =
+        selectedTV === 'premier'
+          ? config === '1'
+            ? 50
+            : 70
+          : selectedTV === 'univers'
+            ? config === '1'
+              ? 60
+              : 80
+            : 0;
+    }
 
     const extraTV =
-      numberTVConfig_2 > 1
-        ? (numberTVConfig_2 - 1) * (activeTVConfig_2 === 'smart_tv' ? 20 : 30)
-        : 0;
+      numberTV > 1 ? (numberTV - 1) * (tvConfig === 'smart_tv' ? 20 : 30) : 0;
 
-    return base + mesh + safe + tel + tv + extraTV;
-  }, [
-    activeConfig,
-    activeMesh_2,
-    activeSafeweb_2,
-    activeTelephone_2,
-    activeTVConfig_2,
-    activeSelectedTV_2,
-    numberTVConfig_2,
-  ]);
+    return base + meshVal + safeVal + telVal + tvVal + extraTV;
+  }
+
+  const total_2 = useMemo(
+    () =>
+      calculateTotal_2(
+        activeConfig,
+        activeMesh_2,
+        activeSafeweb_2,
+        activeTelephone_2,
+        activeTVConfig_2,
+        activeSelectedTV_2,
+        numberTVConfig_2
+      ),
+    [
+      activeConfig,
+      activeMesh_2,
+      activeSafeweb_2,
+      activeTelephone_2,
+      activeTVConfig_2,
+      activeSelectedTV_2,
+      numberTVConfig_2,
+    ]
+  );
+
+  // and now your “other” total, for whichever config ≠ '1':
+  const altConfig_2 = activeConfig !== '1' ? activeConfig : ('2' as ConfigType);
+  const total_2_2 = useMemo(
+    () =>
+      calculateTotal_2(
+        altConfig_2,
+        activeMesh_2,
+        activeSafeweb_2,
+        activeTelephone_2,
+        activeTVConfig_2,
+        activeSelectedTV_2,
+        numberTVConfig_2
+      ),
+    [
+      altConfig_2,
+      activeMesh_2,
+      activeSafeweb_2,
+      activeTelephone_2,
+      activeTVConfig_2,
+      activeSelectedTV_2,
+      numberTVConfig_2,
+    ]
+  );
 
   const [activeTVConfig_3, setActiveTVConfig_3] = useState<string>('smart_tv');
   const [activeSelectedTV_3, setActiveSelectedTV_3] =
@@ -396,50 +489,298 @@ export default function Double() {
   const [activeTelephone_3, setActiveTelephone_3] = useState<boolean>(false);
   const [numberTVConfig_3, setNumberTVConfig_3] = useState<number>(1);
 
-  const total_3 = useMemo(() => {
-    const base = activeConfig === '1' ? 200 : 300;
-    const mesh = activeMesh_3 ? 49 : 0;
-    const safe = activeSafeweb_3 ? 15 : 0;
-    const tel = activeTelephone_3 ? 10 : 0;
+  function calculateTotal_3(
+    config: ConfigType,
+    mesh: boolean,
+    safeweb: boolean,
+    telephone: boolean,
+    tvConfig: string,
+    selectedTV: string,
+    numberTV: number
+  ): number {
+    const base = config === '1' ? 200 : 300;
+    const meshVal = mesh ? 49 : 0;
+    const safeVal = safeweb ? 15 : 0;
+    const telVal = telephone ? 10 : 0;
 
-    let tv =
-      activeTVConfig_3 === 'smart_tv'
-        ? activeSelectedTV_3 === 'premier'
-          ? activeConfig === '1'
+    let tvVal = 0;
+    if (tvConfig === 'smart_tv') {
+      tvVal =
+        selectedTV === 'premier'
+          ? config === '1'
             ? 40
             : 60
-          : activeSelectedTV_3 === 'univers'
-            ? activeConfig === '1'
+          : selectedTV === 'univers'
+            ? config === '1'
               ? 50
               : 70
-            : 0
-        : activeTVConfig_3 === 'tv_box'
-          ? activeSelectedTV_3 === 'premier'
-            ? activeConfig === '1'
-              ? 50
-              : 70
-            : activeSelectedTV_3 === 'univers'
-              ? activeConfig === '1'
-                ? 60
-                : 80
-              : 0
-          : 0;
+            : 0;
+    } else if (tvConfig === 'tv_box') {
+      tvVal =
+        selectedTV === 'premier'
+          ? config === '1'
+            ? 50
+            : 70
+          : selectedTV === 'univers'
+            ? config === '1'
+              ? 60
+              : 80
+            : 0;
+    }
 
     const extraTV =
-      numberTVConfig_3 > 1
-        ? (numberTVConfig_3 - 1) * (activeTVConfig_3 === 'smart_tv' ? 20 : 30)
-        : 0;
+      numberTV > 1 ? (numberTV - 1) * (tvConfig === 'smart_tv' ? 20 : 30) : 0;
 
-    return base + mesh + safe + tel + tv + extraTV;
-  }, [
-    activeConfig,
-    activeMesh_3,
-    activeSafeweb_3,
-    activeTelephone_3,
-    activeTVConfig_3,
-    activeSelectedTV_3,
-    numberTVConfig_3,
-  ]);
+    return base + meshVal + safeVal + telVal + tvVal + extraTV;
+  }
+
+  const total_3 = useMemo(
+    () =>
+      calculateTotal_3(
+        activeConfig,
+        activeMesh_3,
+        activeSafeweb_3,
+        activeTelephone_3,
+        activeTVConfig_3,
+        activeSelectedTV_3,
+        numberTVConfig_3
+      ),
+    [
+      activeConfig,
+      activeMesh_3,
+      activeSafeweb_3,
+      activeTelephone_3,
+      activeTVConfig_3,
+      activeSelectedTV_3,
+      numberTVConfig_3,
+    ]
+  );
+
+  // and now your “other” total, for whichever config ≠ '1':
+  const altConfig_3 = activeConfig !== '1' ? activeConfig : ('2' as ConfigType);
+  const total_3_3 = useMemo(
+    () =>
+      calculateTotal_3(
+        altConfig_3,
+        activeMesh_3,
+        activeSafeweb_3,
+        activeTelephone_3,
+        activeTVConfig_3,
+        activeSelectedTV_3,
+        numberTVConfig_3
+      ),
+    [
+      altConfig_3,
+      activeMesh_3,
+      activeSafeweb_3,
+      activeTelephone_3,
+      activeTVConfig_3,
+      activeSelectedTV_3,
+      numberTVConfig_3,
+    ]
+  );
+
+  const [activeTVConfig_4, setActiveTVConfig_4] = useState<string>('smart_tv');
+  const [activeSelectedTV_4, setActiveSelectedTV_4] =
+    useState<string>('univers');
+  const [activeTV_Select_4, setActiveTV_Select_4] = useState<boolean>(false);
+  const [activeMesh_4, setActiveMesh_4] = useState<boolean>(false);
+  const [activeSafeweb_4, setActiveSafeweb_4] = useState<boolean>(false);
+  const [activeMTC_TV_GO_4, setActiveMTC_TV_GO_4] = useState<boolean>(false);
+  const [activeTelephone_4, setActiveTelephone_4] = useState<boolean>(false);
+  const [numberTVConfig_4, setNumberTVConfig_4] = useState<number>(1);
+
+  function calculateTotal_4(
+    config: ConfigType,
+    mesh: boolean,
+    safeweb: boolean,
+    telephone: boolean,
+    tvConfig: string,
+    selectedTV: string,
+    numberTV: number
+  ): number {
+    const base = config === '1' ? 299 : 599;
+    const meshVal = mesh ? 49 : 0;
+    const safeVal = safeweb ? 15 : 0;
+    const telVal = telephone ? 10 : 0;
+
+    let tvVal = 0;
+    if (tvConfig === 'smart_tv') {
+      tvVal =
+        selectedTV === 'premier'
+          ? config === '1'
+            ? 40
+            : 60
+          : selectedTV === 'univers'
+            ? config === '1'
+              ? 50
+              : 70
+            : 0;
+    } else if (tvConfig === 'tv_box') {
+      tvVal =
+        selectedTV === 'premier'
+          ? config === '1'
+            ? 50
+            : 70
+          : selectedTV === 'univers'
+            ? config === '1'
+              ? 60
+              : 80
+            : 0;
+    }
+
+    const extraTV =
+      numberTV > 1 ? (numberTV - 1) * (tvConfig === 'smart_tv' ? 20 : 30) : 0;
+
+    return base + meshVal + safeVal + telVal + tvVal + extraTV;
+  }
+
+  const total_4 = useMemo(
+    () =>
+      calculateTotal_4(
+        activeConfig,
+        activeMesh_4,
+        activeSafeweb_4,
+        activeTelephone_4,
+        activeTVConfig_4,
+        activeSelectedTV_4,
+        numberTVConfig_4
+      ),
+    [
+      activeConfig,
+      activeMesh_4,
+      activeSafeweb_4,
+      activeTelephone_4,
+      activeTVConfig_4,
+      activeSelectedTV_4,
+      numberTVConfig_4,
+    ]
+  );
+
+  // and now your “other” total, for whichever config ≠ '1':
+  const altConfig_4 = activeConfig !== '1' ? activeConfig : ('2' as ConfigType);
+  const total_4_4 = useMemo(
+    () =>
+      calculateTotal_4(
+        altConfig_4,
+        activeMesh_4,
+        activeSafeweb_4,
+        activeTelephone_4,
+        activeTVConfig_4,
+        activeSelectedTV_4,
+        numberTVConfig_4
+      ),
+    [
+      altConfig_4,
+      activeMesh_4,
+      activeSafeweb_4,
+      activeTelephone_4,
+      activeTVConfig_4,
+      activeSelectedTV_4,
+      numberTVConfig_4,
+    ]
+  );
+
+  const [activeTVConfig_5, setActiveTVConfig_5] = useState<string>('smart_tv');
+  const [activeSelectedTV_5, setActiveSelectedTV_5] =
+    useState<string>('univers');
+  const [activeTV_Select_5, setActiveTV_Select_5] = useState<boolean>(false);
+  const [activeMesh_5, setActiveMesh_5] = useState<boolean>(false);
+  const [activeSafeweb_5, setActiveSafeweb_5] = useState<boolean>(false);
+  const [activeMTC_TV_GO_5, setActiveMTC_TV_GO_5] = useState<boolean>(false);
+  const [activeTelephone_5, setActiveTelephone_5] = useState<boolean>(false);
+  const [numberTVConfig_5, setNumberTVConfig_5] = useState<number>(1);
+
+  function calculateTotal_5(
+    config: ConfigType,
+    mesh: boolean,
+    safeweb: boolean,
+    telephone: boolean,
+    tvConfig: string,
+    selectedTV: string,
+    numberTV: number
+  ): number {
+    const base = config === '1' ? 499 : 799;
+    const meshVal = mesh ? 49 : 0;
+    const safeVal = safeweb ? 15 : 0;
+    const telVal = telephone ? 10 : 0;
+
+    let tvVal = 0;
+    if (tvConfig === 'smart_tv') {
+      tvVal =
+        selectedTV === 'premier'
+          ? config === '1'
+            ? 40
+            : 60
+          : selectedTV === 'univers'
+            ? config === '1'
+              ? 50
+              : 70
+            : 0;
+    } else if (tvConfig === 'tv_box') {
+      tvVal =
+        selectedTV === 'premier'
+          ? config === '1'
+            ? 50
+            : 70
+          : selectedTV === 'univers'
+            ? config === '1'
+              ? 60
+              : 80
+            : 0;
+    }
+
+    const extraTV =
+      numberTV > 1 ? (numberTV - 1) * (tvConfig === 'smart_tv' ? 20 : 30) : 0;
+
+    return base + meshVal + safeVal + telVal + tvVal + extraTV;
+  }
+
+  const total_5 = useMemo(
+    () =>
+      calculateTotal_5(
+        activeConfig,
+        activeMesh_5,
+        activeSafeweb_5,
+        activeTelephone_5,
+        activeTVConfig_5,
+        activeSelectedTV_5,
+        numberTVConfig_5
+      ),
+    [
+      activeConfig,
+      activeMesh_5,
+      activeSafeweb_5,
+      activeTelephone_5,
+      activeTVConfig_5,
+      activeSelectedTV_5,
+      numberTVConfig_5,
+    ]
+  );
+
+  // and now your “other” total, for whichever config ≠ '1':
+  const altConfig_5 = activeConfig !== '1' ? activeConfig : ('2' as ConfigType);
+  const total_5_5 = useMemo(
+    () =>
+      calculateTotal_5(
+        altConfig_5,
+        activeMesh_5,
+        activeSafeweb_5,
+        activeTelephone_5,
+        activeTVConfig_5,
+        activeSelectedTV_5,
+        numberTVConfig_5
+      ),
+    [
+      altConfig_5,
+      activeMesh_5,
+      activeSafeweb_5,
+      activeTelephone_5,
+      activeTVConfig_5,
+      activeSelectedTV_5,
+      numberTVConfig_5,
+    ]
+  );
 
   const setPopup = (id: string, name: string, subname: string) => {
     setActivePopup('1934567');
@@ -453,6 +794,37 @@ export default function Double() {
     console.log(
       `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_1}, nr - ${numberTVConfig_1} tv), ${activeMesh_1 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_1 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_1 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_1 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
     );
+  };
+
+  const settings_devices = {
+    dots: false,
+    infinite: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 951,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 651,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   return (
     <>
@@ -566,7 +938,7 @@ export default function Double() {
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
                   >
-                    (49 lei/luna)
+                    (49 {t('combo_home.lei_luna')})
                   </span>
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280110')} />
@@ -588,7 +960,7 @@ export default function Double() {
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
                   >
-                    (15 lei/luna)
+                    (15 {t('combo_home.lei_luna')})
                   </span>
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280112')} />
@@ -698,7 +1070,7 @@ export default function Double() {
                     className={styles.abonaments_block_inside_subtitle_small}
                     style={{ textDecoration: 'line-through' }}
                   >
-                    (15 lei/luna)
+                    (15 {t('combo_home.lei_luna')})
                   </span>
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280116')} />
@@ -750,7 +1122,7 @@ export default function Double() {
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
                   >
-                    (10 lei/luna)
+                    (10 {t('combo_home.lei_luna')})
                   </span>
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280113')} />
@@ -777,7 +1149,9 @@ export default function Double() {
                     <div className={styles.mobile_carousell_price_old}>
                       <span>
                         {' '}
-                        {activeConfig == '1' ? `230 ${t('lei_luna')}` : ` `}
+                        {activeConfig == '1'
+                          ? `${total_1_1} ${t('lei_luna')}`
+                          : ` `}
                       </span>
                     </div>
                   </div>
@@ -852,7 +1226,7 @@ export default function Double() {
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
                   >
-                    (49 lei/luna)
+                    (49 {t('combo_home.lei_luna')})
                   </span>
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280110')} />
@@ -874,7 +1248,7 @@ export default function Double() {
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
                   >
-                    (15 lei/luna)
+                    (15 {t('combo_home.lei_luna')})
                   </span>
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280112')} />
@@ -904,7 +1278,7 @@ export default function Double() {
                 </div>
               </div>
               <div
-                className={`${styles.abonaments_block_inside_title} ${styles.abonaments_block_inside_title_tv}   ${activeTV_Select_1 && styles.abonaments_block_inside_title_tv_hide}`}
+                className={`${styles.abonaments_block_inside_title} ${styles.abonaments_block_inside_title_tv}   ${activeTV_Select_2 && styles.abonaments_block_inside_title_tv_hide}`}
               >
                 <span>
                   {activeSelectedTV_2 === 'premier'
@@ -984,7 +1358,7 @@ export default function Double() {
                     className={styles.abonaments_block_inside_subtitle_small}
                     style={{ textDecoration: 'line-through' }}
                   >
-                    (15 lei/luna)
+                    (15 {t('combo_home.lei_luna')})
                   </span>
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280116')} />
@@ -1036,7 +1410,7 @@ export default function Double() {
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
                   >
-                    (10 lei/luna)
+                    (10 {t('combo_home.lei_luna')})
                   </span>
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280113')} />
@@ -1075,7 +1449,9 @@ export default function Double() {
                     <div className={styles.mobile_carousell_price_old}>
                       <span>
                         {' '}
-                        {activeConfig == '1' ? `230 ${t('lei_luna')}` : ` `}
+                        {activeConfig == '1'
+                          ? `${total_2_2} ${t('lei_luna')}`
+                          : ` `}
                       </span>
                     </div>
                   </div>
@@ -1147,7 +1523,7 @@ export default function Double() {
                 x1 <b>Mesh Wi-Fi</b>
                 {/*inclus*/}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
-                  (49 lei/luna)
+                  (49 {t('combo_home.lei_luna')})
                 </span>
               </span>
               <InfoIcon onClick={() => setActivePopup('1280110')} />
@@ -1167,7 +1543,7 @@ export default function Double() {
                 <b>Safe-Web</b>
                 {/*inclus*/}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
-                  (15 lei/luna)
+                  (15 {t('combo_home.lei_luna')})
                 </span>
               </span>
               <InfoIcon onClick={() => setActivePopup('1280112')} />
@@ -1197,7 +1573,7 @@ export default function Double() {
               </div>
             </div>
             <div
-              className={`${styles.abonaments_block_inside_title} ${styles.abonaments_block_inside_title_tv}   ${activeTV_Select_1 && styles.abonaments_block_inside_title_tv_hide}`}
+              className={`${styles.abonaments_block_inside_title} ${styles.abonaments_block_inside_title_tv}   ${activeTV_Select_3 && styles.abonaments_block_inside_title_tv_hide}`}
             >
               <span>
                 {activeSelectedTV_3 === 'premier'
@@ -1214,7 +1590,7 @@ export default function Double() {
               <InfoIcon onClick={() => setActivePopup('1280111')} />
             </div>
             <div
-              className={`${styles.abonaments_block_inside_tv_canale} ${activeTV_Select_2 && styles.abonaments_block_inside_title_tv_hide}`}
+              className={`${styles.abonaments_block_inside_tv_canale} ${activeTV_Select_3 && styles.abonaments_block_inside_title_tv_hide}`}
             >
               <span>
                 {activeSelectedTV_3 === 'premier'
@@ -1277,7 +1653,7 @@ export default function Double() {
                   className={styles.abonaments_block_inside_subtitle_small}
                   style={{ textDecoration: 'line-through' }}
                 >
-                  (15 lei/luna)
+                  (15 {t('combo_home.lei_luna')})
                 </span>
               </span>
               <InfoIcon onClick={() => setActivePopup('1280116')} />
@@ -1325,7 +1701,7 @@ export default function Double() {
                 <b>Telefonie fixă</b>
                 {/*inclus*/}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
-                  (10 lei/luna)
+                  (10 {t('combo_home.lei_luna')})
                 </span>
               </span>
               <InfoIcon onClick={() => setActivePopup('1280113')} />
@@ -1376,7 +1752,9 @@ export default function Double() {
                   <div className={styles.mobile_carousell_price_old}>
                     <span>
                       {' '}
-                      {activeConfig == '1' ? `230 ${t('lei_luna')}` : ` `}
+                      {activeConfig == '1'
+                        ? `${total_3_3} ${t('lei_luna')}`
+                        : ` `}
                     </span>
                   </div>
                 </div>
@@ -1403,10 +1781,606 @@ export default function Double() {
             </Button>
           </div>
         </div>
+        <div className={styles.abonaments_block}>
+          <div className={styles.abonaments_block_inside}>
+            {/*<div className={styles.mobile_carousell_tags}>*/}
+            {/*  /!*<div className={styles.mobile_carousell_tag}>*!/*/}
+            {/*  /!*  New*!/*/}
+            {/*  /!*</div>*!/*/}
+            {/*  <div*/}
+            {/*    className={styles.mobile_carousell_tag}*/}
+            {/*    style={{ background: '#E7EBFF' }}*/}
+            {/*  >*/}
+            {/*    Budget*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            <div className={styles.abonaments_block_inside_pretitle}>
+              Internet + TV
+            </div>
+            <div className={styles.abonaments_block_inside_title}>2.1 Gbps</div>
 
-        {activeConfig == '2' && <div className={styles.abonaments_block}></div>}
-        {activeConfig == '3' && <div className={styles.abonaments_block}></div>}
-        {activeConfig == '3' && <div className={styles.abonaments_block}></div>}
+            <div className={styles.abonaments_block_inside_subtitle}>
+              <div className={styles.abonaments_block_inside_subtitle_icon}>
+                <Icon
+                  type={'modem'}
+                  color={'var(--theme_primary_color_blue_2)'}
+                />
+              </div>
+              Router Wi-Fi 6 inclus
+            </div>
+            <div className={styles.abonaments_block_inside_subtitle}>
+              <div className={styles.abonaments_block_inside_subtitle_toggle}>
+                {/*<Icon*/}
+                {/*  type={'empty'}*/}
+                {/*  color={'var(--theme_primary_color_blue_2)'}*/}
+                {/*/>*/}
+                <Toggle
+                  checked={activeMesh_4}
+                  onChange={e => setActiveMesh_4(e.target.checked)}
+                />
+              </div>
+              <span>
+                x1 <b>Mesh Wi-Fi</b>
+                {/*inclus*/}{' '}
+                <span className={styles.abonaments_block_inside_subtitle_small}>
+                  (49 {t('combo_home.lei_luna')})
+                </span>
+              </span>
+              <InfoIcon onClick={() => setActivePopup('1280110')} />
+            </div>
+            <div className={styles.abonaments_block_inside_subtitle}>
+              <div className={styles.abonaments_block_inside_subtitle_toggle}>
+                {/*<Icon*/}
+                {/*  type={'empty'}*/}
+                {/*  color={'var(--theme_primary_color_blue_2)'}*/}
+                {/*/>*/}
+                <Toggle
+                  checked={activeSafeweb_4}
+                  onChange={e => setActiveSafeweb_4(e.target.checked)}
+                />
+              </div>
+              <span>
+                <b>Safe-Web</b>
+                {/*inclus*/}{' '}
+                <span className={styles.abonaments_block_inside_subtitle_small}>
+                  (15 {t('combo_home.lei_luna')})
+                </span>
+              </span>
+              <InfoIcon onClick={() => setActivePopup('1280112')} />
+            </div>
+            <div className={styles.abonaments_block_inside_line}></div>
+
+            <div
+              className={`${styles.abonaments_block_inside_tv_chose} ${activeTV_Select_4 && styles.abonaments_block_inside_tv_chose_active}`}
+            >
+              <div
+                onClick={() => {
+                  setActiveSelectedTV_4('premier');
+                  setActiveTV_Select_4(false);
+                }}
+                className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_left} ${activeSelectedTV_4 === 'premier' && styles.abonaments_block_inside_tv_chose_select_active}`}
+              >
+                Premier TV
+              </div>
+              <div
+                onClick={() => {
+                  setActiveSelectedTV_4('univers');
+                  setActiveTV_Select_4(false);
+                }}
+                className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_right} ${activeSelectedTV_4 === 'univers' && styles.abonaments_block_inside_tv_chose_select_active}`}
+              >
+                Univers TV
+              </div>
+            </div>
+            <div
+              className={`${styles.abonaments_block_inside_title} ${styles.abonaments_block_inside_title_tv}   ${activeTV_Select_4 && styles.abonaments_block_inside_title_tv_hide}`}
+            >
+              <span>
+                {activeSelectedTV_4 === 'premier'
+                  ? 'Premier TV'
+                  : activeSelectedTV_4 === 'univers' && 'Univers TV'}
+              </span>
+              <Icon
+                className={styles.abonaments_block_inside_title_tv_svg}
+                type={'retry'}
+                size={'24px'}
+                color={'var(--theme_primary_color_blue_2)'}
+                onClick={() => setActiveTV_Select_4(true)}
+              />
+              <InfoIcon onClick={() => setActivePopup('1280111')} />
+            </div>
+            <div
+              className={`${styles.abonaments_block_inside_tv_canale} ${activeTV_Select_4 && styles.abonaments_block_inside_title_tv_hide}`}
+            >
+              <span>
+                {activeSelectedTV_4 === 'premier'
+                  ? '121 canale HD, 77 canale SD, 3 radio'
+                  : activeSelectedTV_4 === 'univers' &&
+                    '170 canale HD, 111 canale SD, 3 radio'}{' '}
+              </span>
+            </div>
+
+            <div className={styles.tv_config}>
+              <div className={styles.tv_config_left}>
+                <div
+                  className={styles.tv_config_left_t1}
+                  onClick={() =>
+                    setNumberTVConfig_4(prev => Math.max(1, prev - 1))
+                  }
+                >
+                  -
+                </div>
+                <div className={styles.tv_config_left_t2}>
+                  {numberTVConfig_4} <span>TV</span>
+                </div>
+                <div
+                  className={styles.tv_config_left_t3}
+                  onClick={() =>
+                    setNumberTVConfig_4(prev => Math.min(3, prev + 1))
+                  }
+                >
+                  +
+                </div>
+              </div>
+              <div className={styles.tv_config_right}>
+                <div
+                  onClick={() => setActiveTVConfig_4('smart_tv')}
+                  className={`${styles.tv_config_right_t1} ${activeTVConfig_4 == 'smart_tv' && styles.tv_config_right_active}`}
+                >
+                  Smart TV
+                </div>
+                <div
+                  onClick={() => setActiveTVConfig_4('tv_box')}
+                  className={`${styles.tv_config_right_t2} ${activeTVConfig_4 == 'tv_box' && styles.tv_config_right_active}`}
+                >
+                  TV Box
+                </div>
+              </div>
+            </div>
+            <div
+              className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
+            >
+              <div className={styles.abonaments_block_inside_subtitle_icon}>
+                <Icon
+                  type={'gift'}
+                  color={'var(--theme_primary_color_blue_2)'}
+                />
+                {/*<Toggle />*/}
+              </div>
+              <span>
+                <b>Arhiva TV</b> inclus{' '}
+                <span
+                  className={styles.abonaments_block_inside_subtitle_small}
+                  style={{ textDecoration: 'line-through' }}
+                >
+                  (15 {t('combo_home.lei_luna')})
+                </span>
+              </span>
+              <InfoIcon onClick={() => setActivePopup('1280116')} />
+            </div>
+
+            <div className={styles.abonaments_block_tv_free}>
+              <OptionsIcon />
+
+              <span onClick={() => setActivePopup('1280117')}>
+                {' '}
+                mai multe optiuni
+              </span>
+            </div>
+            <div
+              className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
+            >
+              <div className={styles.abonaments_block_inside_subtitle_toggle}>
+                <Toggle
+                  checked={activeMTC_TV_GO_4}
+                  onChange={e => setActiveMTC_TV_GO_4(e.target.checked)}
+                />
+              </div>
+              <span>
+                <b>Moldtelecom TV GO</b>
+                {/*inclus*/}{' '}
+                <span className={styles.abonaments_block_inside_subtitle_small}>
+                  1 lună gratuit
+                </span>
+              </span>
+              <InfoIcon onClick={() => setActivePopup('1280113')} />
+            </div>
+
+            <div className={styles.abonaments_block_inside_line}></div>
+
+            <div
+              className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
+            >
+              <div className={styles.abonaments_block_inside_subtitle_toggle}>
+                <Toggle
+                  checked={activeTelephone_4}
+                  onChange={e => setActiveTelephone_4(e.target.checked)}
+                />
+              </div>
+              <span>
+                <b>Telefonie fixă</b>
+                {/*inclus*/}{' '}
+                <span className={styles.abonaments_block_inside_subtitle_small}>
+                  (10 {t('combo_home.lei_luna')})
+                </span>
+              </span>
+              <InfoIcon onClick={() => setActivePopup('1280113')} />
+            </div>
+            {activeConfig == '2' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'smart_tv_55 1_leu'}>
+                  <b>Smart TV 55"</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'tableta 1_leu'}>
+                  <b>Tableta</b> (la 1 leu)&nbsp;
+                </option>
+              </select>
+            )}
+            {activeConfig == '3' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'xbox 350_lei'}>
+                  <b>Xbox Series S </b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'smart_tv_43 1_leu'}>
+                  <b>PlayStation 5 </b> (la 1500 lei)&nbsp;
+                </option>
+              </select>
+            )}
+
+            <div className={styles.wifi_carousell_block_inside_btns}>
+              {activeConfig == '1' ? (
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    -120 lei reducere pentru 2 ani
+                  </div>
+                </div>
+              ) : (
+                ` `
+              )}
+              <div className={styles.mobile_carousell_price}>
+                <div>
+                  <div>{total_4}</div>
+                </div>
+                <div>
+                  <div className={styles.mobile_carousell_price_valuta}>
+                    {t('lei_luna')}
+                  </div>
+                  <div className={styles.mobile_carousell_price_old}>
+                    <span>
+                      {' '}
+                      {activeConfig == '1'
+                        ? `${total_4_4} ${t('lei_luna')}`
+                        : ` `}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Button
+              onClick={() =>
+                setPopup(
+                  '1',
+                  'Internet + TV',
+                  `(300Mbps + ${activeSelectedTV_1 == 'premier' ? 'Premier TV' : activeSelectedTV_1 == 'univers' && 'Univers TV'})`
+                )
+              }
+              color="#fff"
+              bgcolor="var(--theme_primary_color_blue_4)"
+              border="var(--theme_primary_color_blue_4)"
+              hover_border="var(--theme_primary_color_blue_2)"
+              hover_bgcolor="var(--theme_primary_color_blue_2)"
+              hover_color="var(--theme_primary_color_blue_4)"
+              icon="arrow_right"
+              className={styles.mobile_carousell_block_btn_buy}
+            >
+              {t('order_now')}
+            </Button>
+          </div>
+        </div>
+        <div className={styles.abonaments_block}>
+          <div className={styles.abonaments_block_inside}>
+            {/*<div className={styles.mobile_carousell_tags}>*/}
+            {/*  /!*<div className={styles.mobile_carousell_tag}>*!/*/}
+            {/*  /!*  New*!/*/}
+            {/*  /!*</div>*!/*/}
+            {/*  <div*/}
+            {/*    className={styles.mobile_carousell_tag}*/}
+            {/*    style={{ background: '#E7EBFF' }}*/}
+            {/*  >*/}
+            {/*    Budget*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            <div className={styles.abonaments_block_inside_pretitle}>
+              Internet + TV
+            </div>
+            <div className={styles.abonaments_block_inside_title}>5.5 Gbps</div>
+
+            <div className={styles.abonaments_block_inside_subtitle}>
+              <div className={styles.abonaments_block_inside_subtitle_icon}>
+                <Icon
+                  type={'modem'}
+                  color={'var(--theme_primary_color_blue_2)'}
+                />
+              </div>
+              Router Wi-Fi 6 inclus
+            </div>
+            <div className={styles.abonaments_block_inside_subtitle}>
+              <div className={styles.abonaments_block_inside_subtitle_toggle}>
+                {/*<Icon*/}
+                {/*  type={'empty'}*/}
+                {/*  color={'var(--theme_primary_color_blue_2)'}*/}
+                {/*/>*/}
+                <Toggle
+                  checked={activeMesh_5}
+                  onChange={e => setActiveMesh_5(e.target.checked)}
+                />
+              </div>
+              <span>
+                x1 <b>Mesh Wi-Fi</b>
+                {/*inclus*/}{' '}
+                <span className={styles.abonaments_block_inside_subtitle_small}>
+                  (49 {t('combo_home.lei_luna')})
+                </span>
+              </span>
+              <InfoIcon onClick={() => setActivePopup('1280110')} />
+            </div>
+            <div className={styles.abonaments_block_inside_subtitle}>
+              <div className={styles.abonaments_block_inside_subtitle_toggle}>
+                {/*<Icon*/}
+                {/*  type={'empty'}*/}
+                {/*  color={'var(--theme_primary_color_blue_2)'}*/}
+                {/*/>*/}
+                <Toggle
+                  checked={activeSafeweb_5}
+                  onChange={e => setActiveSafeweb_5(e.target.checked)}
+                />
+              </div>
+              <span>
+                <b>Safe-Web</b>
+                {/*inclus*/}{' '}
+                <span className={styles.abonaments_block_inside_subtitle_small}>
+                  (15 {t('combo_home.lei_luna')})
+                </span>
+              </span>
+              <InfoIcon onClick={() => setActivePopup('1280112')} />
+            </div>
+            <div className={styles.abonaments_block_inside_line}></div>
+
+            <div
+              className={`${styles.abonaments_block_inside_tv_chose} ${activeTV_Select_4 && styles.abonaments_block_inside_tv_chose_active}`}
+            >
+              <div
+                onClick={() => {
+                  setActiveSelectedTV_5('premier');
+                  setActiveTV_Select_5(false);
+                }}
+                className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_left} ${activeSelectedTV_5 === 'premier' && styles.abonaments_block_inside_tv_chose_select_active}`}
+              >
+                Premier TV
+              </div>
+              <div
+                onClick={() => {
+                  setActiveSelectedTV_5('univers');
+                  setActiveTV_Select_5(false);
+                }}
+                className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_right} ${activeSelectedTV_5 === 'univers' && styles.abonaments_block_inside_tv_chose_select_active}`}
+              >
+                Univers TV
+              </div>
+            </div>
+            <div
+              className={`${styles.abonaments_block_inside_title} ${styles.abonaments_block_inside_title_tv}   ${activeTV_Select_5 && styles.abonaments_block_inside_title_tv_hide}`}
+            >
+              <span>
+                {activeSelectedTV_5 === 'premier'
+                  ? 'Premier TV'
+                  : activeSelectedTV_5 === 'univers' && 'Univers TV'}
+              </span>
+              <Icon
+                className={styles.abonaments_block_inside_title_tv_svg}
+                type={'retry'}
+                size={'24px'}
+                color={'var(--theme_primary_color_blue_2)'}
+                onClick={() => setActiveTV_Select_5(true)}
+              />
+              <InfoIcon onClick={() => setActivePopup('1280111')} />
+            </div>
+            <div
+              className={`${styles.abonaments_block_inside_tv_canale} ${activeTV_Select_5 && styles.abonaments_block_inside_title_tv_hide}`}
+            >
+              <span>
+                {activeSelectedTV_5 === 'premier'
+                  ? '121 canale HD, 77 canale SD, 3 radio'
+                  : activeSelectedTV_5 === 'univers' &&
+                    '170 canale HD, 111 canale SD, 3 radio'}{' '}
+              </span>
+            </div>
+
+            <div className={styles.tv_config}>
+              <div className={styles.tv_config_left}>
+                <div
+                  className={styles.tv_config_left_t1}
+                  onClick={() =>
+                    setNumberTVConfig_5(prev => Math.max(1, prev - 1))
+                  }
+                >
+                  -
+                </div>
+                <div className={styles.tv_config_left_t2}>
+                  {numberTVConfig_5} <span>TV</span>
+                </div>
+                <div
+                  className={styles.tv_config_left_t3}
+                  onClick={() =>
+                    setNumberTVConfig_5(prev => Math.min(3, prev + 1))
+                  }
+                >
+                  +
+                </div>
+              </div>
+              <div className={styles.tv_config_right}>
+                <div
+                  onClick={() => setActiveTVConfig_5('smart_tv')}
+                  className={`${styles.tv_config_right_t1} ${activeTVConfig_5 == 'smart_tv' && styles.tv_config_right_active}`}
+                >
+                  Smart TV
+                </div>
+                <div
+                  onClick={() => setActiveTVConfig_5('tv_box')}
+                  className={`${styles.tv_config_right_t2} ${activeTVConfig_5 == 'tv_box' && styles.tv_config_right_active}`}
+                >
+                  TV Box
+                </div>
+              </div>
+            </div>
+            <div
+              className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
+            >
+              <div className={styles.abonaments_block_inside_subtitle_icon}>
+                <Icon
+                  type={'gift'}
+                  color={'var(--theme_primary_color_blue_2)'}
+                />
+                {/*<Toggle />*/}
+              </div>
+              <span>
+                <b>Arhiva TV</b> inclus{' '}
+                <span
+                  className={styles.abonaments_block_inside_subtitle_small}
+                  style={{ textDecoration: 'line-through' }}
+                >
+                  (15 {t('combo_home.lei_luna')})
+                </span>
+              </span>
+              <InfoIcon onClick={() => setActivePopup('1280116')} />
+            </div>
+
+            <div className={styles.abonaments_block_tv_free}>
+              <OptionsIcon />
+
+              <span onClick={() => setActivePopup('1280117')}>
+                {' '}
+                mai multe optiuni
+              </span>
+            </div>
+            <div
+              className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
+            >
+              <div className={styles.abonaments_block_inside_subtitle_toggle}>
+                <Toggle
+                  checked={activeMTC_TV_GO_5}
+                  onChange={e => setActiveMTC_TV_GO_5(e.target.checked)}
+                />
+              </div>
+              <span>
+                <b>Moldtelecom TV GO</b>
+                {/*inclus*/}{' '}
+                <span className={styles.abonaments_block_inside_subtitle_small}>
+                  1 lună gratuit
+                </span>
+              </span>
+              <InfoIcon onClick={() => setActivePopup('1280113')} />
+            </div>
+
+            <div className={styles.abonaments_block_inside_line}></div>
+
+            <div
+              className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
+            >
+              <div className={styles.abonaments_block_inside_subtitle_toggle}>
+                <Toggle
+                  checked={activeTelephone_5}
+                  onChange={e => setActiveTelephone_5(e.target.checked)}
+                />
+              </div>
+              <span>
+                <b>Telefonie fixă</b>
+                {/*inclus*/}{' '}
+                <span className={styles.abonaments_block_inside_subtitle_small}>
+                  (10 {t('combo_home.lei_luna')})
+                </span>
+              </span>
+              <InfoIcon onClick={() => setActivePopup('1280113')} />
+            </div>
+            {activeConfig == '2' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'smart_tv_55 1_leu'}>
+                  <b>Smart TV 55"</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'tableta 1_leu'}>
+                  <b>Tableta</b> (la 1 leu)&nbsp;
+                </option>
+              </select>
+            )}
+            {activeConfig == '3' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'xbox 350_lei'}>
+                  <b>Xbox Series S </b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'smart_tv_43 1_leu'}>
+                  <b>PlayStation 5 </b> (la 1 leu)&nbsp;
+                </option>
+              </select>
+            )}
+
+            <div className={styles.wifi_carousell_block_inside_btns}>
+              {activeConfig == '1' ? (
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    -120 lei reducere pentru 2 ani
+                  </div>
+                </div>
+              ) : (
+                ` `
+              )}
+              <div className={styles.mobile_carousell_price}>
+                <div>
+                  <div>{total_5}</div>
+                </div>
+                <div>
+                  <div className={styles.mobile_carousell_price_valuta}>
+                    {t('lei_luna')}
+                  </div>
+                  <div className={styles.mobile_carousell_price_old}>
+                    <span>
+                      {' '}
+                      {activeConfig == '1'
+                        ? `${total_5_5} ${t('lei_luna')}`
+                        : ` `}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Button
+              onClick={() =>
+                setPopup(
+                  '1',
+                  'Internet + TV',
+                  `(300Mbps + ${activeSelectedTV_1 == 'premier' ? 'Premier TV' : activeSelectedTV_1 == 'univers' && 'Univers TV'})`
+                )
+              }
+              color="#fff"
+              bgcolor="var(--theme_primary_color_blue_4)"
+              border="var(--theme_primary_color_blue_4)"
+              hover_border="var(--theme_primary_color_blue_2)"
+              hover_bgcolor="var(--theme_primary_color_blue_2)"
+              hover_color="var(--theme_primary_color_blue_4)"
+              icon="arrow_right"
+              className={styles.mobile_carousell_block_btn_buy}
+            >
+              {t('order_now')}
+            </Button>
+          </div>
+        </div>
       </Slider>
 
       <Details>
@@ -1483,7 +2457,107 @@ export default function Double() {
             </li>
           </ul>
         </DetailsBlock>
+        {activeConfig == '2' && (
+          <DetailsBlock title={t('combo_home.promo_offer_1')}>
+            <ul>
+              <li></li>
+            </ul>
+          </DetailsBlock>
+        )}
+        {activeConfig == '3' && (
+          <DetailsBlock title={t('combo_home.promo_offer_2')}>
+            <ul>
+              <li></li>
+            </ul>
+          </DetailsBlock>
+        )}
       </Details>
+
+      <div className={`title_3  ${styles.title2}`}>
+        Dispozitiv la DOAR 1 leu, sau Preț Special!
+      </div>
+
+      <div className={`sub_title ${styles.sub_title1}`}>
+        Alege oferta de internet cu TV fără reducere și primești la conectare
+        unul din device-urile de mai jos
+      </div>
+
+      <Slider {...settings_devices} className={styles.tm_carousell}>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={323564512}
+            image="/images/shop/323564512.png"
+            price={1}
+            old_price={3000}
+            reducere="- 99%"
+            title="Hisense "
+            subtitle="32A4N (FHD)"
+            characteristics='Direct LED / Full HD / 32"'
+            tag={'500 Mbps + TV'}
+            tag_color={'var(--theme_primary_color_blue_3)'}
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={194234497}
+            image="/images/shop/394534437.png"
+            price={1899}
+            old_price={5160}
+            reducere="- 99%"
+            title="Hisense"
+            subtitle="43A4N (4k)"
+            characteristics='UHD VA / 4K / 43"'
+            tag={'1000 Mbps + TV'}
+            tag_color={'var(--theme_primary_color_blue_3)'}
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={194234297}
+            image="/images/shop/783535569.webp"
+            price={1}
+            old_price={3360}
+            reducere="- 99%"
+            title="Xiaomi"
+            subtitle="Redmi Pad SE"
+            characteristics='UHD VA / 4K / 43"'
+            tag={'1000 Mbps + TV'}
+            tag_color={'var(--theme_primary_color_blue_3)'}
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={394534437}
+            image="/images/shop/383935269.webp"
+            price={1}
+            old_price={7299}
+            reducere="-40%"
+            title="Hisense"
+            subtitle="55A4N (4k)"
+            characteristics='UHD VA / 4K / 55"'
+            style_type={'gray'}
+            tag={'2.1 Gbps + TV'}
+            tag_color={'var(--theme_primary_color_blue_3)'}
+            show_like={false}
+            show_comapre={false}
+          />
+        </div>
+      </Slider>
+      <div className={styles.devices_disclailmer}>
+        <span>
+          {' '}
+          <sup>*</sup>Oferta este valabilă în limita stocului disponibil
+        </span>
+      </div>
 
       <Functions
         style_type={'blue'}
@@ -1753,7 +2827,7 @@ export default function Double() {
         onClose={() => setActivePopup(null)}
       >
         <div className={`title_3 ${styles.popup_regio_title}`}>
-          Selecteaza regiunea si localitatea
+          {t('combo_home.location_select')}
         </div>
 
         <div className={styles.popup_regio_selects}>

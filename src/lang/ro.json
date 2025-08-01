@@ -1897,5 +1897,11 @@
       "fibra": "Fibra"
     },
     "hero": { "alt": "Moldtelecom" }
+  },
+  "combo_home": {
+    "location_select": "Selecteaza regiunea și localitatea",
+    "promo_offer_1": "Oferta promoțională \"Smart TV / Tableta\"",
+    "promo_offer_2": "Oferta promoțională \"Gaming Set\"",
+    "lei_luna": "lei/lună"
   }
 }
