@@ -3,6 +3,7 @@ import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb.tsx';
 import Hero from '../../../../components/hero/Hero.tsx';
 import styles from './Double.module.css';
 import { useTranslation } from 'react-i18next';
+import SEO from '../../../../components/SEO';
 import Chat from '../../../../components/chat/Chat.tsx';
 import Feedback from '../../../../components/feedback/Feedback.tsx';
 import Footer from '../../../../components/footer/Footer.tsx';
@@ -23,7 +24,7 @@ import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
 import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 declare global {
   interface Window {
-    regiuni: Record<string, Record<string, any[]>>;
+    regiuni: Record<string, Record<string, unknown[]>>;
   }
 }
 const InfoIcon: React.FC<{ onClick?: () => void }> = ({ onClick }) => (
@@ -153,6 +154,11 @@ type ConfigType = '1' | '2' | '3';
 
 export default function Double() {
   const { t } = useTranslation();
+  const seo = {
+    title: t('pages.double.title'),
+    description: t('pages.double.description'),
+    keywords: t('pages.double.keywords'),
+  };
   const breadcrumbItems = [
     { label: t('navbar.promo'), url: ' ' },
     { label: t('navbar.internet_tv') },
@@ -832,6 +838,7 @@ export default function Double() {
   };
   return (
     <>
+      <SEO {...seo} />
       <div className={styles.regio}>
         <span>{t('combo_home.promo_text')}</span>
         &nbsp;{' '}
