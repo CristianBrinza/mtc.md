@@ -1997,5 +1997,30 @@
       "item_6": "Dispozitivele se oferă în limita stocului disponibil și doar în localitățile unde este posibilă conectarea tehnică.",
       "item_7": "În caz de reziliere anticipată a contractului, clientul va rambursa diferența până la prețul standard al dispozitivului."
     }
+  },
+  "double": {
+    "learn_more": "Află mai mult",
+    "watch_now": "Vizionează acum",
+    "popup_premier": {
+      "title": "Ce este Premier TV?",
+      "text": "Premier TV este serviciul digital de televiziune Moldtelecom, care îți oferă zeci de canale HD, SD şi posturi radio, plus funcționalități avansate de DVR și replay.",
+      "features_title": "Caracteristici principale:",
+      "features": {
+        "0": "121 canale HD, 73 SD și 4 posturi radio",
+        "1": "Înregistrare emisiuni și redare până la 7 zile înapoi",
+        "2": "Pauză și reluare live TV",
+        "3": "Switch rapid între limbi și subtitrări"
+      }
+    },
+    "popup_safeweb": {
+      "title": "Ce este Safe-Web?",
+      "text": "Safe-Web este serviciul de securitate pe internet de la Moldtelecom, care filtrează și blochează site-urile malițioase, phishing și conținut inadecvat, păstrându-ți casa și dispozitivele în siguranță.",
+      "why_title": "De ce să alegi Safe-Web?",
+      "list": {
+        "0": "Protecție în timp real contra virușilor și site-urilor de tip phishing",
+        "1": "Filtrare parentală configurabilă",
+        "2": "Raport de securitate lunar pentru activitatea online"
+      }
+    }
   }
 }
