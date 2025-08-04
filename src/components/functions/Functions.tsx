@@ -177,6 +177,22 @@ const Functions: React.FC<FunctionsProps> = ({
               'functions_optional.RoamingUE.description',
               'f5'
             )}
+          {functions.includes('Arhiva') &&
+            renderFunctionBlock(
+              'Arhiva',
+              'roaming',
+              'functions_optional.Arhiva.title',
+              'functions_optional.Arhiva.description',
+              'f10'
+            )}
+          {functions.includes('PlusTV') &&
+            renderFunctionBlock(
+              'PlusTV',
+              'roaming',
+              'functions_optional.PlusTV.title',
+              'functions_optional.PlusTV.description',
+              'f11'
+            )}
         </Slider>
       </div>
 

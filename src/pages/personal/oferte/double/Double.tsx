@@ -186,12 +186,15 @@ export default function Double() {
     slidesToScroll: 1,
     responsive: [
       {
+        breakpoint: 1301,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
         breakpoint: 651,
         settings: {
           slidesToShow: 1,
-          autoplay: true,
-          autoplaySpeed: 1800,
-          arrows: false,
         },
       },
     ],
@@ -830,9 +833,7 @@ export default function Double() {
   return (
     <>
       <div className={styles.regio}>
-        <span>
-          Oferta promotionala poate varia in dependenta de regiunea selectata
-        </span>
+        <span>{t('combo_home.promo_text')}</span>
         &nbsp;{' '}
         <span>
           (
@@ -860,7 +861,7 @@ export default function Double() {
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/88678012${t('lang')}.png`}
+            src={`/images/landings/13686912${t('lang')}.webp`}
             alt={t('wifi_plus.hero.alt')}
           />
         </div>
@@ -1424,6 +1425,9 @@ export default function Double() {
                     <b>Smart TV 32"</b> (la 1 leu)&nbsp;
                   </option>
                   <option value={'smart_tv_43 1_leu'}>
+                    <b>Smart TV 43"</b> (la 1 899 lei)&nbsp;
+                  </option>
+                  <option value={'smart_tv_43 1_leu'}>
                     <b>Tableta </b> (la 1 leu)&nbsp;
                   </option>
                 </select>
@@ -1713,6 +1717,9 @@ export default function Double() {
               >
                 <option value={'smart_tv_43 1_leu'}>
                   <b>Smart TV 43"</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'smart_tv_55 1_leu'}>
+                  <b>Smart TV 55"</b> (la 2 999 lei)&nbsp;
                 </option>
                 <option value={'tableta 1_leu'}>
                   <b>Tableta</b> (la 1 leu)&nbsp;
@@ -2385,90 +2392,60 @@ export default function Double() {
       </Slider>
 
       <Details>
-        <DetailsBlock title={'Condiții de utilizare Abonamente'}>
+        <DetailsBlock title={t('combo_home.conditii_1.title')}>
           <ul>
-            <li>
-              Perioada de comercializare a ofertei: 03.03.2025 - 25.08.2025
-              (inclusiv).
-            </li>
-            <li>
-              Conectarea la serviciul de Internet fix cu IPTV este gratuită, iar
-              contractul va fi semnat pe o perioadă de 24 de luni.
-            </li>
-            <li>
-              Planurile tarifare de Internet fix și IPTV sunt disponibile pentru
-              conectările noi sau la reperfectare pentru abonați existenți cu
-              contract expirat.
-            </li>
-            <li>
-              Abonații serviciului de Internet fix cu IPTV pot beneficia de
-              reduceri la anumite abonamente de telefonie mobilă.
-            </li>
-            <li>
-              Vitezele sunt indicate în valori maxime. Viteza obținută de client
-              acasă depinde de un șir de factori care nu pot fi controlați de
-              compania Moldtelecom.
-            </li>
-            <li>
-              Planul tarifar de Internet selectat de abonat poate fi conectat în
-              limita posibilităților tehnice.
-            </li>
-            <li>
-              Moldtelecom poate modifica poziționarea și numărul de posturi TV
-              din abonamentul IPTV, în funcție de ofertele existente pe piață și
-              negocierile cu furnizorii de canale.
-            </li>
-            <li>
-              Serviciul IPTV poate fi utilizat prin Android TV-BOX sau Aplicația
-              Moldtelecom TV, în cazul în care abonatul deține un televizor
-              smart compatibil.
-            </li>
-            <li>
-              Oferta promoțională include:
-              <ul>
-                <li>
-                  Reduceri de până la 50% la abonamentul de Internet fix și IPTV
-                  în primele 24 de luni, în funcție de planul tarifar selectat.
-                  (După perioada de 24 de luni, se va aplica tariful standard
-                  conform planului în vigoare.)
-                </li>
-                <li>Preț promoțional la un televizor selectat.</li>
-              </ul>
-            </li>
-            <li>
-              La rezilierea serviciului de Internet fix cu IPTV înainte de
-              expirarea perioadei contractuale, se vor aplica:
-              <ul>
-                <li>Plăți cu titlu de prejudiciu.</li>
-                <li>
-                  Rambursarea reducerii acordate pentru dispozitiv, echivalentă
-                  cu diferența dintre prețul standard și prețul special al
-                  dispozitivului procurat.
-                </li>
-              </ul>
-            </li>
-            <li>
-              Abonații nu pot beneficia concomitent de oferta promoțională și de
-              televizor la preț promoțional.
-            </li>
-            <li>Televizoarele se oferă în limita stocului disponibil.</li>
-            <li>
-              Oferta promoțională și prețul promoțional la TV sunt valabile în
-              anumite localități.
-            </li>
+            <li>{t('combo_home.conditii_1.item_1')}</li>
+            <li>{t('combo_home.conditii_1.item_2')}</li>
+            <li>{t('combo_home.conditii_1.item_3')}</li>
+            <li>{t('combo_home.conditii_1.item_4')}</li>
+            <li>{t('combo_home.conditii_1.item_5')}</li>
+            <li>{t('combo_home.conditii_1.item_6')}</li>
+            <li>{t('combo_home.conditii_1.item_7')}</li>
+            <li>{t('combo_home.conditii_1.item_8')}</li>
+            <li>{t('combo_home.conditii_1.item_9')}</li>
           </ul>
         </DetailsBlock>
         {activeConfig == '2' && (
-          <DetailsBlock title={t('combo_home.promo_offer_1')}>
+          <DetailsBlock title={t('combo_home.conditii_2.title')}>
             <ul>
-              <li></li>
+              <li>{t('combo_home.conditii_2.item_1')}</li>
+              <li>{t('combo_home.conditii_2.item_2')}</li>
+              <li>{t('combo_home.conditii_2.item_3')}</li>
+              <li>
+                {t('combo_home.conditii_2.item_4')
+                  .split('\n')
+                  .map((line, idx) => (
+                    <span key={idx}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+              </li>
+              <li>{t('combo_home.conditii_2.item_5')}</li>
+              <li>{t('combo_home.conditii_2.item_6')}</li>
+              <li>{t('combo_home.conditii_2.item_7')}</li>
             </ul>
           </DetailsBlock>
         )}
         {activeConfig == '3' && (
-          <DetailsBlock title={t('combo_home.promo_offer_2')}>
+          <DetailsBlock title={t('combo_home.conditii_3.title')}>
             <ul>
-              <li></li>
+              <li>{t('combo_home.conditii_3.item_1')}</li>
+              <li>{t('combo_home.conditii_3.item_2')}</li>
+              <li>{t('combo_home.conditii_3.item_3')}</li>
+              <li>
+                {t('combo_home.conditii_3.item_4')
+                  .split('\n')
+                  .map((line, idx) => (
+                    <span key={idx}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+              </li>
+              <li>{t('combo_home.conditii_3.item_5')}</li>
+              <li>{t('combo_home.conditii_3.item_6')}</li>
+              <li>{t('combo_home.conditii_3.item_7')}</li>
             </ul>
           </DetailsBlock>
         )}
@@ -2536,13 +2513,13 @@ export default function Double() {
             title="Xiaomi"
             subtitle="Redmi Pad SE"
             characteristics='11"/128 GB/ Wi-Fi'
-            tag={'1000 Mbps + TV'}
+            tag={'500 Mbps + TV'}
             tag_color={'var(--theme_primary_color_blue_3)'}
             style_type={'gray'}
             show_like={false}
             show_comapre={false}
             buy={() => {
-              setPopup('1', 'Xiaomi Redmi Pad SE', `(1000 Mbps + Univers TV)`);
+              setPopup('1', 'Xiaomi Redmi Pad SE', `(500 Mbps + Univers TV)`);
               setPopupType(true);
             }}
           />
@@ -2553,7 +2530,7 @@ export default function Double() {
             image="/images/shop/383935269.webp"
             price={1}
             old_price={7299}
-            reducere="-40%"
+            reducere="- 99%"
             title="Hisense"
             subtitle="55A4N (4k)"
             characteristics='UHD VA /4K /55"'
@@ -2618,6 +2595,69 @@ export default function Double() {
             }}
           />
         </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={294094407}
+            image="/images/shop/1703509569.webp"
+            price={1}
+            old_price={4800}
+            reducere="- 99%"
+            title="Xiaomi"
+            subtitle={`Redmi Pad Pro 12"`}
+            characteristics={`12.1" 6 GB/128 GB /Wi-Fi`}
+            style_type={'gray'}
+            tag={'1000 Mbps + TV'}
+            tag_color={'var(--theme_primary_color_blue_3)'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('1', ' XiaomiRedmi Pad Pro', `(1000 Mbps + Univers TV)`);
+              setPopupType(true);
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={394534437}
+            image="/images/shop/383935269.webp"
+            price={2999}
+            old_price={7299}
+            reducere="- 4 321"
+            title="Hisense"
+            subtitle="55A4N (4k)"
+            characteristics='UHD VA /4K /55"'
+            style_type={'gray'}
+            tag={'1000 Mbps + TV'}
+            tag_color={'var(--theme_primary_color_blue_3)'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('1', 'Hisense 55A4N', `(1000 Mbps + Univers TV)`);
+              setPopupType(true);
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={394534437}
+            image="/images/shop/183535869.webp"
+            price={1}
+            old_price={7560}
+            reducere="- 4 321"
+            title="Xiaomi"
+            subtitle="Pad 7 Pro"
+            characteristics='11.2" /256 GB /Wi-Fi'
+            style_type={'gray'}
+            tag={'2.1 Gbps + TV'}
+            tag_color={'var(--theme_primary_color_blue_3)'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('1', 'Xiaomi Pad 7 Pro', `(2.1 Gbps + Univers TV)`);
+              setPopupType(true);
+            }}
+          />
+        </div>
       </Slider>
       <div className={styles.devices_disclailmer}>
         <span>
@@ -2629,56 +2669,70 @@ export default function Double() {
       <Functions
         style_type={'blue'}
         title={'general.recommended_options'}
-        functions={['Internet', 'Minute', 'International', 'RoamingUE']}
+        functions={['Arhiva', 'PlusTV', 'International', 'RoamingUE']}
       />
       <MyApp style_type={'blue_white'} className={styles.myapp} />
 
-      <FaqV2 max_faq={6}>
+      <FaqV2 max_faq={5}>
         <FaqQAV2
-          id_faq="112089310"
-          question={'De ce depinde viteza reală de transmisie a datelor?'}
+          id_faq="112089314"
+          question={t('combo_home.faq.install_duration_question')}
         >
-          Viteza depinde de planul tarifar ales, tehnologia de acces dintre
-          echipamentul abonatului și echipamentul de distribuție a furnizorului,
-          gradul de congestionare a infrastructurii magistrale internaționale și
-          de performantele serverului de deservire a resursei web accesate.
+          {t('combo_home.faq.install_duration_answer')}
         </FaqQAV2>
         <FaqQAV2
-          id_faq="112089311"
-          question={'Cum suspendez temporar Internetului?'}
+          id_faq="112089315"
+          question={t('combo_home.faq.availability_check_question')}
         >
-          Abonaţii ce doresc sistarea temporară a serviciului Internet pe o
-          perioadă de la 1 lună până la maxim 3 luni, o pot face prin depunerea
-          în prealabil a unei cereri în centrele comerciale Moldtelecom.
-          <br />
-          Suspendarea temporară a serviciului se face pentru o taxă de 50
-          lei/lună (TVA inclus).
-        </FaqQAV2>
-        <FaqQAV2 id_faq="112089312" question={'Ce este IPTV?'}>
-          <strong>IPTV&nbsp;</strong>este un serviciu de televiziune digitală
-          care presupune transmiterea semnalului TV cu imagini şi sunet de
-          înaltă calitate, printr-o conexiune de bandă largă, direct către
-          televizoarele abonaţilor, prin intermediul unui mediabox
-          (Set-Top-Box).
-          <br />
-          <br />
-          <strong>
-            Ce reprezintă conectarea serviciului de televiziune digitală?
-          </strong>
-          <br />
-          Serviciul de televiziune digitală se conectează prin linia telefonică
-          sau prin conexiunea de fibră optică şi nu necesită pozarea unui cablu
-          suplimentar pentru TV sau instalarea unei antene pe acoperiş.
+          {t('combo_home.faq.availability_check_answer')}
         </FaqQAV2>
         <FaqQAV2
-          id_faq="112089313"
-          question={'Pot beneficia de televiziune digitală?'}
+          id_faq="112089316"
+          question={t('combo_home.faq.activate_new_offer_question')}
         >
-          Televiziunea digitală este disponibilă în majoritatea localităţilor
-          din republică. Pentru a verifica dacă în localitatea Dvs. există
-          posibilitatea de prestare a serviciului, contactaţi reprezentanții
-          celui mai apropiat Centru Comercial Moldtelecom, sau apelaţi Serviciul
-          Asistenţa Clienți la tel. <a href="tel:1181">1181</a>.
+          {t('combo_home.faq.activate_new_offer_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089317"
+          question={t('combo_home.faq.bill_payment_deadline_question')}
+        >
+          {t('combo_home.faq.bill_payment_deadline_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089318"
+          question={t('combo_home.faq.late_payment_consequences_question')}
+        >
+          {t('combo_home.faq.late_payment_consequences_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089319"
+          question={t('combo_home.faq.manage_subscription_remotely_question')}
+        >
+          {t('combo_home.faq.manage_subscription_remotely_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089320"
+          question={t('combo_home.faq.pause_services_question')}
+        >
+          {t('combo_home.faq.pause_services_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089321"
+          question={t('combo_home.faq.change_package_question')}
+        >
+          {t('combo_home.faq.change_package_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089322"
+          question={t('combo_home.faq.move_address_question')}
+        >
+          {t('combo_home.faq.move_address_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089323"
+          question={t('combo_home.faq.transfer_subscription_question')}
+        >
+          {t('combo_home.faq.transfer_subscription_answer')}
         </FaqQAV2>
       </FaqV2>
 
@@ -2702,6 +2756,49 @@ export default function Double() {
           <li>Conectezi toate dispozitivele fără să reintroduci parola</li>
           <li>Fără buffer sau drop-out în timpul streaming-ului</li>
         </ul>
+        <b className={styles.popup_title_1}>Condiții de utilizare:</b>
+        <ul>
+          <li>
+            Wi-Fi PLUS este o opțiune adițională la serviciul de Internet fix
+            existent, care permite extinderea ariei de acoperire Wi-Fi.
+          </li>
+          <li>
+            Plata pentru serviciul Wi-Fi PLUS se va include în abonamentul lunar
+            și se va taxa din momentul activării serviciului, fapt confirmat
+            prin livrarea codului OTP de către Titular.
+          </li>
+          <li>
+            Abonamentul lunar se va aplica per fiecare echipament acordat pentru
+            extinderea ariei de acoperire Wi-Fi. În cadrul serviciului Wi-Fi
+            PLUS pot fi conectate maxim 3 echipamente terminale per conexiune
+            Internet fix.
+          </li>
+          <li>
+            Abonatul va utiliza echipamentul oferit de către Furnizor în
+            condiții de comodat, pe perioada utilizării serviciului Wi-Fi PLUS.
+          </li>
+          <li>
+            Deconectarea serviciului Wi-Fi PLUS va avea loc în momentul
+            restituirii echipamentului terminal (cu toate accesoriile incluse).
+            În cazul depistării accesoriilor lipsă/defecte, Abonatul se obligă
+            să achite contravaloarea acestora.
+          </li>
+          <li>
+            Furnizorul este în drept de a refuza deconectarea serviciului Wi-Fi
+            PLUS în cazul nerestituirii echipamentului sau a nerambursării
+            contravalorii acestuia.
+          </li>
+          <li>
+            În cazul nereturnării (pierderii/deteriorării) echipamentului,
+            abonatul va restitui plata cu titlu de prejudiciu în mărime de 300
+            de lei/echipament (fără TVA) sau 850 de lei/echipament (fără TVA).
+          </li>
+          <li>
+            Conectarea/deconectarea serviciului este posibilă în orice zi a
+            perioadei de facturare, fără efectuarea recalculului.
+          </li>
+        </ul>
+
         <Button
           to={`https://new.moldtelecom.md/${t('lang')}/wifi-plus`}
           color="#fff"
@@ -2785,6 +2882,99 @@ export default function Double() {
         onClose={() => setActivePopup(null)}
       >
         <b className={styles.popup_title_1}>Ce este Moldtelecom TV?</b>
+        <p>
+          Moldtelecom TV GO este televiziunea digitală fără cabluri și fără
+          contracte, disponibilă pe orice dispozitiv, oriunde în Moldova.
+          Plătești doar când folosești – simplu, flexibil și fără obligații.
+        </p>
+        <b className={styles.popup_title_1}>Condiții de utilizare:</b>
+        <ul>
+          <li>
+            Serviciul este disponibil pentru toți utilizatorii, indiferent dacă
+            sunt abonați Moldtelecom sau clienți ai altor operatori.
+          </li>
+          <li>
+            Moldtelecom TV GO poate fi utilizat pe laptop-uri, smartphone și
+            tablete (Android, iOS), televizoare Smart (Samsung, LG, Hisense,
+            Android TV), precum și pe TV box-uri (Android TV, Apple TV) sau pe
+            Web Browser.
+          </li>
+          <li>
+            Serviciul poate fi activat în orice zi a lunii, iar data activării
+            va marca începutul perioadei de facturare. O lună de serviciu este
+            considerată a fi echivalentul a 31 de zile calendaristice.
+          </li>
+          <li>
+            Modificarea numărului de dispozitive poate fi efectuată oricând din
+            My Moldtelecom.
+          </li>
+          <li>
+            Serviciul poate fi utilizat prin orice rețea de internet (fix,mobil
+            sau Wi-Fi) din Republica Moldova, indiferent de operator.
+          </li>
+          <li>
+            Pentru a evita suspendarea serviciului, contul trebuie alimentat
+            lunar cu o sumă cel puțin egală cu tariful planului tarifar activ.
+            Achitarea se face în baza ID-ului de Utilizator.
+          </li>
+          <li>
+            Renunțarea la serviciu se realizează automat prin nealimentarea
+            contului. Nu este necesară o solicitare suplimentară de dezactivare.
+          </li>
+          <li>
+            Accesul la grila de canale diferă în funcție de rețeaua de internet
+            utilizată:
+            <ul>
+              <li>
+                În rețeaua Moldtelecom (fix sau mobil) este disponibil pachetul
+                Univers.
+              </li>
+              <li>
+                În afara rețelei Moldtelecom accesul la anumite canale vor fi
+                restricționate.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Pentru o experiență optimă de vizionare, se recomandă conectarea
+            dispozitivului la internet prin cablu Ethernet (dacă dispozitivul
+            permite acest lucru) sau printr-o conexiune Wi-Fi sau date mobile
+            stabilă, cu viteză bună.
+          </li>
+          <li>
+            Moldtelecom își rezervă dreptul de a modifica lista de canale TV
+            disponibile în cadrul serviciului.
+          </li>
+        </ul>
+
+        <div className={styles.popup_btns_info}>
+          <Button
+            to={`https://www.moldtelecom.md/${t('lang')}/personal/moldtelecom-tv-go`}
+            color="#fff"
+            bgcolor="var(--theme_primary_color_blue_4)"
+            border="var(--theme_primary_color_blue_4)"
+            hover_border="var(--theme_primary_color_blue_2)"
+            hover_bgcolor="var(--theme_primary_color_blue_2)"
+            hover_color="var(--theme_primary_color_blue_4)"
+            icon="arrow_right"
+            className={styles.popup_more_btn}
+          >
+            Află mai mult
+          </Button>
+          <Button
+            to={'https://edge.multiscreen.moldtelecom.md/web/mold/#ro/login'}
+            color="var(--theme_primary_color_blue_4)"
+            bgcolor="transparent"
+            border="var(--theme_primary_color_blue_4)"
+            hover_border="var(--theme_primary_color_blue_2)"
+            hover_bgcolor="var(--theme_primary_color_blue_2)"
+            hover_color="var(--theme_primary_color_blue_4)"
+            icon="arrow_right"
+            className={styles.popup_more_btn}
+          >
+            Vizionează acum
+          </Button>
+        </div>
       </Popup>
       <Popup
         id="1280116"
@@ -2793,7 +2983,18 @@ export default function Double() {
         className={styles.popupBuy}
         onClose={() => setActivePopup(null)}
       >
-        <b className={styles.popup_title_1}>Ce este Moldtelecom TV?</b>
+        <b className={styles.popup_title_1}>Ce este Arhiva TV?</b>
+        Cu serviciul Arhiva TV aveți libertatea de a accesa emisiunile preferate
+        din arhiva programelor TV, care au fost difuzate cu până la 7 zile în
+        urmă, pentru a le viziona în timpul comod pentru dumneavoastră. În acest
+        mod, nici o emisiune importantă nu va fi ratată, iar cele preferate le
+        puteți viziona în reluare.
+        <br /> <br />
+        <b> Activare opțiune:</b>
+        Activează/sau dezactivează simplu prin aplicația "MyMoldtelecom" sau din
+        versiunea web "MyMoldtelecom" și vizionaţi în reluare emisiunile
+        preferate oricând doriți. Serviciul Arhiva TV este foarte ușor de
+        utilizat din meniul principal IPTV
       </Popup>
       <Popup
         id="1280117"

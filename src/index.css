@@ -370,3 +370,12 @@ body {
 .grecaptcha-badge {
   display: none;
 }
+.popup_content_price {
+  width: 100%;
+  background: var(--theme_primary_color_blue_1);
+  padding: 10px 12px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin: 20px auto 0;
+}

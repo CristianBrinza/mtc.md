@@ -1150,7 +1150,7 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
           </ul>
         </div>
       </Popup>
-      {/* Popup pentru 95 */}
+      {/* Popup pentru f9 */}
       <Popup
         id="f9"
         width={width || '1000px'}
@@ -1274,6 +1274,98 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
               __html: t('popups.f9.deactivation.3'),
             }}
           />
+        </div>
+      </Popup>
+      {/* Popup pentru f10 */}
+      <Popup
+        id="f10"
+        width={width || '1000px'}
+        isVisible={content === 'f10'}
+        onClose={onClose}
+      >
+        <div className="popup_content">
+          <h2>Arhiva TV </h2>
+          &nbsp;&nbsp;Cu serviciul <b>Arhiva TV</b> aveți libertatea de a accesa
+          emisiunile preferate din arhiva programelor TV, care au fost difuzate
+          cu până la 7 zile în urmă, pentru a le viziona în timpul comod pentru
+          dumneavoastră. În acest mod, nici o emisiune importantă nu va fi
+          ratată, iar cele preferate le puteți viziona în reluare.
+          <br />
+          <br />
+          &nbsp;&nbsp;<b> Activare opțiune:</b>
+          <ul>
+            <li>
+              Activează/sau dezactivează simplu prin aplicația "MyMoldtelecom"
+              sau din versiunea web "MyMoldtelecom" și vizionaţi în reluare
+              emisiunile preferate oricând doriți.
+            </li>
+          </ul>
+          Serviciul Arhiva TV este foarte ușor de utilizat din meniul principal
+          IPTV.
+          <div className="popup_content_price">
+            <b>GRATUIT</b>
+          </div>
+        </div>
+      </Popup>
+      {/* Popup pentru f10 */}
+      <Popup
+        id="f11"
+        width={width || '1000px'}
+        isVisible={content === 'f11'}
+        onClose={onClose}
+      >
+        <div className="popup_content">
+          <h2>1 TV Suplimentar </h2>
+          Plata de abonament pentru fiecare televizor suplimentar pentru
+          pachetul TV Simplu, Premier sau Univers este de 30 lei.
+          <br />
+          Mediabox-urile adiţionale se consideră al 2-lea, al 3-lea.
+          <br />
+          Prin tehnologia ADSL, Mediabox-urile adiţionale vor fi conectate doar
+          în cazul existenţei posibilităţilor tehnice.
+          <br />
+          &nbsp;
+          <ScrollableWrapper>
+            <table className="popup_table">
+              <thead>
+                <tr>
+                  <td>
+                    <span>
+                      <strong>Denumirea</strong>
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      <strong>
+                        Perioada contractuală
+                        <br />
+                        24 luni
+                      </strong>
+                    </span>
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Taxa de conectare (ADSL, FTTx, GPON, FTTx Gigabit)</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>Taxa de activare a mediabox-ului de bază</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>
+                    Taxa de activare a mediabox-urilor adiţionale (per STB)
+                  </td>
+                  <td>0</td>
+                </tr>
+              </tbody>
+            </table>
+          </ScrollableWrapper>
+          <div className="popup_content_price">
+            Preț: <b>30 lei/luna</b>
+          </div>
         </div>
       </Popup>
     </>

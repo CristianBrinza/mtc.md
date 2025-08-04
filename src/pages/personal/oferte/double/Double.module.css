@@ -298,7 +298,7 @@
 }
 .abonaments :global(.slick-next),
 .tm_carousell :global(.slick-next) {
-  right: -45px !important;
+  right: -35px !important;
   margin-top: -60px !important;
   width: 36px;
   height: 36px;
@@ -359,6 +359,13 @@
 
 .popup_more_btn {
   margin-top: 20px;
+}
+.popup_btns_info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .abonaments_block_tv_free {
@@ -555,7 +562,7 @@
   font-weight: 600;
 }
 .title2 {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .sub_title1 {
@@ -591,6 +598,12 @@
   .hero {
     width: 1300px;
     margin-left: calc((1300px - 100vw) / -2);
+  }
+  .tm_carousell {
+    max-width: 940px;
+  }
+  .abonaments {
+    max-width: 800px;
   }
 }
 @media (max-width: 1150px) {

@@ -1889,6 +1889,14 @@
     "RoamingUE": {
       "title": "Roaming UE",
       "description": "Tarife ca acasă, acum și peste hotare"
+    },
+    "Arhiva": {
+      "title": "Arhiva",
+      "description": "Poţi privi în reluare orice moment important pierdut întâmplător..."
+    },
+    "PlusTV": {
+      "title": "1 TV Suplimentar",
+      "description": "Pentru comoditatea familiei adaugă încă un televizor"
     }
   },
   "bussines_fibra": {
@@ -1902,6 +1910,61 @@
     "location_select": "Selecteaza regiunea și localitatea",
     "promo_offer_1": "Oferta promoțională \"Smart TV / Tableta\"",
     "promo_offer_2": "Oferta promoțională \"Gaming Set\"",
-    "lei_luna": "lei/lună"
+    "lei_luna": "lei/lună",
+    "promo_text": "Oferta promotionala poate varia in dependenta de regiunea selectata",
+    "faq": {
+      "install_duration_question": "Cât durează instalarea serviciilor?",
+      "install_duration_answer": "Serviciile se instalează în cel mult 7 zile lucrătoare de la semnarea contractului.",
+      "availability_check_question": "Cum verific dacă pot conecta serviciile la adresa mea?",
+      "availability_check_answer": "Puteți apela la 1180, iar un consultant Moldtelecom vă va oferi toate informațiile necesare privind disponibilitatea serviciilor la adresa dorită, precum și detalii despre pachetele și ofertele disponibile.",
+      "activate_new_offer_question": "Pot activa o ofertă nouă dacă sunt deja client?",
+      "activate_new_offer_answer": "Da. Dacă aveți contractul expirat, puteți opta pentru un pachet promoțional din cele disponibile pentru clienții existenți.",
+      "bill_payment_deadline_question": "Cum achit factura și până când?",
+      "bill_payment_deadline_answer": "Factura se achită până la data de 25 a fiecărei luni. Puteți achita prin aplicația MyMoldtelecom, pe pagina web moldtelecom.md, prin internet banking, la terminale de plată, în oficiile băncilor comerciale sau la Poșta Moldovei.",
+      "late_payment_consequences_question": "Ce se întâmplă dacă întârzii cu plata mai mult timp?",
+      "late_payment_consequences_answer": "În cazul neachitării, serviciile se suspendă automat. Nu vi se va percepe taxa de abonament, însă va fi aplicată o taxă de mentenanță de 85 de lei lunar. Dacă facturile rămân neplătite mai mult de 3 luni, contractul se va rezilia unilateral de către companie.",
+      "manage_subscription_remotely_question": "Pot gestiona abonamentul fără să merg la oficiu?",
+      "manage_subscription_remotely_answer": "Da. Prin aplicația MyMoldtelecom aveți acces la toate funcțiile necesare: plăți, modificări, notificări și setări, simplu și rapid.",
+      "pause_services_question": "Pot pune serviciile pe pauză?",
+      "pause_services_answer": "Da. Puteți solicita suspendarea temporară a serviciilor direct pe pagina moldtelecom.md/cereri. Se percepe o taxă de 50 de lei pentru fiecare lună de suspendare.",
+      "change_package_question": "Pot schimba pachetul de servicii?",
+      "change_package_answer": "Da. Completați formularul de pe moldtelecom.md/cereri, iar un consultant Moldtelecom vă va contacta în cel mult 8 ore lucrătoare pentru confirmare.",
+      "move_address_question": "Ce fac dacă mă mut la altă adresă?",
+      "move_address_answer": "Puteți depune o cerere de transfer a serviciilor pe pagina moldtelecom.md/cereri. Un consultant vă va contacta pentru a stabili detaliile tehnice și data conectării la noua locuință.",
+      "transfer_subscription_question": "Pot transfera abonamentul pe numele altcuiva?",
+      "transfer_subscription_answer": "Da. Puteți solicita transferul abonamentului către un alt titular prin completarea formularului de pe moldtelecom.md/cereri. Un consultant vă va contacta pentru confirmare și detalii."
+    },
+    "conditii_1": {
+      "title": "Condiții de utilizare Abonamente",
+      "item_1": "Perioada de comercializare a ofertei: 21.08.2025 – 25.11.2025 (inclusiv). Conectarea la serviciul de Internet fix sau Internet fix cu IPTV este gratuită, iar contractul se semnează pe o perioadă de 24 de luni.",
+      "item_2": "Oferta este disponibilă pentru conectările noi și pentru abonații existenți cu contract expirat.",
+      "item_3": "Reducere lunară de 120 lei pentru abonamentele Internet fix 300 Mbps, 500 Mbps, 1000 Mbps în combinație cu un abonament IPTV. Pentru abonamentele Internet fix 2.1 Gbps și 5.5 Gbps în combinație cu IPTV, reducerea lunară este de până la 320 lei. Reducerea se aplică timp de 24 luni, apoi se aplică tariful standard.",
+      "item_4": "Abonații pot beneficia de un dispozitiv la preț de 1 leu – smart TV, consolă sau tabletă – în funcție de abonament. Dispozitivele se oferă în limita stocului și doar în anumite localități. Nu se combină reducerea lunară cu dispozitivul promoțional.",
+      "item_5": "Pentru viteza de 2.1 Gbps, oferta include un router performant și un dispozitiv Mesh Wi-Fi; pentru 5.5 Gbps – un router performant și două dispozitive Mesh Wi-Fi. Echipamentele se oferă pe durata contractului și trebuie returnate la reziliere.",
+      "item_6": "Vitezele indicate sunt maxime. Viteza efectivă la client depinde de factori tehnici independenți de Moldtelecom. Activarea planului se face în limita posibilităților locale.",
+      "item_7": "Serviciul IPTV poate fi folosit prin Android TV-BOX sau aplicația Moldtelecom TV dacă aveți un smart TV compatibil. Moldtelecom își rezervă dreptul de a modifica grila de canale.",
+      "item_8": "La rezilierea anticipată a serviciilor fixe cu IPTV, înainte de expirarea perioadei contractuale, se va aplica o penalitate sau se va solicita rambursarea reducerii pentru dispozitiv (diferența dintre prețul standard și cel promoțional).",
+      "item_9": "Oferta este valabilă doar în localitățile unde Moldtelecom poate asigura conectarea conform planului tarifar ales."
+    },
+    "conditii_2": {
+      "title": "Oferta promoțională \"Smart TV / Tableta\"",
+      "item_1": "Oferta este valabilă în perioada 21.08.2025–25.11.2025.",
+      "item_2": "Se aplică doar clienților care activează un abonament Internet + IPTV cu viteze de 500 Mbps, 1000 Mbps, 2.1 Gbps sau 5.5 Gbps.",
+      "item_3": "Contractul se semnează pe o perioadă de 24 de luni.",
+      "item_4": "Clienții pot alege unul dintre următoarele dispozitive promoționale:\n– Smart TV 32” sau Tabletă – pentru 500 Mbps\n– Smart TV 43” sau Tabletă – pentru 1000 Mbps\n– Smart TV 55” sau Tabletă – pentru 2.1 Gbps sau 5.5 Gbps",
+      "item_5": "Beneficiile nu se cumulează: se poate alege fie reducerea lunară, fie dispozitivul la preț promoțional de 1 leu.",
+      "item_6": "Oferta este disponibilă în limita stocului și doar în localitățile în care conectarea tehnică este posibilă.",
+      "item_7": "În cazul rezilierii anticipate, înainte de expirarea perioadei contractuale, se va aplica rambursarea reducerii oferite pentru dispozitiv – echivalentă cu diferența dintre prețul standard și cel promoțional."
+    },
+    "conditii_3": {
+      "title": "Oferta promoțională \"Gaming Set\"",
+      "item_1": "Oferta este valabilă în perioada 21.08.2025–25.11.2025.",
+      "item_2": "Se aplică exclusiv abonaților care activează un pachet Internet + IPTV cu viteze de 1000 Mbps, 2.1 Gbps sau 5.5 Gbps.",
+      "item_3": "Contractul se semnează pe o perioadă de 24 de luni.",
+      "item_4": "Clienții pot achiziționa un set promoțional de gaming la prețuri preferențiale:\n– Xbox Series S sau Smart TV – de la 1 leu\n– Xbox Series X sau PlayStation 5 – de la 1500 lei",
+      "item_5": "Beneficiile nu se cumulează: clientul poate opta fie pentru reducerea lunară, fie pentru dispozitivul promoțional.",
+      "item_6": "Dispozitivele se oferă în limita stocului disponibil și doar în localitățile unde este posibilă conectarea tehnică.",
+      "item_7": "În caz de reziliere anticipată a contractului, clientul va rambursa diferența până la prețul standard al dispozitivului."
+    }
   }
 }

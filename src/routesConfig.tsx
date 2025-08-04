@@ -71,6 +71,11 @@ export const routesConfig: RouteConfig[] = [
     element: React.createElement(Magazine),
   },
   {
+    path: '/:lang/contacte',
+    element: React.createElement(Contacts),
+  },
+
+  {
     path: '/:lang/wifi-plus',
     element: React.createElement(WifiPlus),
   },
