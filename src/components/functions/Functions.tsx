@@ -177,10 +177,42 @@ const Functions: React.FC<FunctionsProps> = ({
               'functions_optional.RoamingUE.description',
               'f5'
             )}
+          {functions.includes('Megogo') &&
+            renderFunctionBlock(
+              'Megogo',
+              'megogo',
+              'functions_optional.Megogo.title',
+              'functions_optional.Megogo.description',
+              'f14'
+            )}
+          {functions.includes('Premier') &&
+            renderFunctionBlock(
+              'Premier',
+              'premier',
+              'functions_optional.Premier.title',
+              'functions_optional.Premier.description',
+              'f15'
+            )}
+          {functions.includes('Ivi') &&
+            renderFunctionBlock(
+              'Ivi',
+              'ivi',
+              'functions_optional.Ivi.title',
+              'functions_optional.Ivi.description',
+              'f16'
+            )}
+          {functions.includes('MtcTv') &&
+            renderFunctionBlock(
+              'MtcTv',
+              'mtctv',
+              'functions_optional.MtcTv.title',
+              'functions_optional.MtcTv.description',
+              'f17'
+            )}
           {functions.includes('Arhiva') &&
             renderFunctionBlock(
               'Arhiva',
-              'roaming',
+              'arhiva',
               'functions_optional.Arhiva.title',
               'functions_optional.Arhiva.description',
               'f10'
@@ -188,10 +220,26 @@ const Functions: React.FC<FunctionsProps> = ({
           {functions.includes('PlusTV') &&
             renderFunctionBlock(
               'PlusTV',
-              'roaming',
+              'tv_plus',
               'functions_optional.PlusTV.title',
               'functions_optional.PlusTV.description',
+              'f12'
+            )}
+          {functions.includes('Adult') &&
+            renderFunctionBlock(
+              'Adult',
+              'plus18',
+              'functions_optional.Adult.title',
+              'functions_optional.Adult.description',
               'f11'
+            )}
+          {functions.includes('Junior') &&
+            renderFunctionBlock(
+              'Junior',
+              'junior',
+              'functions_optional.Junior.title',
+              'functions_optional.Junior.description',
+              'f13'
             )}
         </Slider>
       </div>

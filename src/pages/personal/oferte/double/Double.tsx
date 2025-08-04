@@ -868,8 +868,7 @@ export default function Double() {
       </Hero>
 
       <div className={`title_3 ${styles.title_main}`}>
-        {' '}
-        <span>Alege cel mai avantajos abonament</span>
+        <span>{t('combo_home.choose_best_subscription')}</span>
       </div>
 
       <div className={styles.config}>
@@ -877,19 +876,19 @@ export default function Double() {
           onClick={() => setActiveConfig('1')}
           className={`${styles.config_block} ${styles.config_block_1}  ${styles.config_block_first} ${activeConfig == '1' && styles.config_block_active}`}
         >
-          Reducere pachet
+          {t('combo_home.package_discount')}
         </div>
         <div
           onClick={() => setActiveConfig('2')}
           className={`${styles.config_block} ${styles.config_block_2}  ${activeConfig == '2' && styles.config_block_active}`}
         >
-          Smart TV / Tableta
+          {t('combo_home.smart_tv_tablet')}
         </div>
         <div
           onClick={() => setActiveConfig('3')}
           className={`${styles.config_block} ${styles.config_block_3}  ${styles.config_block_last} ${activeConfig == '3' && styles.config_block_active}`}
         >
-          Gaming set
+          {t('combo_home.gaming_set')}
         </div>
       </div>
       <Slider {...settings} className={styles.abonaments}>
@@ -908,7 +907,7 @@ export default function Double() {
               {/*  </div>*/}
               {/*</div>*/}
               <div className={styles.abonaments_block_inside_pretitle}>
-                Internet + TV
+                {t('navbar.internet_tv')}
               </div>
               <div className={styles.abonaments_block_inside_title}>
                 300 Mbps
@@ -1096,12 +1095,12 @@ export default function Double() {
                   />
                 </div>
                 <span>
-                  <b>Moldtelecom TV GO</b>
+                  <b>{t('navbar.mt_tv_go')}</b>
                   {/*inclus*/}{' '}
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
                   >
-                    1 lună gratuit
+                    {t('combo_home.one_month_free')}
                   </span>
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280113')} />
@@ -1119,7 +1118,7 @@ export default function Double() {
                   />
                 </div>
                 <span>
-                  <b>Telefonie fixă</b>
+                  <b>{t('navbar.fix')}</b>
                   {/*inclus*/}{' '}
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
@@ -1134,7 +1133,7 @@ export default function Double() {
                 {activeConfig == '1' ? (
                   <div className={styles.tm_carousell_block_row_tags}>
                     <div className={styles.tm_carousell_block_row_tag}>
-                      -120 lei reducere pentru 2 ani
+                      {t('combo_home.discount_120_2_years')}
                     </div>
                   </div>
                 ) : (
@@ -1196,7 +1195,7 @@ export default function Double() {
               {/*  </div>*/}
               {/*</div>*/}
               <div className={styles.abonaments_block_inside_pretitle}>
-                Internet + TV
+                {t('navbar.internet_tv')}
               </div>
               <div className={styles.abonaments_block_inside_title}>
                 500 Mbps
@@ -1384,12 +1383,12 @@ export default function Double() {
                   />
                 </div>
                 <span>
-                  <b>Moldtelecom TV GO</b>
+                  <b>{t('navbar.mt_tv_go')}</b>
                   {/*inclus*/}{' '}
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
                   >
-                    1 lună gratuit
+                    {t('combo_home.one_month_free')}
                   </span>
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280113')} />
@@ -1407,7 +1406,7 @@ export default function Double() {
                   />
                 </div>
                 <span>
-                  <b>Telefonie fixă</b>
+                  <b>{t('navbar.fix')}</b>
                   {/*inclus*/}{' '}
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
@@ -1437,7 +1436,7 @@ export default function Double() {
                 {activeConfig == '1' ? (
                   <div className={styles.tm_carousell_block_row_tags}>
                     <div className={styles.tm_carousell_block_row_tag}>
-                      -120 lei reducere pentru 2 ani
+                      {t('combo_home.discount_120_2_years')}
                     </div>
                   </div>
                 ) : (
@@ -1498,7 +1497,7 @@ export default function Double() {
             {/*  </div>*/}
             {/*</div>*/}
             <div className={styles.abonaments_block_inside_pretitle}>
-              Internet + TV
+              {t('navbar.internet_tv')}
             </div>
             <div className={styles.abonaments_block_inside_title}>
               1000 Mbps
@@ -1682,10 +1681,10 @@ export default function Double() {
                 />
               </div>
               <span>
-                <b>Moldtelecom TV GO</b>
+                <b>{t('navbar.mt_tv_go')}</b>
                 {/*inclus*/}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
-                  1 lună gratuit
+                  {t('combo_home.one_month_free')}
                 </span>
               </span>
               <InfoIcon onClick={() => setActivePopup('1280113')} />
@@ -1703,7 +1702,7 @@ export default function Double() {
                 />
               </div>
               <span>
-                <b>Telefonie fixă</b>
+                <b>{t('navbar.fix')}</b>
                 {/*inclus*/}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
                   (10 {t('combo_home.lei_luna')})
@@ -1743,7 +1742,7 @@ export default function Double() {
               {activeConfig == '1' ? (
                 <div className={styles.tm_carousell_block_row_tags}>
                   <div className={styles.tm_carousell_block_row_tag}>
-                    -120 lei reducere pentru 2 ani
+                    {t('combo_home.discount_120_2_years')}
                   </div>
                 </div>
               ) : (
@@ -1803,7 +1802,7 @@ export default function Double() {
             {/*  </div>*/}
             {/*</div>*/}
             <div className={styles.abonaments_block_inside_pretitle}>
-              Internet + TV
+              {t('navbar.internet_tv')}
             </div>
             <div className={styles.abonaments_block_inside_title}>2.1 Gbps</div>
 
@@ -1985,10 +1984,10 @@ export default function Double() {
                 />
               </div>
               <span>
-                <b>Moldtelecom TV GO</b>
+                <b>{t('navbar.mt_tv_go')}</b>
                 {/*inclus*/}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
-                  1 lună gratuit
+                  {t('combo_home.one_month_free')}
                 </span>
               </span>
               <InfoIcon onClick={() => setActivePopup('1280113')} />
@@ -2006,7 +2005,7 @@ export default function Double() {
                 />
               </div>
               <span>
-                <b>Telefonie fixă</b>
+                <b>{t('navbar.fix')}</b>
                 {/*inclus*/}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
                   (10 {t('combo_home.lei_luna')})
@@ -2043,7 +2042,7 @@ export default function Double() {
               {activeConfig == '1' ? (
                 <div className={styles.tm_carousell_block_row_tags}>
                   <div className={styles.tm_carousell_block_row_tag}>
-                    -120 lei reducere pentru 2 ani
+                    {t('combo_home.discount_120_2_years')}
                   </div>
                 </div>
               ) : (
@@ -2103,7 +2102,7 @@ export default function Double() {
             {/*  </div>*/}
             {/*</div>*/}
             <div className={styles.abonaments_block_inside_pretitle}>
-              Internet + TV
+              {t('navbar.internet_tv')}
             </div>
             <div className={styles.abonaments_block_inside_title}>5.5 Gbps</div>
 
@@ -2285,10 +2284,10 @@ export default function Double() {
                 />
               </div>
               <span>
-                <b>Moldtelecom TV GO</b>
+                <b>{t('navbar.mt_tv_go')}</b>
                 {/*inclus*/}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
-                  1 lună gratuit
+                  {t('combo_home.one_month_free')}
                 </span>
               </span>
               <InfoIcon onClick={() => setActivePopup('1280113')} />
@@ -2306,7 +2305,7 @@ export default function Double() {
                 />
               </div>
               <span>
-                <b>Telefonie fixă</b>
+                <b>{t('navbar.fix')}</b>
                 {/*inclus*/}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
                   (10 {t('combo_home.lei_luna')})
@@ -2343,7 +2342,7 @@ export default function Double() {
               {activeConfig == '1' ? (
                 <div className={styles.tm_carousell_block_row_tags}>
                   <div className={styles.tm_carousell_block_row_tag}>
-                    -120 lei reducere pentru 2 ani
+                    {t('combo_home.discount_120_2_years')}
                   </div>
                 </div>
               ) : (
@@ -2669,7 +2668,16 @@ export default function Double() {
       <Functions
         style_type={'blue'}
         title={'general.recommended_options'}
-        functions={['Arhiva', 'PlusTV', 'International', 'RoamingUE']}
+        functions={[
+          'Megogo',
+          'Ivi',
+          'Premier',
+          'MtcTv',
+          'Arhiva',
+          'PlusTV',
+          'Adult',
+          'Junior',
+        ]}
       />
       <MyApp style_type={'blue_white'} className={styles.myapp} />
 

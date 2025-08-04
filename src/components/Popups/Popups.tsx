@@ -1307,11 +1307,45 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
           </div>
         </div>
       </Popup>
-      {/* Popup pentru f10 */}
+      {/* Popup pentru f11 */}
       <Popup
         id="f11"
         width={width || '1000px'}
         isVisible={content === 'f11'}
+        onClose={onClose}
+      >
+        <div className="popup_content">
+          <h2>Adult</h2>
+          &nbsp;&nbsp;În exclusivitate, pentru abonații pachetului Premier și
+          Univers, Moldtelecom oferă posibilitatea conectării pachetului Adult.
+          La activarea pachetului tematic Adult obțineți 4 posturi TV destinate
+          adulților. Canalele pachetului Adult sunt difuzate de la 00:00 pînă la
+          06:00, și pot fi restricționate prin parolă utilizînd funcția Control
+          parental.
+          <ul>
+            <li>(991) Private TV - ENG</li>
+            <li>(992) Redlight - ENG</li>
+            <li>(993) Barely Legal - ENG</li>
+            <li>(994) Redlight HD - ENG</li>
+          </ul>
+          <br />
+          &nbsp;&nbsp;<b> Activare opțiune:</b>
+          <ul>
+            <li>
+              Activează/sau dezactivează simplu prin aplicația "MyMoldtelecom".
+            </li>
+          </ul>
+          <div className="popup_content_price">
+            Preț: <b>35 lei/luna</b>
+          </div>
+        </div>
+      </Popup>
+
+      {/* Popup pentru f12 */}
+      <Popup
+        id="f12"
+        width={width || '1000px'}
+        isVisible={content === 'f12'}
         onClose={onClose}
       >
         <div className="popup_content">
@@ -1365,6 +1399,188 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
           </ScrollableWrapper>
           <div className="popup_content_price">
             Preț: <b>30 lei/luna</b>
+          </div>
+        </div>
+      </Popup>
+      {/* Popup pentru f13 */}
+      <Popup
+        id="f13"
+        width={width || '1000px'}
+        isVisible={content === 'f13'}
+        onClose={onClose}
+      >
+        <div className="popup_content">
+          <h2>Junior</h2>
+          <span> </span> &nbsp;&nbsp;În exclusivitate, pentru abonații
+          pachetului Premier, Moldtelecom oferă posibilitatea conectării
+          pachetului Junior.
+          <br />
+          <br />
+          &nbsp;&nbsp; Activați pachetul și obțineți 5 posturi TV distractiv –
+          educative destinate copiilor și adolescenților.
+          <ul>
+            <li>(206) Cartoonito - ROM/RUS/ENG/POL/HUN</li>
+            <li>(207) Nick Jr. - ROM/RUS/ENG/HUN</li>
+            <li>(212) Детский мир / Телеклуб - RUS</li>
+            <li>(211) Карусель - RUS</li>
+            <li>(213) CTC Kids - RUS</li>
+          </ul>
+          <br />
+          &nbsp;&nbsp;<b> Activare opțiune:</b>
+          <ul>
+            <li>
+              Activează/sau dezactivează simplu prin aplicația "MyMoldtelecom".
+            </li>
+          </ul>
+          <div className="popup_content_price">
+            Preț: <b>10 lei/luna</b>
+          </div>
+        </div>
+      </Popup>
+      {/* Popup pentru f14 */}
+      <Popup
+        id="f14"
+        width={width || '1000px'}
+        isVisible={content === 'f14'}
+        onClose={onClose}
+      >
+        <div className="popup_content">
+          <h2>MEGOGO</h2>
+          <span> </span> &nbsp;&nbsp;<b>Opțiunea MEGOGO </b> – oferă acces la o
+          video bibliotecă de peste 4000 de filme, 700 seriale și 800 desene
+          animate iar marea surpriză - toate filmele și emisiunile le vizionați
+          fără pauze de publicitate.
+          <br />
+          <br />
+          &nbsp;&nbsp;<b> Activare opțiune:</b>
+          <ul>
+            <li>
+              Activează/sau dezactivează simplu prin aplicația "MyMoldtelecom"
+              la fel cum activați sau dezactivați celelalte servicii la IPTV
+              (Arhiva TV, pachetele tematice).
+            </li>
+          </ul>
+          <div className="popup_content_price">
+            Preț: <b>59 lei/luna</b>
+          </div>
+        </div>
+      </Popup>
+      {/* Popup pentru f15 */}
+      <Popup
+        id="f15"
+        width={width || '1000px'}
+        isVisible={content === 'f15'}
+        onClose={onClose}
+      >
+        <div className="popup_content">
+          <h2>Cinema PREMIER </h2>
+          <span> </span> &nbsp;&nbsp;Descoperă <b>opțiunea PREMIER</b>, o
+          experiență cinematografică care îți oferă acces nelimitat la filme,
+          emisiuni TV și multe altele. Indiferent de dispozitivul pe care îl
+          folosești - mobil, tabletă, PC sau smart TV – te poți bucura de
+          filmele tale preferate în cadrul unui singur abonament.
+          <br />
+          <b>
+            {' '}
+            &nbsp;&nbsp; Activarea opțiunii PREMIER este simplă și se face prin
+            aplicația MyMoldtelecom:
+          </b>
+          <ol>
+            <li>Accesezi Opțiuni și Servicii, apoi Opțiuni</li>
+            <li>Alegi Cinematografe Online</li>
+            <li>
+              Activezi cinematografului PREMIER online cu o doar de 59 lei lunar
+            </li>
+            <li>Primești un email cu un link către crearea contului</li>
+            <li>
+              Indici numărul de contract și un număr de mobil valid, apoi apeși
+              "creează cont".
+            </li>
+            <li>
+              Descarci aplicația PREMIER sau o accesezi online și te autorizezi
+              cu numărul de telefon folosit la crearea contului
+            </li>
+          </ol>
+          <div className="popup_content_price">
+            Preț: <b>59 lei/luna</b>
+          </div>
+        </div>
+      </Popup>
+      {/* Popup pentru f16 */}
+      <Popup
+        id="f16"
+        width={width || '1000px'}
+        isVisible={content === 'f16'}
+        onClose={onClose}
+      >
+        <div className="popup_content">
+          <h2>Cinema-Online ИВИ</h2>
+          <span> </span> &nbsp;&nbsp; Acum ai cea mai tare experiență și cel mai
+          bogat conținut de filme și desene animate cu noul cinemаtograf-online
+          ИВИ, disponibil pe orice dispozitiv.
+          <br />
+          <br />
+          &nbsp;&nbsp; Serviciul este destinat pentru abonații existenți
+          conectați la planurile tarifare de Internet sau Internet + IPTV.
+          <br />
+          <br />
+          &nbsp;&nbsp; Serviciul opțional activat poate fi utilizat de maxim 5
+          dispozitive.
+          <br />
+          <br />
+          &nbsp;&nbsp;
+          <b>
+            {' '}
+            Modalitatea de activare/dezactivare a serviciului ИВИ prin
+            intermediul aplicației MyMoldtelecom:
+          </b>
+          <ul>
+            <li>Autentificarea în aplicație;</li>
+            <li>
+              Compartimentul ”Opțiuni și servicii”, apoi alegem ”Opțiuni”;
+            </li>
+            <li>Activare sau dezactivare serviciu.</li>
+          </ul>
+          <div className="popup_content_price">
+            Preț: <b>59 lei/luna</b>
+          </div>
+        </div>
+      </Popup>
+      {/* Popup pentru f17 */}
+      <Popup
+        id="f17"
+        width={width || '1000px'}
+        isVisible={content === 'f17'}
+        onClose={onClose}
+      >
+        <div className="popup_content">
+          <h2> Moldtelecom TV</h2>
+          <span> </span> &nbsp;&nbsp;<b>Moldtelecom TV</b> este o aplicație care
+          permite să accesezi toate canalele din grila Moldtelecom direct pe
+          smartphone, tabletă sau televizor, fără a avea nevoie de un set-top
+          box.
+          <br />
+          &nbsp;&nbsp;Aplicația Moldtelecom TV este compatibilă cu o gamă largă
+          de dispozitive de exemplu: LG Smart TV, Samsung Smart TV, Hisense,
+          Apple TV, Android TV, Android mobile și iOS.
+          <br />
+          &nbsp;&nbsp;Serviciu este pentru abonații Moldtelecom, care au
+          conectat serviciul de Internet, IPTV sau Internet + IPTV.
+          <br />
+          <br />
+          &nbsp;&nbsp;Activarea serviciului Moldtelecom TV se face doar prin
+          intermediul <b>aplicației MyMoldtelecom</b>, atât prin aplicația
+          mobilă, cât și prin versiunea web.
+          <ol>
+            <li>Accesează My Moldtelecom pagina acasă</li>
+            <li>Selectează serviciul de Internet sau Internet + IPTV</li>
+            <li>Selectează opțiuni și servicii</li>
+            <li>Alege Moldtelecom TV</li>
+            <li>Activează planul tarifar dori ( Single, Double, Family )</li>
+          </ol>
+          <br />
+          <div className="popup_content_price">
+            Preț: <b>60 / 80 / 100 lei/luna</b>
           </div>
         </div>
       </Popup>

@@ -1897,6 +1897,30 @@
     "PlusTV": {
       "title": "1 TV Suplimentar",
       "description": "Pentru comoditatea familiei adaugă încă un televizor"
+    },
+    "Adult": {
+      "title": "Adult",
+      "description": "Posturi TV destinate exclusiv adulților"
+    },
+    "Junior": {
+      "title": "Junior",
+      "description": "Desene animate pentru copii mari și mici"
+    },
+    "MtcTv": {
+      "title": "Moldtelecom TV",
+      "description": "Toate canalele din grila pe orice dispozitiv"
+    },
+    "Premier": {
+      "title": "Premier",
+      "description": "Filme, emisiuni și divertisment pentru toate gusturile"
+    },
+    "Megogo": {
+      "title": "MEGOGO",
+      "description": "Video bibliotecă cu peste 4000 de filme și seriale"
+    },
+    "Ivi": {
+      "title": "ИВИ",
+      "description": "Cel mai bogat conținut de filme și desene animate"
     }
   },
   "bussines_fibra": {
@@ -1912,6 +1936,13 @@
     "promo_offer_2": "Oferta promoțională \"Gaming Set\"",
     "lei_luna": "lei/lună",
     "promo_text": "Oferta promotionala poate varia in dependenta de regiunea selectata",
+    "choose_best_subscription": "Alege cel mai avantajos abonament",
+    "package_discount": "Reducere pachet",
+    "smart_tv_tablet": "Smart TV / Tableta",
+    "gaming_set": "Gaming set",
+    "more_options": "mai multe optiuni",
+    "one_month_free": "1 lună gratuit",
+    "discount_120_2_years": "-120 lei reducere pentru 2 ani",
     "faq": {
       "install_duration_question": "Cât durează instalarea serviciilor?",
       "install_duration_answer": "Serviciile se instalează în cel mult 7 zile lucrătoare de la semnarea contractului.",
