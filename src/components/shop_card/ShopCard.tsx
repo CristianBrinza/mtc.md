@@ -177,7 +177,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
         <div className={styles.ShopCard_price}>
           {formatPrice(price)}{' '}
           <span className={styles.ShopCard_price_small}>
-            {price === 1 ? 'leu' : 'lei'}
+            {price === 1 ? t('general.leu') : t('general.lei')}
           </span>
         </div>
       </div>

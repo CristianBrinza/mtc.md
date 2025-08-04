@@ -154,8 +154,8 @@ type ConfigType = '1' | '2' | '3';
 export default function Double() {
   const { t } = useTranslation();
   const breadcrumbItems = [
-    { label: 'Promo', url: ' ' },
-    { label: 'Internet + TV' },
+    { label: t('navbar.promo'), url: ' ' },
+    { label: t('navbar.internet_tv') },
   ];
 
   const [activeConfig, setActiveConfig] = useState<ConfigType>('1');
@@ -920,7 +920,7 @@ export default function Double() {
                     color={'var(--theme_primary_color_blue_2)'}
                   />
                 </div>
-                Router Wi-Fi 6 inclus
+               {t('combo_home.router_wifi6_included')}
               </div>
               <div className={styles.abonaments_block_inside_subtitle}>
                 <div className={styles.abonaments_block_inside_subtitle_toggle}>
@@ -1082,7 +1082,7 @@ export default function Double() {
 
                 <span onClick={() => setActivePopup('1280117')}>
                   {' '}
-                  mai multe optiuni
+                  {t('combo_home.more_options')}
                 </span>
               </div>
               <div
@@ -1118,7 +1118,7 @@ export default function Double() {
                   />
                 </div>
                 <span>
-                  <b>{t('navbar.fix')}</b>
+                  <b>{t('combo_home.telefonie_fixa')}</b>
                   {/*inclus*/}{' '}
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
@@ -1208,7 +1208,7 @@ export default function Double() {
                     color={'var(--theme_primary_color_blue_2)'}
                   />
                 </div>
-                Router Wi-Fi 6 inclus
+               {t('combo_home.router_wifi6_included')}
               </div>
               <div className={styles.abonaments_block_inside_subtitle}>
                 <div className={styles.abonaments_block_inside_subtitle_toggle}>
@@ -1370,7 +1370,7 @@ export default function Double() {
 
                 <span onClick={() => setActivePopup('1280117')}>
                   {' '}
-                  mai multe optiuni
+                   {t('combo_home.more_options')}
                 </span>
               </div>
               <div
@@ -1406,7 +1406,7 @@ export default function Double() {
                   />
                 </div>
                 <span>
-                  <b>{t('navbar.fix')}</b>
+                  <b>{t('combo_home.telefonie_fixa')}</b>
                   {/*inclus*/}{' '}
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
@@ -1510,7 +1510,7 @@ export default function Double() {
                   color={'var(--theme_primary_color_blue_2)'}
                 />
               </div>
-              Router Wi-Fi 6 inclus
+             {t('combo_home.router_wifi6_included')}
             </div>
             <div className={styles.abonaments_block_inside_subtitle}>
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
@@ -1668,7 +1668,7 @@ export default function Double() {
 
               <span onClick={() => setActivePopup('1280117')}>
                 {' '}
-                mai multe optiuni
+                 {t('combo_home.more_options')}
               </span>
             </div>
             <div
@@ -1702,7 +1702,7 @@ export default function Double() {
                 />
               </div>
               <span>
-                <b>{t('navbar.fix')}</b>
+                <b>{t('combo_home.telefonie_fixa')}</b>
                 {/*inclus*/}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
                   (10 {t('combo_home.lei_luna')})
@@ -1813,7 +1813,7 @@ export default function Double() {
                   color={'var(--theme_primary_color_blue_2)'}
                 />
               </div>
-              Router Wi-Fi 6 inclus
+             {t('combo_home.router_wifi6_included')}
             </div>
             <div className={styles.abonaments_block_inside_subtitle}>
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
@@ -1971,7 +1971,7 @@ export default function Double() {
 
               <span onClick={() => setActivePopup('1280117')}>
                 {' '}
-                mai multe optiuni
+                 {t('combo_home.more_options')}
               </span>
             </div>
             <div
@@ -2005,7 +2005,7 @@ export default function Double() {
                 />
               </div>
               <span>
-                <b>{t('navbar.fix')}</b>
+                <b>{t('combo_home.telefonie_fixa')}</b>
                 {/*inclus*/}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
                   (10 {t('combo_home.lei_luna')})
@@ -2113,7 +2113,7 @@ export default function Double() {
                   color={'var(--theme_primary_color_blue_2)'}
                 />
               </div>
-              Router Wi-Fi 6 inclus
+             {t('combo_home.router_wifi6_included')}
             </div>
             <div className={styles.abonaments_block_inside_subtitle}>
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
@@ -2271,7 +2271,7 @@ export default function Double() {
 
               <span onClick={() => setActivePopup('1280117')}>
                 {' '}
-                mai multe optiuni
+                 {t('combo_home.more_options')}
               </span>
             </div>
             <div
@@ -2305,7 +2305,7 @@ export default function Double() {
                 />
               </div>
               <span>
-                <b>{t('navbar.fix')}</b>
+                <b>{t('combo_home.telefonie_fixa')}</b>
                 {/*inclus*/}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
                   (10 {t('combo_home.lei_luna')})
@@ -2451,12 +2451,11 @@ export default function Double() {
       </Details>
 
       <div className={`title_3  ${styles.title2}`}>
-        Dispozitiv la DOAR 1 leu, sau Preț Special!
+        {t('combo_home.device_one_leu')}
       </div>
 
       <div className={`sub_title ${styles.sub_title1}`}>
-        Alege oferta de internet cu TV fără reducere și primești la conectare
-        unul din device-urile de mai jos
+        {t('combo_home.choose_offer_without_discount')}
       </div>
 
       <Slider {...settings_devices} className={styles.tm_carousell}>
@@ -2661,7 +2660,7 @@ export default function Double() {
       <div className={styles.devices_disclailmer}>
         <span>
           {' '}
-          <sup>*</sup>Oferta este valabilă în limita stocului disponibil
+          <sup>*</sup>{t('combo_home.stock_offer')}
         </span>
       </div>
 
