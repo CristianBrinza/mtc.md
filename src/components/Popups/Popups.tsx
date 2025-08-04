@@ -1284,27 +1284,21 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>Arhiva TV </h2>
-          &nbsp;&nbsp;Cu serviciul <b>Arhiva TV</b> aveți libertatea de a accesa
-          emisiunile preferate din arhiva programelor TV, care au fost difuzate
-          cu până la 7 zile în urmă, pentru a le viziona în timpul comod pentru
-          dumneavoastră. În acest mod, nici o emisiune importantă nu va fi
-          ratată, iar cele preferate le puteți viziona în reluare.
-          <br />
-          <br />
-          &nbsp;&nbsp;<b> Activare opțiune:</b>
+          <h2>{t('popups.f10.title')}</h2>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: t('popups.f10.paragraph'),
+            }}
+          />
+          <b>{t('popups.f10.activationTitle')}</b>
           <ul>
-            <li>
-              Activează/sau dezactivează simplu prin aplicația "MyMoldtelecom"
-              sau din versiunea web "MyMoldtelecom" și vizionaţi în reluare
-              emisiunile preferate oricând doriți.
-            </li>
+            <li>{t('popups.f10.activation.0')}</li>
           </ul>
-          Serviciul Arhiva TV este foarte ușor de utilizat din meniul principal
-          IPTV.
-          <div className="popup_content_price">
-            <b>GRATUIT</b>
-          </div>
+          <p>{t('popups.f10.additional')}</p>
+          <div
+            className="popup_content_price"
+            dangerouslySetInnerHTML={{ __html: t('popups.f10.price') }}
+          />
         </div>
       </Popup>
       {/* Popup pentru f11 */}
@@ -1315,29 +1309,22 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>Adult</h2>
-          &nbsp;&nbsp;În exclusivitate, pentru abonații pachetului Premier și
-          Univers, Moldtelecom oferă posibilitatea conectării pachetului Adult.
-          La activarea pachetului tematic Adult obțineți 4 posturi TV destinate
-          adulților. Canalele pachetului Adult sunt difuzate de la 00:00 pînă la
-          06:00, și pot fi restricționate prin parolă utilizînd funcția Control
-          parental.
+          <h2>{t('popups.f11.title')}</h2>
+          <p>{t('popups.f11.paragraph')}</p>
           <ul>
-            <li>(991) Private TV - ENG</li>
-            <li>(992) Redlight - ENG</li>
-            <li>(993) Barely Legal - ENG</li>
-            <li>(994) Redlight HD - ENG</li>
+            <li>{t('popups.f11.channels.0')}</li>
+            <li>{t('popups.f11.channels.1')}</li>
+            <li>{t('popups.f11.channels.2')}</li>
+            <li>{t('popups.f11.channels.3')}</li>
           </ul>
-          <br />
-          &nbsp;&nbsp;<b> Activare opțiune:</b>
+          <b>{t('popups.f11.activationTitle')}</b>
           <ul>
-            <li>
-              Activează/sau dezactivează simplu prin aplicația "MyMoldtelecom".
-            </li>
+            <li>{t('popups.f11.activation.0')}</li>
           </ul>
-          <div className="popup_content_price">
-            Preț: <b>35 lei/luna</b>
-          </div>
+          <div
+            className="popup_content_price"
+            dangerouslySetInnerHTML={{ __html: t('popups.f11.price') }}
+          />
         </div>
       </Popup>
 
@@ -1349,57 +1336,46 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>1 TV Suplimentar </h2>
-          Plata de abonament pentru fiecare televizor suplimentar pentru
-          pachetul TV Simplu, Premier sau Univers este de 30 lei.
-          <br />
-          Mediabox-urile adiţionale se consideră al 2-lea, al 3-lea.
-          <br />
-          Prin tehnologia ADSL, Mediabox-urile adiţionale vor fi conectate doar
-          în cazul existenţei posibilităţilor tehnice.
-          <br />
-          &nbsp;
+          <h2>{t('popups.f12.title')}</h2>
+          <p>{t('popups.f12.paragraphs.0')}</p>
+          <p>{t('popups.f12.paragraphs.1')}</p>
+          <p>{t('popups.f12.paragraphs.2')}</p>
           <ScrollableWrapper>
             <table className="popup_table">
               <thead>
                 <tr>
-                  <td>
-                    <span>
-                      <strong>Denumirea</strong>
-                    </span>
-                  </td>
-                  <td>
-                    <span>
-                      <strong>
-                        Perioada contractuală
-                        <br />
-                        24 luni
-                      </strong>
-                    </span>
-                  </td>
+                  <td
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f12.table.headers.0'),
+                    }}
+                  />
+                  <td
+                    dangerouslySetInnerHTML={{
+                      __html: t('popups.f12.table.headers.1'),
+                    }}
+                  />
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Taxa de conectare (ADSL, FTTx, GPON, FTTx Gigabit)</td>
-                  <td>0</td>
+                  <td>{t('popups.f12.table.rows.0.0')}</td>
+                  <td>{t('popups.f12.table.rows.0.1')}</td>
                 </tr>
                 <tr>
-                  <td>Taxa de activare a mediabox-ului de bază</td>
-                  <td>0</td>
+                  <td>{t('popups.f12.table.rows.1.0')}</td>
+                  <td>{t('popups.f12.table.rows.1.1')}</td>
                 </tr>
                 <tr>
-                  <td>
-                    Taxa de activare a mediabox-urilor adiţionale (per STB)
-                  </td>
-                  <td>0</td>
+                  <td>{t('popups.f12.table.rows.2.0')}</td>
+                  <td>{t('popups.f12.table.rows.2.1')}</td>
                 </tr>
               </tbody>
             </table>
           </ScrollableWrapper>
-          <div className="popup_content_price">
-            Preț: <b>30 lei/luna</b>
-          </div>
+          <div
+            className="popup_content_price"
+            dangerouslySetInnerHTML={{ __html: t('popups.f12.price') }}
+          />
         </div>
       </Popup>
       {/* Popup pentru f13 */}
@@ -1410,31 +1386,24 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>Junior</h2>
-          <span> </span> &nbsp;&nbsp;În exclusivitate, pentru abonații
-          pachetului Premier, Moldtelecom oferă posibilitatea conectării
-          pachetului Junior.
-          <br />
-          <br />
-          &nbsp;&nbsp; Activați pachetul și obțineți 5 posturi TV distractiv –
-          educative destinate copiilor și adolescenților.
+          <h2>{t('popups.f13.title')}</h2>
+          <p>{t('popups.f13.paragraphs.0')}</p>
+          <p>{t('popups.f13.paragraphs.1')}</p>
           <ul>
-            <li>(206) Cartoonito - ROM/RUS/ENG/POL/HUN</li>
-            <li>(207) Nick Jr. - ROM/RUS/ENG/HUN</li>
-            <li>(212) Детский мир / Телеклуб - RUS</li>
-            <li>(211) Карусель - RUS</li>
-            <li>(213) CTC Kids - RUS</li>
+            <li>{t('popups.f13.channels.0')}</li>
+            <li>{t('popups.f13.channels.1')}</li>
+            <li>{t('popups.f13.channels.2')}</li>
+            <li>{t('popups.f13.channels.3')}</li>
+            <li>{t('popups.f13.channels.4')}</li>
           </ul>
-          <br />
-          &nbsp;&nbsp;<b> Activare opțiune:</b>
+          <b>{t('popups.f13.activationTitle')}</b>
           <ul>
-            <li>
-              Activează/sau dezactivează simplu prin aplicația "MyMoldtelecom".
-            </li>
+            <li>{t('popups.f13.activation.0')}</li>
           </ul>
-          <div className="popup_content_price">
-            Preț: <b>10 lei/luna</b>
-          </div>
+          <div
+            className="popup_content_price"
+            dangerouslySetInnerHTML={{ __html: t('popups.f13.price') }}
+          />
         </div>
       </Popup>
       {/* Popup pentru f14 */}
@@ -1445,24 +1414,20 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>MEGOGO</h2>
-          <span> </span> &nbsp;&nbsp;<b>Opțiunea MEGOGO </b> – oferă acces la o
-          video bibliotecă de peste 4000 de filme, 700 seriale și 800 desene
-          animate iar marea surpriză - toate filmele și emisiunile le vizionați
-          fără pauze de publicitate.
-          <br />
-          <br />
-          &nbsp;&nbsp;<b> Activare opțiune:</b>
+          <h2>{t('popups.f14.title')}</h2>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: t('popups.f14.paragraph'),
+            }}
+          />
+          <b>{t('popups.f14.activationTitle')}</b>
           <ul>
-            <li>
-              Activează/sau dezactivează simplu prin aplicația "MyMoldtelecom"
-              la fel cum activați sau dezactivați celelalte servicii la IPTV
-              (Arhiva TV, pachetele tematice).
-            </li>
+            <li>{t('popups.f14.activation.0')}</li>
           </ul>
-          <div className="popup_content_price">
-            Preț: <b>59 lei/luna</b>
-          </div>
+          <div
+            className="popup_content_price"
+            dangerouslySetInnerHTML={{ __html: t('popups.f14.price') }}
+          />
         </div>
       </Popup>
       {/* Popup pentru f15 */}
@@ -1473,37 +1438,25 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>Cinema PREMIER </h2>
-          <span> </span> &nbsp;&nbsp;Descoperă <b>opțiunea PREMIER</b>, o
-          experiență cinematografică care îți oferă acces nelimitat la filme,
-          emisiuni TV și multe altele. Indiferent de dispozitivul pe care îl
-          folosești - mobil, tabletă, PC sau smart TV – te poți bucura de
-          filmele tale preferate în cadrul unui singur abonament.
-          <br />
-          <b>
-            {' '}
-            &nbsp;&nbsp; Activarea opțiunii PREMIER este simplă și se face prin
-            aplicația MyMoldtelecom:
-          </b>
+          <h2>{t('popups.f15.title')}</h2>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: t('popups.f15.paragraph'),
+            }}
+          />
+          <b>{t('popups.f15.activationTitle')}</b>
           <ol>
-            <li>Accesezi Opțiuni și Servicii, apoi Opțiuni</li>
-            <li>Alegi Cinematografe Online</li>
-            <li>
-              Activezi cinematografului PREMIER online cu o doar de 59 lei lunar
-            </li>
-            <li>Primești un email cu un link către crearea contului</li>
-            <li>
-              Indici numărul de contract și un număr de mobil valid, apoi apeși
-              "creează cont".
-            </li>
-            <li>
-              Descarci aplicația PREMIER sau o accesezi online și te autorizezi
-              cu numărul de telefon folosit la crearea contului
-            </li>
+            <li>{t('popups.f15.activation.0')}</li>
+            <li>{t('popups.f15.activation.1')}</li>
+            <li>{t('popups.f15.activation.2')}</li>
+            <li>{t('popups.f15.activation.3')}</li>
+            <li>{t('popups.f15.activation.4')}</li>
+            <li>{t('popups.f15.activation.5')}</li>
           </ol>
-          <div className="popup_content_price">
-            Preț: <b>59 lei/luna</b>
-          </div>
+          <div
+            className="popup_content_price"
+            dangerouslySetInnerHTML={{ __html: t('popups.f15.price') }}
+          />
         </div>
       </Popup>
       {/* Popup pentru f16 */}
@@ -1514,36 +1467,20 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2>Cinema-Online ИВИ</h2>
-          <span> </span> &nbsp;&nbsp; Acum ai cea mai tare experiență și cel mai
-          bogat conținut de filme și desene animate cu noul cinemаtograf-online
-          ИВИ, disponibil pe orice dispozitiv.
-          <br />
-          <br />
-          &nbsp;&nbsp; Serviciul este destinat pentru abonații existenți
-          conectați la planurile tarifare de Internet sau Internet + IPTV.
-          <br />
-          <br />
-          &nbsp;&nbsp; Serviciul opțional activat poate fi utilizat de maxim 5
-          dispozitive.
-          <br />
-          <br />
-          &nbsp;&nbsp;
-          <b>
-            {' '}
-            Modalitatea de activare/dezactivare a serviciului ИВИ prin
-            intermediul aplicației MyMoldtelecom:
-          </b>
+          <h2>{t('popups.f16.title')}</h2>
+          <p>{t('popups.f16.paragraphs.0')}</p>
+          <p>{t('popups.f16.paragraphs.1')}</p>
+          <p>{t('popups.f16.paragraphs.2')}</p>
+          <b>{t('popups.f16.activationTitle')}</b>
           <ul>
-            <li>Autentificarea în aplicație;</li>
-            <li>
-              Compartimentul ”Opțiuni și servicii”, apoi alegem ”Opțiuni”;
-            </li>
-            <li>Activare sau dezactivare serviciu.</li>
+            <li>{t('popups.f16.activation.0')}</li>
+            <li>{t('popups.f16.activation.1')}</li>
+            <li>{t('popups.f16.activation.2')}</li>
           </ul>
-          <div className="popup_content_price">
-            Preț: <b>59 lei/luna</b>
-          </div>
+          <div
+            className="popup_content_price"
+            dangerouslySetInnerHTML={{ __html: t('popups.f16.price') }}
+          />
         </div>
       </Popup>
       {/* Popup pentru f17 */}
@@ -1554,34 +1491,30 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
         onClose={onClose}
       >
         <div className="popup_content">
-          <h2> Moldtelecom TV</h2>
-          <span> </span> &nbsp;&nbsp;<b>Moldtelecom TV</b> este o aplicație care
-          permite să accesezi toate canalele din grila Moldtelecom direct pe
-          smartphone, tabletă sau televizor, fără a avea nevoie de un set-top
-          box.
-          <br />
-          &nbsp;&nbsp;Aplicația Moldtelecom TV este compatibilă cu o gamă largă
-          de dispozitive de exemplu: LG Smart TV, Samsung Smart TV, Hisense,
-          Apple TV, Android TV, Android mobile și iOS.
-          <br />
-          &nbsp;&nbsp;Serviciu este pentru abonații Moldtelecom, care au
-          conectat serviciul de Internet, IPTV sau Internet + IPTV.
-          <br />
-          <br />
-          &nbsp;&nbsp;Activarea serviciului Moldtelecom TV se face doar prin
-          intermediul <b>aplicației MyMoldtelecom</b>, atât prin aplicația
-          mobilă, cât și prin versiunea web.
+          <h2>{t('popups.f17.title')}</h2>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: t('popups.f17.paragraphs.0'),
+            }}
+          />
+          <p>{t('popups.f17.paragraphs.1')}</p>
+          <p>{t('popups.f17.paragraphs.2')}</p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: t('popups.f17.activationTitle'),
+            }}
+          />
           <ol>
-            <li>Accesează My Moldtelecom pagina acasă</li>
-            <li>Selectează serviciul de Internet sau Internet + IPTV</li>
-            <li>Selectează opțiuni și servicii</li>
-            <li>Alege Moldtelecom TV</li>
-            <li>Activează planul tarifar dori ( Single, Double, Family )</li>
+            <li>{t('popups.f17.activation.0')}</li>
+            <li>{t('popups.f17.activation.1')}</li>
+            <li>{t('popups.f17.activation.2')}</li>
+            <li>{t('popups.f17.activation.3')}</li>
+            <li>{t('popups.f17.activation.4')}</li>
           </ol>
-          <br />
-          <div className="popup_content_price">
-            Preț: <b>60 / 80 / 100 lei/luna</b>
-          </div>
+          <div
+            className="popup_content_price"
+            dangerouslySetInnerHTML={{ __html: t('popups.f17.price') }}
+          />
         </div>
       </Popup>
     </>
