@@ -1166,6 +1166,7 @@ export default function Double() {
                 </div>
               </div>
               <Button
+                id="combo_buy+1"
                 onClick={() =>
                   setPopup(
                     '1',
@@ -1469,6 +1470,7 @@ export default function Double() {
                 </div>
               </div>
               <Button
+                id="combo_buy+2"
                 onClick={() =>
                   setPopup(
                     '1',
@@ -1775,6 +1777,7 @@ export default function Double() {
               </div>
             </div>
             <Button
+              id="combo_buy+3"
               onClick={() =>
                 setPopup(
                   '1',
@@ -2075,6 +2078,7 @@ export default function Double() {
               </div>
             </div>
             <Button
+              id="combo_buy+4"
               onClick={() =>
                 setPopup(
                   '1',
@@ -2375,6 +2379,7 @@ export default function Double() {
               </div>
             </div>
             <Button
+              id="combo_buy+5"
               onClick={() =>
                 setPopup(
                   '1',
@@ -2814,6 +2819,7 @@ export default function Double() {
         </ul>
 
         <Button
+          id="combo_wifi_plus+learn_more"
           to={`https://new.moldtelecom.md/${t('lang')}/wifi-plus`}
           color="#fff"
           bgcolor="var(--theme_primary_color_blue_4)"
@@ -2872,6 +2878,7 @@ export default function Double() {
           <li>{t('double.popup_safeweb.list.2')}</li>
         </ul>
         <Button
+          id="combo_safe_web+learn_more"
           color="#fff"
           bgcolor="var(--theme_primary_color_blue_4)"
           border="var(--theme_primary_color_blue_4)"
@@ -2960,6 +2967,7 @@ export default function Double() {
 
         <div className={styles.popup_btns_info}>
           <Button
+            id="combo_tvgo+learn_more"
             to={`https://www.moldtelecom.md/${t('lang')}/personal/moldtelecom-tv-go`}
             color="#fff"
             bgcolor="var(--theme_primary_color_blue_4)"
@@ -2973,6 +2981,7 @@ export default function Double() {
             {t('double.learn_more')}
           </Button>
           <Button
+            id="combo_tvgo+watch_now"
             to={'https://edge.multiscreen.moldtelecom.md/web/mold/#ro/login'}
             color="var(--theme_primary_color_blue_4)"
             bgcolor="transparent"
@@ -3135,6 +3144,7 @@ export default function Double() {
           </select>
 
           <Button
+            id="combo_region+ok"
             onClick={() => {
               // store
               localStorage.setItem('region', selRegion);
