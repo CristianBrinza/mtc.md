@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Icon, { icons } from './Icon';
+import { trackEvent } from '../initAnalytics.ts';
 
 interface ButtonProps {
   bgcolor?: string;
@@ -56,6 +57,9 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const handleClick = async () => {
+    if (id) {
+      trackEvent(id);
+    }
     if (onClick) {
       await onClick(); // Ensure analytics tracking completes
     }
@@ -119,7 +123,14 @@ const Button: React.FC<ButtonProps> = ({
       style={buttonStyle}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={onClick}
+      onClick={async () => {
+        if (id) {
+          trackEvent(id);
+        }
+        if (onClick) {
+          await onClick();
+        }
+      }}
       className={`mtc_button ${className}`}
       rel="noopener noreferrer"
     >

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import { useTranslation } from 'react-i18next';
 import styles from './Details.module.css';
+import { trackEvent } from '../../initAnalytics.ts';
 
 const ArrowIcon: React.FC<{ rotated?: boolean }> = ({ rotated = false }) => (
   <div className={styles.detalii_arrow}>
@@ -85,6 +86,15 @@ const Details: React.FC<DetailsProps> = ({ children }) => {
       next[index] = !next[index];
       return next;
     });
+
+    const childArray = React.Children.toArray(children);
+    const child = childArray[index];
+    if (React.isValidElement<DetailsBlockProps>(child)) {
+      const label = String(child.props.title)
+        .replace(/\s+/g, '_')
+        .toLowerCase();
+      trackEvent(`combo_detalii+${label}`);
+    }
   };
 
   return (

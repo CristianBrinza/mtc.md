@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './FaqQAV2.module.css';
 import Icon from '../Icon.tsx';
+import { trackEvent } from '../../initAnalytics.ts';
 
 interface FaqQAProps {
   children: React.ReactNode;
@@ -27,6 +28,8 @@ const FaqQAV2: React.FC<FaqQAProps> = ({ children, question, id_faq }) => {
 
   const toggleFAQ = () => {
     setActiveFAQ(prev => !prev);
+
+    trackEvent(`combo faq${id_faq}`);
 
     // Only send increment once per page load
     if (!hasClicked) {
