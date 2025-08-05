@@ -1449,6 +1449,10 @@
   "double": {
     "learn_more": "Learn more",
     "watch_now": "Watch now",
+    "premier_tv": "Premier TV",
+    "univers_tv": "Univers TV",
+    "premier_tv_channels": "121 HD channels, 77 SD channels, 3 radio",
+    "univers_tv_channels": "170 HD channels, 111 SD channels, 3 radio",
     "popup_premier": {
       "title": "What is Premier TV?",
       "text": "Premier TV is Moldtelecom's digital television service offering dozens of HD and SD channels and radio stations, plus advanced DVR and replay functions.",
@@ -1469,6 +1473,99 @@
         "1": "Configurable parental filtering",
         "2": "Monthly security report for online activity"
       }
-    }
+    },
+    "popup_mesh": {
+      "title": "What is Wi-Fi Mesh?",
+      "text": "Wi-Fi Mesh extends the signal of the main router to areas with weak coverage, relaying it wirelessly for a stable and fast connection throughout the home.",
+      "why_title": "Why choose Wi-Fi Mesh?",
+      "list": {
+        "0": "Uniform coverage in every corner of the house",
+        "1": "Connect all devices without re-entering the password",
+        "2": "No buffering or drop-outs during streaming"
+      },
+      "conditions_title": "Usage conditions:",
+      "conditions": {
+        "0": "Wi-Fi PLUS is an additional option to the existing fixed Internet service that extends Wi-Fi coverage.",
+        "1": "The Wi-Fi PLUS service fee is included in the monthly subscription and charged from activation, confirmed by OTP delivery by the Holder.",
+        "2": "The monthly fee applies to each device provided to extend Wi-Fi coverage. Up to 3 devices can be connected per fixed Internet connection.",
+        "3": "The subscriber will use the equipment provided by the Provider as a loan during the use of the Wi-Fi PLUS service.",
+        "4": "Disconnection of the Wi-Fi PLUS service occurs upon returning the terminal equipment (with all accessories). Missing or defective accessories must be paid for by the subscriber.",
+        "5": "The Provider may refuse to disconnect the Wi-Fi PLUS service if the equipment is not returned or its value is not reimbursed.",
+        "6": "If the equipment is not returned (lost/damaged), the subscriber will compensate 300 lei per device (without VAT) or 850 lei per device (without VAT).",
+        "7": "Connecting/disconnecting the service is possible on any billing day without recalculation."
+      }
+    },
+    "popup_tvgo": {
+      "title": "What is Moldtelecom TV GO?",
+      "text": "Moldtelecom TV GO is cable-free digital television available on any device anywhere in Moldova. Pay only when you use it – simple, flexible and without obligations.",
+      "conditions_title": "Usage conditions:",
+      "conditions": {
+        "0": "The service is available to all users, whether they are Moldtelecom subscribers or clients of other operators.",
+        "1": "Moldtelecom TV GO can be used on laptops, smartphones and tablets (Android, iOS), Smart TVs (Samsung, LG, Hisense, Android TV), as well as TV boxes (Android TV, Apple TV) or Web Browser.",
+        "2": "The service can be activated on any day of the month, and the activation date marks the start of the billing period. One service month equals 31 calendar days.",
+        "3": "The number of devices can be changed at any time from My Moldtelecom.",
+        "4": "The service can be used via any internet network (fixed, mobile or Wi-Fi) in the Republic of Moldova, regardless of the operator.",
+        "5": "To avoid suspension, the account must be topped up monthly with at least the active plan's fee. Payment is made using the User ID.",
+        "6": "Service termination occurs automatically by not topping up the account. No additional deactivation request is needed.",
+        "7": "Access to the channel lineup varies depending on the internet network used:",
+        "7_list": {
+          "0": "Within the Moldtelecom network (fixed or mobile) the Univers package is available.",
+          "1": "Outside the Moldtelecom network, access to certain channels will be restricted."
+        },
+        "8": "For optimal viewing, it is recommended to connect the device to the internet via Ethernet cable (if supported) or a stable Wi-Fi/mobile data connection with good speed.",
+        "9": "Moldtelecom reserves the right to modify the list of TV channels available in the service."
+      }
+    },
+    "popup_arhiva": {
+      "title": "What is TV Archive?",
+      "text": "The TV Archive service lets you access favorite shows from the TV program archive broadcast up to 7 days ago to watch at your convenience. This way, no important show is missed and favorites can be replayed.",
+      "activation_title": "Option activation:",
+      "activation_text": "Activate/deactivate easily via the MyMoldtelecom app or web version and watch archived shows anytime. The TV Archive service is very easy to use from the main IPTV menu"
+    },
+    "popup_options": {
+      "title": "Additional options",
+      "subtitle": "With Moldtelecom you can personalize your package and control everything instantly with a single click.",
+      "adult": {
+        "title": "Adult",
+        "text": "Activating the Adult thematic package gives you 4 TV channels for adults. Adult package channels broadcast from 00:00 to 06:00 and can be password-protected using Parental Control.",
+        "price": "35 lei"
+      },
+      "junior": {
+        "title": "Junior",
+        "text": "Exclusively for Premier package subscribers, Moldtelecom offers the Junior package. Activate it and get 5 fun and educational TV channels for children and teenagers.",
+        "price": "10 lei"
+      },
+      "tvextra": {
+        "title": "+1 TV Extra",
+        "text": "The subscription fee for each additional TV for the Simplu, Premier or Univers package is 30 lei. Additional media boxes are considered the 2nd, 3rd, etc.",
+        "price": "30 lei"
+      },
+      "arhiva": {
+        "title": "TV Archive",
+        "text": "With the TV Archive service you can access favorite shows from the TV program archive broadcast up to 7 days ago to watch whenever you like.",
+        "price": "Free"
+      },
+      "cinema_title": "Cinema-online:",
+      "megogo": {
+        "title": "MEGOGO",
+        "text": "Access a video library of over 4000 movies, 700 series and 800 cartoons, all without advertising breaks.",
+        "price": "59 lei"
+      },
+      "premier": {
+        "title": "PREMIER",
+        "text": "A cinematic experience offering unlimited access to movies, TV shows and more.",
+        "price": "59 lei"
+      },
+      "ivi": {
+        "title": "ИВИ",
+        "text": "Enjoy top-notch experience and the richest selection of movies and cartoons available on any device.",
+        "price": "59 lei"
+      }
+    },
+    "request_error": "An error occurred while submitting the request.<br />Please try again.",
+    "request_success": "Your request has been successfully sent!<br />A Moldtelecom consultant will contact you soon.",
+    "device_chosen": "Selected device:",
+    "subscription_chosen": "Selected subscription:",
+    "request_disclaimer": "After sending the request, you will be called by a Moldtelecom consultant. Thank you!<br />Requests received on Sunday will be processed on Monday. | Fields marked with * are mandatory."
   }
 }
