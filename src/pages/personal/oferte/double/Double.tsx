@@ -2824,7 +2824,7 @@ export default function Double() {
           icon="arrow_right"
           className={styles.popup_more_btn}
         >
-          Află mai mult
+          {t('double.learn_more')}
         </Button>
       </Popup>
 
@@ -2836,18 +2836,18 @@ export default function Double() {
         className={styles.popupBuy}
         onClose={() => setActivePopup(null)}
       >
-        <b className={styles.popup_title_1}>Ce este Premier TV?</b>
-        <p>
-          Premier TV este serviciul digital de televiziune Moldtelecom, care îți
-          oferă zeci de canale HD, SD şi posturi radio, plus funcționalități
-          avansate de DVR și replay.
-        </p>
-        <b className={styles.popup_title_1}>Caracteristici principale:</b>
+        <b className={styles.popup_title_1}>
+          {t('double.popup_premier.title')}
+        </b>
+        <p>{t('double.popup_premier.text')}</p>
+        <b className={styles.popup_title_1}>
+          {t('double.popup_premier.features_title')}
+        </b>
         <ul>
-          <li>121 canale HD, 73 SD și 4 posturi radio</li>
-          <li>Înregistrare emisiuni și redare până la 7 zile înapoi</li>
-          <li>Pauză și reluare live TV</li>
-          <li>Switch rapid între limbi și subtitrări</li>
+          <li>{t('double.popup_premier.features.0')}</li>
+          <li>{t('double.popup_premier.features.1')}</li>
+          <li>{t('double.popup_premier.features.2')}</li>
+          <li>{t('double.popup_premier.features.3')}</li>
         </ul>
       </Popup>
 
@@ -2859,20 +2859,17 @@ export default function Double() {
         className={styles.popupBuy}
         onClose={() => setActivePopup(null)}
       >
-        <b className={styles.popup_title_1}>Ce este Safe-Web?</b>
-        <p>
-          Safe-Web este serviciul de securitate pe internet de la Moldtelecom,
-          care filtrează și blochează site-urile malițioase, phishing și
-          conținut inadecvat, păstrându-ți casa și dispozitivele în siguranță.
-        </p>
-        <b className={styles.popup_title_1}>De ce să alegi Safe-Web?</b>
+        <b className={styles.popup_title_1}>
+          {t('double.popup_safeweb.title')}
+        </b>
+        <p>{t('double.popup_safeweb.text')}</p>
+        <b className={styles.popup_title_1}>
+          {t('double.popup_safeweb.why_title')}
+        </b>
         <ul>
-          <li>
-            Protecție în timp real contra virușilor și site-urilor de tip
-            phishing
-          </li>
-          <li>Filtrare parentală configurabilă</li>
-          <li>Raport de securitate lunar pentru activitatea online</li>
+          <li>{t('double.popup_safeweb.list.0')}</li>
+          <li>{t('double.popup_safeweb.list.1')}</li>
+          <li>{t('double.popup_safeweb.list.2')}</li>
         </ul>
         <Button
           color="#fff"
@@ -2884,7 +2881,7 @@ export default function Double() {
           icon="arrow_right"
           className={styles.popup_more_btn}
         >
-          Află mai mult
+          {t('double.learn_more')}
         </Button>
       </Popup>
 
@@ -2973,7 +2970,7 @@ export default function Double() {
             icon="arrow_right"
             className={styles.popup_more_btn}
           >
-            Află mai mult
+            {t('double.learn_more')}
           </Button>
           <Button
             to={'https://edge.multiscreen.moldtelecom.md/web/mold/#ro/login'}
@@ -2986,7 +2983,7 @@ export default function Double() {
             icon="arrow_right"
             className={styles.popup_more_btn}
           >
-            Vizionează acum
+            {t('double.watch_now')}
           </Button>
         </div>
       </Popup>

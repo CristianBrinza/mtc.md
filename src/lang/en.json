@@ -1445,5 +1445,30 @@
     "breadcrumb": {
       "title": "Contacte"
     }
+  },
+  "double": {
+    "learn_more": "Learn more",
+    "watch_now": "Watch now",
+    "popup_premier": {
+      "title": "What is Premier TV?",
+      "text": "Premier TV is Moldtelecom's digital television service offering dozens of HD and SD channels and radio stations, plus advanced DVR and replay functions.",
+      "features_title": "Main features:",
+      "features": {
+        "0": "121 HD channels, 73 SD channels and 4 radio stations",
+        "1": "Record shows and replay up to 7 days",
+        "2": "Pause and resume live TV",
+        "3": "Quick switch between languages and subtitles"
+      }
+    },
+    "popup_safeweb": {
+      "title": "What is Safe-Web?",
+      "text": "Safe-Web is Moldtelecom's internet security service that filters and blocks malicious, phishing and inappropriate sites, keeping your home and devices safe.",
+      "why_title": "Why choose Safe-Web?",
+      "list": {
+        "0": "Real-time protection against viruses and phishing sites",
+        "1": "Configurable parental filtering",
+        "2": "Monthly security report for online activity"
+      }
+    }
   }
 }
