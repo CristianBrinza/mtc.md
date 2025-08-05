@@ -927,7 +927,7 @@ export default function Double() {
                     color={'var(--theme_primary_color_blue_2)'}
                   />
                 </div>
-               {t('combo_home.router_wifi6_included')}
+                {t('combo_home.router_wifi6_included')}
               </div>
               <div className={styles.abonaments_block_inside_subtitle}>
                 <div className={styles.abonaments_block_inside_subtitle_toggle}>
@@ -1221,7 +1221,7 @@ export default function Double() {
                     color={'var(--theme_primary_color_blue_2)'}
                   />
                 </div>
-               {t('combo_home.router_wifi6_included')}
+                {t('combo_home.router_wifi6_included')}
               </div>
               <div className={styles.abonaments_block_inside_subtitle}>
                 <div className={styles.abonaments_block_inside_subtitle_toggle}>
@@ -1384,7 +1384,7 @@ export default function Double() {
 
                 <span onClick={() => setActivePopup('1280117')}>
                   {' '}
-                   {t('combo_home.more_options')}
+                  {t('combo_home.more_options')}
                 </span>
               </div>
               <div
@@ -1529,7 +1529,7 @@ export default function Double() {
                   color={'var(--theme_primary_color_blue_2)'}
                 />
               </div>
-             {t('combo_home.router_wifi6_included')}
+              {t('combo_home.router_wifi6_included')}
             </div>
             <div className={styles.abonaments_block_inside_subtitle}>
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
@@ -1601,8 +1601,7 @@ export default function Double() {
               <span>
                 {activeSelectedTV_3 === 'premier'
                   ? t('double.premier_tv')
-                  : activeSelectedTV_3 === 'univers' &&
-                    t('double.univers_tv')}
+                  : activeSelectedTV_3 === 'univers' && t('double.univers_tv')}
               </span>
               <Icon
                 className={styles.abonaments_block_inside_title_tv_svg}
@@ -1688,7 +1687,7 @@ export default function Double() {
 
               <span onClick={() => setActivePopup('1280117')}>
                 {' '}
-                 {t('combo_home.more_options')}
+                {t('combo_home.more_options')}
               </span>
             </div>
             <div
@@ -1838,7 +1837,7 @@ export default function Double() {
                   color={'var(--theme_primary_color_blue_2)'}
                 />
               </div>
-             {t('combo_home.router_wifi6_included')}
+              {t('combo_home.router_wifi6_included')}
             </div>
             <div className={styles.abonaments_block_inside_subtitle}>
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
@@ -1910,8 +1909,7 @@ export default function Double() {
               <span>
                 {activeSelectedTV_4 === 'premier'
                   ? t('double.premier_tv')
-                  : activeSelectedTV_4 === 'univers' &&
-                    t('double.univers_tv')}
+                  : activeSelectedTV_4 === 'univers' && t('double.univers_tv')}
               </span>
               <Icon
                 className={styles.abonaments_block_inside_title_tv_svg}
@@ -1997,7 +1995,7 @@ export default function Double() {
 
               <span onClick={() => setActivePopup('1280117')}>
                 {' '}
-                 {t('combo_home.more_options')}
+                {t('combo_home.more_options')}
               </span>
             </div>
             <div
@@ -2144,7 +2142,7 @@ export default function Double() {
                   color={'var(--theme_primary_color_blue_2)'}
                 />
               </div>
-             {t('combo_home.router_wifi6_included')}
+              {t('combo_home.router_wifi6_included')}
             </div>
             <div className={styles.abonaments_block_inside_subtitle}>
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
@@ -2216,8 +2214,7 @@ export default function Double() {
               <span>
                 {activeSelectedTV_5 === 'premier'
                   ? t('double.premier_tv')
-                  : activeSelectedTV_5 === 'univers' &&
-                    t('double.univers_tv')}
+                  : activeSelectedTV_5 === 'univers' && t('double.univers_tv')}
               </span>
               <Icon
                 className={styles.abonaments_block_inside_title_tv_svg}
@@ -2303,7 +2300,7 @@ export default function Double() {
 
               <span onClick={() => setActivePopup('1280117')}>
                 {' '}
-                 {t('combo_home.more_options')}
+                {t('combo_home.more_options')}
               </span>
             </div>
             <div
@@ -2725,7 +2722,8 @@ export default function Double() {
       <div className={styles.devices_disclailmer}>
         <span>
           {' '}
-          <sup>*</sup>{t('combo_home.stock_offer')}
+          <sup>*</sup>
+          {t('combo_home.stock_offer')}
         </span>
       </div>
 
@@ -2816,9 +2814,7 @@ export default function Double() {
         className={styles.popupBuy}
         onClose={() => setActivePopup(null)}
       >
-        <b className={styles.popup_title_1}>
-          {t('double.popup_mesh.title')}
-        </b>
+        <b className={styles.popup_title_1}>{t('double.popup_mesh.title')}</b>
         <p>{t('double.popup_mesh.text')}</p>
         <b className={styles.popup_title_1}>
           {t('double.popup_mesh.why_title')}
@@ -2921,9 +2917,7 @@ export default function Double() {
         className={styles.popupBuy}
         onClose={() => setActivePopup(null)}
       >
-        <b className={styles.popup_title_1}>
-          {t('double.popup_tvgo.title')}
-        </b>
+        <b className={styles.popup_title_1}>{t('double.popup_tvgo.title')}</b>
         <p>{t('double.popup_tvgo.text')}</p>
         <b className={styles.popup_title_1}>
           {t('double.popup_tvgo.conditions_title')}
@@ -2983,11 +2977,9 @@ export default function Double() {
         className={styles.popupBuy}
         onClose={() => setActivePopup(null)}
       >
-        <b className={styles.popup_title_1}>
-          {t('double.popup_arhiva.title')}
-        </b>
+        <b className={styles.popup_title_1}>{t('double.popup_arhiva.title')}</b>
         <p>{t('double.popup_arhiva.text')}</p>
-        <br /> <br />
+
         <b>{t('double.popup_arhiva.activation_title')}</b>
         {t('double.popup_arhiva.activation_text')}
       </Popup>
@@ -3176,7 +3168,9 @@ export default function Double() {
               size={'48px'}
               color={'var(--theme_primary_color_blue_3)'}
             />
-            <span dangerouslySetInnerHTML={{ __html: t('double.request_error') }} />
+            <span
+              dangerouslySetInnerHTML={{ __html: t('double.request_error') }}
+            />
           </div>
         ) : submitted ? (
           <div className={styles.buy_popup_success}>
@@ -3185,7 +3179,9 @@ export default function Double() {
               size={'48px'}
               color={'var(--theme_primary_color_blue_3)'}
             />
-            <span dangerouslySetInnerHTML={{ __html: t('double.request_success') }} />
+            <span
+              dangerouslySetInnerHTML={{ __html: t('double.request_success') }}
+            />
           </div>
         ) : (
           <div className={styles.buy_popup}>
@@ -3214,7 +3210,9 @@ export default function Double() {
             />
             <div
               className={styles.popup_discalmer}
-              dangerouslySetInnerHTML={{ __html: t('double.request_disclaimer') }}
+              dangerouslySetInnerHTML={{
+                __html: t('double.request_disclaimer'),
+              }}
             />
           </div>
         )}

@@ -2154,44 +2154,6 @@
         "1": "Filtrare parentală configurabilă",
         "2": "Raport de securitate lunar pentru activitatea online"
       }
-    }
-  },
-  "gbps": {
-    "breadcrumb": {
-      "internet": "Internet",
-      "fibra": "Fibra"
-    "faq": {
-    },
-      "install_duration_question": "Cât durează instalarea serviciilor?",
-
-      "install_duration_answer": "Serviciile se instalează în cel mult 7 zile lucrătoare de la semnarea contractului.",
-      "availability_check_question": "Cum verific dacă pot conecta serviciile la adresa mea?",
-      "availability_check_answer": "Puteți apela la 1180, iar un consultant Moldtelecom vă va oferi toate informațiile necesare privind disponibilitatea serviciilor la adresa dorită, precum și detalii despre pachetele și ofertele disponibile.",
-
-      "activate_new_offer_question": "Pot activa o ofertă nouă dacă sunt deja client?",
-      "activate_new_offer_answer": "Da. Dacă aveți contractul expirat, puteți opta pentru un pachet promoțional din cele disponibile pentru clienții existenți.",
-
-      "bill_payment_deadline_question": "Cum achit factura și până când?",
-
-      "bill_payment_deadline_answer": "Factura se achită până la data de 25 a fiecărei luni. Puteți achita prin aplicația MyMoldtelecom, pe pagina web moldtelecom.md, prin internet banking, la terminale de plată, în oficiile băncilor comerciale sau la Poșta Moldovei.",
-      "late_payment_consequences_question": "Ce se întâmplă dacă întârzii cu plata mai mult timp?",
-
-      "late_payment_consequences_answer": "În cazul neachitării, serviciile se suspendă automat. Nu vi se va percepe taxa de abonament, însă va fi aplicată o taxă de mentenanță de 85 de lei lunar. Dacă facturile rămân neplătite mai mult de 3 luni, contractul se va rezilia unilateral de către companie.",
-      "manage_subscription_remotely_question": "Pot gestiona abonamentul fără să merg la oficiu?",
-      "manage_subscription_remotely_answer": "Da. Prin aplicația MyMoldtelecom aveți acces la toate funcțiile necesare: plăți, modificări, notificări și setări, simplu și rapid.",
-
-      "pause_services_question": "Pot pune serviciile pe pauză?",
-      "pause_services_answer": "Da. Puteți solicita suspendarea temporară a serviciilor direct pe pagina moldtelecom.md/cereri. Se percepe o taxă de 50 de lei pentru fiecare lună de suspendare.",
-      "change_package_question": "Pot schimba pachetul de servicii?",
-
-
-      "change_package_answer": "Da. Completați formularul de pe moldtelecom.md/cereri, iar un consultant Moldtelecom vă va contacta în cel mult 8 ore lucrătoare pentru confirmare.",
-      "move_address_question": "Ce fac dacă mă mut la altă adresă?",
-      "move_address_answer": "Puteți depune o cerere de transfer a serviciilor pe pagina moldtelecom.md/cereri. Un consultant vă va contacta pentru a stabili detaliile tehnice și data conectării la noua locuință.",
-
-      "transfer_subscription_question": "Pot transfera abonamentul pe numele altcuiva?",
-      "transfer_subscription_answer": "Da. Puteți solicita transferul abonamentului către un alt titular prin completarea formularului de pe moldtelecom.md/cereri. Un consultant vă va contacta pentru confirmare și detalii."
-    }
     },
     "popup_mesh": {
       "title": "Ce este Wi-Fi Mesh?",
@@ -2286,5 +2248,41 @@
     "device_chosen": "Dispozitivul ales:",
     "subscription_chosen": "Abonamentul ales:",
     "request_disclaimer": "După expedierea solicitării vei fi apelat de un consultant Moldtelecom. Mulțumim!<br />Solicitările parvenite duminică, vor fi procesate luni. | Câmpurile marcate cu * sunt obligatorii."
+  },
+  "gbps": {
+    "breadcrumb": {
+      "internet": "Internet",
+      "fibra": "Fibra",
+      "faq": {
+        "install_duration_question": "Cât durează instalarea serviciilor?",
+
+        "install_duration_answer": "Serviciile se instalează în cel mult 7 zile lucrătoare de la semnarea contractului.",
+        "availability_check_question": "Cum verific dacă pot conecta serviciile la adresa mea?",
+        "availability_check_answer": "Puteți apela la 1180, iar un consultant Moldtelecom vă va oferi toate informațiile necesare privind disponibilitatea serviciilor la adresa dorită, precum și detalii despre pachetele și ofertele disponibile.",
+
+        "activate_new_offer_question": "Pot activa o ofertă nouă dacă sunt deja client?",
+        "activate_new_offer_answer": "Da. Dacă aveți contractul expirat, puteți opta pentru un pachet promoțional din cele disponibile pentru clienții existenți.",
+
+        "bill_payment_deadline_question": "Cum achit factura și până când?",
+
+        "bill_payment_deadline_answer": "Factura se achită până la data de 25 a fiecărei luni. Puteți achita prin aplicația MyMoldtelecom, pe pagina web moldtelecom.md, prin internet banking, la terminale de plată, în oficiile băncilor comerciale sau la Poșta Moldovei.",
+        "late_payment_consequences_question": "Ce se întâmplă dacă întârzii cu plata mai mult timp?",
+
+        "late_payment_consequences_answer": "În cazul neachitării, serviciile se suspendă automat. Nu vi se va percepe taxa de abonament, însă va fi aplicată o taxă de mentenanță de 85 de lei lunar. Dacă facturile rămân neplătite mai mult de 3 luni, contractul se va rezilia unilateral de către companie.",
+        "manage_subscription_remotely_question": "Pot gestiona abonamentul fără să merg la oficiu?",
+        "manage_subscription_remotely_answer": "Da. Prin aplicația MyMoldtelecom aveți acces la toate funcțiile necesare: plăți, modificări, notificări și setări, simplu și rapid.",
+
+        "pause_services_question": "Pot pune serviciile pe pauză?",
+        "pause_services_answer": "Da. Puteți solicita suspendarea temporară a serviciilor direct pe pagina moldtelecom.md/cereri. Se percepe o taxă de 50 de lei pentru fiecare lună de suspendare.",
+        "change_package_question": "Pot schimba pachetul de servicii?",
+
+        "change_package_answer": "Da. Completați formularul de pe moldtelecom.md/cereri, iar un consultant Moldtelecom vă va contacta în cel mult 8 ore lucrătoare pentru confirmare.",
+        "move_address_question": "Ce fac dacă mă mut la altă adresă?",
+        "move_address_answer": "Puteți depune o cerere de transfer a serviciilor pe pagina moldtelecom.md/cereri. Un consultant vă va contacta pentru a stabili detaliile tehnice și data conectării la noua locuință.",
+
+        "transfer_subscription_question": "Pot transfera abonamentul pe numele altcuiva?",
+        "transfer_subscription_answer": "Da. Puteți solicita transferul abonamentului către un alt titular prin completarea formularului de pe moldtelecom.md/cereri. Un consultant vă va contacta pentru confirmare și detalii."
+      }
+    }
   }
-  }
+}

@@ -443,11 +443,35 @@ export default function FiveGbps() {
         <DetailsBlock title={'Condiții de utilizare Abonamente'}>
           <ul>
             <li>Oferta este valabilă în perioada 21.08.2025–25.11.2025.</li>
-            <li>Se adresează atât clienților noi, cât și celor existenți cu contract expirat. Contractul se semnează pe 24 de luni, iar conectarea este gratuită.</li>
-            <li>Clienții care aleg abonamente de Internet cu viteze de 2.1 Gbps sau 5.5 Gbps beneficiază de o reducere lunară de 300 lei, valabilă pe toată perioada contractuală.</li>
-            <li>Pentru viteza de 2.1 Gbps, oferta include un router performant și un dispozitiv Mesh Wi-Fi, iar pentru viteza de 5.5 Gbps – un router performant și două dispozitive Mesh Wi-Fi. Echipamentele se oferă pe durata contractului și trebuie returnate în cazul rezilierii.</li>
-            <li>Vitezele indicate sunt valori maxime. Viteza efectivă disponibilă la adresa clientului depinde de factori tehnici ce nu pot fi controlați de Moldtelecom. Serviciul este disponibil doar în localitățile în care Moldtelecom poate furniza aceste viteze în condiții optime.</li>
-            <li>În cazul rezilierii anticipate a serviciului de Internet, înainte de expirarea perioadei contractuale, se va aplica o penalitate conform contractului.</li>
+            <li>
+              Se adresează atât clienților noi, cât și celor existenți cu
+              contract expirat. Contractul se semnează pe 24 de luni, iar
+              conectarea este gratuită.
+            </li>
+            <li>
+              Clienții care aleg abonamente de Internet cu viteze de 2.1 Gbps
+              sau 5.5 Gbps beneficiază de o reducere lunară de 300 lei, valabilă
+              pe toată perioada contractuală.
+            </li>
+            <li>
+              Pentru viteza de 2.1 Gbps, oferta include un router performant și
+              un dispozitiv Mesh Wi-Fi, iar pentru viteza de 5.5 Gbps – un
+              router performant și două dispozitive Mesh Wi-Fi. Echipamentele se
+              oferă pe durata contractului și trebuie returnate în cazul
+              rezilierii.
+            </li>
+            <li>
+              Vitezele indicate sunt valori maxime. Viteza efectivă disponibilă
+              la adresa clientului depinde de factori tehnici ce nu pot fi
+              controlați de Moldtelecom. Serviciul este disponibil doar în
+              localitățile în care Moldtelecom poate furniza aceste viteze în
+              condiții optime.
+            </li>
+            <li>
+              În cazul rezilierii anticipate a serviciului de Internet, înainte
+              de expirarea perioadei contractuale, se va aplica o penalitate
+              conform contractului.
+            </li>
           </ul>
         </DetailsBlock>
       </Details>
