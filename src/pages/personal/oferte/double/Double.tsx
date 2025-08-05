@@ -985,7 +985,7 @@ export default function Double() {
                   }}
                   className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_left} ${activeSelectedTV_1 === 'premier' && styles.abonaments_block_inside_tv_chose_select_active}`}
                 >
-                  Premier TV
+                  {t('double.premier_tv')}
                 </div>
                 <div
                   onClick={() => {
@@ -994,7 +994,7 @@ export default function Double() {
                   }}
                   className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_right} ${activeSelectedTV_1 === 'univers' && styles.abonaments_block_inside_tv_chose_select_active}`}
                 >
-                  Univers TV
+                  {t('double.univers_tv')}
                 </div>
               </div>
               <div
@@ -1002,8 +1002,9 @@ export default function Double() {
               >
                 <span>
                   {activeSelectedTV_1 === 'premier'
-                    ? 'Premier TV'
-                    : activeSelectedTV_1 === 'univers' && 'Univers TV'}
+                    ? t('double.premier_tv')
+                    : activeSelectedTV_1 === 'univers' &&
+                      t('double.univers_tv')}
                 </span>
                 <Icon
                   className={styles.abonaments_block_inside_title_tv_svg}
@@ -1019,9 +1020,9 @@ export default function Double() {
               >
                 <span>
                   {activeSelectedTV_1 === 'premier'
-                    ? '121 canale HD, 77 canale SD, 3 radio'
+                    ? t('double.premier_tv_channels')
                     : activeSelectedTV_1 === 'univers' &&
-                      '170 canale HD, 111 canale SD, 3 radio'}{' '}
+                      t('double.univers_tv_channels')}{' '}
                 </span>
               </div>
 
@@ -1169,8 +1170,13 @@ export default function Double() {
                 onClick={() =>
                   setPopup(
                     '1',
-                    'Internet + TV',
-                    `(300Mbps + ${activeSelectedTV_1 == 'premier' ? 'Premier TV' : activeSelectedTV_1 == 'univers' && 'Univers TV'})`
+                    t('navbar.internet_tv'),
+                    `(300Mbps + ${
+                      activeSelectedTV_1 == 'premier'
+                        ? t('double.premier_tv')
+                        : activeSelectedTV_1 == 'univers' &&
+                          t('double.univers_tv')
+                    })`
                   )
                 }
                 color="#fff"
@@ -1273,7 +1279,7 @@ export default function Double() {
                   }}
                   className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_left} ${activeSelectedTV_2 === 'premier' && styles.abonaments_block_inside_tv_chose_select_active}`}
                 >
-                  Premier TV
+                  {t('double.premier_tv')}
                 </div>
                 <div
                   onClick={() => {
@@ -1282,7 +1288,7 @@ export default function Double() {
                   }}
                   className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_right} ${activeSelectedTV_2 === 'univers' && styles.abonaments_block_inside_tv_chose_select_active}`}
                 >
-                  Univers TV
+                  {t('double.univers_tv')}
                 </div>
               </div>
               <div
@@ -1290,8 +1296,9 @@ export default function Double() {
               >
                 <span>
                   {activeSelectedTV_2 === 'premier'
-                    ? 'Premier TV'
-                    : activeSelectedTV_2 === 'univers' && 'Univers TV'}
+                    ? t('double.premier_tv')
+                    : activeSelectedTV_2 === 'univers' &&
+                      t('double.univers_tv')}
                 </span>
                 <Icon
                   className={styles.abonaments_block_inside_title_tv_svg}
@@ -1307,9 +1314,9 @@ export default function Double() {
               >
                 <span>
                   {activeSelectedTV_2 === 'premier'
-                    ? '121 canale HD, 77 canale SD, 3 radio'
+                    ? t('double.premier_tv_channels')
                     : activeSelectedTV_2 === 'univers' &&
-                      '170 canale HD, 111 canale SD, 3 radio'}{' '}
+                      t('double.univers_tv_channels')}{' '}
                 </span>
               </div>
 
@@ -1472,8 +1479,13 @@ export default function Double() {
                 onClick={() =>
                   setPopup(
                     '1',
-                    'Internet + TV',
-                    `(300Mbps + ${activeSelectedTV_1 == 'premier' ? 'Premier TV' : activeSelectedTV_1 == 'univers' && 'Univers TV'})`
+                    t('navbar.internet_tv'),
+                    `(300Mbps + ${
+                      activeSelectedTV_1 == 'premier'
+                        ? t('double.premier_tv')
+                        : activeSelectedTV_1 == 'univers' &&
+                          t('double.univers_tv')
+                    })`
                   )
                 }
                 color="#fff"
@@ -1571,7 +1583,7 @@ export default function Double() {
                 }}
                 className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_left} ${activeSelectedTV_3 === 'premier' && styles.abonaments_block_inside_tv_chose_select_active}`}
               >
-                Premier TV
+                {t('double.premier_tv')}
               </div>
               <div
                 onClick={() => {
@@ -1580,7 +1592,7 @@ export default function Double() {
                 }}
                 className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_right} ${activeSelectedTV_3 === 'univers' && styles.abonaments_block_inside_tv_chose_select_active}`}
               >
-                Univers TV
+                {t('double.univers_tv')}
               </div>
             </div>
             <div
@@ -1588,8 +1600,9 @@ export default function Double() {
             >
               <span>
                 {activeSelectedTV_3 === 'premier'
-                  ? 'Premier TV'
-                  : activeSelectedTV_3 === 'univers' && 'Univers TV'}
+                  ? t('double.premier_tv')
+                  : activeSelectedTV_3 === 'univers' &&
+                    t('double.univers_tv')}
               </span>
               <Icon
                 className={styles.abonaments_block_inside_title_tv_svg}
@@ -1605,9 +1618,9 @@ export default function Double() {
             >
               <span>
                 {activeSelectedTV_3 === 'premier'
-                  ? '121 canale HD, 77 canale SD, 3 radio'
+                  ? t('double.premier_tv_channels')
                   : activeSelectedTV_3 === 'univers' &&
-                    '170 canale HD, 111 canale SD, 3 radio'}{' '}
+                    t('double.univers_tv_channels')}{' '}
               </span>
             </div>
 
@@ -1778,8 +1791,13 @@ export default function Double() {
               onClick={() =>
                 setPopup(
                   '1',
-                  'Internet + TV',
-                  `(300Mbps + ${activeSelectedTV_1 == 'premier' ? 'Premier TV' : activeSelectedTV_1 == 'univers' && 'Univers TV'})`
+                  t('navbar.internet_tv'),
+                  `(300Mbps + ${
+                    activeSelectedTV_1 == 'premier'
+                      ? t('double.premier_tv')
+                      : activeSelectedTV_1 == 'univers' &&
+                        t('double.univers_tv')
+                  })`
                 )
               }
               color="#fff"
@@ -1874,7 +1892,7 @@ export default function Double() {
                 }}
                 className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_left} ${activeSelectedTV_4 === 'premier' && styles.abonaments_block_inside_tv_chose_select_active}`}
               >
-                Premier TV
+                {t('double.premier_tv')}
               </div>
               <div
                 onClick={() => {
@@ -1883,7 +1901,7 @@ export default function Double() {
                 }}
                 className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_right} ${activeSelectedTV_4 === 'univers' && styles.abonaments_block_inside_tv_chose_select_active}`}
               >
-                Univers TV
+                {t('double.univers_tv')}
               </div>
             </div>
             <div
@@ -1891,8 +1909,9 @@ export default function Double() {
             >
               <span>
                 {activeSelectedTV_4 === 'premier'
-                  ? 'Premier TV'
-                  : activeSelectedTV_4 === 'univers' && 'Univers TV'}
+                  ? t('double.premier_tv')
+                  : activeSelectedTV_4 === 'univers' &&
+                    t('double.univers_tv')}
               </span>
               <Icon
                 className={styles.abonaments_block_inside_title_tv_svg}
@@ -1908,9 +1927,9 @@ export default function Double() {
             >
               <span>
                 {activeSelectedTV_4 === 'premier'
-                  ? '121 canale HD, 77 canale SD, 3 radio'
+                  ? t('double.premier_tv_channels')
                   : activeSelectedTV_4 === 'univers' &&
-                    '170 canale HD, 111 canale SD, 3 radio'}{' '}
+                    t('double.univers_tv_channels')}{' '}
               </span>
             </div>
 
@@ -2078,8 +2097,13 @@ export default function Double() {
               onClick={() =>
                 setPopup(
                   '1',
-                  'Internet + TV',
-                  `(300Mbps + ${activeSelectedTV_1 == 'premier' ? 'Premier TV' : activeSelectedTV_1 == 'univers' && 'Univers TV'})`
+                  t('navbar.internet_tv'),
+                  `(300Mbps + ${
+                    activeSelectedTV_1 == 'premier'
+                      ? t('double.premier_tv')
+                      : activeSelectedTV_1 == 'univers' &&
+                        t('double.univers_tv')
+                  })`
                 )
               }
               color="#fff"
@@ -2174,7 +2198,7 @@ export default function Double() {
                 }}
                 className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_left} ${activeSelectedTV_5 === 'premier' && styles.abonaments_block_inside_tv_chose_select_active}`}
               >
-                Premier TV
+                {t('double.premier_tv')}
               </div>
               <div
                 onClick={() => {
@@ -2183,7 +2207,7 @@ export default function Double() {
                 }}
                 className={`${styles.abonaments_block_inside_tv_chose_select} ${styles.abonaments_block_inside_tv_chose_select_right} ${activeSelectedTV_5 === 'univers' && styles.abonaments_block_inside_tv_chose_select_active}`}
               >
-                Univers TV
+                {t('double.univers_tv')}
               </div>
             </div>
             <div
@@ -2191,8 +2215,9 @@ export default function Double() {
             >
               <span>
                 {activeSelectedTV_5 === 'premier'
-                  ? 'Premier TV'
-                  : activeSelectedTV_5 === 'univers' && 'Univers TV'}
+                  ? t('double.premier_tv')
+                  : activeSelectedTV_5 === 'univers' &&
+                    t('double.univers_tv')}
               </span>
               <Icon
                 className={styles.abonaments_block_inside_title_tv_svg}
@@ -2208,9 +2233,9 @@ export default function Double() {
             >
               <span>
                 {activeSelectedTV_5 === 'premier'
-                  ? '121 canale HD, 77 canale SD, 3 radio'
+                  ? t('double.premier_tv_channels')
                   : activeSelectedTV_5 === 'univers' &&
-                    '170 canale HD, 111 canale SD, 3 radio'}{' '}
+                    t('double.univers_tv_channels')}{' '}
               </span>
             </div>
 
@@ -2378,8 +2403,13 @@ export default function Double() {
               onClick={() =>
                 setPopup(
                   '1',
-                  'Internet + TV',
-                  `(300Mbps + ${activeSelectedTV_1 == 'premier' ? 'Premier TV' : activeSelectedTV_1 == 'univers' && 'Univers TV'})`
+                  t('navbar.internet_tv'),
+                  `(300Mbps + ${
+                    activeSelectedTV_1 == 'premier'
+                      ? t('double.premier_tv')
+                      : activeSelectedTV_1 == 'univers' &&
+                        t('double.univers_tv')
+                  })`
                 )
               }
               color="#fff"
@@ -2482,7 +2512,11 @@ export default function Double() {
             show_like={false}
             show_comapre={false}
             buy={() => {
-              setPopup('1', 'Hisense 32A4N', `(500Mbps + Univers TV)`);
+              setPopup(
+                '1',
+                'Hisense 32A4N',
+                `(500Mbps + ${t('double.univers_tv')})`
+              );
               setPopupType(true);
             }}
           />
@@ -2503,7 +2537,11 @@ export default function Double() {
             show_like={false}
             show_comapre={false}
             buy={() => {
-              setPopup('1', 'Hisense 32A4N', `(500 Mbps + Univers TV)`);
+              setPopup(
+                '1',
+                'Hisense 32A4N',
+                `(500 Mbps + ${t('double.univers_tv')})`
+              );
               setPopupType(true);
             }}
           />
@@ -2524,7 +2562,11 @@ export default function Double() {
             show_like={false}
             show_comapre={false}
             buy={() => {
-              setPopup('1', 'Xiaomi Redmi Pad SE', `(500 Mbps + Univers TV)`);
+              setPopup(
+                '1',
+                'Xiaomi Redmi Pad SE',
+                `(500 Mbps + ${t('double.univers_tv')})`
+              );
               setPopupType(true);
             }}
           />
@@ -2545,7 +2587,11 @@ export default function Double() {
             show_like={false}
             show_comapre={false}
             buy={() => {
-              setPopup('1', 'Hisense 55A4N', `(2.1 Gbps + Univers TV)`);
+              setPopup(
+                '1',
+                'Hisense 55A4N',
+                `(2.1 Gbps + ${t('double.univers_tv')})`
+              );
               setPopupType(true);
             }}
           />
@@ -2569,7 +2615,7 @@ export default function Double() {
               setPopup(
                 '1',
                 'Microsoft Xbox Series S',
-                `(2.1 Gbps + Univers TV)`
+                `(2.1 Gbps + ${t('double.univers_tv')})`
               );
               setPopupType(true);
             }}
@@ -2594,7 +2640,7 @@ export default function Double() {
               setPopup(
                 '1',
                 'Sony PlayStation 5 Slim',
-                `(5.5 Gbps + Univers TV)`
+                `(5.5 Gbps + ${t('double.univers_tv')})`
               );
               setPopupType(true);
             }}
@@ -2616,7 +2662,11 @@ export default function Double() {
             show_like={false}
             show_comapre={false}
             buy={() => {
-              setPopup('1', ' XiaomiRedmi Pad Pro', `(1000 Mbps + Univers TV)`);
+              setPopup(
+                '1',
+                ' XiaomiRedmi Pad Pro',
+                `(1000 Mbps + ${t('double.univers_tv')})`
+              );
               setPopupType(true);
             }}
           />
@@ -2637,7 +2687,11 @@ export default function Double() {
             show_like={false}
             show_comapre={false}
             buy={() => {
-              setPopup('1', 'Hisense 55A4N', `(1000 Mbps + Univers TV)`);
+              setPopup(
+                '1',
+                'Hisense 55A4N',
+                `(1000 Mbps + ${t('double.univers_tv')})`
+              );
               setPopupType(true);
             }}
           />
@@ -2658,7 +2712,11 @@ export default function Double() {
             show_like={false}
             show_comapre={false}
             buy={() => {
-              setPopup('1', 'Xiaomi Pad 7 Pro', `(2.1 Gbps + Univers TV)`);
+              setPopup(
+                '1',
+                'Xiaomi Pad 7 Pro',
+                `(2.1 Gbps + ${t('double.univers_tv')})`
+              );
               setPopupType(true);
             }}
           />
@@ -2758,59 +2816,30 @@ export default function Double() {
         className={styles.popupBuy}
         onClose={() => setActivePopup(null)}
       >
-        <b className={styles.popup_title_1}>Ce este Wi-Fi Mesh?</b>
-        <p>
-          Wi-Fi Mesh extinde semnalul routerului principal în zonele unde
-          acoperirea este slabă, preluând și retransmițând wireless pentru o
-          conexiune stabilă și rapidă în toată locuința.
-        </p>
-        <b className={styles.popup_title_1}>De ce să alegi Wi-Fi Mesh?</b>
+        <b className={styles.popup_title_1}>
+          {t('double.popup_mesh.title')}
+        </b>
+        <p>{t('double.popup_mesh.text')}</p>
+        <b className={styles.popup_title_1}>
+          {t('double.popup_mesh.why_title')}
+        </b>
         <ul>
-          <li>Acoperire uniformă în fiecare colț al casei</li>
-          <li>Conectezi toate dispozitivele fără să reintroduci parola</li>
-          <li>Fără buffer sau drop-out în timpul streaming-ului</li>
+          <li>{t('double.popup_mesh.list.0')}</li>
+          <li>{t('double.popup_mesh.list.1')}</li>
+          <li>{t('double.popup_mesh.list.2')}</li>
         </ul>
-        <b className={styles.popup_title_1}>Condiții de utilizare:</b>
+        <b className={styles.popup_title_1}>
+          {t('double.popup_mesh.conditions_title')}
+        </b>
         <ul>
-          <li>
-            Wi-Fi PLUS este o opțiune adițională la serviciul de Internet fix
-            existent, care permite extinderea ariei de acoperire Wi-Fi.
-          </li>
-          <li>
-            Plata pentru serviciul Wi-Fi PLUS se va include în abonamentul lunar
-            și se va taxa din momentul activării serviciului, fapt confirmat
-            prin livrarea codului OTP de către Titular.
-          </li>
-          <li>
-            Abonamentul lunar se va aplica per fiecare echipament acordat pentru
-            extinderea ariei de acoperire Wi-Fi. În cadrul serviciului Wi-Fi
-            PLUS pot fi conectate maxim 3 echipamente terminale per conexiune
-            Internet fix.
-          </li>
-          <li>
-            Abonatul va utiliza echipamentul oferit de către Furnizor în
-            condiții de comodat, pe perioada utilizării serviciului Wi-Fi PLUS.
-          </li>
-          <li>
-            Deconectarea serviciului Wi-Fi PLUS va avea loc în momentul
-            restituirii echipamentului terminal (cu toate accesoriile incluse).
-            În cazul depistării accesoriilor lipsă/defecte, Abonatul se obligă
-            să achite contravaloarea acestora.
-          </li>
-          <li>
-            Furnizorul este în drept de a refuza deconectarea serviciului Wi-Fi
-            PLUS în cazul nerestituirii echipamentului sau a nerambursării
-            contravalorii acestuia.
-          </li>
-          <li>
-            În cazul nereturnării (pierderii/deteriorării) echipamentului,
-            abonatul va restitui plata cu titlu de prejudiciu în mărime de 300
-            de lei/echipament (fără TVA) sau 850 de lei/echipament (fără TVA).
-          </li>
-          <li>
-            Conectarea/deconectarea serviciului este posibilă în orice zi a
-            perioadei de facturare, fără efectuarea recalculului.
-          </li>
+          <li>{t('double.popup_mesh.conditions.0')}</li>
+          <li>{t('double.popup_mesh.conditions.1')}</li>
+          <li>{t('double.popup_mesh.conditions.2')}</li>
+          <li>{t('double.popup_mesh.conditions.3')}</li>
+          <li>{t('double.popup_mesh.conditions.4')}</li>
+          <li>{t('double.popup_mesh.conditions.5')}</li>
+          <li>{t('double.popup_mesh.conditions.6')}</li>
+          <li>{t('double.popup_mesh.conditions.7')}</li>
         </ul>
 
         <Button
@@ -2892,70 +2921,30 @@ export default function Double() {
         className={styles.popupBuy}
         onClose={() => setActivePopup(null)}
       >
-        <b className={styles.popup_title_1}>Ce este Moldtelecom TV?</b>
-        <p>
-          Moldtelecom TV GO este televiziunea digitală fără cabluri și fără
-          contracte, disponibilă pe orice dispozitiv, oriunde în Moldova.
-          Plătești doar când folosești – simplu, flexibil și fără obligații.
-        </p>
-        <b className={styles.popup_title_1}>Condiții de utilizare:</b>
+        <b className={styles.popup_title_1}>
+          {t('double.popup_tvgo.title')}
+        </b>
+        <p>{t('double.popup_tvgo.text')}</p>
+        <b className={styles.popup_title_1}>
+          {t('double.popup_tvgo.conditions_title')}
+        </b>
         <ul>
+          <li>{t('double.popup_tvgo.conditions.0')}</li>
+          <li>{t('double.popup_tvgo.conditions.1')}</li>
+          <li>{t('double.popup_tvgo.conditions.2')}</li>
+          <li>{t('double.popup_tvgo.conditions.3')}</li>
+          <li>{t('double.popup_tvgo.conditions.4')}</li>
+          <li>{t('double.popup_tvgo.conditions.5')}</li>
+          <li>{t('double.popup_tvgo.conditions.6')}</li>
           <li>
-            Serviciul este disponibil pentru toți utilizatorii, indiferent dacă
-            sunt abonați Moldtelecom sau clienți ai altor operatori.
-          </li>
-          <li>
-            Moldtelecom TV GO poate fi utilizat pe laptop-uri, smartphone și
-            tablete (Android, iOS), televizoare Smart (Samsung, LG, Hisense,
-            Android TV), precum și pe TV box-uri (Android TV, Apple TV) sau pe
-            Web Browser.
-          </li>
-          <li>
-            Serviciul poate fi activat în orice zi a lunii, iar data activării
-            va marca începutul perioadei de facturare. O lună de serviciu este
-            considerată a fi echivalentul a 31 de zile calendaristice.
-          </li>
-          <li>
-            Modificarea numărului de dispozitive poate fi efectuată oricând din
-            My Moldtelecom.
-          </li>
-          <li>
-            Serviciul poate fi utilizat prin orice rețea de internet (fix,mobil
-            sau Wi-Fi) din Republica Moldova, indiferent de operator.
-          </li>
-          <li>
-            Pentru a evita suspendarea serviciului, contul trebuie alimentat
-            lunar cu o sumă cel puțin egală cu tariful planului tarifar activ.
-            Achitarea se face în baza ID-ului de Utilizator.
-          </li>
-          <li>
-            Renunțarea la serviciu se realizează automat prin nealimentarea
-            contului. Nu este necesară o solicitare suplimentară de dezactivare.
-          </li>
-          <li>
-            Accesul la grila de canale diferă în funcție de rețeaua de internet
-            utilizată:
+            {t('double.popup_tvgo.conditions.7')}
             <ul>
-              <li>
-                În rețeaua Moldtelecom (fix sau mobil) este disponibil pachetul
-                Univers.
-              </li>
-              <li>
-                În afara rețelei Moldtelecom accesul la anumite canale vor fi
-                restricționate.
-              </li>
+              <li>{t('double.popup_tvgo.conditions.7_list.0')}</li>
+              <li>{t('double.popup_tvgo.conditions.7_list.1')}</li>
             </ul>
           </li>
-          <li>
-            Pentru o experiență optimă de vizionare, se recomandă conectarea
-            dispozitivului la internet prin cablu Ethernet (dacă dispozitivul
-            permite acest lucru) sau printr-o conexiune Wi-Fi sau date mobile
-            stabilă, cu viteză bună.
-          </li>
-          <li>
-            Moldtelecom își rezervă dreptul de a modifica lista de canale TV
-            disponibile în cadrul serviciului.
-          </li>
+          <li>{t('double.popup_tvgo.conditions.8')}</li>
+          <li>{t('double.popup_tvgo.conditions.9')}</li>
         </ul>
 
         <div className={styles.popup_btns_info}>
@@ -2994,18 +2983,13 @@ export default function Double() {
         className={styles.popupBuy}
         onClose={() => setActivePopup(null)}
       >
-        <b className={styles.popup_title_1}>Ce este Arhiva TV?</b>
-        Cu serviciul Arhiva TV aveți libertatea de a accesa emisiunile preferate
-        din arhiva programelor TV, care au fost difuzate cu până la 7 zile în
-        urmă, pentru a le viziona în timpul comod pentru dumneavoastră. În acest
-        mod, nici o emisiune importantă nu va fi ratată, iar cele preferate le
-        puteți viziona în reluare.
+        <b className={styles.popup_title_1}>
+          {t('double.popup_arhiva.title')}
+        </b>
+        <p>{t('double.popup_arhiva.text')}</p>
         <br /> <br />
-        <b> Activare opțiune:</b>
-        Activează/sau dezactivează simplu prin aplicația "MyMoldtelecom" sau din
-        versiunea web "MyMoldtelecom" și vizionaţi în reluare emisiunile
-        preferate oricând doriți. Serviciul Arhiva TV este foarte ușor de
-        utilizat din meniul principal IPTV
+        <b>{t('double.popup_arhiva.activation_title')}</b>
+        {t('double.popup_arhiva.activation_text')}
       </Popup>
       <Popup
         id="1280117"
@@ -3014,80 +2998,95 @@ export default function Double() {
         className={styles.popupBuy}
         onClose={() => setActivePopup(null)}
       >
-        <b className={styles.popup_title_1}>Optiuni aditionale</b>
+        <b className={styles.popup_title_1}>
+          {t('double.popup_options.title')}
+        </b>
         <br />
         <div className={styles.popup_subtitle_1}>
-          Cu Moldtelecom ai libertatea să îţi personalizezi pachetul şi
-          controlezi totul instant, cu un singur click.
+          {t('double.popup_options.subtitle')}
         </div>
 
         <div className={styles.row_popup_options}>
           <div>
-            <div className={styles.row_popup_options_title}>Adult</div>
-            La activarea pachetului tematic Adult obțineți 4 posturi TV
-            destinate adulților. Canalele pachetului Adult sunt difuzate de la
-            00:00 pînă la 06:00, și pot fi restricționate prin parolă utilizînd
-            funcția Control parental.
+            <div className={styles.row_popup_options_title}>
+              {t('double.popup_options.adult.title')}
+            </div>
+            {t('double.popup_options.adult.text')}
           </div>
-          <div className={styles.row_popup_options_title_price}>35 lei</div>
+          <div className={styles.row_popup_options_title_price}>
+            {t('double.popup_options.adult.price')}
+          </div>
         </div>
         <div className={styles.row_popup_options}>
           <div>
-            <div className={styles.row_popup_options_title}>Junior</div>
-            În exclusivitate, pentru abonații pachetului Premier, Moldtelecom
-            oferă posibilitatea conectării pachetului Junior. Activați pachetul
-            și obțineți 5 posturi TV distractiv – educative destinate copiilor
-            și adolescenților.
+            <div className={styles.row_popup_options_title}>
+              {t('double.popup_options.junior.title')}
+            </div>
+            {t('double.popup_options.junior.text')}
           </div>
-          <div className={styles.row_popup_options_title_price}>10 lei</div>
+          <div className={styles.row_popup_options_title_price}>
+            {t('double.popup_options.junior.price')}
+          </div>
         </div>
         <div className={styles.row_popup_options}>
           <div>
-            <div className={styles.row_popup_options_title}>+1 TV Extra</div>
-            Plata de abonament pentru fiecare televizor suplimentar pentru
-            pachetul TV Simplu, Premier sau Univers este de 30 lei.
-            Mediabox-urile adiţionale se consideră al 2-lea, al 3-lea.
+            <div className={styles.row_popup_options_title}>
+              {t('double.popup_options.tvextra.title')}
+            </div>
+            {t('double.popup_options.tvextra.text')}
           </div>
-          <div className={styles.row_popup_options_title_price}>30 lei</div>
+          <div className={styles.row_popup_options_title_price}>
+            {t('double.popup_options.tvextra.price')}
+          </div>
         </div>
         <div className={styles.row_popup_options}>
           <div>
-            <div className={styles.row_popup_options_title}>Arhiva TV</div>
-            Cu serviciul Arhiva TV aveți libertatea de a accesa emisiunile
-            preferate din arhiva programelor TV, care au fost difuzate cu până
-            la 7 zile în urmă, pentru a le viziona în timpul comod pentru
-            dumneavoastră.
+            <div className={styles.row_popup_options_title}>
+              {t('double.popup_options.arhiva.title')}
+            </div>
+            {t('double.popup_options.arhiva.text')}
           </div>
-          <div className={styles.row_popup_options_title_price}>Gratiut</div>
+          <div className={styles.row_popup_options_title_price}>
+            {t('double.popup_options.arhiva.price')}
+          </div>
         </div>
         <div className={styles.popup_subtitle_1}>
           {' '}
           <br />
-          Cinema-online:
+          {t('double.popup_options.cinema_title')}
         </div>
         <div className={styles.row_popup_options}>
           <div>
-            <div className={styles.row_popup_options_title}>MEGOGO</div>
-            Acces la o video bibliotecă de peste 4000 de filme, 700 seriale și
-            800 desene animate, toate fără pauze de publicitate.
+            <div className={styles.row_popup_options_title}>
+              {t('double.popup_options.megogo.title')}
+            </div>
+            {t('double.popup_options.megogo.text')}
           </div>
-          <div className={styles.row_popup_options_title_price}>59 lei</div>
+          <div className={styles.row_popup_options_title_price}>
+            {t('double.popup_options.megogo.price')}
+          </div>
         </div>
         <div className={styles.row_popup_options}>
           <div>
-            <div className={styles.row_popup_options_title}>PREMIER</div>O
-            experiență cinematografică care îți oferă acces nelimitat la filme,
-            emisiuni TV și multe altele.
+            <div className={styles.row_popup_options_title}>
+              {t('double.popup_options.premier.title')}
+            </div>
+            {t('double.popup_options.premier.text')}
           </div>
-          <div className={styles.row_popup_options_title_price}>59 lei</div>
+          <div className={styles.row_popup_options_title_price}>
+            {t('double.popup_options.premier.price')}
+          </div>
         </div>
         <div className={styles.row_popup_options}>
           <div>
-            <div className={styles.row_popup_options_title}>ИВИ</div>
-            Acum ai cea mai tare experiență și cel mai bogat conținut de filme
-            și desene animate, disponibile pe orice dispozitiv.
+            <div className={styles.row_popup_options_title}>
+              {t('double.popup_options.ivi.title')}
+            </div>
+            {t('double.popup_options.ivi.text')}
           </div>
-          <div className={styles.row_popup_options_title_price}>59 lei</div>
+          <div className={styles.row_popup_options_title_price}>
+            {t('double.popup_options.ivi.price')}
+          </div>
         </div>
         {/*<div className={styles.row_popup_options}>*/}
         {/*  <div>*/}
@@ -3177,10 +3176,7 @@ export default function Double() {
               size={'48px'}
               color={'var(--theme_primary_color_blue_3)'}
             />
-            <span>
-              A apărut o eroare la trimiterea cererii. <br />
-              Te rugăm să încerci din nou.
-            </span>
+            <span dangerouslySetInnerHTML={{ __html: t('double.request_error') }} />
           </div>
         ) : submitted ? (
           <div className={styles.buy_popup_success}>
@@ -3189,17 +3185,14 @@ export default function Double() {
               size={'48px'}
               color={'var(--theme_primary_color_blue_3)'}
             />
-            <span>
-              Solicitarea ta a fost trimisă cu succes! <br />
-              Un consultant Moldtelecom te va contacta în curând.
-            </span>
+            <span dangerouslySetInnerHTML={{ __html: t('double.request_success') }} />
           </div>
         ) : (
           <div className={styles.buy_popup}>
             {popupType == true ? (
-              <div>Dispozitivul ales:</div>
+              <div>{t('double.device_chosen')}</div>
             ) : (
-              <div>Abonamentul ales:</div>
+              <div>{t('double.subscription_chosen')}</div>
             )}
             <div className={styles.selected_popup_subcription}>
               <div className={styles.popup_selected}>
@@ -3219,12 +3212,10 @@ export default function Double() {
                 setError(true);
               }}
             />
-            <div className={styles.popup_discalmer}>
-              După expedierea solicitării vei fi apelat de un consultant
-              Moldtelecom. Mulțumim! <br />
-              Solicitările parvenite duminică, vor fi procesate luni. |
-              Câmpurile marcate cu * sunt obligatorii.
-            </div>
+            <div
+              className={styles.popup_discalmer}
+              dangerouslySetInnerHTML={{ __html: t('double.request_disclaimer') }}
+            />
           </div>
         )}
       </Popup>

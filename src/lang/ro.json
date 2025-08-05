@@ -2130,6 +2130,10 @@
   "double": {
     "learn_more": "Află mai mult",
     "watch_now": "Vizionează acum",
+    "premier_tv": "Premier TV",
+    "univers_tv": "Univers TV",
+    "premier_tv_channels": "121 canale HD, 77 canale SD, 3 radio",
+    "univers_tv_channels": "170 canale HD, 111 canale SD, 3 radio",
     "popup_premier": {
       "title": "Ce este Premier TV?",
       "text": "Premier TV este serviciul digital de televiziune Moldtelecom, care îți oferă zeci de canale HD, SD şi posturi radio, plus funcționalități avansate de DVR și replay.",
@@ -2156,11 +2160,11 @@
     "breadcrumb": {
       "internet": "Internet",
       "fibra": "Fibra"
-    },
     "faq": {
+    },
       "install_duration_question": "Cât durează instalarea serviciilor?",
-      "install_duration_answer": "Serviciile se instalează în cel mult 7 zile lucrătoare de la semnarea contractului.",
 
+      "install_duration_answer": "Serviciile se instalează în cel mult 7 zile lucrătoare de la semnarea contractului.",
       "availability_check_question": "Cum verific dacă pot conecta serviciile la adresa mea?",
       "availability_check_answer": "Puteți apela la 1180, iar un consultant Moldtelecom vă va oferi toate informațiile necesare privind disponibilitatea serviciilor la adresa dorită, precum și detalii despre pachetele și ofertele disponibile.",
 
@@ -2168,25 +2172,119 @@
       "activate_new_offer_answer": "Da. Dacă aveți contractul expirat, puteți opta pentru un pachet promoțional din cele disponibile pentru clienții existenți.",
 
       "bill_payment_deadline_question": "Cum achit factura și până când?",
+
       "bill_payment_deadline_answer": "Factura se achită până la data de 25 a fiecărei luni. Puteți achita prin aplicația MyMoldtelecom, pe pagina web moldtelecom.md, prin internet banking, la terminale de plată, în oficiile băncilor comerciale sau la Poșta Moldovei.",
-
       "late_payment_consequences_question": "Ce se întâmplă dacă întârzii cu plata mai mult timp?",
-      "late_payment_consequences_answer": "În cazul neachitării, serviciile se suspendă automat. Nu vi se va percepe taxa de abonament, însă va fi aplicată o taxă de mentenanță de 85 de lei lunar. Dacă facturile rămân neplătite mai mult de 3 luni, contractul se va rezilia unilateral de către companie.",
 
+      "late_payment_consequences_answer": "În cazul neachitării, serviciile se suspendă automat. Nu vi se va percepe taxa de abonament, însă va fi aplicată o taxă de mentenanță de 85 de lei lunar. Dacă facturile rămân neplătite mai mult de 3 luni, contractul se va rezilia unilateral de către companie.",
       "manage_subscription_remotely_question": "Pot gestiona abonamentul fără să merg la oficiu?",
       "manage_subscription_remotely_answer": "Da. Prin aplicația MyMoldtelecom aveți acces la toate funcțiile necesare: plăți, modificări, notificări și setări, simplu și rapid.",
 
       "pause_services_question": "Pot pune serviciile pe pauză?",
       "pause_services_answer": "Da. Puteți solicita suspendarea temporară a serviciilor direct pe pagina moldtelecom.md/cereri. Se percepe o taxă de 50 de lei pentru fiecare lună de suspendare.",
-
       "change_package_question": "Pot schimba pachetul de servicii?",
-      "change_package_answer": "Da. Completați formularul de pe moldtelecom.md/cereri, iar un consultant Moldtelecom vă va contacta în cel mult 8 ore lucrătoare pentru confirmare.",
 
+
+      "change_package_answer": "Da. Completați formularul de pe moldtelecom.md/cereri, iar un consultant Moldtelecom vă va contacta în cel mult 8 ore lucrătoare pentru confirmare.",
       "move_address_question": "Ce fac dacă mă mut la altă adresă?",
       "move_address_answer": "Puteți depune o cerere de transfer a serviciilor pe pagina moldtelecom.md/cereri. Un consultant vă va contacta pentru a stabili detaliile tehnice și data conectării la noua locuință.",
 
       "transfer_subscription_question": "Pot transfera abonamentul pe numele altcuiva?",
       "transfer_subscription_answer": "Da. Puteți solicita transferul abonamentului către un alt titular prin completarea formularului de pe moldtelecom.md/cereri. Un consultant vă va contacta pentru confirmare și detalii."
     }
+    },
+    "popup_mesh": {
+      "title": "Ce este Wi-Fi Mesh?",
+      "text": "Wi-Fi Mesh extinde semnalul routerului principal în zonele unde acoperirea este slabă, preluând și retransmițând wireless pentru o conexiune stabilă și rapidă în toată locuința.",
+      "why_title": "De ce să alegi Wi-Fi Mesh?",
+      "list": {
+        "0": "Acoperire uniformă în fiecare colț al casei",
+        "1": "Conectezi toate dispozitivele fără să reintroduci parola",
+        "2": "Fără buffer sau drop-out în timpul streaming-ului"
+      },
+      "conditions_title": "Condiții de utilizare:",
+      "conditions": {
+        "0": "Wi-Fi PLUS este o opțiune adițională la serviciul de Internet fix existent, care permite extinderea ariei de acoperire Wi-Fi.",
+        "1": "Plata pentru serviciul Wi-Fi PLUS se va include în abonamentul lunar și se va taxa din momentul activării serviciului, fapt confirmat prin livrarea codului OTP de către Titular.",
+        "2": "Abonamentul lunar se va aplica per fiecare echipament acordat pentru extinderea ariei de acoperire Wi-Fi. În cadrul serviciului Wi-Fi PLUS pot fi conectate maxim 3 echipamente terminale per conexiune Internet fix.",
+        "3": "Abonatul va utiliza echipamentul oferit de către Furnizor în condiții de comodat, pe perioada utilizării serviciului Wi-Fi PLUS.",
+        "4": "Deconectarea serviciului Wi-Fi PLUS va avea loc în momentul restituirii echipamentului terminal (cu toate accesoriile incluse). În cazul depistării accesoriilor lipsă/defecte, Abonatul se obligă să achite contravaloarea acestora.",
+        "5": "Furnizorul este în drept de a refuza deconectarea serviciului Wi-Fi PLUS în cazul nerestituirii echipamentului sau a nerambursării contravalorii acestuia.",
+        "6": "În cazul nereturnării (pierderii/deteriorării) echipamentului, abonatul va restitui plata cu titlu de prejudiciu în mărime de 300 de lei/echipament (fără TVA) sau 850 de lei/echipament (fără TVA).",
+        "7": "Conectarea/deconectarea serviciului este posibilă în orice zi a perioadei de facturare, fără efectuarea recalculului."
+      }
+    },
+    "popup_tvgo": {
+      "title": "Ce este Moldtelecom TV GO?",
+      "text": "Moldtelecom TV GO este televiziunea digitală fără cabluri și fără contracte, disponibilă pe orice dispozitiv, oriunde în Moldova. Plătești doar când folosești – simplu, flexibil și fără obligații.",
+      "conditions_title": "Condiții de utilizare:",
+      "conditions": {
+        "0": "Serviciul este disponibil pentru toți utilizatorii, indiferent dacă sunt abonați Moldtelecom sau clienți ai altor operatori.",
+        "1": "Moldtelecom TV GO poate fi utilizat pe laptop-uri, smartphone și tablete (Android, iOS), televizoare Smart (Samsung, LG, Hisense, Android TV), precum și pe TV box-uri (Android TV, Apple TV) sau pe Web Browser.",
+        "2": "Serviciul poate fi activat în orice zi a lunii, iar data activării va marca începutul perioadei de facturare. O lună de serviciu este considerată a fi echivalentul a 31 de zile calendaristice.",
+        "3": "Modificarea numărului de dispozitive poate fi efectuată oricând din My Moldtelecom.",
+        "4": "Serviciul poate fi utilizat prin orice rețea de internet (fix, mobil sau Wi-Fi) din Republica Moldova, indiferent de operator.",
+        "5": "Pentru a evita suspendarea serviciului, contul trebuie alimentat lunar cu o sumă cel puțin egală cu tariful planului tarifar activ. Achitarea se face în baza ID-ului de Utilizator.",
+        "6": "Renunțarea la serviciu se realizează automat prin nealimentarea contului. Nu este necesară o solicitare suplimentară de dezactivare.",
+        "7": "Accesul la grila de canale diferă în funcție de rețeaua de internet utilizată:",
+        "7_list": {
+          "0": "În rețeaua Moldtelecom (fix sau mobil) este disponibil pachetul Univers.",
+          "1": "În afara rețelei Moldtelecom accesul la anumite canale va fi restricționat."
+        },
+        "8": "Pentru o experiență optimă de vizionare, se recomandă conectarea dispozitivului la internet prin cablu Ethernet (dacă dispozitivul permite acest lucru) sau printr-o conexiune Wi-Fi sau date mobile stabilă, cu viteză bună.",
+        "9": "Moldtelecom își rezervă dreptul de a modifica lista de canale TV disponibile în cadrul serviciului."
+      }
+    },
+    "popup_arhiva": {
+      "title": "Ce este Arhiva TV?",
+      "text": "Cu serviciul Arhiva TV aveți libertatea de a accesa emisiunile preferate din arhiva programelor TV, care au fost difuzate cu până la 7 zile în urmă, pentru a le viziona în timpul comod pentru dumneavoastră. În acest mod, nici o emisiune importantă nu va fi ratată, iar cele preferate le puteți viziona în reluare.",
+      "activation_title": "Activare opțiune:",
+      "activation_text": "Activează/sau dezactivează simplu prin aplicația \"MyMoldtelecom\" sau din versiunea web \"MyMoldtelecom\" și vizionaţi în reluare emisiunile preferate oricând doriți. Serviciul Arhiva TV este foarte ușor de utilizat din meniul principal IPTV"
+    },
+    "popup_options": {
+      "title": "Opțiuni adiționale",
+      "subtitle": "Cu Moldtelecom ai libertatea să îţi personalizezi pachetul şi controlezi totul instant, cu un singur click.",
+      "adult": {
+        "title": "Adult",
+        "text": "La activarea pachetului tematic Adult obțineți 4 posturi TV destinate adulților. Canalele pachetului Adult sunt difuzate de la 00:00 pînă la 06:00, și pot fi restricționate prin parolă utilizînd funcția Control parental.",
+        "price": "35 lei"
+      },
+      "junior": {
+        "title": "Junior",
+        "text": "În exclusivitate, pentru abonații pachetului Premier, Moldtelecom oferă posibilitatea conectării pachetului Junior. Activați pachetul și obțineți 5 posturi TV distractiv – educative destinate copiilor și adolescenților.",
+        "price": "10 lei"
+      },
+      "tvextra": {
+        "title": "+1 TV Extra",
+        "text": "Plata de abonament pentru fiecare televizor suplimentar pentru pachetul TV Simplu, Premier sau Univers este de 30 lei. Mediabox-urile adiţionale se consideră al 2-lea, al 3-lea.",
+        "price": "30 lei"
+      },
+      "arhiva": {
+        "title": "Arhiva TV",
+        "text": "Cu serviciul Arhiva TV aveți libertatea de a accesa emisiunile preferate din arhiva programelor TV, care au fost difuzate cu până la 7 zile în urmă, pentru a le viziona în timpul comod pentru dumneavoastră.",
+        "price": "Gratuit"
+      },
+      "cinema_title": "Cinema-online:",
+      "megogo": {
+        "title": "MEGOGO",
+        "text": "Acces la o video bibliotecă de peste 4000 de filme, 700 seriale și 800 desene animate, toate fără pauze de publicitate.",
+        "price": "59 lei"
+      },
+      "premier": {
+        "title": "PREMIER",
+        "text": "O experiență cinematografică care îți oferă acces nelimitat la filme, emisiuni TV și multe altele.",
+        "price": "59 lei"
+      },
+      "ivi": {
+        "title": "ИВИ",
+        "text": "Acum ai cea mai tare experiență și cel mai bogat conținut de filme și desene animate, disponibile pe orice dispozitiv.",
+        "price": "59 lei"
+      }
+    },
+    "request_error": "A apărut o eroare la trimiterea cererii.<br />Te rugăm să încerci din nou.",
+    "request_success": "Solicitarea ta a fost trimisă cu succes!<br />Un consultant Moldtelecom te va contacta în curând.",
+    "device_chosen": "Dispozitivul ales:",
+    "subscription_chosen": "Abonamentul ales:",
+    "request_disclaimer": "După expedierea solicitării vei fi apelat de un consultant Moldtelecom. Mulțumim!<br />Solicitările parvenite duminică, vor fi procesate luni. | Câmpurile marcate cu * sunt obligatorii."
   }
   }
