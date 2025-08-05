@@ -442,46 +442,12 @@ export default function FiveGbps() {
       <Details>
         <DetailsBlock title={'Condiții de utilizare Abonamente'}>
           <ul>
-            <li>
-              Perioada de comercializare a ofertei: 21.08.2025 – 21.11.2025
-              (inclusiv).{' '}
-            </li>
-            <li>
-              Conectarea la serviciul de Internet fix este gratuită, iar
-              contractul va fi semnat pe o perioadă de 24 de luni.{' '}
-            </li>
-            <li>
-              Planurile tarifare de Internet fix sunt disponibile pentru
-              conectările noi sau la reperfectare pentru abonați existenți cu
-              contract expirat.{' '}
-            </li>
-            <li>
-              Abonații serviciului de Internet fix pot beneficia de reduceri la
-              anumite abonamente de telefonie mobilă.{' '}
-            </li>
-            <li>
-              Vitezele sunt indicate în valori maxime. Viteza obținută de client
-              acasă depinde de un șir de factori care nu pot fi controlați de
-              compania Moldtelecom.{' '}
-            </li>
-            <li>
-              Planul tarifar de Internet selectat de abonat poate fi conectat în
-              limita posibilităților tehnice.{' '}
-            </li>
-            <li>
-              Oferta promoțională include reduceri de 300 lei la abonamentul de
-              Internet fix în primele 24 de luni. După perioada de 24 de luni,
-              se va aplica tariful standard conform planului în vigoare.{' '}
-            </li>
-            <li>Echipamentele sunt oferite în condiții de comodat. </li>
-            <li>
-              La rezilierea serviciului de Internet fix înainte de expirarea
-              perioadei contractuale, se vor aplica plăți cu titlu de
-              prejudiciu.{' '}
-            </li>
-            <li>
-              Oferta promoțională se comercializează în anumite localități.{' '}
-            </li>
+            <li>Oferta este valabilă în perioada 21.08.2025–25.11.2025.</li>
+            <li>Se adresează atât clienților noi, cât și celor existenți cu contract expirat. Contractul se semnează pe 24 de luni, iar conectarea este gratuită.</li>
+            <li>Clienții care aleg abonamente de Internet cu viteze de 2.1 Gbps sau 5.5 Gbps beneficiază de o reducere lunară de 300 lei, valabilă pe toată perioada contractuală.</li>
+            <li>Pentru viteza de 2.1 Gbps, oferta include un router performant și un dispozitiv Mesh Wi-Fi, iar pentru viteza de 5.5 Gbps – un router performant și două dispozitive Mesh Wi-Fi. Echipamentele se oferă pe durata contractului și trebuie returnate în cazul rezilierii.</li>
+            <li>Vitezele indicate sunt valori maxime. Viteza efectivă disponibilă la adresa clientului depinde de factori tehnici ce nu pot fi controlați de Moldtelecom. Serviciul este disponibil doar în localitățile în care Moldtelecom poate furniza aceste viteze în condiții optime.</li>
+            <li>În cazul rezilierii anticipate a serviciului de Internet, înainte de expirarea perioadei contractuale, se va aplica o penalitate conform contractului.</li>
           </ul>
         </DetailsBlock>
       </Details>
@@ -524,45 +490,69 @@ export default function FiveGbps() {
       </div>
 
       <MyApp style_type={'blue_white'} className={styles.myapp} />
-      <FaqV2 max_faq={6}>
+      <FaqV2 max_faq={5}>
         <FaqQAV2
-          id_faq="112482310"
-          question={'Care e diferența dintre XGS-PON și GPON?'}
+          id_faq="112089314"
+          question={t('gbps.faq.install_duration_question')}
         >
-          XGS‑PON reprezintă soluția de ultimă generație pentru cei care vor mai
-          mult de la conexiunea de internet: până la 10 Gbps, latență extrem de
-          scăzută și stabilitate de care te poți baza chiar și în cele mai
-          exigente aplicații. Este proiectat pentru un stil de viață permanent
-          conectat, putând susține simultan videoconferințe de înaltă calitate,
-          aplicații cloud complexe, sesiuni de gaming online fără întreruperi,
-          automatizări inteligente pentru casă și streaming 8K ultra-HD fără
-          compromisuri.
-          <br /> <br />
-          În schimb, GPON rămâne în continuare standardul folosit de mulți
-          furnizori, dar cu un profil asimetric care limitează semnificativ
-          viteza de upload. Aceasta poate deveni o problemă atunci când toți
-          membrii familiei sunt conectați în același timp, mai ales la streaming
-          video în direct, sincronizări de backup în cloud sau lucrul de acasă
-          care necesită transfer rapid de fișiere.
+          {t('gbps.faq.install_duration_answer')}
         </FaqQAV2>
         <FaqQAV2
-          id_faq="112482910"
-          question={'Am deja GPON. Merită să trec la XGS‑PON?'}
+          id_faq="112089315"
+          question={t('gbps.faq.availability_check_question')}
         >
-          Absolut. XGS‑PON nu e doar un upgrade – e o revoluție. Obții viteze
-          simetrice de până la 10 Gbps, latență ultraredusă și stabilitate în
-          orice scenariu: muncă remote, backup-uri masive, live streaming sau
-          mai mulți utilizatori conectați simultan.
+          {t('gbps.faq.availability_check_answer')}
         </FaqQAV2>
         <FaqQAV2
-          id_faq="112482910"
-          question={'Ce face Wi‑Fi 6 diferit față de versiunile anterioare?'}
+          id_faq="112089316"
+          question={t('gbps.faq.activate_new_offer_question')}
         >
-          Wi‑Fi 6 este mai rapid, mai stabil și mai eficient. Permite conectarea
-          simultană a mai multor dispozitive fără congestie și oferă o acoperire
-          mai bună în locuințe mari sau cu pereți groși.
+          {t('gbps.faq.activate_new_offer_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089317"
+          question={t('gbps.faq.bill_payment_deadline_question')}
+        >
+          {t('gbps.faq.bill_payment_deadline_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089318"
+          question={t('gbps.faq.late_payment_consequences_question')}
+        >
+          {t('gbps.faq.late_payment_consequences_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089319"
+          question={t('gbps.faq.manage_subscription_remotely_question')}
+        >
+          {t('gbps.faq.manage_subscription_remotely_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089320"
+          question={t('gbps.faq.pause_services_question')}
+        >
+          {t('gbps.faq.pause_services_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089321"
+          question={t('gbps.faq.change_package_question')}
+        >
+          {t('gbps.faq.change_package_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089322"
+          question={t('gbps.faq.move_address_question')}
+        >
+          {t('gbps.faq.move_address_answer')}
+        </FaqQAV2>
+        <FaqQAV2
+          id_faq="112089323"
+          question={t('gbps.faq.transfer_subscription_question')}
+        >
+          {t('gbps.faq.transfer_subscription_answer')}
         </FaqQAV2>
       </FaqV2>
+
       <Footer disclaimer={true} />
     </>
   );
