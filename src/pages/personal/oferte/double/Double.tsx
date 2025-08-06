@@ -172,9 +172,7 @@ export default function Double() {
   const [regio, setRegio] = useState<string>(
     () => localStorage.getItem('city') || DEFAULT_CITY
   );
-  const [isRegio, setIsRegio] = useState<boolean>(() =>
-    Boolean(localStorage.getItem('city'))
-  );
+  const [isRegio, setIsRegio] = useState<boolean>(true);
   const [regions, setRegions] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
   const [selRegion, setSelRegion] = useState<string>('');

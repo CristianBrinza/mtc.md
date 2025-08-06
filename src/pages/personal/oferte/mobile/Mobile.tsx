@@ -16,7 +16,7 @@ import Slider from 'react-slick';
 import Icon from '../../../../components/Icon.tsx';
 import TableRoaming from '../../../../components/Popups/TableRoaming.tsx';
 import Functions from '../../../../components/functions/Functions.tsx';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Popup from '../../../../components/Popup/Popup.tsx';
 import Toggle from '../../../../components/toggle/Toggle.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
