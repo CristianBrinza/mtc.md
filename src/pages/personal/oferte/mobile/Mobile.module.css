@@ -360,10 +360,12 @@
 }
 .popupBuy_left {
   width: 50%;
-  padding: 20px;
+  padding: 30px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 .buy_popup_img {
   width: 100%;
@@ -427,7 +429,7 @@
 }
 .tm_carousell {
   width: 100%;
-  max-width: 1180px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .table_popup thead th {
@@ -486,6 +488,59 @@
   align-items: flex-start;
 }
 
+.tm_carousell :global(.slick-dots) {
+  margin-top: 15px !important;
+}
+
+.tm_carousell :global(.slick-next:before) {
+  content: none !important;
+}
+
+.tm_carousell :global(.slick-next) {
+  right: -40px !important;
+  margin-top: -60px !important;
+  width: 36px;
+  height: 36px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 36px 36px;
+  color: #bdbdbe; /* default tint for the arrow */
+  transition: color 0.2s ease-in-out;
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='36' height='36' viewBox='0 0 36 36' xmlns='http://www.w3.org/2000/svg'><rect width='36' height='36' rx='18' fill='%23F2F2F3'/><path fill='currentColor' d='M23.5587 16.916C24.1447 17.5 24.1467 18.446 23.5647 19.034L16.6077 26.056C16.3147 26.352 15.9287 26.5 15.5427 26.5C15.1607 26.5 14.7787 26.355 14.4867 26.065C13.8977 25.482 13.8947 24.533 14.4777 23.944L20.3818 17.984L14.4408 12.062C13.8548 11.478 13.8528 10.5279 14.4378 9.941C15.0218 9.354 15.9738 9.353 16.5588 9.938L23.5587 16.916Z'/></svg>") !important;
+  transform: rotate(180deg);
+}
+
+.tm_carousell :global(.slick-prev:before) {
+  content: none !important;
+}
+
+.tm_carousell :global(.slick-prev) {
+  left: -45px !important;
+  margin-top: -60px !important;
+  width: 36px;
+  height: 36px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 36px 36px;
+  color: #bdbdbe; /* default tint for the arrow */
+  transition: color 0.2s ease-in-out;
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='36' height='36' viewBox='0 0 36 36' xmlns='http://www.w3.org/2000/svg'><rect width='36' height='36' rx='18' fill='%23F2F2F3'/><path fill='currentColor' d='M23.5587 16.916C24.1447 17.5 24.1467 18.446 23.5647 19.034L16.6077 26.056C16.3147 26.352 15.9287 26.5 15.5427 26.5C15.1607 26.5 14.7787 26.355 14.4867 26.065C13.8977 25.482 13.8947 24.533 14.4777 23.944L20.3818 17.984L14.4408 12.062C13.8548 11.478 13.8528 10.5279 14.4378 9.941C15.0218 9.354 15.9738 9.353 16.5588 9.938L23.5587 16.916Z'/></svg>") !important;
+  transform: rotate(180deg);
+}
+.tm_carousell :global(.slick-prev) {
+  margin-top: -30px !important;
+}
+.tm_carousell :global(.slick-next) {
+  margin-top: -25px !important;
+}
+.tm_carousell_block {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 1300px) {
   .hero {
     width: 1300px;
@@ -509,8 +564,12 @@
   .popupBuy :global(.popup_block_inside) {
     max-width: 550px !important;
   }
-  .buy_popup_img {
+  .buy_popup_img,
+  .buy_popup_img_div {
     display: none;
+  }
+  .popupBuy_left {
+    width: 100%;
   }
 }
 
@@ -561,6 +620,8 @@
   .title2 {
     padding: 0 20px;
     box-sizing: border-box;
+    font-size: 28px;
+    line-height: 30px;
   }
   .mobile_carousell {
     max-width: 290px;
@@ -581,8 +642,8 @@
     display: none !important;
   }
   .title2 {
-    font-size: 32px;
-    line-height: 34px;
+    font-size: 26px;
+    line-height: 28px;
     margin-bottom: 10px;
   }
   .selected_popup_subcription {

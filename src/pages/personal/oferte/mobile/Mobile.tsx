@@ -69,7 +69,7 @@ export default function Mobile() {
     arrows: true,
     autoplay: true,
     autoplaySpeed: 2500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
 
     responsive: [
@@ -1066,19 +1066,55 @@ export default function Mobile() {
       <Slider {...settings_devices} className={styles.tm_carousell}>
         <div className={styles.tm_carousell_block}>
           <ShopCard
-            device_id={327564511}
-            image="/images/shop/323564512.png"
-            price={1}
-            old_price={3000}
-            reducere="- 99%"
-            title="Hisense "
-            subtitle="32A4N (FHD)"
-            characteristics='Direct LED /Full HD /32"'
+            device_id={727564511}
+            image="/images/shop/383535269.webp"
+            price={1199}
+            old_price={2799}
+            reducere="- 600"
+            title="OPPO"
+            subtitle="A40"
+            characteristics='8/256 Gb /5000mAh /6.67"'
             style_type={'gray'}
             show_like={false}
             show_comapre={false}
             buy={() => {
-              setPopup('Hisense 32A4N', ' ');
+              setPopup('OPPO A40', '+ abonament');
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={727564512}
+            image="/images/shop/383535265.webp"
+            price={2199}
+            old_price={3299}
+            reducere="- 99%"
+            title="OPPO"
+            subtitle="A60"
+            characteristics='4/128 Gb /5100mAh /6.67"'
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('OPPO A60', '+ abonament');
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={727564513}
+            image="/images/shop/383535262.webp"
+            price={3199}
+            old_price={4299}
+            reducere="- 99%"
+            title="OPPO"
+            subtitle="A80"
+            characteristics="8/256 Gb /5100mAh /50 MP"
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('OPPO A80', '+ abonament');
             }}
           />
         </div>
@@ -1135,9 +1171,9 @@ export default function Mobile() {
           {t('tm.faq.112489317.answer')}
         </FaqQAV2>
 
-        <FaqQAV2 id_faq="112489318" question={t('tm.faq.112489318.question')}>
-          {t('tm.faq.112489318.answer')}
-        </FaqQAV2>
+        {/*<FaqQAV2 id_faq="112489318" question={t('tm.faq.112489318.question')}>*/}
+        {/*  {t('tm.faq.112489318.answer')}*/}
+        {/*</FaqQAV2>*/}
 
         <FaqQAV2 id_faq="112489319" question={t('tm.faq.112489319.question')}>
           {t('tm.faq.112489319.answer')}
@@ -1151,7 +1187,8 @@ export default function Mobile() {
         isVisible={activePopup === '1280520'}
         onClose={handlePopupClose}
         className={styles.popupBuy}
-        key={activePopup ?? 'popup-closed'}
+        // key={activePopup ?? 'popup-closed'}
+        key="popup-1280520"
       >
         {/*<div className={styles.popup_div_title}>*/}
         {/*  Mulțumim că ai ales Moldtelecom*/}
