@@ -175,7 +175,6 @@ export default function Double() {
   const [isRegio, setIsRegio] = useState<boolean>(() =>
     Boolean(localStorage.getItem('city'))
   );
-
   const [regions, setRegions] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
   const [selRegion, setSelRegion] = useState<string>('');
@@ -198,7 +197,7 @@ export default function Double() {
         },
       },
       {
-        breakpoint: 651,
+        breakpoint: 951,
         settings: {
           slidesToShow: 1,
         },
@@ -229,7 +228,14 @@ export default function Double() {
       //   .filter(([, arr]) => arr.length > 0)
       //   .map(([city]) => city);
       // setCities(validCities);
+
       const validCities = Object.keys(obj[initialRegion]);
+
+      // const validCities =Object.entries(window.regiuni[r])
+      //   .filter(([, arr]) => arr.length > 0)
+      //   .map(([city]) => city)
+      // const validCities = Object.keys(window.regiuni[r]);
+
       setCities(validCities);
 
       // 3️⃣ pick a starting city
@@ -237,6 +243,7 @@ export default function Double() {
       const initialCity =
         storedC && validCities.includes(storedC) ? storedC : DEFAULT_CITY;
       setSelCity(initialCity);
+      // console.log(isRegio)
 
       // 4️⃣ update the display
       setRegio(initialCity);
@@ -253,26 +260,54 @@ export default function Double() {
     return () => void document.head.removeChild(script);
   }, []);
 
+  useEffect(() => {
+    console.log(`isRegio updated → ${isRegio}`);
+    if (isRegio == false) {
+      setActiveConfig('2');
+    } else {
+      setActiveConfig('1');
+    }
+  }, [isRegio]);
+
   // when user picks a region
   const handleRegionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const r = e.target.value;
     setSelRegion(r);
-    setCities(
-      Object.entries(window.regiuni[r])
-        .filter(([, arr]) => arr.length > 0)
-        .map(([city]) => city)
-    );
+    // setCities(
+    //   Object.entries(window.regiuni[r])
+    //     .filter(([, arr]) => arr.length > 0)
+    //     .map(([city]) => city)
+    // );
+    const allCities = Object.keys(window.regiuni[r]);
+    setCities(allCities);
     // reset city selection to first valid city
-    const firstCity =
-      Object.keys(window.regiuni[r]).find(
-        c => window.regiuni[r][c].length > 0
-      ) || '';
+    // const firstCity =
+    //   Object.keys(window.regiuni[r]).find(
+    //     c => window.regiuni[r][c].length > 0
+    //   ) || '';
+    const firstCity = allCities[0] || '';
     setSelCity(firstCity);
+
+    localStorage.setItem('region', r);
+    localStorage.setItem('city', firstCity);
+    const covered = (window.regiuni?.[r]?.[firstCity] || []).length > 0;
+    setRegio(firstCity);
+    setIsRegio(covered);
   };
 
   // when user picks a city
   const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelCity(e.target.value);
+    // const covered = (window.regiuni[selRegion][e.target.value] || []).length > 0;
+    // setIsRegio(covered);
+    //
+    // console.log(`City changed → region=${selRegion}, city=${e.target.value}, isRegio=${covered}`);
+    localStorage.setItem('city', e.target.value);
+    setRegio(e.target.value);
+    const covered =
+      (window.regiuni?.[selRegion]?.[e.target.value] || []).length > 0;
+    setIsRegio(covered);
+    setActivePopup(null);
   };
   const [popupType, setPopupType] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -286,6 +321,29 @@ export default function Double() {
     setError(false);
     setPopupType(false);
   };
+
+  // useEffect(() => {
+  //   console.log(
+  //     `${isRegio}`);
+  //     if(isRegio==false){
+  //       setActiveConfig('2');
+  //       console.log(`!!!${isRegio}`);
+  //     }
+  // }, [isRegio]);
+
+  // useEffect(() => {
+  //   // persist the new selection
+  //   localStorage.setItem('region', selRegion)
+  //   localStorage.setItem('city', selCity)
+  //
+  //   // update what's displayed
+  //   setRegio(selCity)
+  //   // check array length: if >0, we're in a "regio" zone
+  //   const covered = (window.regiuni?.[selRegion]?.[selCity] || []).length > 0
+  //   console.log(isRegio)
+  //
+  //   setIsRegio(covered)
+  // }, [selRegion, selCity])
 
   const [activeTVConfig_1, setActiveTVConfig_1] = useState<string>('smart_tv');
   const [activeSelectedTV_1, setActiveSelectedTV_1] =
@@ -840,17 +898,19 @@ export default function Double() {
     <>
       <SEO {...seo} />
       <div className={styles.regio}>
-        <span>{t('combo_home.promo_text')}</span>
-        &nbsp;{' '}
         <span>
-          (
-          <span
-            onClick={() => setActivePopup('1110116')}
-            className={styles.regio_select}
-          >
-            {regio}
+          <span>{t('combo_home.promo_text')}</span>
+          &nbsp;
+          <span>
+            (
+            <span
+              onClick={() => setActivePopup('1110116')}
+              className={styles.regio_select}
+            >
+              {regio}
+            </span>
+            ).
           </span>
-          ).
         </span>
       </div>
       <Navbar />
@@ -878,28 +938,35 @@ export default function Double() {
         <span>{t('combo_home.choose_best_subscription')}</span>
       </div>
 
-      <div className={styles.config}>
-        <div
-          onClick={() => setActiveConfig('1')}
-          className={`${styles.config_block} ${styles.config_block_1}  ${styles.config_block_first} ${activeConfig == '1' && styles.config_block_active}`}
-        >
-          {t('combo_home.package_discount')}
+      {isRegio && (
+        <div className={styles.mobile_pormotion}>Selectează oferta:</div>
+      )}
+      {isRegio ? (
+        <div className={styles.config}>
+          <div
+            onClick={() => setActiveConfig('1')}
+            className={`${styles.config_block} ${styles.config_block_1}  ${styles.config_block_first} ${activeConfig == '1' && styles.config_block_active}`}
+          >
+            {t('combo_home.package_discount')}
+          </div>
+          <div
+            onClick={() => setActiveConfig('2')}
+            className={`${styles.config_block} ${styles.config_block_2}  ${activeConfig == '2' && styles.config_block_active}`}
+          >
+            {t('combo_home.smart_tv_tablet')}
+          </div>
+          <div
+            onClick={() => setActiveConfig('3')}
+            className={`${styles.config_block} ${styles.config_block_3}  ${styles.config_block_last} ${activeConfig == '3' && styles.config_block_active}`}
+          >
+            {t('combo_home.gaming_set')}
+          </div>
         </div>
-        <div
-          onClick={() => setActiveConfig('2')}
-          className={`${styles.config_block} ${styles.config_block_2}  ${activeConfig == '2' && styles.config_block_active}`}
-        >
-          {t('combo_home.smart_tv_tablet')}
-        </div>
-        <div
-          onClick={() => setActiveConfig('3')}
-          className={`${styles.config_block} ${styles.config_block_3}  ${styles.config_block_last} ${activeConfig == '3' && styles.config_block_active}`}
-        >
-          {t('combo_home.gaming_set')}
-        </div>
-      </div>
+      ) : (
+        <div className={styles.regio_config_selctor}></div>
+      )}
       <Slider {...settings} className={styles.abonaments}>
-        {activeConfig == '1' && (
+        {(activeConfig == '1' || !isRegio) && (
           <div className={styles.abonaments_block}>
             <div className={styles.abonaments_block_inside}>
               {/*<div className={styles.mobile_carousell_tags}>*/}
@@ -1136,6 +1203,13 @@ export default function Double() {
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280113')} />
               </div>
+
+              {activeConfig == '2' && (
+                <select
+                  className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+                  style={{ opacity: '0' }}
+                ></select>
+              )}
 
               <div className={styles.wifi_carousell_block_inside_btns}>
                 {activeConfig == '1' ? (
@@ -1441,9 +1515,15 @@ export default function Double() {
                   <option value={'smart_tv_43 1_leu'}>
                     <b>Smart TV 43"</b> (la 1 899 lei)&nbsp;
                   </option>
-                  <option value={'smart_tv_43 1_leu'}>
-                    <b>Tableta </b> (la 1 leu)&nbsp;
-                  </option>
+
+                  {isRegio && (
+                    <option value={'smart_tv_43 1_leu'}>
+                      <b>Tableta </b> (la 1 leu)&nbsp;
+                    </option>
+                  )}
+                  {!isRegio && (
+                    <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
+                  )}
                 </select>
               )}
 
@@ -1741,9 +1821,14 @@ export default function Double() {
                 <option value={'smart_tv_55 1_leu'}>
                   <b>Smart TV 55"</b> (la 2 999 lei)&nbsp;
                 </option>
-                <option value={'tableta 1_leu'}>
-                  <b>Tableta</b> (la 1 leu)&nbsp;
-                </option>
+                {isRegio && (
+                  <option value={'smart_tv_43 1_leu'}>
+                    <b>Tableta </b> (la 1 leu)&nbsp;
+                  </option>
+                )}
+                {!isRegio && (
+                  <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
+                )}
               </select>
             )}
             {activeConfig == '3' && (
@@ -2047,9 +2132,14 @@ export default function Double() {
                 <option value={'smart_tv_55 1_leu'}>
                   <b>Smart TV 55"</b> (la 1 leu)&nbsp;
                 </option>
-                <option value={'tableta 1_leu'}>
-                  <b>Tableta</b> (la 1 leu)&nbsp;
-                </option>
+                {isRegio && (
+                  <option value={'smart_tv_43 1_leu'}>
+                    <b>Tableta </b> (la 1 leu)&nbsp;
+                  </option>
+                )}
+                {!isRegio && (
+                  <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
+                )}
               </select>
             )}
             {activeConfig == '3' && (
@@ -2353,9 +2443,14 @@ export default function Double() {
                 <option value={'smart_tv_55 1_leu'}>
                   <b>Smart TV 55"</b> (la 1 leu)&nbsp;
                 </option>
-                <option value={'tableta 1_leu'}>
-                  <b>Tableta</b> (la 1 leu)&nbsp;
-                </option>
+                {isRegio && (
+                  <option value={'smart_tv_43 1_leu'}>
+                    <b>Tableta </b> (la 1 leu)&nbsp;
+                  </option>
+                )}
+                {!isRegio && (
+                  <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
+                )}
               </select>
             )}
             {activeConfig == '3' && (
@@ -3133,29 +3228,6 @@ export default function Double() {
               </option>
             ))}
           </select>
-
-          <Button
-            id="combo_region+ok"
-            onClick={() => {
-              // store
-              localStorage.setItem('region', selRegion);
-              localStorage.setItem('city', selCity);
-
-              // update display
-              // set the chosen city (or fallback to region)
-              setRegio(selCity || selRegion);
-              setIsRegio(true);
-              setActivePopup(null);
-            }}
-            color="var(--theme_primary_color_blue_4)"
-            bgcolor="var(--theme_primary_color_blue_3)"
-            border="var(--theme_primary_color_blue_3)"
-            hover_border="var(--theme_primary_color_blue_2)"
-            hover_bgcolor="var(--theme_primary_color_blue_2)"
-            icon="arrow_right"
-          >
-            OK
-          </Button>
         </div>
       </Popup>
 

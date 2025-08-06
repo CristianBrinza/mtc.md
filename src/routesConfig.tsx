@@ -127,7 +127,7 @@ export const routesConfig: RouteConfig[] = [
     element: React.createElement(FiveGbps),
   },
   {
-    path: '/:lang/interent+tv',
+    path: '/:lang/internet+tv',
     element: React.createElement(Double),
   },
   {

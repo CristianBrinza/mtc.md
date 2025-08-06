@@ -775,7 +775,7 @@
       "activation": [
         "Activează/sau dezactivează simplu prin aplicația \"MyMoldtelecom\"."
       ],
-      "price": "Preț: <b>35 lei/luna</b>"
+      "price": "Preț: <b>35 lei/lună</b>"
     },
     "f12": {
       "title": "1 TV Suplimentar",
@@ -795,7 +795,7 @@
           ["Taxa de activare a mediabox-urilor adiţionale (per STB)", "0"]
         ]
       },
-      "price": "Preț: <b>30 lei/luna</b>"
+      "price": "Preț: <b>30 lei/lună</b>"
     },
     "f13": {
       "title": "Junior",
@@ -814,7 +814,7 @@
       "activation": [
         "Activează/sau dezactivează simplu prin aplicația \"MyMoldtelecom\"."
       ],
-      "price": "Preț: <b>10 lei/luna</b>"
+      "price": "Preț: <b>10 lei/lună</b>"
     },
     "f14": {
       "title": "MEGOGO",
@@ -823,7 +823,7 @@
       "activation": [
         "Activează/sau dezactivează simplu prin aplicația \"MyMoldtelecom\" la fel cum activați sau dezactivați celelalte servicii la IPTV (Arhiva TV, pachetele tematice)."
       ],
-      "price": "Preț: <b>59 lei/luna</b>"
+      "price": "Preț: <b>59 lei/lună</b>"
     },
     "f15": {
       "title": "Cinema PREMIER",
@@ -837,7 +837,7 @@
         "Indici numărul de contract și un număr de mobil valid, apoi apeși \"creează cont\".",
         "Descarci aplicația PREMIER sau o accesezi online și te autorizezi cu numărul de telefon folosit la crearea contului"
       ],
-      "price": "Preț: <b>59 lei/luna</b>"
+      "price": "Preț: <b>59 lei/lună</b>"
     },
     "f16": {
       "title": "Cinema-Online ИВИ",
@@ -852,7 +852,7 @@
         "Compartimentul ”Opțiuni și servicii”, apoi alegem ”Opțiuni”;",
         "Activare sau dezactivare serviciu."
       ],
-      "price": "Preț: <b>59 lei/luna</b>"
+      "price": "Preț: <b>59 lei/lună</b>"
     },
     "f17": {
       "title": "Moldtelecom TV",
@@ -869,7 +869,7 @@
         "Alege Moldtelecom TV",
         "Activează planul tarifar dori ( Single, Double, Family )"
       ],
-      "price": "Preț: <b>60 / 80 / 100 lei/luna</b>"
+      "price": "Preț: <b>60 / 80 / 100 lei/lună</b>"
     }
   },
   "myapp": {
@@ -1892,48 +1892,55 @@
         "items": [
           "Promoția „Testează gratuit” oferă o reducere de 100% la costul abonamentului pentru o perioadă de testare de până la 30 de zile.",
           "După perioada de testare, clienții beneficiază de o reducere de 35% la abonament, până la finalizarea perioadei minime contractuale. Perioada minimă contractuală este de 24 de luni, inclusiv luna de testare.",
-          "Oferta este disponibilă exclusiv pentru abonații noi și abonații care portează numărul la unul din abonamentele Star 120, Star 150 și Liberty 190.",
-          "Promoția este valabilă între 02.05.2025 și 31.07.2025."
+          "Oferta este disponibilă exclusiv pentru abonații noi și abonații care portează numărul la unul din abonamentele Star 120, Star 150 și Liberty 190",
+          "Promoția este valabilă între 02.05.2025 și 20.08.2025."
         ]
       },
       "warning": {
         "title": "Politica de utilizare rezonabilă a serviciului „Roaming Europa”",
         "items_1": [
-          "Conținutul de minute și trafic internet inclus în abonamentele ”Liberty 190” și ”Liberty Plus 250”, disponibil în Roaming UE+SEE. este alocat în vederea asigrării necesarului de comunicare în călătoriile cu caracter periodic în Europa. ",
-          "Abonații conectați la abonamentele ”Liberty 190” și ”Liberty Plus 250” sunt obligați să evite folosirea abuzivă a serviciilor Roaming, UE+SEE incluse în abonament. Pentru a analiza folosirea abuzivă a serviciilor Roaming UE+SEE incluse în abonament” se va monitoriza, în mod cumulat, pe parcursul a fiecăror patru luni consecutive din momentul conectării dacă consumul oricărui serviciu în Roaming în Europa este mai mare decât consumul respectivului serviciu la nivel național;",
-          "Consumul la nivel național și consumul în Roaming în Europa se măsoară în mod separat pentru următoarele categorii de servicii:"
+          "Utilizarea serviciului de roaming este considerată rezonabilă atâta timp cât acesta este folosit exclusiv în cadrul călătoriilor ocazionale în afara teritoriului Republicii Moldova.",
+          "Abonații care beneficiază de serviciul de roaming inclus în abonament au obligația de a evita utilizarea abuzivă a serviciilor de roaming în UE și SEE.",
+          "Pentru a analiza utilizarea abuzivă a acestor servicii, Moldtelecom va monitoriza, în mod cumulat, pe parcursul fiecărei perioade de patru luni consecutive de la momentul conectării, dacă"
         ],
         "items_2": [
-          "apeluri primite din orice rețea și apeluri efectuate spre refele din Republica Moldova și Europa (minute);",
-          "trafic Internet generat în Republica Moldova, respectiv în Europa (MB/GB)."
+          "volumul de consum al oricărui serviciu în roaming în Europa este mai mare decât volumul consumului aceluiași serviciu la nivel național;",
+          "numărul de zile de utilizare în roaming este mai mare decât numărul de zile de utilizare a serviciilor la nivel național."
         ],
         "items_3": [
-          "Consumul predominant a oricărui serviciu în Roaming în Europa în timpul perioadei de monitorizare stabilite se consideră ca fiind un indicator al riscului unei utilizări abuzive sau anormale, care nu servește scopului călătoriilor periodice în Europa.",
-          "Abonații care vor fi identificați că au utilizat abuziv serviciile incluse în abonamentele ”Liberty 190” și ”Liberty Plus 250”, nu vor mai beneficia de Trafic adițional inclus în pachet sub forma de FUB ”Liberty Minute și Trafic internet în Roaming UE+SEE”, la, abonamentul respectiv."
+          "Consumul la nivel național și consumul în roaming în Europa se măsoară separat pentru următoarele categorii de servicii:"
         ],
-        "warning_dis": "*consumul în Republica Moldova și consumul în Roaming în alte state decât Europa se consideră consum la nivel național."
+        "items_4": [
+          "apeluri primite din orice rețea și apeluri efectuate către rețele din Republica Moldova și Europa (minute);",
+          "trafic de internet generat în Republica Moldova, respectiv în Europa (MB/GB)."
+        ],
+        "items_5": [
+          "Consumul predominant sau numărul de zile de utilizare preponderent în roaming, pentru oricare dintre serviciile menționate, pe durata perioadei de monitorizare, va fi considerat un indicator al riscului de utilizare abuzivă sau anormală, care nu corespunde scopului călătoriilor ocazionale în Europa.",
+          "În cazul în care sunt constatate dovezi de utilizare excesivă sau abuzivă a serviciului de roaming, Moldtelecom va transmite clientului o avertizare prealabilă, notificând comportamentul identificat.",
+          "Totodată, Moldtelecom își rezervă dreptul de a restricționa sau suspenda utilizarea serviciului în cazul continuării comportamentului abuziv, ilegal și/sau contrar prevederilor Contractului de abonament, inclusiv în situațiile de tentativă de fraudă care pot aduce prejudicii Moldtelecom sau terților."
+        ]
       },
       "conditii": {
         "title": "Condiții de utilizare Abonamente",
+        "title_2": "Detalii ofertă",
         "itemsConfig1": [
-          "Oferta promoțională constă în acordarea unei reduceri de 35% la plata lunară a abonamentelor Star 120, Star 150, Liberty 190 și Liberty Plus 250, valabilă pe întreaga perioadă contractuală de 24 luni.",
-          "Perioada minimă contractuală pentru abonamentul Start 95 este de 6 luni.",
-          "Oferta este destinată pentru clienții noi (conectare, portare din altă rețea) sau pentru cei existenți, la reperfectarea contractului sau migrarea de la PrePay."
+          "Oferta promoțională constă în acordarea unei reduceri de 35% la plata lunare a abonamentelor Star 120, Star150, Liberty 190 și Liberty Plus 250, valabilă pe întreaga perioadă contractuală de 24 de luni.",
+          "Oferta este destinată pentru clienții noi, la conectare, portare din altă rețea sau pentru cei existenți, la reperfectarea contractului sau migrarea de la Prepay.",
+          "Perioada minimă contractuală pentru abonamentul Start 95 este de 6 luni",
+          "Perioada de comercializare a ofertei: 03.03.2025 – 25.08.2025 (inclusiv)."
         ],
         "itemsConfigElse": [
-          "Oferta promo presupune acordarea unei reduceri 50 lei (abonament Star 150), 75 lei (abonament Liberty 190) sau 100 lei (abonament Liberty Plus 250) la plata lunară de abonament, în combinație cu serviciul de Internet Fix sau Internet Fix+IPTV și se oferă pe toată durata contractuală la conectarea/deținerea unei linii de Internet Fix sau Internet Fix+IPTV.",
-          "La promoție pot participa abonați noi, abonați portați, abonați existenți de telefonie mobilă cu perioada contractuală promoțională expirată și utilizatorii PrePay care migrează spre abonament.",
+          "Oferta promo presupune acordarea unei reduceri 50 lei (abonament Star 150), 75 lei (abonament Liberty 190) sau 100 lei (abonament Liberty Plus 250) reducere la plata lunară de abonament (în dependență de abonament), în combinație cu serviciul de Internet Fix sau Internet Fix+IPTV și se oferă pe toată durata contractuală la conectarea/deținerea unei linii de Internet Fix sau Internet Fix+IPTV.",
+          "La promoție pot participa abonați toți abonații noi, abonații portați, abonații existenți de telefonie mobilă cu perioada contractuală promoțională expirată și utilizatorii PrePay, care migrează spre abonament.",
           "Perioada de comercializare a ofertei: 03.03.2025 – 25.08.2025 (inclusiv)."
         ],
         "commonItems": [
-          "Oferta promo include și posibilitatea de a beneficia gratuit de serviciul „Alege Număr Frumos”. Oferirea gratuită a serviciului „Alege Număr Frumos” este disponibilă pentru categoria „Aur” sau „Argint”.",
-          "Perioada de comercializare a ofertei: 03.03.205 – 25.08.2025 (inclusiv).",
-          "Abonații conectați la abonamentele Liberty 190 și Liberty Plus 250 pot comunica în Roaming UE+SEE din contul minutelor naționale incluse în abonament. In plus, abonamentul Liberty 190 oferă 7 GB, iar abonamentul Liberty Plus 250 – 10 GB disponibili spre utilizare în Roaming în rețeaua operatorilor incluși în grupul UE+SEE.",
-          "Pentru apelurile internaționale, destinațiile spre rețeaua fixă și mobilă sunt următoarele țări: Marea Britanie, Franța, Germania, Italia, Spania, Romania, Israel, Rusia, Cehia, Ucraina.",
-          "Abonații conectați la abonamentul ”Liberty Plus 250” sunt obligați să evite folosirea abuzivă a serviciilor incluse în abonament. Prin ”folosire abuzivă a serviciilor incluse în abonament” se înțelege efectuarea de apeluri de ieșire spre „alți operatori naționali” și/sau expedierea SMS-urilor spre „alți operatori naționali” către mai mult de 200 numere telefonice unice, în decursul unei perioade de facturare, și/sau efectuarea, în decursul unei perioade de facturare, de apeluri nelimitate spre „alți operatori naționali” în volum ce depășește 3000 minute, cu condiția că numărul de minute de ieșire spre „alți operatori naționali” depășește de cel puțin două ori numărul minutelor de intrare dinspre „alți operatori naționali” în aceeași perioadă. Abonații care vor fi identificați că au utilizat abuziv serviciile incluse în abonamentul ”Liberty Plus 250” vor beneficia în continuare de conținutul standard de 1000 Minute și 245 SMS naționale la abonamentul respectiv;",
+          "Abonații conectați la abonamentele Liberty 190 și Liberty Plus 250 pot comunica în Roaming UE+SEE din contul minutelor naționale incluse în abonament. În plus, abonamentul Liberty 190 oferă 7 GB, iar abonamentul Liberty Plus 250 – 10 GB disponibili spre utilizare în Roaming în rețeaua operatorilor incluși în grupul UE+SEE.",
+          "Pentru apelurile internaționale, destinațiile spre rețeaua fixă și mobilă sunt următoarele țări: Marea Britanie, Franța, Germania, Italia, Spania, România, Israel, Rusia, Cehia, Ucraina.",
+          "Abonații conectați la abonamentul ”Liberty Plus 250” sunt obligați să evite folosirea abuzivă a serviciilor incluse în abonament. Prin ”folosire abuzivă” se înțelege efectuarea de apeluri de ieșire spre „alți operatori naționali” și/sau expedierea SMS-urilor spre „alți operatori naționali” către mai mult de 200 numere telefonice unice în decursul unei perioade de facturare, și/sau efectuarea, în decursul unei perioade de facturare, de apeluri nelimitate spre „alți operatori naționali” în volum ce depășește 3000 minute, cu condiția ca numărul de minute de ieșire să depășească de cel puțin două ori numărul minutelor de intrare dinspre „alți operatori naționali” în aceeași perioadă. Abonații care vor fi identificați cu utilizare abuzivă vor beneficia în continuare de 1000 minute și 245 SMS naționale.",
           "Viteza la internet se oferă în funcție de posibilitățile tehnice.",
-          "Traficul Internet va avea viteza de transfer a datelor la capacitate maximă download (descarcare) și de până la 512 Kbps upload (încarcare), în dependenta de opțiunile suplimentare activate – pentru tehnologia 3G, și la capacitate maximă download/upload (descarcare/încarcare) – pentru tehnologia 4G.",
-          "Rezoluțiunea anticipată (inclusiv migrarea spre PrePay, schimbul de abonament către unul cu valoare mai mica sau port out) până la expirarea perioadei minime contractuale implică achitarea unei plăți cu titlu de prejudiciu, conform formulei de calcul: 35% din plata de abonament * nr. de luni acordare reducere."
+          "Traficul Internet va avea viteza de transfer a datelor la capacitate maximă download (descărcare) și de până la 512 Kbps upload (încărcare), în dependență de opțiunile suplimentare activate – pentru tehnologia 3G, și la capacitate maximă download/upload – pentru tehnologia 4G.",
+          "Rezoluțiunea anticipată (inclusiv migrarea spre PrePay, schimbul de abonament către unul cu valoare mai mică sau port out) până la expirarea perioadei minime contractuale implică achitarea unei plăți cu titlu de prejudiciu, conform formulei: 35% din plata de abonament * numărul de luni acordare reducere."
         ]
       },
       "list": "Lista operatorilor în rețeaua cărora este disponibil conținutul Roaming UE:",
@@ -1941,11 +1948,11 @@
         "title": "Condiții speciale ale serviciului „Roaming Europa”",
         "items": [
           "Tarifarea apelurilor se efectuează per minut din prima secundă de apel.",
-          "Viteza de acces la internet depinde de condițiile de prestare și terminalul utilizat.",
-          "Tarifarea traficului internet în roaming se efectuează din momentul începerii sesiunii per 10 KByte.",
-          "După consumarea conținutului în Roaming UE, tarifele standard se aplică conform operatorului.",
-          "Serviciul Roaming UE+SEE trebuie activ pentru a beneficia de conținutul inclus.",
-          "Monitorizarea abuzului se face pe 4 luni consecutiv; consumul în roaming nu trebuie să depășească consumul național al aceluiași serviciu."
+          "Viteza de acces la internet depinde de condițiile de prestare a serviciului și de terminalul utilizat.",
+          "Tarifarea traficului Internet consumat se efectuează din momentul începerii sesiunii, per 10 KByte (1MB = 1024 KB).",
+          "După consumarea conținutului inclus în Roaming UE, convorbirile și traficul de internet sunt taxate conform tarifelor standard ale fiecărui operator.",
+          "Conținutul în Roaming UE+SEE poate fi utilizat doar dacă serviciul Roaming este activ.",
+          "Abonații la Liberty 190 și Liberty Plus 250 trebuie să evite folosirea abuzivă a serviciilor Roaming UE+SEE; se va monitoriza la fiecare 4 luni dacă traficul în roaming depășește traficul național pentru același serviciu."
         ]
       }
     },
@@ -2059,7 +2066,7 @@
     "promo_offer_1": "Oferta promoțională \"Smart TV / Tableta\"",
     "promo_offer_2": "Oferta promoțională \"Gaming Set\"",
     "lei_luna": "lei/lună",
-    "promo_text": "Oferta promotionala poate varia in dependenta de regiunea selectata",
+    "promo_text": "Oferta promoțională poate varia în dependență de regiunea selectată",
     "choose_best_subscription": "Alege cel mai avantajos abonament",
     "package_discount": "Reducere pachet",
     "smart_tv_tablet": "Smart TV / Tableta",

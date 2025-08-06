@@ -16,12 +16,14 @@ import Slider from 'react-slick';
 import Icon from '../../../../components/Icon.tsx';
 import TableRoaming from '../../../../components/Popups/TableRoaming.tsx';
 import Functions from '../../../../components/functions/Functions.tsx';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Popup from '../../../../components/Popup/Popup.tsx';
 import Toggle from '../../../../components/toggle/Toggle.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
 import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
 import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
+import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
+import ScrollableWrapper from '../../../../components/Popup/ScrollableWrapper.tsx';
 
 export default function Mobile() {
   const { t } = useTranslation();
@@ -52,6 +54,44 @@ export default function Mobile() {
   const handleClick = (type: 'sim' | 'esim') => {
     setSelected(type);
     // console.log(type);
+  };
+  const [activePopupSubConfig, setActivePopupSubConfig] = useState<string>('');
+  const [activeBuyConfig, setActiveBuyConfig] = useState<string>('');
+  const setPopup = (name: string, subname: string) => {
+    setActivePopup('1934567');
+    setActivePopupConfig(name);
+    setActivePopupSubConfig(subname);
+    setActiveBuyConfig(`(Device)`);
+  };
+  const settings_devices = {
+    dots: false,
+    infinite: true,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 951,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 651,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   const settings = {
@@ -113,6 +153,12 @@ export default function Mobile() {
     returnObjects: true,
   }) as string[];
   const warning3Items = t('tm.details.warning.items_3', {
+    returnObjects: true,
+  }) as string[];
+  const warning4Items = t('tm.details.warning.items_4', {
+    returnObjects: true,
+  }) as string[];
+  const warning5Items = t('tm.details.warning.items_5', {
     returnObjects: true,
   }) as string[];
 
@@ -895,16 +941,73 @@ export default function Mobile() {
             ))}
           </ul>
         </DetailsBlock>
-
-        <DetailsBlock title={t('tm.details.conditii.title')}>
+        <DetailsBlock title={t('tm.details.conditii.title_2')}>
           <ul>
             {(activeConfig === '1' ? cond1 : cond2).map((text, i) => (
               <li key={i}>{text}</li>
             ))}
+          </ul>
+        </DetailsBlock>
+        <DetailsBlock title={t('tm.details.conditii.title')}>
+          <ul>
             {common.map((text, i) => (
               <li key={i}>{text}</li>
             ))}
           </ul>
+          <b>Tarife extra abonament:</b>
+          <ScrollableWrapper>
+            <table className={`popup_table ${styles.table_popup}`}>
+              <thead>
+                <th>Denumire abonament</th>
+                <th>Apel naț. (lei/min)</th>
+                <th>SMS naț. (lei/SMS)</th>
+                <th>SMS Internaț. (lei/SMS)</th>
+                <th>Trafic internet (lei/MB)</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Start 95</td>
+                  <td>2,00</td>
+                  <td>0,50</td>
+                  <td>2,00</td>
+                  <td>0,20</td>
+                </tr>
+                <tr>
+                  <td>Star 120</td>
+                  <td>2,00</td>
+                  <td>0,50</td>
+                  <td>2,00</td>
+                  <td>0,20</td>
+                </tr>
+                <tr>
+                  <td>Star 150</td>
+                  <td>2,00</td>
+                  <td>0,50</td>
+                  <td>2,00</td>
+                  <td>0,20</td>
+                </tr>
+                <tr>
+                  <td>Liberty 190</td>
+                  <td>2,00</td>
+                  <td>0,50</td>
+                  <td>2,00</td>
+                  <td>0,20</td>
+                </tr>
+                <tr>
+                  <td>Liberty Plus 250</td>
+                  <td>2,00</td>
+                  <td>0,50</td>
+                  <td>2,00</td>
+                  <td>
+                    0,00<sup>**</sup>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </ScrollableWrapper>
+          ** După consumarea traficului internet inclus în abonamentul “Liberty
+          Plus 250” traficul extra abonament va fi gratuit, însă viteza de acces
+          download/upload va fi de până la 512/512 kbps;
         </DetailsBlock>
 
         <DetailsBlock title={t('tm.details.roaming.title')}>
@@ -940,11 +1043,53 @@ export default function Mobile() {
             {warning3Items.map((text, i) => (
               <li key={i}>{text}</li>
             ))}
+            <ul>
+              {warning4Items.map((text, i) => (
+                <li key={i}>{text}</li>
+              ))}
+            </ul>
+            {warning5Items.map((text, i) => (
+              <li key={i}>{text}</li>
+            ))}
           </ul>
-
-          {t('tm.details.warning.warning_dis')}
         </DetailsBlock>
       </Details>
+
+      <div className={`title_3  ${styles.title2} ${styles.title2_2}`}>
+        {t('combo_home.device_one_leu')}
+      </div>
+
+      <div className={`sub_title ${styles.sub_title1}`}>
+        {t('combo_home.choose_offer_without_discount')}
+      </div>
+
+      <Slider {...settings_devices} className={styles.tm_carousell}>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={327564511}
+            image="/images/shop/323564512.png"
+            price={1}
+            old_price={3000}
+            reducere="- 99%"
+            title="Hisense "
+            subtitle="32A4N (FHD)"
+            characteristics='Direct LED /Full HD /32"'
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('Hisense 32A4N', ' ');
+            }}
+          />
+        </div>
+      </Slider>
+      <div className={styles.devices_disclailmer}>
+        <span>
+          {' '}
+          <sup>*</sup>
+          {t('combo_home.stock_offer')}
+        </span>
+      </div>
 
       <Functions
         style_type={'blue'}
@@ -1112,6 +1257,69 @@ export default function Mobile() {
                 Câmpurile marcate cu * sunt obligatorii.
               </div>
             </div>
+          </div>
+        )}
+      </Popup>
+      <Popup
+        id="1934567"
+        width="550px"
+        isVisible={activePopup === '1934567'}
+        onClose={handlePopupClose}
+        className={styles.popupBuy_device}
+        key={activePopup ?? 'popup-closed'}
+      >
+        {/*<div className={styles.popup_div_title}>*/}
+        {/*  Mulțumim că ai ales Moldtelecom*/}
+        {/*</div>*/}
+        {error ? (
+          <div className={styles.buy_popup_error}>
+            <Icon
+              type={'repair'}
+              size={'48px'}
+              color={'var(--theme_primary_color_blue_3)'}
+            />
+            <span
+              dangerouslySetInnerHTML={{ __html: t('double.request_error') }}
+            />
+          </div>
+        ) : submitted ? (
+          <div className={styles.buy_popup_success}>
+            <Icon
+              type={'tick'}
+              size={'48px'}
+              color={'var(--theme_primary_color_blue_3)'}
+            />
+            <span
+              dangerouslySetInnerHTML={{ __html: t('double.request_success') }}
+            />
+          </div>
+        ) : (
+          <div className={styles.buy_popup_2}>
+            <div>{t('double.device_chosen')}</div>
+            <div className={styles.selected_popup_subcription}>
+              <div className={styles.popup_selected}>
+                {activePopupConfig}&nbsp;<span>{activePopupSubConfig}</span>
+              </div>
+            </div>
+
+            <BuyForm
+              config={activeBuyConfig}
+              tag={'double'}
+              service={'campain[double_2025_b2s], place[abonament]'}
+              onSuccess={() => {
+                setSubmitted(true);
+                setError(false);
+              }}
+              onError={() => {
+                setError(true);
+              }}
+            />
+            <div
+              className={styles.popup_discalmer}
+              dangerouslySetInnerHTML={{
+                __html: t('double.request_disclaimer'),
+              }}
+            />
           </div>
         )}
       </Popup>
