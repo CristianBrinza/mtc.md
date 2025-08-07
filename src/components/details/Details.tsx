@@ -85,19 +85,26 @@ const Details: React.FC<DetailsProps> = ({
   }, [count]);
 
   const toggleBlock = (index: number) => {
+    // figure out the next open/closed state
+    const nextOpen = !openBlocks[index];
+
+    // update state
     setOpenBlocks(prev => {
       const next = [...prev];
-      next[index] = !next[index];
+      next[index] = nextOpen;
       return next;
     });
 
+    // now fire trackEvent exactly once
     const childArray = React.Children.toArray(children);
     const child = childArray[index];
     if (React.isValidElement<DetailsBlockProps>(child)) {
       const label = String(child.props.title)
         .replace(/\s+/g, '_')
         .toLowerCase();
-      trackEvent(`${trackPrefix}_detalii+${label}`);
+      trackEvent(
+        `${trackPrefix}_detalii_${label}_${nextOpen ? 'open' : 'closed'}`
+      );
     }
   };
 

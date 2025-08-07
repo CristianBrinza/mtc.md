@@ -1301,7 +1301,9 @@ export default function Mobile() {
                 )}
               </div>
 
-              <div className={styles.popup_optional}>{t('tm.popup.optional')}</div>
+              <div className={styles.popup_optional}>
+                {t('tm.popup.optional')}
+              </div>
               <div className={styles.popup_optional_block}>
                 <div className={styles.popup_sim_block}>
                   <div
