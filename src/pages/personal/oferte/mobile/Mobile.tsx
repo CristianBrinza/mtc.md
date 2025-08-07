@@ -333,13 +333,13 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>250 min</b>
+                    <b>250 {t('tm.min')}</b>
                     <br />
                     {t('tm.nationale')}
                   </span>{' '}
                   +
                   <span>
-                    <b>25 min </b>
+                    <b>25 {t('tm.min')} </b>
                     <br /> {t('tm.internationale')}
                   </span>
                 </div>
@@ -452,13 +452,13 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>350 min</b>
+                    <b>350 {t('tm.min')}</b>
                     <br />
                     {t('tm.nationale')}
                   </span>{' '}
                   +
                   <span>
-                    <b>35 min </b>
+                    <b>35 {t('tm.min')} </b>
                     <br /> {t('tm.internationale')}
                   </span>
                 </div>
@@ -574,13 +574,13 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>450 min</b>
+                    <b>450 {t('tm.min')}</b>
                     <br />
                     {t('tm.nationale')}
                   </span>{' '}
                   +
                   <span>
-                    <b>45 min </b>
+                    <b>45 {t('tm.min')} </b>
                     <br /> {t('tm.internationale')}
                   </span>
                 </div>
@@ -700,13 +700,13 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>850 min</b>
+                    <b>850 {t('tm.min')}</b>
                     <br />
                     {t('tm.nationale')}
                   </span>{' '}
                   +
                   <span>
-                    <b>85 min </b>
+                    <b>85 {t('tm.min')} </b>
                     <br /> {t('tm.internationale')}
                   </span>
                 </div>
@@ -754,7 +754,7 @@ export default function Mobile() {
                   </span>{' '}
                   +
                   <span>
-                    <b>850 min </b>
+                    <b>850 {t('tm.min')} </b>
                     <br /> {t('tm.roaming_eu')}
                   </span>
                 </div>
@@ -859,7 +859,7 @@ export default function Mobile() {
                   </span>{' '}
                   +
                   <span>
-                    <b>50 min </b>
+                    <b>50 {t('tm.min')} </b>
                     <br /> {t('tm.internationale')}
                   </span>
                 </div>
