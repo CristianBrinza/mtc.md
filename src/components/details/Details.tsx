@@ -68,9 +68,10 @@ export const DetailsBlock: React.FC<DetailsBlockProps> = ({
  */
 interface DetailsProps {
   children: React.ReactNode;
+  trackPrefix?: string;
 }
 
-const Details: React.FC<DetailsProps> = ({ children }) => {
+const Details: React.FC<DetailsProps> = ({ children, trackPrefix = 'combo' }) => {
   // const { t } = useTranslation();
   const count = React.Children.count(children);
   const [openBlocks, setOpenBlocks] = useState<boolean[]>([]);
@@ -93,7 +94,7 @@ const Details: React.FC<DetailsProps> = ({ children }) => {
       const label = String(child.props.title)
         .replace(/\s+/g, '_')
         .toLowerCase();
-      trackEvent(`combo_detalii+${label}`);
+      trackEvent(`${trackPrefix}_detalii+${label}`);
     }
   };
 

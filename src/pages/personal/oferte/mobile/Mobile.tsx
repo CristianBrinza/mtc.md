@@ -24,6 +24,7 @@ import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
 import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
 import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 import ScrollableWrapper from '../../../../components/Popup/ScrollableWrapper.tsx';
+import { trackEvent } from '../../../../initAnalytics.ts';
 
 export default function Mobile() {
   const { t } = useTranslation();
@@ -53,11 +54,12 @@ export default function Mobile() {
 
   const handleClick = (type: 'sim' | 'esim') => {
     setSelected(type);
-    // console.log(type);
+    trackEvent('tm_sim_select', type);
   };
   const [activePopupSubConfig, setActivePopupSubConfig] = useState<string>('');
   const [activeBuyConfig, setActiveBuyConfig] = useState<string>('');
   const setPopup = (name: string, subname: string) => {
+    trackEvent('tm_device_buy', `${name} ${subname}`);
     setActivePopup('1934567');
     setActivePopupConfig(name);
     setActivePopupSubConfig(subname);
@@ -188,6 +190,7 @@ export default function Mobile() {
       <div className={styles.select_type}>
         <div
           className={`${styles.select_type_card} ${styles.select_type_card_active}`}
+          onClick={() => trackEvent('tm_select_type_abonament')}
         >
           <div className={styles.select_type_card_top}>
             <Icon
@@ -201,9 +204,10 @@ export default function Mobile() {
         </div>
         <div
           className={styles.select_type_card}
-          onClick={() =>
-            goToPage(`https://www.moldtelecom.md/${t('lang')}/personal/Portare`)
-          }
+          onClick={() => {
+            trackEvent('tm_select_type_portare');
+            goToPage(`https://www.moldtelecom.md/${t('lang')}/personal/Portare`);
+          }}
         >
           <div className={styles.select_type_card_top}>
             <Icon
@@ -217,11 +221,12 @@ export default function Mobile() {
         </div>
         <div
           className={styles.select_type_card}
-          onClick={() =>
+          onClick={() => {
+            trackEvent('tm_select_type_prepay');
             goToPage(
               `https://www.moldtelecom.md/${t('lang')}/personal/prepay-cartela`
-            )
-          }
+            );
+          }}
         >
           <div className={styles.select_type_card_top}>
             <Icon
@@ -241,6 +246,7 @@ export default function Mobile() {
 
       <div className={`${styles.btns_select}`}>
         <Button
+          id="tm_not_client"
           color={'var(--theme_primary_color_blue_4)'}
           bgcolor={
             activeConfig == '1'
@@ -257,6 +263,7 @@ export default function Mobile() {
           {t('tm.btn_not_client')}
         </Button>
         <Button
+          id="tm_client"
           color={'var(--theme_primary_color_blue_4)'}
           bgcolor={
             activeConfig == '2'
@@ -378,6 +385,7 @@ export default function Mobile() {
                 </div>
               </div>
               <Button
+                id="tm_start95_order"
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
@@ -488,6 +496,7 @@ export default function Mobile() {
                 </div>
               </div>
               <Button
+                id="tm_star120_order"
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
@@ -609,6 +618,7 @@ export default function Mobile() {
                 </div>
               </div>
               <Button
+                id="tm_star150_order"
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
@@ -759,6 +769,7 @@ export default function Mobile() {
                 </div>
               </div>
               <Button
+                id="tm_liberty190_order"
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
@@ -908,6 +919,7 @@ export default function Mobile() {
                 </div>
               </div>
               <Button
+                id="tm_liberty250plus_order"
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
@@ -933,7 +945,7 @@ export default function Mobile() {
           </div>
         </div>
       </Slider>
-      <Details>
+      <Details trackPrefix="tm">
         <DetailsBlock title={t('tm.details.promo.title')}>
           <ul>
             {promoItems.map((text, i) => (
@@ -1135,19 +1147,35 @@ export default function Mobile() {
       <MyApp style_type={'blue_white'} className={styles.myapp} />
 
       <FaqV2 max_faq={6}>
-        <FaqQAV2 id_faq="112489310" question={t('tm.faq.112489310.question')}>
+        <FaqQAV2
+          trackPrefix="tm"
+          id_faq="112489310"
+          question={t('tm.faq.112489310.question')}
+        >
           {t('tm.faq.112489310.answer')}
         </FaqQAV2>
 
-        <FaqQAV2 id_faq="112489311" question={t('tm.faq.112489311.question')}>
+        <FaqQAV2
+          trackPrefix="tm"
+          id_faq="112489311"
+          question={t('tm.faq.112489311.question')}
+        >
           {t('tm.faq.112489311.answer')}
         </FaqQAV2>
 
-        <FaqQAV2 id_faq="112489312" question={t('tm.faq.112489312.question')}>
+        <FaqQAV2
+          trackPrefix="tm"
+          id_faq="112489312"
+          question={t('tm.faq.112489312.question')}
+        >
           {t('tm.faq.112489312.answer')}
         </FaqQAV2>
 
-        <FaqQAV2 id_faq="112489313" question={t('tm.faq.112489313.question')}>
+        <FaqQAV2
+          trackPrefix="tm"
+          id_faq="112489313"
+          question={t('tm.faq.112489313.question')}
+        >
           <span
             dangerouslySetInnerHTML={{
               __html: t('tm.faq.112489313.answer'),
@@ -1155,19 +1183,35 @@ export default function Mobile() {
           />
         </FaqQAV2>
 
-        <FaqQAV2 id_faq="112489314" question={t('tm.faq.112489314.question')}>
+        <FaqQAV2
+          trackPrefix="tm"
+          id_faq="112489314"
+          question={t('tm.faq.112489314.question')}
+        >
           {t('tm.faq.112489314.answer')}
         </FaqQAV2>
 
-        <FaqQAV2 id_faq="112489315" question={t('tm.faq.112489315.question')}>
+        <FaqQAV2
+          trackPrefix="tm"
+          id_faq="112489315"
+          question={t('tm.faq.112489315.question')}
+        >
           {t('tm.faq.112489315.answer')}
         </FaqQAV2>
 
-        <FaqQAV2 id_faq="112489316" question={t('tm.faq.112489316.question')}>
+        <FaqQAV2
+          trackPrefix="tm"
+          id_faq="112489316"
+          question={t('tm.faq.112489316.question')}
+        >
           {t('tm.faq.112489316.answer')}
         </FaqQAV2>
 
-        <FaqQAV2 id_faq="112489317" question={t('tm.faq.112489317.question')}>
+        <FaqQAV2
+          trackPrefix="tm"
+          id_faq="112489317"
+          question={t('tm.faq.112489317.question')}
+        >
           {t('tm.faq.112489317.answer')}
         </FaqQAV2>
 
@@ -1175,7 +1219,11 @@ export default function Mobile() {
         {/*  {t('tm.faq.112489318.answer')}*/}
         {/*</FaqQAV2>*/}
 
-        <FaqQAV2 id_faq="112489319" question={t('tm.faq.112489319.question')}>
+        <FaqQAV2
+          trackPrefix="tm"
+          id_faq="112489319"
+          question={t('tm.faq.112489319.question')}
+        >
           {t('tm.faq.112489319.answer')}
         </FaqQAV2>
       </FaqV2>
@@ -1266,7 +1314,10 @@ export default function Mobile() {
                 <div className={styles.popup_option}>
                   <Toggle
                     checked={testGratis}
-                    onChange={() => setTestGratis(prev => !prev)}
+                    onChange={() => {
+                      setTestGratis(prev => !prev);
+                      trackEvent('tm_test_gratis_toggle');
+                    }}
                   />
                   <span>
                     {' '}

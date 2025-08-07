@@ -7,9 +7,15 @@ interface FaqQAProps {
   children: React.ReactNode;
   question: string;
   id_faq: string;
+  trackPrefix?: string;
 }
 
-const FaqQAV2: React.FC<FaqQAProps> = ({ children, question, id_faq }) => {
+const FaqQAV2: React.FC<FaqQAProps> = ({
+  children,
+  question,
+  id_faq,
+  trackPrefix = 'combo',
+}) => {
   const [activeFAQ, setActiveFAQ] = useState(false);
   const [count, setCount] = useState<number>(0);
   const [hasClicked, setHasClicked] = useState<boolean>(false);
@@ -29,7 +35,7 @@ const FaqQAV2: React.FC<FaqQAProps> = ({ children, question, id_faq }) => {
   const toggleFAQ = () => {
     setActiveFAQ(prev => !prev);
 
-    trackEvent(`combo faq${id_faq}`);
+    trackEvent(`${trackPrefix} faq${id_faq}`);
 
     // Only send increment once per page load
     if (!hasClicked) {
