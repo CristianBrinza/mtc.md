@@ -1956,6 +1956,53 @@
         ]
       }
     },
+    "tags": {
+      "budget": "Budget",
+      "new": "New",
+      "top_sales": "Top Sales",
+      "roaming": "Roaming",
+      "top": "Top"
+    },
+    "plan_names": {
+      "start_95": "Start 95",
+      "star_120": "Star 120",
+      "star_150": "Star 150",
+      "liberty_190": "Liberty 190",
+      "liberty_250_plus": "Liberty 250+",
+      "liberty_plus_250": "Liberty Plus 250"
+    },
+    "nelimitat": "Nelimitat",
+    "min_sms_retea": "min. și SMS în rețea",
+    "nationale": "naționale",
+    "min_nationale": "min naționale",
+    "min_roaming_eu": "min Roaming EU",
+    "internationale": "internaționale",
+    "trafic_internet": "Trafic internet",
+    "roaming_eu": "Roaming EU",
+    "table": {
+      "extra_tariff_title": "Tarife extra abonament:",
+      "headers": {
+        "plan": "Denumire abonament",
+        "call_nat": "Apel naț. (lei/min)",
+        "sms_nat": "SMS naț. (lei/SMS)",
+        "sms_int": "SMS Internaț. (lei/SMS)",
+        "internet": "Trafic internet (lei/MB)"
+      },
+      "footnote": "** După consumarea traficului internet inclus în abonamentul “Liberty Plus 250” traficul extra abonament va fi gratuit, însă viteza de acces download/upload va fi de până la 512/512 kbps;"
+    },
+    "popup": {
+      "error1": "A apărut o eroare la trimiterea cererii.",
+      "error2": "Te rugăm să încerci din nou.",
+      "success1": "Solicitarea ta a fost trimisă cu succes!",
+      "success2": "Un consultant Moldtelecom te va contacta în curând.",
+      "chosen": "Abonamentul ales:",
+      "optional": "Optional:",
+      "test_prefix": "Testeaza o lună",
+      "test_bold": "GRATUIT",
+      "disclaimer1": "După expedierea solicitării vei fi apelat de un consultant Moldtelecom. Mulțumim!",
+      "disclaimer2": "Solicitările parvenite duminică, vor fi procesate luni.",
+      "disclaimer3": "Câmpurile marcate cu * sunt obligatorii."
+    },
     "35_proc": "35% reducere pentru 2 ani",
     "lei_reducere": "lei reducere",
     "faq": {

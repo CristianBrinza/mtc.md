@@ -303,10 +303,12 @@ export default function Mobile() {
                 className={styles.mobile_carousell_tag}
                 style={{ background: '#E7EBFF' }}
               >
-                Budget
+                {t('tm.tag_budget')}
               </div>
             </div>
-            <div className={styles.mobile_carousell_title}>Start 95</div>
+            <div className={styles.mobile_carousell_title}>
+              {t('tm.plan_names.start_95')}
+            </div>
 
             <div className={styles.tm_carousell_block_rows}>
               <div className={styles.tm_carousell_block_row}>
@@ -317,8 +319,8 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>Nelimitat</b> <br />
-                  min. și SMS în rețea
+                  <b>{t('tm.nelimitat')}</b> <br />
+                  {t('tm.min_sms_retea')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -333,12 +335,12 @@ export default function Mobile() {
                     {' '}
                     <b>250 min</b>
                     <br />
-                    naționale
+                    {t('tm.nationale')}
                   </span>{' '}
                   +
                   <span>
                     <b>25 min </b>
-                    <br /> internaționale
+                    <br /> {t('tm.internationale')}
                   </span>
                 </div>
               </div>
@@ -350,7 +352,7 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>25 GB</b> <br /> Trafic internet
+                  <b>25 GB</b> <br /> {t('tm.trafic_internet')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -361,7 +363,7 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>25 SMS</b> <br /> naționale
+                  <b>25 SMS</b> <br /> {t('tm.nationale')}
                 </span>
               </div>
             </div>
@@ -413,15 +415,19 @@ export default function Mobile() {
         <div>
           <div className={styles.mobile_carousell_block}>
             <div className={styles.mobile_carousell_tags}>
-              <div className={styles.mobile_carousell_tag}>New</div>
+              <div className={styles.mobile_carousell_tag}>
+                {t('tm.tag_new')}
+              </div>
               <div
                 className={styles.mobile_carousell_tag}
                 style={{ background: '#E7EBFF' }}
               >
-                Top Sales
+                {t('tm.tag_top_sales')}
               </div>
             </div>
-            <div className={styles.mobile_carousell_title}>Star 120</div>
+            <div className={styles.mobile_carousell_title}>
+              {t('tm.plan_names.star_120')}
+            </div>
 
             <div className={styles.tm_carousell_block_rows}>
               <div className={styles.tm_carousell_block_row}>
@@ -432,8 +438,8 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>Nelimitat</b> <br />
-                  min. și SMS în rețea
+                  <b>{t('tm.nelimitat')}</b> <br />
+                  {t('tm.min_sms_retea')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -448,12 +454,12 @@ export default function Mobile() {
                     {' '}
                     <b>350 min</b>
                     <br />
-                    naționale
+                    {t('tm.nationale')}
                   </span>{' '}
                   +
                   <span>
                     <b>35 min </b>
-                    <br /> internaționale
+                    <br /> {t('tm.internationale')}
                   </span>
                 </div>
               </div>
@@ -465,7 +471,7 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>35 GB</b> <br /> Trafic internet
+                  <b>35 GB</b> <br /> {t('tm.trafic_internet')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -476,7 +482,7 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>35 SMS</b> <br /> naționale
+                  <b>35 SMS</b> <br /> {t('tm.nationale')}
                 </span>
               </div>
             </div>
@@ -538,10 +544,12 @@ export default function Mobile() {
                 className={styles.mobile_carousell_tag}
                 style={{ background: '#E7EBFF', opacity: '0' }}
               >
-                Roaming
+                {t('tm.tag_roaming')}
               </div>
             </div>
-            <div className={styles.mobile_carousell_title}>Star 150</div>
+            <div className={styles.mobile_carousell_title}>
+              {t('tm.plan_names.star_150')}
+            </div>
 
             <div className={styles.tm_carousell_block_rows}>
               <div className={styles.tm_carousell_block_row}>
@@ -552,8 +560,8 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>Nelimitat</b> <br />
-                  min. și SMS în rețea
+                  <b>{t('tm.nelimitat')}</b> <br />
+                  {t('tm.min_sms_retea')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -568,12 +576,12 @@ export default function Mobile() {
                     {' '}
                     <b>450 min</b>
                     <br />
-                    naționale
+                    {t('tm.nationale')}
                   </span>{' '}
                   +
                   <span>
                     <b>45 min </b>
-                    <br /> internaționale
+                    <br /> {t('tm.internationale')}
                   </span>
                 </div>
               </div>
@@ -585,7 +593,7 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>45 GB</b> <br /> Trafic internet
+                  <b>45 GB</b> <br /> {t('tm.trafic_internet')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -596,7 +604,7 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>45 SMS</b> <br /> naționale
+                  <b>45 SMS</b> <br /> {t('tm.nationale')}
                 </span>
               </div>
             </div>
@@ -662,10 +670,12 @@ export default function Mobile() {
                 className={styles.mobile_carousell_tag}
                 style={{ background: '#E7EBFF' }}
               >
-                Roaming
+                {t('tm.tag_roaming')}
               </div>
             </div>
-            <div className={styles.mobile_carousell_title}>Liberty 190</div>
+            <div className={styles.mobile_carousell_title}>
+              {t('tm.plan_names.liberty_190')}
+            </div>
 
             <div className={styles.tm_carousell_block_rows}>
               <div className={styles.tm_carousell_block_row}>
@@ -676,8 +686,8 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>Nelimitat</b> <br />
-                  min. și SMS în rețea
+                  <b>{t('tm.nelimitat')}</b> <br />
+                  {t('tm.min_sms_retea')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -692,12 +702,12 @@ export default function Mobile() {
                     {' '}
                     <b>850 min</b>
                     <br />
-                    naționale
+                    {t('tm.nationale')}
                   </span>{' '}
                   +
                   <span>
                     <b>85 min </b>
-                    <br /> internaționale
+                    <br /> {t('tm.internationale')}
                   </span>
                 </div>
               </div>
@@ -709,7 +719,7 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>85 GB</b> <br /> Trafic internet
+                  <b>85 GB</b> <br /> {t('tm.trafic_internet')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -720,7 +730,7 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>85 SMS</b> <br /> naționale
+                  <b>85 SMS</b> <br /> {t('tm.nationale')}
                 </span>
               </div>
               <div
@@ -740,12 +750,12 @@ export default function Mobile() {
                     {' '}
                     <b>7 GB</b>
                     <br />
-                    Roaming EU
+                    {t('tm.roaming_eu')}
                   </span>{' '}
                   +
                   <span>
                     <b>850 min </b>
-                    <br /> Roaming EU
+                    <br /> {t('tm.roaming_eu')}
                   </span>
                 </div>
               </div>
@@ -806,15 +816,19 @@ export default function Mobile() {
         <div>
           <div className={styles.mobile_carousell_block}>
             <div className={styles.mobile_carousell_tags}>
-              <div className={styles.mobile_carousell_tag}>Top</div>
+              <div className={styles.mobile_carousell_tag}>
+                {t('tm.tag_top')}
+              </div>
               <div
                 className={styles.mobile_carousell_tag}
                 style={{ background: '#E7EBFF' }}
               >
-                Roaming
+                {t('tm.tag_roaming')}
               </div>
             </div>
-            <div className={styles.mobile_carousell_title}>Liberty 250+</div>
+            <div className={styles.mobile_carousell_title}>
+              {t('tm.plan_names.liberty_250_plus')}
+            </div>
 
             <div className={styles.tm_carousell_block_rows}>
               <div className={styles.tm_carousell_block_row}>
@@ -825,8 +839,8 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>Nelimitat</b> <br />
-                  min. și SMS în rețea
+                  <b>{t('tm.nelimitat')}</b> <br />
+                  {t('tm.min_sms_retea')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -839,14 +853,14 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>Nelimitat</b>
+                    <b>{t('tm.nelimitat')}</b>
                     <br />
-                    min naționale
+                    {t('tm.min_nationale')}
                   </span>{' '}
                   +
                   <span>
                     <b>50 min </b>
-                    <br /> internaționale
+                    <br /> {t('tm.internationale')}
                   </span>
                 </div>
               </div>
@@ -858,7 +872,7 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>Nelimitat GB</b> <br /> Trafic internet
+                  <b>{t('tm.nelimitat')} GB</b> <br /> {t('tm.trafic_internet')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -869,7 +883,7 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>Nelimitat SMS</b> <br /> naționale
+                  <b>{t('tm.nelimitat')} SMS</b> <br /> {t('tm.nationale')}
                 </span>
               </div>
               <div
@@ -889,13 +903,13 @@ export default function Mobile() {
                     {' '}
                     <b>10 GB</b>
                     <br />
-                    Roaming EU
+                    {t('tm.roaming_eu')}
                   </span>{' '}
                   +
                   <span>
-                    <b>Nelimitat </b>
+                    <b>{t('tm.nelimitat')} </b>
                     <br />
-                    min Roaming EU
+                    {t('tm.min_roaming_eu')}
                   </span>
                 </div>
               </div>
@@ -968,47 +982,47 @@ export default function Mobile() {
               <li key={i}>{text}</li>
             ))}
           </ul>
-          <b>Tarife extra abonament:</b>
+          <b>{t('tm.table.extra_tariff_title')}</b>
           <ScrollableWrapper>
             <table className={`popup_table ${styles.table_popup}`}>
               <thead>
-                <th>Denumire abonament</th>
-                <th>Apel naț. (lei/min)</th>
-                <th>SMS naț. (lei/SMS)</th>
-                <th>SMS Internaț. (lei/SMS)</th>
-                <th>Trafic internet (lei/MB)</th>
+                <th>{t('tm.table.headers.plan')}</th>
+                <th>{t('tm.table.headers.call_nat')}</th>
+                <th>{t('tm.table.headers.sms_nat')}</th>
+                <th>{t('tm.table.headers.sms_int')}</th>
+                <th>{t('tm.table.headers.internet')}</th>
               </thead>
               <tbody>
                 <tr>
-                  <td>Start 95</td>
+                  <td>{t('tm.plan_names.start_95')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
                   <td>0,20</td>
                 </tr>
                 <tr>
-                  <td>Star 120</td>
+                  <td>{t('tm.plan_names.star_120')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
                   <td>0,20</td>
                 </tr>
                 <tr>
-                  <td>Star 150</td>
+                  <td>{t('tm.plan_names.star_150')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
                   <td>0,20</td>
                 </tr>
                 <tr>
-                  <td>Liberty 190</td>
+                  <td>{t('tm.plan_names.liberty_190')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
                   <td>0,20</td>
                 </tr>
                 <tr>
-                  <td>Liberty Plus 250</td>
+                  <td>{t('tm.plan_names.liberty_plus_250')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
@@ -1019,9 +1033,7 @@ export default function Mobile() {
               </tbody>
             </table>
           </ScrollableWrapper>
-          ** După consumarea traficului internet inclus în abonamentul “Liberty
-          Plus 250” traficul extra abonament va fi gratuit, însă viteza de acces
-          download/upload va fi de până la 512/512 kbps;
+          {t('tm.table.footnote')}
         </DetailsBlock>
 
         <DetailsBlock title={t('tm.details.roaming.title')}>
@@ -1251,8 +1263,8 @@ export default function Mobile() {
               color={'var(--theme_primary_color_blue_3)'}
             />
             <span>
-              A apărut o eroare la trimiterea cererii. <br />
-              Te rugăm să încerci din nou.
+              {t('tm.popup.error1')} <br />
+              {t('tm.popup.error2')}
             </span>
           </div>
         ) : submitted ? (
@@ -1263,8 +1275,8 @@ export default function Mobile() {
               color={'var(--theme_primary_color_blue_3)'}
             />
             <span>
-              Solicitarea ta a fost trimisă cu succes! <br />
-              Un consultant Moldtelecom te va contacta în curând.
+              {t('tm.popup.success1')} <br />
+              {t('tm.popup.success2')}
             </span>
           </div>
         ) : (
@@ -1278,7 +1290,7 @@ export default function Mobile() {
               />
             </div>
             <div className={styles.popupBuy_left}>
-              <div>Abonamentul ales:</div>
+              <div>{t('tm.popup.chosen')}</div>
               <div className={styles.selected_popup_subcription}>
                 <div className={styles.popup_selected}>{activePopupConfig}</div>
 
@@ -1289,7 +1301,7 @@ export default function Mobile() {
                 )}
               </div>
 
-              <div className={styles.popup_optional}>Optional:</div>
+              <div className={styles.popup_optional}>{t('tm.popup.optional')}</div>
               <div className={styles.popup_optional_block}>
                 <div className={styles.popup_sim_block}>
                   <div
@@ -1323,7 +1335,7 @@ export default function Mobile() {
                   />
                   <span>
                     {' '}
-                    Testeaza o lună <b>GRATUIT</b>
+                    {t('tm.popup.test_prefix')} <b>{t('tm.popup.test_bold')}</b>
                   </span>
                 </div>
               </div>
@@ -1341,10 +1353,8 @@ export default function Mobile() {
                 }}
               />
               <div className={styles.popup_discalmer}>
-                După expedierea solicitării vei fi apelat de un consultant
-                Moldtelecom. Mulțumim! <br />
-                Solicitările parvenite duminică, vor fi procesate luni. |
-                Câmpurile marcate cu * sunt obligatorii.
+                {t('tm.popup.disclaimer1')} <br />
+                {t('tm.popup.disclaimer2')} | {t('tm.popup.disclaimer3')}
               </div>
             </div>
           </div>
