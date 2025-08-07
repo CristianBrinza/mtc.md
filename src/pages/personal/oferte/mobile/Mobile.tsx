@@ -206,7 +206,9 @@ export default function Mobile() {
           className={styles.select_type_card}
           onClick={() => {
             trackEvent('tm_select_type_portare');
-            goToPage(`https://www.moldtelecom.md/${t('lang')}/personal/Portare`);
+            goToPage(
+              `https://www.moldtelecom.md/${t('lang')}/personal/Portare`
+            );
           }}
         >
           <div className={styles.select_type_card_top}>

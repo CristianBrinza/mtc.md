@@ -35,7 +35,13 @@ const FaqQAV2: React.FC<FaqQAProps> = ({
   const toggleFAQ = () => {
     setActiveFAQ(prev => !prev);
 
-    trackEvent(`${trackPrefix} faq${id_faq}`);
+    // trackEvent(`${trackPrefix} faq${id_faq}`);
+    // determine next open/closed state
+    const nextOpen = !activeFAQ;
+    setActiveFAQ(nextOpen);
+
+    // fire separate events for open vs. close
+    trackEvent(`${trackPrefix}_faq${id_faq}_${nextOpen ? 'open' : 'closed'}`);
 
     // Only send increment once per page load
     if (!hasClicked) {

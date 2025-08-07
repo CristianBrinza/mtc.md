@@ -71,7 +71,10 @@ interface DetailsProps {
   trackPrefix?: string;
 }
 
-const Details: React.FC<DetailsProps> = ({ children, trackPrefix = 'combo' }) => {
+const Details: React.FC<DetailsProps> = ({
+  children,
+  trackPrefix = 'combo',
+}) => {
   // const { t } = useTranslation();
   const count = React.Children.count(children);
   const [openBlocks, setOpenBlocks] = useState<boolean[]>([]);
