@@ -2339,5 +2339,20 @@
         "transfer_subscription_answer": "Da. Puteți solicita transferul abonamentului către un alt titular prin completarea formularului de pe moldtelecom.md/cereri. Un consultant vă va contacta pentru confirmare și detalii."
       }
     }
+  },
+  "portare": {
+    "breadcrumb": {
+      "promo": "Promo",
+      "portare": "Portare"
+    },
+    "conditii": {
+      "config_1": [
+        "Oferta promo presupune acordarea unui smartphone OPPO A40 la preț de 1 leu și alte gadget-uri la reducere, în limita stocului disponibil, exclusiv pentru abonații portați.",
+        "Oferta este destinată pentru clienții noi, la conectare, portare din altă rețea sau pentru cei existenți, la reperfectarea contractului sau migrarea de la Prepay.",
+        "Perioada de comercializare a ofertei: 03.03.2025 – 25.08.2025 (inclusiv)."
+      ]
+    },
+    "discount": "Reducere",
+    "smartphone": "Ofertă smartphone"
   }
 }

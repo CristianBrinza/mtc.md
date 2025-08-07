@@ -6,7 +6,7 @@ import Footer from '../../../../components/footer/Footer.tsx';
 import { useTranslation } from 'react-i18next';
 import SEO from '../../../../components/SEO';
 import Hero from '../../../../components/hero/Hero.tsx';
-import styles from './Mobile.module.css';
+import styles from './Portare.module.css';
 import Button from '../../../../components/Button.tsx';
 import MyApp from '../../../../components/app/MyApp.tsx';
 import Details, {
@@ -26,17 +26,17 @@ import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 import ScrollableWrapper from '../../../../components/Popup/ScrollableWrapper.tsx';
 import { trackEvent } from '../../../../initAnalytics.ts';
 
-export default function Mobile() {
+export default function Portare() {
   const { t } = useTranslation();
   const [testGratis, setTestGratis] = useState(false);
   const seo = {
-    title: t('pages.tm.title'),
-    description: t('pages.tm.description'),
-    keywords: t('pages.tm.keywords'),
+    title: t('pages.portare.title'),
+    description: t('pages.portare.description'),
+    keywords: t('pages.portare.keywords'),
   };
   const breadcrumbItems = [
-    { label: t('tm.breadcrumb.promo'), url: ' ' },
-    { label: t('tm.breadcrumb.mobile') },
+    { label: t('portare.breadcrumb.promo'), url: ' ' },
+    { label: t('portare.breadcrumb.portare') },
   ];
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [activePopupConfig, setActivePopupConfig] = useState<string>('');
@@ -54,17 +54,18 @@ export default function Mobile() {
 
   const handleClick = (type: 'sim' | 'esim') => {
     setSelected(type);
-    trackEvent('tm_sim_select', type);
+    trackEvent('portare_sim_select', type);
   };
   const [activePopupSubConfig, setActivePopupSubConfig] = useState<string>('');
   const [activeBuyConfig, setActiveBuyConfig] = useState<string>('');
   const setPopup = (name: string, subname: string) => {
-    trackEvent('tm_device_buy', `${name} ${subname}`);
+    trackEvent('portare_device_buy', `${name} ${subname}`);
     setActivePopup('1934567');
     setActivePopupConfig(name);
     setActivePopupSubConfig(subname);
-    setActiveBuyConfig(`(Device - TM)`);
+    setActiveBuyConfig(`(Device - Portare)`);
   };
+  const [activeConfig, setActiveConfig] = useState<string>('1');
   const settings_devices = {
     dots: false,
     infinite: true,
@@ -102,7 +103,7 @@ export default function Mobile() {
     arrows: true,
     autoplay: false,
     autoplaySpeed: 2500,
-    slidesToShow: 4,
+    slidesToShow: activeConfig === '1' ? 4 : 3,
     slidesToScroll: 1,
     responsive: [
       {
@@ -118,8 +119,6 @@ export default function Mobile() {
       { breakpoint: 651, settings: { slidesToShow: 1 } },
     ],
   };
-
-  const [activeConfig, setActiveConfig] = useState<string>('1');
 
   const goToPage = (link: string) => {
     window.location.href = link;
@@ -139,7 +138,7 @@ export default function Mobile() {
   const cond1 = t('tm.details.conditii.itemsConfig1', {
     returnObjects: true,
   }) as string[];
-  const cond2 = t('tm.details.conditii.itemsConfigElse', {
+  const cond2 = t('portare.conditii.config_1', {
     returnObjects: true,
   }) as string[];
   const common = t('tm.details.conditii.commonItems', {
@@ -176,12 +175,12 @@ export default function Mobile() {
         <div className={styles.hero_img_block}>
           <img
             className={styles.hero_img}
-            src={`/images/landings/68074012${t('lang')}.webp`}
+            src={`/images/landings/61034012${t('lang')}.webp`}
             alt={t('tm.hero.alt')}
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/81074012${t('lang')}.webp`}
+            src={`/images/landings/18074312${t('lang')}.webp`}
             alt={t('tm.hero.alt')}
           />
         </div>
@@ -190,26 +189,7 @@ export default function Mobile() {
       <div className={styles.select_type}>
         <div
           className={`${styles.select_type_card} ${styles.select_type_card_active}`}
-          onClick={() => trackEvent('tm_select_type_abonament')}
-        >
-          <div className={styles.select_type_card_top}>
-            <Icon
-              size={'22px'}
-              type={'plus'}
-              color={'var(--theme_primary_color_blue_2)'}
-            />
-            {t('tm.abonament')}
-          </div>
-          <div className={styles.select_type_card_bottom}></div>
-        </div>
-        <div
-          className={styles.select_type_card}
-          onClick={() => {
-            trackEvent('tm_select_type_portare');
-            goToPage(
-              `https://www.moldtelecom.md/${t('lang')}/personal/Portare`
-            );
-          }}
+          onClick={() => trackEvent('portare_select_type_abonament')}
         >
           <div className={styles.select_type_card_top}>
             <Icon
@@ -224,7 +204,26 @@ export default function Mobile() {
         <div
           className={styles.select_type_card}
           onClick={() => {
-            trackEvent('tm_select_type_prepay');
+            trackEvent('portare_select_type_abonament');
+            goToPage(
+              `https://www.moldtelecom.md/${t('lang')}/personal/Abonamente_Telefonie_Mobila`
+            );
+          }}
+        >
+          <div className={styles.select_type_card_top}>
+            <Icon
+              size={'22px'}
+              type={'plus'}
+              color={'var(--theme_primary_color_blue_2)'}
+            />
+            {t('tm.abonament')}
+          </div>
+          <div className={styles.select_type_card_bottom}></div>
+        </div>
+        <div
+          className={styles.select_type_card}
+          onClick={() => {
+            trackEvent('portare_select_type_prepay');
             goToPage(
               `https://www.moldtelecom.md/${t('lang')}/personal/prepay-cartela`
             );
@@ -262,10 +261,10 @@ export default function Mobile() {
             setActiveConfig('1');
           }}
         >
-          {t('tm.btn_not_client')}
+          {t('portare.discount')}
         </Button>
         <Button
-          id="tm_client"
+          id="portare_client"
           color={'var(--theme_primary_color_blue_4)'}
           bgcolor={
             activeConfig == '2'
@@ -279,7 +278,7 @@ export default function Mobile() {
             setActiveConfig('2');
           }}
         >
-          {t('tm.btn_client')}
+          {t('portare.smartphone')}
         </Button>
         {/*<Button*/}
         {/*  color={'var(--theme_primary_color_blue_4)'}*/}
@@ -292,248 +291,259 @@ export default function Mobile() {
         {/* Device*/}
         {/*</Button>*/}
       </div>
-      <Slider {...settings} className={styles.mobile_carousell}>
-        <div>
-          <div className={styles.mobile_carousell_block}>
-            <div className={styles.mobile_carousell_tags}>
-              {/*<div className={styles.mobile_carousell_tag}>*/}
-              {/*  New*/}
-              {/*</div>*/}
-              <div
-                className={styles.mobile_carousell_tag}
-                style={{ background: '#E7EBFF' }}
-              >
-                {t('tm.tags.budget')}
+      <Slider
+        {...settings}
+        className={`${styles.mobile_carousell} ${activeConfig == '2' ? styles.mobile_carousell_3_devices : ''}`}
+      >
+        {activeConfig == '1' && (
+          <div>
+            <div className={styles.mobile_carousell_block}>
+              <div className={styles.mobile_carousell_tags}>
+                {/*<div className={styles.mobile_carousell_tag}>*/}
+                {/*  New*/}
+                {/*</div>*/}
+                <div
+                  className={styles.mobile_carousell_tag}
+                  style={{ background: '#E7EBFF' }}
+                >
+                  {t('tm.tags.budget')}
+                </div>
               </div>
-            </div>
-            <div className={styles.mobile_carousell_title}>
-              {t('tm.plan_names.start_95')}
-            </div>
+              <div className={styles.mobile_carousell_title}>
+                {t('tm.plan_names.start_95')}
+              </div>
 
-            <div className={styles.tm_carousell_block_rows}>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'call_mess'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <span>
-                  <b>{t('tm.nelimitat')}</b> <br />
-                  {t('tm.min_sms_retea')}
-                </span>
-              </div>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'call'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <div className={styles.tm_carousell_block_row_inline}>
+              <div className={styles.tm_carousell_block_rows}>
+                <div className={styles.tm_carousell_block_row}>
+                  <div className={styles.tm_carousell_block_row_svg}>
+                    <Icon
+                      type={'call_mess'}
+                      color={'var(--theme_primary_color_blue_2)'}
+                    />
+                  </div>
                   <span>
-                    {' '}
-                    <b>250 {t('tm.min')}</b>
-                    <br />
-                    {t('tm.nationale')}
-                  </span>{' '}
-                  +
+                    <b>{t('tm.nelimitat')}</b> <br />
+                    {t('tm.min_sms_retea')}
+                  </span>
+                </div>
+                <div className={styles.tm_carousell_block_row}>
+                  <div className={styles.tm_carousell_block_row_svg}>
+                    <Icon
+                      type={'call'}
+                      color={'var(--theme_primary_color_blue_2)'}
+                    />
+                  </div>
+                  <div className={styles.tm_carousell_block_row_inline}>
+                    <span>
+                      {' '}
+                      <b>250 {t('tm.min')}</b>
+                      <br />
+                      {t('tm.nationale')}
+                    </span>{' '}
+                    +
+                    <span>
+                      <b>25 {t('tm.min')} </b>
+                      <br /> {t('tm.internationale')}
+                    </span>
+                  </div>
+                </div>
+                <div className={styles.tm_carousell_block_row}>
+                  <div className={styles.tm_carousell_block_row_svg}>
+                    <Icon
+                      type={'internet'}
+                      color={'var(--theme_primary_color_blue_2)'}
+                    />
+                  </div>
                   <span>
-                    <b>25 {t('tm.min')} </b>
-                    <br /> {t('tm.internationale')}
+                    <b>25 GB</b> <br /> {t('tm.trafic_internet')}
+                  </span>
+                </div>
+                <div className={styles.tm_carousell_block_row}>
+                  <div className={styles.tm_carousell_block_row_svg}>
+                    <Icon
+                      type={'sms'}
+                      color={'var(--theme_primary_color_blue_2)'}
+                    />
+                  </div>
+                  <span>
+                    <b>25 SMS</b> <br /> {t('tm.nationale')}
                   </span>
                 </div>
               </div>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'internet'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <span>
-                  <b>25 GB</b> <br /> {t('tm.trafic_internet')}
-                </span>
-              </div>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'sms'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <span>
-                  <b>25 SMS</b> <br /> {t('tm.nationale')}
-                </span>
-              </div>
-            </div>
-            <div className={styles.wifi_carousell_block_inside_btns}>
-              <div
-                className={styles.tm_carousell_block_row_tags}
-                style={{ opacity: '0' }}
-              >
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1' ? t('tm.35_proc') : ''}
-                </div>
-              </div>
-              <div className={styles.mobile_carousell_price}>
-                <div>{activeConfig == '1' ? '95' : '95'}</div>
-                <div>
-                  <div className={styles.mobile_carousell_price_valuta}>
-                    {t('lei_luna')}
-                  </div>
-                  <div className={styles.mobile_carousell_price_old}>
-                    <span>&nbsp;</span>
-                    {/*<span>120  {t('lei_luna')}</span>*/}
+              <div className={styles.wifi_carousell_block_inside_btns}>
+                <div
+                  className={styles.tm_carousell_block_row_tags}
+                  style={{ opacity: '0' }}
+                >
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    {activeConfig == '1' ? t('tm.35_proc') : ''}
                   </div>
                 </div>
+                <div className={styles.mobile_carousell_price}>
+                  <div>{activeConfig == '1' ? '95' : '95'}</div>
+                  <div>
+                    <div className={styles.mobile_carousell_price_valuta}>
+                      {t('lei_luna')}
+                    </div>
+                    <div className={styles.mobile_carousell_price_old}>
+                      <span>&nbsp;</span>
+                      {/*<span>120  {t('lei_luna')}</span>*/}
+                    </div>
+                  </div>
+                </div>
+                <Button
+                  id="portare_start95_order"
+                  // onClick={() => setShowPopupFunction('aaa')}
+                  onClick={() =>
+                    handleConfigClick(
+                      'start 95',
+                      activeConfig == '1' ? '95' : '95',
+                      ''
+                    )
+                  }
+                  color="#fff"
+                  bgcolor="var(--theme_primary_color_blue_4)"
+                  border="var(--theme_primary_color_blue_4)"
+                  hover_border="var(--theme_primary_color_blue_2)"
+                  hover_bgcolor="var(--theme_primary_color_blue_2)"
+                  hover_color="var(--theme_primary_color_blue_4)"
+                  icon="arrow_right"
+                  className={styles.mobile_carousell_block_btn_buy}
+                >
+                  {t('order_now')}
+                </Button>
               </div>
-              <Button
-                id="tm_start95_order"
-                // onClick={() => setShowPopupFunction('aaa')}
-                onClick={() =>
-                  handleConfigClick(
-                    'start 95',
-                    activeConfig == '1' ? '95' : '95',
-                    ''
-                  )
-                }
-                color="#fff"
-                bgcolor="var(--theme_primary_color_blue_4)"
-                border="var(--theme_primary_color_blue_4)"
-                hover_border="var(--theme_primary_color_blue_2)"
-                hover_bgcolor="var(--theme_primary_color_blue_2)"
-                hover_color="var(--theme_primary_color_blue_4)"
-                icon="arrow_right"
-                className={styles.mobile_carousell_block_btn_buy}
-              >
-                {t('order_now')}
-              </Button>
             </div>
           </div>
-        </div>
-        <div>
-          <div className={styles.mobile_carousell_block}>
-            <div className={styles.mobile_carousell_tags}>
-              <div className={styles.mobile_carousell_tag}>
-                {t('tm.tags.new')}
+        )}
+        {activeConfig == '1' && (
+          <div>
+            <div className={styles.mobile_carousell_block}>
+              <div className={styles.mobile_carousell_tags}>
+                <div className={styles.mobile_carousell_tag}>
+                  {t('tm.tags.new')}
+                </div>
+                <div
+                  className={styles.mobile_carousell_tag}
+                  style={{ background: '#E7EBFF' }}
+                >
+                  {t('tm.tags.top_sales')}
+                </div>
               </div>
-              <div
-                className={styles.mobile_carousell_tag}
-                style={{ background: '#E7EBFF' }}
-              >
-                {t('tm.tags.top_sales')}
+              <div className={styles.mobile_carousell_title}>
+                {t('tm.plan_names.star_120')}
               </div>
-            </div>
-            <div className={styles.mobile_carousell_title}>
-              {t('tm.plan_names.star_120')}
-            </div>
 
-            <div className={styles.tm_carousell_block_rows}>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'call_mess'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <span>
-                  <b>{t('tm.nelimitat')}</b> <br />
-                  {t('tm.min_sms_retea')}
-                </span>
-              </div>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'call'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <div className={styles.tm_carousell_block_row_inline}>
+              <div className={styles.tm_carousell_block_rows}>
+                <div className={styles.tm_carousell_block_row}>
+                  <div className={styles.tm_carousell_block_row_svg}>
+                    <Icon
+                      type={'call_mess'}
+                      color={'var(--theme_primary_color_blue_2)'}
+                    />
+                  </div>
                   <span>
-                    {' '}
-                    <b>350 {t('tm.min')}</b>
-                    <br />
-                    {t('tm.nationale')}
-                  </span>{' '}
-                  +
+                    <b>{t('tm.nelimitat')}</b> <br />
+                    {t('tm.min_sms_retea')}
+                  </span>
+                </div>
+                <div className={styles.tm_carousell_block_row}>
+                  <div className={styles.tm_carousell_block_row_svg}>
+                    <Icon
+                      type={'call'}
+                      color={'var(--theme_primary_color_blue_2)'}
+                    />
+                  </div>
+                  <div className={styles.tm_carousell_block_row_inline}>
+                    <span>
+                      {' '}
+                      <b>350 {t('tm.min')}</b>
+                      <br />
+                      {t('tm.nationale')}
+                    </span>{' '}
+                    +
+                    <span>
+                      <b>35 {t('tm.min')} </b>
+                      <br /> {t('tm.internationale')}
+                    </span>
+                  </div>
+                </div>
+                <div className={styles.tm_carousell_block_row}>
+                  <div className={styles.tm_carousell_block_row_svg}>
+                    <Icon
+                      type={'internet'}
+                      color={'var(--theme_primary_color_blue_2)'}
+                    />
+                  </div>
                   <span>
-                    <b>35 {t('tm.min')} </b>
-                    <br /> {t('tm.internationale')}
+                    <b>35 GB</b> <br /> {t('tm.trafic_internet')}
+                  </span>
+                </div>
+                <div className={styles.tm_carousell_block_row}>
+                  <div className={styles.tm_carousell_block_row_svg}>
+                    <Icon
+                      type={'sms'}
+                      color={'var(--theme_primary_color_blue_2)'}
+                    />
+                  </div>
+                  <span>
+                    <b>35 SMS</b> <br /> {t('tm.nationale')}
                   </span>
                 </div>
               </div>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'internet'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <span>
-                  <b>35 GB</b> <br /> {t('tm.trafic_internet')}
-                </span>
-              </div>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'sms'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <span>
-                  <b>35 SMS</b> <br /> {t('tm.nationale')}
-                </span>
-              </div>
-            </div>
-            <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1' ? t('tm.35_proc') : t('tm.35_proc')}
-                </div>
-              </div>
-              <div className={styles.mobile_carousell_price}>
-                <div> {activeConfig == '1' ? '78' : '78'}</div>
-                <div>
-                  <div className={styles.mobile_carousell_price_valuta}>
-                    {t('lei_luna')}
-                  </div>
-                  <div className={styles.mobile_carousell_price_old}>
-                    <span>120 {t('lei_luna')}</span>
+              <div className={styles.wifi_carousell_block_inside_btns}>
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    {activeConfig == '1' ? t('tm.35_proc') : t('tm.35_proc')}
                   </div>
                 </div>
+                <div className={styles.mobile_carousell_price}>
+                  <div> {activeConfig == '1' ? '78' : '120'}</div>
+                  <div>
+                    <div className={styles.mobile_carousell_price_valuta}>
+                      {t('lei_luna')}
+                    </div>
+                    <div className={styles.mobile_carousell_price_old}>
+                      {activeConfig == '1' ? (
+                        <span>120 {t('lei_luna')}</span>
+                      ) : (
+                        ' '
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <Button
+                  id="portare_star120_order"
+                  // onClick={() => setShowPopupFunction('aaa')}
+                  onClick={() =>
+                    handleConfigClick(
+                      'star 120',
+                      activeConfig == '1' ? '78' : '78',
+                      t('tm.35_proc')
+                    )
+                  }
+                  color="#fff"
+                  bgcolor="var(--theme_primary_color_blue_4)"
+                  border="var(--theme_primary_color_blue_4)"
+                  hover_border="var(--theme_primary_color_blue_2)"
+                  hover_bgcolor="var(--theme_primary_color_blue_2)"
+                  hover_color="var(--theme_primary_color_blue_4)"
+                  icon="arrow_right"
+                  className={styles.mobile_carousell_block_btn_buy}
+                >
+                  {t('order_now')}
+                </Button>
               </div>
-              <Button
-                id="tm_star120_order"
-                // onClick={() => setShowPopupFunction('aaa')}
-                onClick={() =>
-                  handleConfigClick(
-                    'star 120',
-                    activeConfig == '1' ? '78' : '78',
-                    t('tm.35_proc')
-                  )
-                }
-                color="#fff"
-                bgcolor="var(--theme_primary_color_blue_4)"
-                border="var(--theme_primary_color_blue_4)"
-                hover_border="var(--theme_primary_color_blue_2)"
-                hover_bgcolor="var(--theme_primary_color_blue_2)"
-                hover_color="var(--theme_primary_color_blue_4)"
-                icon="arrow_right"
-                className={styles.mobile_carousell_block_btn_buy}
-              >
-                {t('order_now')}
-              </Button>
             </div>
+            {activeConfig == '1' && (
+              <img
+                className={styles.mobile_carousell_block_test}
+                src={`/images/landings/90971083${t('lang')}.webp`}
+                alt="Moldtelecom"
+              />
+            )}
           </div>
-          {activeConfig == '1' && (
-            <img
-              className={styles.mobile_carousell_block_test}
-              src={`/images/landings/90971083${t('lang')}.webp`}
-              alt="Moldtelecom"
-            />
-          )}
-        </div>
+        )}
         <div>
           <div className={styles.mobile_carousell_block}>
             <div className={styles.mobile_carousell_tags}>
@@ -550,7 +560,6 @@ export default function Mobile() {
             <div className={styles.mobile_carousell_title}>
               {t('tm.plan_names.star_150')}
             </div>
-
             <div className={styles.tm_carousell_block_rows}>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
@@ -608,35 +617,55 @@ export default function Mobile() {
                 </span>
               </div>
             </div>
+            {activeConfig == '2' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'oppo_a40'}>
+                  <b>Oppo A40</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'oppo_a60'}>
+                  <b>Oppo A60</b> (la 1799 lei)&nbsp;
+                </option>
+                <option value={'oppo_a80'}>
+                  <b>Oppo A80</b> (la 2899 lei)&nbsp;
+                </option>
+              </select>
+            )}
+
             <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1'
-                    ? t('tm.35_proc')
-                    : `-50 ${t('tm.lei_reducere')}`}
+              {activeConfig == '1' && (
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    {activeConfig == '1'
+                      ? t('tm.35_proc')
+                      : `-50 ${t('tm.lei_reducere')}`}
+                  </div>
                 </div>
-              </div>
+              )}
               <div className={styles.mobile_carousell_price}>
-                <div> {activeConfig == '1' ? '97.5' : '100'}</div>
+                <div> {activeConfig == '1' ? '97.5' : '150'}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     {t('lei_luna')}
                   </div>
                   <div className={styles.mobile_carousell_price_old}>
-                    <span>150 {t('lei_luna')}</span>
+                    {activeConfig == '1' ? (
+                      <span>150 {t('lei_luna')}</span>
+                    ) : (
+                      ''
+                    )}
                   </div>
                 </div>
               </div>
               <Button
-                id="tm_star150_order"
+                id="portare_star150_order"
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
                     'star 150',
-                    activeConfig == '1' ? '97.5' : '100',
-                    activeConfig == '1'
-                      ? t('tm.35_proc')
-                      : `-50 ${t('tm.lei_reducere')}`
+                    activeConfig == '1' ? '97.5' : '150',
+                    activeConfig == '1' ? t('tm.35_proc') : `+ Smartphone`
                   )
                 }
                 color="#fff"
@@ -760,36 +789,55 @@ export default function Mobile() {
                 </div>
               </div>
             </div>
+            {activeConfig == '2' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'oppo_a40'}>
+                  <b>Oppo A40</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'oppo_a60'}>
+                  <b>Oppo A60</b> (la 1799 lei)&nbsp;
+                </option>
+                <option value={'oppo_a80'}>
+                  <b>Oppo A80</b> (la 2899 lei)&nbsp;
+                </option>
+              </select>
+            )}
 
             <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1'
-                    ? t('tm.35_proc')
-                    : `-75 ${t('tm.lei_reducere')}`}
+              {activeConfig == '1' && (
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    {activeConfig == '1'
+                      ? t('tm.35_proc')
+                      : `-75 ${t('tm.lei_reducere')}`}
+                  </div>
                 </div>
-              </div>
+              )}
               <div className={styles.mobile_carousell_price}>
-                <div>{activeConfig == '1' ? '123.5' : '115'}</div>
+                <div>{activeConfig == '1' ? '123.5' : '190'}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     {t('lei_luna')}
                   </div>
                   <div className={styles.mobile_carousell_price_old}>
-                    <span>190 {t('lei_luna')}</span>
+                    {activeConfig == '1' ? (
+                      <span>190 {t('lei_luna')}</span>
+                    ) : (
+                      ''
+                    )}
                   </div>
                 </div>
               </div>
               <Button
-                id="tm_liberty190_order"
+                id="portare_liberty190_order"
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
                     'liberty 190',
-                    activeConfig == '1' ? '123.5' : '115',
-                    activeConfig == '1'
-                      ? t('tm.35_proc')
-                      : `-75 ${t('tm.lei_reducere')}`
+                    activeConfig == '1' ? '123.5' : '190',
+                    activeConfig == '1' ? t('tm.35_proc') : `+ Smartphone`
                   )
                 }
                 color="#fff"
@@ -914,36 +962,55 @@ export default function Mobile() {
                 </div>
               </div>
             </div>
+            {activeConfig == '2' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'oppo_a40'}>
+                  <b>Oppo A40</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'oppo_a60'}>
+                  <b>Oppo A60</b> (la 1799 lei)&nbsp;
+                </option>
+                <option value={'oppo_a80'}>
+                  <b>Oppo A80</b> (la 2899 lei)&nbsp;
+                </option>
+              </select>
+            )}
 
             <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1'
-                    ? t('tm.35_proc')
-                    : `-100 ${t('tm.lei_reducere')}`}
+              {activeConfig == '1' && (
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    {activeConfig == '1'
+                      ? t('tm.35_proc')
+                      : `-100 ${t('tm.lei_reducere')}`}
+                  </div>
                 </div>
-              </div>
+              )}
               <div className={styles.mobile_carousell_price}>
-                <div>{activeConfig == '1' ? '162.5' : '150'}</div>
+                <div>{activeConfig == '1' ? '162.5' : '250'}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     {t('lei_luna')}
                   </div>
                   <div className={styles.mobile_carousell_price_old}>
-                    <span>250 {t('lei_luna')}</span>
+                    {activeConfig == '1' ? (
+                      <span>250 {t('lei_luna')}</span>
+                    ) : (
+                      ''
+                    )}
                   </div>
                 </div>
               </div>
               <Button
-                id="tm_liberty250plus_order"
+                id="portare_liberty250plus_order"
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
                     'liberty 250+',
-                    activeConfig == '1' ? '162.5' : '150',
-                    activeConfig == '1'
-                      ? t('tm.35_proc')
-                      : `-100 '${t('tm.lei_reducere')}`
+                    activeConfig == '1' ? '162.5' : '250',
+                    activeConfig == '1' ? t('tm.35_proc') : `+ Smartphone`
                   )
                 }
                 color="#fff"
@@ -961,7 +1028,7 @@ export default function Mobile() {
           </div>
         </div>
       </Slider>
-      <Details trackPrefix="tm">
+      <Details trackPrefix="portare">
         {activeConfig === '1' && (
           <DetailsBlock title={t('tm.details.promo.title')}>
             <ul>
@@ -1096,9 +1163,9 @@ export default function Mobile() {
           <ShopCard
             device_id={727564511}
             image="/images/shop/383535269.webp"
-            price={1199}
+            price={1}
             old_price={2799}
-            reducere="- 600"
+            reducere="- 99%"
             title="OPPO"
             subtitle="A40"
             characteristics='8/256 Gb /5000mAh /6.67"'
@@ -1114,9 +1181,9 @@ export default function Mobile() {
           <ShopCard
             device_id={727564512}
             image="/images/shop/383535265.webp"
-            price={2199}
+            price={1799}
             old_price={3299}
-            reducere="- 1100"
+            reducere="- 1500"
             title="OPPO"
             subtitle="A60"
             characteristics='4/128 Gb /5100mAh /6.67"'
@@ -1132,9 +1199,9 @@ export default function Mobile() {
           <ShopCard
             device_id={727564513}
             image="/images/shop/383535262.webp"
-            price={3199}
+            price={2899}
             old_price={4299}
-            reducere="- 1100"
+            reducere="- 1400"
             title="OPPO"
             subtitle="A80"
             characteristics="8/256 Gb /5100mAh /50 MP"
@@ -1164,7 +1231,7 @@ export default function Mobile() {
 
       <FaqV2 max_faq={6}>
         <FaqQAV2
-          trackPrefix="tm"
+          trackPrefix="portare"
           id_faq="112489310"
           question={t('tm.faq.112489310.question')}
         >
@@ -1172,7 +1239,7 @@ export default function Mobile() {
         </FaqQAV2>
 
         <FaqQAV2
-          trackPrefix="tm"
+          trackPrefix="portare"
           id_faq="112489311"
           question={t('tm.faq.112489311.question')}
         >
@@ -1180,7 +1247,7 @@ export default function Mobile() {
         </FaqQAV2>
 
         <FaqQAV2
-          trackPrefix="tm"
+          trackPrefix="portare"
           id_faq="112489312"
           question={t('tm.faq.112489312.question')}
         >
@@ -1188,7 +1255,7 @@ export default function Mobile() {
         </FaqQAV2>
 
         <FaqQAV2
-          trackPrefix="tm"
+          trackPrefix="portare"
           id_faq="112489313"
           question={t('tm.faq.112489313.question')}
         >
@@ -1200,7 +1267,7 @@ export default function Mobile() {
         </FaqQAV2>
 
         <FaqQAV2
-          trackPrefix="tm"
+          trackPrefix="portare"
           id_faq="112489314"
           question={t('tm.faq.112489314.question')}
         >
@@ -1208,7 +1275,7 @@ export default function Mobile() {
         </FaqQAV2>
 
         <FaqQAV2
-          trackPrefix="tm"
+          trackPrefix="portare"
           id_faq="112489315"
           question={t('tm.faq.112489315.question')}
         >
@@ -1216,7 +1283,7 @@ export default function Mobile() {
         </FaqQAV2>
 
         <FaqQAV2
-          trackPrefix="tm"
+          trackPrefix="portare"
           id_faq="112489316"
           question={t('tm.faq.112489316.question')}
         >
@@ -1224,7 +1291,7 @@ export default function Mobile() {
         </FaqQAV2>
 
         <FaqQAV2
-          trackPrefix="tm"
+          trackPrefix="portare"
           id_faq="112489317"
           question={t('tm.faq.112489317.question')}
         >
@@ -1236,7 +1303,7 @@ export default function Mobile() {
         {/*</FaqQAV2>*/}
 
         <FaqQAV2
-          trackPrefix="tm"
+          trackPrefix="portare"
           id_faq="112489319"
           question={t('tm.faq.112489319.question')}
         >
@@ -1329,27 +1396,25 @@ export default function Mobile() {
                     eSIM
                   </div>
                 </div>
-                {activeConfig == '1' && (
-                  <div className={styles.popup_option}>
-                    <Toggle
-                      checked={testGratis}
-                      onChange={() => {
-                        setTestGratis(prev => !prev);
-                        trackEvent('tm_test_gratis_toggle');
-                      }}
-                    />
-                    <span>
-                      {' '}
-                      {t('tm.popup.test_prefix')}{' '}
-                      <b>{t('tm.popup.test_bold')}</b>
-                    </span>
-                  </div>
-                )}
+                <div className={styles.popup_option}>
+                  <Toggle
+                    checked={testGratis}
+                    onChange={() => {
+                      setTestGratis(prev => !prev);
+                      trackEvent('tm_test_gratis_toggle');
+                    }}
+                  />
+                  <span>
+                    {' '}
+                    {t('tm.popup.test_prefix')} <b>{t('tm.popup.test_bold')}</b>
+                  </span>
+                </div>
               </div>
+
               <BuyForm
-                config={`TM - ${activeConfig === '1' ? 'nu sunt client' : 'sunt client'}, tip sim - ${selected}, ${activeConfig === '1' ? `testează - ${testGratis}` : ''}, pachet selectat - ${activePopupConfig} , pret - ${activePriceConfig}`}
-                tag={'tm'}
-                service={'campain[tm_2025_b2s], place[abonament]'}
+                config={`PORTARE - ${activeConfig === '1' ? 'reducere' : 'smartphone'}, tip sim - ${selected}, ${activeConfig === '1' ? `testează - ${testGratis}` : ''}, pachet selectat - ${activePopupConfig} , pret - ${activePriceConfig}`}
+                tag={'portare'}
+                service={'campain[portare_2025_b2s], place[abonament]'}
                 onSuccess={() => {
                   setSubmitted(true);
                   setError(false);
@@ -1410,8 +1475,8 @@ export default function Mobile() {
 
             <BuyForm
               config={activeBuyConfig}
-              tag={'tm'}
-              service={'campain[tm_2025_b2s], place[abonament]'}
+              tag={'portare'}
+              service={'campain[portare_2025_b2s], place[abonament]'}
               onSuccess={() => {
                 setSubmitted(true);
                 setError(false);

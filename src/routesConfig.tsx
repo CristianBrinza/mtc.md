@@ -24,6 +24,7 @@ import FiveGbps from './pages/personal/oferte/5gbps/FiveGbps.tsx';
 import Fibra from './pages/business/fibra/Fibra.tsx';
 import Double from './pages/personal/oferte/double/Double.tsx';
 import PoliticaRoaming from './pages/costume/PoliticaRoaming/PoliticaRoaming.tsx';
+import Portare from './pages/personal/oferte/portare/Portare.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -52,10 +53,13 @@ export const routesConfig: RouteConfig[] = [
     path: '/:lang/triple',
     element: React.createElement(Triple),
   },
-
   {
     path: '/:lang/mobile',
     element: React.createElement(Mobile),
+  },
+  {
+    path: '/:lang/portare',
+    element: React.createElement(Portare),
   },
   {
     path: '/:lang/mobile_old',

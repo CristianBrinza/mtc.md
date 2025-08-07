@@ -28,7 +28,9 @@
   gap: 10px;
   margin: 0 auto;
 }
-
+.tm_carousell_block_row_tag_hiden {
+  opacity: 0;
+}
 .mobile_carousell :global(.slick-dots) {
   margin-top: 15px !important;
 }
@@ -75,6 +77,9 @@
   max-width: 1180px;
   margin: 0 auto;
   margin-top: 5px;
+}
+.mobile_carousell_3_devices {
+  max-width: 900px;
 }
 
 .mobile_carousell_block {
@@ -542,6 +547,34 @@
 }
 .title22 {
   margin-bottom: 0;
+}
+
+.popup_regio_select {
+  /* 1) ascundem controlul nativ */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* 2) stil general */
+  height: 46px;
+  border-radius: 100px;
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 14px;
+
+  /* 3) spaţiu în dreapta pentru săgeată */
+  padding: 0 40px 0 20px;
+
+  /* 4) icon‑arrow custom poziţionat cu 20px mai la stânga de marginea dreaptă */
+  background-image: url('/images/svg/ui_svg/select_arrow.svg'); /* sau data‑uri SVG */
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) center;
+  background-size: 16px; /* ajustaţi după dimensiunea iconiţei */
+  border: 1px transparent;
+}
+.calculaor_select {
+  background-color: var(--theme_primary_color_blue_3);
+  margin: 20px 0 25px;
 }
 
 @media (max-width: 1300px) {
