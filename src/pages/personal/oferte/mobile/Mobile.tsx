@@ -1055,7 +1055,7 @@ export default function Mobile() {
         </DetailsBlock>
       </Details>
 
-      <div className={`title_3  ${styles.title2} ${styles.title2_2}`}>
+      <div className={`title_3  ${styles.title2} ${styles.title22}`}>
         {t('combo_home.device_one_leu')}
       </div>
 
@@ -1088,7 +1088,7 @@ export default function Mobile() {
             image="/images/shop/383535265.webp"
             price={2199}
             old_price={3299}
-            reducere="- 99%"
+            reducere="- 1100"
             title="OPPO"
             subtitle="A60"
             characteristics='4/128 Gb /5100mAh /6.67"'
@@ -1106,7 +1106,7 @@ export default function Mobile() {
             image="/images/shop/383535262.webp"
             price={3199}
             old_price={4299}
-            reducere="- 99%"
+            reducere="- 1100"
             title="OPPO"
             subtitle="A80"
             characteristics="8/256 Gb /5100mAh /50 MP"
