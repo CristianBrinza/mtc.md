@@ -22,6 +22,7 @@ import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
 import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
 import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
+import { trackEvent } from '../../../../initAnalytics.ts';
 declare global {
   interface Window {
     regiuni: Record<string, Record<string, unknown[]>>;
@@ -849,6 +850,7 @@ export default function Double() {
   );
 
   const setPopup = (id: string, name: string, subname: string) => {
+    trackEvent('double_device_buy', `${name} ${subname}`);
     setActivePopup('1934567');
     setActivePopupConfig(name);
     setActivePopupSubConfig(subname);
@@ -860,6 +862,14 @@ export default function Double() {
     console.log(
       `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_1}, nr - ${numberTVConfig_1} tv), ${activeMesh_1 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_1 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_1 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_1 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
     );
+  };
+
+  const trackToggle = (
+    event: string,
+    setter: (checked: boolean) => void
+  ) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    setter(e.target.checked);
+    trackEvent(event);
   };
 
   const settings_devices = {
@@ -942,19 +952,28 @@ export default function Double() {
       {isRegio ? (
         <div className={styles.config}>
           <div
-            onClick={() => setActiveConfig('1')}
+            onClick={() => {
+              setActiveConfig('1');
+              trackEvent('double_select_type_package_discount');
+            }}
             className={`${styles.config_block} ${styles.config_block_1}  ${styles.config_block_first} ${activeConfig == '1' && styles.config_block_active}`}
           >
             {t('combo_home.package_discount')}
           </div>
           <div
-            onClick={() => setActiveConfig('2')}
+            onClick={() => {
+              setActiveConfig('2');
+              trackEvent('double_select_type_smart_tv_tablet');
+            }}
             className={`${styles.config_block} ${styles.config_block_2}  ${activeConfig == '2' && styles.config_block_active}`}
           >
             {t('combo_home.smart_tv_tablet')}
           </div>
           <div
-            onClick={() => setActiveConfig('3')}
+            onClick={() => {
+              setActiveConfig('3');
+              trackEvent('double_select_type_gaming_set');
+            }}
             className={`${styles.config_block} ${styles.config_block_3}  ${styles.config_block_last} ${activeConfig == '3' && styles.config_block_active}`}
           >
             {t('combo_home.gaming_set')}
@@ -1002,7 +1021,7 @@ export default function Double() {
                   {/*/>*/}
                   <Toggle
                     checked={activeMesh_1}
-                    onChange={e => setActiveMesh_1(e.target.checked)}
+                    onChange={trackToggle('double_mesh_toggle', setActiveMesh_1)}
                   />
                 </div>
                 <span>
@@ -1024,7 +1043,7 @@ export default function Double() {
                   {/*/>*/}
                   <Toggle
                     checked={activeSafeweb_1}
-                    onChange={e => setActiveSafeweb_1(e.target.checked)}
+                    onChange={trackToggle('double_safeweb_toggle', setActiveSafeweb_1)}
                   />
                 </div>
                 <span>
@@ -1164,7 +1183,7 @@ export default function Double() {
                 <div className={styles.abonaments_block_inside_subtitle_toggle}>
                   <Toggle
                     checked={activeMTC_TV_GO_1}
-                    onChange={e => setActiveMTC_TV_GO_1(e.target.checked)}
+                    onChange={trackToggle('double_tvgo_toggle', setActiveMTC_TV_GO_1)}
                   />
                 </div>
                 <span>
@@ -1187,7 +1206,7 @@ export default function Double() {
                 <div className={styles.abonaments_block_inside_subtitle_toggle}>
                   <Toggle
                     checked={activeTelephone_1}
-                    onChange={e => setActiveTelephone_1(e.target.checked)}
+                    onChange={trackToggle('double_telephone_toggle', setActiveTelephone_1)}
                   />
                 </div>
                 <span>
@@ -1304,7 +1323,7 @@ export default function Double() {
                   {/*/>*/}
                   <Toggle
                     checked={activeMesh_2}
-                    onChange={e => setActiveMesh_2(e.target.checked)}
+                    onChange={trackToggle('double_mesh_toggle', setActiveMesh_2)}
                   />
                 </div>
                 <span>
@@ -1326,7 +1345,7 @@ export default function Double() {
                   {/*/>*/}
                   <Toggle
                     checked={activeSafeweb_2}
-                    onChange={e => setActiveSafeweb_2(e.target.checked)}
+                    onChange={trackToggle('double_safeweb_toggle', setActiveSafeweb_2)}
                   />
                 </div>
                 <span>
@@ -1466,7 +1485,7 @@ export default function Double() {
                 <div className={styles.abonaments_block_inside_subtitle_toggle}>
                   <Toggle
                     checked={activeMTC_TV_GO_2}
-                    onChange={e => setActiveMTC_TV_GO_2(e.target.checked)}
+                    onChange={trackToggle('double_tvgo_toggle', setActiveMTC_TV_GO_2)}
                   />
                 </div>
                 <span>
@@ -1489,7 +1508,7 @@ export default function Double() {
                 <div className={styles.abonaments_block_inside_subtitle_toggle}>
                   <Toggle
                     checked={activeTelephone_2}
-                    onChange={e => setActiveTelephone_2(e.target.checked)}
+                    onChange={trackToggle('double_telephone_toggle', setActiveTelephone_2)}
                   />
                 </div>
                 <span>
@@ -1619,7 +1638,7 @@ export default function Double() {
                 {/*/>*/}
                 <Toggle
                   checked={activeMesh_3}
-                  onChange={e => setActiveMesh_3(e.target.checked)}
+                  onChange={trackToggle('double_mesh_toggle', setActiveMesh_3)}
                 />
               </div>
               <span>
@@ -1639,7 +1658,7 @@ export default function Double() {
                 {/*/>*/}
                 <Toggle
                   checked={activeSafeweb_3}
-                  onChange={e => setActiveSafeweb_3(e.target.checked)}
+                  onChange={trackToggle('double_safeweb_toggle', setActiveSafeweb_3)}
                 />
               </div>
               <span>
@@ -1776,7 +1795,7 @@ export default function Double() {
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
                 <Toggle
                   checked={activeMTC_TV_GO_3}
-                  onChange={e => setActiveMTC_TV_GO_3(e.target.checked)}
+                  onChange={trackToggle('double_tvgo_toggle', setActiveMTC_TV_GO_3)}
                 />
               </div>
               <span>
@@ -1797,7 +1816,7 @@ export default function Double() {
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
                 <Toggle
                   checked={activeTelephone_3}
-                  onChange={e => setActiveTelephone_3(e.target.checked)}
+                  onChange={trackToggle('double_telephone_toggle', setActiveTelephone_3)}
                 />
               </div>
               <span>
@@ -1933,7 +1952,7 @@ export default function Double() {
                 {/*/>*/}
                 <Toggle
                   checked={activeMesh_4}
-                  onChange={e => setActiveMesh_4(e.target.checked)}
+                  onChange={trackToggle('double_mesh_toggle', setActiveMesh_4)}
                 />
               </div>
               <span>
@@ -1953,7 +1972,7 @@ export default function Double() {
                 {/*/>*/}
                 <Toggle
                   checked={activeSafeweb_4}
-                  onChange={e => setActiveSafeweb_4(e.target.checked)}
+                  onChange={trackToggle('double_safeweb_toggle', setActiveSafeweb_4)}
                 />
               </div>
               <span>
@@ -2090,7 +2109,7 @@ export default function Double() {
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
                 <Toggle
                   checked={activeMTC_TV_GO_4}
-                  onChange={e => setActiveMTC_TV_GO_4(e.target.checked)}
+                  onChange={trackToggle('double_tvgo_toggle', setActiveMTC_TV_GO_4)}
                 />
               </div>
               <span>
@@ -2111,7 +2130,7 @@ export default function Double() {
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
                 <Toggle
                   checked={activeTelephone_4}
-                  onChange={e => setActiveTelephone_4(e.target.checked)}
+                  onChange={trackToggle('double_telephone_toggle', setActiveTelephone_4)}
                 />
               </div>
               <span>
@@ -2244,7 +2263,7 @@ export default function Double() {
                 {/*/>*/}
                 <Toggle
                   checked={activeMesh_5}
-                  onChange={e => setActiveMesh_5(e.target.checked)}
+                  onChange={trackToggle('double_mesh_toggle', setActiveMesh_5)}
                 />
               </div>
               <span>
@@ -2264,7 +2283,7 @@ export default function Double() {
                 {/*/>*/}
                 <Toggle
                   checked={activeSafeweb_5}
-                  onChange={e => setActiveSafeweb_5(e.target.checked)}
+                  onChange={trackToggle('double_safeweb_toggle', setActiveSafeweb_5)}
                 />
               </div>
               <span>
@@ -2401,7 +2420,7 @@ export default function Double() {
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
                 <Toggle
                   checked={activeMTC_TV_GO_5}
-                  onChange={e => setActiveMTC_TV_GO_5(e.target.checked)}
+                  onChange={trackToggle('double_tvgo_toggle', setActiveMTC_TV_GO_5)}
                 />
               </div>
               <span>
@@ -2422,7 +2441,7 @@ export default function Double() {
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
                 <Toggle
                   checked={activeTelephone_5}
-                  onChange={e => setActiveTelephone_5(e.target.checked)}
+                  onChange={trackToggle('double_telephone_toggle', setActiveTelephone_5)}
                 />
               </div>
               <span>
@@ -2522,7 +2541,7 @@ export default function Double() {
         </div>
       </Slider>
 
-      <Details>
+      <Details trackPrefix="double">
         <DetailsBlock title={t('combo_home.conditii_1.title')}>
           <ul>
             <li>{t('combo_home.conditii_1.item_1')}</li>
@@ -2843,60 +2862,70 @@ export default function Double() {
 
       <FaqV2 max_faq={5}>
         <FaqQAV2
+          trackPrefix="double"
           id_faq="112089314"
           question={t('combo_home.faq.install_duration_question')}
         >
           {t('combo_home.faq.install_duration_answer')}
         </FaqQAV2>
         <FaqQAV2
+          trackPrefix="double"
           id_faq="112089315"
           question={t('combo_home.faq.availability_check_question')}
         >
           {t('combo_home.faq.availability_check_answer')}
         </FaqQAV2>
         <FaqQAV2
+          trackPrefix="double"
           id_faq="112089316"
           question={t('combo_home.faq.activate_new_offer_question')}
         >
           {t('combo_home.faq.activate_new_offer_answer')}
         </FaqQAV2>
         <FaqQAV2
+          trackPrefix="double"
           id_faq="112089317"
           question={t('combo_home.faq.bill_payment_deadline_question')}
         >
           {t('combo_home.faq.bill_payment_deadline_answer')}
         </FaqQAV2>
         <FaqQAV2
+          trackPrefix="double"
           id_faq="112089318"
           question={t('combo_home.faq.late_payment_consequences_question')}
         >
           {t('combo_home.faq.late_payment_consequences_answer')}
         </FaqQAV2>
         <FaqQAV2
+          trackPrefix="double"
           id_faq="112089319"
           question={t('combo_home.faq.manage_subscription_remotely_question')}
         >
           {t('combo_home.faq.manage_subscription_remotely_answer')}
         </FaqQAV2>
         <FaqQAV2
+          trackPrefix="double"
           id_faq="112089320"
           question={t('combo_home.faq.pause_services_question')}
         >
           {t('combo_home.faq.pause_services_answer')}
         </FaqQAV2>
         <FaqQAV2
+          trackPrefix="double"
           id_faq="112089321"
           question={t('combo_home.faq.change_package_question')}
         >
           {t('combo_home.faq.change_package_answer')}
         </FaqQAV2>
         <FaqQAV2
+          trackPrefix="double"
           id_faq="112089322"
           question={t('combo_home.faq.move_address_question')}
         >
           {t('combo_home.faq.move_address_answer')}
         </FaqQAV2>
         <FaqQAV2
+          trackPrefix="double"
           id_faq="112089323"
           question={t('combo_home.faq.transfer_subscription_question')}
         >
