@@ -850,27 +850,36 @@ export default function Double() {
   );
 
   const setPopup = (id: string, name: string, subname: string) => {
-    trackEvent('double_device_buy', `${name} ${subname}`);
+    if (id == '0') {
+      trackEvent('double_device_buy', `${name} ${subname}`);
+    }
     setActivePopup('1934567');
     setActivePopupConfig(name);
     setActivePopupSubConfig(subname);
     setActiveBuyConfig(
       id === '1'
-        ? `(Internet + TV) Double – ${name} ${subname} (), ${activeMesh_1 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_1 ? '+ Safe‑Web, ' : ''}(Oferta Back-2-School 2025)`
-        : ''
+        ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_1}, nr - ${numberTVConfig_1} tv), ${activeMesh_1 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_1 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_1 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_1 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+        : id === '2'
+          ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_2}, nr - ${numberTVConfig_2} tv), ${activeMesh_2 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_2 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_2 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_2 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+          : id === '3'
+            ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_3}, nr - ${numberTVConfig_3} tv), ${activeMesh_3 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_3 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_3 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_3 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+            : id === '4'
+              ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_4}, nr - ${numberTVConfig_4} tv), ${activeMesh_4 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_4 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_4 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_4 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+              : id === '5'
+                ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_5}, nr - ${numberTVConfig_5} tv), ${activeMesh_5 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_5 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_5 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_5 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+                : ''
     );
-    console.log(
-      `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_1}, nr - ${numberTVConfig_1} tv), ${activeMesh_1 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_1 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_1 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_1 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
-    );
+    // console.log(
+    //   `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_1}, nr - ${numberTVConfig_1} tv), ${activeMesh_1 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_1 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_1 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_1 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+    // );
   };
 
-  const trackToggle = (
-    event: string,
-    setter: (checked: boolean) => void
-  ) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    setter(e.target.checked);
-    trackEvent(event);
-  };
+  const trackToggle =
+    (event: string, setter: (checked: boolean) => void) =>
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setter(e.target.checked);
+      trackEvent(event);
+    };
 
   const settings_devices = {
     dots: false,
@@ -1021,7 +1030,10 @@ export default function Double() {
                   {/*/>*/}
                   <Toggle
                     checked={activeMesh_1}
-                    onChange={trackToggle('double_mesh_toggle', setActiveMesh_1)}
+                    onChange={trackToggle(
+                      'double_mesh_toggle',
+                      setActiveMesh_1
+                    )}
                   />
                 </div>
                 <span>
@@ -1043,7 +1055,10 @@ export default function Double() {
                   {/*/>*/}
                   <Toggle
                     checked={activeSafeweb_1}
-                    onChange={trackToggle('double_safeweb_toggle', setActiveSafeweb_1)}
+                    onChange={trackToggle(
+                      'double_safeweb_toggle',
+                      setActiveSafeweb_1
+                    )}
                   />
                 </div>
                 <span>
@@ -1183,7 +1198,10 @@ export default function Double() {
                 <div className={styles.abonaments_block_inside_subtitle_toggle}>
                   <Toggle
                     checked={activeMTC_TV_GO_1}
-                    onChange={trackToggle('double_tvgo_toggle', setActiveMTC_TV_GO_1)}
+                    onChange={trackToggle(
+                      'double_tvgo_toggle',
+                      setActiveMTC_TV_GO_1
+                    )}
                   />
                 </div>
                 <span>
@@ -1206,7 +1224,10 @@ export default function Double() {
                 <div className={styles.abonaments_block_inside_subtitle_toggle}>
                   <Toggle
                     checked={activeTelephone_1}
-                    onChange={trackToggle('double_telephone_toggle', setActiveTelephone_1)}
+                    onChange={trackToggle(
+                      'double_telephone_toggle',
+                      setActiveTelephone_1
+                    )}
                   />
                 </div>
                 <span>
@@ -1323,7 +1344,10 @@ export default function Double() {
                   {/*/>*/}
                   <Toggle
                     checked={activeMesh_2}
-                    onChange={trackToggle('double_mesh_toggle', setActiveMesh_2)}
+                    onChange={trackToggle(
+                      'double_mesh_toggle',
+                      setActiveMesh_2
+                    )}
                   />
                 </div>
                 <span>
@@ -1345,7 +1369,10 @@ export default function Double() {
                   {/*/>*/}
                   <Toggle
                     checked={activeSafeweb_2}
-                    onChange={trackToggle('double_safeweb_toggle', setActiveSafeweb_2)}
+                    onChange={trackToggle(
+                      'double_safeweb_toggle',
+                      setActiveSafeweb_2
+                    )}
                   />
                 </div>
                 <span>
@@ -1485,7 +1512,10 @@ export default function Double() {
                 <div className={styles.abonaments_block_inside_subtitle_toggle}>
                   <Toggle
                     checked={activeMTC_TV_GO_2}
-                    onChange={trackToggle('double_tvgo_toggle', setActiveMTC_TV_GO_2)}
+                    onChange={trackToggle(
+                      'double_tvgo_toggle',
+                      setActiveMTC_TV_GO_2
+                    )}
                   />
                 </div>
                 <span>
@@ -1508,7 +1538,10 @@ export default function Double() {
                 <div className={styles.abonaments_block_inside_subtitle_toggle}>
                   <Toggle
                     checked={activeTelephone_2}
-                    onChange={trackToggle('double_telephone_toggle', setActiveTelephone_2)}
+                    onChange={trackToggle(
+                      'double_telephone_toggle',
+                      setActiveTelephone_2
+                    )}
                   />
                 </div>
                 <span>
@@ -1577,9 +1610,9 @@ export default function Double() {
                 id="combo_buy+2"
                 onClick={() =>
                   setPopup(
-                    '1',
+                    '2',
                     t('navbar.internet_tv'),
-                    `(300Mbps + ${
+                    `(500Mbps + ${
                       activeSelectedTV_1 == 'premier'
                         ? t('double.premier_tv')
                         : activeSelectedTV_1 == 'univers' &&
@@ -1658,7 +1691,10 @@ export default function Double() {
                 {/*/>*/}
                 <Toggle
                   checked={activeSafeweb_3}
-                  onChange={trackToggle('double_safeweb_toggle', setActiveSafeweb_3)}
+                  onChange={trackToggle(
+                    'double_safeweb_toggle',
+                    setActiveSafeweb_3
+                  )}
                 />
               </div>
               <span>
@@ -1795,7 +1831,10 @@ export default function Double() {
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
                 <Toggle
                   checked={activeMTC_TV_GO_3}
-                  onChange={trackToggle('double_tvgo_toggle', setActiveMTC_TV_GO_3)}
+                  onChange={trackToggle(
+                    'double_tvgo_toggle',
+                    setActiveMTC_TV_GO_3
+                  )}
                 />
               </div>
               <span>
@@ -1816,7 +1855,10 @@ export default function Double() {
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
                 <Toggle
                   checked={activeTelephone_3}
-                  onChange={trackToggle('double_telephone_toggle', setActiveTelephone_3)}
+                  onChange={trackToggle(
+                    'double_telephone_toggle',
+                    setActiveTelephone_3
+                  )}
                 />
               </div>
               <span>
@@ -1894,9 +1936,9 @@ export default function Double() {
               id="combo_buy+3"
               onClick={() =>
                 setPopup(
-                  '1',
+                  '3',
                   t('navbar.internet_tv'),
-                  `(300Mbps + ${
+                  `(1000Mbps + ${
                     activeSelectedTV_1 == 'premier'
                       ? t('double.premier_tv')
                       : activeSelectedTV_1 == 'univers' &&
@@ -1972,7 +2014,10 @@ export default function Double() {
                 {/*/>*/}
                 <Toggle
                   checked={activeSafeweb_4}
-                  onChange={trackToggle('double_safeweb_toggle', setActiveSafeweb_4)}
+                  onChange={trackToggle(
+                    'double_safeweb_toggle',
+                    setActiveSafeweb_4
+                  )}
                 />
               </div>
               <span>
@@ -2109,7 +2154,10 @@ export default function Double() {
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
                 <Toggle
                   checked={activeMTC_TV_GO_4}
-                  onChange={trackToggle('double_tvgo_toggle', setActiveMTC_TV_GO_4)}
+                  onChange={trackToggle(
+                    'double_tvgo_toggle',
+                    setActiveMTC_TV_GO_4
+                  )}
                 />
               </div>
               <span>
@@ -2130,7 +2178,10 @@ export default function Double() {
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
                 <Toggle
                   checked={activeTelephone_4}
-                  onChange={trackToggle('double_telephone_toggle', setActiveTelephone_4)}
+                  onChange={trackToggle(
+                    'double_telephone_toggle',
+                    setActiveTelephone_4
+                  )}
                 />
               </div>
               <span>
@@ -2205,9 +2256,9 @@ export default function Double() {
               id="combo_buy+4"
               onClick={() =>
                 setPopup(
-                  '1',
+                  '4',
                   t('navbar.internet_tv'),
-                  `(300Mbps + ${
+                  `(2.1Gbps + ${
                     activeSelectedTV_1 == 'premier'
                       ? t('double.premier_tv')
                       : activeSelectedTV_1 == 'univers' &&
@@ -2283,7 +2334,10 @@ export default function Double() {
                 {/*/>*/}
                 <Toggle
                   checked={activeSafeweb_5}
-                  onChange={trackToggle('double_safeweb_toggle', setActiveSafeweb_5)}
+                  onChange={trackToggle(
+                    'double_safeweb_toggle',
+                    setActiveSafeweb_5
+                  )}
                 />
               </div>
               <span>
@@ -2420,7 +2474,10 @@ export default function Double() {
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
                 <Toggle
                   checked={activeMTC_TV_GO_5}
-                  onChange={trackToggle('double_tvgo_toggle', setActiveMTC_TV_GO_5)}
+                  onChange={trackToggle(
+                    'double_tvgo_toggle',
+                    setActiveMTC_TV_GO_5
+                  )}
                 />
               </div>
               <span>
@@ -2441,7 +2498,10 @@ export default function Double() {
               <div className={styles.abonaments_block_inside_subtitle_toggle}>
                 <Toggle
                   checked={activeTelephone_5}
-                  onChange={trackToggle('double_telephone_toggle', setActiveTelephone_5)}
+                  onChange={trackToggle(
+                    'double_telephone_toggle',
+                    setActiveTelephone_5
+                  )}
                 />
               </div>
               <span>
@@ -2516,9 +2576,9 @@ export default function Double() {
               id="combo_buy+5"
               onClick={() =>
                 setPopup(
-                  '1',
+                  '5',
                   t('navbar.internet_tv'),
-                  `(300Mbps + ${
+                  `(5.5Gbps + ${
                     activeSelectedTV_1 == 'premier'
                       ? t('double.premier_tv')
                       : activeSelectedTV_1 == 'univers' &&
@@ -2627,7 +2687,7 @@ export default function Double() {
             show_comapre={false}
             buy={() => {
               setPopup(
-                '1',
+                '0',
                 'Hisense 32A4N',
                 `(500Mbps + ${t('double.univers_tv')})`
               );
@@ -2652,7 +2712,7 @@ export default function Double() {
             show_comapre={false}
             buy={() => {
               setPopup(
-                '1',
+                '0',
                 'Hisense 32A4N',
                 `(500 Mbps + ${t('double.univers_tv')})`
               );
@@ -2677,7 +2737,7 @@ export default function Double() {
             show_comapre={false}
             buy={() => {
               setPopup(
-                '1',
+                '0',
                 'Xiaomi Redmi Pad SE',
                 `(500 Mbps + ${t('double.univers_tv')})`
               );
@@ -2702,7 +2762,7 @@ export default function Double() {
             show_comapre={false}
             buy={() => {
               setPopup(
-                '1',
+                '0',
                 'Hisense 55A4N',
                 `(2.1 Gbps + ${t('double.univers_tv')})`
               );
@@ -2727,7 +2787,7 @@ export default function Double() {
             show_comapre={false}
             buy={() => {
               setPopup(
-                '1',
+                '0',
                 'Microsoft Xbox Series S',
                 `(2.1 Gbps + ${t('double.univers_tv')})`
               );
@@ -2752,7 +2812,7 @@ export default function Double() {
             show_comapre={false}
             buy={() => {
               setPopup(
-                '1',
+                '0',
                 'Sony PlayStation 5 Slim',
                 `(5.5 Gbps + ${t('double.univers_tv')})`
               );
@@ -2777,7 +2837,7 @@ export default function Double() {
             show_comapre={false}
             buy={() => {
               setPopup(
-                '1',
+                '0',
                 ' XiaomiRedmi Pad Pro',
                 `(1000 Mbps + ${t('double.univers_tv')})`
               );
@@ -2802,7 +2862,7 @@ export default function Double() {
             show_comapre={false}
             buy={() => {
               setPopup(
-                '1',
+                '0',
                 'Hisense 55A4N',
                 `(1000 Mbps + ${t('double.univers_tv')})`
               );
@@ -2827,7 +2887,7 @@ export default function Double() {
             show_comapre={false}
             buy={() => {
               setPopup(
-                '1',
+                '0',
                 'Xiaomi Pad 7 Pro',
                 `(2.1 Gbps + ${t('double.univers_tv')})`
               );
