@@ -303,7 +303,7 @@ export default function Mobile() {
                 className={styles.mobile_carousell_tag}
                 style={{ background: '#E7EBFF' }}
               >
-                {t('tm.tag_budget')}
+                {t('tm.tags.budget')}
               </div>
             </div>
             <div className={styles.mobile_carousell_title}>
@@ -416,13 +416,13 @@ export default function Mobile() {
           <div className={styles.mobile_carousell_block}>
             <div className={styles.mobile_carousell_tags}>
               <div className={styles.mobile_carousell_tag}>
-                {t('tm.tag_new')}
+                {t('tm.tags.new')}
               </div>
               <div
                 className={styles.mobile_carousell_tag}
                 style={{ background: '#E7EBFF' }}
               >
-                {t('tm.tag_top_sales')}
+                {t('tm.tags.top_sales')}
               </div>
             </div>
             <div className={styles.mobile_carousell_title}>
@@ -544,7 +544,7 @@ export default function Mobile() {
                 className={styles.mobile_carousell_tag}
                 style={{ background: '#E7EBFF', opacity: '0' }}
               >
-                {t('tm.tag_roaming')}
+                {t('tm.tags.roaming')}
               </div>
             </div>
             <div className={styles.mobile_carousell_title}>
@@ -670,7 +670,7 @@ export default function Mobile() {
                 className={styles.mobile_carousell_tag}
                 style={{ background: '#E7EBFF' }}
               >
-                {t('tm.tag_roaming')}
+                {t('tm.tags.roaming')}
               </div>
             </div>
             <div className={styles.mobile_carousell_title}>
@@ -817,13 +817,13 @@ export default function Mobile() {
           <div className={styles.mobile_carousell_block}>
             <div className={styles.mobile_carousell_tags}>
               <div className={styles.mobile_carousell_tag}>
-                {t('tm.tag_top')}
+                {t('tm.tags.top')}
               </div>
               <div
                 className={styles.mobile_carousell_tag}
                 style={{ background: '#E7EBFF' }}
               >
-                {t('tm.tag_roaming')}
+                {t('tm.tags.roaming')}
               </div>
             </div>
             <div className={styles.mobile_carousell_title}>
