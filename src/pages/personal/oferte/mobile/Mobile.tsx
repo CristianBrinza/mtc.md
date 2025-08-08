@@ -30,9 +30,9 @@ export default function Mobile() {
   const { t } = useTranslation();
   const [testGratis, setTestGratis] = useState(false);
   const seo = {
-    title: t('pages.tm.title'),
-    description: t('pages.tm.description'),
-    keywords: t('pages.tm.keywords'),
+    title: t('pages.mobile.title'),
+    description: t('pages.mobile.description'),
+    keywords: t('pages.mobile.keywords'),
   };
   const breadcrumbItems = [
     { label: t('tm.breadcrumb.promo'), url: ' ' },
