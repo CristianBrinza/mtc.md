@@ -1533,10 +1533,15 @@
       "description": "Prezentare detaliată a planurilor mobile, funcțiilor de roaming și a serviciilor suplimentare oferite de Moldtelecom.",
       "keywords": "mobil, opțiuni, servicii, tarife, roaming, prepaid, postpaid, internet, apeluri, sms"
     },
-    "tm": {
+    "mobile": {
       "title": "Telefonie Mobilă",
       "description": "Descoperă cele mai noi smartphone‑uri și abonamente flexibile care te mențin conectat oriunde.",
       "keywords": "mobil, smartphone, abonamente, tarife, prepaid, postpaid, oferte, 4G, 5G, Moldova"
+    },
+    "portare": {
+      "title": "Portare număr",
+      "description": "Treci la Moldtelecom și păstrează-ți numărul de telefon printr-un proces simplu de portare.",
+      "keywords": "portare, portare număr, trecere, mobil, Moldtelecom"
     },
     "double": {
       "title": "Internet + TV Double",
