@@ -26,6 +26,7 @@ import Double from './pages/personal/oferte/double/Double.tsx';
 import PoliticaRoaming from './pages/costume/PoliticaRoaming/PoliticaRoaming.tsx';
 import Portare from './pages/personal/oferte/portare/Portare.tsx';
 import OnlyNet from './pages/personal/oferte/only_net/OnlyNet.tsx';
+import Gaming from './pages/personal/oferte/gaming/Gaming.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -57,6 +58,10 @@ export const routesConfig: RouteConfig[] = [
   {
     path: '/:lang/internet',
     element: React.createElement(OnlyNet),
+  },
+  {
+    path: '/:lang/gaming',
+    element: React.createElement(Gaming),
   },
   {
     path: '/:lang/mobile',

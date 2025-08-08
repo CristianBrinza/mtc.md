@@ -651,7 +651,6 @@ export default function Double() {
   const [activeSelectedTV_4, setActiveSelectedTV_4] =
     useState<string>('univers');
   const [activeTV_Select_4, setActiveTV_Select_4] = useState<boolean>(false);
-  const [activeMesh_4, setActiveMesh_4] = useState<boolean>(false);
   const [activeSafeweb_4, setActiveSafeweb_4] = useState<boolean>(false);
   const [activeMTC_TV_GO_4, setActiveMTC_TV_GO_4] = useState<boolean>(false);
   const [activeTelephone_4, setActiveTelephone_4] = useState<boolean>(false);
@@ -659,7 +658,6 @@ export default function Double() {
 
   function calculateTotal_4(
     config: ConfigType,
-    mesh: boolean,
     safeweb: boolean,
     telephone: boolean,
     tvConfig: string,
@@ -667,7 +665,6 @@ export default function Double() {
     numberTV: number
   ): number {
     const base = config === '1' ? 299 : 599;
-    const meshVal = mesh ? 49 : 0;
     const safeVal = safeweb ? 15 : 0;
     const telVal = telephone ? 10 : 0;
 
@@ -699,14 +696,13 @@ export default function Double() {
     const extraTV =
       numberTV > 1 ? (numberTV - 1) * (tvConfig === 'smart_tv' ? 20 : 30) : 0;
 
-    return base + meshVal + safeVal + telVal + tvVal + extraTV;
+    return base + safeVal + telVal + tvVal + extraTV;
   }
 
   const total_4 = useMemo(
     () =>
       calculateTotal_4(
         activeConfig,
-        activeMesh_4,
         activeSafeweb_4,
         activeTelephone_4,
         activeTVConfig_4,
@@ -715,7 +711,6 @@ export default function Double() {
       ),
     [
       activeConfig,
-      activeMesh_4,
       activeSafeweb_4,
       activeTelephone_4,
       activeTVConfig_4,
@@ -730,7 +725,6 @@ export default function Double() {
     () =>
       calculateTotal_4(
         altConfig_4,
-        activeMesh_4,
         activeSafeweb_4,
         activeTelephone_4,
         activeTVConfig_4,
@@ -739,7 +733,6 @@ export default function Double() {
       ),
     [
       altConfig_4,
-      activeMesh_4,
       activeSafeweb_4,
       activeTelephone_4,
       activeTVConfig_4,
@@ -752,7 +745,6 @@ export default function Double() {
   const [activeSelectedTV_5, setActiveSelectedTV_5] =
     useState<string>('univers');
   const [activeTV_Select_5, setActiveTV_Select_5] = useState<boolean>(false);
-  const [activeMesh_5, setActiveMesh_5] = useState<boolean>(false);
   const [activeSafeweb_5, setActiveSafeweb_5] = useState<boolean>(false);
   const [activeMTC_TV_GO_5, setActiveMTC_TV_GO_5] = useState<boolean>(false);
   const [activeTelephone_5, setActiveTelephone_5] = useState<boolean>(false);
@@ -760,7 +752,6 @@ export default function Double() {
 
   function calculateTotal_5(
     config: ConfigType,
-    mesh: boolean,
     safeweb: boolean,
     telephone: boolean,
     tvConfig: string,
@@ -768,7 +759,6 @@ export default function Double() {
     numberTV: number
   ): number {
     const base = config === '1' ? 499 : 799;
-    const meshVal = mesh ? 49 : 0;
     const safeVal = safeweb ? 15 : 0;
     const telVal = telephone ? 10 : 0;
 
@@ -800,14 +790,13 @@ export default function Double() {
     const extraTV =
       numberTV > 1 ? (numberTV - 1) * (tvConfig === 'smart_tv' ? 20 : 30) : 0;
 
-    return base + meshVal + safeVal + telVal + tvVal + extraTV;
+    return base + safeVal + telVal + tvVal + extraTV;
   }
 
   const total_5 = useMemo(
     () =>
       calculateTotal_5(
         activeConfig,
-        activeMesh_5,
         activeSafeweb_5,
         activeTelephone_5,
         activeTVConfig_5,
@@ -816,7 +805,6 @@ export default function Double() {
       ),
     [
       activeConfig,
-      activeMesh_5,
       activeSafeweb_5,
       activeTelephone_5,
       activeTVConfig_5,
@@ -831,7 +819,6 @@ export default function Double() {
     () =>
       calculateTotal_5(
         altConfig_5,
-        activeMesh_5,
         activeSafeweb_5,
         activeTelephone_5,
         activeTVConfig_5,
@@ -840,7 +827,6 @@ export default function Double() {
       ),
     [
       altConfig_5,
-      activeMesh_5,
       activeSafeweb_5,
       activeTelephone_5,
       activeTVConfig_5,
@@ -864,9 +850,9 @@ export default function Double() {
           : id === '3'
             ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_3}, nr - ${numberTVConfig_3} tv), ${activeMesh_3 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_3 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_3 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_3 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
             : id === '4'
-              ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_4}, nr - ${numberTVConfig_4} tv), ${activeMesh_4 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_4 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_4 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_4 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+              ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_4}, nr - ${numberTVConfig_4} tv), ${activeSafeweb_4 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_4 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_4 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
               : id === '5'
-                ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_5}, nr - ${numberTVConfig_5} tv), ${activeMesh_5 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_5 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_5 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_5 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+                ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_5}, nr - ${numberTVConfig_5} tv), ${activeSafeweb_5 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_5 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_5 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
                 : ''
     );
     // console.log(
@@ -1987,20 +1973,22 @@ export default function Double() {
               {t('combo_home.router_wifi6_included')}
             </div>
             <div className={styles.abonaments_block_inside_subtitle}>
-              <div className={styles.abonaments_block_inside_subtitle_toggle}>
-                {/*<Icon*/}
-                {/*  type={'empty'}*/}
-                {/*  color={'var(--theme_primary_color_blue_2)'}*/}
-                {/*/>*/}
-                <Toggle
-                  checked={activeMesh_4}
-                  onChange={trackToggle('double_mesh_toggle', setActiveMesh_4)}
+              <div className={styles.abonaments_block_inside_subtitle_icon}>
+                <Icon
+                  type={'wifi'}
+                  color={'var(--theme_primary_color_blue_2)'}
                 />
+                {/*<Toggle*/}
+                {/*  checked={activeMesh_4}*/}
+                {/*  onChange={trackToggle('double_mesh_toggle', setActiveMesh_4)}*/}
+                {/*/>*/}
               </div>
               <span>
-                x1 <b>Mesh Wi-Fi</b>
-                {/*inclus*/}{' '}
-                <span className={styles.abonaments_block_inside_subtitle_small}>
+                x1 <b>Mesh Wi-Fi</b> {t('combo_home.inclus')}{' '}
+                <span
+                  className={styles.abonaments_block_inside_subtitle_small}
+                  style={{ textDecoration: 'line-through' }}
+                >
                   (49 {t('combo_home.lei_luna')})
                 </span>
               </span>
@@ -2307,20 +2295,22 @@ export default function Double() {
               {t('combo_home.router_wifi6_included')}
             </div>
             <div className={styles.abonaments_block_inside_subtitle}>
-              <div className={styles.abonaments_block_inside_subtitle_toggle}>
-                {/*<Icon*/}
-                {/*  type={'empty'}*/}
-                {/*  color={'var(--theme_primary_color_blue_2)'}*/}
-                {/*/>*/}
-                <Toggle
-                  checked={activeMesh_5}
-                  onChange={trackToggle('double_mesh_toggle', setActiveMesh_5)}
+              <div className={styles.abonaments_block_inside_subtitle_icon}>
+                <Icon
+                  type={'wifi'}
+                  color={'var(--theme_primary_color_blue_2)'}
                 />
+                {/*<Toggle*/}
+                {/*  checked={activeMesh_4}*/}
+                {/*  onChange={trackToggle('double_mesh_toggle', setActiveMesh_4)}*/}
+                {/*/>*/}
               </div>
               <span>
-                x1 <b>Mesh Wi-Fi</b>
-                {/*inclus*/}{' '}
-                <span className={styles.abonaments_block_inside_subtitle_small}>
+                x2 <b>Mesh Wi-Fi</b> {t('combo_home.inclus')}{' '}
+                <span
+                  className={styles.abonaments_block_inside_subtitle_small}
+                  style={{ textDecoration: 'line-through' }}
+                >
                   (49 {t('combo_home.lei_luna')})
                 </span>
               </span>

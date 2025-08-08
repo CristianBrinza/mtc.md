@@ -354,75 +354,57 @@ export default function OnlyNet() {
     [altConfig_3, activeMesh_3, activeSafeweb_3, activeTelephone_3]
   );
 
-  const [activeMesh_4, setActiveMesh_4] = useState<boolean>(false);
   const [activeSafeweb_4, setActiveSafeweb_4] = useState<boolean>(false);
   const [activeTelephone_4, setActiveTelephone_4] = useState<boolean>(false);
 
   function calculateTotal_4(
     config: ConfigType,
-    mesh: boolean,
     safeweb: boolean,
     telephone: boolean
   ): number {
     const base = config === '1' ? 299 : 599;
-    const meshVal = mesh ? 49 : 0;
     const safeVal = safeweb ? 15 : 0;
     const telVal = telephone ? 10 : 0;
 
-    return base + meshVal + safeVal + telVal;
+    return base + safeVal + telVal;
   }
 
   const total_4 = useMemo(
     () =>
       calculateTotal_4(
         activeConfig,
-        activeMesh_4,
+
         activeSafeweb_4,
         activeTelephone_4
       ),
-    [activeConfig, activeMesh_4, activeSafeweb_4, activeTelephone_4]
+    [activeConfig, activeSafeweb_4, activeTelephone_4]
   );
 
   // and now your “other” total, for whichever config ≠ '1':
   const altConfig_4 = activeConfig !== '1' ? activeConfig : ('2' as ConfigType);
   const total_4_4 = useMemo(
-    () =>
-      calculateTotal_4(
-        altConfig_4,
-        activeMesh_4,
-        activeSafeweb_4,
-        activeTelephone_4
-      ),
-    [altConfig_4, activeMesh_4, activeSafeweb_4, activeTelephone_4]
+    () => calculateTotal_4(altConfig_4, activeSafeweb_4, activeTelephone_4),
+    [altConfig_4, activeSafeweb_4, activeTelephone_4]
   );
 
-  const [activeMesh_5, setActiveMesh_5] = useState<boolean>(false);
   const [activeSafeweb_5, setActiveSafeweb_5] = useState<boolean>(false);
   const [activeTelephone_5, setActiveTelephone_5] = useState<boolean>(false);
 
   function calculateTotal_5(
     config: ConfigType,
-    mesh: boolean,
     safeweb: boolean,
     telephone: boolean
   ): number {
     const base = config === '1' ? 499 : 799;
-    const meshVal = mesh ? 49 : 0;
     const safeVal = safeweb ? 15 : 0;
     const telVal = telephone ? 10 : 0;
 
-    return base + meshVal + safeVal + telVal;
+    return base + safeVal + telVal;
   }
 
   const total_5 = useMemo(
-    () =>
-      calculateTotal_5(
-        activeConfig,
-        activeMesh_5,
-        activeSafeweb_5,
-        activeTelephone_5
-      ),
-    [activeConfig, activeMesh_5, activeSafeweb_5, activeTelephone_5]
+    () => calculateTotal_5(activeConfig, activeSafeweb_5, activeTelephone_5),
+    [activeConfig, activeSafeweb_5, activeTelephone_5]
   );
 
   // and now your “other” total, for whichever config ≠ '1':
@@ -431,11 +413,11 @@ export default function OnlyNet() {
     () =>
       calculateTotal_5(
         altConfig_5,
-        activeMesh_5,
+
         activeSafeweb_5,
         activeTelephone_5
       ),
-    [altConfig_5, activeMesh_5, activeSafeweb_5, activeTelephone_5]
+    [altConfig_5, activeSafeweb_5, activeTelephone_5]
   );
 
   const setPopup = (id: string, name: string, subname: string) => {
@@ -453,9 +435,9 @@ export default function OnlyNet() {
           : id === '3'
             ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet) Double – ${name} ${subname} , ${activeMesh_3 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_3 ? '+ Safe‑Web, ' : ''}${activeTelephone_3 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
             : id === '4'
-              ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet) Double – ${name} ${subname} , ${activeMesh_4 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_4 ? '+ Safe‑Web, ' : ''}${activeTelephone_4 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+              ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet) Double – ${name} ${subname} , ${activeSafeweb_4 ? '+ Safe‑Web, ' : ''}${activeTelephone_4 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
               : id === '5'
-                ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet) Double – ${name} ${subname} , ${activeMesh_5 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_5 ? '+ Safe‑Web, ' : ''}${activeTelephone_5 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+                ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet) Double – ${name} ${subname} , ${activeSafeweb_5 ? '+ Safe‑Web, ' : ''}${activeTelephone_5 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
                 : ''
     );
   };
@@ -617,11 +599,8 @@ export default function OnlyNet() {
                 <InfoIcon onClick={() => setActivePopup('1280113')} />
               </div>
 
-              {activeConfig == '2' && (
-                <select
-                  className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-                  style={{ opacity: '0' }}
-                ></select>
+              {activeConfig != '1' && (
+                <div className={styles.regio_spacer}>&nbsp;</div>
               )}
 
               <div className={styles.wifi_carousell_block_inside_btns}>
@@ -778,26 +757,8 @@ export default function OnlyNet() {
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280113')} />
               </div>
-              {activeConfig == '2' && (
-                <select
-                  className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-                >
-                  <option value={'smart_tv_32 1_leu'}>
-                    <b>Smart TV 32"</b> (la 1 leu)&nbsp;
-                  </option>
-                  <option value={'smart_tv_43 1_leu'}>
-                    <b>Smart TV 43"</b> (la 1 899 lei)&nbsp;
-                  </option>
-
-                  {isRegio && (
-                    <option value={'smart_tv_43 1_leu'}>
-                      <b>Tableta </b> (la 1 leu)&nbsp;
-                    </option>
-                  )}
-                  {!isRegio && (
-                    <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
-                  )}
-                </select>
+              {activeConfig != '1' && (
+                <div className={styles.regio_spacer}>&nbsp;</div>
               )}
 
               <div className={styles.wifi_carousell_block_inside_btns}>
@@ -944,37 +905,9 @@ export default function OnlyNet() {
               </span>
               <InfoIcon onClick={() => setActivePopup('1280113')} />
             </div>
-            {activeConfig == '2' && (
-              <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-              >
-                <option value={'smart_tv_43 1_leu'}>
-                  <b>Smart TV 43"</b> (la 1 leu)&nbsp;
-                </option>
-                <option value={'smart_tv_55 1_leu'}>
-                  <b>Smart TV 55"</b> (la 2 999 lei)&nbsp;
-                </option>
-                {isRegio && (
-                  <option value={'smart_tv_43 1_leu'}>
-                    <b>Tableta </b> (la 1 leu)&nbsp;
-                  </option>
-                )}
-                {!isRegio && (
-                  <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
-                )}
-              </select>
-            )}
-            {activeConfig == '3' && (
-              <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-              >
-                <option value={'xbox 350_lei'}>
-                  <b>Xbox Series S </b> (la 3500 lei)&nbsp;
-                </option>
-                <option value={'smart_tv_43 1_leu'}>
-                  <b>PlayStation 5 </b> (la 5000 lei)&nbsp;
-                </option>
-              </select>
+
+            {activeConfig != '1' && (
+              <div className={styles.regio_spacer}>&nbsp;</div>
             )}
 
             <div className={styles.wifi_carousell_block_inside_btns}>
@@ -1052,20 +985,22 @@ export default function OnlyNet() {
               {t('combo_home.router_wifi6_included')}
             </div>
             <div className={styles.abonaments_block_inside_subtitle}>
-              <div className={styles.abonaments_block_inside_subtitle_toggle}>
-                {/*<Icon*/}
-                {/*  type={'empty'}*/}
-                {/*  color={'var(--theme_primary_color_blue_2)'}*/}
-                {/*/>*/}
-                <Toggle
-                  checked={activeMesh_4}
-                  onChange={trackToggle('double_mesh_toggle', setActiveMesh_4)}
+              <div className={styles.abonaments_block_inside_subtitle_icon}>
+                <Icon
+                  type={'wifi'}
+                  color={'var(--theme_primary_color_blue_2)'}
                 />
+                {/*<Toggle*/}
+                {/*  checked={activeMesh_4}*/}
+                {/*  onChange={trackToggle('double_mesh_toggle', setActiveMesh_4)}*/}
+                {/*/>*/}
               </div>
               <span>
-                x1 <b>Mesh Wi-Fi</b>
-                {/*inclus*/}{' '}
-                <span className={styles.abonaments_block_inside_subtitle_small}>
+                x1 <b>Mesh Wi-Fi</b> {t('combo_home.inclus')}{' '}
+                <span
+                  className={styles.abonaments_block_inside_subtitle_small}
+                  style={{ textDecoration: 'line-through' }}
+                >
                   (49 {t('combo_home.lei_luna')})
                 </span>
               </span>
@@ -1118,34 +1053,9 @@ export default function OnlyNet() {
               </span>
               <InfoIcon onClick={() => setActivePopup('1280113')} />
             </div>
-            {activeConfig == '2' && (
-              <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-              >
-                <option value={'smart_tv_55 1_leu'}>
-                  <b>Smart TV 55"</b> (la 1 leu)&nbsp;
-                </option>
-                {isRegio && (
-                  <option value={'smart_tv_43 1_leu'}>
-                    <b>Tableta </b> (la 1 leu)&nbsp;
-                  </option>
-                )}
-                {!isRegio && (
-                  <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
-                )}
-              </select>
-            )}
-            {activeConfig == '3' && (
-              <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-              >
-                <option value={'xbox 350_lei'}>
-                  <b>Xbox Series S </b> (la 1 leu)&nbsp;
-                </option>
-                <option value={'smart_tv_43 1_leu'}>
-                  <b>PlayStation 5 </b> (la 1500 lei)&nbsp;
-                </option>
-              </select>
+
+            {activeConfig != '1' && (
+              <div className={styles.regio_spacer}>&nbsp;</div>
             )}
 
             <div className={styles.wifi_carousell_block_inside_btns}>
@@ -1223,20 +1133,22 @@ export default function OnlyNet() {
               {t('combo_home.router_wifi6_included')}
             </div>
             <div className={styles.abonaments_block_inside_subtitle}>
-              <div className={styles.abonaments_block_inside_subtitle_toggle}>
-                {/*<Icon*/}
-                {/*  type={'empty'}*/}
-                {/*  color={'var(--theme_primary_color_blue_2)'}*/}
-                {/*/>*/}
-                <Toggle
-                  checked={activeMesh_5}
-                  onChange={trackToggle('double_mesh_toggle', setActiveMesh_5)}
+              <div className={styles.abonaments_block_inside_subtitle_icon}>
+                <Icon
+                  type={'wifi'}
+                  color={'var(--theme_primary_color_blue_2)'}
                 />
+                {/*<Toggle*/}
+                {/*  checked={activeMesh_4}*/}
+                {/*  onChange={trackToggle('double_mesh_toggle', setActiveMesh_4)}*/}
+                {/*/>*/}
               </div>
               <span>
-                x1 <b>Mesh Wi-Fi</b>
-                {/*inclus*/}{' '}
-                <span className={styles.abonaments_block_inside_subtitle_small}>
+                x2 <b>Mesh Wi-Fi</b> {t('combo_home.inclus')}{' '}
+                <span
+                  className={styles.abonaments_block_inside_subtitle_small}
+                  style={{ textDecoration: 'line-through' }}
+                >
                   (49 {t('combo_home.lei_luna')})
                 </span>
               </span>
@@ -1289,36 +1201,10 @@ export default function OnlyNet() {
               </span>
               <InfoIcon onClick={() => setActivePopup('1280113')} />
             </div>
-            {activeConfig == '2' && (
-              <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-              >
-                <option value={'smart_tv_55 1_leu'}>
-                  <b>Smart TV 55"</b> (la 1 leu)&nbsp;
-                </option>
-                {isRegio && (
-                  <option value={'smart_tv_43 1_leu'}>
-                    <b>Tableta </b> (la 1 leu)&nbsp;
-                  </option>
-                )}
-                {!isRegio && (
-                  <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
-                )}
-              </select>
-            )}
-            {activeConfig == '3' && (
-              <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-              >
-                <option value={'xbox 350_lei'}>
-                  <b>Xbox Series S </b> (la 1 leu)&nbsp;
-                </option>
-                <option value={'smart_tv_43 1_leu'}>
-                  <b>PlayStation 5 </b> (la 1 leu)&nbsp;
-                </option>
-              </select>
-            )}
 
+            {activeConfig != '1' && (
+              <div className={styles.regio_spacer}>&nbsp;</div>
+            )}
             <div className={styles.wifi_carousell_block_inside_btns}>
               {activeConfig == '1' ? (
                 <div className={styles.tm_carousell_block_row_tags}>

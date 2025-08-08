@@ -616,6 +616,9 @@
 .mobile_pormotion {
   display: none;
 }
+.regio_spacer {
+  margin-bottom: 10px;
+}
 
 @media (max-width: 1300px) {
   .hero {
