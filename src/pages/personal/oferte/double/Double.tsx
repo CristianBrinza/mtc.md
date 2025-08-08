@@ -154,6 +154,25 @@ const OptionsIcon: React.FC = () => (
 type ConfigType = '1' | '2' | '3';
 
 export default function Double() {
+  const [showRegio, setShowRegio] = useState(false);
+
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setShowRegio(window.scrollY > 15);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    onScroll(); // în caz că pagina pornește deja scrollată
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   const { t } = useTranslation();
   const seo = {
     title: t('pages.double.title'),
@@ -911,6 +930,7 @@ export default function Double() {
           </span>
         </span>
       </div>
+
       <Navbar />
 
       <Chat />
@@ -3383,6 +3403,16 @@ export default function Double() {
           </div>
         )}
       </Popup>
+      <div className={styles.regio_block_mobile} hidden={!showRegio}>
+        {t('combo_home.regiunea')} ({' '}
+        <span
+          onClick={() => setActivePopup('1110116')}
+          className={styles.regio_select}
+        >
+          {regio}
+        </span>{' '}
+        )
+      </div>
     </>
   );
 }
