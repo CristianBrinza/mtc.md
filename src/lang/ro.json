@@ -1,5 +1,6 @@
 {
   "lang": "ro",
+  "activeaza_acum": "Activează acum",
   "navbar": {
     "romanian": "Română",
     "english": "Engleză",
@@ -323,12 +324,20 @@
       "text": "Conectezi multiple dispozitive la aceeași rețea Wi-Fi, fără a fi necesar să introduci repetat parola și fără întreruperi la navigare în timp ce te deplasezi în locuința ta."
     },
     "faq": {
-      "q1": "Wi-Fi PLUS este compatibil cu orice router?",
-      "a1": "Wi-Fi PLUS este proiectat pentru a fi compatibil cu majoritatea routerelor moderne. Pentru detalii specifice despre compatibilitate, te rugăm să consulți documentația echipamentului sau să contactezi Serviciul Suport Clienți.",
-      "q2": "Pot deconecta serviciul Wi-Fi PLUS?",
-      "a2": "Da, serviciul Wi-Fi PLUS poate fi deconectat în orice moment fără penalități. Pentru deconectare, returnează echipamentul în orice magazin Moldtelecom.",
-      "q3": "Cum sunt facturate costurile pentru Wi-Fi PLUS?",
-      "a3": "Facturarea începe de la momentul activării serviciului și costurile sunt incluse în factura lunară de Internet fix până la deconectare."
+      "q1": "Ce este Wi-Fi PLUS?",
+      "a1": "Wi-Fi PLUS este o opțiune adițională la serviciul tău de Internet fix, care îți extinde acoperirea Wi-Fi în locuință, permițând conectarea a până la două echipamente terminale per conexiune pentru a asigura o acoperire optimă.",
+      "q2": "Cum se activează Wi-Fi PLUS?",
+      "a2": "Serviciul Wi-Fi PLUS poate fi activat prin contactarea Serviciului Suport Clienți la 022 200 200 sau accesând secțiunea Cereri Online pe www.moldtelecom.md/cereri.",
+      "q3": "Cât costă serviciul Wi-Fi PLUS?",
+      "a3": "Serviciul Wi-Fi PLUS costă 20 lei lunar pentru fiecare echipament conectat. Acest cost este adăugat la factura ta lunară de Internet fix.",
+      "q4": "Cum sunt facturate costurile pentru Wi-Fi PLUS?",
+      "a4": "Facturarea începe din momentul activării serviciului, iar costurile sunt incluse în factura lunară de Internet fix. Facturarea continuă până la deconectarea serviciului.",
+      "q5": "Pot deconecta serviciul Wi-Fi PLUS oricând?",
+      "a5": "Da, serviciul Wi-Fi PLUS poate fi deconectat în orice moment fără penalități. Pentru deconectare, returnează echipamentul în orice magazin Moldtelecom.",
+      "q6": "Ce se întâmplă dacă echipamentul Wi-Fi PLUS este pierdut sau deteriorat?",
+      "a6": "Dacă echipamentul este pierdut sau deteriorat, vei fi responsabil să plătești o taxă de compensare de 300 lei per echipament, sumă care va fi adăugată la factura ta.",
+      "q7": "Wi-Fi PLUS este compatibil cu orice router?",
+      "a7": "Wi-Fi PLUS este proiectat pentru a fi compatibil cu majoritatea routerelor moderne. Pentru detalii specifice despre compatibilitate, consultă documentația echipamentului sau contactează Serviciul Suport Clienți."
     }
   },
   "footer": {
@@ -2135,6 +2144,8 @@
     }
   },
   "combo_home": {
+    "gratiut": "gratiut",
+    "cu_oferta": "Doar cu oferta",
     "inclus": "inclus",
     "location_select": "Selecteaza regiunea și localitatea",
     "promo_offer_1": "Oferta promoțională \"Smart TV / Tableta\"",
@@ -2223,6 +2234,18 @@
       "features": {
         "0": "121 canale HD, 73 SD și 4 posturi radio",
         "1": "Înregistrare emisiuni și redare până la 7 zile înapoi",
+        "2": "Pauză și reluare live TV",
+        "3": "Switch rapid între limbi și subtitrări"
+      }
+    },
+    "popup_univers": {
+      "title": "Ce este Univers TV?",
+      "text": "Univers TV este unul dintre cele mai complexe pachete TV disponibile, oferind o selecție extinsă de canale naționale și internaționale, în format HD și SD, alături de funcționalități avansate pentru controlul conținutului.",
+      "features_title": "Caracteristici principale:",
+      "features": {
+        "0": "170 canale HD, 77 SD și 4 posturi radio",
+        "1": "Înregistrare emisiuni și redare până la 7 zile înapoi",
+        "1_1": "Arhiva TV inclusă",
         "2": "Pauză și reluare live TV",
         "3": "Switch rapid între limbi și subtitrări"
       }

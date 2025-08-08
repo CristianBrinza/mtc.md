@@ -265,7 +265,7 @@
   border-radius: 100px;
 }
 .tv_config_left_t2 {
-  padding: 3px 18px;
+  padding: 3px 15px;
   border: 1px solid #fff;
   background-color: #ffffff;
   border-radius: 100px;
@@ -500,6 +500,9 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
+.popup_more_detalii {
+  margin: 0 auto;
+}
 
 .popup_div_title {
   font-weight: 700;
@@ -615,6 +618,20 @@
 }
 .mobile_pormotion {
   display: none;
+}
+.row_popup_options_links {
+  display: flex;
+  gap: 3px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 3px;
+}
+.row_popup_options_link {
+  color: var(--theme_primary_color_blue_2);
+  cursor: pointer;
+}
+.row_popup_options_link :hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 1300px) {

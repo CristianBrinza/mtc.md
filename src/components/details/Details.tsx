@@ -68,11 +68,13 @@ export const DetailsBlock: React.FC<DetailsBlockProps> = ({
  */
 interface DetailsProps {
   children: React.ReactNode;
+  className?: string;
   trackPrefix?: string;
 }
 
 const Details: React.FC<DetailsProps> = ({
   children,
+  className,
   trackPrefix = 'combo',
 }) => {
   // const { t } = useTranslation();
@@ -113,6 +115,7 @@ const Details: React.FC<DetailsProps> = ({
       className={`
         ${styles.detalii_btns_detalii_v2}
         ${styles.detalii_btns_detalii_v2_first}
+       ${className || ''}
       `}
     >
       {React.Children.map(children, (child, idx) => {

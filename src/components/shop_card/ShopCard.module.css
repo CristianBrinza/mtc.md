@@ -177,4 +177,15 @@
   align-items: center;
   justify-content: center;
   font-weight: 600;
+  flex-direction: column;
+  line-height: 14px;
+}
+.ShopCard_tag_big {
+  height: 40px;
+}
+.ShopCard_subtag {
+  font-size: 12px;
+  opacity: 0.5;
+  margin-top: -5px;
+  margin-bottom: 1px;
 }

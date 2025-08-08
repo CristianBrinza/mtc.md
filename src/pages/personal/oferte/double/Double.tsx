@@ -350,7 +350,6 @@ export default function Double() {
   const [activeTV_Select_1, setActiveTV_Select_1] = useState<boolean>(false);
   const [activeMesh_1, setActiveMesh_1] = useState<boolean>(false);
   const [activeSafeweb_1, setActiveSafeweb_1] = useState<boolean>(false);
-  const [activeMTC_TV_GO_1, setActiveMTC_TV_GO_1] = useState<boolean>(false);
   const [activeTelephone_1, setActiveTelephone_1] = useState<boolean>(false);
   const [numberTVConfig_1, setNumberTVConfig_1] = useState<number>(1);
 
@@ -451,7 +450,6 @@ export default function Double() {
   const [activeTV_Select_2, setActiveTV_Select_2] = useState<boolean>(false);
   const [activeMesh_2, setActiveMesh_2] = useState<boolean>(false);
   const [activeSafeweb_2, setActiveSafeweb_2] = useState<boolean>(false);
-  const [activeMTC_TV_GO_2, setActiveMTC_TV_GO_2] = useState<boolean>(false);
   const [activeTelephone_2, setActiveTelephone_2] = useState<boolean>(false);
   const [numberTVConfig_2, setNumberTVConfig_2] = useState<number>(1);
 
@@ -552,7 +550,6 @@ export default function Double() {
   const [activeTV_Select_3, setActiveTV_Select_3] = useState<boolean>(false);
   const [activeMesh_3, setActiveMesh_3] = useState<boolean>(false);
   const [activeSafeweb_3, setActiveSafeweb_3] = useState<boolean>(false);
-  const [activeMTC_TV_GO_3, setActiveMTC_TV_GO_3] = useState<boolean>(false);
   const [activeTelephone_3, setActiveTelephone_3] = useState<boolean>(false);
   const [numberTVConfig_3, setNumberTVConfig_3] = useState<number>(1);
 
@@ -652,7 +649,6 @@ export default function Double() {
     useState<string>('univers');
   const [activeTV_Select_4, setActiveTV_Select_4] = useState<boolean>(false);
   const [activeSafeweb_4, setActiveSafeweb_4] = useState<boolean>(false);
-  const [activeMTC_TV_GO_4, setActiveMTC_TV_GO_4] = useState<boolean>(false);
   const [activeTelephone_4, setActiveTelephone_4] = useState<boolean>(false);
   const [numberTVConfig_4, setNumberTVConfig_4] = useState<number>(1);
 
@@ -746,7 +742,6 @@ export default function Double() {
     useState<string>('univers');
   const [activeTV_Select_5, setActiveTV_Select_5] = useState<boolean>(false);
   const [activeSafeweb_5, setActiveSafeweb_5] = useState<boolean>(false);
-  const [activeMTC_TV_GO_5, setActiveMTC_TV_GO_5] = useState<boolean>(false);
   const [activeTelephone_5, setActiveTelephone_5] = useState<boolean>(false);
   const [numberTVConfig_5, setNumberTVConfig_5] = useState<number>(1);
 
@@ -844,15 +839,15 @@ export default function Double() {
     setActivePopupSubConfig(subname);
     setActiveBuyConfig(
       id === '1'
-        ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_1}, nr - ${numberTVConfig_1} tv), ${activeMesh_1 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_1 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_1 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_1 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+        ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_1}, nr - ${numberTVConfig_1} tv), ${activeMesh_1 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_1 ? '+ Safe‑Web, ' : ''}${activeTelephone_1 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
         : id === '2'
-          ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_2}, nr - ${numberTVConfig_2} tv), ${activeMesh_2 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_2 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_2 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_2 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+          ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_2}, nr - ${numberTVConfig_2} tv), ${activeMesh_2 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_2 ? '+ Safe‑Web, ' : ''}${activeTelephone_2 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
           : id === '3'
-            ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_3}, nr - ${numberTVConfig_3} tv), ${activeMesh_3 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_3 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_3 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_3 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+            ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_3}, nr - ${numberTVConfig_3} tv), ${activeMesh_3 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_3 ? '+ Safe‑Web, ' : ''}${activeTelephone_3 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
             : id === '4'
-              ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_4}, nr - ${numberTVConfig_4} tv), ${activeSafeweb_4 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_4 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_4 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+              ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_4}, nr - ${numberTVConfig_4} tv), ${activeSafeweb_4 ? '+ Safe‑Web, ' : ''}${activeTelephone_4 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
               : id === '5'
-                ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_5}, nr - ${numberTVConfig_5} tv), ${activeSafeweb_5 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_5 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_5 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+                ? `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_5}, nr - ${numberTVConfig_5} tv), ${activeSafeweb_5 ? '+ Safe‑Web, ' : ''}${activeTelephone_5 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
                 : ''
     );
     // console.log(
@@ -1162,9 +1157,8 @@ export default function Double() {
                   <b>Arhiva TV</b> inclus{' '}
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
-                    style={{ textDecoration: 'line-through' }}
                   >
-                    (15 {t('combo_home.lei_luna')})
+                    ({t('combo_home.gratiut')})
                   </span>
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280116')} />
@@ -1177,29 +1171,6 @@ export default function Double() {
                   {' '}
                   {t('combo_home.more_options')}
                 </span>
-              </div>
-              <div
-                className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
-              >
-                <div className={styles.abonaments_block_inside_subtitle_toggle}>
-                  <Toggle
-                    checked={activeMTC_TV_GO_1}
-                    onChange={trackToggle(
-                      'double_tvgo_toggle',
-                      setActiveMTC_TV_GO_1
-                    )}
-                  />
-                </div>
-                <span>
-                  <b>{t('navbar.mt_tv_go')}</b>
-                  {/*inclus*/}{' '}
-                  <span
-                    className={styles.abonaments_block_inside_subtitle_small}
-                  >
-                    {t('combo_home.one_month_free')}
-                  </span>
-                </span>
-                <InfoIcon onClick={() => setActivePopup('1280113')} />
               </div>
 
               <div className={styles.abonaments_block_inside_line}></div>
@@ -1225,7 +1196,7 @@ export default function Double() {
                     (10 {t('combo_home.lei_luna')})
                   </span>
                 </span>
-                <InfoIcon onClick={() => setActivePopup('1280113')} />
+                <InfoIcon onClick={() => setActivePopup('1280119')} />
               </div>
 
               {activeConfig == '2' && (
@@ -1476,9 +1447,8 @@ export default function Double() {
                   <b>Arhiva TV</b> inclus{' '}
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
-                    style={{ textDecoration: 'line-through' }}
                   >
-                    (15 {t('combo_home.lei_luna')})
+                    ({t('combo_home.gratiut')})
                   </span>
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280116')} />
@@ -1491,29 +1461,6 @@ export default function Double() {
                   {' '}
                   {t('combo_home.more_options')}
                 </span>
-              </div>
-              <div
-                className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
-              >
-                <div className={styles.abonaments_block_inside_subtitle_toggle}>
-                  <Toggle
-                    checked={activeMTC_TV_GO_2}
-                    onChange={trackToggle(
-                      'double_tvgo_toggle',
-                      setActiveMTC_TV_GO_2
-                    )}
-                  />
-                </div>
-                <span>
-                  <b>{t('navbar.mt_tv_go')}</b>
-                  {/*inclus*/}{' '}
-                  <span
-                    className={styles.abonaments_block_inside_subtitle_small}
-                  >
-                    {t('combo_home.one_month_free')}
-                  </span>
-                </span>
-                <InfoIcon onClick={() => setActivePopup('1280113')} />
               </div>
 
               <div className={styles.abonaments_block_inside_line}></div>
@@ -1539,7 +1486,7 @@ export default function Double() {
                     (10 {t('combo_home.lei_luna')})
                   </span>
                 </span>
-                <InfoIcon onClick={() => setActivePopup('1280113')} />
+                <InfoIcon onClick={() => setActivePopup('1280119')} />
               </div>
               {activeConfig == '2' && (
                 <select
@@ -1793,11 +1740,8 @@ export default function Double() {
               </div>
               <span>
                 <b>Arhiva TV</b> inclus{' '}
-                <span
-                  className={styles.abonaments_block_inside_subtitle_small}
-                  style={{ textDecoration: 'line-through' }}
-                >
-                  (15 {t('combo_home.lei_luna')})
+                <span className={styles.abonaments_block_inside_subtitle_small}>
+                  ({t('combo_home.gratiut')})
                 </span>
               </span>
               <InfoIcon onClick={() => setActivePopup('1280116')} />
@@ -1810,27 +1754,6 @@ export default function Double() {
                 {' '}
                 {t('combo_home.more_options')}
               </span>
-            </div>
-            <div
-              className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
-            >
-              <div className={styles.abonaments_block_inside_subtitle_toggle}>
-                <Toggle
-                  checked={activeMTC_TV_GO_3}
-                  onChange={trackToggle(
-                    'double_tvgo_toggle',
-                    setActiveMTC_TV_GO_3
-                  )}
-                />
-              </div>
-              <span>
-                <b>{t('navbar.mt_tv_go')}</b>
-                {/*inclus*/}{' '}
-                <span className={styles.abonaments_block_inside_subtitle_small}>
-                  {t('combo_home.one_month_free')}
-                </span>
-              </span>
-              <InfoIcon onClick={() => setActivePopup('1280113')} />
             </div>
 
             <div className={styles.abonaments_block_inside_line}></div>
@@ -1854,7 +1777,7 @@ export default function Double() {
                   (10 {t('combo_home.lei_luna')})
                 </span>
               </span>
-              <InfoIcon onClick={() => setActivePopup('1280113')} />
+              <InfoIcon onClick={() => setActivePopup('1280119')} />
             </div>
             {activeConfig == '2' && (
               <select
@@ -2118,11 +2041,8 @@ export default function Double() {
               </div>
               <span>
                 <b>Arhiva TV</b> inclus{' '}
-                <span
-                  className={styles.abonaments_block_inside_subtitle_small}
-                  style={{ textDecoration: 'line-through' }}
-                >
-                  (15 {t('combo_home.lei_luna')})
+                <span className={styles.abonaments_block_inside_subtitle_small}>
+                  ({t('combo_home.gratiut')})
                 </span>
               </span>
               <InfoIcon onClick={() => setActivePopup('1280116')} />
@@ -2135,27 +2055,6 @@ export default function Double() {
                 {' '}
                 {t('combo_home.more_options')}
               </span>
-            </div>
-            <div
-              className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
-            >
-              <div className={styles.abonaments_block_inside_subtitle_toggle}>
-                <Toggle
-                  checked={activeMTC_TV_GO_4}
-                  onChange={trackToggle(
-                    'double_tvgo_toggle',
-                    setActiveMTC_TV_GO_4
-                  )}
-                />
-              </div>
-              <span>
-                <b>{t('navbar.mt_tv_go')}</b>
-                {/*inclus*/}{' '}
-                <span className={styles.abonaments_block_inside_subtitle_small}>
-                  {t('combo_home.one_month_free')}
-                </span>
-              </span>
-              <InfoIcon onClick={() => setActivePopup('1280113')} />
             </div>
 
             <div className={styles.abonaments_block_inside_line}></div>
@@ -2179,7 +2078,7 @@ export default function Double() {
                   (10 {t('combo_home.lei_luna')})
                 </span>
               </span>
-              <InfoIcon onClick={() => setActivePopup('1280113')} />
+              <InfoIcon onClick={() => setActivePopup('1280119')} />
             </div>
             {activeConfig == '2' && (
               <select
@@ -2342,7 +2241,7 @@ export default function Double() {
             <div className={styles.abonaments_block_inside_line}></div>
 
             <div
-              className={`${styles.abonaments_block_inside_tv_chose} ${activeTV_Select_4 && styles.abonaments_block_inside_tv_chose_active}`}
+              className={`${styles.abonaments_block_inside_tv_chose} ${activeTV_Select_5 && styles.abonaments_block_inside_tv_chose_active}`}
             >
               <div
                 onClick={() => {
@@ -2440,11 +2339,8 @@ export default function Double() {
               </div>
               <span>
                 <b>Arhiva TV</b> inclus{' '}
-                <span
-                  className={styles.abonaments_block_inside_subtitle_small}
-                  style={{ textDecoration: 'line-through' }}
-                >
-                  (15 {t('combo_home.lei_luna')})
+                <span className={styles.abonaments_block_inside_subtitle_small}>
+                  ({t('combo_home.gratiut')})
                 </span>
               </span>
               <InfoIcon onClick={() => setActivePopup('1280116')} />
@@ -2457,27 +2353,6 @@ export default function Double() {
                 {' '}
                 {t('combo_home.more_options')}
               </span>
-            </div>
-            <div
-              className={`${styles.abonaments_block_inside_subtitle} ${styles.abonaments_block_inside_subtitle_tv}`}
-            >
-              <div className={styles.abonaments_block_inside_subtitle_toggle}>
-                <Toggle
-                  checked={activeMTC_TV_GO_5}
-                  onChange={trackToggle(
-                    'double_tvgo_toggle',
-                    setActiveMTC_TV_GO_5
-                  )}
-                />
-              </div>
-              <span>
-                <b>{t('navbar.mt_tv_go')}</b>
-                {/*inclus*/}{' '}
-                <span className={styles.abonaments_block_inside_subtitle_small}>
-                  {t('combo_home.one_month_free')}
-                </span>
-              </span>
-              <InfoIcon onClick={() => setActivePopup('1280113')} />
             </div>
 
             <div className={styles.abonaments_block_inside_line}></div>
@@ -2501,7 +2376,7 @@ export default function Double() {
                   (10 {t('combo_home.lei_luna')})
                 </span>
               </span>
-              <InfoIcon onClick={() => setActivePopup('1280113')} />
+              <InfoIcon onClick={() => setActivePopup('1280119')} />
             </div>
             {activeConfig == '2' && (
               <select
@@ -2671,6 +2546,7 @@ export default function Double() {
             subtitle="32A4N (FHD)"
             characteristics='Direct LED /Full HD /32"'
             tag={'500 Mbps + TV'}
+            subtag={t('combo_home.cu_oferta')}
             tag_color={'var(--theme_primary_color_blue_3)'}
             style_type={'gray'}
             show_like={false}
@@ -2696,6 +2572,7 @@ export default function Double() {
             subtitle="43A4N (4k)"
             characteristics='UHD VA /4K /43"'
             tag={'1000 Mbps + TV'}
+            subtag={t('combo_home.cu_oferta')}
             tag_color={'var(--theme_primary_color_blue_3)'}
             style_type={'gray'}
             show_like={false}
@@ -2721,6 +2598,7 @@ export default function Double() {
             subtitle="Redmi Pad SE"
             characteristics='11"/128 GB/ Wi-Fi'
             tag={'500 Mbps + TV'}
+            subtag={t('combo_home.cu_oferta')}
             tag_color={'var(--theme_primary_color_blue_3)'}
             style_type={'gray'}
             show_like={false}
@@ -2747,6 +2625,7 @@ export default function Double() {
             characteristics='UHD VA /4K /55"'
             style_type={'gray'}
             tag={'2.1 Gbps + TV'}
+            subtag={t('combo_home.cu_oferta')}
             tag_color={'var(--theme_primary_color_blue_3)'}
             show_like={false}
             show_comapre={false}
@@ -2772,6 +2651,7 @@ export default function Double() {
             characteristics="1 TB /White"
             style_type={'gray'}
             tag={'2.1 Gbps + TV'}
+            subtag={t('combo_home.cu_oferta')}
             tag_color={'var(--theme_primary_color_blue_3)'}
             show_like={false}
             show_comapre={false}
@@ -2797,6 +2677,7 @@ export default function Double() {
             characteristics="Disc Edition /White"
             style_type={'gray'}
             tag={'5.5 Gbps + TV'}
+            subtag={t('combo_home.cu_oferta')}
             tag_color={'var(--theme_primary_color_blue_3)'}
             show_like={false}
             show_comapre={false}
@@ -2819,9 +2700,10 @@ export default function Double() {
             reducere="- 99%"
             title="Xiaomi"
             subtitle={`Redmi Pad Pro 12"`}
-            characteristics={`12.1" 6 GB/128 GB /Wi-Fi`}
+            characteristics={`"12.1 /6 GB/128 GB /Wi-Fi`}
             style_type={'gray'}
             tag={'1000 Mbps + TV'}
+            subtag={t('combo_home.cu_oferta')}
             tag_color={'var(--theme_primary_color_blue_3)'}
             show_like={false}
             show_comapre={false}
@@ -2847,6 +2729,7 @@ export default function Double() {
             characteristics='UHD VA /4K /55"'
             style_type={'gray'}
             tag={'1000 Mbps + TV'}
+            subtag={t('combo_home.cu_oferta')}
             tag_color={'var(--theme_primary_color_blue_3)'}
             show_like={false}
             show_comapre={false}
@@ -2872,6 +2755,7 @@ export default function Double() {
             characteristics='11.2" /256 GB /Wi-Fi'
             style_type={'gray'}
             tag={'2.1 Gbps + TV'}
+            subtag={t('combo_home.cu_oferta')}
             tag_color={'var(--theme_primary_color_blue_3)'}
             show_like={false}
             show_comapre={false}
@@ -3001,19 +2885,21 @@ export default function Double() {
           <li>{t('double.popup_mesh.list.1')}</li>
           <li>{t('double.popup_mesh.list.2')}</li>
         </ul>
-        <b className={styles.popup_title_1}>
-          {t('double.popup_mesh.conditions_title')}
-        </b>
-        <ul>
-          <li>{t('double.popup_mesh.conditions.0')}</li>
-          <li>{t('double.popup_mesh.conditions.1')}</li>
-          <li>{t('double.popup_mesh.conditions.2')}</li>
-          <li>{t('double.popup_mesh.conditions.3')}</li>
-          <li>{t('double.popup_mesh.conditions.4')}</li>
-          <li>{t('double.popup_mesh.conditions.5')}</li>
-          <li>{t('double.popup_mesh.conditions.6')}</li>
-          <li>{t('double.popup_mesh.conditions.7')}</li>
-        </ul>
+
+        <Details className={styles.popup_more_detalii}>
+          <DetailsBlock title={t('double.popup_tvgo.conditions_title')}>
+            <ul>
+              <li>{t('double.popup_mesh.conditions.0')}</li>
+              <li>{t('double.popup_mesh.conditions.1')}</li>
+              <li>{t('double.popup_mesh.conditions.2')}</li>
+              <li>{t('double.popup_mesh.conditions.3')}</li>
+              <li>{t('double.popup_mesh.conditions.4')}</li>
+              <li>{t('double.popup_mesh.conditions.5')}</li>
+              <li>{t('double.popup_mesh.conditions.6')}</li>
+              <li>{t('double.popup_mesh.conditions.7')}</li>
+            </ul>
+          </DetailsBlock>
+        </Details>
 
         <Button
           id="combo_wifi_plus+learn_more"
@@ -3051,6 +2937,23 @@ export default function Double() {
           <li>{t('double.popup_premier.features.1')}</li>
           <li>{t('double.popup_premier.features.2')}</li>
           <li>{t('double.popup_premier.features.3')}</li>
+        </ul>
+
+        <div className={styles.abonaments_block_inside_line}></div>
+
+        <b className={styles.popup_title_1}>
+          {t('double.popup_univers.title')}
+        </b>
+        <p>{t('double.popup_univers.text')}</p>
+        <b className={styles.popup_title_1}>
+          {t('double.popup_univers.features_title')}
+        </b>
+        <ul>
+          <li>{t('double.popup_univers.features.0')}</li>
+          <li>{t('double.popup_univers.features.1')}</li>
+          <li>{t('double.popup_univers.features.1_1')}</li>
+          <li>{t('double.popup_univers.features.2')}</li>
+          <li>{t('double.popup_univers.features.3')}</li>
         </ul>
       </Popup>
 
@@ -3098,27 +3001,29 @@ export default function Double() {
       >
         <b className={styles.popup_title_1}>{t('double.popup_tvgo.title')}</b>
         <p>{t('double.popup_tvgo.text')}</p>
-        <b className={styles.popup_title_1}>
-          {t('double.popup_tvgo.conditions_title')}
-        </b>
-        <ul>
-          <li>{t('double.popup_tvgo.conditions.0')}</li>
-          <li>{t('double.popup_tvgo.conditions.1')}</li>
-          <li>{t('double.popup_tvgo.conditions.2')}</li>
-          <li>{t('double.popup_tvgo.conditions.3')}</li>
-          <li>{t('double.popup_tvgo.conditions.4')}</li>
-          <li>{t('double.popup_tvgo.conditions.5')}</li>
-          <li>{t('double.popup_tvgo.conditions.6')}</li>
-          <li>
-            {t('double.popup_tvgo.conditions.7')}
+
+        <Details className={styles.popup_more_detalii}>
+          <DetailsBlock title={t('double.popup_tvgo.conditions_title')}>
             <ul>
-              <li>{t('double.popup_tvgo.conditions.7_list.0')}</li>
-              <li>{t('double.popup_tvgo.conditions.7_list.1')}</li>
+              <li>{t('double.popup_tvgo.conditions.0')}</li>
+              <li>{t('double.popup_tvgo.conditions.1')}</li>
+              <li>{t('double.popup_tvgo.conditions.2')}</li>
+              <li>{t('double.popup_tvgo.conditions.3')}</li>
+              <li>{t('double.popup_tvgo.conditions.4')}</li>
+              <li>{t('double.popup_tvgo.conditions.5')}</li>
+              <li>{t('double.popup_tvgo.conditions.6')}</li>
+              <li>
+                {t('double.popup_tvgo.conditions.7')}
+                <ul>
+                  <li>{t('double.popup_tvgo.conditions.7_list.0')}</li>
+                  <li>{t('double.popup_tvgo.conditions.7_list.1')}</li>
+                </ul>
+              </li>
+              <li>{t('double.popup_tvgo.conditions.8')}</li>
+              <li>{t('double.popup_tvgo.conditions.9')}</li>
             </ul>
-          </li>
-          <li>{t('double.popup_tvgo.conditions.8')}</li>
-          <li>{t('double.popup_tvgo.conditions.9')}</li>
-        </ul>
+          </DetailsBlock>
+        </Details>
 
         <div className={styles.popup_btns_info}>
           <Button
@@ -3148,6 +3053,40 @@ export default function Double() {
             className={styles.popup_more_btn}
           >
             {t('double.watch_now')}
+          </Button>
+        </div>
+      </Popup>
+      <Popup
+        id="1280119"
+        width="1000px"
+        isVisible={activePopup === '1280119'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <b className={styles.popup_title_1}>Telefonia fixă</b>
+        Telefonia fixă este disponibilă exclusiv pentru abonații conectați la
+        serviciul Internet Fix Moldtelecom. <br />
+        <br />
+        Abonamentul include:
+        <ul>
+          <li>Minute nelimitate către rețeaua fixă și mobilă Moldtelecom </li>
+          <li> 30 minute naționale incluse (fix & mobil alte rețele) </li>
+          <li> Serviciul CLIP (afișarea numărului apelant) – gratuit</li>
+        </ul>
+        <div className={styles.popup_btns_info}>
+          <Button
+            id="combo_fix+learn_more"
+            to={`https://www.moldtelecom.md/${t('lang')}/personal/Abonamente-telefonie-fixa`}
+            color="#fff"
+            bgcolor="var(--theme_primary_color_blue_4)"
+            border="var(--theme_primary_color_blue_4)"
+            hover_border="var(--theme_primary_color_blue_2)"
+            hover_bgcolor="var(--theme_primary_color_blue_2)"
+            hover_color="var(--theme_primary_color_blue_4)"
+            icon="arrow_right"
+            className={styles.popup_more_btn}
+          >
+            {t('double.learn_more')}
           </Button>
         </div>
       </Popup>
@@ -3185,6 +3124,14 @@ export default function Double() {
               {t('double.popup_options.adult.title')}
             </div>
             {t('double.popup_options.adult.text')}
+            <div className={styles.row_popup_options_links}>
+              <a
+                href={'https://mtc.md/my-mtc'}
+                className={styles.row_popup_options_link}
+              >
+                {t('activeaza_acum')} {'>'}
+              </a>
+            </div>
           </div>
           <div className={styles.row_popup_options_title_price}>
             {t('double.popup_options.adult.price')}
@@ -3196,6 +3143,14 @@ export default function Double() {
               {t('double.popup_options.junior.title')}
             </div>
             {t('double.popup_options.junior.text')}
+            <div className={styles.row_popup_options_links}>
+              <a
+                href={'https://mtc.md/my-mtc'}
+                className={styles.row_popup_options_link}
+              >
+                {t('activeaza_acum')} {'>'}
+              </a>
+            </div>
           </div>
           <div className={styles.row_popup_options_title_price}>
             {t('double.popup_options.junior.price')}
@@ -3207,6 +3162,14 @@ export default function Double() {
               {t('double.popup_options.tvextra.title')}
             </div>
             {t('double.popup_options.tvextra.text')}
+            <div className={styles.row_popup_options_links}>
+              <a
+                href={'https://mtc.md/my-mtc'}
+                className={styles.row_popup_options_link}
+              >
+                {t('activeaza_acum')} {'>'}
+              </a>
+            </div>
           </div>
           <div className={styles.row_popup_options_title_price}>
             {t('double.popup_options.tvextra.price')}
@@ -3218,6 +3181,14 @@ export default function Double() {
               {t('double.popup_options.arhiva.title')}
             </div>
             {t('double.popup_options.arhiva.text')}
+            <div className={styles.row_popup_options_links}>
+              <a
+                href={'https://mtc.md/my-mtc'}
+                className={styles.row_popup_options_link}
+              >
+                {t('activeaza_acum')} {'>'}
+              </a>
+            </div>
           </div>
           <div className={styles.row_popup_options_title_price}>
             {t('double.popup_options.arhiva.price')}
@@ -3234,6 +3205,14 @@ export default function Double() {
               {t('double.popup_options.megogo.title')}
             </div>
             {t('double.popup_options.megogo.text')}
+            <div className={styles.row_popup_options_links}>
+              <a
+                href={'https://mtc.md/my-mtc'}
+                className={styles.row_popup_options_link}
+              >
+                {t('activeaza_acum')} {'>'}
+              </a>
+            </div>
           </div>
           <div className={styles.row_popup_options_title_price}>
             {t('double.popup_options.megogo.price')}
@@ -3245,6 +3224,20 @@ export default function Double() {
               {t('double.popup_options.premier.title')}
             </div>
             {t('double.popup_options.premier.text')}
+            <div className={styles.row_popup_options_links}>
+              <a
+                href={`https://moldtelecom.md/${t('lang')}/personal/premier`}
+                className={styles.row_popup_options_link}
+              >
+                {t('footer.maimult')} {'>'}
+              </a>
+              <a
+                href={'https://mtc.md/my-mtc'}
+                className={styles.row_popup_options_link}
+              >
+                {t('activeaza_acum')} {'>'}
+              </a>
+            </div>
           </div>
           <div className={styles.row_popup_options_title_price}>
             {t('double.popup_options.premier.price')}
@@ -3256,6 +3249,20 @@ export default function Double() {
               {t('double.popup_options.ivi.title')}
             </div>
             {t('double.popup_options.ivi.text')}
+            <div className={styles.row_popup_options_links}>
+              <a
+                href={`https://moldtelecom.md/${t('lang')}/personal/ivi`}
+                className={styles.row_popup_options_link}
+              >
+                {t('footer.maimult')} {'>'}
+              </a>
+              <a
+                href={'https://mtc.md/my-mtc'}
+                className={styles.row_popup_options_link}
+              >
+                {t('activeaza_acum')} {'>'}
+              </a>
+            </div>
           </div>
           <div className={styles.row_popup_options_title_price}>
             {t('double.popup_options.ivi.price')}

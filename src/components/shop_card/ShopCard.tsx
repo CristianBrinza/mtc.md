@@ -12,6 +12,7 @@ interface ShopCardProps {
   subtitle?: string;
   characteristics?: string;
   tag?: string;
+  subtag?: string;
   tag_color?: string;
   tag_text_color?: string;
   device_id: number;
@@ -39,6 +40,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
   subtitle,
   characteristics,
   tag,
+  subtag,
   tag_color,
   tag_text_color,
   device_id,
@@ -119,7 +121,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
     >
       {tag && (
         <div
-          className={styles.ShopCard_tag}
+          className={`${styles.ShopCard_tag} ${subtag && styles.ShopCard_tag_big}`}
           style={{
             // opacity: 0,
             background: tag_color
@@ -130,6 +132,11 @@ const ShopCard: React.FC<ShopCardProps> = ({
               : 'var(--theme_primary_color_black)',
           }}
         >
+          {subtag && (
+            <>
+              <div className={styles.ShopCard_subtag}>{subtag} </div>
+            </>
+          )}
           {tag}
         </div>
       )}
