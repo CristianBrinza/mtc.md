@@ -2109,6 +2109,26 @@
     },
     "hero": { "alt": "Moldtelecom" }
   },
+  "only_net": {
+    "breadcrumb": {
+      "internet": "Internet"
+    },
+    "discount_300_2_years": "-300 lei reducere pentru 2 ani",
+    "discount_100_2_years": "-100 lei reducere pentru 2 ani",
+    "conditii_1": {
+      "item_1": "Perioada de comercializare a ofertei: 21.08.2025 – 25.11.2025 (inclusiv).",
+      "item_2": "Conectarea la serviciul de Internet fix este gratuită, iar contractul se semnează pe o perioadă de 24 de luni.",
+      "item_3": "Oferta este disponibilă pentru conectările noi și pentru abonații existenți cu contract expirat.",
+      "item_4": "300 Mbps, 500 Mbps sau 1000 Mbps – cu reducere lunară până la 100 lei.",
+      "item_5": "2.1 Gbps sau 5.5 Gbps – cu reducere lunară de 300 lei.",
+      "item_6": "Reducerea se aplică pe durata contractuală. După expirarea celor 24 de luni, se aplică tariful standard corespunzător planului tarifar activ.",
+      "item_7": "Vitezele indicate sunt valori maxime. Viteza efectivă disponibilă la adresa clientului depinde de factori tehnici ce nu pot fi controlați de Moldtelecom.",
+      "item_8": "Activarea planului tarifar selectat se face în limita posibilităților tehnice din localitate.",
+      "item_9": "Pentru viteza de 2.1 Gbps, oferta include un router performant și un dispozitiv Mesh Wi-Fi, iar pentru viteza de 5.5 Gbps – un router performant și două dispozitive Mesh Wi-Fi.",
+      "item_10": "Echipamentele se oferă pe durata contractului și trebuie returnate în cazul rezilierii.",
+      "item_11": "În cazul rezilierii anticipate a serviciului de Internet fix, înainte de expirarea perioadei contractuale, se va aplica o penalitate conform contractului."
+    }
+  },
   "combo_home": {
     "location_select": "Selecteaza regiunea și localitatea",
     "promo_offer_1": "Oferta promoțională \"Smart TV / Tableta\"",
@@ -2121,6 +2141,7 @@
     "gaming_set": "Gaming set",
     "more_options": "mai multe optiuni",
     "one_month_free": "1 lună gratuit",
+    "discount_320_2_years": "-320 lei reducere pentru 2 ani",
     "discount_120_2_years": "-120 lei reducere pentru 2 ani",
     "router_wifi6_included": "Router Wi-Fi 6 inclus",
     "device_one_leu": "Dispozitiv la DOAR 1 leu, sau Preț Special!",
