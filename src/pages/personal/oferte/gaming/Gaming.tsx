@@ -519,7 +519,7 @@ export default function Gaming() {
             <b>fără întreruperi</b>, <b>ultra-rapid</b>.
           </div>
           <Button
-            to="https://mtc.md/my-mtc"
+            to={`https://www.moldtelecom.md/${t('lang')}/echipamente-wifi`}
             color={'var(--theme_primary_color_blue_4)'}
             bgcolor={'var(--theme_primary_color_blue_3)'}
             border={'var(--theme_primary_color_blue_3)'}
@@ -527,7 +527,7 @@ export default function Gaming() {
             hover_bgcolor={'var(--theme_primary_color_blue_2)'}
             icon={'arrow_right'}
           >
-            Vezi abonamentele
+            Vezi echipamentele
           </Button>
         </div>
         <img
@@ -751,11 +751,11 @@ export default function Gaming() {
                 onChange={e => setSelectedDevice_3_3(e.target.value)}
               >
                 <option value={'1780226'}>
-                  <b>Xbox Series S </b> (la 1 leu)&nbsp;
+                  <b>Xbox Series S </b> (la 3500 lei)&nbsp;
                 </option>
 
                 <option value={'1780227'}>
-                  <b>PlayStation 5 </b> (la 1 leu)&nbsp;
+                  <b>PlayStation 5 </b> (la 5000 lei)&nbsp;
                 </option>
               </select>
               {selectedDevice_3_3 != 'no_device' && (
@@ -906,7 +906,7 @@ export default function Gaming() {
                   : activeSelectedTV_4 === 'univers' && t('double.univers_tv')}
               </span>
               <Icon
-                className={styles.abonaments_block_inside_title_tv_svg}
+                className={`${styles.abonaments_block_inside_title_tv_svg} ${styles.abonaments_block_inside_title_tv_svg_none}`}
                 type={'retry'}
                 size={'24px'}
                 color={'var(--theme_primary_color_blue_2)'}
@@ -1180,7 +1180,7 @@ export default function Gaming() {
                   : activeSelectedTV_5 === 'univers' && t('double.univers_tv')}
               </span>
               <Icon
-                className={styles.abonaments_block_inside_title_tv_svg}
+                className={`${styles.abonaments_block_inside_title_tv_svg} ${styles.abonaments_block_inside_title_tv_svg_none}`}
                 type={'retry'}
                 size={'24px'}
                 color={'var(--theme_primary_color_blue_2)'}

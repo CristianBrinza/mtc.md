@@ -18,7 +18,7 @@
 .info_block {
   width: 100%;
   max-width: 1180px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   background: var(--theme_primary_color_blue_1);
   border-radius: 24px;
   display: flex;
@@ -51,7 +51,7 @@
 .title_main {
   /*margin-bottom: 20px;*/
   max-width: 880px;
-  margin: 30px auto;
+  margin: 50px auto 30px;
 }
 
 .why {
@@ -85,6 +85,13 @@
   font-size: 24px;
   margin: 5px 0 10px;
   color: #222;
+}
+.abonaments_block_inside_title_tv_svg_none{
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  overflow: hidden;
+  margin-right: -10px;
 }
 
 @media (max-width: 1300px) {
@@ -146,7 +153,7 @@
 }
 
 .title_main {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .config {
   margin: 20px auto -10px;
