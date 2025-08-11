@@ -27,6 +27,7 @@ import PoliticaRoaming from './pages/costume/PoliticaRoaming/PoliticaRoaming.tsx
 import Portare from './pages/personal/oferte/portare/Portare.tsx';
 import OnlyNet from './pages/personal/oferte/only_net/OnlyNet.tsx';
 import Gaming from './pages/personal/oferte/gaming/Gaming.tsx';
+import Promo1536965 from './pages/eshop/promo_b2s/Promo1536965.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -167,6 +168,10 @@ export const routesConfig: RouteConfig[] = [
   {
     path: '/:lang/politica-de-utilizare-rezonabila-a-serviciului-roaming-europa',
     element: React.createElement(PoliticaRoaming),
+  },
+  {
+    path: '/:lang/eshop/back-2-school',
+    element: React.createElement(Promo1536965),
   },
   {
     path: '*',

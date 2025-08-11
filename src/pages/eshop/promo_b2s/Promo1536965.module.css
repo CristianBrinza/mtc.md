@@ -1,0 +1,32 @@
+.notfound {
+  width: 100%;
+  max-width: 1210px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  height: calc(100vh - 240px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.notfound_title {
+  width: 100%;
+  text-align: center;
+  font-size: 120px;
+  line-height: 120px;
+  font-weight: bold;
+  font-family: Poppins, sans-serif;
+}
+.notfound_subtitle {
+  font-weight: 600;
+  font-size: 25px;
+  margin: -5px 0 10px;
+}
+.notfound_text {
+  margin: 5px 0 25px;
+  text-align: center;
+}
+
+@media (max-width: 470px) {
+}

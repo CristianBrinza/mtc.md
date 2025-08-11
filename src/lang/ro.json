@@ -226,7 +226,7 @@
     "functions": {
       "multi_device": {
         "title": "Multi-Dispozitiv",
-        "text": "Suportă conectarea a până la 3 echipamente per conexiune de Internet fix."
+        "text": "Permite conectarea a până la 3 echipamente per conexiune de Internet fix."
       },
       "extended_coverage": {
         "title": "Acoperire Extinsă",
@@ -234,7 +234,7 @@
       },
       "super_speeds": {
         "title": "Viteze Superioare",
-        "text": "Navighează și transmite în streaming la viteze rapide, fără întreruperi."
+        "text": "Navighează și fă streaming la viteze rapide, fără întreruperi. "
       },
       "constant_support": {
         "title": "Suport Constant",
