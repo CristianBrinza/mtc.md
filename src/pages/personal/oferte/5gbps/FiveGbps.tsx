@@ -517,63 +517,63 @@ export default function FiveGbps() {
       <FaqV2 max_faq={5}>
         <FaqQAV2
           id_faq="112089314"
-          question={t('gbps.faq.install_duration_question')}
+          question={t('combo_home.faq.install_duration_question')}
         >
-          {t('gbps.faq.install_duration_answer')}
+          {t('combo_home.faq.install_duration_answer')}
         </FaqQAV2>
         <FaqQAV2
           id_faq="112089315"
-          question={t('gbps.faq.availability_check_question')}
+          question={t('combo_home.faq.availability_check_question')}
         >
-          {t('gbps.faq.availability_check_answer')}
+          {t('combo_home.faq.availability_check_answer')}
         </FaqQAV2>
         <FaqQAV2
           id_faq="112089316"
-          question={t('gbps.faq.activate_new_offer_question')}
+          question={t('combo_home.faq.activate_new_offer_question')}
         >
-          {t('gbps.faq.activate_new_offer_answer')}
+          {t('combo_home.faq.activate_new_offer_answer')}
         </FaqQAV2>
         <FaqQAV2
           id_faq="112089317"
-          question={t('gbps.faq.bill_payment_deadline_question')}
+          question={t('combo_home.faq.bill_payment_deadline_question')}
         >
-          {t('gbps.faq.bill_payment_deadline_answer')}
+          {t('combo_home.faq.bill_payment_deadline_answer')}
         </FaqQAV2>
         <FaqQAV2
           id_faq="112089318"
-          question={t('gbps.faq.late_payment_consequences_question')}
+          question={t('combo_home.faq.late_payment_consequences_question')}
         >
-          {t('gbps.faq.late_payment_consequences_answer')}
+          {t('combo_home.faq.late_payment_consequences_answer')}
         </FaqQAV2>
         <FaqQAV2
           id_faq="112089319"
-          question={t('gbps.faq.manage_subscription_remotely_question')}
+          question={t('combo_home.faq.manage_subscription_remotely_question')}
         >
-          {t('gbps.faq.manage_subscription_remotely_answer')}
+          {t('combo_home.faq.manage_subscription_remotely_answer')}
         </FaqQAV2>
         <FaqQAV2
           id_faq="112089320"
-          question={t('gbps.faq.pause_services_question')}
+          question={t('combo_home.faq.pause_services_question')}
         >
-          {t('gbps.faq.pause_services_answer')}
+          {t('combo_home.faq.pause_services_answer')}
         </FaqQAV2>
         <FaqQAV2
           id_faq="112089321"
-          question={t('gbps.faq.change_package_question')}
+          question={t('combo_home.faq.change_package_question')}
         >
-          {t('gbps.faq.change_package_answer')}
+          {t('combo_home.faq.change_package_answer')}
         </FaqQAV2>
         <FaqQAV2
           id_faq="112089322"
-          question={t('gbps.faq.move_address_question')}
+          question={t('combo_home.faq.move_address_question')}
         >
-          {t('gbps.faq.move_address_answer')}
+          {t('combo_home.faq.move_address_answer')}
         </FaqQAV2>
         <FaqQAV2
           id_faq="112089323"
-          question={t('gbps.faq.transfer_subscription_question')}
+          question={t('combo_home.faq.transfer_subscription_question')}
         >
-          {t('gbps.faq.transfer_subscription_answer')}
+          {t('combo_home.faq.transfer_subscription_answer')}
         </FaqQAV2>
       </FaqV2>
 

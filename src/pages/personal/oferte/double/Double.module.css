@@ -443,6 +443,32 @@
   right: 50%;
   transform: translateX(50%);
   color: white;
+  min-width: 165px;
+  text-align: center;
+}
+.abonaments_block_inside_info_line {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.popup_table_double {
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.popup_table_double tbody td {
+  border: none;
+}
+.popup_table_double tbody tr td {
+  padding: 6px 10px;
+  background: #ffffff;
+}
+.row_popup_options_title_span {
+  font-size: 14px;
+  opacity: 0.5;
 }
 .regio {
   width: 100%;

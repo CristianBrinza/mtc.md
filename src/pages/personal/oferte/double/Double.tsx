@@ -23,6 +23,7 @@ import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
 import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 import { trackEvent } from '../../../../initAnalytics.ts';
+import ScrollableWrapper from '../../../../components/Popup/ScrollableWrapper.tsx';
 declare global {
   interface Window {
     regiuni: Record<string, Record<string, unknown[]>>;
@@ -471,6 +472,7 @@ export default function Double() {
   const [activeSafeweb_2, setActiveSafeweb_2] = useState<boolean>(false);
   const [activeTelephone_2, setActiveTelephone_2] = useState<boolean>(false);
   const [numberTVConfig_2, setNumberTVConfig_2] = useState<number>(1);
+  const [selectedDevice_2, setSelectedDevice_2] = useState<string>('1780119');
 
   function calculateTotal_2(
     config: ConfigType,
@@ -571,6 +573,9 @@ export default function Double() {
   const [activeSafeweb_3, setActiveSafeweb_3] = useState<boolean>(false);
   const [activeTelephone_3, setActiveTelephone_3] = useState<boolean>(false);
   const [numberTVConfig_3, setNumberTVConfig_3] = useState<number>(1);
+  const [selectedDevice_3, setSelectedDevice_3] = useState<string>('1780220');
+  const [selectedDevice_3_3, setSelectedDevice_3_3] =
+    useState<string>('1780226');
 
   function calculateTotal_3(
     config: ConfigType,
@@ -670,6 +675,9 @@ export default function Double() {
   const [activeSafeweb_4, setActiveSafeweb_4] = useState<boolean>(false);
   const [activeTelephone_4, setActiveTelephone_4] = useState<boolean>(false);
   const [numberTVConfig_4, setNumberTVConfig_4] = useState<number>(1);
+  const [selectedDevice_4, setSelectedDevice_4] = useState<string>('1780224');
+  const [selectedDevice_4_4, setSelectedDevice_4_4] =
+    useState<string>('1780226');
 
   function calculateTotal_4(
     config: ConfigType,
@@ -763,6 +771,9 @@ export default function Double() {
   const [activeSafeweb_5, setActiveSafeweb_5] = useState<boolean>(false);
   const [activeTelephone_5, setActiveTelephone_5] = useState<boolean>(false);
   const [numberTVConfig_5, setNumberTVConfig_5] = useState<number>(1);
+  const [selectedDevice_5, setSelectedDevice_5] = useState<string>('1780224');
+  const [selectedDevice_5_5, setSelectedDevice_5_5] =
+    useState<string>('1780226');
 
   function calculateTotal_5(
     config: ConfigType,
@@ -1509,25 +1520,34 @@ export default function Double() {
                 <InfoIcon onClick={() => setActivePopup('1280119')} />
               </div>
               {activeConfig == '2' && (
-                <select
-                  className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-                >
-                  <option value={'smart_tv_32 1_leu'}>
-                    <b>Smart TV 32"</b> (la 1 leu)&nbsp;
-                  </option>
-                  <option value={'smart_tv_43 1_leu'}>
-                    <b>Smart TV 43"</b> (la 1 899 lei)&nbsp;
-                  </option>
-
-                  {isRegio && (
-                    <option value={'smart_tv_43 1_leu'}>
-                      <b>Tableta </b> (la 1 leu)&nbsp;
+                <div className={styles.abonaments_block_inside_info_line}>
+                  <select
+                    className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+                    value={selectedDevice_2}
+                    onChange={e => setSelectedDevice_2(e.target.value)}
+                  >
+                    <option value={'1780119'}>
+                      <b>Smart TV 32"</b> (la 1 leu)&nbsp;
                     </option>
+                    <option value={'1780220'}>
+                      <b>Smart TV 43"</b> (la 1 899 lei)&nbsp;
+                    </option>
+
+                    {isRegio && (
+                      <option value={'1780221'}>
+                        <b>Tableta </b> (la 1 leu)&nbsp;
+                      </option>
+                    )}
+                    {!isRegio && (
+                      <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
+                    )}
+                  </select>
+                  {selectedDevice_2 != 'no_device' && (
+                    <InfoIcon
+                      onClick={() => setActivePopup(selectedDevice_2)}
+                    />
                   )}
-                  {!isRegio && (
-                    <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
-                  )}
-                </select>
+                </div>
               )}
 
               <div className={styles.wifi_carousell_block_inside_btns}>
@@ -1566,9 +1586,9 @@ export default function Double() {
                     '2',
                     t('navbar.internet_tv'),
                     `(500Mbps + ${
-                      activeSelectedTV_1 == 'premier'
+                      activeSelectedTV_2 == 'premier'
                         ? t('double.premier_tv')
-                        : activeSelectedTV_1 == 'univers' &&
+                        : activeSelectedTV_2 == 'univers' &&
                           t('double.univers_tv')
                     })`
                   )
@@ -1799,37 +1819,56 @@ export default function Double() {
               </span>
               <InfoIcon onClick={() => setActivePopup('1280119')} />
             </div>
-            {activeConfig == '2' && (
-              <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-              >
-                <option value={'smart_tv_43 1_leu'}>
-                  <b>Smart TV 43"</b> (la 1 leu)&nbsp;
-                </option>
-                <option value={'smart_tv_55 1_leu'}>
-                  <b>Smart TV 55"</b> (la 2 999 lei)&nbsp;
-                </option>
-                {isRegio && (
-                  <option value={'smart_tv_43 1_leu'}>
-                    <b>Tableta </b> (la 1 leu)&nbsp;
+            {activeConfig === '2' && (
+              <div className={styles.abonaments_block_inside_info_line}>
+                <select
+                  className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+                  value={selectedDevice_3}
+                  onChange={e => setSelectedDevice_3(e.target.value)}
+                >
+                  <option value={'1780220'}>
+                    <b>Smart TV 43"</b> (la 1 leu)&nbsp;
                   </option>
+
+                  <option value={'1780224'}>
+                    <b>Smart TV 55"</b> (la 2 999 lei)&nbsp;
+                  </option>
+
+                  {isRegio && (
+                    <option value={'1780321'}>
+                      <b>Tableta </b> (la 1 leu)&nbsp;
+                    </option>
+                  )}
+                  {!isRegio && (
+                    <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
+                  )}
+                </select>
+                {selectedDevice_3 != 'no_device' && (
+                  <InfoIcon onClick={() => setActivePopup(selectedDevice_3)} />
                 )}
-                {!isRegio && (
-                  <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
-                )}
-              </select>
+              </div>
             )}
-            {activeConfig == '3' && (
-              <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-              >
-                <option value={'xbox 350_lei'}>
-                  <b>Xbox Series S </b> (la 3500 lei)&nbsp;
-                </option>
-                <option value={'smart_tv_43 1_leu'}>
-                  <b>PlayStation 5 </b> (la 5000 lei)&nbsp;
-                </option>
-              </select>
+            {activeConfig === '3' && (
+              <div className={styles.abonaments_block_inside_info_line}>
+                <select
+                  className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+                  value={selectedDevice_3_3}
+                  onChange={e => setSelectedDevice_3_3(e.target.value)}
+                >
+                  <option value={'1780226'}>
+                    <b>Xbox Series S </b> (la 3500 lei)&nbsp;
+                  </option>
+
+                  <option value={'1780227'}>
+                    <b>PlayStation 5 </b> (la 5000 lei)&nbsp;
+                  </option>
+                </select>
+                {selectedDevice_3_3 != 'no_device' && (
+                  <InfoIcon
+                    onClick={() => setActivePopup(selectedDevice_3_3)}
+                  />
+                )}
+              </div>
             )}
 
             <div className={styles.wifi_carousell_block_inside_btns}>
@@ -1868,9 +1907,9 @@ export default function Double() {
                   '3',
                   t('navbar.internet_tv'),
                   `(1000Mbps + ${
-                    activeSelectedTV_1 == 'premier'
+                    activeSelectedTV_3 == 'premier'
                       ? t('double.premier_tv')
-                      : activeSelectedTV_1 == 'univers' &&
+                      : activeSelectedTV_3 == 'univers' &&
                         t('double.univers_tv')
                   })`
                 )
@@ -2100,34 +2139,52 @@ export default function Double() {
               </span>
               <InfoIcon onClick={() => setActivePopup('1280119')} />
             </div>
-            {activeConfig == '2' && (
-              <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-              >
-                <option value={'smart_tv_55 1_leu'}>
-                  <b>Smart TV 55"</b> (la 1 leu)&nbsp;
-                </option>
-                {isRegio && (
-                  <option value={'smart_tv_43 1_leu'}>
-                    <b>Tableta </b> (la 1 leu)&nbsp;
+            {activeConfig === '2' && (
+              <div className={styles.abonaments_block_inside_info_line}>
+                <select
+                  className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+                  value={selectedDevice_4}
+                  onChange={e => setSelectedDevice_4(e.target.value)}
+                >
+                  <option value={'1780224'}>
+                    <b>Smart TV 55"</b> (la 1 leu)&nbsp;
                   </option>
+
+                  {isRegio && (
+                    <option value={'1710322'}>
+                      <b>Tableta </b> (la 1 leu)&nbsp;
+                    </option>
+                  )}
+                  {!isRegio && (
+                    <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
+                  )}
+                </select>
+                {selectedDevice_4 != 'no_device' && (
+                  <InfoIcon onClick={() => setActivePopup(selectedDevice_4)} />
                 )}
-                {!isRegio && (
-                  <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
-                )}
-              </select>
+              </div>
             )}
-            {activeConfig == '3' && (
-              <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-              >
-                <option value={'xbox 350_lei'}>
-                  <b>Xbox Series S </b> (la 1 leu)&nbsp;
-                </option>
-                <option value={'smart_tv_43 1_leu'}>
-                  <b>PlayStation 5 </b> (la 1500 lei)&nbsp;
-                </option>
-              </select>
+            {activeConfig === '3' && (
+              <div className={styles.abonaments_block_inside_info_line}>
+                <select
+                  className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+                  value={selectedDevice_4_4}
+                  onChange={e => setSelectedDevice_4_4(e.target.value)}
+                >
+                  <option value={'1780226'}>
+                    <b>Xbox Series S </b> (la 1 leu)&nbsp;
+                  </option>
+
+                  <option value={'1780227'}>
+                    <b>PlayStation 5 </b> (la 1 leu)&nbsp;
+                  </option>
+                </select>
+                {selectedDevice_4_4 != 'no_device' && (
+                  <InfoIcon
+                    onClick={() => setActivePopup(selectedDevice_4_4)}
+                  />
+                )}
+              </div>
             )}
 
             <div className={styles.wifi_carousell_block_inside_btns}>
@@ -2166,9 +2223,9 @@ export default function Double() {
                   '4',
                   t('navbar.internet_tv'),
                   `(2.1Gbps + ${
-                    activeSelectedTV_1 == 'premier'
+                    activeSelectedTV_4 == 'premier'
                       ? t('double.premier_tv')
-                      : activeSelectedTV_1 == 'univers' &&
+                      : activeSelectedTV_4 == 'univers' &&
                         t('double.univers_tv')
                   })`
                 )
@@ -2398,34 +2455,52 @@ export default function Double() {
               </span>
               <InfoIcon onClick={() => setActivePopup('1280119')} />
             </div>
-            {activeConfig == '2' && (
-              <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-              >
-                <option value={'smart_tv_55 1_leu'}>
-                  <b>Smart TV 55"</b> (la 1 leu)&nbsp;
-                </option>
-                {isRegio && (
-                  <option value={'smart_tv_43 1_leu'}>
-                    <b>Tableta </b> (la 1 leu)&nbsp;
+            {activeConfig === '2' && (
+              <div className={styles.abonaments_block_inside_info_line}>
+                <select
+                  className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+                  value={selectedDevice_5}
+                  onChange={e => setSelectedDevice_5(e.target.value)}
+                >
+                  <option value={'1780224'}>
+                    <b>Smart TV 55"</b> (la 1 leu)&nbsp;
                   </option>
+
+                  {isRegio && (
+                    <option value={'1710322'}>
+                      <b>Tableta </b> (la 1 leu)&nbsp;
+                    </option>
+                  )}
+                  {!isRegio && (
+                    <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
+                  )}
+                </select>
+                {selectedDevice_5 != 'no_device' && (
+                  <InfoIcon onClick={() => setActivePopup(selectedDevice_5)} />
                 )}
-                {!isRegio && (
-                  <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
-                )}
-              </select>
+              </div>
             )}
-            {activeConfig == '3' && (
-              <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-              >
-                <option value={'xbox 350_lei'}>
-                  <b>Xbox Series S </b> (la 1 leu)&nbsp;
-                </option>
-                <option value={'smart_tv_43 1_leu'}>
-                  <b>PlayStation 5 </b> (la 1 leu)&nbsp;
-                </option>
-              </select>
+            {activeConfig === '3' && (
+              <div className={styles.abonaments_block_inside_info_line}>
+                <select
+                  className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+                  value={selectedDevice_5_5}
+                  onChange={e => setSelectedDevice_5_5(e.target.value)}
+                >
+                  <option value={'1780226'}>
+                    <b>Xbox Series S </b> (la 1 leu)&nbsp;
+                  </option>
+
+                  <option value={'1780227'}>
+                    <b>PlayStation 5 </b> (la 1 leu)&nbsp;
+                  </option>
+                </select>
+                {selectedDevice_5_5 != 'no_device' && (
+                  <InfoIcon
+                    onClick={() => setActivePopup(selectedDevice_5_5)}
+                  />
+                )}
+              </div>
             )}
 
             <div className={styles.wifi_carousell_block_inside_btns}>
@@ -2464,9 +2539,9 @@ export default function Double() {
                   '5',
                   t('navbar.internet_tv'),
                   `(5.5Gbps + ${
-                    activeSelectedTV_1 == 'premier'
+                    activeSelectedTV_5 == 'premier'
                       ? t('double.premier_tv')
-                      : activeSelectedTV_1 == 'univers' &&
+                      : activeSelectedTV_5 == 'univers' &&
                         t('double.univers_tv')
                   })`
                 )
@@ -3007,6 +3082,7 @@ export default function Double() {
           hover_color="var(--theme_primary_color_blue_4)"
           icon="arrow_right"
           className={styles.popup_more_btn}
+          to={`https://www.moldtelecom.md/${t('lang')}/personal/safe-web`}
         >
           {t('double.learn_more')}
         </Button>
@@ -3333,6 +3409,484 @@ export default function Double() {
             ))}
           </select>
         </div>
+      </Popup>
+
+      <Popup
+        id="1780119"
+        width="600px"
+        isVisible={activePopup === '1780119'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className={styles.row_popup_options_title}>
+          Caracteristici:
+          <br />{' '}
+          <span className={styles.row_popup_options_title_span}>
+            (Hisense 32")
+          </span>
+        </div>
+
+        <ScrollableWrapper>
+          <table className={`popup_table ${styles.popup_table_double}`}>
+            <tbody>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Tehnologie display
+                </td>
+                <td style={{ background: '#eceef0' }}>LED</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>
+                  {' '}
+                  Tipul rezoluției ecranului
+                </td>
+                <td>HD Ready</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Sistem de operare
+                </td>
+                <td style={{ background: '#eceef0' }}>VIDAA</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Dimensiune ecran</td>
+                <td>32"</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Wi-FI
+                </td>
+                <td style={{ background: '#eceef0' }}>DA</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}> Rezoluție ecran</td>
+                <td>1366 x 768</td>
+              </tr>
+            </tbody>
+          </table>
+        </ScrollableWrapper>
+      </Popup>
+      <Popup
+        id="1780220"
+        width="600px"
+        isVisible={activePopup === '1780220'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className={styles.row_popup_options_title}>
+          Caracteristici:
+          <br />{' '}
+          <span className={styles.row_popup_options_title_span}>
+            (Hisense 43")
+          </span>
+        </div>
+
+        <ScrollableWrapper>
+          <table className={`popup_table ${styles.popup_table_double}`}>
+            <tbody>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Tehnologie display
+                </td>
+                <td style={{ background: '#eceef0' }}>LED</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>
+                  {' '}
+                  Tipul rezoluției ecranului
+                </td>
+                <td>HD Ready</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Sistem de operare
+                </td>
+                <td style={{ background: '#eceef0' }}>VIDAA</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Dimensiune ecran</td>
+                <td>32"</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Wi-FI
+                </td>
+                <td style={{ background: '#eceef0' }}>DA</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}> Rezoluție ecran</td>
+                <td>1366 x 768</td>
+              </tr>
+            </tbody>
+          </table>
+        </ScrollableWrapper>
+      </Popup>
+      <Popup
+        id="1780226"
+        width="600px"
+        isVisible={activePopup === '1780226'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className={styles.row_popup_options_title}>
+          Caracteristici:
+          <br />{' '}
+          <span className={styles.row_popup_options_title_span}>
+            (Xbox Series S)
+          </span>
+        </div>
+
+        <ScrollableWrapper>
+          <table className={`popup_table ${styles.popup_table_double}`}>
+            <tbody>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Rezoluție ecran
+                </td>
+                <td style={{ background: '#eceef0' }}>2560 x 1440</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}> Model CPU</td>
+                <td>Custom Zen 2</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  RAM
+                </td>
+                <td style={{ background: '#eceef0' }}>10 GB</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Model placă video</td>
+                <td>AMD Radeon RDNA 2</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Tip unitate de stocare
+                </td>
+                <td style={{ background: '#eceef0' }}>SSD</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}> Capacitate SSD </td>
+                <td>1 TB</td>
+              </tr>
+            </tbody>
+          </table>
+        </ScrollableWrapper>
+      </Popup>
+      <Popup
+        id="1780227"
+        width="600px"
+        isVisible={activePopup === '1780227'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className={styles.row_popup_options_title}>
+          Caracteristici:
+          <br />{' '}
+          <span className={styles.row_popup_options_title_span}>
+            (Playstation 5 SLIM)
+          </span>
+        </div>
+
+        <ScrollableWrapper>
+          <table className={`popup_table ${styles.popup_table_double}`}>
+            <tbody>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Rezoluție ecran
+                </td>
+                <td style={{ background: '#eceef0' }}>2560 x 1440</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}> Ryzen Zen 2</td>
+                <td>Custom Zen 2</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  RAM
+                </td>
+                <td style={{ background: '#eceef0' }}>16 GB</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Model placă video</td>
+                <td>Radeon RDNA 2</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Tip unitate de stocare
+                </td>
+                <td style={{ background: '#eceef0' }}>SSD</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}> Capacitate SSD </td>
+                <td>1 TB</td>
+              </tr>
+            </tbody>
+          </table>
+        </ScrollableWrapper>
+      </Popup>
+      <Popup
+        id="1780224"
+        width="600px"
+        isVisible={activePopup === '1780224'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className={styles.row_popup_options_title}>
+          Caracteristici:
+          <br />{' '}
+          <span className={styles.row_popup_options_title_span}>
+            (Hisense 55")
+          </span>
+        </div>
+
+        <ScrollableWrapper>
+          <table className={`popup_table ${styles.popup_table_double}`}>
+            <tbody>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Rezoluție ecran
+                </td>
+                <td style={{ background: '#eceef0' }}>2560 x 1440</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}> Ryzen Zen 2</td>
+                <td>Custom Zen 2</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  RAM
+                </td>
+                <td style={{ background: '#eceef0' }}>16 GB</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Model placă video</td>
+                <td>Radeon RDNA 2</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Tip unitate de stocare
+                </td>
+                <td style={{ background: '#eceef0' }}>SSD</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}> Capacitate SSD </td>
+                <td>1 TB</td>
+              </tr>
+            </tbody>
+          </table>
+        </ScrollableWrapper>
+      </Popup>
+
+      <Popup
+        id="1780221"
+        width="600px"
+        isVisible={activePopup === '1780221'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className={styles.row_popup_options_title}>
+          Caracteristici:
+          <br />{' '}
+          <span className={styles.row_popup_options_title_span}>
+            (Xiaomi Redmi Pad SE)
+          </span>
+        </div>
+
+        <ScrollableWrapper>
+          <table className={`popup_table ${styles.popup_table_double}`}>
+            <tbody>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Diagonala ecranului
+                </td>
+                <td style={{ background: '#eceef0' }}>11"</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Rezoluția ecranului</td>
+                <td>1200 x 1920</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Tehnologia display-ului
+                </td>
+                <td style={{ background: '#eceef0' }}>IPS LCD</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Memorie internă</td>
+                <td>128 GB</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Memoria RAM
+                </td>
+                <td style={{ background: '#eceef0' }}>4 GB</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Max. rezoluția camerei</td>
+                <td>8 MP</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Capacitate acumulator
+                </td>
+                <td style={{ background: '#eceef0' }}>8000 mAh</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Chipset</td>
+                <td>Snapdragon 680</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Platformă software
+                </td>
+                <td style={{ background: '#eceef0' }}>Android</td>
+              </tr>
+            </tbody>
+          </table>
+        </ScrollableWrapper>
+      </Popup>
+
+      <Popup
+        id="1780321"
+        width="600px"
+        isVisible={activePopup === '1780321'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className={styles.row_popup_options_title}>
+          Caracteristici:
+          <br />{' '}
+          <span className={styles.row_popup_options_title_span}>
+            (Xiaomi Redmi Pad Pro)
+          </span>
+        </div>
+
+        <ScrollableWrapper>
+          <table className={`popup_table ${styles.popup_table_double}`}>
+            <tbody>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Tip display
+                </td>
+                <td style={{ background: '#eceef0' }}>IPS</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Rezoluție ecran</td>
+                <td>2560 x 1600</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Dimensiune ecran
+                </td>
+                <td style={{ background: '#eceef0' }}>12.1"</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Producătorul CPU</td>
+                <td>Qualcomm</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Model CPU
+                </td>
+                <td style={{ background: '#eceef0' }}>Snapdragon 7s Gen 2</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Memorie internă</td>
+                <td>128 GB</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  RAM
+                </td>
+                <td style={{ background: '#eceef0' }}>6 GB</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>
+                  Rezoluția camerei principale
+                </td>
+                <td>8 MP</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Cameră frontală
+                </td>
+                <td style={{ background: '#eceef0' }}>8 MP</td>
+              </tr>
+            </tbody>
+          </table>
+        </ScrollableWrapper>
+      </Popup>
+
+      <Popup
+        id="1710322"
+        width="600px"
+        isVisible={activePopup === '1710322'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className={styles.row_popup_options_title}>
+          Caracteristici:
+          <br />{' '}
+          <span className={styles.row_popup_options_title_span}>
+            (Xiaomi Pad 7)
+          </span>
+        </div>
+
+        <ScrollableWrapper>
+          <table className={`popup_table ${styles.popup_table_double}`}>
+            <tbody>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Tip display
+                </td>
+                <td style={{ background: '#eceef0' }}>IPS LCD</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Rezoluție ecran</td>
+                <td>3200 x 2136</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Dimensiune ecran
+                </td>
+                <td style={{ background: '#eceef0' }}>11.2"</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Producătorul CPU</td>
+                <td>Qualcomm</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Model CPU
+                </td>
+                <td style={{ background: '#eceef0' }}>Snapdragon 7+ Gen 3</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>Memorie internă</td>
+                <td>256 GB</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  RAM
+                </td>
+                <td style={{ background: '#eceef0' }}>8 GB</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099' }}>
+                  Rezoluția camerei principale
+                </td>
+                <td>13 MP</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Cameră frontală
+                </td>
+                <td style={{ background: '#eceef0' }}>8 MP</td>
+              </tr>
+            </tbody>
+          </table>
+        </ScrollableWrapper>
       </Popup>
 
       <Footer disclaimer={true} />

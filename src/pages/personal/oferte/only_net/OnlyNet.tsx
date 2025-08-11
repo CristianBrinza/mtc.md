@@ -1464,6 +1464,7 @@ export default function OnlyNet() {
           hover_color="var(--theme_primary_color_blue_4)"
           icon="arrow_right"
           className={styles.popup_more_btn}
+          to={`https://www.moldtelecom.md/${t('lang')}/personal/safe-web`}
         >
           {t('double.learn_more')}
         </Button>
