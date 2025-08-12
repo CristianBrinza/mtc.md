@@ -3159,15 +3159,14 @@ export default function Double() {
         className={styles.popupBuy}
         onClose={() => setActivePopup(null)}
       >
-        <b className={styles.popup_title_1}>Telefonia fixă</b>
-        Telefonia fixă este disponibilă exclusiv pentru abonații conectați la
-        serviciul Internet Fix Moldtelecom. <br />
+        <b className={styles.popup_title_1}>{t('double.tf.title')}</b>
+        {t('double.tf.text')} <br />
         <br />
-        Abonamentul include:
+        {t('double.tf.include')}
         <ul>
-          <li>Minute nelimitate către rețeaua fixă și mobilă Moldtelecom </li>
-          <li> 30 minute naționale incluse (fix & mobil alte rețele) </li>
-          <li> Serviciul CLIP (afișarea numărului apelant) – gratuit</li>
+          <li> {t('double.tf.list.0')} </li>
+          <li>{t('double.tf.list.1')} </li>
+          <li> {t('double.tf.list.2')}</li>
         </ul>
         <div className={styles.popup_btns_info}>
           <Button

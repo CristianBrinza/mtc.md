@@ -484,15 +484,15 @@ export default function Roaming() {
         </div>
       </div>
 
-      <Details>
-        <DetailsBlock title={t('roaming.fair_usage.title')}>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: t('roaming.fair_usage.content'),
-            }}
-          />
-        </DetailsBlock>
-      </Details>
+      {/*<Details>*/}
+      {/*  <DetailsBlock title={t('roaming.fair_usage.title')}>*/}
+      {/*    <div*/}
+      {/*      dangerouslySetInnerHTML={{*/}
+      {/*        __html: t('roaming.fair_usage.content'),*/}
+      {/*      }}*/}
+      {/*    />*/}
+      {/*  </DetailsBlock>*/}
+      {/*</Details>*/}
 
       {/* Tarife */}
       <div className={styles.roaming_tarifs}>

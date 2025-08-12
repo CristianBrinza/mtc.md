@@ -1500,8 +1500,8 @@ export default function Gaming() {
 
             <BuyForm
               config={activeBuyConfig}
-              tag={'double'}
-              service={'campain[double_2025_b2s], place[abonament]'}
+              tag={'gaming'}
+              service={'campain[gaming_2025_b2s], place[abonament]'}
               onSuccess={() => {
                 setSubmitted(true);
                 setError(false);
@@ -1519,6 +1519,8 @@ export default function Gaming() {
           </div>
         )}
       </Popup>
+
+      {/* Wi-Fi Mesh */}
       <Popup
         id="1280110"
         width="1000px"
@@ -1928,6 +1930,13 @@ export default function Gaming() {
         {/*  <div className={styles.row_popup_options_title_price}>30 lei</div>*/}
         {/*</div>*/}
       </Popup>
+
+
+
+
+
+
+
 
       <Popup
         id="1780226"

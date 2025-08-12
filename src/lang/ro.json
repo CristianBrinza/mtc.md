@@ -222,7 +222,7 @@
     "hero": {
       "alt": "Moldtelecom"
     },
-    "fill_house": "Umple casa cu Wi-Fi de ultimă generație",
+    "fill_house": "Conectează-ți casa la Wi-Fi de ultimă generație",
     "functions": {
       "multi_device": {
         "title": "Multi-Dispozitiv",
@@ -268,7 +268,7 @@
           "title": "Condiții de utilizare",
           "items": [
             "Wi-Fi PLUS este o opțiune adițională la serviciul de Internet fix existent, care permite extinderea ariei de acoperire Wi-Fi.",
-            "Plata pentru serviciul Wi-Fi PLUS se va include în abonamentul lunar și se va taxa din momentul activării serviciului, fapt confirmat prin livrarea codului OTP de către Titular.",
+            "Plata pentru serviciul Wi-Fi PLUS va fi adăugată la abonamentul lunar și va începe din momentul în care clientul confirmă activarea serviciului.",
             "Abonamentul lunar se va aplica per fiecare echipament acordat pentru extinderea ariei de acoperire Wi-Fi. În cadrul serviciului Wi-Fi PLUS pot fi conectate maxim 3 echipamente terminale per conexiune Internet fix.",
             "Abonatul va utiliza echipamentul oferit de către Furnizor în condiții de comodat, pe perioada utilizării serviciului Wi-Fi PLUS.",
             "Deconectarea serviciului Wi-Fi PLUS va avea loc în momentul restituirii echipamentului terminal (cu toate accesoriile incluse). În cazul depistării accesoriilor lipsă/defecte, Abonatul se obligă să achite contravaloarea acestora.",
@@ -2261,19 +2261,29 @@
         "2": "Raport de securitate lunar pentru activitatea online"
       }
     },
-    "popup_mesh": {
+    "tf": {
+    "title": "Telefonia fixă",
+      "text": " Telefonia fixă este disponibilă exclusiv pentru abonații conectați la serviciul Internet Fix Moldtelecom. ",
+      "include": "  Abonamentul include:",
+      "list": {
+        "0": "Minute nelimitate către rețeaua fixă și mobilă Moldtelecom",
+        "1": "30 minute naționale incluse (fix & mobil alte rețele)",
+        "2": "Serviciul CLIP (afișarea numărului apelant) – gratuit"
+      }
+    },
+     "popup_mesh": {
       "title": "Ce este Wi-Fi Mesh?",
-      "text": "Wi-Fi Mesh extinde semnalul routerului principal în zonele unde acoperirea este slabă, preluând și retransmițând wireless pentru o conexiune stabilă și rapidă în toată locuința.",
+      "text": "Wi-Fi Mesh este o soluție care extinde acoperirea rețelei wireless în zonele cu semnal slab din locuință. Dispozitivele adiționale preiau și retransmit semnalul de la routerul principal, asigurând o conexiune stabilă și rapidă în întreaga casă.",
       "why_title": "De ce să alegi Wi-Fi Mesh?",
       "list": {
-        "0": "Acoperire uniformă în fiecare colț al casei",
-        "1": "Conectezi toate dispozitivele fără să reintroduci parola",
-        "2": "Fără buffer sau drop-out în timpul streaming-ului"
+        "0": "Acoperire Wi-Fi uniformă în toate încăperile",
+        "1": "Rețea unică pentru toate dispozitivele – fără reconectări",
+        "2": "Conexiune stabilă în timpul navigării, streaming-ului sau jocurilor online"
       },
       "conditions_title": "Condiții de utilizare:",
       "conditions": {
         "0": "Wi-Fi PLUS este o opțiune adițională la serviciul de Internet fix existent, care permite extinderea ariei de acoperire Wi-Fi.",
-        "1": "Plata pentru serviciul Wi-Fi PLUS se va include în abonamentul lunar și se va taxa din momentul activării serviciului, fapt confirmat prin livrarea codului OTP de către Titular.",
+        "1": "Plata pentru serviciul Wi-Fi PLUS va fi adăugată la abonamentul lunar și va începe din momentul în care clientul confirmă activarea serviciului.",
         "2": "Abonamentul lunar se va aplica per fiecare echipament acordat pentru extinderea ariei de acoperire Wi-Fi. În cadrul serviciului Wi-Fi PLUS pot fi conectate maxim 3 echipamente terminale per conexiune Internet fix.",
         "3": "Abonatul va utiliza echipamentul oferit de către Furnizor în condiții de comodat, pe perioada utilizării serviciului Wi-Fi PLUS.",
         "4": "Deconectarea serviciului Wi-Fi PLUS va avea loc în momentul restituirii echipamentului terminal (cu toate accesoriile incluse). În cazul depistării accesoriilor lipsă/defecte, Abonatul se obligă să achite contravaloarea acestora.",

@@ -596,7 +596,7 @@ export default function OnlyNet() {
                     (10 {t('combo_home.lei_luna')})
                   </span>
                 </span>
-                <InfoIcon onClick={() => setActivePopup('1280113')} />
+                <InfoIcon onClick={() => setActivePopup('1280119')} />
               </div>
 
               {activeConfig != '1' && (
@@ -755,7 +755,7 @@ export default function OnlyNet() {
                     (10 {t('combo_home.lei_luna')})
                   </span>
                 </span>
-                <InfoIcon onClick={() => setActivePopup('1280113')} />
+                <InfoIcon onClick={() => setActivePopup('1280119')} />
               </div>
               {activeConfig != '1' && (
                 <div className={styles.regio_spacer}>&nbsp;</div>
@@ -903,7 +903,7 @@ export default function OnlyNet() {
                   (10 {t('combo_home.lei_luna')})
                 </span>
               </span>
-              <InfoIcon onClick={() => setActivePopup('1280113')} />
+              <InfoIcon onClick={() => setActivePopup('1280119')} />
             </div>
 
             {activeConfig != '1' && (
@@ -1051,7 +1051,7 @@ export default function OnlyNet() {
                   (10 {t('combo_home.lei_luna')})
                 </span>
               </span>
-              <InfoIcon onClick={() => setActivePopup('1280113')} />
+              <InfoIcon onClick={() => setActivePopup('1280119')} />
             </div>
 
             {activeConfig != '1' && (
@@ -1199,7 +1199,7 @@ export default function OnlyNet() {
                   (10 {t('combo_home.lei_luna')})
                 </span>
               </span>
-              <InfoIcon onClick={() => setActivePopup('1280113')} />
+              <InfoIcon onClick={() => setActivePopup('1280119')} />
             </div>
 
             {activeConfig != '1' && (
@@ -1363,6 +1363,7 @@ export default function OnlyNet() {
         </FaqQAV2>
       </FaqV2>
 
+
       {/* Wi-Fi Mesh */}
       <Popup
         id="1280110"
@@ -1381,19 +1382,21 @@ export default function OnlyNet() {
           <li>{t('double.popup_mesh.list.1')}</li>
           <li>{t('double.popup_mesh.list.2')}</li>
         </ul>
-        <b className={styles.popup_title_1}>
-          {t('double.popup_mesh.conditions_title')}
-        </b>
-        <ul>
-          <li>{t('double.popup_mesh.conditions.0')}</li>
-          <li>{t('double.popup_mesh.conditions.1')}</li>
-          <li>{t('double.popup_mesh.conditions.2')}</li>
-          <li>{t('double.popup_mesh.conditions.3')}</li>
-          <li>{t('double.popup_mesh.conditions.4')}</li>
-          <li>{t('double.popup_mesh.conditions.5')}</li>
-          <li>{t('double.popup_mesh.conditions.6')}</li>
-          <li>{t('double.popup_mesh.conditions.7')}</li>
-        </ul>
+
+        <Details className={styles.popup_more_detalii}>
+          <DetailsBlock title={t('double.popup_tvgo.conditions_title')}>
+            <ul>
+              <li>{t('double.popup_mesh.conditions.0')}</li>
+              <li>{t('double.popup_mesh.conditions.1')}</li>
+              <li>{t('double.popup_mesh.conditions.2')}</li>
+              <li>{t('double.popup_mesh.conditions.3')}</li>
+              <li>{t('double.popup_mesh.conditions.4')}</li>
+              <li>{t('double.popup_mesh.conditions.5')}</li>
+              <li>{t('double.popup_mesh.conditions.6')}</li>
+              <li>{t('double.popup_mesh.conditions.7')}</li>
+            </ul>
+          </DetailsBlock>
+        </Details>
 
         <Button
           id="combo_wifi_plus+learn_more"
@@ -1431,6 +1434,23 @@ export default function OnlyNet() {
           <li>{t('double.popup_premier.features.1')}</li>
           <li>{t('double.popup_premier.features.2')}</li>
           <li>{t('double.popup_premier.features.3')}</li>
+        </ul>
+
+        <div className={styles.abonaments_block_inside_line}></div>
+
+        <b className={styles.popup_title_1}>
+          {t('double.popup_univers.title')}
+        </b>
+        <p>{t('double.popup_univers.text')}</p>
+        <b className={styles.popup_title_1}>
+          {t('double.popup_univers.features_title')}
+        </b>
+        <ul>
+          <li>{t('double.popup_univers.features.0')}</li>
+          <li>{t('double.popup_univers.features.1')}</li>
+          <li>{t('double.popup_univers.features.1_1')}</li>
+          <li>{t('double.popup_univers.features.2')}</li>
+          <li>{t('double.popup_univers.features.3')}</li>
         </ul>
       </Popup>
 
@@ -1686,6 +1706,39 @@ export default function OnlyNet() {
               </option>
             ))}
           </select>
+        </div>
+      </Popup>
+      <Popup
+        id="1280119"
+        width="1000px"
+        isVisible={activePopup === '1280119'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <b className={styles.popup_title_1}>{t('double.tf.title')}</b>
+        {t('double.tf.text')} <br />
+        <br />
+        {t('double.tf.include')}
+        <ul>
+          <li> {t('double.tf.list.0')} </li>
+          <li>{t('double.tf.list.1')} </li>
+          <li> {t('double.tf.list.2')}</li>
+        </ul>
+        <div className={styles.popup_btns_info}>
+          <Button
+            id="combo_fix+learn_more"
+            to={`https://www.moldtelecom.md/${t('lang')}/personal/Abonamente-telefonie-fixa`}
+            color="#fff"
+            bgcolor="var(--theme_primary_color_blue_4)"
+            border="var(--theme_primary_color_blue_4)"
+            hover_border="var(--theme_primary_color_blue_2)"
+            hover_bgcolor="var(--theme_primary_color_blue_2)"
+            hover_color="var(--theme_primary_color_blue_4)"
+            icon="arrow_right"
+            className={styles.popup_more_btn}
+          >
+            {t('double.learn_more')}
+          </Button>
         </div>
       </Popup>
 

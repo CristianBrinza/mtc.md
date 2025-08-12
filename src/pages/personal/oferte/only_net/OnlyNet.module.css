@@ -619,6 +619,9 @@
 .regio_spacer {
   margin-bottom: 10px;
 }
+.popup_more_detalii {
+  margin: 0 auto;
+}
 
 @media (max-width: 1300px) {
   .hero {
