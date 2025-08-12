@@ -1363,7 +1363,6 @@ export default function OnlyNet() {
         </FaqQAV2>
       </FaqV2>
 
-
       {/* Wi-Fi Mesh */}
       <Popup
         id="1280110"

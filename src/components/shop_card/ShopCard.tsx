@@ -19,6 +19,8 @@ interface ShopCardProps {
   buy?: () => Promise<void> | void;
   style_type?: string;
   show_like?: boolean;
+  color?: string;
+  colors?: string[];
   show_comapre?: boolean;
   link?: string;
 }
@@ -29,6 +31,21 @@ const STORAGE_KEY_COMPARE = 'comapreDevices';
 // Format price function to use space as a thousands separator
 const formatPrice = (price: number) => {
   return price.toLocaleString('ro-RO').replace(/\./g, ' '); // Ensures space instead of dot
+};
+// === Color options (implicit) + util ===
+const DEFAULT_COLOR_OPTIONS = [
+  { name: 'black', hex: '#000000' },
+  { name: 'purple', hex: '#EAA0D0' },
+  { name: 'white', hex: '#ffffff' },
+  { name: 'Desert Titanium', hex: '#E5D3C2' },
+];
+const colorNameToHex = (
+  name: string,
+  options: { name: string; hex: string }[] = DEFAULT_COLOR_OPTIONS
+) => {
+  const found = options.find(o => o.name.toLowerCase() === name.toLowerCase());
+  // fallback: dacă nu găsim în map, lăsăm string-ul (poate fi css valid, ex. "red")
+  return found ? found.hex : name;
 };
 
 const ShopCard: React.FC<ShopCardProps> = ({
@@ -47,6 +64,8 @@ const ShopCard: React.FC<ShopCardProps> = ({
   buy,
   style_type,
   link,
+  color,
+  colors,
   show_comapre = true,
   show_like = true,
 }) => {
@@ -141,6 +160,25 @@ const ShopCard: React.FC<ShopCardProps> = ({
         </div>
       )}
       <img className={styles.ShopCard_img} src={image} alt="Device" />
+      {color && (
+        <div className={styles.colors_block}>
+          <div
+            className={styles.color_block}
+            style={{ backgroundColor: colorNameToHex(color) }}
+          ></div>
+          {colors && colors.length > 0 && (
+            <>
+              {colors.map((c, index) => (
+                <div
+                  key={index}
+                  className={styles.color_block}
+                  style={{ backgroundColor: colorNameToHex(c) }}
+                />
+              ))}
+            </>
+          )}
+        </div>
+      )}
       <div className={styles.ShopCard_inside}>
         <div className={styles.ShopCard_top}>
           <div className={styles.ShopCard_title}>

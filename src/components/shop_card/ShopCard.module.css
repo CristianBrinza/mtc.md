@@ -15,6 +15,18 @@
   width: 100%;
   margin-top: 10px;
 }
+.colors_block {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.color_block {
+  width: 32px;
+  height: 7px;
+  border-radius: 100px;
+  /*border: 1px solid var(--theme_primary_color_dark_gray);*/
+}
 
 .ShopCard_title {
   color: var(--theme_primary_color_black);

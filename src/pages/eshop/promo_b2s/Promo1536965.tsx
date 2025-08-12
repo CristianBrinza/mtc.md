@@ -11,7 +11,7 @@ import ShopCard from '../../../components/shop_card/ShopCard.tsx';
 import Icon from '../../../components/Icon.tsx';
 
 // === CONFIGURARE: setează data/ora limită (cu fus orar) ===
-const ENDS_AT = '2025-09-15T23:59:59+03:00';
+const ENDS_AT = '2025-09-25T23:59:59+03:00';
 
 // mic utilitar pentru zecimale la ore/min/sec
 const pad2 = (n: number) => String(n).padStart(2, '0');
@@ -77,7 +77,10 @@ const norm = (s?: string) =>
 const getSortTokens = (val: unknown): string[] => {
   if (Array.isArray(val)) return val.map(String);
   if (typeof val === 'string') {
-    return val.split(/[,;|]/).map(s => s.trim()).filter(Boolean);
+    return val
+      .split(/[,;|]/)
+      .map(s => s.trim())
+      .filter(Boolean);
   }
   return [];
 };
@@ -134,7 +137,9 @@ function facetCounts(
 export default function Promo1536965() {
   const untilFromQuery = useMemo(() => {
     try {
-      const q = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
+      const q = new URLSearchParams(
+        typeof window !== 'undefined' ? window.location.search : ''
+      );
       return q.get('until') || null;
     } catch {
       return null;
@@ -147,13 +152,23 @@ export default function Promo1536965() {
 
   const endsAtLabel = useMemo(() => {
     const d = new Date(targetMs);
-    return d.toLocaleDateString('ro-RO', { day: '2-digit', month: '2-digit', year: '2-digit' });
+    return d.toLocaleDateString('ro-RO', {
+      day: '2-digit',
+      month: '2-digit',
+      year: '2-digit',
+    });
   }, [targetMs]);
 
   const { t } = useTranslation();
   const breadcrumbItems = [
-    { label: 'Magazin Online', url: `https://www.moldtelecom.md/${t('lang')}/personal/Telefoane` },
-    { label: 'Promo', url: `https://www.moldtelecom.md/${t('lang')}/personal/Telefoane` },
+    {
+      label: 'Magazin Online',
+      url: `https://www.moldtelecom.md/${t('lang')}/personal/Telefoane`,
+    },
+    {
+      label: 'Promo',
+      url: `https://www.moldtelecom.md/${t('lang')}/personal/Telefoane`,
+    },
     { label: 'Back to school' },
   ];
 
@@ -166,12 +181,15 @@ export default function Promo1536965() {
     let alive = true;
     (async () => {
       try {
-        const res = await fetch('/json/promo1536956.json', { cache: 'no-store' });
+        const res = await fetch('/json/promo1536956.json', {
+          cache: 'no-store',
+        });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const raw = await res.json();
-        if (!Array.isArray(raw)) throw new Error('JSON invalid: trebuie să fie un array.');
+        if (!Array.isArray(raw))
+          throw new Error('JSON invalid: trebuie să fie un array.');
 
-// Normalize fields so sorting/filtering works even if JSON has strings like "FALSE"/"2999"
+        // Normalize fields so sorting/filtering works even if JSON has strings like "FALSE"/"2999"
         const normalized: PromoItem[] = raw.map((r: any, idx: number) => ({
           device_id: toNum(r.device_id) ?? idx,
           image: String(r.image ?? ''),
@@ -180,7 +198,8 @@ export default function Promo1536965() {
           reducere: r.reducere != null ? String(r.reducere) : undefined,
           title: String(r.title ?? ''),
           subtitle: r.subtitle != null ? String(r.subtitle) : undefined,
-          characteristics: r.characteristics != null ? String(r.characteristics) : undefined,
+          characteristics:
+            r.characteristics != null ? String(r.characteristics) : undefined,
           tag: r.tag != null ? String(r.tag) : undefined,
           subtag: r.subtag != null ? String(r.subtag) : undefined,
           tag_color: r.tag_color != null ? String(r.tag_color) : undefined,
@@ -196,14 +215,15 @@ export default function Promo1536965() {
         }));
 
         if (alive) setItems(normalized);
-
       } catch (e: any) {
         if (alive) setError(e?.message || 'Eroare necunoscută.');
       } finally {
         if (alive) setLoading(false);
       }
     })();
-    return () => { alive = false; };
+    return () => {
+      alive = false;
+    };
   }, []);
 
   // === SORT & FILTER state ===
@@ -221,7 +241,15 @@ export default function Promo1536965() {
   const [openColor, setOpenColor] = useState(false);
 
   // TAGS sus (max 1 activ)
-  const filterTags = ['La 1 leu', 'Telefoane', 'Televizoare', 'Tablete','Console', 'Ceasuri', 'Gadget-uri'];
+  const filterTags = [
+    'La 1 leu',
+    'Telefoane',
+    'Televizoare',
+    'Tablete',
+    'Console',
+    'Ceasuri',
+    'Gadget-uri',
+  ];
 
   // rezolvă link-ul relativ vs absolut + limbă
   const resolveLink = (link?: string) => {
@@ -241,7 +269,7 @@ export default function Promo1536965() {
   const baseAfterTag = useMemo(() => {
     let arr = items.slice();
     if (activeTag) {
-      arr = arr.filter((it) => matchesSort(it, activeTag));
+      arr = arr.filter(it => matchesSort(it, activeTag));
     }
     return arr;
   }, [items, activeTag]);
@@ -249,22 +277,28 @@ export default function Promo1536965() {
   // counts dinamice pentru fiecare facet (ținând cont de ceilalți selectați)
   const catCounts = useMemo(() => {
     let base = baseAfterTag.slice();
-    if (selectedBrand) base = base.filter((it) => norm(it.brand) === norm(selectedBrand));
-    if (selectedColor) base = base.filter((it) => norm(it.color) === norm(selectedColor));
+    if (selectedBrand)
+      base = base.filter(it => norm(it.brand) === norm(selectedBrand));
+    if (selectedColor)
+      base = base.filter(it => norm(it.color) === norm(selectedColor));
     return facetCounts(base, 'category');
   }, [baseAfterTag, selectedBrand, selectedColor]);
 
   const brandCounts = useMemo(() => {
     let base = baseAfterTag.slice();
-    if (selectedCategory) base = base.filter((it) => norm(it.category) === norm(selectedCategory));
-    if (selectedColor) base = base.filter((it) => norm(it.color) === norm(selectedColor));
+    if (selectedCategory)
+      base = base.filter(it => norm(it.category) === norm(selectedCategory));
+    if (selectedColor)
+      base = base.filter(it => norm(it.color) === norm(selectedColor));
     return facetCounts(base, 'brand');
   }, [baseAfterTag, selectedCategory, selectedColor]);
 
   const colorCounts = useMemo(() => {
     let base = baseAfterTag.slice();
-    if (selectedCategory) base = base.filter((it) => norm(it.category) === norm(selectedCategory));
-    if (selectedBrand) base = base.filter((it) => norm(it.brand) === norm(selectedBrand));
+    if (selectedCategory)
+      base = base.filter(it => norm(it.category) === norm(selectedCategory));
+    if (selectedBrand)
+      base = base.filter(it => norm(it.brand) === norm(selectedBrand));
     return facetCounts(base, 'color');
   }, [baseAfterTag, selectedCategory, selectedBrand]);
 
@@ -274,46 +308,105 @@ export default function Promo1536965() {
 
     // FILTRU: tags sus
     if (activeTag) {
-      arr = arr.filter((it) => matchesSort(it, activeTag));
+      arr = arr.filter(it => matchesSort(it, activeTag));
     }
 
     // FILTRU: facete laterale
     if (selectedCategory) {
-      arr = arr.filter((it) => norm(it.category) === norm(selectedCategory));
+      arr = arr.filter(it => norm(it.category) === norm(selectedCategory));
     }
     if (selectedBrand) {
-      arr = arr.filter((it) => norm(it.brand) === norm(selectedBrand));
+      arr = arr.filter(it => norm(it.brand) === norm(selectedBrand));
     }
     if (selectedColor) {
-      arr = arr.filter((it) => norm(it.color) === norm(selectedColor));
+      arr = arr.filter(it => norm(it.color) === norm(selectedColor));
     }
 
     // SORTARE: preț
     if (sortMode === 'min_price') {
-      arr.sort((a, b) => (a.price ?? Number.POSITIVE_INFINITY) - (b.price ?? Number.POSITIVE_INFINITY));
+      arr.sort(
+        (a, b) =>
+          (a.price ?? Number.POSITIVE_INFINITY) -
+          (b.price ?? Number.POSITIVE_INFINITY)
+      );
     } else if (sortMode === 'max_price') {
-      arr.sort((a, b) => (b.price ?? Number.NEGATIVE_INFINITY) - (a.price ?? Number.NEGATIVE_INFINITY));
+      arr.sort(
+        (a, b) =>
+          (b.price ?? Number.NEGATIVE_INFINITY) -
+          (a.price ?? Number.NEGATIVE_INFINITY)
+      );
     }
     // default = ordinea din JSON
     return arr;
-  }, [items, activeTag, selectedCategory, selectedBrand, selectedColor, sortMode]);
+  }, [
+    items,
+    activeTag,
+    selectedCategory,
+    selectedBrand,
+    selectedColor,
+    sortMode,
+  ]);
 
   // handleri UI
-  const onSelectSort = (e: React.ChangeEvent<HTMLSelectElement>) => setSortMode(e.target.value as SortMode);
-  const onClickTag = (label: string) => setActiveTag((prev) => (prev === label ? null : label));
+  const onSelectSort = (e: React.ChangeEvent<HTMLSelectElement>) =>
+    setSortMode(e.target.value as SortMode);
+  const onClickTag = (label: string) =>
+    setActiveTag(prev => (prev === label ? null : label));
 
   const toggleFacet = (facet: 'cat' | 'brand' | 'color') => {
-    if (facet === 'cat') setOpenCat((v) => !v);
-    if (facet === 'brand') setOpenBrand((v) => !v);
-    if (facet === 'color') setOpenColor((v) => !v);
+    if (facet === 'cat') setOpenCat(v => !v);
+    if (facet === 'brand') setOpenBrand(v => !v);
+    if (facet === 'color') setOpenColor(v => !v);
   };
 
   const pickCategory = (label: string) =>
-    setSelectedCategory((prev) => (prev && norm(prev) === norm(label) ? null : label));
+    setSelectedCategory(prev =>
+      prev && norm(prev) === norm(label) ? null : label
+    );
   const pickBrand = (label: string) =>
-    setSelectedBrand((prev) => (prev && norm(prev) === norm(label) ? null : label));
+    setSelectedBrand(prev =>
+      prev && norm(prev) === norm(label) ? null : label
+    );
   const pickColor = (label: string) =>
-    setSelectedColor((prev) => (prev && norm(prev) === norm(label) ? null : label));
+    setSelectedColor(prev =>
+      prev && norm(prev) === norm(label) ? null : label
+    );
+
+  // Restore filters from URL on page load
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+
+    const tag = params.get('tag');
+    const cat = params.get('category');
+    const brand = params.get('brand');
+    const color = params.get('color');
+    const sortParam = params.get('sort');
+
+    if (tag) setActiveTag(tag);
+    if (cat) setSelectedCategory(cat);
+    if (brand) setSelectedBrand(brand);
+    if (color) setSelectedColor(color);
+    if (
+      sortParam &&
+      ['default', 'min_price', 'max_price'].includes(sortParam)
+    ) {
+      setSortMode(sortParam as SortMode);
+    }
+  }, []);
+
+  // Update URL when filters change
+  useEffect(() => {
+    const params = new URLSearchParams();
+
+    if (activeTag) params.set('tag', activeTag);
+    if (selectedCategory) params.set('category', selectedCategory);
+    if (selectedBrand) params.set('brand', selectedBrand);
+    if (selectedColor) params.set('color', selectedColor);
+    if (sortMode !== 'default') params.set('sort', sortMode);
+
+    const newUrl = `${window.location.pathname}?${params.toString()}`;
+    window.history.replaceState({}, '', newUrl);
+  }, [activeTag, selectedCategory, selectedBrand, selectedColor, sortMode]);
 
   return (
     <>
@@ -455,21 +548,23 @@ export default function Promo1536965() {
             {openCat && (
               <div className={styles.filter_btn_options}>
                 {allCategories.map(({ n, label }) => (
-
                   <label key={n} className={styles.filter_btn_option}>
-                <label className={styles.checkbox}>
-                  <input
-                    type="checkbox"
-                    className={styles.checkbox_input}
-                    checked={
-                      !!selectedCategory && norm(selectedCategory) === n
-                    }
-                    onChange={() => pickCategory(label)}
-                  />
-                  <span className={styles.checkbox_box}></span>
-                </label>
-                <b>{label}</b> <span className={styles.filter_btn_option_span}>({catCounts[n] ?? 0})</span>
-              </label>
+                    <label className={styles.checkbox}>
+                      <input
+                        type="checkbox"
+                        className={styles.checkbox_input}
+                        checked={
+                          !!selectedCategory && norm(selectedCategory) === n
+                        }
+                        onChange={() => pickCategory(label)}
+                      />
+                      <span className={styles.checkbox_box}></span>
+                    </label>
+                    <b>{label}</b>{' '}
+                    <span className={styles.filter_btn_option_span}>
+                      ({catCounts[n] ?? 0})
+                    </span>
+                  </label>
                 ))}
               </div>
             )}
@@ -496,7 +591,10 @@ export default function Promo1536965() {
                       />
                       <span className={styles.checkbox_box}></span>
                     </label>
-                    <b>{label}</b> <span className={styles.filter_btn_option_span}>({brandCounts[n] ?? 0})</span>
+                    <b>{label}</b>{' '}
+                    <span className={styles.filter_btn_option_span}>
+                      ({brandCounts[n] ?? 0})
+                    </span>
                   </label>
                 ))}
               </div>
@@ -515,17 +613,20 @@ export default function Promo1536965() {
               <div className={styles.filter_btn_options}>
                 {allColors.map(({ n, label }) => (
                   <label key={n} className={styles.filter_btn_option}>
-                <label className={styles.checkbox}>
-                  <input
-                    type="checkbox"
-                    className={styles.checkbox_input}
-                    checked={!!selectedColor && norm(selectedColor) === n}
-                    onChange={() => pickColor(label)}
-                  />
-                  <span className={styles.checkbox_box}></span>
-                </label>
-                <b>{label}</b> <span className={styles.filter_btn_option_span}>({colorCounts[n] ?? 0})</span>
-              </label>
+                    <label className={styles.checkbox}>
+                      <input
+                        type="checkbox"
+                        className={styles.checkbox_input}
+                        checked={!!selectedColor && norm(selectedColor) === n}
+                        onChange={() => pickColor(label)}
+                      />
+                      <span className={styles.checkbox_box}></span>
+                    </label>
+                    <b>{label}</b>{' '}
+                    <span className={styles.filter_btn_option_span}>
+                      ({colorCounts[n] ?? 0})
+                    </span>
+                  </label>
                 ))}
               </div>
             )}
@@ -549,13 +650,14 @@ export default function Promo1536965() {
                 subtitle={item.subtitle}
                 characteristics={item.characteristics}
                 tag={item.tag}
-                subtag={item.subtag ?? t('combo_home.cu_oferta')}
+                subtag={item.subtag}
                 tag_color={
                   item.tag_color ?? 'var(--theme_primary_color_blue_3)'
                 }
                 style_type={item.style_type ?? 'gray'}
                 show_like={item.show_like ?? false}
                 show_comapre={item.show_comapre ?? false}
+                // color={item.color}
                 link={resolveLink(item.link)}
               />
             ))}

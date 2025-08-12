@@ -2262,7 +2262,7 @@
       }
     },
     "tf": {
-    "title": "Telefonia fixă",
+      "title": "Telefonia fixă",
       "text": " Telefonia fixă este disponibilă exclusiv pentru abonații conectați la serviciul Internet Fix Moldtelecom. ",
       "include": "  Abonamentul include:",
       "list": {
@@ -2271,7 +2271,7 @@
         "2": "Serviciul CLIP (afișarea numărului apelant) – gratuit"
       }
     },
-     "popup_mesh": {
+    "popup_mesh": {
       "title": "Ce este Wi-Fi Mesh?",
       "text": "Wi-Fi Mesh este o soluție care extinde acoperirea rețelei wireless în zonele cu semnal slab din locuință. Dispozitivele adiționale preiau și retransmit semnalul de la routerul principal, asigurând o conexiune stabilă și rapidă în întreaga casă.",
       "why_title": "De ce să alegi Wi-Fi Mesh?",
