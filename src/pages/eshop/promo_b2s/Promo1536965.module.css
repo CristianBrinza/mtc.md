@@ -1,4 +1,4 @@
-.couldown{
+.couldown {
   background: var(--theme_primary_color_blue_1);
   margin: 10px auto;
   display: flex;
@@ -7,29 +7,29 @@
   padding: 25px 30px;
   box-sizing: border-box;
   border-radius: 15px;
-  gap:20px;
+  gap: 20px;
 }
-.couldown_container{
+.couldown_container {
   width: 100%;
   display: flex;
 }
-.couldown_top{
+.couldown_top {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
   margin: 5px 0 -5px;
 }
-.couldown_top_card{
+.couldown_top_card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   line-height: 20px;
-  gap:3px;
+  gap: 3px;
   height: 45px;
 }
-.couldown_bottom{
+.couldown_bottom {
   /*color: var(--theme_primary_color_blue_4);*/
   color: var(--theme_primary_color_blue_2);
   opacity: 0.7;
@@ -37,23 +37,23 @@
   font-weight: 600;
   margin: 0px 0 -8px;
 }
-.couldown_promo_title{
-font-weight: 700;
+.couldown_promo_title {
+  font-weight: 700;
   font-size: 24px;
   color: var(--theme_primary_color_blue_2);
   font-family: Poppins, sans-serif;
 }
-.couldown_top_card_time{
+.couldown_top_card_time {
   font-size: 12px;
   color: var(--theme_primary_color_blue_2);
 }
-.couldown_top_card_number{
+.couldown_top_card_number {
   font-weight: 700;
   /*font-family: Poppins, sans-serif;*/
   font-size: 28px;
   color: var(--theme_primary_color_blue_4);
 }
-.couldown_promo{
+.couldown_promo {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -76,45 +76,45 @@ font-weight: 700;
   width: 100%;
   height: auto;
 }
-.title_main{
+.title_main {
   font-size: 42px;
   line-height: 44px;
   max-width: 700px;
   margin: 30px auto 20px;
   font-weight: 700;
 }
-.subtitle{
+.subtitle {
   width: 96vw;
   max-width: 1000px;
   margin: 0 auto 20px;
   text-align: center;
 }
-.devices{
+.devices {
   display: flex;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  gap:10px;
+  gap: 10px;
 }
-.devices_filter{
+.devices_filter {
   width: 280px;
   display: flex;
   flex-direction: column;
-  gap:5px;
+  gap: 5px;
 }
-.devices_list{
-display: flex;
+.devices_list {
+  display: flex;
   flex-wrap: wrap;
-  gap:10px;
+  gap: 10px;
   width: 1150px;
 }
-.filter_title{
+.filter_title {
   font-family: Poppins, sans-serif;
   font-size: 22px;
-  font-weight:500;
+  font-weight: 500;
   line-height: 28px;
 }
-.filter_btn{
+.filter_btn {
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -125,57 +125,57 @@ display: flex;
   font-size: 14px;
   flex-direction: column;
 }
-.sort_select{
+.sort_select {
   /*height: 42px;*/
   /*background-color: var(--theme_primary_color_light_gray);*/
   /*border-radius: 100px;*/
 
-    /* 1) ascundem controlul nativ */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+  /* 1) ascundem controlul nativ */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
-    /* 2) stil general */
-    height: 46px;
-    border-radius: 100px;
-    /*background-color: #f1f1f1;*/
+  /* 2) stil general */
+  height: 46px;
+  border-radius: 100px;
+  /*background-color: #f1f1f1;*/
   background-color: #fff;
   border: 1px solid var(--theme_primary_color_gray);
-    color: #333;
+  color: #333;
   font-weight: 500;
-    font-size: 14px;
+  font-size: 14px;
 
-    /* 3) spaţiu în dreapta pentru săgeată */
-    padding: 0 40px 0 20px;
+  /* 3) spaţiu în dreapta pentru săgeată */
+  padding: 0 40px 0 20px;
 
-    /* 4) icon‑arrow custom poziţionat cu 20px mai la stânga de marginea dreaptă */
-    background-image: url('/images/svg/ui_svg/select_arrow.svg'); /* sau data‑uri SVG */
-    background-repeat: no-repeat;
-    background-position: calc(100% - 20px) center;
-    background-size: 16px; /* ajustaţi după dimensiunea iconiţei */
-    /*border: 1px transparent;*/
+  /* 4) icon‑arrow custom poziţionat cu 20px mai la stânga de marginea dreaptă */
+  background-image: url('/images/svg/ui_svg/select_arrow.svg'); /* sau data‑uri SVG */
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) center;
+  background-size: 16px; /* ajustaţi după dimensiunea iconiţei */
+  /*border: 1px transparent;*/
 }
-.devices_tags{
+.devices_tags {
   width: 100%;
   max-width: 1440px;
   margin: 40px auto 10px;
   display: flex;
-  gap:3px;
+  gap: 3px;
 }
-.devices_tag{
-padding: 5px 10px;
+.devices_tag {
+  padding: 5px 10px;
   /*background: var(--theme_primary_color_blue_1);*/
   border: 1px solid var(--theme_primary_color_gray);
   border-radius: 100px;
   cursor: pointer;
 }
-.devices_tag:hover{
+.devices_tag:hover {
   background: var(--theme_primary_color_gray);
 }
-.devices_found{
+.devices_found {
   opacity: 0.7;
 }
-.sort{
+.sort {
   width: 100%;
   max-width: 1440px;
   display: flex;
@@ -184,7 +184,7 @@ padding: 5px 10px;
   align-items: center;
 }
 
-.filter_btn_title{
+.filter_btn_title {
   display: flex;
   width: 100%;
   align-items: center;
@@ -192,11 +192,61 @@ padding: 5px 10px;
   padding: 10px 15px;
   box-sizing: border-box;
 }
-.filter_btn_option{
+.filter_btn_options {
   padding: 10px 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 5px;
 }
-.filter_btn_option input{
-  background: #fff;
+.filter_btn_option{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+}
+.filter_btn_option_span{
+  opacity: 0.6;
+ /*transform: scale(0.7);*/
+ /* transform-origin: bottom center;*/
+
+}
+.checkbox {
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.checkbox_input {
+  display: none;
+}
+.checkbox_box {
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  height: 16px;
+  position: relative;
+  transition: background-color .2s ease;
+  width: 16px;
+}
+.checkbox_input:checked+.checkbox_box {
+  background-color: var(--theme_primary_color_blue_3);
+  border-color: var(--theme_primary_color_blue_3);
+}
+.checkbox_input:checked+.checkbox_box:after {
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  content: "";
+  height: 10px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -60%) rotate(45deg);
+  width: 5px;
 }
 
 

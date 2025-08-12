@@ -76,6 +76,10 @@ export const routesConfig: RouteConfig[] = [
     path: '/:lang/mobile_old',
     element: React.createElement(MobileOld),
   },
+  {
+    path: '/:lang/test2903579',
+    element: React.createElement(Home),
+  },
   // {
   //   path: '/:lang/test',
   //   i18nKey: 'navbar.internet_tv',
