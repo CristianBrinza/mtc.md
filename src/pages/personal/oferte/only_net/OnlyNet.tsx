@@ -1282,10 +1282,6 @@ export default function OnlyNet() {
           'Ivi',
           'Premier',
           'MtcTv',
-          'Arhiva',
-          'PlusTV',
-          'Adult',
-          'Junior',
         ]}
       />
       <MyApp style_type={'blue_white'} className={styles.myapp} />

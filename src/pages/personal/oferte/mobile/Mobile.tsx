@@ -79,21 +79,15 @@ export default function Mobile() {
       {
         breakpoint: 1300,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
         },
       },
       {
         breakpoint: 951,
         settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 651,
-        settings: {
           slidesToShow: 1,
         },
-      },
+      }
     ],
   };
   const settings_devices = {
@@ -1278,7 +1272,7 @@ export default function Mobile() {
                   Din aplicație
                 </div>
                 <div className={styles.tm_discover_card_title}>
-                  Cinema-Online la doar 59 lei/lună
+                  Alege Cinema-Online la doar 59 lei/lună
                 </div>
                 <div className={styles.tm_discover_card_text}>
                   Explorează lumea televiziunii interactive cu abonamentul

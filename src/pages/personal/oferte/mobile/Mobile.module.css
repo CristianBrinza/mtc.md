@@ -596,7 +596,7 @@
   font-size: 14px;
 }
 .tm_discover_card_title {
-  font-size: 28px;
+  font-size: 26px;
   line-height: 30px;
   font-weight: 700;
 }
@@ -625,6 +625,9 @@
   }
   .tm_carousell {
     max-width: 890px;
+  }
+  .tm_carousell_discover{
+    max-width: 800px;
   }
 }
 @media (max-width: 1150px) {
@@ -663,6 +666,9 @@
   }
   .mobile_carousell {
     max-width: 580px;
+  }
+  .tm_carousell_discover{
+    max-width: 400px;
   }
   .btns_select {
     max-width: 580px;
@@ -720,5 +726,26 @@
   .selected_popup_subcription {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+.tm_carousell_discover{
+  max-width: 96vw;
+}
+  .tm_discover_card{
+    max-width: 90vw;
+  }
+
+  .tm_carousell_discover :global(.slick-next) {
+    right: -10px !important;
+    border: 3px solid #fff;
+    border-radius: 100px;
+  }
+
+  .tm_carousell_discover :global(.slick-prev) {
+    left: -10px !important;
+    border: 3px solid #fff;
+    border-radius: 100px;
   }
 }
