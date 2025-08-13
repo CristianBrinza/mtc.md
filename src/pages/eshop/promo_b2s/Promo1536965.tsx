@@ -163,9 +163,9 @@ export default function Promo1536965() {
 
   const { t } = useTranslation();
   const seo = {
-    title: t('pormo_b2s_2025.seo.title'),
-    description: t('pormo_b2s_2025.seo.description'),
-    keywords: t('pormo_b2s_2025.seo.keywords'),
+    title: t('pages.pormo_b2s_2025.title'),
+    description: t('pages.pormo_b2s_2025.description'),
+    keywords: t('pages.pormo_b2s_2025.keywords'),
   };
   const breadcrumbItems = [
     {

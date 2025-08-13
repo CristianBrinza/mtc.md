@@ -1621,34 +1621,43 @@
       "title": "Back to School",
       "description": "Promoții pentru începutul anului școlar la dispozitive și abonamente Moldtelecom.",
       "keywords": "back to school, promoții, reduceri, dispozitive, moldtelecom"
-    }
-  },
-  "pormo_b2s_2025": {
-    "seo": {
-      "title": "Back to School 2025",
-      "description": "Promoții pentru începutul anului școlar la dispozitive și abonamente Moldtelecom.",
-      "keywords": "back to school, promoții, reduceri, dispozitive, moldtelecom"
     },
+    "pormo_b2s_2025": {
+        "title": "Back to School 2025",
+        "description": "Promoții pentru începutul anului școlar la dispozitive și abonamente Moldtelecom.",
+        "keywords": "back to school, promoții, reduceri, dispozitive, moldtelecom"
+      }
+      },
+  "pormo_b2s_2025": {
     "breadcrumb": {
       "shop": "Magazin Online",
       "promo": "Promo",
       "current": "Back to school"
     },
-    "title": "Back to School 2025",
-    "text": "Descoperă reduceri spectaculoase pentru începutul anului școlar.",
+      "title": "Back to School cu mega oferte la tot ce-ți trebuie!",
+      "text": " Dă start noului an de studii cu tehnologia care te sprijină în fiecare moment. Fie că e vorba de școală sau timp liber, pasiune sau eficiență, te așteaptă reduceri la laptopuri, telefoane, trotinete, gadgeturi, tablete și ceasuri inteligente. Descoperă ce te motivează, bucură-te de oferte și continuă să faci ceea ce îți place!",
     "countdown": {
       "title": "Back to School",
       "expired": "Oferta s-a încheiat",
       "valid_until": "Valabil până la: {{date}}",
+
       "days_one": "zi",
+      "days_few": "zile",
       "days_other": "zile",
+
       "hours_one": "oră",
+      "hours_few": "ore",
       "hours_other": "ore",
+
       "minutes_one": "minut",
+      "minutes_few": "minute",
       "minutes_other": "minute",
+
       "seconds_one": "secundă",
+      "seconds_few": "secunde",
       "seconds_other": "secunde"
     },
+
     "tags": [
       "La 1 leu",
       "Telefoane",
@@ -2515,9 +2524,5 @@
     },
     "discount": "Reducere",
     "smartphone": "Ofertă smartphone"
-  },
-  "pormo_b2s_2025": {
-    "title": "Back to School cu mega oferte la tot ce-ți trebuie!",
-    "text": " Dă start noului an de studii cu tehnologia care te sprijină în fiecare moment. Fie că e vorba de școală sau timp liber, pasiune sau eficiență, te așteaptă reduceri la laptopuri, telefoane, trotinete, gadgeturi, tablete și ceasuri inteligente. Descoperă ce te motivează, bucură-te de oferte și continuă să faci ceea ce îți place!"
   }
 }
