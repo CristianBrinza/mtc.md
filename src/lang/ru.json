@@ -1654,6 +1654,67 @@
       "keywords": "back to school, акции, скидки, устройства, moldtelecom"
     }
   },
+  "pormo_b2s_2025": {
+    "seo": {
+      "title": "Back to School 2025",
+      "description": "Акции к началу учебного года на устройства и абонементы Moldtelecom.",
+      "keywords": "back to school, акции, скидки, устройства, moldtelecom"
+    },
+    "breadcrumb": {
+      "shop": "Интернет-магазин",
+      "promo": "Промо",
+      "current": "Back to school"
+    },
+    "title": "Back to School 2025",
+    "text": "Откройте впечатляющие скидки к началу учебного года.",
+    "countdown": {
+      "title": "Back to School",
+      "expired": "Акция завершилась",
+      "valid_until": "Действует до: {{date}}",
+      "days_one": "день",
+      "days_few": "дня",
+      "days_many": "дней",
+      "days_other": "дней",
+      "hours_one": "час",
+      "hours_few": "часа",
+      "hours_many": "часов",
+      "hours_other": "часов",
+      "minutes_one": "минута",
+      "minutes_few": "минуты",
+      "minutes_many": "минут",
+      "minutes_other": "минут",
+      "seconds_one": "секунда",
+      "seconds_few": "секунды",
+      "seconds_many": "секунд",
+      "seconds_other": "секунд"
+    },
+    "tags": [
+      "За 1 лей",
+      "Телефоны",
+      "Телевизоры",
+      "Планшеты",
+      "Консоли",
+      "Часы",
+      "Гаджеты"
+    ],
+    "found_products_before": "Найдено",
+    "found_products_after": "товаров",
+    "sort": {
+      "recommended": "Рекомендуемые",
+      "price_asc": "Цена (по возрастанию)",
+      "price_desc": "Цена (по убыванию)"
+    },
+    "filter": {
+      "title": "Фильтр:",
+      "category": "Категория",
+      "brand": "Бренд",
+      "color": "Цвет"
+    },
+    "loading": "Загрузка...",
+    "loading_error": "Не удалось загрузить товары: {{error}}",
+    "error_invalid_json": "Неверный JSON: должен быть массив.",
+    "error_unknown": "Неизвестная ошибка."
+  },
   "home": {
     "exclusive_online": "Открой самые крутые предложения исключительно онлайн",
     "only_digital": "Servicii digitale"

@@ -163,20 +163,20 @@ export default function Promo1536965() {
 
   const { t } = useTranslation();
   const seo = {
-    title: t('pages.back_to_school.title'),
-    description: t('pages.back_to_school.description'),
-    keywords: t('pages.back_to_school.keywords'),
+    title: t('pormo_b2s_2025.seo.title'),
+    description: t('pormo_b2s_2025.seo.description'),
+    keywords: t('pormo_b2s_2025.seo.keywords'),
   };
   const breadcrumbItems = [
     {
-      label: 'Magazin Online',
+      label: t('pormo_b2s_2025.breadcrumb.shop'),
       url: `https://www.moldtelecom.md/${t('lang')}/personal/Telefoane`,
     },
     {
-      label: 'Promo',
+      label: t('pormo_b2s_2025.breadcrumb.promo'),
       url: `https://www.moldtelecom.md/${t('lang')}/personal/Telefoane`,
     },
-    { label: 'Back to school' },
+    { label: t('pormo_b2s_2025.breadcrumb.current') },
   ];
 
   // === FETCH din public/json/promo1536956.json ===
@@ -186,6 +186,7 @@ export default function Promo1536965() {
 
   const [error, setError] = useState<string | null>(null);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     let alive = true;
     (async () => {
@@ -196,7 +197,7 @@ export default function Promo1536965() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const raw = await res.json();
         if (!Array.isArray(raw))
-          throw new Error('JSON invalid: trebuie să fie un array.');
+          throw new Error(t('pormo_b2s_2025.error_invalid_json'));
 
         // Normalize fields so sorting/filtering works even if JSON has strings like "FALSE"/"2999"
         const normalized: PromoItem[] = raw.map((r: any, idx: number) => ({
@@ -226,7 +227,7 @@ export default function Promo1536965() {
 
         if (alive) setItems(normalized);
       } catch (e: any) {
-        if (alive) setError(e?.message || 'Eroare necunoscută.');
+        if (alive) setError(e?.message || t('pormo_b2s_2025.error_unknown'));
       } finally {
         if (alive) setLoading(false);
       }
@@ -251,15 +252,18 @@ export default function Promo1536965() {
   const [openColor, setOpenColor] = useState(false);
 
   // TAGS sus (max 1 activ)
-  const filterTags = [
-    'La 1 leu',
-    'Telefoane',
-    'Televizoare',
-    'Tablete',
-    'Console',
-    'Ceasuri',
-    'Gadget-uri',
-  ];
+  const filterTags = useMemo(
+    () => [
+      { token: 'La 1 leu', label: t('pormo_b2s_2025.tags.0') },
+      { token: 'Telefoane', label: t('pormo_b2s_2025.tags.1') },
+      { token: 'Televizoare', label: t('pormo_b2s_2025.tags.2') },
+      { token: 'Tablete', label: t('pormo_b2s_2025.tags.3') },
+      { token: 'Console', label: t('pormo_b2s_2025.tags.4') },
+      { token: 'Ceasuri', label: t('pormo_b2s_2025.tags.5') },
+      { token: 'Gadget-uri', label: t('pormo_b2s_2025.tags.6') },
+    ],
+    [t]
+  );
 
   // rezolvă link-ul relativ vs absolut + limbă
   const resolveLink = (link?: string) => {
@@ -451,18 +455,22 @@ export default function Promo1536965() {
       <div className={styles.couldown_container}>
         <div className={styles.couldown}>
           <div className={styles.couldown_promo}>
-            <div className={styles.couldown_promo_title}>Back to School</div>
+            <div className={styles.couldown_promo_title}>
+              {t('pormo_b2s_2025.countdown.title')}
+            </div>
             <div className={styles.couldown_bottom}>
               {expired
-                ? 'Oferta s-a încheiat'
-                : `Valabil până la: ${endsAtLabel}`}
+                ? t('pormo_b2s_2025.countdown.expired')
+                : t('pormo_b2s_2025.countdown.valid_until', {
+                    date: endsAtLabel,
+                  })}
             </div>
           </div>
           <div className={styles.couldown_top}>
             <div className={styles.couldown_top_card}>
               <div className={styles.couldown_top_card_number}>{days}</div>
               <div className={styles.couldown_top_card_time}>
-                {days === 1 ? 'zi' : 'zile'}
+                {t('pormo_b2s_2025.countdown.days', { count: days })}
               </div>
             </div>
             <div className={styles.couldown_top_card}>
@@ -474,7 +482,7 @@ export default function Promo1536965() {
                 {pad2(hours)}
               </div>
               <div className={styles.couldown_top_card_time}>
-                {hours === 1 ? 'oră' : 'ore'}
+                {t('pormo_b2s_2025.countdown.hours', { count: hours })}
               </div>
             </div>
             <div className={styles.couldown_top_card}>
@@ -486,7 +494,7 @@ export default function Promo1536965() {
                 {pad2(minutes)}
               </div>
               <div className={styles.couldown_top_card_time}>
-                {minutes === 1 ? 'minut' : 'minute'}
+                {t('pormo_b2s_2025.countdown.minutes', { count: minutes })}
               </div>
             </div>
             <div className={styles.couldown_top_card}>
@@ -498,7 +506,7 @@ export default function Promo1536965() {
                 {pad2(seconds)}
               </div>
               <div className={styles.couldown_top_card_time}>
-                {seconds === 1 ? 'secundă' : 'secunde'}
+                {t('pormo_b2s_2025.countdown.seconds', { count: seconds })}
               </div>
             </div>
           </div>
@@ -507,15 +515,17 @@ export default function Promo1536965() {
 
       {/* TAGS sus (selectare exclusivă, filtrare pe item.sort) */}
       <div className={styles.devices_tags}>
-        {filterTags.map(label => (
+        {filterTags.map(({ token, label }) => (
           <div
-            key={label}
-            className={`${styles.devices_tag} ${activeTag === label ? styles.devices_tag_active : ''}`}
-            onClick={() => onClickTag(label)}
+            key={token}
+            className={`${styles.devices_tag} ${
+              activeTag === token ? styles.devices_tag_active : ''
+            }`}
+            onClick={() => onClickTag(token)}
             role="button"
             tabIndex={0}
             onKeyDown={e =>
-              e.key === 'Enter' || e.key === ' ' ? onClickTag(label) : null
+              e.key === 'Enter' || e.key === ' ' ? onClickTag(token) : null
             }
           >
             {label}
@@ -525,7 +535,9 @@ export default function Promo1536965() {
 
       <div className={styles.sort}>
         <div className={styles.devices_found}>
-          Au fost găsite <b>{loading ? '...' : visibleItems.length}</b> produse
+          {t('pormo_b2s_2025.found_products_before')}{' '}
+          <b>{loading ? '...' : visibleItems.length}</b>{' '}
+          {t('pormo_b2s_2025.found_products_after')}
         </div>
         <div className={styles.sort_rigth}>
           <div
@@ -541,9 +553,15 @@ export default function Promo1536965() {
             value={sortMode}
             onChange={onSelectSort}
           >
-            <option value="default">Recomandate</option>
-            <option value="min_price">Preț (crescător)</option>
-            <option value="max_price">Preț (descrescător)</option>
+            <option value="default">
+              {t('pormo_b2s_2025.sort.recommended')}
+            </option>
+            <option value="min_price">
+              {t('pormo_b2s_2025.sort.price_asc')}
+            </option>
+            <option value="max_price">
+              {t('pormo_b2s_2025.sort.price_desc')}
+            </option>
           </select>
         </div>
       </div>
@@ -552,7 +570,9 @@ export default function Promo1536965() {
         <div
           className={`${styles.devices_filter} ${fiterActive && styles.devices_filter_active}`}
         >
-          <div className={styles.filter_title}>Filtru:</div>
+          <div className={styles.filter_title}>
+            {t('pormo_b2s_2025.filter.title')}
+          </div>
 
           {/* CATEGORIE */}
           <div className={styles.filter_btn}>
@@ -560,7 +580,8 @@ export default function Promo1536965() {
               className={styles.filter_btn_title}
               onClick={() => toggleFacet('cat')}
             >
-              <b>Categorie</b> <Icon type={'arrow_down'} />
+              <b>{t('pormo_b2s_2025.filter.category')}</b>{' '}
+              <Icon type={'arrow_down'} />
             </div>
             {openCat && (
               <div className={styles.filter_btn_options}>
@@ -593,7 +614,8 @@ export default function Promo1536965() {
               className={styles.filter_btn_title}
               onClick={() => toggleFacet('brand')}
             >
-              <b>Brand</b> <Icon type={'arrow_down'} />
+              <b>{t('pormo_b2s_2025.filter.brand')}</b>{' '}
+              <Icon type={'arrow_down'} />
             </div>
             {openBrand && (
               <div className={styles.filter_btn_options}>
@@ -624,7 +646,8 @@ export default function Promo1536965() {
               className={styles.filter_btn_title}
               onClick={() => toggleFacet('color')}
             >
-              <b>Culoare</b> <Icon type={'arrow_down'} />
+              <b>{t('pormo_b2s_2025.filter.color')}</b>{' '}
+              <Icon type={'arrow_down'} />
             </div>
             {openColor && (
               <div className={styles.filter_btn_options}>
@@ -651,8 +674,10 @@ export default function Promo1536965() {
         </div>
 
         <div className={styles.devices_list}>
-          {loading && <div>Se încarcă...</div>}
-          {error && <div>Nu am putut încărca produsele: {error}</div>}
+          {loading && <div>{t('pormo_b2s_2025.loading')}</div>}
+          {error && (
+            <div>{t('pormo_b2s_2025.loading_error', { error })}</div>
+          )}
           {!loading &&
             !error &&
             visibleItems.map((item, index) => (

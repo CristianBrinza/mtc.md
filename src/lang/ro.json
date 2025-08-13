@@ -1623,6 +1623,59 @@
       "keywords": "back to school, promoții, reduceri, dispozitive, moldtelecom"
     }
   },
+  "pormo_b2s_2025": {
+    "seo": {
+      "title": "Back to School 2025",
+      "description": "Promoții pentru începutul anului școlar la dispozitive și abonamente Moldtelecom.",
+      "keywords": "back to school, promoții, reduceri, dispozitive, moldtelecom"
+    },
+    "breadcrumb": {
+      "shop": "Magazin Online",
+      "promo": "Promo",
+      "current": "Back to school"
+    },
+    "title": "Back to School 2025",
+    "text": "Descoperă reduceri spectaculoase pentru începutul anului școlar.",
+    "countdown": {
+      "title": "Back to School",
+      "expired": "Oferta s-a încheiat",
+      "valid_until": "Valabil până la: {{date}}",
+      "days_one": "zi",
+      "days_other": "zile",
+      "hours_one": "oră",
+      "hours_other": "ore",
+      "minutes_one": "minut",
+      "minutes_other": "minute",
+      "seconds_one": "secundă",
+      "seconds_other": "secunde"
+    },
+    "tags": [
+      "La 1 leu",
+      "Telefoane",
+      "Televizoare",
+      "Tablete",
+      "Console",
+      "Ceasuri",
+      "Gadget-uri"
+    ],
+    "found_products_before": "Au fost găsite",
+    "found_products_after": "produse",
+    "sort": {
+      "recommended": "Recomandate",
+      "price_asc": "Preț (crescător)",
+      "price_desc": "Preț (descrescător)"
+    },
+    "filter": {
+      "title": "Filtru:",
+      "category": "Categorie",
+      "brand": "Brand",
+      "color": "Culoare"
+    },
+    "loading": "Se încarcă...",
+    "loading_error": "Nu am putut încărca produsele: {{error}}",
+    "error_invalid_json": "JSON invalid: trebuie să fie un array.",
+    "error_unknown": "Eroare necunoscută."
+  },
   "navbar_business": {
     "businessoffice": "Business Office",
     "internet": "Internet",
