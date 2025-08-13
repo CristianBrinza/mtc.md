@@ -1427,33 +1427,11 @@ export default function Mobile() {
         key="popup-1084567"
       >
         <ul>
-          <li>
-            Serviciul „Alege un număr frumos” îți permite să selectezi un număr
-            de telefon special din lista de numere disponibile, oferindu-ți o
-            opțiune unică de personalizare. Numerele sunt clasificate în
-            categorii precum „Aur” și „Argint” și sunt alocate conform regulilor
-            de mai jos.
-          </li>
-          <li>
-            Numerele din categoria „Aur” și „Argint” pot fi alese doar de
-            abonații noi sau existenți ai serviciului de Telefonie mobilă
-            Postpay, cu condiția ca perioada contractuală obligatorie anterioară
-            să fie expirată.
-          </li>
-          <li>
-            Alegerea unui număr din categoria „Aur” sau „Argint” este posibilă
-            doar împreună cu un abonament de Telefonie mobilă Voce sau Date
-            aflat în oferta comercială curentă.
-          </li>
-          <li>
-            Selectarea unui număr dorit este posibilă exclusiv din lista de
-            numere libere disponibile în momentul solicitării, fără
-            posibilitatea de rezervare prealabilă.
-          </li>
-          <li>
-            Alegerea și activarea unui „număr frumos” se realizează exclusiv în
-            magazinele Moldtelecom autorizate pentru prestarea acestui serviciu.
-          </li>
+          <li>{t('tm.discover.card_1.l0')}</li>
+          <li>{t('tm.discover.card_1.l1')}</li>
+          <li>{t('tm.discover.card_1.l2')}</li>
+          <li>{t('tm.discover.card_1.l3')}</li>
+          <li>{t('tm.discover.card_1.l4')}</li>
         </ul>
       </Popup>
       <Popup

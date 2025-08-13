@@ -444,9 +444,7 @@ export default function Promo1536965() {
       <div className={`title_3 title_4 gradient_text_4 ${styles.title_main}`}>
         {t('pormo_b2s_2025.title')}
       </div>
-      <div className={styles.subtitle}>
-        {t('pormo_b2s_2025.text')}
-      </div>
+      <div className={styles.subtitle}>{t('pormo_b2s_2025.text')}</div>
 
       <div className={styles.couldown_container}>
         <div className={styles.couldown}>

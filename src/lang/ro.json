@@ -1922,7 +1922,13 @@
       "card_1": {
         "tag": "Descoperă",
         "title": "Fii unic cu Numar Frumos",
-        "text": "Alege <b>GRATUIT</b> un număr care te reprezintă! <br /><br /> Selecteaza un număr dorit din lista de numere libere disponibile în momentul solicitării."
+        "text": "Alege <b>GRATUIT</b> un număr care te reprezintă! <br /><br /> Selecteaza un număr dorit din lista de numere libere disponibile în momentul solicitării.",
+        "l0": "Serviciul „Alege un număr frumos” îți permite să selectezi un număr de telefon special din lista de numere disponibile, oferindu-ți o opțiune unică de personalizare.",
+        "l1": "Numerele sunt clasificate în categorii precum „Aur” și „Argint” și sunt alocate conform regulilor de mai jos.",
+        "l2": "Numerele din categoria „Aur” și „Argint” pot fi alese doar de abonații noi sau existenți ai serviciului de Telefonie mobilă Postpay, cu condiția ca perioada contractuală obligatorie anterioară să fie expirată.",
+        "l3": "Alegerea unui număr din categoria „Aur” sau „Argint” este posibilă doar împreună cu un abonament de Telefonie mobilă Voce sau Date aflat în oferta comercială curentă.",
+        "l4": "Selectarea unui număr dorit este posibilă exclusiv din lista de numere libere disponibile în momentul solicitării, fără posibilitatea de rezervare prealabilă.",
+        "l5": "Alegerea și activarea unui „număr frumos” se realizează exclusiv în magazinele Moldtelecom autorizate pentru prestarea acestui serviciu."
       },
       "card_2": {
         "tag": "Din aplicație",

@@ -626,7 +626,7 @@
   .tm_carousell {
     max-width: 890px;
   }
-  .tm_carousell_discover{
+  .tm_carousell_discover {
     max-width: 800px;
   }
 }
@@ -667,7 +667,7 @@
   .mobile_carousell {
     max-width: 580px;
   }
-  .tm_carousell_discover{
+  .tm_carousell_discover {
     max-width: 400px;
   }
   .btns_select {
@@ -730,10 +730,10 @@
 }
 
 @media (max-width: 480px) {
-.tm_carousell_discover{
-  max-width: 96vw;
-}
-  .tm_discover_card{
+  .tm_carousell_discover {
+    max-width: 96vw;
+  }
+  .tm_discover_card {
     max-width: 90vw;
   }
 

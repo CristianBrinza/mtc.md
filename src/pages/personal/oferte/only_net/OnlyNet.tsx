@@ -1277,12 +1277,7 @@ export default function OnlyNet() {
       <Functions
         style_type={'blue'}
         title={'general.recommended_options'}
-        functions={[
-          'Megogo',
-          'Ivi',
-          'Premier',
-          'MtcTv',
-        ]}
+        functions={['Megogo', 'Ivi', 'Premier', 'MtcTv']}
       />
       <MyApp style_type={'blue_white'} className={styles.myapp} />
 
