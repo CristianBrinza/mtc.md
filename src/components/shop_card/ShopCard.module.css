@@ -15,17 +15,49 @@
   width: 100%;
   margin-top: 10px;
 }
+.show_info {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 3px;
+  background-color: rgba(223, 228, 253, 0.71);
+  backdrop-filter: blur(20px);
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 10px;
+  border-radius: 15px;
+  opacity: 0;
+  border: 1px solid rgba(223, 228, 253, 0.71);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.ShopCard:hover .show_info {
+  transform: scale(1.1) translateX(-46%);
+  transform-origin: center center;
+  opacity: 1;
+}
 .colors_block {
   position: absolute;
   top: 250px;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  gap: 3px;
 }
 .color_block {
-  width: 32px;
+  width: 35px;
   height: 7px;
   border-radius: 100px;
   /*border: 1px solid var(--theme_primary_color_dark_gray);*/
+}
+.color_block:hover {
+  transform: scale(1.1);
+}
+.show_info_hiden {
+  display: none !important;
 }
 
 .ShopCard_title {

@@ -19,8 +19,8 @@ interface ShopCardProps {
   buy?: () => Promise<void> | void;
   style_type?: string;
   show_like?: boolean;
-  color?: string;
   colors?: string[];
+  show_detalii?: boolean;
   show_comapre?: boolean;
   link?: string;
 }
@@ -32,20 +32,37 @@ const STORAGE_KEY_COMPARE = 'comapreDevices';
 const formatPrice = (price: number) => {
   return price.toLocaleString('ro-RO').replace(/\./g, ' '); // Ensures space instead of dot
 };
-// === Color options (implicit) + util ===
-const DEFAULT_COLOR_OPTIONS = [
-  { name: 'black', hex: '#000000' },
-  { name: 'purple', hex: '#EAA0D0' },
-  { name: 'white', hex: '#ffffff' },
-  { name: 'Desert Titanium', hex: '#E5D3C2' },
-];
-const colorNameToHex = (
-  name: string,
-  options: { name: string; hex: string }[] = DEFAULT_COLOR_OPTIONS
-) => {
-  const found = options.find(o => o.name.toLowerCase() === name.toLowerCase());
-  // fallback: dacă nu găsim în map, lăsăm string-ul (poate fi css valid, ex. "red")
-  return found ? found.hex : name;
+// normalizare denumire culoare
+const normalizeColorName = (s: string) =>
+  s
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, ''); // ex. "Desert Titanium" -> "deserttitanium"
+
+// map pentru denumiri frecvente de culori din device-uri
+const COLOR_MAP: Record<string, string> = {
+  black: '#333333',
+  white: '#ffffff',
+  purple: '#EAA0D0',
+  green: '#1fc51f',
+  grey: '#808080',
+  gray: '#808080',
+  graphite: '#383838',
+  brown: '#A52A2A',
+  darkbrown: '#5C4033',
+  bluetitanium: '#7E8A96',
+  naturaltitanium: '#C8C1B8',
+  deserttitanium: '#E5D3C2',
+};
+
+// acceptă HEX/rgb/hsl sau nume mapate
+const colorNameToHex = (nameOrCode: string) => {
+  const s = String(nameOrCode).trim();
+  if (/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(s)) return s; // HEX
+  if (/^(rgba?|hsla?)\(/i.test(s)) return s; // rgb/rgba/hsl/hsla
+  const key = normalizeColorName(s);
+  return COLOR_MAP[key] ?? s; // fallback: încercă ca nume CSS
 };
 
 const ShopCard: React.FC<ShopCardProps> = ({
@@ -63,8 +80,8 @@ const ShopCard: React.FC<ShopCardProps> = ({
   device_id,
   buy,
   style_type,
+  show_detalii = false,
   link,
-  color,
   colors,
   show_comapre = true,
   show_like = true,
@@ -131,6 +148,24 @@ const ShopCard: React.FC<ShopCardProps> = ({
     if (buy) buy();
   };
 
+  // în interiorul componentului ShopCard, înainte de return():
+  const colorList = (() => {
+    const list: string[] = [];
+    // if (color) list.push(color);
+    if (colors && colors.length) list.push(...colors);
+    // dedupe după numele normalizat
+    const seen = new Set<string>();
+    const out: string[] = [];
+    for (const c of list) {
+      const key = normalizeColorName(c);
+      if (!seen.has(key)) {
+        seen.add(key);
+        out.push(c);
+      }
+    }
+    return out;
+  })();
+
   return (
     <div
       id={device_id.toString()}
@@ -160,25 +195,28 @@ const ShopCard: React.FC<ShopCardProps> = ({
         </div>
       )}
       <img className={styles.ShopCard_img} src={image} alt="Device" />
-      {color && (
+
+      <div
+        className={`${styles.show_info} ${!show_detalii && styles.show_info_hiden}`}
+        onClick={() => (link ? (window.location.href = link) : handleClick())}
+      >
+        Vezi detalii
+        <Icon type={'watch'} />
+      </div>
+      {colorList.length > 0 && (
         <div className={styles.colors_block}>
-          <div
-            className={styles.color_block}
-            style={{ backgroundColor: colorNameToHex(color) }}
-          ></div>
-          {colors && colors.length > 0 && (
-            <>
-              {colors.map((c, index) => (
-                <div
-                  key={index}
-                  className={styles.color_block}
-                  style={{ backgroundColor: colorNameToHex(c) }}
-                />
-              ))}
-            </>
-          )}
+          {colorList.map((c, i) => (
+            <div
+              key={i}
+              className={styles.color_block}
+              style={{ backgroundColor: colorNameToHex(c) }}
+              title={c}
+              aria-label={`Culoare ${c}`}
+            />
+          ))}
         </div>
       )}
+
       <div className={styles.ShopCard_inside}>
         <div className={styles.ShopCard_top}>
           <div className={styles.ShopCard_title}>
@@ -264,7 +302,7 @@ const ShopCard: React.FC<ShopCardProps> = ({
                 : isLiked
                   ? isHovered
                     ? 'var(--theme_primary_color_red_2)'
-                    : 'var(--theme_primary_color_gray)'
+                    : 'var(--theme_primary_color_blue_2)'
                   : 'var(--theme_primary_color_black)'
             }
           />

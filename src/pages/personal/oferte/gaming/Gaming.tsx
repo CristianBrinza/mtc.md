@@ -1629,6 +1629,8 @@ export default function Gaming() {
           <li>{t('double.popup_safeweb.list.0')}</li>
           <li>{t('double.popup_safeweb.list.1')}</li>
           <li>{t('double.popup_safeweb.list.2')}</li>
+          <li>{t('double.popup_safeweb.list.3')}</li>
+          <li>{t('double.popup_safeweb.list.4')}</li>
         </ul>
         <Button
           id="combo_safe_web+learn_more"

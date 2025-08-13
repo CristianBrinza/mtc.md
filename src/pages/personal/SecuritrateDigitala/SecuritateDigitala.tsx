@@ -10,13 +10,10 @@ import Feedback from '../../../components/feedback/Feedback.tsx';
 
 export default function SecuritateDigitala() {
   const { t } = useTranslation();
-  const breadcrumbItems = [
-    { label: 'Securitrate Digitala' },
-  ];
+  const breadcrumbItems = [{ label: 'Securitrate Digitala' }];
 
   return (
     <>
-
       <Navbar />
       <Chat />
       <Feedback />
@@ -38,7 +35,6 @@ export default function SecuritateDigitala() {
       </Hero>
 
       <Footer disclaimer={true} />
-
     </>
   );
 }

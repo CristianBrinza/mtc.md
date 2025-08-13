@@ -883,6 +883,17 @@ export const icons = {
       />
     </>
   ),
+  filter: (
+    <>
+      <path
+        d="M5 4H19L14 10.5V20L10 16V10.5L5 4Z"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </>
+  ),
   junior: (
     <>
       <path

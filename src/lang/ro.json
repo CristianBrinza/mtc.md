@@ -2256,9 +2256,11 @@
       "text": "Safe-Web este serviciul de securitate pe internet de la Moldtelecom, care filtrează și blochează site-urile malițioase, phishing și conținut inadecvat, păstrându-ți casa și dispozitivele în siguranță.",
       "why_title": "De ce să alegi Safe-Web?",
       "list": {
-        "0": "Protecție în timp real contra virușilor și site-urilor de tip phishing",
-        "1": "Filtrare parentală configurabilă",
-        "2": "Raport de securitate lunar pentru activitatea online"
+        "0": "Protecția împotriva site-uri phishing-ului și a site-urilor malițioase.",
+        "1": "Blocarea pagine web cu conținut ADULT.",
+        "2": "Actualizare zilnică pentru identificarea și blocarea paginilor dubioase sau a celor cu conținut nepotrivit.",
+        "3": "Eliminarea reclamelor de tip spam.",
+        "4": "Safe Search pentru o navigare sigură pe orice dispozitiv, prin orice browser conectat la rețeaua de acasă."
       }
     },
     "tf": {

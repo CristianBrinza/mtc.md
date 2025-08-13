@@ -28,7 +28,6 @@ import Portare from './pages/personal/oferte/portare/Portare.tsx';
 import OnlyNet from './pages/personal/oferte/only_net/OnlyNet.tsx';
 import Gaming from './pages/personal/oferte/gaming/Gaming.tsx';
 import Promo1536965 from './pages/eshop/promo_b2s/Promo1536965.tsx';
-import SecuritrateDigitala from './pages/personal/SecuritrateDigitala/SecuritateDigitala.tsx';
 import SecuritateDigitala from './pages/personal/SecuritrateDigitala/SecuritateDigitala.tsx';
 
 export interface RouteConfig {

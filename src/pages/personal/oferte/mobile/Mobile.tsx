@@ -65,6 +65,37 @@ export default function Mobile() {
     setActivePopupSubConfig(subname);
     setActiveBuyConfig(`(Device - TM)`);
   };
+
+  const settings_discover = {
+    dots: true,
+    infinite: true,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 951,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 651,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
   const settings_devices = {
     dots: false,
     infinite: true,
@@ -1160,6 +1191,116 @@ export default function Mobile() {
         title={'general.recommended_options'}
         functions={['Internet', 'Minute', 'International', 'RoamingUE']}
       />
+      <div className={`title_3  ${styles.title2} ${styles.title222}`}>
+        Descoperă extra beneficii
+      </div>
+      <Slider {...settings_discover} className={styles.tm_carousell_discover}>
+        <div className={styles.tm_discover_inside}>
+          <div className={styles.tm_discover_card}>
+            <img
+              className={styles.tm_discover_img}
+              src={`/images/landings/18100123${t('lang')}.webp`}
+              alt="Moldtelecom"
+            />
+            <div className={styles.tm_discover_card_inside}>
+              <div className={styles.tm_discover_card_inside_top}>
+                <div className={styles.tm_discover_card_inside_top_tag}>
+                  Descoperă
+                </div>
+                <div className={styles.tm_discover_card_title}>
+                  Fii unic cu Numar Frumos
+                </div>
+                <div className={styles.tm_discover_card_text}>
+                  Alege <b>GRATUIT</b> un număr care te reprezintă! <br />{' '}
+                  <br />
+                  Selecteaza un număr dorit din lista de numere libere
+                  disponibile în momentul solicitării.
+                </div>
+              </div>
+              <Button
+                onClick={() => setActivePopup('1084567')}
+                color={'var(--theme_primary_color_blue_4)'}
+                bgcolor={'var(--theme_primary_color_blue_3)'}
+                border={'var(--theme_primary_color_blue_3)'}
+                hover_border={'var(--theme_primary_color_blue_2)'}
+                hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+                icon={'arrow_right'}
+              >
+                Vezi mai multe detalii
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div className={styles.tm_discover_inside}>
+          <div className={styles.tm_discover_card}>
+            <img
+              className={styles.tm_discover_img}
+              src={`/images/landings/18100122${t('lang')}.webp`}
+              alt="Moldtelecom"
+            />
+            <div className={styles.tm_discover_card_inside}>
+              <div className={styles.tm_discover_card_inside_top}>
+                <div className={styles.tm_discover_card_inside_top_tag}>
+                  Din aplicație
+                </div>
+                <div className={styles.tm_discover_card_title}>
+                  Acum ai Moldtelecom TV la doar 40 lei!
+                </div>
+                <div className={styles.tm_discover_card_text}>
+                  Accesează acum <b>oriunde</b> în rețeaua Moldtelecom pe{' '}
+                  <b>orice ecran</b>.
+                </div>
+              </div>
+              <Button
+                to={`https://www.moldtelecom.md/${t('lang')}/personal/moldtelecom_tv`}
+                color={'var(--theme_primary_color_blue_4)'}
+                bgcolor={'var(--theme_primary_color_blue_3)'}
+                border={'var(--theme_primary_color_blue_3)'}
+                hover_border={'var(--theme_primary_color_blue_2)'}
+                hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+                icon={'arrow_right'}
+              >
+                Vezi mai multe detalii
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div className={styles.tm_discover_inside}>
+          <div className={styles.tm_discover_card}>
+            <img
+              className={styles.tm_discover_img}
+              src={`/images/landings/18100124${t('lang')}.webp`}
+              alt="Moldtelecom"
+            />
+            <div className={styles.tm_discover_card_inside}>
+              <div className={styles.tm_discover_card_inside_top}>
+                <div className={styles.tm_discover_card_inside_top_tag}>
+                  Din aplicație
+                </div>
+                <div className={styles.tm_discover_card_title}>
+                  Cinema-Online la doar 59 lei/lună
+                </div>
+                <div className={styles.tm_discover_card_text}>
+                  Explorează lumea televiziunii interactive cu abonamentul
+                  dorit, direct <b> pe smartphone-ul tău!</b>
+                </div>
+              </div>
+              <Button
+                to={`https://www.moldtelecom.md/${t('lang')}/personal/cinema`}
+                color={'var(--theme_primary_color_blue_4)'}
+                bgcolor={'var(--theme_primary_color_blue_3)'}
+                border={'var(--theme_primary_color_blue_3)'}
+                hover_border={'var(--theme_primary_color_blue_2)'}
+                hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+                icon={'arrow_right'}
+              >
+                Vezi mai multe detalii
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Slider>
+
       <MyApp style_type={'blue_white'} className={styles.myapp} />
 
       <FaqV2 max_faq={6}>
@@ -1245,6 +1386,45 @@ export default function Mobile() {
       </FaqV2>
 
       <Footer disclaimer={true} />
+
+      <Popup
+        id="1084567"
+        width="1000px"
+        isVisible={activePopup === '1084567'}
+        onClose={handlePopupClose}
+        // key={activePopup ?? 'popup-closed'}
+        key="popup-1084567"
+      >
+        <ul>
+          <li>
+            Serviciul „Alege un număr frumos” îți permite să selectezi un număr
+            de telefon special din lista de numere disponibile, oferindu-ți o
+            opțiune unică de personalizare. Numerele sunt clasificate în
+            categorii precum „Aur” și „Argint” și sunt alocate conform regulilor
+            de mai jos.
+          </li>
+          <li>
+            Numerele din categoria „Aur” și „Argint” pot fi alese doar de
+            abonații noi sau existenți ai serviciului de Telefonie mobilă
+            Postpay, cu condiția ca perioada contractuală obligatorie anterioară
+            să fie expirată.
+          </li>
+          <li>
+            Alegerea unui număr din categoria „Aur” sau „Argint” este posibilă
+            doar împreună cu un abonament de Telefonie mobilă Voce sau Date
+            aflat în oferta comercială curentă.
+          </li>
+          <li>
+            Selectarea unui număr dorit este posibilă exclusiv din lista de
+            numere libere disponibile în momentul solicitării, fără
+            posibilitatea de rezervare prealabilă.
+          </li>
+          <li>
+            Alegerea și activarea unui „număr frumos” se realizează exclusiv în
+            magazinele Moldtelecom autorizate pentru prestarea acestui serviciu.
+          </li>
+        </ul>
+      </Popup>
       <Popup
         id="1280520"
         width="1000px"

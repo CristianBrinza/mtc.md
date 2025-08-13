@@ -57,6 +57,7 @@ interface PromoItem {
   show_comapre?: boolean;
   link?: string;
   color?: string;
+  colors?: string[];
   sort?: string[];
   model?: string;
   brand?: string;
@@ -175,6 +176,8 @@ export default function Promo1536965() {
   // === FETCH din public/json/promo1536956.json ===
   const [items, setItems] = useState<PromoItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [fiterActive, setFiterActive] = useState(false);
+
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -212,6 +215,7 @@ export default function Promo1536965() {
           brand: r.brand != null ? String(r.brand) : undefined,
           category: r.category != null ? String(r.category) : undefined,
           sort: getSortTokens(r.sort), // <-- always an array now
+          colors: getSortTokens(r.colors),
         }));
 
         if (alive) setItems(normalized);
@@ -520,21 +524,31 @@ export default function Promo1536965() {
         <div className={styles.devices_found}>
           Au fost găsite <b>{loading ? '...' : visibleItems.length}</b> produse
         </div>
-        <select
-          name="sort"
-          id="sort_promo"
-          className={styles.sort_select}
-          value={sortMode}
-          onChange={onSelectSort}
-        >
-          <option value="default">Recomandate</option>
-          <option value="min_price">Preț (crescător)</option>
-          <option value="max_price">Preț (descrescător)</option>
-        </select>
+        <div className={styles.sort_rigth}>
+          <div
+            className={styles.sort_rigth_icon}
+            onClick={() => setFiterActive(!fiterActive)}
+          >
+            <Icon type={'filter'} color={'var(--theme_primary_color_blue_2)'} />
+          </div>
+          <select
+            name="sort"
+            id="sort_promo"
+            className={styles.sort_select}
+            value={sortMode}
+            onChange={onSelectSort}
+          >
+            <option value="default">Recomandate</option>
+            <option value="min_price">Preț (crescător)</option>
+            <option value="max_price">Preț (descrescător)</option>
+          </select>
+        </div>
       </div>
 
       <div className={styles.devices}>
-        <div className={styles.devices_filter}>
+        <div
+          className={`${styles.devices_filter} ${fiterActive && styles.devices_filter_active}`}
+        >
           <div className={styles.filter_title}>Filtru:</div>
 
           {/* CATEGORIE */}
@@ -650,11 +664,13 @@ export default function Promo1536965() {
                 subtitle={item.subtitle}
                 characteristics={item.characteristics}
                 tag={item.tag}
+                show_detalii={true}
                 subtag={item.subtag}
                 tag_color={
                   item.tag_color ?? 'var(--theme_primary_color_blue_3)'
                 }
                 style_type={item.style_type ?? 'gray'}
+                colors={item.colors}
                 show_like={item.show_like ?? false}
                 show_comapre={item.show_comapre ?? false}
                 // color={item.color}
