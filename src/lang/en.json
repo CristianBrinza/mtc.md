@@ -507,6 +507,59 @@
       "keywords": "search, moldtelecom, services, plans, options, internet, tv, mobile, Moldova"
     }
   },
+  "pormo_b2s_2025": {
+    "seo": {
+      "title": "Back to School 2025",
+      "description": "Promotions for the start of the school year on devices and subscriptions from Moldtelecom.",
+      "keywords": "back to school, promotions, discounts, devices, moldtelecom"
+    },
+    "breadcrumb": {
+      "shop": "Online Shop",
+      "promo": "Promo",
+      "current": "Back to school"
+    },
+    "title": "Back to School 2025",
+    "text": "Discover great deals for the start of the school year.",
+    "countdown": {
+      "title": "Back to School",
+      "expired": "Offer has ended",
+      "valid_until": "Valid until: {{date}}",
+      "days_one": "day",
+      "days_other": "days",
+      "hours_one": "hour",
+      "hours_other": "hours",
+      "minutes_one": "minute",
+      "minutes_other": "minutes",
+      "seconds_one": "second",
+      "seconds_other": "seconds"
+    },
+    "tags": [
+      "For 1 leu",
+      "Phones",
+      "TVs",
+      "Tablets",
+      "Consoles",
+      "Watches",
+      "Gadgets"
+    ],
+    "found_products_before": "Found",
+    "found_products_after": "products",
+    "sort": {
+      "recommended": "Recommended",
+      "price_asc": "Price (ascending)",
+      "price_desc": "Price (descending)"
+    },
+    "filter": {
+      "title": "Filter:",
+      "category": "Category",
+      "brand": "Brand",
+      "color": "Color"
+    },
+    "loading": "Loading...",
+    "loading_error": "Couldn't load products: {{error}}",
+    "error_invalid_json": "Invalid JSON: expected an array.",
+    "error_unknown": "Unknown error."
+  },
   "home": {
     "exclusive_online": "Descoperă cele mai tari oferte exclusiv online",
     "only_digital": "Servicii digitale"
