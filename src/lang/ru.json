@@ -1637,6 +1637,21 @@
       "title": "SMS Service 100",
       "description": "Быстро активируйте опции и услуги Moldtelecom, отправляя SMS‑коды на номер 100.",
       "keywords": "sms service, опции, пакеты, интернет, минуты, роуминг, moldtelecom, 100"
+    },
+    "only_net": {
+      "title": "Только Интернет",
+      "description": "Выбирайте тарифы фиксированного интернета на высокой скорости со специальными онлайн‑скидками.",
+      "keywords": "только интернет, фиксированный интернет, тарифы, акции, moldtelecom"
+    },
+    "gaming": {
+      "title": "Гейминг",
+      "description": "Приставки, подписки и предложения для любителей игр.",
+      "keywords": "гейминг, приставки, быстрый интернет, акции, moldtelecom"
+    },
+    "back_to_school": {
+      "title": "Back to School",
+      "description": "Акции к началу учебного года на устройства и абонементы Moldtelecom.",
+      "keywords": "back to school, акции, скидки, устройства, moldtelecom"
     }
   },
   "home": {
