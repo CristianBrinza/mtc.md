@@ -87,7 +87,7 @@ export default function Mobile() {
         settings: {
           slidesToShow: 1,
         },
-      }
+      },
     ],
   };
   const settings_devices = {
@@ -1186,7 +1186,7 @@ export default function Mobile() {
         functions={['Internet', 'Minute', 'International', 'RoamingUE']}
       />
       <div className={`title_3  ${styles.title2} ${styles.title222}`}>
-        Descoperă extra beneficii
+        {t('tm.discover.title')}
       </div>
       <Slider {...settings_discover} className={styles.tm_carousell_discover}>
         <div className={styles.tm_discover_inside}>
@@ -1199,17 +1199,17 @@ export default function Mobile() {
             <div className={styles.tm_discover_card_inside}>
               <div className={styles.tm_discover_card_inside_top}>
                 <div className={styles.tm_discover_card_inside_top_tag}>
-                  Descoperă
+                  {t('tm.discover.card_1.tag')}
                 </div>
                 <div className={styles.tm_discover_card_title}>
-                  Fii unic cu Numar Frumos
+                  {t('tm.discover.card_1.title')}
                 </div>
-                <div className={styles.tm_discover_card_text}>
-                  Alege <b>GRATUIT</b> un număr care te reprezintă! <br />{' '}
-                  <br />
-                  Selecteaza un număr dorit din lista de numere libere
-                  disponibile în momentul solicitării.
-                </div>
+                <div
+                  className={styles.tm_discover_card_text}
+                  dangerouslySetInnerHTML={{
+                    __html: t('tm.discover.card_1.text'),
+                  }}
+                />
               </div>
               <Button
                 onClick={() => setActivePopup('1084567')}
@@ -1220,7 +1220,7 @@ export default function Mobile() {
                 hover_bgcolor={'var(--theme_primary_color_blue_2)'}
                 icon={'arrow_right'}
               >
-                Vezi mai multe detalii
+                {t('tm.discover.btn')}
               </Button>
             </div>
           </div>
@@ -1235,15 +1235,17 @@ export default function Mobile() {
             <div className={styles.tm_discover_card_inside}>
               <div className={styles.tm_discover_card_inside_top}>
                 <div className={styles.tm_discover_card_inside_top_tag}>
-                  Din aplicație
+                  {t('tm.discover.card_2.tag')}
                 </div>
                 <div className={styles.tm_discover_card_title}>
-                  Acum ai Moldtelecom TV la doar 40 lei!
+                  {t('tm.discover.card_2.title')}
                 </div>
-                <div className={styles.tm_discover_card_text}>
-                  Accesează acum <b>oriunde</b> în rețeaua Moldtelecom pe{' '}
-                  <b>orice ecran</b>.
-                </div>
+                <div
+                  className={styles.tm_discover_card_text}
+                  dangerouslySetInnerHTML={{
+                    __html: t('tm.discover.card_2.text'),
+                  }}
+                />
               </div>
               <Button
                 to={`https://www.moldtelecom.md/${t('lang')}/personal/moldtelecom_tv`}
@@ -1254,7 +1256,7 @@ export default function Mobile() {
                 hover_bgcolor={'var(--theme_primary_color_blue_2)'}
                 icon={'arrow_right'}
               >
-                Vezi mai multe detalii
+                {t('tm.discover.btn')}
               </Button>
             </div>
           </div>
@@ -1269,15 +1271,17 @@ export default function Mobile() {
             <div className={styles.tm_discover_card_inside}>
               <div className={styles.tm_discover_card_inside_top}>
                 <div className={styles.tm_discover_card_inside_top_tag}>
-                  Din aplicație
+                  {t('tm.discover.card_3.tag')}
                 </div>
                 <div className={styles.tm_discover_card_title}>
-                  Alege Cinema-Online la doar 59 lei/lună
+                  {t('tm.discover.card_3.title')}
                 </div>
-                <div className={styles.tm_discover_card_text}>
-                  Explorează lumea televiziunii interactive cu abonamentul
-                  dorit, direct <b> pe smartphone-ul tău!</b>
-                </div>
+                <div
+                  className={styles.tm_discover_card_text}
+                  dangerouslySetInnerHTML={{
+                    __html: t('tm.discover.card_3.text'),
+                  }}
+                />
               </div>
               <Button
                 to={`https://www.moldtelecom.md/${t('lang')}/personal/cinema`}
@@ -1288,7 +1292,7 @@ export default function Mobile() {
                 hover_bgcolor={'var(--theme_primary_color_blue_2)'}
                 icon={'arrow_right'}
               >
-                Vezi mai multe detalii
+                {t('tm.discover.btn')}
               </Button>
             </div>
           </div>
@@ -1303,14 +1307,13 @@ export default function Mobile() {
             <div className={styles.tm_discover_card_inside}>
               <div className={styles.tm_discover_card_inside_top}>
                 <div className={styles.tm_discover_card_inside_top_tag}>
-                  Din aplicație
+                  {t('tm.discover.card_4.tag')}
                 </div>
                 <div className={styles.tm_discover_card_title}>
-                 Comunica fata telefon, direct de pe Smartwatch
+                  {t('tm.discover.card_4.title')}
                 </div>
                 <div className={styles.tm_discover_card_text}>
-                Acum poți utiliza atât telefonul, cât și ceasul inteligent, cu un singur număr de telefon și un singur abonament.
-
+                  {t('tm.discover.card_4.text')}
                 </div>
               </div>
               <Button
@@ -1322,7 +1325,7 @@ export default function Mobile() {
                 hover_bgcolor={'var(--theme_primary_color_blue_2)'}
                 icon={'arrow_right'}
               >
-                Vezi mai multe detalii
+                {t('tm.discover.btn')}
               </Button>
             </div>
           </div>

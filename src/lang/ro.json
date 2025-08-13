@@ -1916,6 +1916,30 @@
     "prepay": "Prepay",
     "btn_not_client": "Nu sunt client",
     "btn_client": "Sunt client",
+    "discover": {
+      "title": "Descoperă extra beneficii",
+      "btn": "Vezi mai multe detalii",
+      "card_1": {
+        "tag": "Descoperă",
+        "title": "Fii unic cu Numar Frumos",
+        "text": "Alege <b>GRATUIT</b> un număr care te reprezintă! <br /><br /> Selecteaza un număr dorit din lista de numere libere disponibile în momentul solicitării."
+      },
+      "card_2": {
+        "tag": "Din aplicație",
+        "title": "Acum ai Moldtelecom TV la doar 40 lei!",
+        "text": "Accesează acum <b>oriunde</b> în rețeaua Moldtelecom pe <b>orice ecran</b>."
+      },
+      "card_3": {
+        "tag": "Din aplicație",
+        "title": "Alege Cinema-Online la doar 59 lei/lună",
+        "text": "Explorează lumea televiziunii interactive cu abonamentul dorit, direct <b> pe smartphone-ul tău!</b>"
+      },
+      "card_4": {
+        "tag": "Din aplicație",
+        "title": "Comunica fata telefon, direct de pe Smartwatch",
+        "text": "Acum poți utiliza atât telefonul, cât și ceasul inteligent, cu un singur număr de telefon și un singur abonament."
+      }
+    },
     "details": {
       "promo": {
         "title": "Promoția „Testează gratuit”",
