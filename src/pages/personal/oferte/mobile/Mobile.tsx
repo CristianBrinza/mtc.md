@@ -1293,6 +1293,40 @@ export default function Mobile() {
             </div>
           </div>
         </div>
+        <div className={styles.tm_discover_inside}>
+          <div className={styles.tm_discover_card}>
+            <img
+              className={styles.tm_discover_img}
+              src={`/images/landings/18100125${t('lang')}.webp`}
+              alt="Moldtelecom"
+            />
+            <div className={styles.tm_discover_card_inside}>
+              <div className={styles.tm_discover_card_inside_top}>
+                <div className={styles.tm_discover_card_inside_top_tag}>
+                  Din aplicație
+                </div>
+                <div className={styles.tm_discover_card_title}>
+                 Comunica fata telefon, direct de pe Smartwatch
+                </div>
+                <div className={styles.tm_discover_card_text}>
+                Acum poți utiliza atât telefonul, cât și ceasul inteligent, cu un singur număr de telefon și un singur abonament.
+
+                </div>
+              </div>
+              <Button
+                to={`https://www.moldtelecom.md/${t('lang')}/personal/one_number`}
+                color={'var(--theme_primary_color_blue_4)'}
+                bgcolor={'var(--theme_primary_color_blue_3)'}
+                border={'var(--theme_primary_color_blue_3)'}
+                hover_border={'var(--theme_primary_color_blue_2)'}
+                hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+                icon={'arrow_right'}
+              >
+                Vezi mai multe detalii
+              </Button>
+            </div>
+          </div>
+        </div>
       </Slider>
 
       <MyApp style_type={'blue_white'} className={styles.myapp} />
