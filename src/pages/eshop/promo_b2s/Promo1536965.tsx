@@ -442,14 +442,10 @@ export default function Promo1536965() {
       </Hero>
 
       <div className={`title_3 title_4 gradient_text_4 ${styles.title_main}`}>
-        Back to School cu mega oferte la tot ce-ți trebuie!
+        {t('pormo_b2s_2025.title')}
       </div>
       <div className={styles.subtitle}>
-        Dă start noului an de studii cu tehnologia care te sprijină în fiecare
-        moment. Fie că e vorba de școală sau timp liber, pasiune sau eficiență,
-        te așteaptă reduceri la laptopuri, telefoane, trotinete, gadgeturi,
-        tablete și ceasuri inteligente. Descoperă ce te motivează, bucură-te de
-        oferte și continuă să faci ceea ce îți place!
+        {t('pormo_b2s_2025.text')}
       </div>
 
       <div className={styles.couldown_container}>
