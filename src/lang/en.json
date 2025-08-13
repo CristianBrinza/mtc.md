@@ -481,6 +481,21 @@
       "description": "Use the same phone number on multiple devices and stay reachable on all your gadgets.",
       "keywords": "one number, multi device, smartwatch, tablet, phone, number sharing, mobile, calls, sms, Moldtelecom"
     },
+    "only_net": {
+      "title": "Internet Only",
+      "description": "Choose high-speed fixed internet plans with exclusive online discounts.",
+      "keywords": "internet only, fixed internet, plans, offers, moldtelecom"
+    },
+    "gaming": {
+      "title": "Gaming",
+      "description": "Consoles, subscriptions and offers tailored for gamers.",
+      "keywords": "gaming, consoles, fast internet, offers, moldtelecom"
+    },
+    "back_to_school": {
+      "title": "Back to School",
+      "description": "Promotions for the start of the school year on devices and subscriptions from Moldtelecom.",
+      "keywords": "back to school, promotions, discounts, devices, moldtelecom"
+    },
     "home": {
       "title": "Moldtelecom",
       "description": "Official Moldtelecom website with information about services, offers and the latest news.",

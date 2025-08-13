@@ -9,6 +9,7 @@ import MyApp from '../../../../components/app/MyApp.tsx';
 import Footer from '../../../../components/footer/Footer.tsx';
 import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
 import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
+import SEO from '../../../../components/SEO';
 
 import Button from '../../../../components/Button.tsx';
 import Slider from 'react-slick';
@@ -148,6 +149,11 @@ const OptionsIcon: React.FC = () => (
 
 export default function Gaming() {
   const { t } = useTranslation();
+  const seo = {
+    title: t('pages.gaming.title'),
+    description: t('pages.gaming.description'),
+    keywords: t('pages.gaming.keywords'),
+  };
 
   const breadcrumbItems = [{ label: 'Promo', url: ' ' }, { label: 'Gaming' }];
 
@@ -433,6 +439,7 @@ export default function Gaming() {
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Chat />
       <Feedback />

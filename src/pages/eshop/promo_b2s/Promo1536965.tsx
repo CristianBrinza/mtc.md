@@ -7,6 +7,7 @@ import Footer from '../../../components/footer/Footer.tsx';
 import styles from './Promo1536965.module.css';
 import Hero from '../../../components/hero/Hero.tsx';
 import { useTranslation } from 'react-i18next';
+import SEO from '../../../components/SEO';
 import ShopCard from '../../../components/shop_card/ShopCard.tsx';
 import Icon from '../../../components/Icon.tsx';
 
@@ -161,6 +162,11 @@ export default function Promo1536965() {
   }, [targetMs]);
 
   const { t } = useTranslation();
+  const seo = {
+    title: t('pages.back_to_school.title'),
+    description: t('pages.back_to_school.description'),
+    keywords: t('pages.back_to_school.keywords'),
+  };
   const breadcrumbItems = [
     {
       label: 'Magazin Online',
@@ -414,6 +420,7 @@ export default function Promo1536965() {
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Chat />
       <Feedback />

@@ -1606,6 +1606,21 @@
       "title": "SMS Service 100",
       "description": "Activează rapid opțiuni și servicii Moldtelecom trimițând coduri SMS la numărul 100.",
       "keywords": "sms service, opțiuni, pachete, internet, minute, roaming, moldtelecom, 100"
+    },
+    "only_net": {
+      "title": "Doar Internet",
+      "description": "Alege abonamente de Internet fix de mare viteză cu reduceri exclusive pentru online.",
+      "keywords": "doar internet, internet fix, abonamente, oferte, moldtelecom"
+    },
+    "gaming": {
+      "title": "Gaming",
+      "description": "Console, abonamente și oferte pentru pasionații de gaming.",
+      "keywords": "gaming, console, internet rapid, oferte, moldtelecom"
+    },
+    "back_to_school": {
+      "title": "Back to School",
+      "description": "Promoții pentru începutul anului școlar la dispozitive și abonamente Moldtelecom.",
+      "keywords": "back to school, promoții, reduceri, dispozitive, moldtelecom"
     }
   },
   "navbar_business": {
