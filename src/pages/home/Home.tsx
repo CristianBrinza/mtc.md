@@ -475,7 +475,7 @@ export default function Home() {
           <div className={styles.triple_carousell_block}>
             <ShopCard
               device_id={194234497}
-              image="/images/shop/394534437.png"
+              image="/images/shop/394534437.webp"
               price={1}
               old_price={5099}
               reducere="- 5098"

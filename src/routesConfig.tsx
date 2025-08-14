@@ -29,6 +29,7 @@ import OnlyNet from './pages/personal/oferte/only_net/OnlyNet.tsx';
 import Gaming from './pages/personal/oferte/gaming/Gaming.tsx';
 import Promo1536965 from './pages/eshop/promo_b2s/Promo1536965.tsx';
 import SecuritateDigitala from './pages/personal/SecuritrateDigitala/SecuritateDigitala.tsx';
+import MobileSchool from './pages/personal/oferte/mobile/MobileSchool.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -68,6 +69,10 @@ export const routesConfig: RouteConfig[] = [
   {
     path: '/:lang/mobile',
     element: React.createElement(Mobile),
+  },
+  {
+    path: '/:lang/mobile189347654',
+    element: React.createElement(MobileSchool),
   },
   {
     path: '/:lang/portare',

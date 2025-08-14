@@ -16,7 +16,7 @@ import Slider from 'react-slick';
 import Icon from '../../../../components/Icon.tsx';
 import TableRoaming from '../../../../components/Popups/TableRoaming.tsx';
 import Functions from '../../../../components/functions/Functions.tsx';
-import  { useState } from 'react';
+import { useState } from 'react';
 import Popup from '../../../../components/Popup/Popup.tsx';
 import Toggle from '../../../../components/toggle/Toggle.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
@@ -26,7 +26,7 @@ import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 import ScrollableWrapper from '../../../../components/Popup/ScrollableWrapper.tsx';
 import { trackEvent } from '../../../../initAnalytics.ts';
 
-export default function Mobile() {
+export default function MobileSchool() {
   const { t } = useTranslation();
   const [testGratis, setTestGratis] = useState(false);
   const seo = {
@@ -1180,6 +1180,32 @@ export default function Mobile() {
         </span>
       </div>
 
+      <div className={styles.conversion}>
+       <div className={styles.conversion_text}>
+        <div>
+          <div className={styles.conversion_title}>
+            Totul <br/>
+            Internet + TV + Mobil
+          </div>
+          <div>
+            La un preț beton!
+          </div>
+        </div>
+         <Button
+           to={`https://www.moldtelecom.md/${t('lang')}/personal/Promo_Abonamente-TV-Internet-Mobil`}
+           color={'var(--theme_primary_color_blue_4)'}
+           bgcolor={'var(--theme_primary_color_blue_2)'}
+           border={'var(--theme_primary_color_blue_2)'}
+           hover_border={'var(--theme_primary_color_blue_4)'}
+           hover_bgcolor={'var(--theme_primary_color_blue_4)'}
+           hover_color={"#fff"}
+           icon={'arrow_right'}
+         >
+           Vezi mai multe
+         </Button>
+       </div>
+        <img className={styles.conversion_img} src="/images/landings/55271183.webp" alt="Moldtelecom" />
+      </div>
       <Functions
         style_type={'blue'}
         title={'general.recommended_options'}

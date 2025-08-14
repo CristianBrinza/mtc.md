@@ -789,7 +789,7 @@ export default function MobileOld() {
         <div className={styles.tm_carousell_block}>
           <ShopCard
             device_id={323564512}
-            image="/images/shop/323564512.png"
+            image="/images/shop/323564512.webp"
             price={1}
             old_price={2999}
             reducere="-99%"
@@ -805,7 +805,7 @@ export default function MobileOld() {
         <div className={styles.tm_carousell_block}>
           <ShopCard
             device_id={194234497}
-            image="/images/shop/394534437.png"
+            image="/images/shop/394534437.webp"
             price={1}
             old_price={5099}
             reducere="- 5098"
@@ -821,7 +821,7 @@ export default function MobileOld() {
         <div className={styles.tm_carousell_block}>
           <ShopCard
             device_id={394534437}
-            image="/images/shop/394534437.png"
+            image="/images/shop/394534437.webp"
             price={2999}
             old_price={7299}
             reducere="-40%"

@@ -13,6 +13,43 @@
   height: auto;
 }
 
+.conversion{
+  width: 100%;
+  max-width: 1180px;
+  margin: 15px auto;
+  min-height: 300px;
+  background-color: var(--theme_primary_color_blue_3);
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  /*justify-content: flex-start;*/
+  align-items: center;
+  justify-content: space-between;
+}
+.conversion_text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 24px;
+  box-sizing: border-box;
+  width: 50%;
+  gap:15px;
+}
+.conversion_img{
+  height: 100%;
+  width: 100%;
+  max-width: 780px;
+}
+.conversion_title{
+ font-size: 30px;
+  line-height: 32px;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+}
+
+
+
 .title2 {
   margin: 30px auto 10px;
   width: 100%;

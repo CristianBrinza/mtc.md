@@ -15,9 +15,42 @@ import Slider from 'react-slick';
 import Button from '../../../../components/Button.tsx';
 import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
 import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
+import Popup from '../../../../components/Popup/Popup.tsx';
+import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
+import { useState } from 'react';
+import { trackEvent } from '../../../../initAnalytics.ts';
 
 export default function FiveGbps() {
   const { t } = useTranslation();
+
+  const [activePopup, setActivePopup] = useState<string | null>(null);
+  const [popupType, setPopupType] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+  const [activePopupConfig, setActivePopupConfig] = useState<string>('');
+  const [activePopupSubConfig, setActivePopupSubConfig] = useState<string>('');
+  const [activeBuyConfig, setActiveBuyConfig] = useState<string>('');
+  const handlePopupClose = () => {
+    setActivePopup(null);
+    setSubmitted(false);
+    setError(false);
+    setPopupType(false);
+  };
+
+  const setPopup = (id: string, name: string, subname: string) => {
+    if (id == '0') {
+      trackEvent('5gbps_device_buy', `${name} ${subname}`);
+    }
+    setActivePopup('1934567');
+    setActivePopupConfig(name);
+    setActivePopupSubConfig(subname);
+    setActiveBuyConfig(
+      ` (5Gbps landing) Config – ${name} ${subname}  (Oferta Back-2-School 2025)`
+    );
+    // console.log(
+    //   `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_1}, nr - ${numberTVConfig_1} tv), ${activeMesh_1 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_1 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_1 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_1 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+    // );
+  };
 
   const breadcrumbItems = [
     { label: t('wifi_plus.breadcrumb.internet'), url: ' ' },
@@ -73,7 +106,7 @@ export default function FiveGbps() {
                 section.scrollIntoView({ behavior: 'smooth', block: 'center' });
               }
             }}
-            color="var(--theme_primary_color_blue_4)"
+            color="var(--theme_primary_color_blue_2)"
             bgcolor="#fff"
             border="#fff"
             hover_border="var(--theme_primary_color_blue_2)"
@@ -90,6 +123,7 @@ export default function FiveGbps() {
             hover_bgcolor="var(--theme_primary_color_blue_2)"
             hover_color="var(--theme_primary_color_blue_1)"
             color="#fff"
+            className={styles.btn_hero_secondary}
           >
             0(22) 500-500
           </Button>
@@ -337,6 +371,9 @@ export default function FiveGbps() {
               hover_color="var(--theme_primary_color_blue_4)"
               icon="arrow_right"
               className={styles.mobile_carousell_block_btn_buy}
+              onClick={() =>
+                setPopup('1', '2.1Gbps', `(Fibră optică + Wi-Fi Mesh)`)
+              }
             >
               {t('order_now')}
             </Button>
@@ -407,6 +444,9 @@ export default function FiveGbps() {
                 hover_color="var(--theme_primary_color_blue_4)"
                 icon="arrow_right"
                 className={styles.mobile_carousell_block_btn_buy}
+                onClick={() =>
+                  setPopup('1', '5.5Gbps', `(Fibră optică + Wi-Fi Mesh)`)
+                }
               >
                 {t('order_now')}
               </Button>
@@ -578,6 +618,74 @@ export default function FiveGbps() {
       </FaqV2>
 
       <Footer disclaimer={true} />
+
+      <Popup
+        id="1934567"
+        width="550px"
+        isVisible={activePopup === '1934567'}
+        onClose={handlePopupClose}
+        className={styles.popupBuy}
+        key={activePopup ?? 'popup-closed'}
+      >
+        {/*<div className={styles.popup_div_title}>*/}
+        {/*  Mulțumim că ai ales Moldtelecom*/}
+        {/*</div>*/}
+        {error ? (
+          <div className={styles.buy_popup_error}>
+            <Icon
+              type={'repair'}
+              size={'48px'}
+              color={'var(--theme_primary_color_blue_3)'}
+            />
+            <span
+              dangerouslySetInnerHTML={{ __html: t('double.request_error') }}
+            />
+          </div>
+        ) : submitted ? (
+          <div className={styles.buy_popup_success}>
+            <Icon
+              type={'tick'}
+              size={'48px'}
+              color={'var(--theme_primary_color_blue_3)'}
+            />
+            <span
+              dangerouslySetInnerHTML={{ __html: t('double.request_success') }}
+            />
+          </div>
+        ) : (
+          <div className={styles.buy_popup}>
+            {popupType == true ? (
+              <div>{t('double.device_chosen')}</div>
+            ) : (
+              <div>{t('double.subscription_chosen')}</div>
+            )}
+            <div className={styles.selected_popup_subcription}>
+              <div className={styles.popup_selected}>
+                {activePopupConfig}&nbsp;<span>{activePopupSubConfig}</span>
+              </div>
+            </div>
+
+            <BuyForm
+              config={activeBuyConfig}
+              tag={'double'}
+              service={'campain[double_2025_b2s], place[abonament]'}
+              onSuccess={() => {
+                setSubmitted(true);
+                setError(false);
+              }}
+              onError={() => {
+                setError(true);
+              }}
+            />
+            <div
+              className={styles.popup_discalmer}
+              dangerouslySetInnerHTML={{
+                __html: t('double.request_disclaimer'),
+              }}
+            />
+          </div>
+        )}
+      </Popup>
     </>
   );
 }

@@ -455,7 +455,7 @@ export default function Home() {
             <div className={styles.home_carousell_phone}>
               <ShopCard
                 device_id={194234497}
-                image="/images/shop/394534437.png"
+                image="/images/shop/394534437.webp"
                 price={6799}
                 // old_price={5099}
                 // reducere="- 5098"

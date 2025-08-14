@@ -9,6 +9,7 @@ interface FunctionsProps {
   title?: string;
   style_type?: string;
   functions: Array<string>;
+  btn_type?: string;
 }
 
 const Functions: React.FC<FunctionsProps> = ({
@@ -79,7 +80,8 @@ const Functions: React.FC<FunctionsProps> = ({
     icon: string,
     title: string,
     description: string,
-    popup: string
+    popup: string,
+  btn_type:string
   ) => (
     <div className={styles.functions_carousell_inside} key={id}>
       <div className={styles.functions_carousell_inside_block}>
@@ -118,7 +120,12 @@ const Functions: React.FC<FunctionsProps> = ({
           onMouseLeave={handleMouseLeave}
           onClick={() => togglePopup(popup)}
         >
-          <span>{t('functions_optional.detalii')}</span>{' '}
+          {btn_type=='1'?
+          <span>{t('functions_optional.detalii')}</span>:
+            btn_type=='2'?
+          <span>{t('functions_optional.detalii_2')}</span>:
+              <span>{t('functions_optional.detalii')}</span>
+        }{' '}
           <Icon
             className="LinkButton_arrow"
             type="arrow_right"
@@ -148,7 +155,9 @@ const Functions: React.FC<FunctionsProps> = ({
               'cart', // Icon (must be a valid key from icons)
               'functions_optional.Internet.title',
               'functions_optional.Internet.description',
-              'f1'
+              'f1',
+              '2'
+
             )}
 
           {functions.includes('Minute') &&
@@ -157,7 +166,9 @@ const Functions: React.FC<FunctionsProps> = ({
               'call',
               'functions_optional.Minute.title',
               'functions_optional.Minute.description',
-              'f2'
+              'f2',
+              '2'
+
             )}
 
           {functions.includes('International') &&
@@ -166,7 +177,8 @@ const Functions: React.FC<FunctionsProps> = ({
               'internet',
               'functions_optional.International.title',
               'functions_optional.International.description',
-              'f3'
+              'f3',
+              '2'
             )}
 
           {functions.includes('RoamingUE') &&
@@ -175,7 +187,8 @@ const Functions: React.FC<FunctionsProps> = ({
               'roaming',
               'functions_optional.RoamingUE.title',
               'functions_optional.RoamingUE.description',
-              'f5'
+              'f5',
+              '2'
             )}
           {functions.includes('Megogo') &&
             renderFunctionBlock(
@@ -183,7 +196,8 @@ const Functions: React.FC<FunctionsProps> = ({
               'megogo',
               'functions_optional.Megogo.title',
               'functions_optional.Megogo.description',
-              'f14'
+              'f14',
+              '1'
             )}
           {functions.includes('Premier') &&
             renderFunctionBlock(
@@ -191,7 +205,8 @@ const Functions: React.FC<FunctionsProps> = ({
               'premier',
               'functions_optional.Premier.title',
               'functions_optional.Premier.description',
-              'f15'
+              'f15',
+              '1'
             )}
           {functions.includes('Ivi') &&
             renderFunctionBlock(
@@ -199,7 +214,8 @@ const Functions: React.FC<FunctionsProps> = ({
               'ivi',
               'functions_optional.Ivi.title',
               'functions_optional.Ivi.description',
-              'f16'
+              'f16',
+              '1'
             )}
           {functions.includes('MtcTv') &&
             renderFunctionBlock(
@@ -207,7 +223,8 @@ const Functions: React.FC<FunctionsProps> = ({
               'mtctv',
               'functions_optional.MtcTv.title',
               'functions_optional.MtcTv.description',
-              'f17'
+              'f17',
+              '1'
             )}
           {functions.includes('Arhiva') &&
             renderFunctionBlock(
@@ -215,7 +232,8 @@ const Functions: React.FC<FunctionsProps> = ({
               'arhiva',
               'functions_optional.Arhiva.title',
               'functions_optional.Arhiva.description',
-              'f10'
+              'f10',
+              '1'
             )}
           {functions.includes('PlusTV') &&
             renderFunctionBlock(
@@ -223,7 +241,8 @@ const Functions: React.FC<FunctionsProps> = ({
               'tv_plus',
               'functions_optional.PlusTV.title',
               'functions_optional.PlusTV.description',
-              'f12'
+              'f12',
+              '1'
             )}
           {functions.includes('Adult') &&
             renderFunctionBlock(
@@ -231,7 +250,8 @@ const Functions: React.FC<FunctionsProps> = ({
               'plus18',
               'functions_optional.Adult.title',
               'functions_optional.Adult.description',
-              'f11'
+              'f11',
+              '1'
             )}
           {functions.includes('Junior') &&
             renderFunctionBlock(
@@ -239,7 +259,8 @@ const Functions: React.FC<FunctionsProps> = ({
               'junior',
               'functions_optional.Junior.title',
               'functions_optional.Junior.description',
-              'f13'
+              'f13',
+              '1'
             )}
         </Slider>
       </div>

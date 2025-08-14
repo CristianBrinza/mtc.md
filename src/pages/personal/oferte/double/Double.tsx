@@ -2633,7 +2633,7 @@ export default function Double() {
         <div className={styles.tm_carousell_block}>
           <ShopCard
             device_id={323564512}
-            image="/images/shop/323564512.png"
+            image="/images/shop/323564512.webp"
             price={1}
             old_price={3000}
             reducere="- 99%"
@@ -2659,7 +2659,7 @@ export default function Double() {
         <div className={styles.tm_carousell_block}>
           <ShopCard
             device_id={194234497}
-            image="/images/shop/394534437.png"
+            image="/images/shop/394534437.webp"
             price={1899}
             old_price={5160}
             reducere="- 3 261"

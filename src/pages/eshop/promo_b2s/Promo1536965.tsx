@@ -673,9 +673,7 @@ export default function Promo1536965() {
 
         <div className={styles.devices_list}>
           {loading && <div>{t('pormo_b2s_2025.loading')}</div>}
-          {error && (
-            <div>{t('pormo_b2s_2025.loading_error', { error })}</div>
-          )}
+          {error && <div>{t('pormo_b2s_2025.loading_error', { error })}</div>}
           {!loading &&
             !error &&
             visibleItems.map((item, index) => (

@@ -1623,19 +1623,19 @@
       "keywords": "back to school, promoții, reduceri, dispozitive, moldtelecom"
     },
     "pormo_b2s_2025": {
-        "title": "Back to School 2025",
-        "description": "Promoții pentru începutul anului școlar la dispozitive și abonamente Moldtelecom.",
-        "keywords": "back to school, promoții, reduceri, dispozitive, moldtelecom"
-      }
-      },
+      "title": "Back to School 2025",
+      "description": "Promoții pentru începutul anului școlar la dispozitive și abonamente Moldtelecom.",
+      "keywords": "back to school, promoții, reduceri, dispozitive, moldtelecom"
+    }
+  },
   "pormo_b2s_2025": {
     "breadcrumb": {
       "shop": "Magazin Online",
       "promo": "Promo",
       "current": "Back to school"
     },
-      "title": "Back to School – dă start ofertelor masive la TOT!",
-      "text": "Începe noul an școlar cu tehnologia care te susține la ore, în proiecte și în momentele de relaxare. Profită de reduceri la laptopuri, telefoane, Smart TV, tablete, gadgeturi și ceasuri inteligente. Alege ce îți dă energie și intră în noul sezon pregătit pentru orice provocare.",
+    "title": "Back to School – dă start ofertelor masive la TOT!",
+    "text": "Începe noul an școlar cu tehnologia care te susține la ore, în proiecte și în momentele de relaxare. Profită de reduceri la laptopuri, telefoane, Smart TV, tablete, gadgeturi și ceasuri inteligente. Alege ce îți dă energie și intră în noul sezon pregătit pentru orice provocare.",
     "countdown": {
       "title": "Back to School",
       "expired": "Oferta s-a încheiat",
@@ -2174,6 +2174,7 @@
   "lei_luna": " lei/lună",
   "functions_optional": {
     "detalii": "Detalii",
+    "detalii_2": "Activează acum",
     "Internet": {
       "title": "Internet",
       "description": "Descarcă date cu viteză mare și navighează fără griji"
