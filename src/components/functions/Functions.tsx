@@ -81,7 +81,7 @@ const Functions: React.FC<FunctionsProps> = ({
     title: string,
     description: string,
     popup: string,
-  btn_type:string
+    btn_type: string
   ) => (
     <div className={styles.functions_carousell_inside} key={id}>
       <div className={styles.functions_carousell_inside_block}>
@@ -120,12 +120,13 @@ const Functions: React.FC<FunctionsProps> = ({
           onMouseLeave={handleMouseLeave}
           onClick={() => togglePopup(popup)}
         >
-          {btn_type=='1'?
-          <span>{t('functions_optional.detalii')}</span>:
-            btn_type=='2'?
-          <span>{t('functions_optional.detalii_2')}</span>:
-              <span>{t('functions_optional.detalii')}</span>
-        }{' '}
+          {btn_type == '1' ? (
+            <span>{t('functions_optional.detalii')}</span>
+          ) : btn_type == '2' ? (
+            <span>{t('functions_optional.detalii_2')}</span>
+          ) : (
+            <span>{t('functions_optional.detalii')}</span>
+          )}{' '}
           <Icon
             className="LinkButton_arrow"
             type="arrow_right"
@@ -157,7 +158,6 @@ const Functions: React.FC<FunctionsProps> = ({
               'functions_optional.Internet.description',
               'f1',
               '2'
-
             )}
 
           {functions.includes('Minute') &&
@@ -168,7 +168,6 @@ const Functions: React.FC<FunctionsProps> = ({
               'functions_optional.Minute.description',
               'f2',
               '2'
-
             )}
 
           {functions.includes('International') &&

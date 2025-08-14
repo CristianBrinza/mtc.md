@@ -19,7 +19,7 @@
     "model": "32A4N",
     "brand": "Hisense",
     "category": "Televizor",
-    "link": "/eshop/telefoane/samsung-galaxy-a56-8-gb-256-gb-awesome-graphite"
+    "link": "/eshop/tv/hisense-tv-32a4n"
   },
   {
     "device_id": "194234497",
@@ -41,7 +41,7 @@
     "model": "43A4N",
     "brand": "Hisense",
     "category": "Televizor",
-    "link": null
+    "link": "/eshop/tv/hisense-43a6n"
   },
   {
     "device_id": "194234297",
@@ -85,7 +85,7 @@
     "model": "55A4N",
     "brand": "Hisense",
     "category": "Televizor",
-    "link": null
+    "link": "/eshop/tv/hisense-tv-55a6n"
   },
   {
     "device_id": "294594497",
@@ -173,7 +173,7 @@
     "model": "55A4N",
     "brand": "Hisense",
     "category": "Televizor",
-    "link": null
+    "link": "/eshop/tv/hisense-tv-55a6n"
   },
   {
     "device_id": "294024401",
@@ -322,7 +322,7 @@
     "reducere": "- 2 519",
     "title": "Samsung",
     "subtitle": "A06",
-    "characteristics": "4GB /128GB",
+    "characteristics": "4/128GB 5000 mAh /6,7\"",
     "tag": "Telefonie Mobila",
     "subtag": "Doar cu abonament",
     "tag_color": "var(--theme_primary_color_blue_3)",
@@ -344,7 +344,7 @@
     "reducere": "- 2 601",
     "title": "Samsung",
     "subtitle": "A16",
-    "characteristics": "4GB /128GB",
+    "characteristics": "4/128GB 5000 mAh /6,7\"",
     "tag": "Telefonie Mobila",
     "subtag": "Doar cu abonament",
     "tag_color": "var(--theme_primary_color_blue_3)",
@@ -377,7 +377,7 @@
     "model": "WATCH",
     "brand": "Huawei",
     "category": "Ceasuri",
-    "link": null
+    "link": "/eshop/gadgeturi/huawei-watch-4-pro-2-gb-32-gb-dark-brown"
   },
   {
     "device_id": "294024411",
@@ -400,5 +400,45 @@
     "brand": "Xiaomi",
     "category": "Telefoane",
     "link": null
+  },
+  {
+    "device_id": "294024413",
+    "image": "/images/shop/153935909.webp",
+    "price": "299",
+    "title": "SWISSTEN",
+    "subtitle": "Bluetooth TWS SONIC",
+    "characteristics": "Bluetooth, ",
+    "style_type": "gray",
+    "color": "Black",
+    "colors": "white,black",
+    "show_like": "TRUE",
+    "show_comapre": "FALSE",
+    "sort": "Gadget-uri",
+    "model": "TWS",
+    "brand": "SWISSTEN",
+    "category": "Gadget-uri",
+    "link": "/eshop/accesorii/earphones-swissten-bluetooth-tws-sonic-black"
+  },
+  {
+    "device_id": "294024412",
+    "image": "/images/shop/173935969.webp",
+    "price": "3 399",
+    "old_price": "6 600",
+    "reducere": "- 3 201",
+    "title": "Samsung",
+    "subtitle": "A36",
+    "characteristics": "6/128GB /5000mAh /6,7\"",
+    "tag": "Telefonie Mobila",
+    "subtag": "Doar cu abonament",
+    "tag_color": "var(--theme_primary_color_blue_3)",
+    "style_type": "gray",
+    "color": "Black",
+    "show_like": "TRUE",
+    "show_comapre": "FALSE",
+    "sort": "Telefoane",
+    "model": "Galaxy",
+    "brand": "Samsung",
+    "category": "Telefoane",
+    "link": "/eshop/telefoane/samsung-galaxy-a36-6-gb-128-gb-awesome-black"
   }
 ]
