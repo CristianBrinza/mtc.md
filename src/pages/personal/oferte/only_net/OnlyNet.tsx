@@ -1295,7 +1295,7 @@ export default function OnlyNet() {
             hover_bgcolor={'var(--theme_primary_color_blue_4)'}
             hover_color={'#fff'}
             icon={'arrow_right'}
-            id="tm_go_to_triple"
+            id="only_net_go_to_triple"
           >
             Vezi mai multe
           </Button>
