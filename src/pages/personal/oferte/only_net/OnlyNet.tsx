@@ -1274,6 +1274,44 @@ export default function OnlyNet() {
         </DetailsBlock>
       </Details>
 
+      <div className={styles.conversion}>
+        <div className={styles.conversion_text}>
+          <div className={styles.conversion_text_top}>
+            {/*<div className={styles.tm_discover_card_inside_top_tag}>*/}
+            {/*  Descoperă*/}
+            {/*</div>*/}
+            <div className={styles.conversion_title}>
+              Totul <br />
+              Internet + TV + Mobil
+            </div>
+            <div>La un preț beton!</div>
+          </div>
+          <Button
+            to={`https://www.moldtelecom.md/${t('lang')}/personal/Promo_Abonamente-TV-Internet-Mobil`}
+            color={'var(--theme_primary_color_blue_4)'}
+            bgcolor={'var(--theme_primary_color_blue_2)'}
+            border={'var(--theme_primary_color_blue_2)'}
+            hover_border={'var(--theme_primary_color_blue_4)'}
+            hover_bgcolor={'var(--theme_primary_color_blue_4)'}
+            hover_color={'#fff'}
+            icon={'arrow_right'}
+            id="tm_go_to_triple"
+          >
+            Vezi mai multe
+          </Button>
+        </div>
+        <img
+          className={styles.conversion_img}
+          src="/images/landings/55271183.webp"
+          alt="Moldtelecom"
+        />
+        <img
+          className={styles.conversion_img_mob}
+          src="/images/landings/55271181.webp"
+          alt="Moldtelecom"
+        />
+      </div>
+
       <Functions
         style_type={'blue'}
         title={'general.recommended_options'}

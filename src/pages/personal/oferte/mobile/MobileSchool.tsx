@@ -203,7 +203,7 @@ export default function MobileSchool() {
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/81074012${t('lang')}.webp`}
+            src={`/images/landings/13216912${t('lang')}.webp`}
             alt={t('tm.hero.alt')}
           />
         </div>
