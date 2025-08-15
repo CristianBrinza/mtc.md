@@ -2,7 +2,7 @@ import Navbar from '../../../../components/navbar/Navbar.tsx';
 import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb.tsx';
 import Hero from '../../../../components/hero/Hero.tsx';
 import styles from './Gaming.module.css';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import Chat from '../../../../components/chat/Chat.tsx';
 import Feedback from '../../../../components/feedback/Feedback.tsx';
 import MyApp from '../../../../components/app/MyApp.tsx';
@@ -155,7 +155,10 @@ export default function Gaming() {
     keywords: t('pages.gaming.keywords'),
   };
 
-  const breadcrumbItems = [{ label: 'Promo', url: ' ' }, { label: 'Gaming' }];
+  const breadcrumbItems = [
+    { label: t('gaming.breadcrumb.promo'), url: ' ' },
+    { label: t('gaming.breadcrumb.gaming') },
+  ];
 
   const [activeTVConfig_3, setActiveTVConfig_3] = useState<string>('smart_tv');
   const [activeSelectedTV_3, setActiveSelectedTV_3] =
@@ -461,9 +464,7 @@ export default function Gaming() {
       </Hero>
 
       <div className={`title_3 ${styles.title_main}`}>
-        <span>
-          Acum ai cele mai tari console, pentru experienta ideala in gaming
-        </span>
+        <span>{t('gaming.hero_title')}</span>
       </div>
 
       <div className={styles.why}>
@@ -474,11 +475,11 @@ export default function Gaming() {
             size="48px"
           />
           <div className={styles.why_card_text}>
-            <div className={styles.why_card_title}>Viteza incredibila</div>
+            <div className={styles.why_card_title}>
+              {t('gaming.why.speed_title')}
+            </div>
             <div className={styles.why_card_text_span}>
-              {' '}
-              Performanță constantă pe multiple dispozitive, fără pierderi de
-              viteză sau instabilitate.
+              {t('gaming.why.speed_desc')}
             </div>
           </div>
         </div>
@@ -489,10 +490,11 @@ export default function Gaming() {
             size="48px"
           />
           <div className={styles.why_card_text}>
-            <div className={styles.why_card_title}>Acoperire toata casa</div>
+            <div className={styles.why_card_title}>
+              {t('gaming.why.coverage_title')}
+            </div>
             <div className={styles.why_card_text_span}>
-              Wi-Fi de ultima generatie si Tehnologie XGS-PON cu arhitectura
-              pasivă și eficientă
+              {t('gaming.why.coverage_desc')}
             </div>
           </div>
         </div>
@@ -503,9 +505,11 @@ export default function Gaming() {
             size="48px"
           />
           <div className={styles.why_card_text}>
-            <div className={styles.why_card_title}>Console & Gaming</div>
+            <div className={styles.why_card_title}>
+              {t('gaming.why.console_title')}
+            </div>
             <div className={styles.why_card_text_span}>
-              Oferte incredile la Xbox sau Playstation cu 1 leu la conenctare
+              {t('gaming.why.console_desc')}
             </div>
           </div>
         </div>
@@ -515,15 +519,13 @@ export default function Gaming() {
         <div className={styles.info_block_text}>
           <div>
             <div className={styles.info_block_text_title}>
-              Cu mare viteza, <br />
-              vin marile victorii
+              {t('gaming.info.title_line1')} <br />
+              {t('gaming.info.title_line2')}
             </div>
-            Acum ai viteze de pana la <b>5.5Gbps</b> si console la 1 leu sau la
-            pret special doar la Moldtelecom.
-            <br />
-            Gaming-ul de performata nu a fost niciodata mai aproape. Nu rata
-            ocazia de a fi parte a progresului, <b>fără laguri</b>,{' '}
-            <b>fără întreruperi</b>, <b>ultra-rapid</b>.
+            <Trans
+              i18nKey="gaming.info.desc"
+              components={{ b: <b />, br: <br /> }}
+            />
           </div>
           <Button
             to={`https://www.moldtelecom.md/${t('lang')}/echipamente-wifi`}
@@ -534,7 +536,7 @@ export default function Gaming() {
             hover_bgcolor={'var(--theme_primary_color_blue_2)'}
             icon={'arrow_right'}
           >
-            Vezi echipamentele
+            {t('gaming.info.button')}
           </Button>
         </div>
         <img
@@ -584,7 +586,7 @@ export default function Gaming() {
                 />
               </div>
               <span>
-                x1 <b>Mesh Wi-Fi</b>
+                x1 <b>{t('combo_home.mesh_wifi')}</b>
                 {/*inclus*/}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
                   (49 {t('combo_home.lei_luna')})
@@ -715,7 +717,7 @@ export default function Gaming() {
                 {/*<Toggle />*/}
               </div>
               <span>
-                <b>Arhiva TV</b> inclus{' '}
+                <b>{t('combo_home.arhiva_tv')}</b> {t('combo_home.inclus')}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
                   ({t('combo_home.gratiut')})
                 </span>
@@ -852,7 +854,7 @@ export default function Gaming() {
                 />
               </div>
               <span>
-                x1 <b>Mesh Wi-Fi</b> {t('combo_home.inclus')}{' '}
+                x1 <b>{t('combo_home.mesh_wifi')}</b> {t('combo_home.inclus')}{' '}
                 <span
                   className={styles.abonaments_block_inside_subtitle_small}
                   style={{ textDecoration: 'line-through' }}
@@ -985,7 +987,7 @@ export default function Gaming() {
                 {/*<Toggle />*/}
               </div>
               <span>
-                <b>Arhiva TV</b> inclus{' '}
+                <b>{t('combo_home.arhiva_tv')}</b> {t('combo_home.inclus')}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
                   ({t('combo_home.gratiut')})
                 </span>
@@ -1126,7 +1128,7 @@ export default function Gaming() {
                 {/*/>*/}
               </div>
               <span>
-                x2 <b>Mesh Wi-Fi</b> {t('combo_home.inclus')}{' '}
+                x2 <b>{t('combo_home.mesh_wifi')}</b> {t('combo_home.inclus')}{' '}
                 <span
                   className={styles.abonaments_block_inside_subtitle_small}
                   style={{ textDecoration: 'line-through' }}
@@ -1259,7 +1261,7 @@ export default function Gaming() {
                 {/*<Toggle />*/}
               </div>
               <span>
-                <b>Arhiva TV</b> inclus{' '}
+                <b>{t('combo_home.arhiva_tv')}</b> {t('combo_home.inclus')}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
                   ({t('combo_home.gratiut')})
                 </span>
