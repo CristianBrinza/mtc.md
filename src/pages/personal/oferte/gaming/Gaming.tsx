@@ -2,7 +2,7 @@ import Navbar from '../../../../components/navbar/Navbar.tsx';
 import Breadcrumb from '../../../../components/Breadcrumb/Breadcrumb.tsx';
 import Hero from '../../../../components/hero/Hero.tsx';
 import styles from './Gaming.module.css';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import Chat from '../../../../components/chat/Chat.tsx';
 import Feedback from '../../../../components/feedback/Feedback.tsx';
 import MyApp from '../../../../components/app/MyApp.tsx';
@@ -522,10 +522,11 @@ export default function Gaming() {
               {t('gaming.info.title_line1')} <br />
               {t('gaming.info.title_line2')}
             </div>
-            <Trans
-              i18nKey="gaming.info.desc"
-              components={{ b: <b />, br: <br /> }}
-            />
+            <span
+              dangerouslySetInnerHTML={{
+                __html: t('gaming.info.desc'),
+              }}
+            ></span>
           </div>
           <Button
             to={`https://www.moldtelecom.md/${t('lang')}/echipamente-wifi`}

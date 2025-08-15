@@ -512,8 +512,8 @@
   .modem_img {
     right: -90px;
   }
-  .hero_btn{
-  left:137px;
+  .hero_btn {
+    left: 137px;
   }
 }
 @media (max-width: 1150px) {
@@ -521,8 +521,8 @@
     width: 1150px;
     margin-left: calc((1150px - 100vw) / -2);
   }
-  .hero_btn{
-    left:117px;
+  .hero_btn {
+    left: 117px;
     bottom: 60px;
   }
 }
@@ -532,7 +532,7 @@
     width: 1000px;
     margin-left: calc((1000px - 100vw) / -2);
   }
-  .hero_btn{
+  .hero_btn {
     display: none;
   }
 }

@@ -194,9 +194,7 @@ export default function FiveGbps() {
           className={styles.what_img}
         />
         <div className={styles.what_right}>
-          <div className={styles.what_title}>
-            {t('five_gbps.intro.title')}
-          </div>
+          <div className={styles.what_title}>{t('five_gbps.intro.title')}</div>
           <div
             dangerouslySetInnerHTML={{ __html: t('five_gbps.intro.text') }}
           />
@@ -339,11 +337,15 @@ export default function FiveGbps() {
               <span>
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: t('five_gbps.abonaments.features.mesh', { count: 1 }),
+                    __html: t('five_gbps.abonaments.features.mesh', {
+                      count: 1,
+                    }),
                   }}
                 />{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
-                  ({t('five_gbps.abonaments.features.mesh_price', { price: 49 })})
+                  (
+                  {t('five_gbps.abonaments.features.mesh_price', { price: 49 })}
+                  )
                 </span>
               </span>
             </div>
@@ -376,7 +378,11 @@ export default function FiveGbps() {
               icon="arrow_right"
               className={styles.mobile_carousell_block_btn_buy}
               onClick={() =>
-                setPopup('1', '2.1Gbps', `(${t('five_gbps.abonaments.pretitle')})`)
+                setPopup(
+                  '1',
+                  '2.1Gbps',
+                  `(${t('five_gbps.abonaments.pretitle')})`
+                )
               }
             >
               {t('order_now')}
@@ -415,13 +421,19 @@ export default function FiveGbps() {
                 <span>
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: t('five_gbps.abonaments.features.mesh', { count: 2 }),
+                      __html: t('five_gbps.abonaments.features.mesh', {
+                        count: 2,
+                      }),
                     }}
                   />{' '}
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
                   >
-                    ({t('five_gbps.abonaments.features.mesh_price', { price: 98 })})
+                    (
+                    {t('five_gbps.abonaments.features.mesh_price', {
+                      price: 98,
+                    })}
+                    )
                   </span>
                 </span>
               </div>
@@ -454,7 +466,11 @@ export default function FiveGbps() {
                 icon="arrow_right"
                 className={styles.mobile_carousell_block_btn_buy}
                 onClick={() =>
-                  setPopup('1', '5.5Gbps', `(${t('five_gbps.abonaments.pretitle')})`)
+                  setPopup(
+                    '1',
+                    '5.5Gbps',
+                    `(${t('five_gbps.abonaments.pretitle')})`
+                  )
                 }
               >
                 {t('order_now')}
@@ -491,11 +507,11 @@ export default function FiveGbps() {
       <Details>
         <DetailsBlock title={t('five_gbps.details.title')}>
           <ul>
-            {(t('five_gbps.details.items', { returnObjects: true }) as string[]).map(
-              (item, i) => (
-                <li key={i}>{item}</li>
-              )
-            )}
+            {(
+              t('five_gbps.details.items', { returnObjects: true }) as string[]
+            ).map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
           </ul>
         </DetailsBlock>
       </Details>
