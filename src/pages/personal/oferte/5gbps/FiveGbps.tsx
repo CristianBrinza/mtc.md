@@ -94,7 +94,7 @@ export default function FiveGbps() {
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/88678012${t('lang')}.png`}
+            src={`/images/landings/81671012${t('lang')}.webp`}
             alt={t('wifi_plus.hero.alt')}
           />
         </div>

@@ -512,11 +512,18 @@
   .modem_img {
     right: -90px;
   }
+  .hero_btn{
+  left:137px;
+  }
 }
 @media (max-width: 1150px) {
   .hero {
     width: 1150px;
     margin-left: calc((1150px - 100vw) / -2);
+  }
+  .hero_btn{
+    left:117px;
+    bottom: 60px;
   }
 }
 
@@ -524,6 +531,9 @@
   .hero {
     width: 1000px;
     margin-left: calc((1000px - 100vw) / -2);
+  }
+  .hero_btn{
+    display: none;
   }
 }
 @media (max-width: 950px) {

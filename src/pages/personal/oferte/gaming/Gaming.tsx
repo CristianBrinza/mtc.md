@@ -454,7 +454,7 @@ export default function Gaming() {
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/88678012${t('lang')}.png`}
+            src={`/images/landings/71671012${t('lang')}.webp`}
             alt={t('wifi_plus.hero.alt')}
           />
         </div>
@@ -542,9 +542,14 @@ export default function Gaming() {
           src="/images/landings/12271183.webp"
           alt="Moldtelecom"
         />
+        <img
+          className={styles.info_block_img_mob}
+          src="/images/landings/12272183.webp"
+          alt="Moldtelecom"
+        />
       </div>
 
-      <div className={`title_3 ${styles.title_main}`}>
+      <div className={`title_3 ${styles.title_main} ${styles.title_main_2}`}>
         <span>{t('combo_home.choose_best_subscription')}</span>
       </div>
 
