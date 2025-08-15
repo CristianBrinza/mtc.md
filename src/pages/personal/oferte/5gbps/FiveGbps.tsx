@@ -53,8 +53,8 @@ export default function FiveGbps() {
   };
 
   const breadcrumbItems = [
-    { label: t('wifi_plus.breadcrumb.internet'), url: ' ' },
-    { label: '5.5 Gbps' },
+    { label: t('five_gbps.breadcrumb.internet'), url: ' ' },
+    { label: t('five_gbps.breadcrumb.five_gbps') },
   ];
 
   const settings = {
@@ -131,10 +131,11 @@ export default function FiveGbps() {
       </Hero>
 
       <div className={`title_3 ${styles.title_main}`}>
-        {' '}
         <span>
-          Rețeaua de internet fix{' '}
-          <span className={styles.title_3_span}>pe care te poți baza</span>
+          {t('five_gbps.title_main.text')}{' '}
+          <span className={styles.title_3_span}>
+            {t('five_gbps.title_main.highlight')}
+          </span>
         </span>
       </div>
 
@@ -146,11 +147,11 @@ export default function FiveGbps() {
             size="48px"
           />
           <div className={styles.why_card_text}>
-            <div className={styles.why_card_title}>Semnal puternic</div>
+            <div className={styles.why_card_title}>
+              {t('five_gbps.why.signal_title')}
+            </div>
             <div className={styles.why_card_text_span}>
-              {' '}
-              Performanță constantă pe multiple dispozitive, fără pierderi de
-              viteză sau instabilitate.
+              {t('five_gbps.why.signal_text')}
             </div>
           </div>
         </div>
@@ -162,11 +163,10 @@ export default function FiveGbps() {
           />
           <div className={styles.why_card_text}>
             <div className={styles.why_card_title}>
-              Zero lag, zero buffering
+              {t('five_gbps.why.zero_lag_title')}
             </div>
             <div className={styles.why_card_text_span}>
-              Performanță impresionanta pentru gaming competitiv și streaming
-              4K/8K fără întreruperi.
+              {t('five_gbps.why.zero_lag_text')}
             </div>
           </div>
         </div>
@@ -178,11 +178,10 @@ export default function FiveGbps() {
           />
           <div className={styles.why_card_text}>
             <div className={styles.why_card_title}>
-              Stabilitate și latență redusă
+              {t('five_gbps.why.stability_title')}
             </div>
             <div className={styles.why_card_text_span}>
-              Conexiune ultra-fiabilă pentru gaming, productivitate, conferințe
-              video și aplicații critice.
+              {t('five_gbps.why.stability_text')}
             </div>
           </div>
         </div>
@@ -196,21 +195,20 @@ export default function FiveGbps() {
         />
         <div className={styles.what_right}>
           <div className={styles.what_title}>
-            Experimentează viteza supremă pentru o lume fără limite!
+            {t('five_gbps.intro.title')}
           </div>
-          Explorează tehnologia care redefinește viitorul
-          <br />
-          Viteză maxima, latență ultra‑mică și stabilitate rock‑solid – deja
-          validat de profesioniști și pregătit să susțină simultan streaming{' '}
-          <b>8K impecabil</b>, <b>gaming hardcore</b>, <b>backup instant</b>,{' '}
-          <b>Cloud</b> și <b>inovatie</b>.
+          <div
+            dangerouslySetInnerHTML={{ __html: t('five_gbps.intro.text') }}
+          />
         </div>
       </div>
       <div className={styles.what}>
         <div className={`${styles.what_right} ${styles.what_right_2}`}>
-          <div className={styles.what_title}>De ce ai nevoie de 5.5 Gbps ?</div>
+          <div className={styles.what_title}>
+            {t('five_gbps.why_need.title')}
+          </div>
           <div className={styles.what_tsubitle}>
-            Performanță maxima, semnal puternic, în fiecare colț al locuinței!
+            {t('five_gbps.why_need.subtitle')}
           </div>
           <div className={styles.what_list}>
             <div className={styles.what_list_row}>
@@ -221,10 +219,11 @@ export default function FiveGbps() {
                   color={'var(--theme_primary_color_blue_2)'}
                 />
               </div>
-              <span>
-                Dacă ești <b>gamer</b> sau <b>streamer</b> – <br />
-                VR/AR și multiplayer, fără laguri, fără întreruperi
-              </span>
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: t('five_gbps.why_need.items.gamer'),
+                }}
+              />
             </div>
             <div className={styles.what_list_row}>
               <div className={styles.what_list_icon}>
@@ -234,11 +233,11 @@ export default function FiveGbps() {
                   color={'var(--theme_primary_color_blue_2)'}
                 />
               </div>
-              <span>
-                {' '}
-                Dacă ai <b>Smart Home</b> și multe dispozitive IoT – <br />
-                fără întârzieri, conexiune instantă
-              </span>
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: t('five_gbps.why_need.items.smart_home'),
+                }}
+              />
             </div>
             <div className={styles.what_list_row}>
               <div className={styles.what_list_icon}>
@@ -248,11 +247,11 @@ export default function FiveGbps() {
                   color={'var(--theme_primary_color_blue_2)'}
                 />
               </div>
-              <span>
-                Dacă ai <b>familie mare</b> și <b>activă</b> pe Internet –{' '}
-                <br />
-                joacă simultan și fă streaming în rezoluție 8K
-              </span>
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: t('five_gbps.why_need.items.family'),
+                }}
+              />
             </div>
             <div className={styles.what_list_row}>
               <div className={styles.what_list_icon}>
@@ -262,10 +261,11 @@ export default function FiveGbps() {
                   color={'var(--theme_primary_color_blue_2)'}
                 />
               </div>
-              <span>
-                Un <b>job remote</b> – <br />
-                lucrează fără griji cu aplicații critice
-              </span>
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: t('five_gbps.why_need.items.remote_job'),
+                }}
+              />
             </div>
           </div>
         </div>
@@ -284,14 +284,13 @@ export default function FiveGbps() {
             alt="Moldtelecom"
           />
           <div className={`${styles.modem_inside_title} title_3`}>
-            Moldtelecom OptiXstar
+            {t('five_gbps.modem.title')}
           </div>
 
-          <div className={styles.modem_inside_text}>
-            <b> XGS‑PON</b> & <b>Wi‑Fi6</b>: acces ultra‑broadband, acoperire
-            totală și performanță de top pentru voce și date – soluția optică a
-            viitorului.
-          </div>
+          <div
+            className={styles.modem_inside_text}
+            dangerouslySetInnerHTML={{ __html: t('five_gbps.modem.text') }}
+          />
 
           {/*<div className={styles.modem_inside_list}>*/}
           {/*  <div className={styles.modem_inside_row}>*/}
@@ -310,12 +309,14 @@ export default function FiveGbps() {
         </div>
       </div>
 
-      <div className={`title_3 ${styles.domenii}`}>Descoperă abonamentele</div>
+      <div className={`title_3 ${styles.domenii}`}>
+        {t('five_gbps.discover_subscriptions')}
+      </div>
       <Slider {...settings} className={styles.abonaments}>
         <div id={'abonamente'} className={styles.abonaments_block}>
           <div className={styles.abonaments_block_inside}>
             <div className={styles.abonaments_block_inside_pretitle}>
-              Fibră optică + Wi-Fi Mesh
+              {t('five_gbps.abonaments.pretitle')}
             </div>
             <div className={styles.abonaments_block_inside_title}>2.1 Gbps</div>
 
@@ -326,7 +327,7 @@ export default function FiveGbps() {
                   color={'var(--theme_primary_color_blue_2)'}
                 />
               </div>
-              Router Wi-Fi 6 inclus
+              {t('five_gbps.abonaments.features.router')}
             </div>
             <div className={styles.abonaments_block_inside_subtitle}>
               <div className={styles.abonaments_block_inside_subtitle_icon}>
@@ -336,9 +337,13 @@ export default function FiveGbps() {
                 />
               </div>
               <span>
-                x1 <b>Mesh Wi-Fi</b> inclus{' '}
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: t('five_gbps.abonaments.features.mesh', { count: 1 }),
+                  }}
+                />{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
-                  (49 lei/luna)
+                  ({t('five_gbps.abonaments.features.mesh_price', { price: 49 })})
                 </span>
               </span>
             </div>
@@ -346,7 +351,7 @@ export default function FiveGbps() {
             <div className={styles.wifi_carousell_block_inside_btns}>
               <div className={styles.tm_carousell_block_row_tags}>
                 <div className={styles.tm_carousell_block_row_tag}>
-                  50% reducere pentru 2 ani
+                  {t('five_gbps.abonaments.tag')}
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
@@ -362,7 +367,6 @@ export default function FiveGbps() {
               </div>
             </div>
             <Button
-              // onClick={() => setShowPopupFunction('aaa')}
               color="#fff"
               bgcolor="var(--theme_primary_color_blue_4)"
               border="var(--theme_primary_color_blue_4)"
@@ -372,7 +376,7 @@ export default function FiveGbps() {
               icon="arrow_right"
               className={styles.mobile_carousell_block_btn_buy}
               onClick={() =>
-                setPopup('1', '2.1Gbps', `(Fibră optică + Wi-Fi Mesh)`)
+                setPopup('1', '2.1Gbps', `(${t('five_gbps.abonaments.pretitle')})`)
               }
             >
               {t('order_now')}
@@ -381,10 +385,12 @@ export default function FiveGbps() {
         </div>
         <div className={styles.abonaments_block}>
           <div className={styles.roaming_carousell_block_sp}>
-            <div className={styles.roaming_carousell_block_sp_title}>NEW</div>
+            <div className={styles.roaming_carousell_block_sp_title}>
+              {t('five_gbps.abonaments.new')}
+            </div>
             <div className={styles.abonaments_block_inside}>
               <div className={styles.abonaments_block_inside_pretitle}>
-                Fibră optică + Wi-Fi Mesh
+                {t('five_gbps.abonaments.pretitle')}
               </div>
               <div className={styles.abonaments_block_inside_title}>
                 5.5 Gbps
@@ -397,7 +403,7 @@ export default function FiveGbps() {
                     color={'var(--theme_primary_color_blue_2)'}
                   />
                 </div>
-                Router Wi-Fi 6 inclus
+                {t('five_gbps.abonaments.features.router')}
               </div>
               <div className={styles.abonaments_block_inside_subtitle}>
                 <div className={styles.abonaments_block_inside_subtitle_icon}>
@@ -407,11 +413,15 @@ export default function FiveGbps() {
                   />
                 </div>
                 <span>
-                  x2 <b>Mesh Wi-Fi</b> inclus{' '}
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: t('five_gbps.abonaments.features.mesh', { count: 2 }),
+                    }}
+                  />{' '}
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
                   >
-                    (98 lei/luna)
+                    ({t('five_gbps.abonaments.features.mesh_price', { price: 98 })})
                   </span>
                 </span>
               </div>
@@ -419,7 +429,7 @@ export default function FiveGbps() {
               <div className={styles.wifi_carousell_block_inside_btns}>
                 <div className={styles.tm_carousell_block_row_tags}>
                   <div className={styles.tm_carousell_block_row_tag}>
-                    50% reducere pentru 2 ani
+                    {t('five_gbps.abonaments.tag')}
                   </div>
                 </div>
                 <div className={styles.mobile_carousell_price}>
@@ -435,7 +445,6 @@ export default function FiveGbps() {
                 </div>
               </div>
               <Button
-                // onClick={() => setShowPopupFunction('aaa')}
                 color="#fff"
                 bgcolor="var(--theme_primary_color_blue_4)"
                 border="var(--theme_primary_color_blue_4)"
@@ -445,7 +454,7 @@ export default function FiveGbps() {
                 icon="arrow_right"
                 className={styles.mobile_carousell_block_btn_buy}
                 onClick={() =>
-                  setPopup('1', '5.5Gbps', `(Fibră optică + Wi-Fi Mesh)`)
+                  setPopup('1', '5.5Gbps', `(${t('five_gbps.abonaments.pretitle')})`)
                 }
               >
                 {t('order_now')}
@@ -464,7 +473,7 @@ export default function FiveGbps() {
           hover_bgcolor="var(--theme_primary_color_blue_2)"
           icon="arrow_right"
         >
-          Promo Abonamente
+          {t('five_gbps.abonaments.buttons.promo')}
         </Button>
         <Button
           to={`https://www.moldtelecom.md/${t('lang')}/echipamente-wifi`}
@@ -475,60 +484,28 @@ export default function FiveGbps() {
           hover_bgcolor="var(--theme_primary_color_blue_2)"
           icon="arrow_right"
         >
-          Vezi caracteristicile
+          {t('five_gbps.abonaments.buttons.features')}
         </Button>
       </div>
 
       <Details>
-        <DetailsBlock title={'Condiții de utilizare Abonamente'}>
+        <DetailsBlock title={t('five_gbps.details.title')}>
           <ul>
-            <li>Oferta este valabilă în perioada 21.08.2025–25.11.2025.</li>
-            <li>
-              Se adresează atât clienților noi, cât și celor existenți cu
-              contract expirat. Contractul se semnează pe 24 de luni, iar
-              conectarea este gratuită.
-            </li>
-            <li>
-              Clienții care aleg abonamente de Internet cu viteze de 2.1 Gbps
-              sau 5.5 Gbps beneficiază de o reducere lunară de 300 lei, valabilă
-              pe toată perioada contractuală.
-            </li>
-            <li>
-              Pentru viteza de 2.1 Gbps, oferta include un router performant și
-              un dispozitiv Mesh Wi-Fi, iar pentru viteza de 5.5 Gbps – un
-              router performant și două dispozitive Mesh Wi-Fi. Echipamentele se
-              oferă pe durata contractului și trebuie returnate în cazul
-              rezilierii.
-            </li>
-            <li>
-              Vitezele indicate sunt valori maxime. Viteza efectivă disponibilă
-              la adresa clientului depinde de factori tehnici ce nu pot fi
-              controlați de Moldtelecom. Serviciul este disponibil doar în
-              localitățile în care Moldtelecom poate furniza aceste viteze în
-              condiții optime.
-            </li>
-            <li>
-              În cazul rezilierii anticipate a serviciului de Internet, înainte
-              de expirarea perioadei contractuale, se va aplica o penalitate
-              conform contractului.
-            </li>
+            {(t('five_gbps.details.items', { returnObjects: true }) as string[]).map(
+              (item, i) => (
+                <li key={i}>{item}</li>
+              )
+            )}
           </ul>
         </DetailsBlock>
       </Details>
 
       <div className={styles.roaming_warning}>
         <div className={`${styles.roaming_warning_red}`}></div>
-        <div className={styles.roaming_warning_inside}>
-          Vitezele de 2,1 Gbps și 5,5 Gbps sunt posibile datorită tehnologiei
-          XGS-PON — cea mai nouă generație de fibră optică, care permite viteze
-          de până la 10 Gbps per port.
-          <br />
-          {/*<br/>*/}
-          Totuși, pentru a beneficia efectiv de aceste viteze, dispozitivele
-          terminale de acasă (PC, laptop, tabletă, router) trebuie să suporte
-          conexiuni la aceste viteze. În caz contrar, viteza maximă va fi
-          limitată de performanța echipamentului propriu.
-        </div>
+        <div
+          className={styles.roaming_warning_inside}
+          dangerouslySetInnerHTML={{ __html: t('five_gbps.warning') }}
+        />
       </div>
 
       <div className={styles.eco}>
@@ -536,20 +513,19 @@ export default function FiveGbps() {
           <div className={styles.eco_icon}>
             <Icon type={'eco'} color={'#82C84F'} size={'68px'} />
           </div>
-          <div className={styles.eco_card_text}>
-            Rețeaua <b>XGS-PON</b> are o arhitectura pasivă și eficientă, ce
-            reduce amprenta de carbon și costurile de energie
-          </div>
+          <div
+            className={styles.eco_card_text}
+            dangerouslySetInnerHTML={{ __html: t('five_gbps.eco.card1') }}
+          />
         </div>
         <div className={styles.eco_card}>
           <div className={styles.eco_icon}>
             <Icon type={'eco_sign'} color={'#82C84F'} size={'68px'} />
           </div>
-          <div className={styles.eco_card_text}>
-            Acum poți semna contractul cu <b>M‑Sign</b> digital, fără hârtie,
-            contribuie la reducerea amprentei de carbon și la un mediu mai
-            sustenabil
-          </div>
+          <div
+            className={styles.eco_card_text}
+            dangerouslySetInnerHTML={{ __html: t('five_gbps.eco.card2') }}
+          />
         </div>
       </div>
 

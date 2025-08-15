@@ -2526,5 +2526,72 @@
     },
     "discount": "Reducere",
     "smartphone": "Ofertă smartphone"
+  },
+  "five_gbps": {
+    "breadcrumb": {
+      "internet": "Internet",
+      "five_gbps": "5.5 Gbps"
+    },
+    "title_main": {
+      "text": "Rețeaua de internet fix",
+      "highlight": "pe care te poți baza"
+    },
+    "why": {
+      "signal_title": "Semnal puternic",
+      "signal_text": "Performanță constantă pe multiple dispozitive, fără pierderi de viteză sau instabilitate.",
+      "zero_lag_title": "Zero lag, zero buffering",
+      "zero_lag_text": "Performanță impresionantă pentru gaming competitiv și streaming 4K/8K fără întreruperi.",
+      "stability_title": "Stabilitate și latență redusă",
+      "stability_text": "Conexiune ultra-fiabilă pentru gaming, productivitate, conferințe video și aplicații critice."
+    },
+    "intro": {
+      "title": "Experimentează viteza supremă pentru o lume fără limite!",
+      "text": "Explorează tehnologia care redefinește viitorul<br/>Viteză maxima, latență ultra‑mică și stabilitate rock‑solid – deja validat de profesioniști și pregătit să susțină simultan streaming <b>8K impecabil</b>, <b>gaming hardcore</b>, <b>backup instant</b>, <b>Cloud</b> și <b>inovație</b>."
+    },
+    "why_need": {
+      "title": "De ce ai nevoie de 5.5 Gbps ?",
+      "subtitle": "Performanță maxima, semnal puternic, în fiecare colț al locuinței!",
+      "items": {
+        "gamer": "Dacă ești <b>gamer</b> sau <b>streamer</b> – <br/>VR/AR și multiplayer, fără laguri, fără întreruperi",
+        "smart_home": "Dacă ai <b>Smart Home</b> și multe dispozitive IoT – <br/>fără întârzieri, conexiune instantă",
+        "family": "Dacă ai <b>familie mare</b> și <b>activă</b> pe Internet – <br/>joacă simultan și fă streaming în rezoluție 8K",
+        "remote_job": "Un <b>job remote</b> – <br/>lucrează fără griji cu aplicații critice"
+      }
+    },
+    "modem": {
+      "title": "Moldtelecom OptiXstar",
+      "text": "<b>XGS‑PON</b> & <b>Wi‑Fi6</b>: acces ultra‑broadband, acoperire totală și performanță de top pentru voce și date – soluția optică a viitorului."
+    },
+    "discover_subscriptions": "Descoperă abonamentele",
+    "abonaments": {
+      "pretitle": "Fibră optică + Wi-Fi Mesh",
+      "tag": "50% reducere pentru 2 ani",
+      "features": {
+        "router": "Router Wi-Fi 6 inclus",
+        "mesh": "x{{count}} <b>Mesh Wi-Fi</b> inclus",
+        "mesh_price": "{{price}} lei/lună"
+      },
+      "buttons": {
+        "promo": "Promo Abonamente",
+        "features": "Vezi caracteristicile"
+      },
+      "new": "NOU"
+    },
+    "details": {
+      "title": "Condiții de utilizare Abonamente",
+      "items": [
+        "Oferta este valabilă în perioada 21.08.2025–25.11.2025.",
+        "Se adresează atât clienților noi, cât și celor existenți cu contract expirat. Contractul se semnează pe 24 de luni, iar conectarea este gratuită.",
+        "Clienții care aleg abonamente de Internet cu viteze de 2.1 Gbps sau 5.5 Gbps beneficiază de o reducere lunară de 300 lei, valabilă pe toată perioada contractuală.",
+        "Pentru viteza de 2.1 Gbps, oferta include un router performant și un dispozitiv Mesh Wi-Fi, iar pentru viteza de 5.5 Gbps – un router performant și două dispozitive Mesh Wi-Fi. Echipamentele se oferă pe durata contractului și trebuie returnate în cazul rezilierii.",
+        "Vitezele indicate sunt valori maxime. Viteza efectivă disponibilă la adresa clientului depinde de factori tehnici ce nu pot fi controlați de Moldtelecom. Serviciul este disponibil doar în localitățile în care Moldtelecom poate furniza aceste viteze în condiții optime.",
+        "În cazul rezilierii anticipate a serviciului de Internet, înainte de expirarea perioadei contractuale, se va aplica o penalitate conform contractului."
+      ]
+    },
+    "warning": "Vitezele de 2,1 Gbps și 5,5 Gbps sunt posibile datorită tehnologiei XGS-PON — cea mai nouă generație de fibră optică, care permite viteze de până la 10 Gbps per port.<br/>Totuși, pentru a beneficia efectiv de aceste viteze, dispozitivele terminale de acasă (PC, laptop, tabletă, router) trebuie să suporte conexiuni la aceste viteze. În caz contrar, viteza maximă va fi limitată de performanța echipamentului propriu.",
+    "eco": {
+      "card1": "Rețeaua <b>XGS-PON</b> are o arhitectură pasivă și eficientă, ce reduce amprenta de carbon și costurile de energie",
+      "card2": "Acum poți semna contractul cu <b>M‑Sign</b> digital, fără hârtie, contribuie la reducerea amprentei de carbon și la un mediu mai sustenabil"
+    }
   }
 }
