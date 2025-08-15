@@ -18,7 +18,7 @@ import TableRoaming from '../../../../components/Popups/TableRoaming.tsx';
 import Functions from '../../../../components/functions/Functions.tsx';
 import { useState } from 'react';
 import Popup from '../../../../components/Popup/Popup.tsx';
-import Toggle from '../../../../components/toggle/Toggle.tsx';
+// import Toggle from '../../../../components/toggle/Toggle.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
 import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
 import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
@@ -921,10 +921,10 @@ export default function MobileSchool() {
             {(activeConfig === '1' ? cond1 : cond2).map((text, i) => (
               <li key={i}>{text}</li>
             ))}
-            {(activeConfig == '1' &&
+            {activeConfig == '1' && (
               <div className={styles.detalii_bold}>
-              {t('tm.details.conditii.title_3')}
-            </div>
+                {t('tm.details.conditii.title_3')}
+              </div>
             )}
             {(activeConfig === '1' ? common_1 : []).map(
               (text: string, i: number) => (
@@ -983,9 +983,7 @@ export default function MobileSchool() {
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
-                  <td>
-                    0,00
-                  </td>
+                  <td>0,00</td>
                 </tr>
               </tbody>
             </table>
