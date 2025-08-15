@@ -3,10 +3,41 @@ import { useTranslation } from 'react-i18next';
 
 export default function HomeTemplink() {
   const { t } = useTranslation();
+  const lang = t('lang'); // e.g. "ro", "ru", "en"
+  const target = `https://www.moldtelecom.md/${lang}`;
 
   useEffect(() => {
-    window.location.href = `https://www.moldtelecom.md/${t('lang')}`;
-  });
+    let navigated = false;
 
-  return null; // sau un fallback gen: <p>Redirecting...</p>
+    const markNavigated = () => {
+      navigated = true;
+    };
+    window.addEventListener('pagehide', markNavigated);
+    window.addEventListener('beforeunload', markNavigated);
+
+    // Redirect după ~0.01 secunde
+    const timer = setTimeout(() => {
+      try {
+        window.location.assign(target);
+      } catch {
+        // dacă eșuează, fallback mai jos
+      }
+    }, 10);
+
+    // Fallback: dacă nu a început navigarea, forțează replace după 1.5s
+    const fallback = setTimeout(() => {
+      if (!navigated) {
+        window.location.replace(target);
+      }
+    }, 1500);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(fallback);
+      window.removeEventListener('pagehide', markNavigated);
+      window.removeEventListener('beforeunload', markNavigated);
+    };
+  }, [target]);
+
+  return null; // sau <p>Redirecting...</p>
 }

@@ -158,10 +158,10 @@ export default function MobileSchool() {
     setTestGratis(false);
   };
 
-  const cond1 = t('tm.details.conditii.itemsConfig1', {
+  const cond1 = t('tm.details.conditii.itemsConfig1_1', {
     returnObjects: true,
   }) as string[];
-  const cond2 = t('tm.details.conditii.itemsConfigElse', {
+  const cond2 = t('tm.details.conditii.itemsConfigElse_1', {
     returnObjects: true,
   }) as string[];
   const common = t('tm.details.conditii.commonItems', {

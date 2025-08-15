@@ -10,6 +10,7 @@ import ScrollToTop from './components/scroll_to_top/ScrollToTop';
 import NotFound from './pages/not_found/NotFound';
 import { routesConfig } from './routesConfig';
 import { LanguageProvider } from './context/LanguageContext';
+import HomeTemplink from './pages/home/Home_templink.tsx';
 
 function AppContent() {
   return (
@@ -22,8 +23,10 @@ function AppContent() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Navigate to="/ro" replace />} />
-        <Route path="/" element={<NotFound />} />
-        <Route path="/:lang/" element={<NotFound />} />
+        {/*<Route path="/" element={<NotFound />} />*/}
+        {/*<Route path="/:lang/" element={<NotFound />} />*/}
+        <Route path="/" element={<HomeTemplink />} />
+        <Route path="/:lang/" element={<HomeTemplink />} />
         <Route path="*" element={<NotFound />} />
         {routesConfig.map((route, index) => (
           <Route key={index} path={route.path} element={route.element} />

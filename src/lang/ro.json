@@ -2051,10 +2051,19 @@
           "Perioada minimă contractuală pentru abonamentul Start 95 este de 6 luni",
           "Perioada de comercializare a ofertei: 03.03.2025 – 25.08.2025 (inclusiv)."
         ],
+        "itemsConfig1_1": [
+          "Oferta promoțională presupune acordarea unei reduceri lunare la plata abonamentului, în funcție de planul tarifar ales și este valabilă pe întreaga durată contractuală de 24 de luni.",
+          "Oferta este valabilă pentru abonații noi, la conectare nouă sau portarea numărului din altă rețea, precum și pentru abonații existenți, la reperfectarea contractului.",
+          "Perioada de comercializare a ofertei: 21.08.2025 – 25.11.2025 (inclusiv).",
+          "Oferta promoțională include și posibilitatea de a achiziționa un smartphone la prețul de 1 leu sau alte dispozitive la preț promoțional, în funcție de ofertă, în limita stocului disponibil, valabilă pentru abonații noi la portare, conectare nouă, precum și abonații existenți, la reperfectarea contractului. Perioada promoțională este 21.08.2024 – 14.11.2025 (inclusiv)"
+        ],
         "itemsConfigElse": [
           "Oferta promo presupune acordarea unei reduceri 50 lei (abonament Star 150), 75 lei (abonament Liberty 190) sau 100 lei (abonament Liberty Plus 250) reducere la plata lunară de abonament (în dependență de abonament), în combinație cu serviciul de Internet Fix sau Internet Fix+IPTV și se oferă pe toată durata contractuală la conectarea/deținerea unei linii de Internet Fix sau Internet Fix+IPTV.",
           "La promoție pot participa abonați toți abonații noi, abonații portați, abonații existenți de telefonie mobilă cu perioada contractuală promoțională expirată și utilizatorii PrePay, care migrează spre abonament.",
           "Perioada de comercializare a ofertei: 03.03.2025 – 25.08.2025 (inclusiv)."
+        ],
+        "itemsConfigElse_1": [
+          "Oferta promo presupune acordarea unei reduceri la plata lunară de abonament, precum urmează: 40 lei (Start 120), 50 lei (Flex 150), 75 lei (Liberty 200) și 100 lei (Liberty Plus 290), în combinație cu serviciul de Internet Fix sau Internet Fix+IPTV și se oferă pe toată durata contractuală la conectarea/deținerea unei linii de Internet Fix sau Internet Fix+IPTV."
         ],
         "commonItems": [
           "Abonații conectați la abonamentele Liberty 190 și Liberty Plus 250 pot comunica în Roaming UE+SEE din contul minutelor naționale incluse în abonament. În plus, abonamentul Liberty 190 oferă 7 GB, iar abonamentul Liberty Plus 250 – 10 GB disponibili spre utilizare în Roaming în rețeaua operatorilor incluși în grupul UE+SEE.",

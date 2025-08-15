@@ -19,7 +19,6 @@ import M2M from './pages/business/m2m/M2M.tsx';
 import GpsTrack from './pages/business/gps_track/GpsTrack.tsx';
 import AppRedirect from './components/app/AppRedirect.tsx';
 import SmsServices from './pages/personal/oferte/sms_services/SmsServices.tsx';
-import MobileOld from './pages/personal/oferte/mobile/Mobile_old.tsx';
 import FiveGbps from './pages/personal/oferte/5gbps/FiveGbps.tsx';
 import Fibra from './pages/business/fibra/Fibra.tsx';
 import Double from './pages/personal/oferte/double/Double.tsx';
@@ -30,6 +29,7 @@ import Gaming from './pages/personal/oferte/gaming/Gaming.tsx';
 import Promo1536965 from './pages/eshop/promo_b2s/Promo1536965.tsx';
 import SecuritateDigitala from './pages/personal/SecuritrateDigitala/SecuritateDigitala.tsx';
 import MobileSchool from './pages/personal/oferte/mobile/MobileSchool.tsx';
+import HomeTemplink from './pages/home/Home_templink.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -38,11 +38,16 @@ export interface RouteConfig {
 }
 
 export const routesConfig: RouteConfig[] = [
-  { path: '/', element: React.createElement(NotFound) },
+  {
+    path: '/',
+    // element: React.createElement(NotFound)
+    element: React.createElement(HomeTemplink),
+  },
   {
     path: '/:lang/',
     // i18nKey: 'home.title',
-    element: React.createElement(NotFound),
+    // element: React.createElement(NotFound),
+    element: React.createElement(HomeTemplink),
   },
   {
     path: '/:lang/newsite',
@@ -81,10 +86,10 @@ export const routesConfig: RouteConfig[] = [
     path: '/:lang/portare',
     element: React.createElement(Portare),
   },
-  {
-    path: '/:lang/mobile_old',
-    element: React.createElement(MobileOld),
-  },
+  // {
+  //   path: '/:lang/mobile_old',
+  //   element: React.createElement(MobileOld),
+  // },
 
   {
     path: '/:lang/securitatea-digitala',
