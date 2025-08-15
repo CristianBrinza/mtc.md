@@ -1299,7 +1299,7 @@ export default function Mobile() {
           <div className={styles.tm_discover_card}>
             <img
               className={styles.tm_discover_img}
-              src={`/images/landings/18100125${t('lang')}.webp`}
+              src={`/images/landings/18150125${t('lang')}.webp`}
               alt="Moldtelecom"
             />
             <div className={styles.tm_discover_card_inside}>
