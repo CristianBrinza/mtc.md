@@ -2045,6 +2045,7 @@
       "conditii": {
         "title": "Condiții de utilizare Abonamente",
         "title_2": "Detalii ofertă",
+        "title_3": "Oferata \"Dispozitiv la DOAR 1 leu, sau Preț Special!\":",
         "itemsConfig1": [
           "Oferta promoțională constă în acordarea unei reduceri de 35% la plata lunare a abonamentelor Star 120, Star150, Liberty 190 și Liberty Plus 250, valabilă pe întreaga perioadă contractuală de 24 de luni.",
           "Oferta este destinată pentru clienții noi, la conectare, portare din altă rețea sau pentru cei existenți, la reperfectarea contractului sau migrarea de la Prepay.",
@@ -2072,6 +2073,11 @@
           "Viteza la internet se oferă în funcție de posibilitățile tehnice.",
           "Traficul Internet va avea viteza de transfer a datelor la capacitate maximă download (descărcare) și de până la 512 Kbps upload (încărcare), în dependență de opțiunile suplimentare activate – pentru tehnologia 3G, și la capacitate maximă download/upload – pentru tehnologia 4G.",
           "Rezoluțiunea anticipată (inclusiv migrarea spre PrePay, schimbul de abonament către unul cu valoare mai mică sau port out) până la expirarea perioadei minime contractuale implică achitarea unei plăți cu titlu de prejudiciu, conform formulei: 35% din plata de abonament * numărul de luni acordare reducere."
+        ],
+        "commonItems_1": [
+          "Oferta promoțională include și posibilitatea de a achiziționa un smartphone Xiaomi Redmi 14C 4/128 sau Samsung A06 4/128GB la prețul de 1 leu, sau alte dispozitive la preț promoțional, în funcție de ofertă, în limita stocului disponibil, valabilă pentru abonații noi la portare, conectare nouă, precum și abonații existenți, la reperfectarea contractului.",
+          "Terminalele la preț promoțional, vor fi acordate în combinație cu abonamentele de Telefonie mobilă: Flex 150, Liberty 200 și Liberty Plus 290.",
+          "Perioada promoțională este 21.08.2025 – 25.11.2025 (inclusiv)."
         ]
       },
       "list": "Lista operatorilor în rețeaua cărora este disponibil conținutul Roaming UE:",

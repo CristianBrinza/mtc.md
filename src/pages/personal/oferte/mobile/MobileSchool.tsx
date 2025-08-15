@@ -167,6 +167,9 @@ export default function MobileSchool() {
   const common = t('tm.details.conditii.commonItems', {
     returnObjects: true,
   }) as string[];
+  const common_1 = t('tm.details.conditii.commonItems_1', {
+    returnObjects: true,
+  }) as string[];
   const roamingItems = t('tm.details.roaming.items', {
     returnObjects: true,
   }) as string[];
@@ -435,7 +438,9 @@ export default function MobileSchool() {
                   handleConfigClick(
                     'star 120',
                     activeConfig == '1' ? '95' : '80',
-                    t('tm.35_proc')
+                    activeConfig == '1'
+                      ? `-25 ${t('tm.lei_reducere_2_ani')}`
+                      : `-40 ${t('tm.lei_reducere')}`
                   )
                 }
                 color="#fff"
@@ -735,7 +740,7 @@ export default function MobileSchool() {
                     'liberty 200',
                     activeConfig == '1' ? '140' : '125',
                     activeConfig == '1'
-                      ? t('tm.35_proc')
+                      ? `-60 ${t('tm.lei_reducere_2_ani')}`
                       : `-75 ${t('tm.lei_reducere')}`
                   )
                 }
@@ -887,11 +892,11 @@ export default function MobileSchool() {
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
-                    'liberty 250+',
+                    'liberty 290+',
                     activeConfig == '1' ? '162.5' : '150',
                     activeConfig == '1'
-                      ? t('tm.35_proc')
-                      : `-100 '${t('tm.lei_reducere')}`
+                      ? `-100 ${t('tm.lei_reducere_2_ani')}`
+                      : `-100 ${t('tm.lei_reducere')}`
                   )
                 }
                 color="#fff"
@@ -915,6 +920,15 @@ export default function MobileSchool() {
             {(activeConfig === '1' ? cond1 : cond2).map((text, i) => (
               <li key={i}>{text}</li>
             ))}
+
+            <div className={styles.detalii_bold}>
+              {t('tm.details.conditii.title_3')}
+            </div>
+            {(activeConfig === '1' ? common_1 : []).map(
+              (text: string, i: number) => (
+                <li key={i}>{text}</li>
+              )
+            )}
           </ul>
         </DetailsBlock>
         <DetailsBlock title={t('tm.details.conditii.title')}>

@@ -59,6 +59,10 @@
   font-family: Poppins, sans-serif;
   font-weight: 600;
 }
+.detalii_bold {
+  margin: 20px 0 10px;
+  font-weight: 600;
+}
 
 @media (max-width: 1300px) {
   .conversion_img_mob {
