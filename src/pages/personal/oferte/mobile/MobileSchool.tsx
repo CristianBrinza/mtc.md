@@ -164,7 +164,7 @@ export default function MobileSchool() {
   const cond2 = t('tm.details.conditii.itemsConfigElse_1', {
     returnObjects: true,
   }) as string[];
-  const common = t('tm.details.conditii.commonItems', {
+  const common = t('tm.details.conditii.commonItems_new', {
     returnObjects: true,
   }) as string[];
   const common_1 = t('tm.details.conditii.commonItems_1', {
@@ -954,28 +954,28 @@ export default function MobileSchool() {
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
-                  <td>0,20</td>
+                  <td>0,00</td>
                 </tr>
                 <tr>
                   <td>{t('tm.plan_names.star_120')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
-                  <td>0,20</td>
+                  <td>0,00</td>
                 </tr>
                 <tr>
                   <td>{t('tm.plan_names.star_150')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
-                  <td>0,20</td>
+                  <td>0,00</td>
                 </tr>
                 <tr>
                   <td>{t('tm.plan_names.liberty_190')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
-                  <td>0,20</td>
+                  <td>0,00</td>
                 </tr>
                 <tr>
                   <td>{t('tm.plan_names.liberty_plus_250')}</td>
@@ -1087,8 +1087,8 @@ export default function MobileSchool() {
             device_id={294024406}
             image="/images/shop/313515267.webp"
             price={1999}
-            old_price={4560}
-            reducere="- 2 561"
+            old_price={4680}
+            reducere="- 2 681"
             title="Samsung"
             subtitle="Galaxy Watch 7"
             characteristics='1.5" / 40mm / L300'
@@ -1124,7 +1124,7 @@ export default function MobileSchool() {
             image="/images/shop/193519269.webp"
             price={1799}
             old_price={4680}
-            reducere="- 2 601"
+            reducere="- 2 881"
             title="Xiaomi"
             subtitle="Redmi Note 14"
             characteristics='4GB /256GB /eSIM"'
@@ -1133,24 +1133,6 @@ export default function MobileSchool() {
             show_comapre={false}
             buy={() => {
               setPopup('Xiaomi Redmi Note 14', '+ abonament');
-            }}
-          />
-        </div>
-        <div className={styles.tm_carousell_block}>
-          <ShopCard
-            device_id={294024409}
-            image="/images/shop/113511268.webp"
-            price={999}
-            old_price={3600}
-            reducere="- 2 601"
-            title="Samsung"
-            subtitle="A16"
-            characteristics='4/128GB 5000 mAh /6,7"'
-            style_type={'gray'}
-            show_like={false}
-            show_comapre={false}
-            buy={() => {
-              setPopup('Samsung A16', '+ abonament');
             }}
           />
         </div>
@@ -1356,6 +1338,39 @@ export default function MobileSchool() {
               </div>
               <Button
                 to={`https://www.moldtelecom.md/${t('lang')}/personal/one_number`}
+                color={'var(--theme_primary_color_blue_4)'}
+                bgcolor={'var(--theme_primary_color_blue_3)'}
+                border={'var(--theme_primary_color_blue_3)'}
+                hover_border={'var(--theme_primary_color_blue_2)'}
+                hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+                icon={'arrow_right'}
+              >
+                {t('tm.discover.btn')}
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div className={styles.tm_discover_inside}>
+          <div className={styles.tm_discover_card}>
+            <img
+              className={styles.tm_discover_img}
+              src={`/images/landings/18100723${t('lang')}.webp`}
+              alt="Moldtelecom"
+            />
+            <div className={styles.tm_discover_card_inside}>
+              <div className={styles.tm_discover_card_inside_top}>
+                <div className={styles.tm_discover_card_inside_top_tag}>
+                  {t('tm.discover.card_5.tag')}
+                </div>
+                <div className={styles.tm_discover_card_title}>
+                  {t('tm.discover.card_5.title')}
+                </div>
+                <div className={styles.tm_discover_card_text}>
+                  {t('tm.discover.card_5.text')}
+                </div>
+              </div>
+              <Button
+                to={`https://www.moldtelecom.md/${t('lang')}/personal/esim`}
                 color={'var(--theme_primary_color_blue_4)'}
                 bgcolor={'var(--theme_primary_color_blue_3)'}
                 border={'var(--theme_primary_color_blue_3)'}

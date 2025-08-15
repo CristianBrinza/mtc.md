@@ -1995,7 +1995,7 @@
       "card_2": {
         "tag": "Din aplicație",
         "title": "Acum ai Moldtelecom TV la doar 40 lei!",
-        "text": "Accesează acum <b>oriunde</b> în rețeaua Moldtelecom pe <b>orice ecran</b>."
+        "text": "Activează serviciul și urmărește canalele tale preferate direct pe telefon, oriunde te-ai afla, <b>la doar 40 de lei/lună</b>."
       },
       "card_3": {
         "tag": "Din aplicație",
@@ -2006,6 +2006,11 @@
         "tag": "Din aplicație",
         "title": "Comunica fata telefon, direct de pe Smartwatch",
         "text": "Acum poți utiliza atât telefonul, cât și ceasul inteligent, cu un singur număr de telefon și un singur abonament."
+      },
+      "card_5": {
+        "tag": "Descoperă",
+        "title": "Cu eSIM te conectezi 100% digital.",
+        "text": "eSIMplu să te conectezi prin câteva clickuri la rețeaua mobilă Moldtelecom, oriunde te-ai afla."
       }
     },
     "details": {
@@ -2070,6 +2075,13 @@
           "Abonații conectați la abonamentele Liberty 190 și Liberty Plus 250 pot comunica în Roaming UE+SEE din contul minutelor naționale incluse în abonament. În plus, abonamentul Liberty 190 oferă 7 GB, iar abonamentul Liberty Plus 250 – 10 GB disponibili spre utilizare în Roaming în rețeaua operatorilor incluși în grupul UE+SEE.",
           "Pentru apelurile internaționale, destinațiile spre rețeaua fixă și mobilă sunt următoarele țări: Marea Britanie, Franța, Germania, Italia, Spania, România, Israel, Rusia, Cehia, Ucraina.",
           "Abonații conectați la abonamentul ”Liberty Plus 250” sunt obligați să evite folosirea abuzivă a serviciilor incluse în abonament. Prin ”folosire abuzivă” se înțelege efectuarea de apeluri de ieșire spre „alți operatori naționali” și/sau expedierea SMS-urilor spre „alți operatori naționali” către mai mult de 200 numere telefonice unice în decursul unei perioade de facturare, și/sau efectuarea, în decursul unei perioade de facturare, de apeluri nelimitate spre „alți operatori naționali” în volum ce depășește 3000 minute, cu condiția ca numărul de minute de ieșire să depășească de cel puțin două ori numărul minutelor de intrare dinspre „alți operatori naționali” în aceeași perioadă. Abonații care vor fi identificați cu utilizare abuzivă vor beneficia în continuare de 1000 minute și 245 SMS naționale.",
+          "Viteza la internet se oferă în funcție de posibilitățile tehnice.",
+          "Traficul Internet va avea viteza de transfer a datelor la capacitate maximă download (descărcare) și de până la 512 Kbps upload (încărcare), în dependență de opțiunile suplimentare activate – pentru tehnologia 3G, și la capacitate maximă download/upload – pentru tehnologia 4G.",
+          "Rezoluțiunea anticipată (inclusiv migrarea spre PrePay, schimbul de abonament către unul cu valoare mai mică sau port out) până la expirarea perioadei minime contractuale implică achitarea unei plăți cu titlu de prejudiciu, conform formulei: 35% din plata de abonament * numărul de luni acordare reducere."
+        ],
+        "commonItems_new": [
+          "Pentru apelurile internaționale, destinațiile spre rețeaua fixă și mobilă sunt următoarele țări: Marea Britanie, Franța, Germania, Italia, Spania, România, Israel, Rusia, Cehia, Ucraina.",
+          "Abonații conectați la abonamentul ”Liberty Plus 290” sunt obligați să evite folosirea abuzivă a serviciilor incluse în abonament. Prin ”folosire abuzivă” se înțelege efectuarea de apeluri de ieșire spre „alți operatori naționali” și/sau expedierea SMS-urilor spre „alți operatori naționali” către mai mult de 200 numere telefonice unice în decursul unei perioade de facturare, și/sau efectuarea, în decursul unei perioade de facturare, de apeluri nelimitate spre „alți operatori naționali” în volum ce depășește 3000 minute, cu condiția ca numărul de minute de ieșire să depășească de cel puțin două ori numărul minutelor de intrare dinspre „alți operatori naționali” în aceeași perioadă. Abonații care vor fi identificați cu utilizare abuzivă vor beneficia în continuare de 1000 minute și 245 SMS naționale.",
           "Viteza la internet se oferă în funcție de posibilitățile tehnice.",
           "Traficul Internet va avea viteza de transfer a datelor la capacitate maximă download (descărcare) și de până la 512 Kbps upload (încărcare), în dependență de opțiunile suplimentare activate – pentru tehnologia 3G, și la capacitate maximă download/upload – pentru tehnologia 4G.",
           "Rezoluțiunea anticipată (inclusiv migrarea spre PrePay, schimbul de abonament către unul cu valoare mai mică sau port out) până la expirarea perioadei minime contractuale implică achitarea unei plăți cu titlu de prejudiciu, conform formulei: 35% din plata de abonament * numărul de luni acordare reducere."
