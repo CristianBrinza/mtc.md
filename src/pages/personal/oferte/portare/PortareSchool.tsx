@@ -6,7 +6,7 @@ import Footer from '../../../../components/footer/Footer.tsx';
 import { useTranslation } from 'react-i18next';
 import SEO from '../../../../components/SEO';
 import Hero from '../../../../components/hero/Hero.tsx';
-import styles from './Mobile.module.css';
+import styles from './PortareSchool.module.css';
 import Button from '../../../../components/Button.tsx';
 import MyApp from '../../../../components/app/MyApp.tsx';
 import Details, {
@@ -18,7 +18,7 @@ import TableRoaming from '../../../../components/Popups/TableRoaming.tsx';
 import Functions from '../../../../components/functions/Functions.tsx';
 import { useState } from 'react';
 import Popup from '../../../../components/Popup/Popup.tsx';
-import Toggle from '../../../../components/toggle/Toggle.tsx';
+// import Toggle from '../../../../components/toggle/Toggle.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
 import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
 import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
@@ -26,17 +26,17 @@ import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 import ScrollableWrapper from '../../../../components/Popup/ScrollableWrapper.tsx';
 import { trackEvent } from '../../../../initAnalytics.ts';
 
-export default function Mobile() {
+export default function PortareSchool() {
   const { t } = useTranslation();
   const [testGratis, setTestGratis] = useState(false);
   const seo = {
-    title: t('pages.mobile.title'),
-    description: t('pages.mobile.description'),
-    keywords: t('pages.mobile.keywords'),
+    title: t('pages.portare.title'),
+    description: t('pages.portare.description'),
+    keywords: t('pages.portare.keywords'),
   };
   const breadcrumbItems = [
-    { label: t('tm.breadcrumb.promo'), url: ' ' },
-    { label: t('tm.breadcrumb.mobile') },
+    { label: t('portare.breadcrumb.promo'), url: ' ' },
+    { label: t('portare.breadcrumb.portare') },
   ];
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [activePopupConfig, setActivePopupConfig] = useState<string>('');
@@ -158,16 +158,16 @@ export default function Mobile() {
     setTestGratis(false);
   };
 
-  const promoItems = t('tm.details.promo.items', {
+  const cond1 = t('tm.details.conditii.itemsConfig1_1', {
     returnObjects: true,
   }) as string[];
-  const cond1 = t('tm.details.conditii.itemsConfig1', {
+  const cond2 = t('tm.details.conditii.itemsConfigElse_1', {
     returnObjects: true,
   }) as string[];
-  const cond2 = t('tm.details.conditii.itemsConfigElse', {
+  const common = t('tm.details.conditii.commonItems_new', {
     returnObjects: true,
   }) as string[];
-  const common = t('tm.details.conditii.commonItems', {
+  const common_1 = t('tm.details.conditii.commonItems_1', {
     returnObjects: true,
   }) as string[];
   const roamingItems = t('tm.details.roaming.items', {
@@ -201,12 +201,12 @@ export default function Mobile() {
         <div className={styles.hero_img_block}>
           <img
             className={styles.hero_img}
-            src={`/images/landings/68074012${t('lang')}.webp`}
+            src={`/images/landings/16216912${t('lang')}.webp`}
             alt={t('tm.hero.alt')}
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/81074012${t('lang')}.webp`}
+            src={`/images/landings/16216112${t('lang')}.webp`}
             alt={t('tm.hero.alt')}
           />
         </div>
@@ -215,24 +215,7 @@ export default function Mobile() {
       <div className={styles.select_type}>
         <div
           className={`${styles.select_type_card} ${styles.select_type_card_active}`}
-          onClick={() => trackEvent('tm_select_type_abonament')}
-        >
-          <div className={styles.select_type_card_top}>
-            <Icon
-              size={'22px'}
-              type={'plus'}
-              color={'var(--theme_primary_color_blue_2)'}
-            />
-            {t('tm.abonament')}
-          </div>
-          <div className={styles.select_type_card_bottom}></div>
-        </div>
-        <div
-          className={styles.select_type_card}
-          onClick={() => {
-            trackEvent('tm_select_type_portare');
-            goToPage(`https://new.moldtelecom.md/${t('lang')}/portare`);
-          }}
+          onClick={() => trackEvent('portare_select_type_abonament')}
         >
           <div className={styles.select_type_card_top}>
             <Icon
@@ -247,7 +230,24 @@ export default function Mobile() {
         <div
           className={styles.select_type_card}
           onClick={() => {
-            trackEvent('tm_select_type_prepay');
+            trackEvent('portare_select_type_abonament');
+            goToPage(`https://new.moldtelecom.md/${t('lang')}/mobile`);
+          }}
+        >
+          <div className={styles.select_type_card_top}>
+            <Icon
+              size={'22px'}
+              type={'plus'}
+              color={'var(--theme_primary_color_blue_2)'}
+            />
+            {t('tm.abonament')}
+          </div>
+          <div className={styles.select_type_card_bottom}></div>
+        </div>
+        <div
+          className={styles.select_type_card}
+          onClick={() => {
+            trackEvent('portare_select_type_prepay');
             goToPage(
               `https://www.moldtelecom.md/${t('lang')}/personal/prepay-cartela`
             );
@@ -264,7 +264,6 @@ export default function Mobile() {
           <div className={styles.select_type_card_bottom}></div>
         </div>
       </div>
-
       <div className={`title title_5 ${styles.title2}`}>
         {t('tm.title_choose')}
       </div>
@@ -285,10 +284,10 @@ export default function Mobile() {
             setActiveConfig('1');
           }}
         >
-          {t('tm.btn_not_client')}
+          {t('portare.discount')}
         </Button>
         <Button
-          id="tm_client"
+          id="portare_client"
           color={'var(--theme_primary_color_blue_4)'}
           bgcolor={
             activeConfig == '2'
@@ -302,7 +301,7 @@ export default function Mobile() {
             setActiveConfig('2');
           }}
         >
-          {t('tm.btn_client')}
+          {t('portare.smartphone')}
         </Button>
         {/*<Button*/}
         {/*  color={'var(--theme_primary_color_blue_4)'}*/}
@@ -316,125 +315,6 @@ export default function Mobile() {
         {/*</Button>*/}
       </div>
       <Slider {...settings} className={styles.mobile_carousell}>
-        <div>
-          <div className={styles.mobile_carousell_block}>
-            <div className={styles.mobile_carousell_tags}>
-              {/*<div className={styles.mobile_carousell_tag}>*/}
-              {/*  New*/}
-              {/*</div>*/}
-              <div
-                className={styles.mobile_carousell_tag}
-                style={{ background: '#E7EBFF' }}
-              >
-                {t('tm.tags.budget')}
-              </div>
-            </div>
-            <div className={styles.mobile_carousell_title}>
-              {t('tm.plan_names.start_95')}
-            </div>
-
-            <div className={styles.tm_carousell_block_rows}>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'call_mess'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <span>
-                  <b>{t('tm.nelimitat')}</b> <br />
-                  {t('tm.min_sms_retea')}
-                </span>
-              </div>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'call'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <div className={styles.tm_carousell_block_row_inline}>
-                  <span>
-                    {' '}
-                    <b>250 {t('tm.min')}</b>
-                    <br />
-                    {t('tm.nationale')}
-                  </span>{' '}
-                  +
-                  <span>
-                    <b>25 {t('tm.min')} </b>
-                    <br /> {t('tm.internationale')}
-                  </span>
-                </div>
-              </div>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'internet'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <span>
-                  <b>25 GB</b> <br /> {t('tm.trafic_internet')}
-                </span>
-              </div>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'sms'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <span>
-                  <b>25 SMS</b> <br /> {t('tm.nationale')}
-                </span>
-              </div>
-            </div>
-            <div className={styles.wifi_carousell_block_inside_btns}>
-              <div
-                className={styles.tm_carousell_block_row_tags}
-                style={{ opacity: '0' }}
-              >
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1' ? t('tm.35_proc') : ''}
-                </div>
-              </div>
-              <div className={styles.mobile_carousell_price}>
-                <div>{activeConfig == '1' ? '95' : '95'}</div>
-                <div>
-                  <div className={styles.mobile_carousell_price_valuta}>
-                    {t('lei_luna')}
-                  </div>
-                  <div className={styles.mobile_carousell_price_old}>
-                    <span>&nbsp;</span>
-                    {/*<span>120  {t('lei_luna')}</span>*/}
-                  </div>
-                </div>
-              </div>
-              <Button
-                id="tm_start95_order"
-                // onClick={() => setShowPopupFunction('aaa')}
-                onClick={() =>
-                  handleConfigClick(
-                    'start 95',
-                    activeConfig == '1' ? '95' : '95',
-                    ''
-                  )
-                }
-                color="#fff"
-                bgcolor="var(--theme_primary_color_blue_4)"
-                border="var(--theme_primary_color_blue_4)"
-                hover_border="var(--theme_primary_color_blue_2)"
-                hover_bgcolor="var(--theme_primary_color_blue_2)"
-                hover_color="var(--theme_primary_color_blue_4)"
-                icon="arrow_right"
-                className={styles.mobile_carousell_block_btn_buy}
-              >
-                {t('order_now')}
-              </Button>
-            </div>
-          </div>
-        </div>
         <div>
           <div className={styles.mobile_carousell_block}>
             <div className={styles.mobile_carousell_tags}>
@@ -452,7 +332,7 @@ export default function Mobile() {
               {t('tm.plan_names.star_120')}
             </div>
 
-            <div className={styles.tm_carousell_block_rows}>
+            <div className={styles.tm_carousell_block_rows_2}>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
@@ -479,7 +359,7 @@ export default function Mobile() {
                     <br />
                     {t('tm.nationale')}
                   </span>{' '}
-                  +
+                  /
                   <span>
                     <b>35 {t('tm.min')} </b>
                     <br /> {t('tm.internationale')}
@@ -494,7 +374,7 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>35 GB</b> <br /> {t('tm.trafic_internet')}
+                  <b>{t('tm.nelimitat')} GB</b> <br /> {t('tm.trafic_internet')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -508,22 +388,74 @@ export default function Mobile() {
                   <b>35 SMS</b> <br /> {t('tm.nationale')}
                 </span>
               </div>
-            </div>
-            <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1' ? t('tm.35_proc') : t('tm.35_proc')}
+              <div className={`${styles.tm_carousell_block_row}`}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'romania'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>1 GB</b>
+                    <br />
+                    Roaming RO
+                  </span>{' '}
+                  +
+                  <span>
+                    <b>4 GB</b>
+                    <br />
+                    Roaming Digi
+                  </span>
                 </div>
               </div>
+            </div>
+            {activeConfig == '2' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'1'}>
+                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'2'}>
+                  <b>Samsung A06</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'3'}>
+                  <b>Samsung A16</b> (la 999 lei)&nbsp;
+                </option>
+                <option value={'4'}>
+                  <b>Samsung Galaxy Watch 7</b> (la 1999 lei)&nbsp;
+                </option>
+                <option value={'5'}>
+                  <b>Xiaomi Redmi Note 14</b> (la 1799 lei)&nbsp;
+                </option>
+                <option value={'6'}>
+                  <b>Samsung A36 A16</b> (la 3399 lei)&nbsp;
+                </option>
+              </select>
+            )}
+            <div className={styles.wifi_carousell_block_inside_btns}>
+              {activeConfig == '1' && (
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    {activeConfig == '1'
+                      ? `-25 ${t('tm.lei_reducere_2_ani')}`
+                      : `-40 ${t('tm.lei_reducere')}`}
+                  </div>
+                </div>
+              )}
               <div className={styles.mobile_carousell_price}>
-                <div> {activeConfig == '1' ? '78' : '78'}</div>
+                <div> {activeConfig == '1' ? '95' : '120'}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     {t('lei_luna')}
                   </div>
-                  <div className={styles.mobile_carousell_price_old}>
-                    <span>120 {t('lei_luna')}</span>
-                  </div>
+                  {activeConfig == '1' && (
+                    <div className={styles.mobile_carousell_price_old}>
+                      <span>120 {t('lei_luna')}</span>
+                    </div>
+                  )}
                 </div>
               </div>
               <Button
@@ -531,9 +463,11 @@ export default function Mobile() {
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
-                    'star 120',
-                    activeConfig == '1' ? '78' : '78',
-                    t('tm.35_proc')
+                    'start 120',
+                    activeConfig == '1' ? '95' : '80',
+                    activeConfig == '1'
+                      ? `-25 ${t('tm.lei_reducere_2_ani')}`
+                      : `-40 ${t('tm.lei_reducere')}`
                   )
                 }
                 color="#fff"
@@ -549,13 +483,6 @@ export default function Mobile() {
               </Button>
             </div>
           </div>
-          {activeConfig == '1' && (
-            <img
-              className={styles.mobile_carousell_block_test}
-              src={`/images/landings/90971083${t('lang')}.webp`}
-              alt="Moldtelecom"
-            />
-          )}
         </div>
         <div>
           <div className={styles.mobile_carousell_block}>
@@ -571,10 +498,10 @@ export default function Mobile() {
               </div>
             </div>
             <div className={styles.mobile_carousell_title}>
-              {t('tm.plan_names.star_150')}
+              {t('tm.plan_names.flex_150')}
             </div>
 
-            <div className={styles.tm_carousell_block_rows}>
+            <div className={styles.tm_carousell_block_rows_2}>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
@@ -601,7 +528,7 @@ export default function Mobile() {
                     <br />
                     {t('tm.nationale')}
                   </span>{' '}
-                  +
+                  /
                   <span>
                     <b>45 {t('tm.min')} </b>
                     <br /> {t('tm.internationale')}
@@ -616,7 +543,7 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>45 GB</b> <br /> {t('tm.trafic_internet')}
+                  <b>{t('tm.nelimitat')} GB</b> <br /> {t('tm.trafic_internet')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -630,35 +557,85 @@ export default function Mobile() {
                   <b>45 SMS</b> <br /> {t('tm.nationale')}
                 </span>
               </div>
-            </div>
-            <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1'
-                    ? t('tm.35_proc')
-                    : `-50 ${t('tm.lei_reducere')}`}
+              <div className={`${styles.tm_carousell_block_row}`}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'romania'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    {' '}
+                    <b>1 GB</b>
+                    <br />
+                    Roaming RO
+                  </span>{' '}
+                  +
+                  <span>
+                    <b>7 GB</b>
+                    <br />
+                    Roaming Digi
+                  </span>
                 </div>
               </div>
+            </div>
+            {activeConfig == '2' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'1'}>
+                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'2'}>
+                  <b>Samsung A06</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'3'}>
+                  <b>Samsung A16</b> (la 999 lei)&nbsp;
+                </option>
+                <option value={'4'}>
+                  <b>Samsung Galaxy Watch 7</b> (la 1999 lei)&nbsp;
+                </option>
+                <option value={'5'}>
+                  <b>Xiaomi Redmi Note 14</b> (la 1799 lei)&nbsp;
+                </option>
+                <option value={'6'}>
+                  <b>Samsung A36 A16</b> (la 3399 lei)&nbsp;
+                </option>
+              </select>
+            )}
+            <div className={styles.wifi_carousell_block_inside_btns}>
+              {activeConfig == '1' && (
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    {activeConfig == '1'
+                      ? `-35 ${t('tm.lei_reducere_2_ani')}`
+                      : `-50 ${t('tm.lei_reducere')}`}
+                  </div>
+                </div>
+              )}
               <div className={styles.mobile_carousell_price}>
-                <div> {activeConfig == '1' ? '97.5' : '100'}</div>
+                <div> {activeConfig == '1' ? '115' : '150'}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     {t('lei_luna')}
                   </div>
-                  <div className={styles.mobile_carousell_price_old}>
-                    <span>150 {t('lei_luna')}</span>
-                  </div>
+                  {activeConfig == '1' && (
+                    <div className={styles.mobile_carousell_price_old}>
+                      <span>150 {t('lei_luna')}</span>
+                    </div>
+                  )}
                 </div>
               </div>
               <Button
-                id="tm_star150_order"
+                id="tm_flex150_order"
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
-                    'star 150',
-                    activeConfig == '1' ? '97.5' : '100',
+                    'Flex 150',
+                    activeConfig == '1' ? '115' : '100',
                     activeConfig == '1'
-                      ? t('tm.35_proc')
+                      ? `-35 ${t('tm.lei_reducere')}`
                       : `-50 ${t('tm.lei_reducere')}`
                   )
                 }
@@ -675,13 +652,6 @@ export default function Mobile() {
               </Button>
             </div>
           </div>
-          {activeConfig == '1' && (
-            <img
-              className={styles.mobile_carousell_block_test}
-              src={`/images/landings/90971083${t('lang')}.webp`}
-              alt="Moldtelecom"
-            />
-          )}
         </div>
         <div>
           <div className={styles.mobile_carousell_block}>
@@ -696,11 +666,9 @@ export default function Mobile() {
                 {t('tm.tags.roaming')}
               </div>
             </div>
-            <div className={styles.mobile_carousell_title}>
-              {t('tm.plan_names.liberty_190')}
-            </div>
+            <div className={styles.mobile_carousell_title}>Liberty 200</div>
 
-            <div className={styles.tm_carousell_block_rows}>
+            <div className={styles.tm_carousell_block_rows_2}>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
@@ -727,7 +695,7 @@ export default function Mobile() {
                     <br />
                     {t('tm.nationale')}
                   </span>{' '}
-                  +
+                  /
                   <span>
                     <b>85 {t('tm.min')} </b>
                     <br /> {t('tm.internationale')}
@@ -742,7 +710,7 @@ export default function Mobile() {
                   />
                 </div>
                 <span>
-                  <b>85 GB</b> <br /> {t('tm.trafic_internet')}
+                  <b>{t('tm.nelimitat')} GB</b> <br /> {t('tm.trafic_internet')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -756,6 +724,7 @@ export default function Mobile() {
                   <b>85 SMS</b> <br /> {t('tm.nationale')}
                 </span>
               </div>
+
               <div
                 // ${styles.tm_carousell_block_row_sp}
                 className={`${styles.tm_carousell_block_row} 
@@ -771,47 +740,91 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>7 GB</b>
+                    <b>5 GB</b>
                     <br />
                     {t('tm.roaming_eu')}
                   </span>{' '}
                   +
                   <span>
-                    <b>850 {t('tm.min')} </b>
-                    <br /> {t('tm.roaming_eu')}
+                    <b>{t('tm.nelimitat')} </b>
+                    <br />
+                    {t('tm.min_roaming_eu')}
+                  </span>
+                </div>
+              </div>
+              <div className={`${styles.tm_carousell_block_row}`}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'romania'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    <b>5 GB</b>
+                    <br />
+                    Roaming Digi
                   </span>
                 </div>
               </div>
             </div>
 
+            {activeConfig == '2' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'1'}>
+                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'2'}>
+                  <b>Samsung A06</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'3'}>
+                  <b>Samsung A16</b> (la 999 lei)&nbsp;
+                </option>
+                <option value={'4'}>
+                  <b>Samsung Galaxy Watch 7</b> (la 1999 lei)&nbsp;
+                </option>
+                <option value={'5'}>
+                  <b>Xiaomi Redmi Note 14</b> (la 1799 lei)&nbsp;
+                </option>
+                <option value={'6'}>
+                  <b>Samsung A36 A16</b> (la 3399 lei)&nbsp;
+                </option>
+              </select>
+            )}
             <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1'
-                    ? t('tm.35_proc')
-                    : `-75 ${t('tm.lei_reducere')}`}
+              {activeConfig == '1' && (
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    {activeConfig == '1'
+                      ? `-60 ${t('tm.lei_reducere_2_ani')}`
+                      : `-75 ${t('tm.lei_reducere')}`}
+                  </div>
                 </div>
-              </div>
+              )}
               <div className={styles.mobile_carousell_price}>
-                <div>{activeConfig == '1' ? '123.5' : '115'}</div>
+                <div>{activeConfig == '1' ? '140' : '200'}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     {t('lei_luna')}
                   </div>
-                  <div className={styles.mobile_carousell_price_old}>
-                    <span>190 {t('lei_luna')}</span>
-                  </div>
+                  {activeConfig == '1' && (
+                    <div className={styles.mobile_carousell_price_old}>
+                      <span>200 {t('lei_luna')}</span>
+                    </div>
+                  )}
                 </div>
               </div>
               <Button
-                id="tm_liberty190_order"
+                id="tm_liberty200_order"
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
-                    'liberty 190',
-                    activeConfig == '1' ? '123.5' : '115',
+                    'liberty 200',
+                    activeConfig == '1' ? '140' : '125',
                     activeConfig == '1'
-                      ? t('tm.35_proc')
+                      ? `-60 ${t('tm.lei_reducere_2_ani')}`
                       : `-75 ${t('tm.lei_reducere')}`
                   )
                 }
@@ -828,13 +841,6 @@ export default function Mobile() {
               </Button>
             </div>
           </div>
-          {activeConfig == '1' && (
-            <img
-              className={styles.mobile_carousell_block_test}
-              src={`/images/landings/90971083${t('lang')}.webp`}
-              alt="Moldtelecom"
-            />
-          )}
         </div>
         <div>
           <div className={styles.mobile_carousell_block}>
@@ -849,11 +855,9 @@ export default function Mobile() {
                 {t('tm.tags.roaming')}
               </div>
             </div>
-            <div className={styles.mobile_carousell_title}>
-              {t('tm.plan_names.liberty_250_plus')}
-            </div>
+            <div className={styles.mobile_carousell_title}>Liberty 290 +</div>
 
-            <div className={styles.tm_carousell_block_rows}>
+            <div className={styles.tm_carousell_block_rows_2}>
               <div className={styles.tm_carousell_block_row}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
@@ -909,12 +913,7 @@ export default function Mobile() {
                   <b>{t('tm.nelimitat')} SMS</b> <br /> {t('tm.nationale')}
                 </span>
               </div>
-              <div
-                // ${styles.tm_carousell_block_row_sp}
-                className={`${styles.tm_carousell_block_row} 
-               
-                `}
-              >
+              <div className={`${styles.tm_carousell_block_row}`}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'roaming'}
@@ -924,7 +923,7 @@ export default function Mobile() {
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>10 GB</b>
+                    <b>8 GB</b>
                     <br />
                     {t('tm.roaming_eu')}
                   </span>{' '}
@@ -936,25 +935,68 @@ export default function Mobile() {
                   </span>
                 </div>
               </div>
-            </div>
-
-            <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1'
-                    ? t('tm.35_proc')
-                    : `-100 ${t('tm.lei_reducere')}`}
+              <div className={`${styles.tm_carousell_block_row}`}>
+                <div className={styles.tm_carousell_block_row_svg}>
+                  <Icon
+                    type={'romania'}
+                    color={'var(--theme_primary_color_blue_2)'}
+                  />
+                </div>
+                <div className={styles.tm_carousell_block_row_inline}>
+                  <span>
+                    <b>6 GB</b>
+                    <br />
+                    Roaming Digi
+                  </span>
                 </div>
               </div>
+            </div>
+
+            {activeConfig == '2' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'1'}>
+                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'2'}>
+                  <b>Samsung A06</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'3'}>
+                  <b>Samsung A16</b> (la 999 lei)&nbsp;
+                </option>
+                <option value={'4'}>
+                  <b>Samsung Galaxy Watch 7</b> (la 1999 lei)&nbsp;
+                </option>
+                <option value={'5'}>
+                  <b>Xiaomi Redmi Note 14</b> (la 1799 lei)&nbsp;
+                </option>
+                <option value={'6'}>
+                  <b>Samsung A36 A16</b> (la 3399 lei)&nbsp;
+                </option>
+              </select>
+            )}
+            <div className={styles.wifi_carousell_block_inside_btns}>
+              {activeConfig == '1' && (
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    {activeConfig == '1'
+                      ? `-100 ${t('tm.lei_reducere_2_ani')}`
+                      : `-100 ${t('tm.lei_reducere')}`}
+                  </div>
+                </div>
+              )}
               <div className={styles.mobile_carousell_price}>
-                <div>{activeConfig == '1' ? '162.5' : '150'}</div>
+                <div>{activeConfig == '1' ? '190' : '290'}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     {t('lei_luna')}
                   </div>
-                  <div className={styles.mobile_carousell_price_old}>
-                    <span>250 {t('lei_luna')}</span>
-                  </div>
+                  {activeConfig == '1' && (
+                    <div className={styles.mobile_carousell_price_old}>
+                      <span>290 {t('lei_luna')}</span>
+                    </div>
+                  )}
                 </div>
               </div>
               <Button
@@ -962,11 +1004,11 @@ export default function Mobile() {
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
-                    'liberty 250+',
+                    'liberty 290+',
                     activeConfig == '1' ? '162.5' : '150',
                     activeConfig == '1'
-                      ? t('tm.35_proc')
-                      : `-100 '${t('tm.lei_reducere')}`
+                      ? `-100 ${t('tm.lei_reducere_2_ani')}`
+                      : `-100 ${t('tm.lei_reducere')}`
                   )
                 }
                 color="#fff"
@@ -985,20 +1027,21 @@ export default function Mobile() {
         </div>
       </Slider>
       <Details trackPrefix="tm">
-        {activeConfig === '1' && (
-          <DetailsBlock title={t('tm.details.promo.title')}>
-            <ul>
-              {promoItems.map((text, i) => (
-                <li key={i}>{text}</li>
-              ))}
-            </ul>
-          </DetailsBlock>
-        )}
         <DetailsBlock title={t('tm.details.conditii.title_2')}>
           <ul>
             {(activeConfig === '1' ? cond1 : cond2).map((text, i) => (
               <li key={i}>{text}</li>
             ))}
+            {activeConfig == '1' && (
+              <div className={styles.detalii_bold}>
+                {t('tm.details.conditii.title_3')}
+              </div>
+            )}
+            {(activeConfig === '1' ? common_1 : []).map(
+              (text: string, i: number) => (
+                <li key={i}>{text}</li>
+              )
+            )}
           </ul>
         </DetailsBlock>
         <DetailsBlock title={t('tm.details.conditii.title')}>
@@ -1018,42 +1061,40 @@ export default function Mobile() {
                 <th>{t('tm.table.headers.internet')}</th>
               </thead>
               <tbody>
-                <tr>
-                  <td>{t('tm.plan_names.start_95')}</td>
-                  <td>2,00</td>
-                  <td>0,50</td>
-                  <td>2,00</td>
-                  <td>0,20</td>
-                </tr>
+                {/*<tr>*/}
+                {/*  <td>{t('tm.plan_names.start_95')}</td>*/}
+                {/*  <td>2,00</td>*/}
+                {/*  <td>0,50</td>*/}
+                {/*  <td>2,00</td>*/}
+                {/*  <td>0,00</td>*/}
+                {/*</tr>*/}
                 <tr>
                   <td>{t('tm.plan_names.star_120')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
-                  <td>0,20</td>
+                  <td>0,00</td>
                 </tr>
                 <tr>
-                  <td>{t('tm.plan_names.star_150')}</td>
+                  <td>{t('tm.plan_names.flex_150')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
-                  <td>0,20</td>
+                  <td>0,00</td>
                 </tr>
                 <tr>
-                  <td>{t('tm.plan_names.liberty_190')}</td>
+                  <td>{t('tm.plan_names.liberty_200')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
-                  <td>0,20</td>
+                  <td>0,00</td>
                 </tr>
                 <tr>
-                  <td>{t('tm.plan_names.liberty_plus_250')}</td>
+                  <td>{t('tm.plan_names.liberty_plus_290')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
-                  <td>
-                    0,00<sup>**</sup>
-                  </td>
+                  <td>0,00</td>
                 </tr>
               </tbody>
             </table>
@@ -1068,13 +1109,13 @@ export default function Mobile() {
             ))}
           </ul>
           <br />
-          <div className={styles.roaming_warning}>
-            <div className={`${styles.roaming_warning_red}`}></div>
-            <div className={styles.roaming_warning_inside}>
-              {t('roaming.warning_1')} <br />
-              {t('roaming.warning_2')}
-            </div>
-          </div>
+          {/*<div className={styles.roaming_warning}>*/}
+          {/*  <div className={`${styles.roaming_warning_red}`}></div>*/}
+          {/*  /!*<div className={styles.roaming_warning_inside}>*!/*/}
+          {/*  /!*  {t('roaming.warning_1')} <br />*!/*/}
+          {/*  /!*  {t('roaming.warning_2')}*!/*/}
+          {/*  /!*</div>*!/*/}
+          {/*</div>*/}
           <br />
           <b>{t('tm.details.list')}</b>
           <br />
@@ -1117,55 +1158,109 @@ export default function Mobile() {
       <Slider {...settings_devices} className={styles.tm_carousell}>
         <div className={styles.tm_carousell_block}>
           <ShopCard
-            device_id={727564511}
-            image="/images/shop/383535269.webp"
-            price={1199}
-            old_price={2799}
-            reducere="- 600"
-            title="OPPO"
-            subtitle="A40"
-            characteristics='8/256 Gb /5000mAh /6.67"'
+            device_id={294024407}
+            image="/images/shop/313515268.webp"
+            price={1}
+            old_price={2520}
+            reducere="- 99%"
+            title="Xiaomi"
+            subtitle="Redmi 14C"
+            characteristics='4GB /128GB"'
             style_type={'gray'}
             show_like={false}
             show_comapre={false}
             buy={() => {
-              setPopup('OPPO A40', '+ abonament');
+              setPopup('Xiaomi Redmi 14C', '+ abonament');
             }}
           />
         </div>
         <div className={styles.tm_carousell_block}>
           <ShopCard
-            device_id={727564512}
-            image="/images/shop/383535265.webp"
-            price={2199}
-            old_price={3299}
-            reducere="- 1100"
-            title="OPPO"
-            subtitle="A60"
-            characteristics='4/128 Gb /5100mAh /6.67"'
+            device_id={294024408}
+            image="/images/shop/363115268.webp"
+            price={1}
+            old_price={2520}
+            reducere="- 99%"
+            title="Samsung"
+            subtitle="A06"
+            characteristics='4/128GB 5000 mAh /6,7"'
             style_type={'gray'}
             show_like={false}
             show_comapre={false}
             buy={() => {
-              setPopup('OPPO A60', '+ abonament');
+              setPopup('Samsung A06', '+ abonament');
             }}
           />
         </div>
         <div className={styles.tm_carousell_block}>
           <ShopCard
-            device_id={727564513}
-            image="/images/shop/383535262.webp"
-            price={3199}
-            old_price={4299}
-            reducere="- 1100"
-            title="OPPO"
-            subtitle="A80"
-            characteristics="8/256 Gb /5100mAh /50 MP"
+            device_id={294024406}
+            image="/images/shop/313515267.webp"
+            price={1999}
+            old_price={4680}
+            reducere="- 2 681"
+            title="Samsung"
+            subtitle="Galaxy Watch 7"
+            characteristics='1.5" / 40mm / L300'
             style_type={'gray'}
             show_like={false}
             show_comapre={false}
             buy={() => {
-              setPopup('OPPO A80', '+ abonament');
+              setPopup('Samsung Galaxy Watch 7', '+ abonament');
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={294024409}
+            image="/images/shop/113511268.webp"
+            price={999}
+            old_price={3600}
+            reducere="- 2 601"
+            title="Samsung"
+            subtitle="A16"
+            characteristics='4/128GB 5000 mAh /6,7"'
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('Samsung A16', '+ abonament');
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={294024411}
+            image="/images/shop/193519269.webp"
+            price={1799}
+            old_price={4680}
+            reducere="- 2 881"
+            title="Xiaomi"
+            subtitle="Redmi Note 14"
+            characteristics='4GB /256GB /eSIM"'
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('Xiaomi Redmi Note 14', '+ abonament');
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={294024412}
+            image="/images/shop/173935969.webp"
+            price={3399}
+            old_price={6600}
+            reducere="- 3 201"
+            title="Samsung"
+            subtitle="A36"
+            characteristics='6/128GB /5000mAh /6,7"'
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('Samsung A36', '+ abonament');
             }}
           />
         </div>
@@ -1178,6 +1273,43 @@ export default function Mobile() {
         </span>
       </div>
 
+      <div className={styles.conversion}>
+        <div className={styles.conversion_text}>
+          <div className={styles.conversion_text_top}>
+            {/*<div className={styles.tm_discover_card_inside_top_tag}>*/}
+            {/*  Descoperă*/}
+            {/*</div>*/}
+            <div className={styles.conversion_title}>
+              TOTUL <br />
+              Internet + TV + Mobil
+            </div>
+            <div>La un preț beton!</div>
+          </div>
+          <Button
+            to={`https://www.moldtelecom.md/${t('lang')}/personal/Promo_Abonamente-TV-Internet-Mobil`}
+            color={'var(--theme_primary_color_blue_4)'}
+            bgcolor={'var(--theme_primary_color_blue_2)'}
+            border={'var(--theme_primary_color_blue_2)'}
+            hover_border={'var(--theme_primary_color_blue_4)'}
+            hover_bgcolor={'var(--theme_primary_color_blue_4)'}
+            hover_color={'#fff'}
+            icon={'arrow_right'}
+            id="tm_go_to_triple"
+          >
+            Vezi mai multe
+          </Button>
+        </div>
+        <img
+          className={styles.conversion_img}
+          src="/images/landings/55271183.webp"
+          alt="Moldtelecom"
+        />
+        <img
+          className={styles.conversion_img_mob}
+          src="/images/landings/55271181.webp"
+          alt="Moldtelecom"
+        />
+      </div>
       <Functions
         style_type={'blue'}
         title={'general.recommended_options'}
@@ -1191,7 +1323,7 @@ export default function Mobile() {
           <div className={styles.tm_discover_card}>
             <img
               className={styles.tm_discover_img}
-              src={`/images/landings/18100123${t('lang')}.webp`}
+              src={`/images/landings/18699723${t('lang')}.webp`}
               alt="Moldtelecom"
             />
             <div className={styles.tm_discover_card_inside}>
@@ -1299,7 +1431,7 @@ export default function Mobile() {
           <div className={styles.tm_discover_card}>
             <img
               className={styles.tm_discover_img}
-              src={`/images/landings/18150125${t('lang')}.webp`}
+              src={`/images/landings/18100125${t('lang')}.webp`}
               alt="Moldtelecom"
             />
             <div className={styles.tm_discover_card_inside}>
@@ -1316,6 +1448,39 @@ export default function Mobile() {
               </div>
               <Button
                 to={`https://www.moldtelecom.md/${t('lang')}/personal/one_number`}
+                color={'var(--theme_primary_color_blue_4)'}
+                bgcolor={'var(--theme_primary_color_blue_3)'}
+                border={'var(--theme_primary_color_blue_3)'}
+                hover_border={'var(--theme_primary_color_blue_2)'}
+                hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+                icon={'arrow_right'}
+              >
+                {t('tm.discover.btn')}
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div className={styles.tm_discover_inside}>
+          <div className={styles.tm_discover_card}>
+            <img
+              className={styles.tm_discover_img}
+              src={`/images/landings/18199723${t('lang')}.webp`}
+              alt="Moldtelecom"
+            />
+            <div className={styles.tm_discover_card_inside}>
+              <div className={styles.tm_discover_card_inside_top}>
+                <div className={styles.tm_discover_card_inside_top_tag}>
+                  {t('tm.discover.card_5.tag')}
+                </div>
+                <div className={styles.tm_discover_card_title}>
+                  {t('tm.discover.card_5.title')}
+                </div>
+                <div className={styles.tm_discover_card_text}>
+                  {t('tm.discover.card_5.text')}
+                </div>
+              </div>
+              <Button
+                to={`https://www.moldtelecom.md/${t('lang')}/personal/esim`}
                 color={'var(--theme_primary_color_blue_4)'}
                 bgcolor={'var(--theme_primary_color_blue_3)'}
                 border={'var(--theme_primary_color_blue_3)'}
@@ -1474,7 +1639,7 @@ export default function Mobile() {
               {' '}
               <img
                 className={styles.buy_popup_img}
-                src="/images/landings/22271083.webp"
+                src={`/images/landings/28800723ro.webp`}
                 alt="Moldtelecom"
               />
             </div>
@@ -1516,22 +1681,22 @@ export default function Mobile() {
                     eSIM
                   </div>
                 </div>
-                {activeConfig == '1' && (
-                  <div className={styles.popup_option}>
-                    <Toggle
-                      checked={testGratis}
-                      onChange={() => {
-                        setTestGratis(prev => !prev);
-                        trackEvent('tm_test_gratis_toggle');
-                      }}
-                    />
-                    <span>
-                      {' '}
-                      {t('tm.popup.test_prefix')}{' '}
-                      <b>{t('tm.popup.test_bold')}</b>
-                    </span>
-                  </div>
-                )}
+                {/*{activeConfig == '1' && (*/}
+                {/*  <div className={styles.popup_option}>*/}
+                {/*    <Toggle*/}
+                {/*      checked={testGratis}*/}
+                {/*      onChange={() => {*/}
+                {/*        setTestGratis(prev => !prev);*/}
+                {/*        trackEvent('tm_test_gratis_toggle');*/}
+                {/*      }}*/}
+                {/*    />*/}
+                {/*    <span>*/}
+                {/*      {' '}*/}
+                {/*      {t('tm.popup.test_prefix')}{' '}*/}
+                {/*      <b>{t('tm.popup.test_bold')}</b>*/}
+                {/*    </span>*/}
+                {/*  </div>*/}
+                {/*)}*/}
               </div>
               <BuyForm
                 config={`TM - ${activeConfig === '1' ? 'nu sunt client' : 'sunt client'}, tip sim - ${selected}, ${activeConfig === '1' ? `testează - ${testGratis}` : ''}, pachet selectat - ${activePopupConfig} , pret - ${activePriceConfig}`}

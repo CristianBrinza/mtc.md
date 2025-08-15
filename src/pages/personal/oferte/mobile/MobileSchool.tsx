@@ -231,7 +231,7 @@ export default function MobileSchool() {
           className={styles.select_type_card}
           onClick={() => {
             trackEvent('tm_select_type_portare');
-            goToPage(`/portare`);
+            goToPage(`https://new.moldtelecom.md/${t('lang')}/portare`);
           }}
         >
           <div className={styles.select_type_card_top}>

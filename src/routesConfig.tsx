@@ -30,6 +30,7 @@ import Promo1536965 from './pages/eshop/promo_b2s/Promo1536965.tsx';
 import SecuritateDigitala from './pages/personal/SecuritrateDigitala/SecuritateDigitala.tsx';
 import MobileSchool from './pages/personal/oferte/mobile/MobileSchool.tsx';
 import HomeTemplink from './pages/home/Home_templink.tsx';
+import PortareSchool from './pages/personal/oferte/portare/PortareSchool.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -85,6 +86,10 @@ export const routesConfig: RouteConfig[] = [
   {
     path: '/:lang/portare',
     element: React.createElement(Portare),
+  },
+  {
+    path: '/:lang/portare189347654',
+    element: React.createElement(PortareSchool),
   },
   // {
   //   path: '/:lang/mobile_old',

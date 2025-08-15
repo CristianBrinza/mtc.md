@@ -205,9 +205,7 @@ export default function Portare() {
           className={styles.select_type_card}
           onClick={() => {
             trackEvent('portare_select_type_abonament');
-            goToPage(
-              `https://www.moldtelecom.md/${t('lang')}/personal/Abonamente_Telefonie_Mobila`
-            );
+            goToPage(`https://new.moldtelecom.md/${t('lang')}/mobile`);
           }}
         >
           <div className={styles.select_type_card_top}>
