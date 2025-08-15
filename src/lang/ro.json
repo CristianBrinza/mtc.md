@@ -2225,10 +2225,31 @@
       "description": "Cel mai bogat conținut de filme și desene animate"
     }
   },
+  "gaming": {
+    "breadcrumb": {
+      "promo": "Promo",
+      "gaming": "Gaming"
+    },
+    "hero_title": "Acum ai cele mai tari console, pentru experiența ideală în gaming",
+    "why": {
+      "speed_title": "Viteză incredibilă",
+      "speed_desc": "Performanță constantă pe multiple dispozitive, fără pierderi de viteză sau instabilitate.",
+      "coverage_title": "Acoperire toată casa",
+      "coverage_desc": "Wi-Fi de ultimă generație și Tehnologie XGS-PON cu arhitectură pasivă și eficientă",
+      "console_title": "Console & Gaming",
+      "console_desc": "Oferte incredibile la Xbox sau PlayStation cu 1 leu la conectare"
+    },
+    "info": {
+      "title_line1": "Cu mare viteză,",
+      "title_line2": "vin marile victorii",
+      "desc": "Acum ai viteze de până la <b>5.5Gbps</b> și console la 1 leu sau la preț special doar la Moldtelecom.<br />Gaming-ul de performanță nu a fost niciodată mai aproape. Nu rata ocazia de a fi parte a progresului, <b>fără laguri</b>, <b>fără întreruperi</b>, <b>ultra-rapid</b>.",
+      "button": "Vezi echipamentele"
+    }
+  },
   "bussines_fibra": {
     "breadcrumb": {
       "internet": "Internet",
-      "fibra": "Fibra"
+      "fibra": "Fibră"
     },
     "hero": { "alt": "Moldtelecom" }
   },
@@ -2271,6 +2292,8 @@
     "discount_320_2_years": "-320 lei reducere pentru 2 ani",
     "discount_120_2_years": "-120 lei reducere pentru 2 ani",
     "router_wifi6_included": "Router Wi-Fi 6 inclus",
+    "mesh_wifi": "Mesh Wi-Fi",
+    "arhiva_tv": "Arhiva TV",
     "device_one_leu": "Dispozitiv la DOAR 1 leu, sau Preț Special!",
     "choose_offer_without_discount": "Alege oferta de internet cu TV fără reducere și primești la conectare unul din device-urile de mai jos",
     "stock_offer": "Oferta este valabilă în limita stocului disponibil",
@@ -2479,7 +2502,7 @@
   "gbps": {
     "breadcrumb": {
       "internet": "Internet",
-      "fibra": "Fibra",
+      "fibra": "Fibră",
       "faq": {
         "install_duration_question": "Cât durează instalarea serviciilor?",
 
