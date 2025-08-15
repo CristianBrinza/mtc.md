@@ -106,7 +106,7 @@ export default function FiveGbps() {
                 section.scrollIntoView({ behavior: 'smooth', block: 'center' });
               }
             }}
-            color="var(--theme_primary_color_blue_2)"
+            color="var(--theme_primary_color_blue_6)"
             bgcolor="#fff"
             border="#fff"
             hover_border="var(--theme_primary_color_blue_2)"

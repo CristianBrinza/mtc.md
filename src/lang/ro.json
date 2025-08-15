@@ -2104,6 +2104,7 @@
       "start_95": "Start 95",
       "star_120": "Star 120",
       "star_150": "Star 150",
+      "flex_150": "Flex 150",
       "liberty_190": "Liberty 190",
       "liberty_250_plus": "Liberty 250+",
       "liberty_plus_250": "Liberty Plus 250"
@@ -2257,7 +2258,7 @@
     "info": {
       "title_line1": "Cu mare viteză,",
       "title_line2": "vin marile victorii",
-      "desc": "Acum ai viteze de până la <b>5.5Gbps</b> și console la 1 leu sau la preț special doar la Moldtelecom.<br />Gaming-ul de performanță nu a fost niciodată mai aproape. Nu rata ocazia de a fi parte a progresului, <b>fără laguri</b>, <b>fără întreruperi</b>, <b>ultra-rapid</b>.",
+      "desc": "Acum ai viteze de până la <b>5.5Gbps</b> și console la 1 leu sau la preț special doar la Moldtelecom.<br />Gaming-ul de performanță nu a fost niciodată mai accesibil. Nu rata ocazia de a fi parte a progresului, <b>fără laguri</b>, <b>fără întreruperi</b>, <b>ultra-rapid</b>.",
       "button": "Vezi echipamentele"
     }
   },
@@ -2579,21 +2580,22 @@
       "signal_text": "Performanță constantă pe multiple dispozitive, fără pierderi de viteză sau instabilitate.",
       "zero_lag_title": "Zero lag, zero buffering",
       "zero_lag_text": "Performanță impresionantă pentru gaming competitiv și streaming 4K/8K fără întreruperi.",
-      "stability_title": "Stabilitate și latență redusă",
+      "stability_title": "Stabilitate și răspuns instant",
       "stability_text": "Conexiune ultra-fiabilă pentru gaming, productivitate, conferințe video și aplicații critice."
     },
     "intro": {
       "title": "Experimentează viteza supremă pentru o lume fără limite!",
-      "text": "Explorează tehnologia care redefinește viitorul<br/>Viteză maxima, latență ultra‑mică și stabilitate rock‑solid – deja validat de profesioniști și pregătit să susțină simultan streaming <b>8K impecabil</b>, <b>gaming hardcore</b>, <b>backup instant</b>, <b>Cloud</b> și <b>inovație</b>."
+      "text": "Explorează tehnologia care redefinește viitorul. Viteză maximă, timp de răspuns instant și stabilitate impecabilă – deja testată de profesioniști și pregătită să susțină, în același timp, <b>streaming 8K</b> de cea mai bună calitate, <b>gaming de performanță</b>, <b>salvarea rapidă a datelor</b>."
     },
     "why_need": {
       "title": "De ce ai nevoie de 5.5 Gbps ?",
       "subtitle": "Performanță maxima, semnal puternic, în fiecare colț al locuinței!",
       "items": {
-        "gamer": "Dacă ești <b>gamer</b> sau <b>streamer</b> – <br/>VR/AR și multiplayer, fără laguri, fără întreruperi",
-        "smart_home": "Dacă ai <b>Smart Home</b> și multe dispozitive IoT – <br/>fără întârzieri, conexiune instantă",
-        "family": "Dacă ai <b>familie mare</b> și <b>activă</b> pe Internet – <br/>joacă simultan și fă streaming în rezoluție 8K",
-        "remote_job": "Un <b>job remote</b> – <br/>lucrează fără griji cu aplicații critice"
+        "gamer": "Dacă ești <b>gamer</b> sau <b>streamer</b> – <br/>VR/AR și multiplayer cu răspuns imediat, fără întreruperi",
+        "smart_home": "Dacă ai <b>Smart Home</b> și multe dispozitive IoT – <br/>conexiune rapidă și stabilă, fără întârzieri",
+        "family": "Dacă ai <b>familie mare</b> și <b>activă</b> pe internet – <br/>streaming 8K și gaming simultan, fără probleme",
+        "remote_job": "Dacă lucrezi <b>remote</b> – <br/>aplicații critice și fișiere mari transferate instant, fără stres"
+
       }
     },
     "modem": {

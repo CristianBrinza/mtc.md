@@ -471,7 +471,7 @@ export default function MobileSchool() {
               </div>
             </div>
             <div className={styles.mobile_carousell_title}>
-              {t('tm.plan_names.star_150')}
+              {t('tm.plan_names.flex_150')}
             </div>
 
             <div className={styles.tm_carousell_block_rows_2}>
@@ -573,11 +573,11 @@ export default function MobileSchool() {
                 </div>
               </div>
               <Button
-                id="tm_star150_order"
+                id="tm_flex150_order"
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
-                    'star 150',
+                    'Flex 150',
                     activeConfig == '1' ? '115' : '100',
                     activeConfig == '1'
                       ? `-35 ${t('tm.lei_reducere')}`

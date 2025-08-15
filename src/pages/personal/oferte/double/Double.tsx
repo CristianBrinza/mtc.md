@@ -372,6 +372,7 @@ export default function Double() {
   const [activeSafeweb_1, setActiveSafeweb_1] = useState<boolean>(false);
   const [activeTelephone_1, setActiveTelephone_1] = useState<boolean>(false);
   const [numberTVConfig_1, setNumberTVConfig_1] = useState<number>(1);
+  const [selectedDevice_1, setSelectedDevice_1] = useState<string>('1780119');
 
   function calculateTotal_1(
     config: ConfigType,
@@ -1004,7 +1005,7 @@ export default function Double() {
         <div className={styles.regio_config_selctor}></div>
       )}
       <Slider {...settings} className={styles.abonaments}>
-        {(activeConfig == '1' || !isRegio) && (
+        {(activeConfig == '1' || activeConfig == '2' || !isRegio) && (
           <div className={styles.abonaments_block}>
             <div className={styles.abonaments_block_inside}>
               {/*<div className={styles.mobile_carousell_tags}>*/}
@@ -1231,10 +1232,34 @@ export default function Double() {
               </div>
 
               {activeConfig == '2' && (
-                <select
-                  className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
-                  style={{ opacity: '0' }}
-                ></select>
+                <div className={styles.abonaments_block_inside_info_line}>
+                  <select
+                    className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+                    value={selectedDevice_1}
+                    onChange={e => setSelectedDevice_1(e.target.value)}
+                  >
+                    <option value={'1780119'}>
+                      <b>Smart TV 32"</b> (la 1 leu)&nbsp;
+                    </option>
+                    <option value={'1780220'}>
+                      <b>Smart TV 43"</b> (la 1 899 lei)&nbsp;
+                    </option>
+
+                    {isRegio && (
+                      <option value={'1780221'}>
+                        <b>Tableta </b> (la 1 leu)&nbsp;
+                      </option>
+                    )}
+                    {!isRegio && (
+                      <option value={'no_device'}>Fără Dispozitiv&nbsp;</option>
+                    )}
+                  </select>
+                  {selectedDevice_1 != 'no_device' && (
+                    <InfoIcon
+                      onClick={() => setActivePopup(selectedDevice_1)}
+                    />
+                  )}
+                </div>
               )}
 
               <div className={styles.wifi_carousell_block_inside_btns}>
