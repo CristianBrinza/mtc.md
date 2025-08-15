@@ -1972,7 +1972,7 @@
     },
     "min": "min",
     "hero": { "alt": "Moldtelecom" },
-    "title_choose": "Alege abonamentul care ți se potrivește cel mai bine",
+    "title_choose": "Orice abonament alegi, ai Internet Nelimitat și Roaming incluse",
     "abonament": "Abonament",
     "portare": "Portare",
     "prepay": "Prepay",
@@ -2102,7 +2102,7 @@
     },
     "plan_names": {
       "start_95": "Start 95",
-      "star_120": "Star 120",
+      "star_120": "Start 120",
       "star_150": "Star 150",
       "flex_150": "Flex 150",
       "liberty_190": "Liberty 190",
@@ -2312,6 +2312,8 @@
     "arhiva_tv": "Arhiva TV",
     "device_one_leu": "Dispozitiv la DOAR 1 leu, sau Preț Special!",
     "choose_offer_without_discount": "Alege oferta de internet cu TV fără reducere și primești la conectare unul din device-urile de mai jos",
+    "choose_offer_without_discount_2": "Alege abonamentul fără reducere și primești la conectare unul din device-urile de mai jos",
+
     "stock_offer": "Oferta este valabilă în limita stocului disponibil",
     "telefonie_fixa": "Telefonie fixă",
     "faq": {
@@ -2595,7 +2597,6 @@
         "smart_home": "Dacă ai <b>Smart Home</b> și multe dispozitive IoT – <br/>conexiune rapidă și stabilă, fără întârzieri",
         "family": "Dacă ai <b>familie mare</b> și <b>activă</b> pe internet – <br/>streaming 8K și gaming simultan, fără probleme",
         "remote_job": "Dacă lucrezi <b>remote</b> – <br/>aplicații critice și fișiere mari transferate instant, fără stres"
-
       }
     },
     "modem": {

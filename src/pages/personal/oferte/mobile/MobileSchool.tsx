@@ -685,14 +685,15 @@ export default function MobileSchool() {
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>7 GB</b>
+                    <b>5 GB</b>
                     <br />
                     {t('tm.roaming_eu')}
                   </span>{' '}
                   +
                   <span>
-                    <b>850 {t('tm.min')} </b>
-                    <br /> {t('tm.roaming_eu')}
+                    <b>{t('tm.nelimitat')} </b>
+                    <br />
+                    {t('tm.min_roaming_eu')}
                   </span>
                 </div>
               </div>
@@ -728,7 +729,7 @@ export default function MobileSchool() {
                     {t('lei_luna')}
                   </div>
                   <div className={styles.mobile_carousell_price_old}>
-                    <span>190 {t('lei_luna')}</span>
+                    <span>200 {t('lei_luna')}</span>
                   </div>
                 </div>
               </div>
@@ -839,7 +840,7 @@ export default function MobileSchool() {
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>10 GB</b>
+                    <b>8 GB</b>
                     <br />
                     {t('tm.roaming_eu')}
                   </span>{' '}
@@ -883,7 +884,7 @@ export default function MobileSchool() {
                     {t('lei_luna')}
                   </div>
                   <div className={styles.mobile_carousell_price_old}>
-                    <span>250 {t('lei_luna')}</span>
+                    <span>290 {t('lei_luna')}</span>
                   </div>
                 </div>
               </div>
@@ -1041,7 +1042,7 @@ export default function MobileSchool() {
       </div>
 
       <div className={`sub_title ${styles.sub_title1}`}>
-        {t('combo_home.choose_offer_without_discount')}
+        {t('combo_home.choose_offer_without_discount_2')}
       </div>
 
       <Slider {...settings_devices} className={styles.tm_carousell}>
@@ -1150,6 +1151,24 @@ export default function MobileSchool() {
             show_comapre={false}
             buy={() => {
               setPopup('Samsung A16', '+ abonament');
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={294024412}
+            image="/images/shop/173935969.webp"
+            price={3399}
+            old_price={6600}
+            reducere="- 3 201"
+            title="Samsung"
+            subtitle="A36"
+            characteristics='6/128GB /5000mAh /6,7"'
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('Samsung A36', '+ abonament');
             }}
           />
         </div>

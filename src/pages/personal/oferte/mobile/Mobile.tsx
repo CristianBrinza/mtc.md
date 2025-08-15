@@ -1111,7 +1111,7 @@ export default function Mobile() {
       </div>
 
       <div className={`sub_title ${styles.sub_title1}`}>
-        {t('combo_home.choose_offer_without_discount')}
+        {t('combo_home.choose_offer_without_discount_2')}
       </div>
 
       <Slider {...settings_devices} className={styles.tm_carousell}>

@@ -95,11 +95,11 @@
 }
 
 .title2 {
-  margin: 30px auto 10px;
+  margin: 25px auto 0px;
   width: 100%;
   max-width: 750px;
   text-align: center;
-
+  line-height: 46px;
   overflow: hidden;
 }
 .btns_select {
