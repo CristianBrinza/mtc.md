@@ -436,7 +436,7 @@ export default function MobileSchool() {
                 // onClick={() => setShowPopupFunction('aaa')}
                 onClick={() =>
                   handleConfigClick(
-                    'star 120',
+                    'start 120',
                     activeConfig == '1' ? '95' : '80',
                     activeConfig == '1'
                       ? `-25 ${t('tm.lei_reducere_2_ani')}`
@@ -921,10 +921,11 @@ export default function MobileSchool() {
             {(activeConfig === '1' ? cond1 : cond2).map((text, i) => (
               <li key={i}>{text}</li>
             ))}
-
-            <div className={styles.detalii_bold}>
+            {(activeConfig == '1' &&
+              <div className={styles.detalii_bold}>
               {t('tm.details.conditii.title_3')}
             </div>
+            )}
             {(activeConfig === '1' ? common_1 : []).map(
               (text: string, i: number) => (
                 <li key={i}>{text}</li>
@@ -949,13 +950,13 @@ export default function MobileSchool() {
                 <th>{t('tm.table.headers.internet')}</th>
               </thead>
               <tbody>
-                <tr>
-                  <td>{t('tm.plan_names.start_95')}</td>
-                  <td>2,00</td>
-                  <td>0,50</td>
-                  <td>2,00</td>
-                  <td>0,00</td>
-                </tr>
+                {/*<tr>*/}
+                {/*  <td>{t('tm.plan_names.start_95')}</td>*/}
+                {/*  <td>2,00</td>*/}
+                {/*  <td>0,50</td>*/}
+                {/*  <td>2,00</td>*/}
+                {/*  <td>0,00</td>*/}
+                {/*</tr>*/}
                 <tr>
                   <td>{t('tm.plan_names.star_120')}</td>
                   <td>2,00</td>
@@ -964,26 +965,26 @@ export default function MobileSchool() {
                   <td>0,00</td>
                 </tr>
                 <tr>
-                  <td>{t('tm.plan_names.star_150')}</td>
+                  <td>{t('tm.plan_names.flex_150')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
                   <td>0,00</td>
                 </tr>
                 <tr>
-                  <td>{t('tm.plan_names.liberty_190')}</td>
+                  <td>{t('tm.plan_names.liberty_200')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
                   <td>0,00</td>
                 </tr>
                 <tr>
-                  <td>{t('tm.plan_names.liberty_plus_250')}</td>
+                  <td>{t('tm.plan_names.liberty_plus_290')}</td>
                   <td>2,00</td>
                   <td>0,50</td>
                   <td>2,00</td>
                   <td>
-                    0,00<sup>**</sup>
+                    0,00
                   </td>
                 </tr>
               </tbody>
@@ -999,13 +1000,13 @@ export default function MobileSchool() {
             ))}
           </ul>
           <br />
-          <div className={styles.roaming_warning}>
-            <div className={`${styles.roaming_warning_red}`}></div>
-            <div className={styles.roaming_warning_inside}>
-              {t('roaming.warning_1')} <br />
-              {t('roaming.warning_2')}
-            </div>
-          </div>
+          {/*<div className={styles.roaming_warning}>*/}
+          {/*  <div className={`${styles.roaming_warning_red}`}></div>*/}
+          {/*  /!*<div className={styles.roaming_warning_inside}>*!/*/}
+          {/*  /!*  {t('roaming.warning_1')} <br />*!/*/}
+          {/*  /!*  {t('roaming.warning_2')}*!/*/}
+          {/*  /!*</div>*!/*/}
+          {/*</div>*/}
           <br />
           <b>{t('tm.details.list')}</b>
           <br />
@@ -1170,7 +1171,7 @@ export default function MobileSchool() {
             {/*  Descoperă*/}
             {/*</div>*/}
             <div className={styles.conversion_title}>
-              Totul <br />
+              TOTUL <br />
               Internet + TV + Mobil
             </div>
             <div>La un preț beton!</div>
@@ -1213,7 +1214,7 @@ export default function MobileSchool() {
           <div className={styles.tm_discover_card}>
             <img
               className={styles.tm_discover_img}
-              src={`/images/landings/18100123${t('lang')}.webp`}
+              src={`/images/landings/18699723${t('lang')}.webp`}
               alt="Moldtelecom"
             />
             <div className={styles.tm_discover_card_inside}>
@@ -1354,7 +1355,7 @@ export default function MobileSchool() {
           <div className={styles.tm_discover_card}>
             <img
               className={styles.tm_discover_img}
-              src={`/images/landings/18100723${t('lang')}.webp`}
+              src={`/images/landings/18199723${t('lang')}.webp`}
               alt="Moldtelecom"
             />
             <div className={styles.tm_discover_card_inside}>
@@ -1529,7 +1530,7 @@ export default function MobileSchool() {
               {' '}
               <img
                 className={styles.buy_popup_img}
-                src="/images/landings/22271083.webp"
+                src={`/images/landings/28800723ro.webp`}
                 alt="Moldtelecom"
               />
             </div>
@@ -1571,22 +1572,22 @@ export default function MobileSchool() {
                     eSIM
                   </div>
                 </div>
-                {activeConfig == '1' && (
-                  <div className={styles.popup_option}>
-                    <Toggle
-                      checked={testGratis}
-                      onChange={() => {
-                        setTestGratis(prev => !prev);
-                        trackEvent('tm_test_gratis_toggle');
-                      }}
-                    />
-                    <span>
-                      {' '}
-                      {t('tm.popup.test_prefix')}{' '}
-                      <b>{t('tm.popup.test_bold')}</b>
-                    </span>
-                  </div>
-                )}
+                {/*{activeConfig == '1' && (*/}
+                {/*  <div className={styles.popup_option}>*/}
+                {/*    <Toggle*/}
+                {/*      checked={testGratis}*/}
+                {/*      onChange={() => {*/}
+                {/*        setTestGratis(prev => !prev);*/}
+                {/*        trackEvent('tm_test_gratis_toggle');*/}
+                {/*      }}*/}
+                {/*    />*/}
+                {/*    <span>*/}
+                {/*      {' '}*/}
+                {/*      {t('tm.popup.test_prefix')}{' '}*/}
+                {/*      <b>{t('tm.popup.test_bold')}</b>*/}
+                {/*    </span>*/}
+                {/*  </div>*/}
+                {/*)}*/}
               </div>
               <BuyForm
                 config={`TM - ${activeConfig === '1' ? 'nu sunt client' : 'sunt client'}, tip sim - ${selected}, ${activeConfig === '1' ? `testează - ${testGratis}` : ''}, pachet selectat - ${activePopupConfig} , pret - ${activePriceConfig}`}

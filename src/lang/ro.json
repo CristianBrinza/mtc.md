@@ -1994,23 +1994,23 @@
       },
       "card_2": {
         "tag": "Din aplicație",
-        "title": "Acum ai Moldtelecom TV la doar 40 lei!",
+        "title": "Moldtelecom TV",
         "text": "Activează serviciul și urmărește canalele tale preferate direct pe telefon, oriunde te-ai afla, <b>la doar 40 de lei/lună</b>."
       },
       "card_3": {
         "tag": "Din aplicație",
         "title": "Alege Cinema-Online la doar 59 lei/lună",
-        "text": "Explorează lumea televiziunii interactive cu abonamentul dorit, direct <b> pe smartphone-ul tău!</b>"
+        "text": "Explorează lumea televiziunii interactive cu abonamentul dorit, direct <b>pe smartphone-ul tău!</b>"
       },
       "card_4": {
         "tag": "Din aplicație",
-        "title": "Comunica fata telefon, direct de pe Smartwatch",
+        "title": "Comunică fără telefon, direct de pe Smartwatch",
         "text": "Acum poți utiliza atât telefonul, cât și ceasul inteligent, cu un singur număr de telefon și un singur abonament."
       },
       "card_5": {
         "tag": "Descoperă",
-        "title": "Cu eSIM te conectezi 100% digital.",
-        "text": "eSIMplu să te conectezi prin câteva clickuri la rețeaua mobilă Moldtelecom, oriunde te-ai afla."
+        "title": "eSIM – Cartela ta digitală",
+        "text": "Conectează-te rapid și simplu, 100% online. Fără contracte. Fără plastic. Fii ECO!"
       }
     },
     "details": {
@@ -2084,7 +2084,7 @@
           "Abonații conectați la abonamentul ”Liberty Plus 290” sunt obligați să evite folosirea abuzivă a serviciilor incluse în abonament. Prin ”folosire abuzivă” se înțelege efectuarea de apeluri de ieșire spre „alți operatori naționali” și/sau expedierea SMS-urilor spre „alți operatori naționali” către mai mult de 200 numere telefonice unice în decursul unei perioade de facturare, și/sau efectuarea, în decursul unei perioade de facturare, de apeluri nelimitate spre „alți operatori naționali” în volum ce depășește 3000 minute, cu condiția ca numărul de minute de ieșire să depășească de cel puțin două ori numărul minutelor de intrare dinspre „alți operatori naționali” în aceeași perioadă. Abonații care vor fi identificați cu utilizare abuzivă vor beneficia în continuare de 1000 minute și 245 SMS naționale.",
           "Viteza la internet se oferă în funcție de posibilitățile tehnice.",
           "Traficul Internet va avea viteza de transfer a datelor la capacitate maximă download (descărcare) și de până la 512 Kbps upload (încărcare), în dependență de opțiunile suplimentare activate – pentru tehnologia 3G, și la capacitate maximă download/upload – pentru tehnologia 4G.",
-          "Rezoluțiunea anticipată (inclusiv migrarea spre PrePay, schimbul de abonament către unul cu valoare mai mică sau port out) până la expirarea perioadei minime contractuale implică achitarea unei plăți cu titlu de prejudiciu, conform formulei: 35% din plata de abonament * numărul de luni acordare reducere."
+          "Rezoluțiunea anticipată (inclusiv migrarea spre PrePay, schimbul de abonament către unul cu valoare mai mică sau port out) până la expirarea perioadei minime contractuale implică achitarea unei plăți cu titlu de prejudiciu, se calculeaza in baza reducerii acordate, conform formulei: reducerea lunara (fără TVA) * nr de luni in care a fost acordată reducerea."
         ],
         "commonItems_1": [
           "Oferta promoțională include și posibilitatea de a achiziționa un smartphone Xiaomi Redmi 14C 4/128 sau Samsung A06 4/128GB la prețul de 1 leu, sau alte dispozitive la preț promoțional, în funcție de ofertă, în limita stocului disponibil, valabilă pentru abonații noi la portare, conectare nouă, precum și abonații existenți, la reperfectarea contractului.",
@@ -2119,7 +2119,10 @@
       "flex_150": "Flex 150",
       "liberty_190": "Liberty 190",
       "liberty_250_plus": "Liberty 250+",
-      "liberty_plus_250": "Liberty Plus 250"
+      "liberty_plus_250": "Liberty Plus 250",
+      "liberty_200": "Liberty 200",
+      "liberty_290_plus": "Liberty 290+",
+      "liberty_plus_290": "Liberty Plus 290"
     },
     "nelimitat": "Nelimitat",
     "min_sms_retea": "min. și SMS în rețea",
@@ -2138,7 +2141,7 @@
         "sms_int": "SMS Internaț. (lei/SMS)",
         "internet": "Trafic internet (lei/MB)"
       },
-      "footnote": "** După consumarea traficului internet inclus în abonamentul “Liberty Plus 250” traficul extra abonament va fi gratuit, însă viteza de acces download/upload va fi de până la 512/512 kbps;"
+      "footnote": " După consumarea traficului internet inclus în abonamente traficul extra abonament va fi gratuit, însă viteza de acces download/upload va fi de până la 512/512 kbps."
     },
     "popup": {
       "error1": "A apărut o eroare la trimiterea cererii.",
@@ -2322,9 +2325,9 @@
     "router_wifi6_included": "Router Wi-Fi 6 inclus",
     "mesh_wifi": "Mesh Wi-Fi",
     "arhiva_tv": "Arhiva TV",
-    "device_one_leu": "Dispozitiv la DOAR 1 leu, sau Preț Special!",
-    "choose_offer_without_discount": "Alege oferta de internet cu TV fără reducere și primești la conectare unul din device-urile de mai jos",
-    "choose_offer_without_discount_2": "Alege abonamentul fără reducere și primești la conectare unul din device-urile de mai jos",
+    "device_one_leu": "Dispozitiv la DOAR 1 leu sau Preț Special!",
+    "choose_offer_without_discount": "Alege oferta de internet cu TV fără reducere și primești la conectare unul din device-urile de mai jos:",
+    "choose_offer_without_discount_2": "Alege un abonament mobil fără reducere și primești la conectare unul din device-urile de mai jos:",
 
     "stock_offer": "Oferta este valabilă în limita stocului disponibil",
     "telefonie_fixa": "Telefonie fixă",
