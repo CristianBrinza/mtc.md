@@ -29,7 +29,7 @@ import Gaming from './pages/personal/oferte/gaming/Gaming.tsx';
 import Promo1536965 from './pages/eshop/promo_b2s/Promo1536965.tsx';
 import SecuritateDigitala from './pages/personal/SecuritrateDigitala/SecuritateDigitala.tsx';
 import MobileSchool from './pages/personal/oferte/mobile/MobileSchool.tsx';
-import HomeTemplink from './pages/home/Home_templink.tsx';
+// import HomeTemplink from './pages/home/Home_templink.tsx';
 import PortareSchool from './pages/personal/oferte/portare/PortareSchool.tsx';
 
 export interface RouteConfig {
@@ -39,22 +39,6 @@ export interface RouteConfig {
 }
 
 export const routesConfig: RouteConfig[] = [
-  {
-    path: '/',
-    // element: React.createElement(NotFound)
-    element: React.createElement(HomeTemplink),
-  },
-  {
-    path: '/:lang/',
-    // i18nKey: 'home.title',
-    // element: React.createElement(NotFound),
-    element: React.createElement(HomeTemplink),
-  },
-  {
-    path: '/:lang/newsite',
-
-    element: React.createElement(Triple),
-  },
   {
     path: '/:lang/home',
     element: React.createElement(Home),
@@ -66,10 +50,6 @@ export const routesConfig: RouteConfig[] = [
   {
     path: '/:lang/test86753',
     element: React.createElement(Gaming),
-  },
-  {
-    path: '/:lang/triple',
-    element: React.createElement(Triple),
   },
   {
     path: '/:lang/internet',

@@ -22,6 +22,7 @@ import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
 import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
 import { trackEvent } from '../../../../initAnalytics.ts';
+import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 declare global {
   interface Window {
     regiuni: Record<string, Record<string, unknown[]>>;
@@ -61,6 +62,37 @@ const InfoIcon: React.FC<{ onClick?: () => void }> = ({ onClick }) => (
 type ConfigType = '1' | '2' | '3';
 
 export default function OnlyNet() {
+  const settings_devices = {
+    dots: false,
+    infinite: true,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 951,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 651,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   const { t } = useTranslation();
   const seo = {
     title: t('pages.only_net.title'),
@@ -1274,6 +1306,170 @@ export default function OnlyNet() {
         </DetailsBlock>
       </Details>
 
+      <div className={`title_3  ${styles.title2}`}>
+        {t('combo_home.device_one_leu')}
+      </div>
+
+      <div className={`sub_title ${styles.sub_title1}`}>
+        {t('combo_home.choose_offer_without_discount')}
+      </div>
+
+      <Slider {...settings_devices} className={styles.tm_carousell}>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={323564512}
+            image="/images/shop/323564512.webp"
+            price={3000}
+            title="Hisense "
+            subtitle="32A4N (FHD)"
+            characteristics='Direct LED /Full HD /32"'
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('0', 'Hisense 32A4N', ``);
+              setPopupType(true);
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={194234497}
+            image="/images/shop/394534437.webp"
+            price={5160}
+            title="Hisense"
+            subtitle="43A4N (4k)"
+            characteristics='UHD VA /4K /43"'
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('0', 'Hisense 32A4N', ``);
+              setPopupType(true);
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={194234297}
+            image="/images/shop/783535569.webp"
+            price={3360}
+            title="Xiaomi"
+            subtitle="Redmi Pad SE"
+            characteristics='11"/128 GB/ Wi-Fi'
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('0', 'Xiaomi Redmi Pad SE', ``);
+              setPopupType(true);
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={394534437}
+            image="/images/shop/383935269.webp"
+            price={7299}
+            title="Hisense"
+            subtitle="55A4N (4k)"
+            characteristics='UHD VA /4K /55"'
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('0', 'Hisense 55A4N', ``);
+              setPopupType(true);
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={294594497}
+            image="/images/shop/283935269.webp"
+            price={9369}
+            title="Microsoft"
+            subtitle="Xbox Series S"
+            characteristics="1 TB /White"
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('0', 'Microsoft Xbox Series S', ``);
+              setPopupType(true);
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={294594497}
+            image="/images/shop/183935269.webp"
+            price={11040}
+            title="Sony"
+            subtitle="PlayStation 5 Slim"
+            characteristics="Disc Edition /White"
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('0', 'Sony PlayStation 5 Slim', ``);
+              setPopupType(true);
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={294094407}
+            image="/images/shop/1703509569.webp"
+            price={4800}
+            title="Xiaomi"
+            subtitle={`Redmi Pad Pro 12"`}
+            characteristics={`"12.1 /6 GB/128 GB /Wi-Fi`}
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('0', ' XiaomiRedmi Pad Pro', ``);
+              setPopupType(true);
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={394534437}
+            image="/images/shop/383935269.webp"
+            price={7299}
+            title="Hisense"
+            subtitle="55A4N (4k)"
+            characteristics='UHD VA /4K /55"'
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('0', 'Hisense 55A4N', ``);
+              setPopupType(true);
+            }}
+          />
+        </div>
+        <div className={styles.tm_carousell_block}>
+          <ShopCard
+            device_id={394534437}
+            image="/images/shop/183535869.webp"
+            price={7560}
+            title="Xiaomi"
+            subtitle="Pad 7 Pro"
+            characteristics='11.2" /256 GB /Wi-Fi'
+            style_type={'gray'}
+            show_like={false}
+            show_comapre={false}
+            buy={() => {
+              setPopup('0', 'Xiaomi Pad 7 Pro', ``);
+              setPopupType(true);
+            }}
+          />
+        </div>
+      </Slider>
+
       <div className={styles.conversion}>
         <div className={styles.conversion_text}>
           <div className={styles.conversion_text_top}>
@@ -1281,10 +1477,10 @@ export default function OnlyNet() {
             {/*  Descoperă*/}
             {/*</div>*/}
             <div className={styles.conversion_title}>
-              Totul <br />
-              Internet + TV + Mobil
+              {t('combo_home.totul_triple_1')} <br />
+              {t('combo_home.totul_triple_2')}
             </div>
-            <div>La un preț beton!</div>
+            <div>{t('combo_home.totul_triple_3')}</div>
           </div>
           <Button
             to={`https://www.moldtelecom.md/${t('lang')}/personal/Promo_Abonamente-TV-Internet-Mobil`}

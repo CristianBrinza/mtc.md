@@ -83,6 +83,7 @@
 
 .domenii {
   margin-top: 80px;
+  /*color: var(--theme_primary_color_blue_6);*/
 }
 .abonaments {
   width: 100%;
@@ -354,8 +355,9 @@
   width: 100%;
   height: 300px;
   /*background: #001428;*/
-  background: linear-gradient(90deg, #001428 0%, #00478e 100%);
+  /*background: linear-gradient(90deg, #001428 0%, #00478e 100%);*/
   margin: 60px auto 0px;
+  background-image: url('/images/landings/10577085.webp');
 }
 .modem_img {
   position: absolute;

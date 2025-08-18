@@ -15,6 +15,7 @@
 
 .title_main {
   margin-top: 20px;
+  color: var(--theme_primary_color_blue_6);
 }
 .config {
   margin: 20px auto -10px;
