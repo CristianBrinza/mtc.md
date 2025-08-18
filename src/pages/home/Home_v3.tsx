@@ -4,10 +4,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Home_v3.module.css';
 import { useTranslation } from 'react-i18next';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Chat from '../../components/chat/Chat.tsx';
 import Footer from '../../components/footer/Footer.tsx';
-import ShopCard from '../../components/shop_card/ShopCard.tsx';
 import Icon from '../../components/Icon.tsx';
 import Videos from '../../components/videos/Videos.tsx';
 import SEO from '../../components/SEO';
@@ -42,61 +41,6 @@ export default function Home() {
     title: t('pages.home.title'),
     description: t('pages.home.description'),
     keywords: t('pages.home.keywords'),
-  };
-
-  const settings_phones = {
-    dots: true,
-    infinite: true,
-    arrows: true,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-
-    responsive: [
-      {
-        breakpoint: 1491,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 951,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 651,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
-  // ✨ Tell TS this ref will hold a HTMLDivElement
-  const carouselRef = useRef<HTMLDivElement>(null);
-
-  // ✨ Narrow dir to two literal types
-  const scrollByCard = (dir: 'prev' | 'next') => {
-    const container = carouselRef.current;
-    if (!container) return;
-
-    // ✨ Tell TS this will return an HTMLElement (so offsetWidth exists)
-    const card = container.querySelector<HTMLDivElement>(
-      `.${styles.home_deals_card}`
-    );
-    if (!card) return;
-
-    const gap = parseInt(getComputedStyle(container).gap, 10) || 0;
-    const scrollAmount = card.offsetWidth + gap;
-
-    // ✨ Now TS knows container.scrollBy exists on HTMLDivElement
-    container.scrollBy({
-      left: dir === 'next' ? scrollAmount : -scrollAmount,
-      behavior: 'smooth',
-    });
   };
 
   const [videos, setVideos] = useState<videosItem[]>([]);
