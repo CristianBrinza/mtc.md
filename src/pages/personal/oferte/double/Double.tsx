@@ -882,7 +882,7 @@ export default function Double() {
                 : ''
     );
     // console.log(
-    //   `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Double – ${name} ${subname} (tip - ${activeTVConfig_1}, nr - ${numberTVConfig_1} tv), ${activeMesh_1 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_1 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_1 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_1 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
+    //   `[${isRegio ? 'regio' : 'non-regio'}] (Internet + TV) Triple – ${name} ${subname} (tip - ${activeTVConfig_1}, nr - ${numberTVConfig_1} tv), ${activeMesh_1 ? '+ Wi‑Fi Mesh, ' : ''}${activeSafeweb_1 ? '+ Safe‑Web, ' : ''}${activeMTC_TV_GO_1 ? '+ Moldtelecom TV GO, ' : ''}${activeTelephone_1 ? '+ Telefonie Fixa, ' : ''} (Oferta Back-2-School 2025)`
     // );
   };
 

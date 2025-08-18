@@ -144,7 +144,7 @@ export default function MobileSchool() {
     ],
   };
 
-  const [activeConfig, setActiveConfig] = useState<string>('1');
+  const [activeConfig, setActiveConfig] = useState<string>('2');
 
   const goToPage = (link: string) => {
     window.location.href = link;
@@ -271,23 +271,6 @@ export default function MobileSchool() {
 
       <div className={`${styles.btns_select}`}>
         <Button
-          id="tm_not_client"
-          color={'var(--theme_primary_color_blue_4)'}
-          bgcolor={
-            activeConfig == '1'
-              ? 'var(--theme_primary_color_blue_3)'
-              : 'transparent'
-          }
-          border={'var(--theme_primary_color_blue_3)'}
-          hover_border={'var(--theme_primary_color_blue_2)'}
-          hover_bgcolor={'var(--theme_primary_color_blue_2)'}
-          onClick={() => {
-            setActiveConfig('1');
-          }}
-        >
-          {t('tm.btn_not_client')}
-        </Button>
-        <Button
           id="tm_client"
           color={'var(--theme_primary_color_blue_4)'}
           bgcolor={
@@ -304,6 +287,24 @@ export default function MobileSchool() {
         >
           {t('tm.btn_client')}
         </Button>
+        <Button
+          id="tm_not_client"
+          color={'var(--theme_primary_color_blue_4)'}
+          bgcolor={
+            activeConfig == '1'
+              ? 'var(--theme_primary_color_blue_3)'
+              : 'transparent'
+          }
+          border={'var(--theme_primary_color_blue_3)'}
+          hover_border={'var(--theme_primary_color_blue_2)'}
+          hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+          onClick={() => {
+            setActiveConfig('1');
+          }}
+        >
+          {t('tm.btn_not_client')}
+        </Button>
+
         {/*<Button*/}
         {/*  color={'var(--theme_primary_color_blue_4)'}*/}
         {/*  bgcolor={'transparent'}*/}
@@ -1169,10 +1170,10 @@ export default function MobileSchool() {
             {/*  Descoperă*/}
             {/*</div>*/}
             <div className={styles.conversion_title}>
-              TOTUL <br />
-              Internet + TV + Mobil
+              {t('combo_home.totul_triple_1')} <br />
+              {t('combo_home.totul_triple_2')}
             </div>
-            <div>La un preț beton!</div>
+            <div>{t('combo_home.totul_triple_3')}</div>
           </div>
           <Button
             to={`https://www.moldtelecom.md/${t('lang')}/personal/Promo_Abonamente-TV-Internet-Mobil`}

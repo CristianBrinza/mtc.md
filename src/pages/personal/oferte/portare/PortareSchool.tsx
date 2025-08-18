@@ -1280,10 +1280,10 @@ export default function PortareSchool() {
             {/*  Descoperă*/}
             {/*</div>*/}
             <div className={styles.conversion_title}>
-              TOTUL <br />
-              Internet + TV + Mobil
+              {t('combo_home.totul_triple_1')} <br />
+              {t('combo_home.totul_triple_2')}
             </div>
-            <div>La un preț beton!</div>
+            <div>{t('combo_home.totul_triple_3')}</div>
           </div>
           <Button
             to={`https://www.moldtelecom.md/${t('lang')}/personal/Promo_Abonamente-TV-Internet-Mobil`}

@@ -1972,7 +1972,7 @@
     },
     "min": "min",
     "hero": { "alt": "Moldtelecom" },
-    "title_choose": "Orice abonament alegi, ai Internet Nelimitat și Roaming incluse",
+    "title_choose": "Orice abonament alegi, ai Internet Nelimitat și Roaming inclus",
     "abonament": "Abonament",
     "portare": "Portare",
     "prepay": "Prepay",
@@ -2305,6 +2305,10 @@
     }
   },
   "combo_home": {
+    "totul_triple_1": "TOTUL",
+    "totul_triple_2": " Internet + TV + Mobil",
+    "totul_triple_3": "3 servicii de la 250 lei/lunar",
+    "chose_mob": "Alege abonamentul mobil:",
     "gratiut": "gratiut",
     "regiunea": "Regiunea",
     "cu_oferta": "Doar cu oferta",

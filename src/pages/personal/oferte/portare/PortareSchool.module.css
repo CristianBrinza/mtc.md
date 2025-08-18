@@ -130,6 +130,7 @@
   text-align: center;
   line-height: 46px;
   overflow: hidden;
+  color: var(--theme_primary_color_blue_6);
 }
 .btns_select {
   width: 100%;
@@ -727,6 +728,7 @@
   margin-bottom: 20px;
   margin-top: 60px;
   color: #333;
+  color: var(--theme_primary_color_blue_6);
 }
 
 @media (max-width: 1300px) {

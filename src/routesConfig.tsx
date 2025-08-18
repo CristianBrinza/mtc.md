@@ -170,6 +170,10 @@ export const routesConfig: RouteConfig[] = [
     element: React.createElement(Double),
   },
   {
+    path: '/:lang/internet+tv+mobil',
+    element: React.createElement(Triple),
+  },
+  {
     path: '/:lang/form-test',
     element: React.createElement(FormTestPage),
   },
