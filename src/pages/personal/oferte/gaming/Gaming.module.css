@@ -551,6 +551,12 @@
   height: 2px;
   margin: 15px 0 20px;
 }
+.abonaments_block_inside_pretitle2 {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.5;
+  margin: -5px 0 -5px;
+}
 
 .info_icon {
   cursor: pointer;

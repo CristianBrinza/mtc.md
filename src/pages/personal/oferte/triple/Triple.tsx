@@ -1489,7 +1489,7 @@ export default function Triple() {
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
                   >
-                    (49 {t('combo_home.lei_luna')})
+                    (98 {t('combo_home.lei_luna')})
                   </span>
                 </span>
                 <InfoIcon onClick={() => setActivePopup('1280110')} />

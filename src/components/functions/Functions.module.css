@@ -9,7 +9,7 @@
   width: 100%;
   max-width: 650px;
   text-align: center;
-  color: var(--theme_primary_color_blue_6);
+  /*color: var(--theme_primary_color_blue_6);*/
 }
 .functions_inside {
   border-radius: 20px;

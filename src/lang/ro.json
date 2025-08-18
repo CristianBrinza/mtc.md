@@ -2028,7 +2028,7 @@
         "items_1": [
           "Utilizarea serviciului de roaming este considerată rezonabilă atâta timp cât acesta este folosit exclusiv în cadrul călătoriilor ocazionale în afara teritoriului Republicii Moldova.",
           "Abonații care beneficiază de serviciul de roaming inclus în abonament au obligația de a evita utilizarea abuzivă a serviciilor de roaming în UE și SEE.",
-          "Pentru a analiza utilizarea abuzivă a acestor servicii, Moldtelecom va monitoriza, în mod cumulat, pe parcursul fiecărei perioade de patru luni consecutive de la momentul conectării, dacă"
+          "Pentru a analiza utilizarea abuzivă a acestor servicii, Moldtelecom va monitoriza, în mod cumulat, pe parcursul fiecărei perioade de patru luni consecutive de la momentul conectării, dacă:"
         ],
         "items_2": [
           "volumul de consum al oricărui serviciu în roaming în Europa este mai mare decât volumul consumului aceluiași serviciu la nivel național;",
@@ -2060,8 +2060,7 @@
         "itemsConfig1_1": [
           "Oferta promoțională presupune acordarea unei reduceri lunare la plata abonamentului, în funcție de planul tarifar ales și este valabilă pe întreaga durată contractuală de 24 de luni.",
           "Oferta este valabilă pentru abonații noi, la conectare nouă sau portarea numărului din altă rețea, precum și pentru abonații existenți, la reperfectarea contractului.",
-          "Perioada de comercializare a ofertei: 21.08.2025 – 25.11.2025 (inclusiv).",
-          "Oferta promoțională include și posibilitatea de a achiziționa un smartphone la prețul de 1 leu sau alte dispozitive la preț promoțional, în funcție de ofertă, în limita stocului disponibil, valabilă pentru abonații noi la portare, conectare nouă, precum și abonații existenți, la reperfectarea contractului. Perioada promoțională este 21.08.2024 – 14.11.2025 (inclusiv)"
+          "Perioada de comercializare a ofertei: 21.08.2025 – 25.11.2025 (inclusiv)."
         ],
         "itemsConfigElse": [
           "Oferta promo presupune acordarea unei reduceri 50 lei (abonament Star 150), 75 lei (abonament Liberty 190) sau 100 lei (abonament Liberty Plus 250) reducere la plata lunară de abonament (în dependență de abonament), în combinație cu serviciul de Internet Fix sau Internet Fix+IPTV și se oferă pe toată durata contractuală la conectarea/deținerea unei linii de Internet Fix sau Internet Fix+IPTV.",
@@ -2084,7 +2083,7 @@
           "Abonații conectați la abonamentul ”Liberty Plus 290” sunt obligați să evite folosirea abuzivă a serviciilor incluse în abonament. Prin ”folosire abuzivă” se înțelege efectuarea de apeluri de ieșire spre „alți operatori naționali” și/sau expedierea SMS-urilor spre „alți operatori naționali” către mai mult de 200 numere telefonice unice în decursul unei perioade de facturare, și/sau efectuarea, în decursul unei perioade de facturare, de apeluri nelimitate spre „alți operatori naționali” în volum ce depășește 3000 minute, cu condiția ca numărul de minute de ieșire să depășească de cel puțin două ori numărul minutelor de intrare dinspre „alți operatori naționali” în aceeași perioadă. Abonații care vor fi identificați cu utilizare abuzivă vor beneficia în continuare de 1000 minute și 245 SMS naționale.",
           "Viteza la internet se oferă în funcție de posibilitățile tehnice.",
           "Traficul Internet va avea viteza de transfer a datelor la capacitate maximă download (descărcare) și de până la 512 Kbps upload (încărcare), în dependență de opțiunile suplimentare activate – pentru tehnologia 3G, și la capacitate maximă download/upload – pentru tehnologia 4G.",
-          "Rezoluțiunea anticipată (inclusiv migrarea spre PrePay, schimbul de abonament către unul cu valoare mai mică sau port out) până la expirarea perioadei minime contractuale implică achitarea unei plăți cu titlu de prejudiciu, se calculeaza in baza reducerii acordate, conform formulei: reducerea lunara (fără TVA) * nr de luni in care a fost acordată reducerea."
+          "Rezoluțiunea anticipată (inclusiv migrarea spre PrePay, schimbul de abonament către unul cu valoare mai mică sau port out) până la expirarea perioadei minime contractuale implică achitarea unei plăți cu titlu de prejudiciu, care se calculeaza in baza reducerii acordate, conform formulei: reducerea lunara (fără TVA) * nr de luni in care a fost acordată reducerea."
         ],
         "commonItems_1": [
           "Oferta promoțională include și posibilitatea de a achiziționa un smartphone Xiaomi Redmi 14C 4/128 sau Samsung A06 4/128GB la prețul de 1 leu, sau alte dispozitive la preț promoțional, în funcție de ofertă, în limita stocului disponibil, valabilă pentru abonații noi la portare, conectare nouă, precum și abonații existenți, la reperfectarea contractului.",
@@ -2101,7 +2100,7 @@
           "Tarifarea traficului Internet consumat se efectuează din momentul începerii sesiunii, per 10 KByte (1MB = 1024 KB).",
           "După consumarea conținutului inclus în Roaming UE, convorbirile și traficul de internet sunt taxate conform tarifelor standard ale fiecărui operator.",
           "Conținutul în Roaming UE+SEE poate fi utilizat doar dacă serviciul Roaming este activ.",
-          "Abonații la Liberty 190 și Liberty Plus 250 trebuie să evite folosirea abuzivă a serviciilor Roaming UE+SEE; se va monitoriza la fiecare 4 luni dacă traficul în roaming depășește traficul național pentru același serviciu."
+          "Abonații la Liberty 190 și Liberty Plus 250 trebuie să evite folosirea abuzivă a serviciilor Roaming UE+SEE."
         ]
       }
     },

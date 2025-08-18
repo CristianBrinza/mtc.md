@@ -610,6 +610,7 @@
 }
 .abonaments_block_inside_tv_chose_active {
   display: flex;
+  margin-top: 20px;
 }
 .abonaments_block_inside_tv_chose_select {
   border: 1px solid #fff;

@@ -106,6 +106,12 @@
   font-weight: 500;
   opacity: 0.5;
 }
+.abonaments_block_inside_pretitle2 {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.5;
+  margin: -5px 0 -5px;
+}
 .abonaments_block_inside_subtitle {
   margin: 0px 0 5px;
   /*min-height: 90px;*/
@@ -593,6 +599,7 @@
 }
 .abonaments_block_inside_tv_chose_active {
   display: flex;
+  margin-top: 20px;
 }
 .abonaments_block_inside_tv_chose_select {
   border: 1px solid #fff;

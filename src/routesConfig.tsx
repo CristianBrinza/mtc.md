@@ -64,6 +64,10 @@ export const routesConfig: RouteConfig[] = [
     element: React.createElement(Home),
   },
   {
+    path: '/:lang/test86753',
+    element: React.createElement(Gaming),
+  },
+  {
     path: '/:lang/triple',
     element: React.createElement(Triple),
   },

@@ -560,7 +560,7 @@ export default function Gaming() {
         <div className={styles.abonaments_block}>
           <div className={styles.abonaments_block_inside}>
             <div className={styles.abonaments_block_inside_pretitle}>
-              {t('navbar.internet_tv')}
+              {t('combo_home.internet')}
             </div>
             <div className={styles.abonaments_block_inside_title}>
               1000 Mbps
@@ -619,6 +619,7 @@ export default function Gaming() {
               <InfoIcon onClick={() => setActivePopup('1280112')} />
             </div>
             <div className={styles.abonaments_block_inside_line}></div>
+            <div className={styles.abonaments_block_inside_pretitle2}>TV</div>
 
             <div
               className={`${styles.abonaments_block_inside_tv_chose} ${activeTV_Select_3 && styles.abonaments_block_inside_tv_chose_active}`}
@@ -834,7 +835,7 @@ export default function Gaming() {
             {/*  </div>*/}
             {/*</div>*/}
             <div className={styles.abonaments_block_inside_pretitle}>
-              {t('navbar.internet_tv')}
+              {t('combo_home.internet')}
             </div>
             <div className={styles.abonaments_block_inside_title}>2.1 Gbps</div>
 
@@ -889,6 +890,7 @@ export default function Gaming() {
               <InfoIcon onClick={() => setActivePopup('1280112')} />
             </div>
             <div className={styles.abonaments_block_inside_line}></div>
+            <div className={styles.abonaments_block_inside_pretitle2}>TV</div>
 
             <div
               className={`${styles.abonaments_block_inside_tv_chose} ${activeTV_Select_4 && styles.abonaments_block_inside_tv_chose_active}`}
@@ -1104,7 +1106,7 @@ export default function Gaming() {
             {/*  </div>*/}
             {/*</div>*/}
             <div className={styles.abonaments_block_inside_pretitle}>
-              {t('navbar.internet_tv')}
+              {t('combo_home.internet')}
             </div>
             <div className={styles.abonaments_block_inside_title}>5.5 Gbps</div>
 
@@ -1134,7 +1136,7 @@ export default function Gaming() {
                   className={styles.abonaments_block_inside_subtitle_small}
                   style={{ textDecoration: 'line-through' }}
                 >
-                  (49 {t('combo_home.lei_luna')})
+                  (98 {t('combo_home.lei_luna')})
                 </span>
               </span>
               <InfoIcon onClick={() => setActivePopup('1280110')} />
@@ -1163,6 +1165,7 @@ export default function Gaming() {
               <InfoIcon onClick={() => setActivePopup('1280112')} />
             </div>
             <div className={styles.abonaments_block_inside_line}></div>
+            <div className={styles.abonaments_block_inside_pretitle2}>TV</div>
 
             <div
               className={`${styles.abonaments_block_inside_tv_chose} ${activeTV_Select_5 && styles.abonaments_block_inside_tv_chose_active}`}

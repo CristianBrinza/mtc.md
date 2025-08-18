@@ -773,7 +773,7 @@ export default function MobileSchool() {
                 {t('tm.tags.roaming')}
               </div>
             </div>
-            <div className={styles.mobile_carousell_title}>Liberty 290 +</div>
+            <div className={styles.mobile_carousell_title}>Liberty 290+</div>
 
             <div className={styles.tm_carousell_block_rows_2}>
               <div className={styles.tm_carousell_block_row}>
