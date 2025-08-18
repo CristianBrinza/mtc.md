@@ -1105,7 +1105,7 @@ export default function Triple() {
               {/*  </div>*/}
               {/*</div>*/}
               <div className={styles.abonaments_block_inside_pretitle}>
-                {t('navbar.internet_tv')}
+                {t('combo_home.internet')}
               </div>
               <div className={styles.abonaments_block_inside_title}>
                 300 Mbps
@@ -1171,7 +1171,7 @@ export default function Triple() {
                 <InfoIcon onClick={() => setActivePopup('1280112')} />
               </div>
               <div className={styles.abonaments_block_inside_line}></div>
-
+              <div className={styles.abonaments_block_inside_pretitle2}>TV</div>
               <div
                 className={`${styles.abonaments_block_inside_tv_chose} ${activeTV_Select_1 && styles.abonaments_block_inside_tv_chose_active}`}
               >
@@ -1291,6 +1291,9 @@ export default function Triple() {
               </div>
 
               <div className={styles.abonaments_block_inside_line}></div>
+              <div className={styles.abonaments_block_inside_pretitle3}>
+                {t('combo_home.mobil')}
+              </div>
               <div className={styles.abonaments_block_mobile_title}>
                 <span>{t('combo_home.chose_mob')}</span>{' '}
                 <InfoIcon onClick={() => setActivePopup('1281117')} />
@@ -1451,7 +1454,7 @@ export default function Triple() {
               {/*  </div>*/}
               {/*</div>*/}
               <div className={styles.abonaments_block_inside_pretitle}>
-                {t('navbar.internet_tv')}
+                {t('combo_home.internet')}
               </div>
               <div className={styles.abonaments_block_inside_title}>
                 500 Mbps
@@ -1517,7 +1520,7 @@ export default function Triple() {
                 <InfoIcon onClick={() => setActivePopup('1280112')} />
               </div>
               <div className={styles.abonaments_block_inside_line}></div>
-
+              <div className={styles.abonaments_block_inside_pretitle2}>TV</div>
               <div
                 className={`${styles.abonaments_block_inside_tv_chose} ${activeTV_Select_2 && styles.abonaments_block_inside_tv_chose_active}`}
               >
@@ -1637,6 +1640,9 @@ export default function Triple() {
               </div>
 
               <div className={styles.abonaments_block_inside_line}></div>
+              <div className={styles.abonaments_block_inside_pretitle3}>
+                {t('combo_home.mobil')}
+              </div>
               <div className={styles.abonaments_block_mobile_title}>
                 <span>{t('combo_home.chose_mob')}</span>{' '}
                 <InfoIcon onClick={() => setActivePopup('1281117')} />
@@ -1795,7 +1801,7 @@ export default function Triple() {
             {/*  </div>*/}
             {/*</div>*/}
             <div className={styles.abonaments_block_inside_pretitle}>
-              {t('navbar.internet_tv')}
+              {t('combo_home.internet')}
             </div>
             <div className={styles.abonaments_block_inside_title}>
               1000 Mbps
@@ -1854,7 +1860,7 @@ export default function Triple() {
               <InfoIcon onClick={() => setActivePopup('1280112')} />
             </div>
             <div className={styles.abonaments_block_inside_line}></div>
-
+            <div className={styles.abonaments_block_inside_pretitle2}>TV</div>
             <div
               className={`${styles.abonaments_block_inside_tv_chose} ${activeTV_Select_3 && styles.abonaments_block_inside_tv_chose_active}`}
             >
@@ -1970,6 +1976,9 @@ export default function Triple() {
               </span>
             </div>
             <div className={styles.abonaments_block_inside_line}></div>
+            <div className={styles.abonaments_block_inside_pretitle3}>
+              {t('combo_home.mobil')}
+            </div>
             <div className={styles.abonaments_block_mobile_title}>
               <span>{t('combo_home.chose_mob')}</span>{' '}
               <InfoIcon onClick={() => setActivePopup('1281117')} />
@@ -2146,7 +2155,7 @@ export default function Triple() {
             {/*  </div>*/}
             {/*</div>*/}
             <div className={styles.abonaments_block_inside_pretitle}>
-              {t('navbar.internet_tv')}
+              {t('combo_home.internet')}
             </div>
             <div className={styles.abonaments_block_inside_title}>2.1 Gbps</div>
 
@@ -2205,7 +2214,7 @@ export default function Triple() {
               <InfoIcon onClick={() => setActivePopup('1280112')} />
             </div>
             <div className={styles.abonaments_block_inside_line}></div>
-
+            <div className={styles.abonaments_block_inside_pretitle2}>TV</div>
             <div
               className={`${styles.abonaments_block_inside_tv_chose} ${activeTV_Select_4 && styles.abonaments_block_inside_tv_chose_active}`}
             >
@@ -2321,6 +2330,9 @@ export default function Triple() {
               </span>
             </div>
             <div className={styles.abonaments_block_inside_line}></div>
+            <div className={styles.abonaments_block_inside_pretitle3}>
+              {t('combo_home.mobil')}
+            </div>
             <div className={styles.abonaments_block_mobile_title}>
               <span>{t('combo_home.chose_mob')}</span>{' '}
               <InfoIcon onClick={() => setActivePopup('1281117')} />
@@ -2493,7 +2505,7 @@ export default function Triple() {
             {/*  </div>*/}
             {/*</div>*/}
             <div className={styles.abonaments_block_inside_pretitle}>
-              {t('navbar.internet_tv')}
+              {t('combo_home.internet')}
             </div>
             <div className={styles.abonaments_block_inside_title}>5.5 Gbps</div>
 
@@ -2552,7 +2564,7 @@ export default function Triple() {
               <InfoIcon onClick={() => setActivePopup('1280112')} />
             </div>
             <div className={styles.abonaments_block_inside_line}></div>
-
+            <div className={styles.abonaments_block_inside_pretitle2}>TV</div>
             <div
               className={`${styles.abonaments_block_inside_tv_chose} ${activeTV_Select_5 && styles.abonaments_block_inside_tv_chose_active}`}
             >
@@ -2669,6 +2681,9 @@ export default function Triple() {
             </div>
 
             <div className={styles.abonaments_block_inside_line}></div>
+            <div className={styles.abonaments_block_inside_pretitle3}>
+              {t('combo_home.mobil')}
+            </div>
             <div className={styles.abonaments_block_mobile_title}>
               <span>{t('combo_home.chose_mob')}</span>{' '}
               <InfoIcon onClick={() => setActivePopup('1281117')} />

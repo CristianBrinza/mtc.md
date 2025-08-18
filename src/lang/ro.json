@@ -2305,6 +2305,8 @@
     }
   },
   "combo_home": {
+    "internet": "Internet",
+    "mobil": "Mobil",
     "totul_triple_1": "TOTUL",
     "totul_triple_2": " Internet + TV + Mobil",
     "totul_triple_3": "3 servicii de la 250 lei/lunar",

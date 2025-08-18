@@ -107,7 +107,8 @@
   cursor: pointer;
 }
 .ShopCard_price {
-  color: var(--theme_primary_color_blue_2);
+  /*color: var(--theme_primary_color_blue_2);*/
+  color: var(--theme_primary_color_blue_6);
   font-family: Inter;
   font-size: 26px;
   font-style: normal;

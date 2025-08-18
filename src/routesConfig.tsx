@@ -60,7 +60,7 @@ export const routesConfig: RouteConfig[] = [
     element: React.createElement(Home),
   },
   {
-    path: '/:lang/test1257',
+    path: '/:lang/test16757',
     element: React.createElement(Home),
   },
   {
