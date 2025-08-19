@@ -67,6 +67,10 @@ function AppContent() {
 
         <Route path="/:lang/magazine" element={<Magazine />} />
         <Route
+          path="/:lang/securitate-digitala"
+          element={<SecuritateDigitala />}
+        />
+        <Route
           path="/:lang/securitatea-digitala"
           element={<SecuritateDigitala />}
         />
