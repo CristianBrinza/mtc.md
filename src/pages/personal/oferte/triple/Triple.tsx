@@ -2439,7 +2439,7 @@ export default function Triple() {
               {activeConfig == '1' ? (
                 <div className={styles.tm_carousell_block_row_tags}>
                   <div className={styles.tm_carousell_block_row_tag}>
-                    {t('combo_home.discount_120_2_years')}
+                    {t('combo_home.discount_320_2_years')}
                   </div>
                 </div>
               ) : (
@@ -2790,7 +2790,7 @@ export default function Triple() {
               {activeConfig == '1' ? (
                 <div className={styles.tm_carousell_block_row_tags}>
                   <div className={styles.tm_carousell_block_row_tag}>
-                    {t('combo_home.discount_120_2_years')}
+                    {t('combo_home.discount_320_2_years')}
                   </div>
                 </div>
               ) : (
