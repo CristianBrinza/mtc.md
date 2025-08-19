@@ -791,7 +791,8 @@
       "paragraphs": [
         "Plata de abonament pentru fiecare televizor suplimentar pentru pachetul TV Simplu, Premier sau Univers este de 30 lei.",
         "Mediabox-urile adiţionale se consideră al 2-lea, al 3-lea.",
-        "Prin tehnologia ADSL, Mediabox-urile adiţionale vor fi conectate doar în cazul existenţei posibilităţilor tehnice."
+        "Prin tehnologia ADSL, Mediabox-urile adiţionale vor fi conectate doar în cazul existenţei posibilităţilor tehnice.",
+      "Televiziunea poate fi conectată prin MediaBox = 30 lei/lună sau aplicația Moldtelecom TV 20 lei/lună."
       ],
       "table": {
         "headers": [
@@ -2180,7 +2181,9 @@
         "sms_int": "SMS Internaț. (lei/SMS)",
         "internet": "Trafic internet (lei/MB)"
       },
-      "footnote": " După consumarea traficului internet inclus în abonamente traficul extra abonament va fi gratuit, însă viteza de acces download/upload va fi de până la 512/512 kbps."
+      "footnote": " După consumarea traficului internet inclus în abonamente traficul extra abonament va fi gratuit, însă viteza de acces download/upload va fi de până la 512/512 kbps.",
+      "footnote_1": "După consumarea traficului internet inclus în abonamente, (35 GB - Start 120), 45 GB -Flex 150, 85 GB -Liberty 200, 200 GB -Liberty Plus 290) traficul extra abonament va fi gratuit, însă viteza de acces download/upload va fi de până la 512/512 kbps.",
+      "footnote_2": "Traficul de date inclus în Roaming România se distribuie astfel: pentru abonamentul Start 120 – 1 GB roaming România (orice operator) + 5 GB în rețeaua operatorului Digi, iar pentru abonamentul Flex 150 – 1 GB roaming România (orice operator) + 4 GB în rețeaua operatorului Digi. Pentru a accesa traficul de date in reteaua operatorului Digi este necesar de asigurat configurarea manuala a operatorului."
     },
     "popup": {
       "error1": "A apărut o eroare la trimiterea cererii.",
@@ -2413,9 +2416,9 @@
     "conditii_2": {
       "title": "Oferta promoțională \"Smart TV / Tableta\"",
       "item_1": "Oferta este valabilă în perioada 21.08.2025–25.11.2025.",
-      "item_2": "Se aplică doar clienților care activează un abonament Internet + IPTV cu viteze de 500 Mbps, 1000 Mbps, 2.1 Gbps sau 5.5 Gbps.",
+      "item_2": "Se aplică doar clienților care activează un abonament Internet + IPTV",
       "item_3": "Contractul se semnează pe o perioadă de 24 de luni.",
-      "item_4": "Clienții pot alege unul dintre următoarele dispozitive promoționale:\n– Smart TV 32” sau Tabletă – pentru 500 Mbps\n– Smart TV 43” sau Tabletă – pentru 1000 Mbps\n– Smart TV 55” sau Tabletă – pentru 2.1 Gbps sau 5.5 Gbps",
+      "item_4": "Clienții pot alege unul dintre următoarele dispozitive promoționale:\n– Smart TV 32” sau Tabletă – pentru 500 Mbps sau 300 Mbps\n– Smart TV 43” sau Tabletă – pentru 1000 Mbps\n– Smart TV 55” sau Tabletă – pentru 2.1 Gbps sau 5.5 Gbps",
       "item_5": "Beneficiile nu se cumulează: se poate alege fie reducerea lunară, fie dispozitivul la preț promoțional de 1 leu.",
       "item_6": "Oferta este disponibilă în limita stocului și doar în localitățile în care conectarea tehnică este posibilă.",
       "item_7": "În cazul rezilierii anticipate, înainte de expirarea perioadei contractuale, se va aplica rambursarea reducerii oferite pentru dispozitiv – echivalentă cu diferența dintre prețul standard și cel promoțional."
@@ -2436,8 +2439,8 @@
     "watch_now": "Vizionează acum",
     "premier_tv": "Premier",
     "univers_tv": "Univers",
-    "premier_tv_channels": "121 canale HD, 77 canale SD, 3 radio",
-    "univers_tv_channels": "170 canale HD, 111 canale SD, 3 radio",
+    "premier_tv_channels": "122 canale HD, 77 canale SD, 3 radio",
+    "univers_tv_channels": "171 canale HD, 111 canale SD, 3 radio",
     "popup_premier": {
       "title": "Ce este Premier TV?",
       "text": "Premier TV este serviciul digital de televiziune Moldtelecom, care îți oferă zeci de canale HD, SD şi posturi radio, plus funcționalități avansate de DVR și replay.",
@@ -2547,7 +2550,7 @@
       "tvextra": {
         "title": "+1 TV Extra",
         "text": "Plata de abonament pentru fiecare televizor suplimentar este de 20 lei în cazul utilizării aplicație și de 30 lei în cazul utilizării Mediabox-ului.",
-        "price": "30 lei"
+        "price": "20/30 lei"
       },
       "arhiva": {
         "title": "Arhiva TV",
@@ -2673,7 +2676,7 @@
         "mesh_price": "{{price}} lei/lună"
       },
       "buttons": {
-        "promo": "Promo Abonamente",
+        "promo": "Alte Abonamente",
         "features": "Vezi caracteristicile"
       },
       "new": "NOU"

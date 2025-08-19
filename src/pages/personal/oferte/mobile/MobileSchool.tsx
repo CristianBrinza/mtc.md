@@ -400,16 +400,11 @@ export default function MobileSchool() {
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>1 GB</b>
+                    <b>5 GB</b>
                     <br />
                     Roaming RO
                   </span>{' '}
-                  +
-                  <span>
-                    <b>4 GB</b>
-                    <br />
-                    Roaming Digi
-                  </span>
+
                 </div>
               </div>
             </div>
@@ -541,16 +536,10 @@ export default function MobileSchool() {
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>1 GB</b>
+                    <b>8 GB</b>
                     <br />
                     Roaming RO
                   </span>{' '}
-                  +
-                  <span>
-                    <b>7 GB</b>
-                    <br />
-                    Roaming Digi
-                  </span>
                 </div>
               </div>
             </div>
@@ -692,9 +681,9 @@ export default function MobileSchool() {
                   </span>{' '}
                   +
                   <span>
-                    <b>{t('tm.nelimitat')} </b>
+                    <b>40 {t('tm.min')}</b>
                     <br />
-                    {t('tm.min_roaming_eu')}
+                    {t('tm.roaming_eu')}
                   </span>
                 </div>
               </div>
@@ -709,7 +698,7 @@ export default function MobileSchool() {
                   <span>
                     <b>5 GB</b>
                     <br />
-                    Roaming Digi
+                    Roaming RO
                   </span>
                 </div>
               </div>
@@ -847,9 +836,9 @@ export default function MobileSchool() {
                   </span>{' '}
                   +
                   <span>
-                    <b>{t('tm.nelimitat')} </b>
+                    <b>50 {t('tm.min')} </b>
                     <br />
-                    {t('tm.min_roaming_eu')}
+                    {t('tm.roaming_eu')}
                   </span>
                 </div>
               </div>
@@ -864,7 +853,7 @@ export default function MobileSchool() {
                   <span>
                     <b>6 GB</b>
                     <br />
-                    Roaming Digi
+                    Roaming RO
                   </span>
                 </div>
               </div>
@@ -989,7 +978,15 @@ export default function MobileSchool() {
               </tbody>
             </table>
           </ScrollableWrapper>
-          {t('tm.table.footnote')}
+          <ul>
+            <li>
+              {t('tm.table.footnote_1')}
+            </li>
+            <li>
+              {t('tm.table.footnote_2')}
+            </li>
+          </ul>
+
         </DetailsBlock>
 
         <DetailsBlock title={t('tm.details.roaming.title')}>

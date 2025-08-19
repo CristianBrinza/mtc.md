@@ -651,13 +651,13 @@ export default function Gaming() {
                   ? t('double.premier_tv')
                   : activeSelectedTV_3 === 'univers' && t('double.univers_tv')}
               </span>
-              <Icon
-                className={styles.abonaments_block_inside_title_tv_svg}
-                type={'retry'}
-                size={'24px'}
-                color={'var(--theme_primary_color_blue_2)'}
-                onClick={() => setActiveTV_Select_3(true)}
-              />
+              {/*<Icon*/}
+              {/*  className={styles.abonaments_block_inside_title_tv_svg}*/}
+              {/*  type={'retry'}*/}
+              {/*  size={'24px'}*/}
+              {/*  color={'var(--theme_primary_color_blue_2)'}*/}
+              {/*  onClick={() => setActiveTV_Select_3(true)}*/}
+              {/*/>*/}
               <InfoIcon onClick={() => setActivePopup('1280111')} />
             </div>
             <div
@@ -1197,13 +1197,13 @@ export default function Gaming() {
                   ? t('double.premier_tv')
                   : activeSelectedTV_5 === 'univers' && t('double.univers_tv')}
               </span>
-              <Icon
-                className={`${styles.abonaments_block_inside_title_tv_svg} ${styles.abonaments_block_inside_title_tv_svg_none}`}
-                type={'retry'}
-                size={'24px'}
-                color={'var(--theme_primary_color_blue_2)'}
-                onClick={() => setActiveTV_Select_5(true)}
-              />
+              {/*<Icon*/}
+              {/*  className={`${styles.abonaments_block_inside_title_tv_svg} ${styles.abonaments_block_inside_title_tv_svg_none}`}*/}
+              {/*  type={'retry'}*/}
+              {/*  size={'24px'}*/}
+              {/*  color={'var(--theme_primary_color_blue_2)'}*/}
+              {/*  onClick={() => setActiveTV_Select_5(true)}*/}
+              {/*/>*/}
               <InfoIcon onClick={() => setActivePopup('1280111')} />
             </div>
             <div

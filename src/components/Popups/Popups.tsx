@@ -1340,38 +1340,8 @@ export default function Popups({ content, onClose, width }: PopupsProps) {
           <p>{t('popups.f12.paragraphs.0')}</p>
           <p>{t('popups.f12.paragraphs.1')}</p>
           <p>{t('popups.f12.paragraphs.2')}</p>
-          <ScrollableWrapper>
-            <table className="popup_table">
-              <thead>
-                <tr>
-                  <td
-                    dangerouslySetInnerHTML={{
-                      __html: t('popups.f12.table.headers.0'),
-                    }}
-                  />
-                  <td
-                    dangerouslySetInnerHTML={{
-                      __html: t('popups.f12.table.headers.1'),
-                    }}
-                  />
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{t('popups.f12.table.rows.0.0')}</td>
-                  <td>{t('popups.f12.table.rows.0.1')}</td>
-                </tr>
-                <tr>
-                  <td>{t('popups.f12.table.rows.1.0')}</td>
-                  <td>{t('popups.f12.table.rows.1.1')}</td>
-                </tr>
-                <tr>
-                  <td>{t('popups.f12.table.rows.2.0')}</td>
-                  <td>{t('popups.f12.table.rows.2.1')}</td>
-                </tr>
-              </tbody>
-            </table>
-          </ScrollableWrapper>
+          <p>{t('popups.f12.paragraphs.3')}</p>
+
           <div
             className="popup_content_price"
             dangerouslySetInnerHTML={{ __html: t('popups.f12.price') }}

@@ -1881,11 +1881,11 @@ export default function Double() {
                   onChange={e => setSelectedDevice_3_3(e.target.value)}
                 >
                   <option value={'1780226'}>
-                    <b>Xbox Series S </b> (la 3500 lei)&nbsp;
+                    <b>Xbox Series S </b> (la 3499 lei)&nbsp;
                   </option>
 
                   <option value={'1780227'}>
-                    <b>PlayStation 5 </b> (la 5000 lei)&nbsp;
+                    <b>PlayStation 5 </b> (la 4999 lei)&nbsp;
                   </option>
                 </select>
                 {selectedDevice_3_3 != 'no_device' && (
@@ -2056,13 +2056,13 @@ export default function Double() {
                   ? t('double.premier_tv')
                   : activeSelectedTV_4 === 'univers' && t('double.univers_tv')}
               </span>
-              <Icon
-                className={styles.abonaments_block_inside_title_tv_svg}
-                type={'retry'}
-                size={'24px'}
-                color={'var(--theme_primary_color_blue_2)'}
-                onClick={() => setActiveTV_Select_4(true)}
-              />
+              {/*<Icon*/}
+              {/*  className={styles.abonaments_block_inside_title_tv_svg}*/}
+              {/*  type={'retry'}*/}
+              {/*  size={'24px'}*/}
+              {/*  color={'var(--theme_primary_color_blue_2)'}*/}
+              {/*  onClick={() => setActiveTV_Select_4(true)}*/}
+              {/*/>*/}
               <InfoIcon onClick={() => setActivePopup('1280111')} />
             </div>
             <div
@@ -2201,7 +2201,7 @@ export default function Double() {
                   </option>
 
                   <option value={'1780227'}>
-                    <b>PlayStation 5 </b> (la 1 leu)&nbsp;
+                    <b>PlayStation 5 </b> (la 1499 lei)&nbsp;
                   </option>
                 </select>
                 {selectedDevice_4_4 != 'no_device' && (
@@ -2372,13 +2372,13 @@ export default function Double() {
                   ? t('double.premier_tv')
                   : activeSelectedTV_5 === 'univers' && t('double.univers_tv')}
               </span>
-              <Icon
-                className={styles.abonaments_block_inside_title_tv_svg}
-                type={'retry'}
-                size={'24px'}
-                color={'var(--theme_primary_color_blue_2)'}
-                onClick={() => setActiveTV_Select_5(true)}
-              />
+              {/*<Icon*/}
+              {/*  className={styles.abonaments_block_inside_title_tv_svg}*/}
+              {/*  type={'retry'}*/}
+              {/*  size={'24px'}*/}
+              {/*  color={'var(--theme_primary_color_blue_2)'}*/}
+              {/*  onClick={() => setActiveTV_Select_5(true)}*/}
+              {/*/>*/}
               <InfoIcon onClick={() => setActivePopup('1280111')} />
             </div>
             <div
