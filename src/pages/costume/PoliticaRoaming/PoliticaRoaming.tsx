@@ -1,23 +1,30 @@
 import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb.tsx';
-// import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import Chat from '../../../components/chat/Chat.tsx';
 import Feedback from '../../../components/feedback/Feedback.tsx';
 import Navbar from '../../../components/navbar/Navbar.tsx';
 import styles from './PoliticaRoaming.module.css';
 import Footer from '../../../components/footer/Footer.tsx';
+import SEO from '../../../components/SEO';
 
 // import CostumeFunctions from '../../../components/functions/CostumeFunctions.tsx';
 
 export default function PoliticaRoaming() {
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
   const breadcrumbItems = [
     // { label: 'politica-de-utilizare-rezonabila-a-serviciului-roaming-europa' },
     { label: 'Politica de utilizare rezonabilă', url: ' ' },
     { label: 'Roaming-Europa' },
   ];
+  const seo = {
+    title: t('pages.politica_roaming.title'),
+    description: t('pages.politica_roaming.description'),
+    keywords: t('pages.politica_roaming.keywords'),
+  };
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Chat />
       <Feedback />

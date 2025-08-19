@@ -19,9 +19,15 @@ import Popup from '../../../../components/Popup/Popup.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
 import { useState } from 'react';
 import { trackEvent } from '../../../../initAnalytics.ts';
+import SEO from '../../../../components/SEO';
 
 export default function FiveGbps() {
   const { t } = useTranslation();
+  const seo = {
+    title: t('pages.five_gbps.title'),
+    description: t('pages.five_gbps.description'),
+    keywords: t('pages.five_gbps.keywords'),
+  };
 
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [popupType, setPopupType] = useState(false);
@@ -80,6 +86,7 @@ export default function FiveGbps() {
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Chat />
       <Feedback />

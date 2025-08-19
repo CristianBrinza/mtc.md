@@ -5,6 +5,7 @@ import Feedback from '../../../components/feedback/Feedback.tsx';
 import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb.tsx';
 import Footer from '../../../components/footer/Footer.tsx';
 // import styles from './Promo1536965.module.css';
+import SEO from '../../../components/SEO';
 
 export default function Contacts() {
   const { t } = useTranslation();
@@ -12,9 +13,15 @@ export default function Contacts() {
     { label: t('contacts.breadcrumb.help'), url: ' ' },
     { label: t('contacts.breadcrumb.title') },
   ];
+  const seo = {
+    title: t('pages.contacts.title'),
+    description: t('pages.contacts.description'),
+    keywords: t('pages.contacts.keywords'),
+  };
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Chat />
       <Feedback />

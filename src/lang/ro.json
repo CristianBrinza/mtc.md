@@ -1626,6 +1626,46 @@
       "title": "Back to School 2025",
       "description": "Promoții pentru începutul anului școlar la dispozitive și abonamente Moldtelecom.",
       "keywords": "back to school, promoții, reduceri, dispozitive, moldtelecom"
+    },
+    "notfound": {
+      "title": "Pagina nu a fost găsită",
+      "description": "Pagina solicitată nu a fost găsită pe site-ul Moldtelecom.",
+      "keywords": "404, pagină nu există, moldtelecom, not found"
+    },
+    "securitatea_digitala": {
+      "title": "Securitate digitală",
+      "description": "Resurse și sfaturi pentru protecția datelor și navigare sigură online.",
+      "keywords": "securitate digitală, protecția datelor, internet sigur, moldtelecom"
+    },
+    "contacts": {
+      "title": "Contacte Moldtelecom",
+      "description": "Date de contact și modalități de suport pentru clienți Moldtelecom.",
+      "keywords": "contacte, suport clienți, moldtelecom, telefon, email"
+    },
+    "icons": {
+      "title": "Colecție de iconițe",
+      "description": "Demonstrație tehnică a setului de iconițe utilizate în proiect.",
+      "keywords": "iconițe, pictograme, demo, tehnic"
+    },
+    "mymtc": {
+      "title": "Descarcă aplicația MyMoldtelecom",
+      "description": "Redirecționare către aplicația MyMoldtelecom pentru iOS, Android sau web.",
+      "keywords": "mymoldtelecom, aplicație, descărcare, moldtelecom, ios, android"
+    },
+    "five_gbps": {
+      "title": "Internet 5.5 Gbps",
+      "description": "Oferta Moldtelecom cu viteză de 5.5 Gbps și acoperire totală în casă.",
+      "keywords": "5.5 gbps, internet rapid, wifi 6, xgs-pon, moldtelecom"
+    },
+    "form_test": {
+      "title": "Formular test",
+      "description": "Pagină de test pentru formulare și funcționalități interne.",
+      "keywords": "test, formular, intern"
+    },
+    "politica_roaming": {
+      "title": "Politica de utilizare rezonabilă Roaming Europa",
+      "description": "Reguli privind utilizarea rezonabilă a serviciului Roaming Europa oferit de Moldtelecom.",
+      "keywords": "politica roaming, utilizare rezonabilă, roaming europa, moldtelecom"
     }
   },
   "pormo_b2s_2025": {

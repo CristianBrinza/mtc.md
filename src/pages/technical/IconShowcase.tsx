@@ -1,12 +1,21 @@
 import Icon, { icons } from '../../components/Icon.tsx';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import SEO from '../../components/SEO';
 
 export default function IconShowcase() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
+  const seo = {
+    title: t('pages.icons.title'),
+    description: t('pages.icons.description'),
+    keywords: t('pages.icons.keywords'),
+  };
   return (
     <>
+      <SEO {...seo} />
       <h3>Icons Showcase</h3>
 
       <input

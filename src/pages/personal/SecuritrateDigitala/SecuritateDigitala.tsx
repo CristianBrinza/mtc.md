@@ -7,13 +7,20 @@ import Footer from '../../../components/footer/Footer.tsx';
 import { useTranslation } from 'react-i18next';
 import Chat from '../../../components/chat/Chat.tsx';
 import Feedback from '../../../components/feedback/Feedback.tsx';
+import SEO from '../../../components/SEO';
 
 export default function SecuritateDigitala() {
   const { t } = useTranslation();
   const breadcrumbItems = [{ label: 'Securitrate Digitala' }];
+  const seo = {
+    title: t('pages.securitatea_digitala.title'),
+    description: t('pages.securitatea_digitala.description'),
+    keywords: t('pages.securitatea_digitala.keywords'),
+  };
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Chat />
       <Feedback />
