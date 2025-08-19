@@ -578,6 +578,7 @@
 }
 .title2 {
   margin-top: 40px;
+  color: var(--theme_primary_color_blue_6);
 }
 
 .sub_title1 {
@@ -754,7 +755,7 @@
 .conversion {
   width: 100%;
   max-width: 1180px;
-  margin: 15px auto;
+  margin: 25px auto 15px;
   min-height: 300px;
   background-color: var(--theme_primary_color_blue_3);
   overflow: hidden;

@@ -30,7 +30,6 @@ import Roaming from './pages/personal/oferte/roaming/Roaming.tsx';
 import FiveGbps from './pages/personal/oferte/5gbps/FiveGbps.tsx';
 import Double from './pages/personal/oferte/double/Double.tsx';
 import Triple from './pages/personal/oferte/triple/Triple.tsx';
-import FormTestPage from './pages/test/Test.tsx';
 import M2M from './pages/business/m2m/M2M.tsx';
 import GpsTrack from './pages/business/gps_track/GpsTrack.tsx';
 import Fibra from './pages/business/fibra/Fibra.tsx';
@@ -95,7 +94,7 @@ function AppContent() {
         <Route path="/:lang/5gbps" element={<FiveGbps />} />
         <Route path="/:lang/internet+tv" element={<Double />} />
         <Route path="/:lang/internet+tv+mobil" element={<Triple />} />
-        <Route path="/:lang/form-test" element={<FormTestPage />} />
+        {/*<Route path="/:lang/form-test" element={<FormTestPage />} />*/}
         <Route
           path="/:lang/politica-de-utilizare-rezonabila-a-serviciului-roaming-europa"
           element={<PoliticaRoaming />}

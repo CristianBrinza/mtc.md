@@ -1469,7 +1469,13 @@ export default function OnlyNet() {
           />
         </div>
       </Slider>
-
+      <div className={styles.devices_disclailmer}>
+        <span>
+          {' '}
+          <sup>*</sup>
+          {t('combo_home.stock_offer')}
+        </span>
+      </div>
       <div className={styles.conversion}>
         <div className={styles.conversion_text}>
           <div className={styles.conversion_text_top}>
