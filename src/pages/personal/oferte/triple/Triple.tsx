@@ -176,9 +176,9 @@ export default function Triple() {
 
   const { t } = useTranslation();
   const seo = {
-    title: t('pages.double.title'),
-    description: t('pages.double.description'),
-    keywords: t('pages.double.keywords'),
+    title: t('pages.triple.title'),
+    description: t('pages.triple.description'),
+    keywords: t('pages.triple.keywords'),
   };
   const breadcrumbItems = [
     { label: t('navbar.promo'), url: ' ' },
