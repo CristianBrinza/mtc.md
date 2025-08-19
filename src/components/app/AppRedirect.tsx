@@ -1,6 +1,14 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import SEO from '../SEO';
 
-export default function AppRedirect(): null {
+export default function AppRedirect(): JSX.Element {
+  const { t } = useTranslation();
+  const seo = {
+    title: t('pages.mymtc.title'),
+    description: t('pages.mymtc.description'),
+    keywords: t('pages.mymtc.keywords'),
+  };
   useEffect(() => {
     const ua = navigator.userAgent || navigator.vendor || '';
     let url: string;
@@ -33,5 +41,5 @@ export default function AppRedirect(): null {
     }
   }, []);
 
-  return null;
+  return <SEO {...seo} />;
 }

@@ -1657,6 +1657,46 @@
       "title": "Back to School 2025",
       "description": "Акции к началу учебного года на устройства и абонементы Moldtelecom.",
       "keywords": "back to school, акции, скидки, устройства, moldtelecom"
+    },
+    "notfound": {
+      "title": "Страница не найдена",
+      "description": "Запрошенная страница не найдена на сайте Moldtelecom.",
+      "keywords": "404, страница не найдена, moldtelecom, not found"
+    },
+    "securitatea_digitala": {
+      "title": "Цифровая безопасность",
+      "description": "Ресурсы и советы по защите данных и безопасному использованию интернета.",
+      "keywords": "цифровая безопасность, защита данных, безопасный интернет, moldtelecom"
+    },
+    "contacts": {
+      "title": "Контакты Moldtelecom",
+      "description": "Контактные данные и способы поддержки клиентов Moldtelecom.",
+      "keywords": "контакты, поддержка клиентов, moldtelecom, телефон, email"
+    },
+    "icons": {
+      "title": "Демонстрация иконок",
+      "description": "Техническая демонстрация набора иконок, используемых в проекте.",
+      "keywords": "иконки, демонстрация, технический"
+    },
+    "mymtc": {
+      "title": "Скачать приложение MyMoldtelecom",
+      "description": "Переадресация в приложение MyMoldtelecom для iOS, Android или web.",
+      "keywords": "mymoldtelecom, приложение, скачать, moldtelecom, ios, android"
+    },
+    "five_gbps": {
+      "title": "Интернет 5.5 Gbps",
+      "description": "Предложение Moldtelecom со скоростью 5.5 Gbps и полным покрытием дома.",
+      "keywords": "5.5 gbps, быстрый интернет, wifi 6, xgs-pon, moldtelecom"
+    },
+    "form_test": {
+      "title": "Тестовая страница формы",
+      "description": "Тестовая страница для форм и внутренних функций.",
+      "keywords": "тест, форма, внутренний"
+    },
+    "politica_roaming": {
+      "title": "Политика разумного использования Roaming Europa",
+      "description": "Правила разумного использования услуги Roaming Europa от Moldtelecom.",
+      "keywords": "политика роуминг, разумное использование, roaming europa, moldtelecom"
     }
   },
   "pormo_b2s_2025": {

@@ -6,13 +6,20 @@ import Breadcrumb from '../../components/Breadcrumb/Breadcrumb.tsx';
 import Footer from '../../components/footer/Footer.tsx';
 import styles from './NotFound.module.css';
 import Button from '../../components/Button.tsx';
+import SEO from '../../components/SEO';
 
 export default function NotFound() {
   const { t } = useTranslation();
   const breadcrumbItems = [{ label: t('notfound.breadcrumb.title') }];
+  const seo = {
+    title: t('pages.notfound.title'),
+    description: t('pages.notfound.description'),
+    keywords: t('pages.notfound.keywords'),
+  };
 
   return (
     <>
+      <SEO {...seo} />
       <Navbar />
       <Chat />
       <Feedback />

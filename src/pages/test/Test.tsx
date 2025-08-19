@@ -1,7 +1,15 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import SEO from '../../components/SEO';
 
 export default function FormTestPage() {
+  const { t } = useTranslation();
   const [phone, setPhone] = useState('');
+  const seo = {
+    title: t('pages.form_test.title'),
+    description: t('pages.form_test.description'),
+    keywords: t('pages.form_test.keywords'),
+  };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -12,11 +20,13 @@ export default function FormTestPage() {
   };
 
   return (
-    <form
-      action="https://www.moldtelecom.md/comanda_marketing"
-      data-type="thankyou-page-form"
-      method="post"
-    >
+    <>
+      <SEO {...seo} />
+      <form
+        action="https://www.moldtelecom.md/comanda_marketing"
+        data-type="thankyou-page-form"
+        method="post"
+      >
       <input
         type="tel"
         inputMode="numeric"
@@ -61,5 +71,6 @@ export default function FormTestPage() {
         value="3zqS1thx5283Dl6XJ786we75Pw1RNr9PhBzHiq8z"
       />
     </form>
+    </>
   );
 }
