@@ -55,6 +55,7 @@
   gap: 10px;
   margin: 40px auto 65px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .why_card {
   width: 380px;

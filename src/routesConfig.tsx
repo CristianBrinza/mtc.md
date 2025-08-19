@@ -56,6 +56,10 @@ export const routesConfig: RouteConfig[] = [
     element: React.createElement(Gaming),
   },
   {
+    path: '/:lang/test55013',
+    element: React.createElement(Gaming),
+  },
+  {
     path: '/:lang/internet',
     element: React.createElement(OnlyNet),
   },

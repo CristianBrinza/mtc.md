@@ -23,10 +23,10 @@ function AppContent() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Navigate to="/ro" replace />} />
-        {/*<Route path="/" element={<NotFound />} />*/}
-        {/*<Route path="/:lang/" element={<NotFound />} />*/}
-        <Route path="/" element={<Home />} />
-        <Route path="/:lang/" element={<Home />} />
+        <Route path="/" element={<NotFound />} />
+        <Route path="/:lang/" element={<NotFound />} />
+        {/*<Route path="/" element={<Home />} />*/}
+        {/*<Route path="/:lang/" element={<Home />} />*/}
         {/*<Route path="/" element={<HomeNew />} />*/}
         {/*<Route path="/:lang/" element={<HomeTemplink />} />*/}
         <Route path="*" element={<NotFound />} />

@@ -67,7 +67,7 @@ export default function FiveGbps() {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 651,
+        breakpoint: 1301,
         settings: {
           slidesToShow: 1,
           autoplay: true,
