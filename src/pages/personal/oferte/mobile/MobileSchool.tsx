@@ -978,7 +978,11 @@ export default function MobileSchool() {
             </table>
           </ScrollableWrapper>
           <ul>
-            <li>{t('tm.table.footnote_1')}</li>
+            <li>
+              <b>{t('tm.table.footnote_1')}</b>
+            </li>
+          </ul>{' '}
+          <ul>
             <li>{t('tm.table.footnote_2')}</li>
           </ul>
         </DetailsBlock>

@@ -1087,7 +1087,15 @@ export default function PortareSchool() {
               </tbody>
             </table>
           </ScrollableWrapper>
-          {t('tm.table.footnote')}
+          {/*{t('tm.table.footnote')}*/}
+          <ul>
+            <li>
+              <b>{t('tm.table.footnote_1')}</b>
+            </li>
+          </ul>{' '}
+          <ul>
+            <li>{t('tm.table.footnote_2')}</li>
+          </ul>
         </DetailsBlock>
 
         <DetailsBlock title={t('tm.details.roaming.title')}>

@@ -208,12 +208,12 @@ export default function FiveGbps() {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1301,
+        breakpoint: 951,
         settings: {
           slidesToShow: 1,
           autoplay: true,
           autoplaySpeed: 1800,
-          arrows: false,
+          arrows: true,
         },
       },
     ],
@@ -346,11 +346,13 @@ export default function FiveGbps() {
       </div>
 
       <div className={styles.what}>
-        <img
-          src="/images/landings/88618812.webp"
-          alt="Moldtelecom"
-          className={styles.what_img}
-        />
+        <div className={`${styles.what_img_block} ${styles.what_img_block_1}`}>
+          {/*<img*/}
+          {/*  src="/images/landings/88618812.webp"*/}
+          {/*  alt="Moldtelecom"*/}
+          {/*  className={styles.what_img}*/}
+          {/*/>*/}
+        </div>
         <div className={styles.what_right}>
           <div className={styles.what_title}>{t('five_gbps.intro.title')}</div>
           <div
@@ -358,7 +360,7 @@ export default function FiveGbps() {
           />
         </div>
       </div>
-      <div className={styles.what}>
+      <div className={`${styles.what} ${styles.what_2}`}>
         <div className={`${styles.what_right} ${styles.what_right_2}`}>
           <div className={styles.what_title}>
             {t('five_gbps.why_need.title')}
@@ -425,11 +427,13 @@ export default function FiveGbps() {
             </div>
           </div>
         </div>
-        <img
-          src="/images/landings/88618813.webp"
-          alt="Moldtelecom"
-          className={styles.what_img}
-        />
+        <div className={`${styles.what_img_block} ${styles.what_img_block_2}`}>
+          {/*<img*/}
+          {/*  src="/images/landings/88618813.webp"*/}
+          {/*  alt="Moldtelecom"*/}
+          {/*  className={styles.what_img}*/}
+          {/*/>*/}
+        </div>
       </div>
 
       <div className={styles.modem}>
@@ -446,6 +450,11 @@ export default function FiveGbps() {
           <div
             className={styles.modem_inside_text}
             dangerouslySetInnerHTML={{ __html: t('five_gbps.modem.text') }}
+          />
+          <img
+            className={styles.modem_img_2}
+            src="/images/landings/45292083.webp"
+            alt="Moldtelecom"
           />
 
           {/*<div className={styles.modem_inside_list}>*/}
