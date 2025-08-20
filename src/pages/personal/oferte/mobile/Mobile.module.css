@@ -702,6 +702,11 @@
   /*color: var(--theme_primary_color_blue_6);*/
 }
 
+.start_quest {
+  opacity: 0.5;
+  /*font-size: 12px;*/
+  /*line-height: 18px;*/
+}
 @media (max-width: 1300px) {
   .hero {
     width: 1300px;

@@ -3293,7 +3293,6 @@ export default function Double() {
               {t('double.popup_options.tvextra.title')}
             </div>
             {t('double.popup_options.tvextra.text')}
-
           </div>
           <div className={styles.row_popup_options_title_price}>
             {t('double.popup_options.tvextra.price')}

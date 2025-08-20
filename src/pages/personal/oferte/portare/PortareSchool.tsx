@@ -374,7 +374,11 @@ export default function PortareSchool() {
                   />
                 </div>
                 <span>
-                  <b>{t('tm.nelimitat')} GB</b> <br /> {t('tm.trafic_internet')}
+                  <b>
+                    {t('tm.nelimitat')} GB{' '}
+                    <span className={styles.start_quest}>*</span>{' '}
+                  </b>{' '}
+                  <br /> {t('tm.trafic_internet')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -398,7 +402,9 @@ export default function PortareSchool() {
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>5 GB</b>
+                    <b>
+                      5 GB <span className={styles.start_quest}>**</span>
+                    </b>
                     <br />
                     Roaming RO
                   </span>{' '}
@@ -537,7 +543,11 @@ export default function PortareSchool() {
                   />
                 </div>
                 <span>
-                  <b>{t('tm.nelimitat')} GB</b> <br /> {t('tm.trafic_internet')}
+                  <b>
+                    {t('tm.nelimitat')} GB{' '}
+                    <span className={styles.start_quest}>*</span>
+                  </b>{' '}
+                  <br /> {t('tm.trafic_internet')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -561,7 +571,9 @@ export default function PortareSchool() {
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
                     {' '}
-                    <b>8 GB</b>
+                    <b>
+                      8 GB <span className={styles.start_quest}>**</span>
+                    </b>
                     <br />
                     Roaming RO
                   </span>{' '}
@@ -698,7 +710,11 @@ export default function PortareSchool() {
                   />
                 </div>
                 <span>
-                  <b>{t('tm.nelimitat')} GB</b> <br /> {t('tm.trafic_internet')}
+                  <b>
+                    {t('tm.nelimitat')} GB{' '}
+                    <span className={styles.start_quest}>*</span>
+                  </b>{' '}
+                  <br /> {t('tm.trafic_internet')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -749,7 +765,9 @@ export default function PortareSchool() {
                 </div>
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
-                    <b>5 GB</b>
+                    <b>
+                      5 GB <span className={styles.start_quest}>**</span>
+                    </b>
                     <br />
                     Roaming RO
                   </span>
@@ -887,7 +905,11 @@ export default function PortareSchool() {
                   />
                 </div>
                 <span>
-                  <b>{t('tm.nelimitat')} GB</b> <br /> {t('tm.trafic_internet')}
+                  <b>
+                    {t('tm.nelimitat')} GB{' '}
+                    <span className={styles.start_quest}>*</span>
+                  </b>{' '}
+                  <br /> {t('tm.trafic_internet')}
                 </span>
               </div>
               <div className={styles.tm_carousell_block_row}>
@@ -932,7 +954,9 @@ export default function PortareSchool() {
                 </div>
                 <div className={styles.tm_carousell_block_row_inline}>
                   <span>
-                    <b>6 GB</b>
+                    <b>
+                      6 GB <span className={styles.start_quest}>**</span>
+                    </b>
                     <br />
                     Roaming RO
                   </span>
@@ -1088,14 +1112,11 @@ export default function PortareSchool() {
             </table>
           </ScrollableWrapper>
           {/*{t('tm.table.footnote')}*/}
-          <ul>
-            <li>
-              <b>{t('tm.table.footnote_1')}</b>
-            </li>
-          </ul>{' '}
-          <ul>
-            <li>{t('tm.table.footnote_2')}</li>
-          </ul>
+
+          <b>{t('tm.table.footnote_1')}</b>
+
+          <br />
+          {t('tm.table.footnote_2')}
         </DetailsBlock>
 
         <DetailsBlock title={t('tm.details.roaming.title')}>
@@ -1118,29 +1139,29 @@ export default function PortareSchool() {
           <br />
           <TableRoaming />
         </DetailsBlock>
-        <DetailsBlock title={t('tm.details.warning.title')}>
-          <ul>
-            {warning1Items.map((text, i) => (
-              <li key={i}>{text}</li>
-            ))}
-            <ul>
-              {warning2Items.map((text, i) => (
-                <li key={i}>{text}</li>
-              ))}
-            </ul>
-            {warning3Items.map((text, i) => (
-              <li key={i}>{text}</li>
-            ))}
-            <ul>
-              {warning4Items.map((text, i) => (
-                <li key={i}>{text}</li>
-              ))}
-            </ul>
-            {warning5Items.map((text, i) => (
-              <li key={i}>{text}</li>
-            ))}
-          </ul>
-        </DetailsBlock>
+        {/*<DetailsBlock title={t('tm.details.warning.title')}>*/}
+        {/*  <ul>*/}
+        {/*    {warning1Items.map((text, i) => (*/}
+        {/*      <li key={i}>{text}</li>*/}
+        {/*    ))}*/}
+        {/*    <ul>*/}
+        {/*      {warning2Items.map((text, i) => (*/}
+        {/*        <li key={i}>{text}</li>*/}
+        {/*      ))}*/}
+        {/*    </ul>*/}
+        {/*    {warning3Items.map((text, i) => (*/}
+        {/*      <li key={i}>{text}</li>*/}
+        {/*    ))}*/}
+        {/*    <ul>*/}
+        {/*      {warning4Items.map((text, i) => (*/}
+        {/*        <li key={i}>{text}</li>*/}
+        {/*      ))}*/}
+        {/*    </ul>*/}
+        {/*    {warning5Items.map((text, i) => (*/}
+        {/*      <li key={i}>{text}</li>*/}
+        {/*    ))}*/}
+        {/*  </ul>*/}
+        {/*</DetailsBlock>*/}
       </Details>
 
       <div className={`title_3  ${styles.title2} ${styles.title22}`}>

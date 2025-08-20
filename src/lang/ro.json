@@ -2091,7 +2091,7 @@
       "conditii": {
         "title": "Condiții de utilizare Abonamente",
         "title_2": "Detalii ofertă",
-        "title_3": "Oferata \"Dispozitiv la DOAR 1 leu, sau Preț Special!\":",
+        "title_3": "Oferta \"Dispozitiv la DOAR 1 leu, sau Preț Special!\":",
         "itemsConfig1": [
           "Oferta promoțională constă în acordarea unei reduceri de 35% la plata lunare a abonamentelor Star 120, Star150, Liberty 190 și Liberty Plus 250, valabilă pe întreaga perioadă contractuală de 24 de luni.",
           "Oferta este destinată pentru clienții noi, la conectare, portare din altă rețea sau pentru cei existenți, la reperfectarea contractului sau migrarea de la Prepay.",
@@ -2109,7 +2109,7 @@
           "Perioada de comercializare a ofertei: 03.03.2025 – 25.08.2025 (inclusiv)."
         ],
         "itemsConfigElse_1": [
-          "Oferta promo presupune acordarea unei reduceri la plata lunară de abonament, precum urmează: 40 lei (Start 120), 50 lei (Flex 150), 75 lei (Liberty 200) și 100 lei (Liberty Plus 290), în combinație cu serviciul de Internet Fix sau Internet Fix+IPTV și se oferă pe toată durata contractuală la conectarea/deținerea unei linii de Internet Fix sau Internet Fix+IPTV."
+          "Oferta promo presupune acordarea unei reduceri la plata lunară de abonament, precum urmează: 40 lei (Start 120), 50 lei (Flex 150), 75 lei (Liberty 200) și 100 lei (Liberty Plus 290), în combinație cu serviciul de Internet Fix sau Internet Fix+IPTV și se oferă pe toată perioada deținerii serviciului de Internet Fix sau Internet Fix+IPTV."
         ],
         "commonItems": [
           "Abonații conectați la abonamentele Liberty 190 și Liberty Plus 250 pot comunica în Roaming UE+SEE din contul minutelor naționale incluse în abonament. În plus, abonamentul Liberty 190 oferă 7 GB, iar abonamentul Liberty Plus 250 – 10 GB disponibili spre utilizare în Roaming în rețeaua operatorilor incluși în grupul UE+SEE.",
@@ -2128,7 +2128,7 @@
         ],
         "commonItems_1": [
           "Oferta promoțională include și posibilitatea de a achiziționa un smartphone Xiaomi Redmi 14C 4/128 sau Samsung A06 4/128GB la prețul de 1 leu, sau alte dispozitive la preț promoțional, în funcție de ofertă, în limita stocului disponibil, valabilă pentru abonații noi la portare, conectare nouă, precum și abonații existenți, la reperfectarea contractului.",
-          "Terminalele la preț promoțional, vor fi acordate în combinație cu abonamentele de Telefonie mobilă: Flex 150, Liberty 200 și Liberty Plus 290.",
+          "Terminalele la preț promoțional vor fi acordate în combinație cu abonamentele de Telefonie mobilă: Flex 150, Liberty 200 și Liberty Plus 290, pe o perioadă contractuală de 24 luni",
           "Perioada promoțională este 21.08.2025 – 25.11.2025 (inclusiv)."
         ]
       },
@@ -2140,8 +2140,7 @@
           "Viteza de acces la internet depinde de condițiile de prestare a serviciului și de terminalul utilizat.",
           "Tarifarea traficului Internet consumat se efectuează din momentul începerii sesiunii, per 10 KByte (1MB = 1024 KB).",
           "După consumarea conținutului inclus în Roaming UE, convorbirile și traficul de internet sunt taxate conform tarifelor standard ale fiecărui operator.",
-          "Conținutul în Roaming UE+SEE poate fi utilizat doar dacă serviciul Roaming este activ.",
-          "Abonații la Liberty 190 și Liberty Plus 250 trebuie să evite folosirea abuzivă a serviciilor Roaming UE+SEE."
+          "Conținutul în Roaming UE+SEE poate fi utilizat doar dacă serviciul Roaming este activ."
         ]
       }
     },
@@ -2182,8 +2181,8 @@
         "internet": "Trafic internet (lei/MB)"
       },
       "footnote": " După consumarea traficului internet inclus în abonamente traficul extra abonament va fi gratuit, însă viteza de acces download/upload va fi de până la 512/512 kbps.",
-      "footnote_1": "După consumarea traficului internet inclus în abonamente, (35 GB - Start 120), 45 GB - Flex 150, 85 GB - Liberty 200, 200 GB - Liberty Plus 290) traficul extra abonament va fi gratuit, însă viteza de acces download/upload va fi de până la 512/512 kbps.",
-      "footnote_2": "Traficul de date inclus în Roaming România se distribuie astfel: pentru abonamentul Start 120 – 1 GB roaming România (orice operator) + 5 GB în rețeaua operatorului Digi, iar pentru abonamentul Flex 150 – 1 GB roaming România (orice operator) + 4 GB în rețeaua operatorului Digi. Pentru a accesa traficul de date in reteaua operatorului Digi este necesar de asigurat configurarea manuala a operatorului."
+      "footnote_1": "* După consumarea traficului internet inclus în abonamente (35 GB - Start 120, 45 GB - Flex 150, 85 GB - Liberty 200, 200 GB - Liberty Plus 290) traficul extra abonament va fi gratuit, însă viteza de acces download/upload va fi de până la 512/512 kbps.",
+      "footnote_2": "** Traficul de date inclus în Roaming România se distribuie astfel: pentru abonamentul Start 120 – 1 GB roaming România (orice operator) + 5 GB în rețeaua operatorului Digi,  pentru abonamentul Flex 150 – 1 GB roaming România (orice operator) + 4 GB în rețeaua operatorului Digi, iar pentru abonamentele Liberty 200 - 5 GB în rețeaua operatorului Digi şi Liberty 290 Plus - 6 GB în rețeaua operatorului Digi. Pentru a accesa traficul de date în reteaua operatorului Digi este necesar de asigurat configurarea manuala a operatorului."
     },
     "popup": {
       "error1": "A apărut o eroare la trimiterea cererii.",
