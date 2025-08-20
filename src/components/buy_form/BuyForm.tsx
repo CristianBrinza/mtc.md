@@ -199,8 +199,8 @@ export default function BuyForm({
       </Button>
       <input type="hidden" name="lang" value={t('lang')} />
       <input type="hidden" name="source" value={source} />
-      <input type="hidden" name="service" value={service} />
-      <input type="hidden" name="tag" value={tag} />
+      <input type="hidden" name="service" value={tag} />
+      <input type="hidden" name="tag" value={service} />
       <input type="hidden" name="info" ref={infoRef} value="" />
       <input type="hidden" name="recaptcha_response" />
     </form>
