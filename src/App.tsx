@@ -60,9 +60,9 @@ function AppContent() {
         {/*personal promo*/}
         <Route path="/:lang/gaming" element={<Gaming />} />
         <Route path="/:lang/internet" element={<OnlyNet />} />
-        <Route path="/:lang/mobile" element={<Mobile />} />
+        <Route path="/:lang/mobile" element={<MobileSchool />} />
         <Route path="/:lang/mobile189347654" element={<MobileSchool />} />
-        <Route path="/:lang/portare" element={<Portare />} />
+        <Route path="/:lang/portare" element={<PortareSchool />} />
         <Route path="/:lang/portare189347654" element={<PortareSchool />} />
 
         <Route path="/:lang/magazine" element={<Magazine />} />
