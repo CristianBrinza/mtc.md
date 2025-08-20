@@ -2793,7 +2793,7 @@
     "discover_subscriptions": "Открой для себя абонементы",
     "abonaments": {
       "pretitle": "Оптика + Wi-Fi Mesh",
-      "tag": "50% скидка на 2 года",
+      "tag": "-300 лей скидка на 2 года",
       "features": {
         "router": "Wi-Fi 6 роутер включён",
         "mesh": "x{{count}} <b>Mesh Wi-Fi</b> включён",
