@@ -173,21 +173,21 @@ export default function MobileSchool() {
   const roamingItems = t('tm.details.roaming.items', {
     returnObjects: true,
   }) as string[];
-  const warning1Items = t('tm.details.warning.items_1', {
-    returnObjects: true,
-  }) as string[];
-  const warning2Items = t('tm.details.warning.items_2', {
-    returnObjects: true,
-  }) as string[];
-  const warning3Items = t('tm.details.warning.items_3', {
-    returnObjects: true,
-  }) as string[];
-  const warning4Items = t('tm.details.warning.items_4', {
-    returnObjects: true,
-  }) as string[];
-  const warning5Items = t('tm.details.warning.items_5', {
-    returnObjects: true,
-  }) as string[];
+  // const warning1Items = t('tm.details.warning.items_1', {
+  //   returnObjects: true,
+  // }) as string[];
+  // const warning2Items = t('tm.details.warning.items_2', {
+  //   returnObjects: true,
+  // }) as string[];
+  // const warning3Items = t('tm.details.warning.items_3', {
+  //   returnObjects: true,
+  // }) as string[];
+  // const warning4Items = t('tm.details.warning.items_4', {
+  //   returnObjects: true,
+  // }) as string[];
+  // const warning5Items = t('tm.details.warning.items_5', {
+  //   returnObjects: true,
+  // }) as string[];
 
   return (
     <>
