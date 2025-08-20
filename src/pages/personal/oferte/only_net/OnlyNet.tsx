@@ -104,6 +104,25 @@ export default function OnlyNet() {
     { label: t('only_net.breadcrumb.internet') },
   ];
 
+  const [showRegio, setShowRegio] = useState(false);
+
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setShowRegio(window.scrollY > 15);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    onScroll(); // în caz că pagina pornește deja scrollată
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   const [activeConfig, setActiveConfig] = useState<ConfigType>('1');
 
   // whether user has explicitly chosen
@@ -2042,6 +2061,16 @@ export default function OnlyNet() {
           </div>
         )}
       </Popup>
+      <div className={styles.regio_block_mobile} hidden={!showRegio}>
+        {t('combo_home.regiunea')} ({' '}
+        <span
+          onClick={() => setActivePopup('1110116')}
+          className={styles.regio_select}
+        >
+          {regio}
+        </span>{' '}
+        )
+      </div>
     </>
   );
 }
