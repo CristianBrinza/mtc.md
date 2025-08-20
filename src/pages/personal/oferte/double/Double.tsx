@@ -1239,10 +1239,12 @@ export default function Double() {
                     onChange={e => setSelectedDevice_1(e.target.value)}
                   >
                     <option value={'1780119'}>
-                      <b>Smart TV 32"</b> (la 1 leu)&nbsp;
+                      <b>Smart TV 32"</b> (la{' '}
+                      {isRegio == true ? '1 leu' : '1 500 lei'})&nbsp;
                     </option>
                     <option value={'1780220'}>
-                      <b>Smart TV 43"</b> (la 1 899 lei)&nbsp;
+                      <b>Smart TV 43"</b> (la{' '}
+                      {isRegio == true ? '1 899 lei' : '3 354 lei'})&nbsp;
                     </option>
 
                     {isRegio && (
@@ -1552,10 +1554,12 @@ export default function Double() {
                     onChange={e => setSelectedDevice_2(e.target.value)}
                   >
                     <option value={'1780119'}>
-                      <b>Smart TV 32"</b> (la 1 leu)&nbsp;
+                      <b>Smart TV 32"</b> (la{' '}
+                      {isRegio == true ? '1 leu' : '1 500 lei'})&nbsp;
                     </option>
                     <option value={'1780220'}>
-                      <b>Smart TV 43"</b> (la 1 899 lei)&nbsp;
+                      <b>Smart TV 43"</b> (la{' '}
+                      {isRegio == true ? '1 899 lei' : '3 354 lei'})&nbsp;
                     </option>
 
                     {isRegio && (
@@ -1852,11 +1856,13 @@ export default function Double() {
                   onChange={e => setSelectedDevice_3(e.target.value)}
                 >
                   <option value={'1780220'}>
-                    <b>Smart TV 43"</b> (la 1 leu)&nbsp;
+                    <b>Smart TV 43"</b> (la{' '}
+                    {isRegio == true ? '1 leu' : '2 580 lei'})&nbsp;
                   </option>
 
                   <option value={'1780224'}>
-                    <b>Smart TV 55"</b> (la 2 999 lei)&nbsp;
+                    <b>Smart TV 55"</b> (la{' '}
+                    {isRegio == true ? '2 999 lei' : '4 758 lei'})&nbsp;
                   </option>
 
                   {isRegio && (
@@ -2172,7 +2178,8 @@ export default function Double() {
                   onChange={e => setSelectedDevice_4(e.target.value)}
                 >
                   <option value={'1780224'}>
-                    <b>Smart TV 55"</b> (la 1 leu)&nbsp;
+                    <b>Smart TV 55"</b> (la{' '}
+                    {isRegio == true ? '1 leu' : '3 660 lei'})&nbsp;
                   </option>
 
                   {isRegio && (
@@ -2488,7 +2495,8 @@ export default function Double() {
                   onChange={e => setSelectedDevice_5(e.target.value)}
                 >
                   <option value={'1780224'}>
-                    <b>Smart TV 55"</b> (la 1 leu)&nbsp;
+                    <b>Smart TV 55"</b> (la{' '}
+                    {isRegio == true ? '1 leu' : '3 660 lei'})&nbsp;
                   </option>
 
                   {isRegio && (
