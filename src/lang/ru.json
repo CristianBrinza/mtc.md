@@ -867,7 +867,7 @@
           ["Плата за активацию дополнительных медиабоксов (за STB)", "0"]
         ]
       },
-      "price": "Цена: <b>30 лей/месяц</b>"
+      "price": "Цена: <b>20/30 лей/месяц</b>"
     },
     "f13": {
       "title": "Junior",
@@ -2580,8 +2580,8 @@
     "watch_now": "Смотреть сейчас",
     "premier_tv": "Premier",
     "univers_tv": "Univers",
-    "premier_tv_channels": "122 канал HD, 77 каналов SD, 3 радио",
-    "univers_tv_channels": "171 каналов HD, 111 каналов SD, 3 радио",
+    "premier_tv_channels": "122 каналов, 77 HD, 3 радио",
+    "univers_tv_channels": "171 каналов, 111 HD, 3 радио",
     "popup_premier": {
       "title": "Что такое Premier TV?",
       "text": "Premier TV — цифровой телевизионный сервис Moldtelecom, предлагающий десятки HD и SD каналов и радиостанции, а также продвинутые функции DVR и повторного просмотра.",

@@ -805,7 +805,7 @@
           ["Taxa de activare a mediabox-urilor adiţionale (per STB)", "0"]
         ]
       },
-      "price": "Preț: <b>30 lei/lună</b>"
+      "price": "Preț: <b>20/30 lei/lună</b>"
     },
     "f13": {
       "title": "Junior",
@@ -2442,8 +2442,8 @@
     "watch_now": "Vizionează acum",
     "premier_tv": "Premier",
     "univers_tv": "Univers",
-    "premier_tv_channels": "122 canale HD, 77 canale SD, 3 radio",
-    "univers_tv_channels": "171 canale HD, 111 canale SD, 3 radio",
+    "premier_tv_channels": "122 canale, 77 HD, 3 radio",
+    "univers_tv_channels": "171 canale, 111 HD, 3 radio",
     "popup_premier": {
       "title": "Ce este Premier TV?",
       "text": "Premier TV este serviciul digital de televiziune Moldtelecom, care îți oferă zeci de canale HD, SD şi posturi radio, plus funcționalități avansate de DVR și replay.",

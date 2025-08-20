@@ -3760,14 +3760,7 @@ export default function Triple() {
               {t('double.popup_options.tvextra.title')}
             </div>
             {t('double.popup_options.tvextra.text')}
-            <div className={styles.row_popup_options_links}>
-              <a
-                href={'https://mtc.md/my-mtc'}
-                className={styles.row_popup_options_link}
-              >
-                {t('activeaza_acum')} {'>'}
-              </a>
-            </div>
+
           </div>
           <div className={styles.row_popup_options_title_price}>
             {t('double.popup_options.tvextra.price')}
