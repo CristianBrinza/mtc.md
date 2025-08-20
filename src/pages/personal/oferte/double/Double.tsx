@@ -2641,6 +2641,7 @@ export default function Double() {
               <li>{t('combo_home.conditii_3.item_5')}</li>
               <li>{t('combo_home.conditii_3.item_6')}</li>
               <li>{t('combo_home.conditii_3.item_7')}</li>
+              {/*<li>{t('combo_home.conditii_3.item_8')}</li>*/}
             </ul>
           </DetailsBlock>
         )}

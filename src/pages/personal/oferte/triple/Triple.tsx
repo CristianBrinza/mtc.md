@@ -186,6 +186,7 @@ export default function Triple() {
   ];
 
   const [activeConfig, setActiveConfig] = useState<ConfigType>('1');
+  const [activeRegioConfig, setActiveRegioConfig] = useState<ConfigType>('1');
 
   // whether user has explicitly chosen
   const DEFAULT_REGION = 'Mun. Chișinău';
@@ -283,6 +284,7 @@ export default function Triple() {
     console.log(`isRegio updated → ${isRegio}`);
     if (isRegio == false) {
       setActiveConfig('2');
+      setActiveRegioConfig('3');
     } else {
       setActiveConfig('1');
     }
@@ -1053,9 +1055,8 @@ export default function Triple() {
         <span>{t('combo_home.choose_best_subscription')}</span>
       </div>
 
-      {isRegio && (
-        <div className={styles.mobile_pormotion}>Selectează oferta:</div>
-      )}
+      <div className={styles.mobile_pormotion}>Selectează oferta:</div>
+
       {isRegio ? (
         <div className={styles.config}>
           <div
@@ -1087,7 +1088,28 @@ export default function Triple() {
           </div>
         </div>
       ) : (
-        <div className={styles.regio_config_selctor}></div>
+        <div className={styles.config}>
+          <div
+            onClick={() => {
+              setActiveConfig('1');
+              setActiveRegioConfig('2');
+              trackEvent('triple_select_type_package_discount');
+            }}
+            className={`${styles.config_block} ${styles.config_block_1}  ${styles.config_block_first} ${activeConfig == '1' && styles.config_block_active}`}
+          >
+            {t('combo_home.package_discount')}
+          </div>
+          <div
+            onClick={() => {
+              setActiveConfig('2');
+              setActiveRegioConfig('3');
+              trackEvent('triple_select_type_smart_tv_tablet');
+            }}
+            className={`${styles.config_block} ${styles.config_block_2} ${styles.config_block_last}  ${activeConfig == '2' && styles.config_block_active}`}
+          >
+            {t('combo_home.smart_tv_only')}
+          </div>
+        </div>
       )}
       <Slider {...settings} className={styles.abonaments}>
         {(activeConfig == '1' || activeConfig == '2' || !isRegio) && (
@@ -1359,10 +1381,12 @@ export default function Triple() {
                     onChange={e => setSelectedDevice_1(e.target.value)}
                   >
                     <option value={'1780119'}>
-                      <b>Smart TV 32"</b> (la 1 leu)&nbsp;
+                      <b>Smart TV 32"</b> (la{' '}
+                      {isRegio == true ? '1 leu' : '1 500 lei'})&nbsp;
                     </option>
                     <option value={'1780220'}>
-                      <b>Smart TV 43"</b> (la 1 899 lei)&nbsp;
+                      <b>Smart TV 43"</b> (la{' '}
+                      {isRegio == true ? '1 899 lei' : '3 354 lei'})&nbsp;
                     </option>
 
                     {isRegio && (
@@ -1386,7 +1410,9 @@ export default function Triple() {
                 {activeConfig == '1' ? (
                   <div className={styles.tm_carousell_block_row_tags}>
                     <div className={styles.tm_carousell_block_row_tag}>
-                      {t('combo_home.discount_120_2_years')}
+                      {activeRegioConfig !== '1'
+                        ? t('combo_home.discount_50_2_years')
+                        : t('combo_home.discount_120_2_years')}
                     </div>
                   </div>
                 ) : (
@@ -1394,7 +1420,12 @@ export default function Triple() {
                 )}
                 <div className={styles.mobile_carousell_price}>
                   <div>
-                    <div>{total_1}</div>
+                    <div>
+                      {/*{total_1}*/}
+                      {activeRegioConfig == '2'
+                        ? `${total_1_1 - 50}`
+                        : `${total_1}`}
+                    </div>
                   </div>
                   <div>
                     <div className={styles.mobile_carousell_price_valuta}>
@@ -1707,10 +1738,12 @@ export default function Triple() {
                     onChange={e => setSelectedDevice_2(e.target.value)}
                   >
                     <option value={'1780119'}>
-                      <b>Smart TV 32"</b> (la 1 leu)&nbsp;
+                      <b>Smart TV 32"</b> (la{' '}
+                      {isRegio == true ? '1 leu' : '1 500 lei'})&nbsp;
                     </option>
                     <option value={'1780220'}>
-                      <b>Smart TV 43"</b> (la 1 899 lei)&nbsp;
+                      <b>Smart TV 43"</b> (la{' '}
+                      {isRegio == true ? '1 899 lei' : '3 354 lei'})&nbsp;
                     </option>
 
                     {isRegio && (
@@ -1734,7 +1767,9 @@ export default function Triple() {
                 {activeConfig == '1' ? (
                   <div className={styles.tm_carousell_block_row_tags}>
                     <div className={styles.tm_carousell_block_row_tag}>
-                      {t('combo_home.discount_120_2_years')}
+                      {activeRegioConfig !== '1'
+                        ? t('combo_home.discount_50_2_years')
+                        : t('combo_home.discount_120_2_years')}
                     </div>
                   </div>
                 ) : (
@@ -1742,7 +1777,11 @@ export default function Triple() {
                 )}
                 <div className={styles.mobile_carousell_price}>
                   <div>
-                    <div>{total_2}</div>
+                    <div>
+                      {activeRegioConfig == '2'
+                        ? `${total_2_2 - 50}`
+                        : `${total_2}`}
+                    </div>
                   </div>
                   <div>
                     <div className={styles.mobile_carousell_price_valuta}>
@@ -2041,11 +2080,13 @@ export default function Triple() {
                   onChange={e => setSelectedDevice_3(e.target.value)}
                 >
                   <option value={'1780220'}>
-                    <b>Smart TV 43"</b> (la 1 leu)&nbsp;
+                    <b>Smart TV 43"</b> (la{' '}
+                    {isRegio == true ? '1 leu' : '2 580 lei'})&nbsp;
                   </option>
 
                   <option value={'1780224'}>
-                    <b>Smart TV 55"</b> (la 2 999 lei)&nbsp;
+                    <b>Smart TV 55"</b> (la{' '}
+                    {isRegio == true ? '2 999 lei' : '4 758 lei'})&nbsp;
                   </option>
 
                   {isRegio && (
@@ -2089,7 +2130,9 @@ export default function Triple() {
               {activeConfig == '1' ? (
                 <div className={styles.tm_carousell_block_row_tags}>
                   <div className={styles.tm_carousell_block_row_tag}>
-                    {t('combo_home.discount_120_2_years')}
+                    {activeRegioConfig !== '1'
+                      ? t('combo_home.discount_50_2_years')
+                      : t('combo_home.discount_120_2_years')}
                   </div>
                 </div>
               ) : (
@@ -2097,7 +2140,11 @@ export default function Triple() {
               )}
               <div className={styles.mobile_carousell_price}>
                 <div>
-                  <div>{total_3}</div>
+                  <div>
+                    {activeRegioConfig == '2'
+                      ? `${total_3_3 - 50}`
+                      : `${total_3}`}
+                  </div>
                 </div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
@@ -2395,7 +2442,8 @@ export default function Triple() {
                   onChange={e => setSelectedDevice_4(e.target.value)}
                 >
                   <option value={'1780224'}>
-                    <b>Smart TV 55"</b> (la 1 leu)&nbsp;
+                    <b>Smart TV 55"</b> (la{' '}
+                    {isRegio == true ? '1 leu' : '3 660 lei'})&nbsp;
                   </option>
 
                   {isRegio && (
@@ -2439,7 +2487,9 @@ export default function Triple() {
               {activeConfig == '1' ? (
                 <div className={styles.tm_carousell_block_row_tags}>
                   <div className={styles.tm_carousell_block_row_tag}>
-                    {t('combo_home.discount_320_2_years')}
+                    {activeRegioConfig !== '1'
+                      ? t('combo_home.discount_50_2_years')
+                      : t('combo_home.discount_320_2_years')}
                   </div>
                 </div>
               ) : (
@@ -2447,7 +2497,11 @@ export default function Triple() {
               )}
               <div className={styles.mobile_carousell_price}>
                 <div>
-                  <div>{total_4}</div>
+                  <div>
+                    {activeRegioConfig == '2'
+                      ? `${total_4_4 - 50}`
+                      : `${total_4}`}
+                  </div>
                 </div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
@@ -2746,7 +2800,8 @@ export default function Triple() {
                   onChange={e => setSelectedDevice_5(e.target.value)}
                 >
                   <option value={'1780224'}>
-                    <b>Smart TV 55"</b> (la 1 leu)&nbsp;
+                    <b>Smart TV 55"</b> (la{' '}
+                    {isRegio == true ? '1 leu' : '3 660 lei'})&nbsp;
                   </option>
 
                   {isRegio && (
@@ -2790,7 +2845,9 @@ export default function Triple() {
               {activeConfig == '1' ? (
                 <div className={styles.tm_carousell_block_row_tags}>
                   <div className={styles.tm_carousell_block_row_tag}>
-                    {t('combo_home.discount_320_2_years')}
+                    {activeRegioConfig !== '1'
+                      ? t('combo_home.discount_50_2_years')
+                      : t('combo_home.discount_320_2_years')}
                   </div>
                 </div>
               ) : (
@@ -2798,7 +2855,11 @@ export default function Triple() {
               )}
               <div className={styles.mobile_carousell_price}>
                 <div>
-                  <div>{total_5}</div>
+                  <div>
+                    {activeRegioConfig == '2'
+                      ? `${total_5_5 - 50}`
+                      : `${total_5}`}
+                  </div>
                 </div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
@@ -2899,6 +2960,7 @@ export default function Triple() {
               <li>{t('combo_home.conditii_3.item_5')}</li>
               <li>{t('combo_home.conditii_3.item_6')}</li>
               <li>{t('combo_home.conditii_3.item_7')}</li>
+              {/*<li>{t('combo_home.conditii_3.item_8')}</li>*/}
             </ul>
           </DetailsBlock>
         )}

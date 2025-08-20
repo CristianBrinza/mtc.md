@@ -352,6 +352,71 @@
   padding: 40px 30px 40px 30px;
 }
 
+.regio {
+  width: 100%;
+  /*max-width: 1500px;*/
+  background: #e6f4dc;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  margin: 0px auto 0px;
+  font-family: Poppins, sans-serif;
+  display: flex;
+  /*border-radius: 15px;*/
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.regio_select {
+  color: var(--theme_primary_color_blue_6);
+  cursor: pointer;
+}
+.regio_select:hover {
+  text-decoration: underline;
+}
+.popup_regio_selects {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  margin: 25px auto 20px;
+}
+.popup_regio_select {
+  /* 1) ascundem controlul nativ */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* 2) stil general */
+  height: 46px;
+  border-radius: 100px;
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 14px;
+
+  /* 3) spaţiu în dreapta pentru săgeată */
+  padding: 0 40px 0 20px;
+
+  /* 4) icon‑arrow custom poziţionat cu 20px mai la stânga de marginea dreaptă */
+  background-image: url('/images/svg/ui_svg/select_arrow.svg'); /* sau data‑uri SVG */
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) center;
+  background-size: 16px; /* ajustaţi după dimensiunea iconiţei */
+  border: 1px transparent;
+}
+.regio_block_mobile {
+  background: rgba(146, 213, 92, 0.8);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  bottom: 0;
+  padding: 5px 30px 5px;
+  border-radius: 10px 10px 0 0;
+  right: 50%;
+  transform: translateX(50%);
+  color: white;
+  min-width: 165px;
+  text-align: center;
+}
 .modem {
   width: 100%;
   height: 300px;
@@ -538,6 +603,10 @@
   }
   .hero_btn {
     display: none;
+  }
+  .regio {
+    font-size: 14px;
+    line-height: 16px;
   }
 }
 @media (max-width: 950px) {

@@ -402,7 +402,6 @@ export default function PortareSchool() {
                     <br />
                     Roaming RO
                   </span>{' '}
-
                 </div>
               </div>
             </div>
@@ -566,7 +565,6 @@ export default function PortareSchool() {
                     <br />
                     Roaming RO
                   </span>{' '}
-
                 </div>
               </div>
             </div>

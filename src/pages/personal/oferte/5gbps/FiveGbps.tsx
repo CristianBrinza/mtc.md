@@ -17,9 +17,11 @@ import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
 import FaqV2 from '../../../../components/faqV2/FaqV2.tsx';
 import Popup from '../../../../components/Popup/Popup.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { trackEvent } from '../../../../initAnalytics.ts';
 import SEO from '../../../../components/SEO';
+
+type ConfigType = '1' | '2' | '3';
 
 export default function FiveGbps() {
   const { t } = useTranslation();
@@ -28,7 +30,23 @@ export default function FiveGbps() {
     description: t('pages.five_gbps.description'),
     keywords: t('pages.five_gbps.keywords'),
   };
+  const [showRegio, setShowRegio] = useState(false);
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setShowRegio(window.scrollY > 15);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
 
+    onScroll(); // în caz că pagina pornește deja scrollată
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [popupType, setPopupType] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -63,6 +81,123 @@ export default function FiveGbps() {
     { label: t('five_gbps.breadcrumb.five_gbps') },
   ];
 
+  // whether user has explicitly chosen
+  const DEFAULT_REGION = 'Mun. Chișinău';
+  const DEFAULT_CITY = 'or. Chișinău';
+  const [regio, setRegio] = useState<string>(
+    () => localStorage.getItem('city') || DEFAULT_CITY
+  );
+  const [isRegio, setIsRegio] = useState<boolean>(true);
+  const [regions, setRegions] = useState<string[]>([]);
+  const [cities, setCities] = useState<string[]>([]);
+  const [selRegion, setSelRegion] = useState<string>('');
+  const [selCity, setSelCity] = useState<string>('');
+  const [activeConfig, setActiveConfig] = useState<ConfigType>('1');
+
+  // populate <select> on mount
+  // load external regions_ro.js & then populate selects
+  useEffect(() => {
+    const SCRIPT_SRC = 'https://www.moldtelecom.md/js/regions_ro.js';
+    const script = document.createElement('script');
+    script.src = SCRIPT_SRC;
+    script.async = true;
+
+    script.onload = () => {
+      const obj = window.regiuni;
+      const allRegions = Object.keys(obj);
+
+      // 1️⃣ pick a starting region
+      const storedR = localStorage.getItem('region');
+      const initialRegion = storedR && obj[storedR] ? storedR : DEFAULT_REGION;
+      setSelRegion(initialRegion);
+      setRegions(allRegions);
+
+      // 2️⃣ build its city list
+      // const validCities = Object.entries(obj[initialRegion])
+      //   .filter(([, arr]) => arr.length > 0)
+      //   .map(([city]) => city);
+      // setCities(validCities);
+
+      const validCities = Object.keys(obj[initialRegion]);
+
+      // const validCities =Object.entries(window.regiuni[r])
+      //   .filter(([, arr]) => arr.length > 0)
+      //   .map(([city]) => city)
+      // const validCities = Object.keys(window.regiuni[r]);
+
+      setCities(validCities);
+
+      // 3️⃣ pick a starting city
+      const storedC = localStorage.getItem('city');
+      const initialCity =
+        storedC && validCities.includes(storedC) ? storedC : DEFAULT_CITY;
+      setSelCity(initialCity);
+      // console.log(isRegio)
+
+      // 4️⃣ update the display
+      setRegio(initialCity);
+      // setIsRegio(true);
+      setIsRegio((obj[initialRegion][initialCity] || []).length > 0);
+      // console.log(isRegio);
+    };
+
+    script.onerror = () => {
+      console.error(`failed to load ${SCRIPT_SRC}`);
+    };
+
+    document.head.appendChild(script);
+    return () => void document.head.removeChild(script);
+  }, []);
+  useEffect(() => {
+    console.log(`isRegio updated → ${isRegio}`);
+    if (isRegio == false) {
+      setActiveConfig('2');
+    } else {
+      setActiveConfig('1');
+    }
+  }, [isRegio]);
+
+  // when user picks a region
+  const handleRegionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const r = e.target.value;
+    setSelRegion(r);
+    // setCities(
+    //   Object.entries(window.regiuni[r])
+    //     .filter(([, arr]) => arr.length > 0)
+    //     .map(([city]) => city)
+    // );
+    const allCities = Object.keys(window.regiuni[r]);
+    setCities(allCities);
+    // reset city selection to first valid city
+    // const firstCity =
+    //   Object.keys(window.regiuni[r]).find(
+    //     c => window.regiuni[r][c].length > 0
+    //   ) || '';
+    const firstCity = allCities[0] || '';
+    setSelCity(firstCity);
+
+    localStorage.setItem('region', r);
+    localStorage.setItem('city', firstCity);
+    const covered = (window.regiuni?.[r]?.[firstCity] || []).length > 0;
+    setRegio(firstCity);
+    setIsRegio(covered);
+  };
+
+  // when user picks a city
+  const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelCity(e.target.value);
+    // const covered = (window.regiuni[selRegion][e.target.value] || []).length > 0;
+    // setIsRegio(covered);
+    //
+    // console.log(`City changed → region=${selRegion}, city=${e.target.value}, isRegio=${covered}`);
+    localStorage.setItem('city', e.target.value);
+    setRegio(e.target.value);
+    const covered =
+      (window.regiuni?.[selRegion]?.[e.target.value] || []).length > 0;
+    setIsRegio(covered);
+    setActivePopup(null);
+  };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -87,6 +222,22 @@ export default function FiveGbps() {
   return (
     <>
       <SEO {...seo} />
+      <div className={styles.regio}>
+        <span>
+          <span>{t('combo_home.promo_text')}</span>
+          &nbsp;
+          <span>
+            (
+            <span
+              onClick={() => setActivePopup('1110116')}
+              className={styles.regio_select}
+            >
+              {regio}
+            </span>
+            ).
+          </span>
+        </span>
+      </div>
       <Navbar />
       <Chat />
       <Feedback />
@@ -359,19 +510,24 @@ export default function FiveGbps() {
 
             <div className={styles.wifi_carousell_block_inside_btns}>
               <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
+                <div
+                  className={styles.tm_carousell_block_row_tag}
+                  style={{ opacity: activeConfig === '2' ? '0' : '1' }}
+                >
                   {t('five_gbps.abonaments.tag')}
                 </div>
               </div>
               <div className={styles.mobile_carousell_price}>
-                <div>299</div>
+                <div>{activeConfig == '1' ? 299 : 599}</div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     {t('lei_luna')}
                   </div>
-                  <div className={styles.mobile_carousell_price_old}>
-                    <span>599 {t('lei_luna')}</span>
-                  </div>
+                  {activeConfig == '1' && (
+                    <div className={styles.mobile_carousell_price_old}>
+                      <span>599 {t('lei_luna')}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -447,19 +603,24 @@ export default function FiveGbps() {
 
               <div className={styles.wifi_carousell_block_inside_btns}>
                 <div className={styles.tm_carousell_block_row_tags}>
-                  <div className={styles.tm_carousell_block_row_tag}>
+                  <div
+                    className={styles.tm_carousell_block_row_tag}
+                    style={{ opacity: activeConfig === '2' ? '0' : '1' }}
+                  >
                     {t('five_gbps.abonaments.tag')}
                   </div>
                 </div>
                 <div className={styles.mobile_carousell_price}>
-                  <div>499</div>
+                  <div> {activeConfig == '1' ? 499 : 799}</div>
                   <div>
                     <div className={styles.mobile_carousell_price_valuta}>
                       {t('lei_luna')}
                     </div>
-                    <div className={styles.mobile_carousell_price_old}>
-                      <span>799 {t('lei_luna')}</span>
-                    </div>
+                    {activeConfig == '1' && (
+                      <div className={styles.mobile_carousell_price_old}>
+                        <span>799 {t('lei_luna')}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -684,6 +845,123 @@ export default function FiveGbps() {
             />
           </div>
         )}
+      </Popup>
+
+      <div className={styles.regio_block_mobile} hidden={!showRegio}>
+        {t('combo_home.regiunea')} ({' '}
+        <span
+          onClick={() => setActivePopup('1110116')}
+          className={styles.regio_select}
+        >
+          {regio}
+        </span>{' '}
+        )
+      </div>
+
+      <Popup
+        id="1934567"
+        width="550px"
+        isVisible={activePopup === '1934567'}
+        onClose={handlePopupClose}
+        className={styles.popupBuy}
+        key={activePopup ?? 'popup-closed'}
+      >
+        {/*<div className={styles.popup_div_title}>*/}
+        {/*  Mulțumim că ai ales Moldtelecom*/}
+        {/*</div>*/}
+        {error ? (
+          <div className={styles.buy_popup_error}>
+            <Icon
+              type={'repair'}
+              size={'48px'}
+              color={'var(--theme_primary_color_blue_3)'}
+            />
+            <span
+              dangerouslySetInnerHTML={{ __html: t('double.request_error') }}
+            />
+          </div>
+        ) : submitted ? (
+          <div className={styles.buy_popup_success}>
+            <Icon
+              type={'tick'}
+              size={'48px'}
+              color={'var(--theme_primary_color_blue_3)'}
+            />
+            <span
+              dangerouslySetInnerHTML={{ __html: t('double.request_success') }}
+            />
+          </div>
+        ) : (
+          <div className={styles.buy_popup}>
+            {popupType == true ? (
+              <div>{t('double.device_chosen')}</div>
+            ) : (
+              <div>{t('double.subscription_chosen')}</div>
+            )}
+            <div className={styles.selected_popup_subcription}>
+              <div className={styles.popup_selected}>
+                {activePopupConfig}&nbsp;<span>{activePopupSubConfig}</span>
+              </div>
+            </div>
+
+            <BuyForm
+              config={activeBuyConfig}
+              tag={'double'}
+              service={'campain[double_2025_b2s], place[abonament]'}
+              onSuccess={() => {
+                setSubmitted(true);
+                setError(false);
+              }}
+              onError={() => {
+                setError(true);
+              }}
+            />
+            <div
+              className={styles.popup_discalmer}
+              dangerouslySetInnerHTML={{
+                __html: t('double.request_disclaimer'),
+              }}
+            />
+          </div>
+        )}
+      </Popup>
+
+      <Popup
+        id="1110116"
+        width="400px"
+        isVisible={activePopup === '1110116'}
+        className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <div className={`title_3 ${styles.popup_regio_title}`}>
+          {t('combo_home.location_select')}
+        </div>
+
+        <div className={styles.popup_regio_selects}>
+          <select
+            value={selRegion}
+            className={styles.popup_regio_select}
+            onChange={handleRegionChange}
+          >
+            {regions.map(r => (
+              <option key={r} value={r}>
+                {r}
+              </option>
+            ))}
+          </select>
+
+          <select
+            value={selCity}
+            className={styles.popup_regio_select}
+            onChange={handleCityChange}
+          >
+            {cities.map(c => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+        </div>
       </Popup>
     </>
   );

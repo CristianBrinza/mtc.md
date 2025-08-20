@@ -404,7 +404,6 @@ export default function MobileSchool() {
                     <br />
                     Roaming RO
                   </span>{' '}
-
                 </div>
               </div>
             </div>
@@ -979,14 +978,9 @@ export default function MobileSchool() {
             </table>
           </ScrollableWrapper>
           <ul>
-            <li>
-              {t('tm.table.footnote_1')}
-            </li>
-            <li>
-              {t('tm.table.footnote_2')}
-            </li>
+            <li>{t('tm.table.footnote_1')}</li>
+            <li>{t('tm.table.footnote_2')}</li>
           </ul>
-
         </DetailsBlock>
 
         <DetailsBlock title={t('tm.details.roaming.title')}>

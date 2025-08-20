@@ -273,7 +273,7 @@
             "Abonatul va utiliza echipamentul oferit de către Furnizor în condiții de comodat, pe perioada utilizării serviciului Wi-Fi PLUS.",
             "Deconectarea serviciului Wi-Fi PLUS va avea loc în momentul restituirii echipamentului terminal (cu toate accesoriile incluse). În cazul depistării accesoriilor lipsă/defecte, Abonatul se obligă să achite contravaloarea acestora.",
             "Furnizorul este în drept de a refuza deconectarea serviciului Wi-Fi PLUS în cazul nerestituirii echipamentului sau a nerambursării contravalorii acestuia.",
-            "În cazul nereturnării (pierderii/deteriorării) echipamentului, abonatul va restitui plata cu titlu de prejudiciu în mărime de 300 de lei/echipament (fără TVA) sau 850 de lei/echipament (fără TVA).",
+            "În cazul nereturnării (pierderii/deteriorării) echipamentului, abonatul va restitui plata cu titlu de prejudiciu, pentru echipamentul acordat.",
             "Conectarea/deconectarea serviciului este posibilă în orice zi a perioadei de facturare, fără efectuarea recalculului."
           ]
         },
@@ -792,7 +792,7 @@
         "Plata de abonament pentru fiecare televizor suplimentar pentru pachetul TV Simplu, Premier sau Univers este de 30 lei.",
         "Mediabox-urile adiţionale se consideră al 2-lea, al 3-lea.",
         "Prin tehnologia ADSL, Mediabox-urile adiţionale vor fi conectate doar în cazul existenţei posibilităţilor tehnice.",
-      "Televiziunea poate fi conectată prin MediaBox = 30 lei/lună sau aplicația Moldtelecom TV 20 lei/lună."
+        "Televiziunea poate fi conectată prin MediaBox = 30 lei/lună sau aplicația Moldtelecom TV 20 lei/lună."
       ],
       "table": {
         "headers": [
@@ -2365,11 +2365,13 @@
     "choose_best_subscription": "Alege cel mai avantajos abonament",
     "package_discount": "Reducere pachet",
     "smart_tv_tablet": "Smart TV / Tableta",
+    "smart_tv_only": "Smart TV",
     "gaming_set": "Gaming set",
     "more_options": "mai multe optiuni",
     "one_month_free": "1 lună gratuit",
     "discount_320_2_years": "-320 lei reducere pentru 2 ani",
     "discount_120_2_years": "-120 lei reducere pentru 2 ani",
+    "discount_50_2_years": "-50 lei reducere pentru 2 ani",
     "router_wifi6_included": "Router Wi-Fi 6 inclus",
     "mesh_wifi": "Mesh Wi-Fi",
     "arhiva_tv": "Arhiva TV",
@@ -2428,10 +2430,11 @@
       "item_1": "Oferta este valabilă în perioada 21.08.2025–25.11.2025.",
       "item_2": "Se aplică exclusiv abonaților care activează un pachet Internet + IPTV cu viteze de 1000 Mbps, 2.1 Gbps sau 5.5 Gbps.",
       "item_3": "Contractul se semnează pe o perioadă de 24 de luni.",
-      "item_4": "Clienții pot achiziționa un set promoțional de gaming la prețuri preferențiale:\n– Xbox Series S sau Smart TV – de la 1 leu\n– Xbox Series X sau PlayStation 5 – de la 1500 lei",
+      "item_4": "Clienții pot achiziționa un set promoțional de gaming la prețuri preferențiale:\n – 1000 Mbps ( Xbox Series S – la 3 499 lei / PlayStation 5 – la 4 999 lei)\n – 2.1 Gbps ( Xbox Series S – la 1 leu / PlayStation 5 – la 1500 lei)\n – 5.5 Gbps ( Xbox Series S – la 1 leu / PlayStation 5 – la 1 leu)",
       "item_5": "Beneficiile nu se cumulează: clientul poate opta fie pentru reducerea lunară, fie pentru dispozitivul promoțional.",
       "item_6": "Dispozitivele se oferă în limita stocului disponibil și doar în localitățile unde este posibilă conectarea tehnică.",
-      "item_7": "În caz de reziliere anticipată a contractului, clientul va rambursa diferența până la prețul standard al dispozitivului."
+      "item_7": "În caz de reziliere anticipată a contractului, clientul va rambursa diferența până la prețul standard al dispozitivului.",
+      "item_8": "Clienții pot achiziționa un set promoțional de gaming la prețuri preferențiale (în funcție de planul tarifar ales)"
     }
   },
   "double": {
@@ -2503,7 +2506,7 @@
         "3": "Abonatul va utiliza echipamentul oferit de către Furnizor în condiții de comodat, pe perioada utilizării serviciului Wi-Fi PLUS.",
         "4": "Deconectarea serviciului Wi-Fi PLUS va avea loc în momentul restituirii echipamentului terminal (cu toate accesoriile incluse). În cazul depistării accesoriilor lipsă/defecte, Abonatul se obligă să achite contravaloarea acestora.",
         "5": "Furnizorul este în drept de a refuza deconectarea serviciului Wi-Fi PLUS în cazul nerestituirii echipamentului sau a nerambursării contravalorii acestuia.",
-        "6": "În cazul nereturnării (pierderii/deteriorării) echipamentului, abonatul va restitui plata cu titlu de prejudiciu în mărime de 300 de lei/echipament (fără TVA) sau 850 de lei/echipament (fără TVA).",
+        "6": "În cazul nereturnării (pierderii/deteriorării) echipamentului, abonatul va restitui plata cu titlu de prejudiciu, pentru echipamentul acordat",
         "7": "Conectarea/deconectarea serviciului este posibilă în orice zi a perioadei de facturare, fără efectuarea recalculului."
       }
     },
@@ -2689,7 +2692,8 @@
         "Clienții care aleg abonamente de Internet cu viteze de 2.1 Gbps sau 5.5 Gbps beneficiază de o reducere lunară de 300 lei, valabilă pe toată perioada contractuală.",
         "Pentru viteza de 2.1 Gbps, oferta include un router performant și un dispozitiv Mesh Wi-Fi, iar pentru viteza de 5.5 Gbps – un router performant și două dispozitive Mesh Wi-Fi. Echipamentele se oferă pe durata contractului și trebuie returnate în cazul rezilierii.",
         "Vitezele indicate sunt valori maxime. Viteza efectivă disponibilă la adresa clientului depinde de factori tehnici ce nu pot fi controlați de Moldtelecom. Serviciul este disponibil doar în localitățile în care Moldtelecom poate furniza aceste viteze în condiții optime.",
-        "În cazul rezilierii anticipate a serviciului de Internet, înainte de expirarea perioadei contractuale, se va aplica o penalitate conform contractului."
+        "În cazul rezilierii anticipate a serviciului de Internet, înainte de expirarea perioadei contractuale, se va aplica o penalitate conform contractului.",
+        "Disponibilitatea ofertei diferă în funcție de localitate și de condițiile tehnice existente."
       ]
     },
     "warning": "Vitezele de 2,1 Gbps și 5,5 Gbps sunt posibile datorită tehnologiei XGS-PON — cea mai nouă generație de fibră optică, care permite viteze de până la 10 Gbps per port.<br/>Totuși, pentru a beneficia efectiv de aceste viteze, dispozitivele terminale de acasă (PC, laptop, tabletă, router) trebuie să suporte conexiuni la aceste viteze. În caz contrar, viteza maximă va fi limitată de performanța echipamentului propriu.",
