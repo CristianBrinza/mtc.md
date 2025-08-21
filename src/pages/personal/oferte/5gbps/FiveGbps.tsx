@@ -83,7 +83,7 @@ export default function FiveGbps() {
 
   // whether user has explicitly chosen
   const DEFAULT_REGION = 'Mun. Chișinău';
-  const DEFAULT_CITY = 'or. Chișinău';
+  const DEFAULT_CITY = 'or. Chişinău'; // ← cu „ş” (U+015F) ca în fișier
   const [regio, setRegio] = useState<string>(
     () => localStorage.getItem('city') || DEFAULT_CITY
   );
@@ -866,7 +866,6 @@ export default function FiveGbps() {
         </span>{' '}
         )
       </div>
-
 
       <Popup
         id="1110116"

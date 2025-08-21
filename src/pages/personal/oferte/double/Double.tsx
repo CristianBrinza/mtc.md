@@ -189,7 +189,7 @@ export default function Double() {
 
   // whether user has explicitly chosen
   const DEFAULT_REGION = 'Mun. Chișinău';
-  const DEFAULT_CITY = 'or. Chișinău';
+  const DEFAULT_CITY = 'or. Chişinău'; // ← cu „ş” (U+015F) ca în fișier
   const [regio, setRegio] = useState<string>(
     () => localStorage.getItem('city') || DEFAULT_CITY
   );
@@ -262,12 +262,16 @@ export default function Double() {
       const initialCity =
         storedC && validCities.includes(storedC) ? storedC : DEFAULT_CITY;
       setSelCity(initialCity);
-      // console.log(isRegio)
+      //console.log(initialCity)
 
       // 4️⃣ update the display
       setRegio(initialCity);
       // setIsRegio(true);
-      setIsRegio((obj[initialRegion][initialCity] || []).length > 0);
+      //console.log((obj[initialRegion][initialCity] || []).length > 0);
+      const covered =
+        (window.regiuni?.[initialRegion]?.[initialCity] || []).length > 0;
+      setIsRegio(covered);
+      // setIsRegio((obj[initialRegion][initialCity] || []).length > 0);
       // console.log(isRegio);
     };
 
