@@ -1426,8 +1426,32 @@ export default function Triple() {
                   <div className={styles.tm_carousell_block_row_tags}>
                     <div className={styles.tm_carousell_block_row_tag}>
                       {activeRegioConfig !== '1'
-                        ? t('combo_home.discount_50_2_years')
-                        : t('combo_home.discount_120_2_years')}
+                        ? `- ${
+                            activeMobil_1 == 0
+                              ? 50
+                              : activeMobil_1 == 1
+                                ? 90
+                                : activeMobil_1 == 2
+                                  ? 100
+                                  : activeMobil_1 == 3
+                                    ? 125
+                                    : activeMobil_1 == 4
+                                      ? 150
+                                      : 0
+                          } ${t('combo_home.discount_2_years')}`
+                        : `- ${
+                            activeMobil_1 == 0
+                              ? 120
+                              : activeMobil_1 == 1
+                                ? 160
+                                : activeMobil_1 == 2
+                                  ? 170
+                                  : activeMobil_1 == 3
+                                    ? 195
+                                    : activeMobil_1 == 4
+                                      ? 220
+                                      : 0
+                          } ${t('combo_home.discount_2_years')}`}
                     </div>
                   </div>
                 ) : (
@@ -1462,13 +1486,13 @@ export default function Triple() {
                 onClick={() =>
                   setPopup(
                     '1',
-                    t('navbar.internet_tv'),
+                    `${activeMobil_1 != 0 ? t('navbar.internet_tv_mobil') : t('navbar.internet_tv')}`,
                     `(300Mbps + ${
                       activeSelectedTV_1 == 'premier'
                         ? t('double.premier_tv')
                         : activeSelectedTV_1 == 'univers' &&
                           t('double.univers_tv')
-                    })`
+                    } ${activeMobil_1 != 0 ? `${t('navbar.mobil')}` : ''})`
                   )
                 }
                 color="#fff"
@@ -1783,8 +1807,32 @@ export default function Triple() {
                   <div className={styles.tm_carousell_block_row_tags}>
                     <div className={styles.tm_carousell_block_row_tag}>
                       {activeRegioConfig !== '1'
-                        ? t('combo_home.discount_50_2_years')
-                        : t('combo_home.discount_120_2_years')}
+                        ? `- ${
+                            activeMobil_2 == 0
+                              ? 50
+                              : activeMobil_2 == 1
+                                ? 90
+                                : activeMobil_2 == 2
+                                  ? 100
+                                  : activeMobil_2 == 3
+                                    ? 125
+                                    : activeMobil_2 == 4
+                                      ? 150
+                                      : 0
+                          } ${t('combo_home.discount_2_years')}`
+                        : `- ${
+                            activeMobil_2 == 0
+                              ? 120
+                              : activeMobil_2 == 1
+                                ? 160
+                                : activeMobil_1 == 2
+                                  ? 170
+                                  : activeMobil_2 == 3
+                                    ? 195
+                                    : activeMobil_2 == 4
+                                      ? 220
+                                      : 0
+                          } ${t('combo_home.discount_2_years')}`}
                     </div>
                   </div>
                 ) : (
@@ -1818,13 +1866,13 @@ export default function Triple() {
                 onClick={() =>
                   setPopup(
                     '2',
-                    t('navbar.internet_tv'),
+                    `${activeMobil_2 != 0 ? t('navbar.internet_tv_mobil') : t('navbar.internet_tv')}`,
                     `(500Mbps + ${
                       activeSelectedTV_2 == 'premier'
                         ? t('double.premier_tv')
                         : activeSelectedTV_2 == 'univers' &&
                           t('double.univers_tv')
-                    })`
+                    } ${activeMobil_1 != 0 ? `${t('navbar.mobil')}` : ''})`
                   )
                 }
                 color="#fff"
@@ -2146,8 +2194,32 @@ export default function Triple() {
                 <div className={styles.tm_carousell_block_row_tags}>
                   <div className={styles.tm_carousell_block_row_tag}>
                     {activeRegioConfig !== '1'
-                      ? t('combo_home.discount_50_2_years')
-                      : t('combo_home.discount_120_2_years')}
+                      ? `- ${
+                          activeMobil_3 == 0
+                            ? 50
+                            : activeMobil_3 == 1
+                              ? 90
+                              : activeMobil_3 == 2
+                                ? 100
+                                : activeMobil_3 == 3
+                                  ? 125
+                                  : activeMobil_3 == 4
+                                    ? 150
+                                    : 0
+                        } ${t('combo_home.discount_2_years')}`
+                      : `- ${
+                          activeMobil_3 == 0
+                            ? 120
+                            : activeMobil_3 == 1
+                              ? 160
+                              : activeMobil_3 == 2
+                                ? 170
+                                : activeMobil_3 == 3
+                                  ? 195
+                                  : activeMobil_3 == 4
+                                    ? 220
+                                    : 0
+                        } ${t('combo_home.discount_2_years')}`}
                   </div>
                 </div>
               ) : (
@@ -2181,13 +2253,13 @@ export default function Triple() {
               onClick={() =>
                 setPopup(
                   '3',
-                  t('navbar.internet_tv'),
+                  `${activeMobil_3 != 0 ? t('navbar.internet_tv_mobil') : t('navbar.internet_tv')}`,
                   `(1000Mbps + ${
                     activeSelectedTV_3 == 'premier'
                       ? t('double.premier_tv')
                       : activeSelectedTV_3 == 'univers' &&
                         t('double.univers_tv')
-                  })`
+                  } ${activeMobil_3 != 0 ? `${t('navbar.mobil')}` : ''})`
                 )
               }
               color="#fff"
@@ -2503,8 +2575,32 @@ export default function Triple() {
                 <div className={styles.tm_carousell_block_row_tags}>
                   <div className={styles.tm_carousell_block_row_tag}>
                     {activeRegioConfig !== '1'
-                      ? t('combo_home.discount_50_2_years')
-                      : t('combo_home.discount_320_2_years')}
+                      ? `- ${
+                          activeMobil_4 == 0
+                            ? 50
+                            : activeMobil_4 == 1
+                              ? 90
+                              : activeMobil_4 == 2
+                                ? 100
+                                : activeMobil_4 == 3
+                                  ? 125
+                                  : activeMobil_4 == 4
+                                    ? 150
+                                    : 0
+                        } ${t('combo_home.discount_2_years')}`
+                      : `- ${
+                          activeMobil_4 == 0
+                            ? 320
+                            : activeMobil_4 == 1
+                              ? 360
+                              : activeMobil_4 == 2
+                                ? 370
+                                : activeMobil_4 == 3
+                                  ? 395
+                                  : activeMobil_4 == 4
+                                    ? 420
+                                    : 0
+                        } ${t('combo_home.discount_2_years')}`}
                   </div>
                 </div>
               ) : (
@@ -2538,13 +2634,13 @@ export default function Triple() {
               onClick={() =>
                 setPopup(
                   '4',
-                  t('navbar.internet_tv'),
+                  `${activeMobil_4 != 0 ? t('navbar.internet_tv_mobil') : t('navbar.internet_tv')}`,
                   `(2.1Gbps + ${
                     activeSelectedTV_4 == 'premier'
                       ? t('double.premier_tv')
                       : activeSelectedTV_4 == 'univers' &&
                         t('double.univers_tv')
-                  })`
+                  } ${activeMobil_4 != 0 ? `${t('navbar.mobil')}` : ''})`
                 )
               }
               color="#fff"
@@ -2861,8 +2957,32 @@ export default function Triple() {
                 <div className={styles.tm_carousell_block_row_tags}>
                   <div className={styles.tm_carousell_block_row_tag}>
                     {activeRegioConfig !== '1'
-                      ? t('combo_home.discount_50_2_years')
-                      : t('combo_home.discount_320_2_years')}
+                      ? `- ${
+                          activeMobil_5 == 0
+                            ? 50
+                            : activeMobil_5 == 1
+                              ? 90
+                              : activeMobil_5 == 2
+                                ? 100
+                                : activeMobil_5 == 3
+                                  ? 125
+                                  : activeMobil_5 == 4
+                                    ? 150
+                                    : 0
+                        } ${t('combo_home.discount_2_years')}`
+                      : `- ${
+                          activeMobil_5 == 0
+                            ? 320
+                            : activeMobil_5 == 1
+                              ? 360
+                              : activeMobil_5 == 2
+                                ? 370
+                                : activeMobil_5 == 3
+                                  ? 395
+                                  : activeMobil_5 == 4
+                                    ? 420
+                                    : 0
+                        } ${t('combo_home.discount_2_years')}`}
                   </div>
                 </div>
               ) : (
@@ -2896,13 +3016,13 @@ export default function Triple() {
               onClick={() =>
                 setPopup(
                   '5',
-                  t('navbar.internet_tv'),
+                  `${activeMobil_5 != 0 ? t('navbar.internet_tv_mobil') : t('navbar.internet_tv')}`,
                   `(5.5Gbps + ${
                     activeSelectedTV_5 == 'premier'
                       ? t('double.premier_tv')
                       : activeSelectedTV_5 == 'univers' &&
                         t('double.univers_tv')
-                  })`
+                  } ${activeMobil_5 != 0 ? `+ ${t('navbar.mobil')}` : ''})`
                 )
               }
               color="#fff"
@@ -4097,7 +4217,7 @@ export default function Triple() {
               </tr>
               <tr>
                 <td style={{ color: '#00000099' }}>Dimensiune ecran</td>
-                <td>32"</td>
+                <td>43"</td>
               </tr>
               <tr>
                 <td style={{ color: '#00000099', background: '#eceef0' }}>
@@ -4107,7 +4227,7 @@ export default function Triple() {
               </tr>
               <tr>
                 <td style={{ color: '#00000099' }}> Rezoluție ecran</td>
-                <td>1366 x 768</td>
+                <td>3840 x 2160</td>
               </tr>
             </tbody>
           </table>
@@ -4237,33 +4357,36 @@ export default function Triple() {
             <tbody>
               <tr>
                 <td style={{ color: '#00000099', background: '#eceef0' }}>
-                  Rezoluție ecran
+                  Tehnologie display
                 </td>
-                <td style={{ background: '#eceef0' }}>2560 x 1440</td>
+                <td style={{ background: '#eceef0' }}>LED</td>
               </tr>
               <tr>
-                <td style={{ color: '#00000099' }}> Ryzen Zen 2</td>
-                <td>Custom Zen 2</td>
+                <td style={{ color: '#00000099' }}>
+                  {' '}
+                  Tipul rezoluției ecranului
+                </td>
+                <td>HD Ready</td>
               </tr>
               <tr>
                 <td style={{ color: '#00000099', background: '#eceef0' }}>
-                  RAM
+                  Sistem de operare
                 </td>
-                <td style={{ background: '#eceef0' }}>16 GB</td>
+                <td style={{ background: '#eceef0' }}>VIDAA</td>
               </tr>
               <tr>
-                <td style={{ color: '#00000099' }}>Model placă video</td>
-                <td>Radeon RDNA 2</td>
+                <td style={{ color: '#00000099' }}>Dimensiune ecran</td>
+                <td>55"</td>
               </tr>
               <tr>
                 <td style={{ color: '#00000099', background: '#eceef0' }}>
-                  Tip unitate de stocare
+                  Wi-FI
                 </td>
-                <td style={{ background: '#eceef0' }}>SSD</td>
+                <td style={{ background: '#eceef0' }}>DA</td>
               </tr>
               <tr>
-                <td style={{ color: '#00000099' }}> Capacitate SSD </td>
-                <td>1 TB</td>
+                <td style={{ color: '#00000099' }}> Rezoluție ecran</td>
+                <td>3840 x 2160</td>
               </tr>
             </tbody>
           </table>

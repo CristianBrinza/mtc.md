@@ -3536,7 +3536,7 @@ export default function Double() {
               </tr>
               <tr>
                 <td style={{ color: '#00000099' }}>Dimensiune ecran</td>
-                <td>32"</td>
+                <td>43"</td>
               </tr>
               <tr>
                 <td style={{ color: '#00000099', background: '#eceef0' }}>
@@ -3546,7 +3546,7 @@ export default function Double() {
               </tr>
               <tr>
                 <td style={{ color: '#00000099' }}> Rezoluție ecran</td>
-                <td>1366 x 768</td>
+                <td>3840 x 2160</td>
               </tr>
             </tbody>
           </table>
@@ -3676,33 +3676,36 @@ export default function Double() {
             <tbody>
               <tr>
                 <td style={{ color: '#00000099', background: '#eceef0' }}>
-                  Rezoluție ecran
+                  Tehnologie display
                 </td>
-                <td style={{ background: '#eceef0' }}>2560 x 1440</td>
+                <td style={{ background: '#eceef0' }}>LED</td>
               </tr>
               <tr>
-                <td style={{ color: '#00000099' }}> Ryzen Zen 2</td>
-                <td>Custom Zen 2</td>
+                <td style={{ color: '#00000099' }}>
+                  {' '}
+                  Tipul rezoluției ecranului
+                </td>
+                <td>HD Ready</td>
               </tr>
               <tr>
                 <td style={{ color: '#00000099', background: '#eceef0' }}>
-                  RAM
+                  Sistem de operare
                 </td>
-                <td style={{ background: '#eceef0' }}>16 GB</td>
+                <td style={{ background: '#eceef0' }}>VIDAA</td>
               </tr>
               <tr>
-                <td style={{ color: '#00000099' }}>Model placă video</td>
-                <td>Radeon RDNA 2</td>
+                <td style={{ color: '#00000099' }}>Dimensiune ecran</td>
+                <td>55"</td>
               </tr>
               <tr>
                 <td style={{ color: '#00000099', background: '#eceef0' }}>
-                  Tip unitate de stocare
+                  Wi-FI
                 </td>
-                <td style={{ background: '#eceef0' }}>SSD</td>
+                <td style={{ background: '#eceef0' }}>DA</td>
               </tr>
               <tr>
-                <td style={{ color: '#00000099' }}> Capacitate SSD </td>
-                <td>1 TB</td>
+                <td style={{ color: '#00000099' }}> Rezoluție ecran</td>
+                <td>3840 x 2160</td>
               </tr>
             </tbody>
           </table>
