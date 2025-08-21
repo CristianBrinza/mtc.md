@@ -414,7 +414,7 @@ export default function MobileSchool() {
                       5 GB <span className={styles.start_quest}>**</span>
                     </b>
                     <br />
-                     {t('tm.roaming_ro')}
+                    {t('tm.roaming_ro')}
                   </span>{' '}
                 </div>
               </div>
@@ -472,7 +472,7 @@ export default function MobileSchool() {
               {/*</div>*/}
               <div
                 className={styles.mobile_carousell_tag}
-                style={{ background: '#E7EBFF'}}
+                style={{ background: '#E7EBFF' }}
               >
                 {t('tm.tags.roaming')}
               </div>
@@ -555,7 +555,7 @@ export default function MobileSchool() {
                       8 GB <span className={styles.start_quest}>**</span>
                     </b>
                     <br />
-                     {t('tm.roaming_ro')}
+                    {t('tm.roaming_ro')}
                   </span>{' '}
                 </div>
               </div>
@@ -721,7 +721,7 @@ export default function MobileSchool() {
                       5 GB <span className={styles.start_quest}>**</span>
                     </b>
                     <br />
-                     {t('tm.roaming_ro')}
+                    {t('tm.roaming_ro')}
                   </span>
                 </div>
               </div>
@@ -882,7 +882,7 @@ export default function MobileSchool() {
                       6 GB <span className={styles.start_quest}>**</span>
                     </b>
                     <br />
-                     {t('tm.roaming_ro')}
+                    {t('tm.roaming_ro')}
                   </span>
                 </div>
               </div>
