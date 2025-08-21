@@ -66,11 +66,11 @@
             "to": "/internet+tv+mobil"
           },
           {
-            "label": "navbar.ab_internet",
+            "label": "navbar.ab_internet_2",
             "to": "/internet"
           },
           {
-            "label": "navbar.ab_tv",
+            "label": "navbar.ab_tv_2",
             "to": "/personal/Abonamente-Televiziune"
           }
         ]
