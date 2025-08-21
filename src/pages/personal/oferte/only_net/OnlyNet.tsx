@@ -1329,7 +1329,9 @@ export default function OnlyNet() {
         </DetailsBlock>
       </Details>
 
-      <div className={`title_3  ${styles.title2} ${styles.title2} ${styles.title2_devices}`}>
+      <div
+        className={`title_3  ${styles.title2} ${styles.title2} ${styles.title2_devices}`}
+      >
         {t('combo_home.device_one_leu_2')}
       </div>
 

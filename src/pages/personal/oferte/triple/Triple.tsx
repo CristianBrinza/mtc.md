@@ -24,6 +24,7 @@ import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
 import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 import { trackEvent } from '../../../../initAnalytics.ts';
 import ScrollableWrapper from '../../../../components/Popup/ScrollableWrapper.tsx';
+import TableRoaming from '../../../../components/Popups/TableRoaming.tsx';
 declare global {
   interface Window {
     regiuni: Record<string, Record<string, unknown[]>>;
@@ -951,6 +952,16 @@ export default function Triple() {
       activeMobil_5,
     ]
   );
+
+  const common = t('tm.details.conditii.commonItems_new', {
+    returnObjects: true,
+  }) as string[];
+  // const common_1 = t('tm.details.conditii.commonItems_1', {
+  //   returnObjects: true,
+  // }) as string[];
+  const roamingItems = t('tm.details.roaming.items', {
+    returnObjects: true,
+  }) as string[];
 
   const setPopup = (id: string, name: string, subname: string) => {
     if (id == '0') {
@@ -2968,6 +2979,89 @@ export default function Triple() {
             </ul>
           </DetailsBlock>
         )}
+
+        <DetailsBlock title={t('combo_home.conditii_1.title_2')}>
+          <ul>
+            {common.map((text, i) => (
+              <li key={i}>{text}</li>
+            ))}
+          </ul>
+          <b>{t('tm.table.extra_tariff_title')}</b>
+          <ScrollableWrapper>
+            <table className={`popup_table ${styles.table_popup}`}>
+              <thead>
+                <th>{t('tm.table.headers.plan')}</th>
+                <th>{t('tm.table.headers.call_nat')}</th>
+                <th>{t('tm.table.headers.sms_nat')}</th>
+                <th>{t('tm.table.headers.sms_int')}</th>
+                <th>{t('tm.table.headers.internet')}</th>
+              </thead>
+              <tbody>
+                {/*<tr>*/}
+                {/*  <td>{t('tm.plan_names.start_95')}</td>*/}
+                {/*  <td>2,00</td>*/}
+                {/*  <td>0,50</td>*/}
+                {/*  <td>2,00</td>*/}
+                {/*  <td>0,00</td>*/}
+                {/*</tr>*/}
+                <tr>
+                  <td>{t('tm.plan_names.star_120')}</td>
+                  <td>2,00</td>
+                  <td>0,50</td>
+                  <td>2,00</td>
+                  <td>0,00</td>
+                </tr>
+                <tr>
+                  <td>{t('tm.plan_names.flex_150')}</td>
+                  <td>2,00</td>
+                  <td>0,50</td>
+                  <td>2,00</td>
+                  <td>0,00</td>
+                </tr>
+                <tr>
+                  <td>{t('tm.plan_names.liberty_200')}</td>
+                  <td>2,00</td>
+                  <td>0,50</td>
+                  <td>2,00</td>
+                  <td>0,00</td>
+                </tr>
+                <tr>
+                  <td>{t('tm.plan_names.liberty_plus_290')}</td>
+                  <td>2,00</td>
+                  <td>0,50</td>
+                  <td>2,00</td>
+                  <td>0,00</td>
+                </tr>
+              </tbody>
+            </table>
+          </ScrollableWrapper>
+
+          <b>{t('tm.table.footnote_1')}</b>
+
+          <br />
+          {t('tm.table.footnote_2')}
+        </DetailsBlock>
+
+        <DetailsBlock title={t('tm.details.roaming.title')}>
+          <ul>
+            {roamingItems.map((text, i) => (
+              <li key={i}>{text}</li>
+            ))}
+          </ul>
+          <br />
+          {/*<div className={styles.roaming_warning}>*/}
+          {/*  <div className={`${styles.roaming_warning_red}`}></div>*/}
+          {/*  /!*<div className={styles.roaming_warning_inside}>*!/*/}
+          {/*  /!*  {t('roaming.warning_1')} <br />*!/*/}
+          {/*  /!*  {t('roaming.warning_2')}*!/*/}
+          {/*  /!*</div>*!/*/}
+          {/*</div>*/}
+          <br />
+          <b>{t('tm.details.list')}</b>
+          <br />
+          <br />
+          <TableRoaming />
+        </DetailsBlock>
       </Details>
 
       <div className={`title_3  ${styles.title2}`}>

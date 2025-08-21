@@ -79,6 +79,10 @@
         "title": "navbar.descopera",
         "small": true,
         "items": [
+          {
+            "label": "navbar.gaming",
+            "to": "/gaming"
+          },
           { "label": "navbar.mt_tv", "to": "/personal/moldtelecom_tv" },
           { "label": "navbar.mt_tv_go", "to": "/personal/moldtelecom-tv-go" },
           { "label": "navbar.cinema", "to": "/personal/cinema" },

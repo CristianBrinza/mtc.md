@@ -16,6 +16,7 @@
     "ab_internet_2": "Doar Internet",
     "ab_tv": "Abonamente TV",
     "ab_tv_2": "Doar TV",
+    "gaming": "#Gaming",
     "2_1_gbps": "2.1 Gbps",
     "5_5_gbps": "5.5 Gbps",
     "apps": "Aplicatii",
@@ -2408,6 +2409,7 @@
     },
     "conditii_1": {
       "title": "Condiții de utilizare Abonamente",
+      "title_2": "Condiții de utilizare Telefonie Mobilă",
       "item_1": "Perioada de comercializare a ofertei: 21.08.2025 – 25.11.2025 (inclusiv). Conectarea la serviciul de Internet fix sau Internet fix cu IPTV este gratuită, iar contractul se semnează pe o perioadă de 24 de luni.",
       "item_2": "Oferta este disponibilă pentru conectările noi și pentru abonații existenți cu contract expirat.",
       "item_3": "Reducere lunară de 120 lei pentru abonamentele Internet fix 300 Mbps, 500 Mbps, 1000 Mbps în combinație cu un abonament IPTV. Pentru abonamentele Internet fix 2.1 Gbps și 5.5 Gbps în combinație cu IPTV, reducerea lunară este de până la 320 lei. Reducerea se aplică timp de 24 luni, apoi se aplică tariful standard.",
