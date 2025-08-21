@@ -594,6 +594,9 @@
   margin-top: 40px;
   color: var(--theme_primary_color_blue_6);
 }
+.title2_devices{
+  margin-bottom: 20px;
+}
 
 .sub_title1 {
   margin: 2px auto 20px;

@@ -1329,13 +1329,13 @@ export default function OnlyNet() {
         </DetailsBlock>
       </Details>
 
-      <div className={`title_3  ${styles.title2}`}>
-        {t('combo_home.device_one_leu')}
+      <div className={`title_3  ${styles.title2} ${styles.title2} ${styles.title2_devices}`}>
+        {t('combo_home.device_one_leu_2')}
       </div>
 
-      <div className={`sub_title ${styles.sub_title1}`}>
-        {t('combo_home.choose_offer_without_discount')}
-      </div>
+      {/*<div className={`sub_title ${styles.sub_title1}`}>*/}
+      {/*  {t('combo_home.choose_offer_without_discount')}*/}
+      {/*</div>*/}
 
       <Slider {...settings_devices} className={styles.tm_carousell}>
         <div className={styles.tm_carousell_block}>
