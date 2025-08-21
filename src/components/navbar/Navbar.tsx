@@ -180,7 +180,7 @@ const Navbar: React.FC = () => {
               >
                 {/*Contacte*/}
                 <Icon size={'20px'} type="call" />
-                (6:00 -24:00)
+                (06:00 -24:00)
               </Link>
 
               <div

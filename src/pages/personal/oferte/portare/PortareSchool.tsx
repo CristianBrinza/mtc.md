@@ -16,7 +16,7 @@ import Slider from 'react-slick';
 import Icon from '../../../../components/Icon.tsx';
 import TableRoaming from '../../../../components/Popups/TableRoaming.tsx';
 import Functions from '../../../../components/functions/Functions.tsx';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import Popup from '../../../../components/Popup/Popup.tsx';
 // import Toggle from '../../../../components/toggle/Toggle.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
@@ -121,13 +121,15 @@ export default function PortareSchool() {
     ],
   };
 
-  const settings = {
+  const [activeConfig, setActiveConfig] = useState<string>('1');
+
+  const settings = useMemo(() => ({
     dots: true,
     infinite: true,
     arrows: true,
     autoplay: false,
     autoplaySpeed: 2500,
-    slidesToShow: 4,
+    slidesToShow: activeConfig === '1' ? 4 : 3,
     slidesToScroll: 1,
     responsive: [
       {
@@ -142,9 +144,8 @@ export default function PortareSchool() {
       { breakpoint: 951, settings: { slidesToShow: 2 } },
       { breakpoint: 651, settings: { slidesToShow: 1 } },
     ],
-  };
+  }), [activeConfig]);
 
-  const [activeConfig, setActiveConfig] = useState<string>('1');
 
   const goToPage = (link: string) => {
     window.location.href = link;
@@ -314,12 +315,19 @@ export default function PortareSchool() {
         {/* Device*/}
         {/*</Button>*/}
       </div>
-      <Slider {...settings} className={styles.mobile_carousell}>
+      <Slider {...settings} className={`${styles.mobile_carousell} ${activeConfig =='2'&&styles.mobile_carousell_config_2}`}>
+        {activeConfig =='1'&&
         <div>
           <div className={styles.mobile_carousell_block}>
             <div className={styles.mobile_carousell_tags}>
               <div className={styles.mobile_carousell_tag}>
                 {t('tm.tags.new')}
+              </div>
+              <div
+                className={styles.mobile_carousell_tag}
+                style={{ background: '#E7EBFF' }}
+              >
+                {t('tm.tags.roaming')}
               </div>
               <div
                 className={styles.mobile_carousell_tag}
@@ -406,35 +414,11 @@ export default function PortareSchool() {
                       5 GB <span className={styles.start_quest}>**</span>
                     </b>
                     <br />
-                    Roaming RO
+                    {t('tm.roaming_ro')}
                   </span>{' '}
                 </div>
               </div>
             </div>
-            {activeConfig == '2' && (
-              <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select} ${styles.calculaor_select_hiden}`}
-              >
-                <option value={'1'}>
-                  <b>Samsung A06</b> (la 1 leu)&nbsp;
-                </option>
-                <option value={'2'}>
-                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
-                </option>
-                <option value={'3'}>
-                  <b>Samsung A16</b> (la 999 lei)&nbsp;
-                </option>
-                <option value={'4'}>
-                  <b>Samsung Galaxy Watch 7</b> (la 1999 lei)&nbsp;
-                </option>
-                <option value={'5'}>
-                  <b>Xiaomi Redmi Note 14</b> (la 1799 lei)&nbsp;
-                </option>
-                <option value={'6'}>
-                  <b>Samsung A36 A16</b> (la 3399 lei)&nbsp;
-                </option>
-              </select>
-            )}
             <div className={styles.wifi_carousell_block_inside_btns}>
               {activeConfig == '1' && (
                 <div className={styles.tm_carousell_block_row_tags}>
@@ -484,6 +468,7 @@ export default function PortareSchool() {
             </div>
           </div>
         </div>
+        }
         <div>
           <div className={styles.mobile_carousell_block}>
             <div className={styles.mobile_carousell_tags}>
@@ -492,7 +477,7 @@ export default function PortareSchool() {
               {/*</div>*/}
               <div
                 className={styles.mobile_carousell_tag}
-                style={{ background: '#E7EBFF', opacity: '0' }}
+                style={{ background: '#E7EBFF' }}
               >
                 {t('tm.tags.roaming')}
               </div>
@@ -575,7 +560,7 @@ export default function PortareSchool() {
                       8 GB <span className={styles.start_quest}>**</span>
                     </b>
                     <br />
-                    Roaming RO
+                    {t('tm.roaming_ro')}
                   </span>{' '}
                 </div>
               </div>
@@ -769,7 +754,7 @@ export default function PortareSchool() {
                       5 GB <span className={styles.start_quest}>**</span>
                     </b>
                     <br />
-                    Roaming RO
+                    {t('tm.roaming_ro')}
                   </span>
                 </div>
               </div>
@@ -958,7 +943,7 @@ export default function PortareSchool() {
                       6 GB <span className={styles.start_quest}>**</span>
                     </b>
                     <br />
-                    Roaming RO
+                    {t('tm.roaming_ro')}
                   </span>
                 </div>
               </div>

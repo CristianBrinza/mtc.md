@@ -37,12 +37,14 @@
     "promo": "Promo",
     "verifica_acoperirea": "Verifică acoperirea",
     "ab_mobile": "Abonamente mobile",
+    "ab_mobile_2": "Abonamente mobile",
     "modem_wifi": "Modem Wi-Fi",
     "modem_4g": "Modem 4G Acasă",
     "servicii_digitale": "Servicii digitale",
     "esim": "eSIM",
     "esim_acasa": "eSIM Acasă",
     "prepay": "Prepay",
+    "prepay_2": "Cartela Prepay",
     "prepay_digital": "Prepay Digital",
     "onenumber": "One Number",
     "cartela": "Cartela Moldtelecom",
@@ -2015,6 +2017,7 @@
       "promo": "Promo",
       "mobile": "Telefonie Mobilă"
     },
+    "roaming_ro": "Roaming RO",
     "min": "min",
     "hero": { "alt": "Moldtelecom" },
     "title_choose": "Orice abonament alegi, ai Internet Nelimitat și Roaming inclus",
@@ -2350,6 +2353,7 @@
     }
   },
   "combo_home": {
+    "inclus_2": "inclus",
     "internet": "Internet",
     "mobil": "Mobil",
     "totul_triple_1": "TOTUL",

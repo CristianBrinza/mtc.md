@@ -37,12 +37,14 @@
     "promo": "Акции",
     "verifica_acoperirea": "Проверить покрытие",
     "ab_mobile": "Абонементы",
+    "ab_mobile_2": "Абонемент",
     "modem_wifi": "Wi-Fi модем",
     "modem_4g": "4G модем дома",
     "servicii_digitale": "Цифровые услуги",
     "esim": "eSIM",
     "esim_acasa": "eSIM Acasă",
     "prepay": "Prepay",
+    "prepay_2": "Карта Prepay",
     "prepay_digital": "Prepay Digital",
     "onenumber": "One Number",
     "cartela": "Карта Moldtelecom",
@@ -2177,6 +2179,7 @@
       "promo": "Промо",
       "mobile": "Мобильная связь"
     },
+    "roaming_ro": "Роуминг RO",
     "min": "мин",
     "hero": { "alt": "Moldtelecom" },
     "title_choose": "Любой абонемент — безлимитный интернет и роуминг включены!",
@@ -2502,6 +2505,7 @@
     }
   },
   "combo_home": {
+    "inclus_2": "включено",
     "internet": "Интернет",
     "mobil": "Мобильный",
     "totul_triple_1": "ВСЁ",

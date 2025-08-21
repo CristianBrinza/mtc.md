@@ -56,15 +56,15 @@ function AppContent() {
         {/*<Route path="/:lang/" element={<Home />} />*/}
         {/*<Route path="/" element={<HomeNew />} />*/}
         {/*<Route path="/:lang/" element={<HomeTemplink />} />*/}
-
         {/*personal promo*/}
         <Route path="/:lang/gaming" element={<Gaming />} />
         <Route path="/:lang/internet" element={<OnlyNet />} />
+        <Route path="/:lang/interent" element={<OnlyNet />} />
+        {/*wrong DNS special*/}
         <Route path="/:lang/mobile" element={<MobileSchool />} />
         <Route path="/:lang/mobile189347654" element={<MobileSchool />} />
         <Route path="/:lang/portare" element={<PortareSchool />} />
         <Route path="/:lang/portare189347654" element={<PortareSchool />} />
-
         <Route path="/:lang/magazine" element={<Magazine />} />
         <Route
           path="/:lang/securitate-digitala"
@@ -76,16 +76,12 @@ function AppContent() {
         />
         <Route path="/:lang/contacte" element={<Contacts />} />
         <Route path="/:lang/contacts" element={<Contacts />} />
-
         <Route path="/:lang/wifi-plus" element={<WifiPlus />} />
-
         {/*tehincal*/}
         <Route path="/:lang/icons" element={<IconShowcase />} />
-
         {/*App redirect*/}
         <Route path="/:lang/mymtc" element={<AppRedirect />} />
         <Route path="/mymtc" element={<AppRedirect />} />
-
         <Route path="/:lang/mobile-options" element={<OptionsandServices />} />
         <Route path="/:lang/sms-service" element={<SmsServices />} />
         <Route
@@ -97,20 +93,22 @@ function AppContent() {
         <Route path="/:lang/roaming" element={<Roaming />} />
         <Route path="/:lang/5gbps" element={<FiveGbps />} />
         <Route path="/:lang/internet+tv" element={<Double />} />
+        <Route path="/:lang/interent+tv" element={<Double />} />
+        {/*wrong DNS special*/}
         <Route path="/:lang/internet+tv+mobil" element={<Triple />} />
+        <Route path="/:lang/interent+tv+mobil" element={<Triple />} />{' '}
+        {/*wrong DNS special*/}
         {/*<Route path="/:lang/form-test" element={<FormTestPage />} />*/}
         <Route
           path="/:lang/politica-de-utilizare-rezonabila-a-serviciului-roaming-europa"
           element={<PoliticaRoaming />}
         />
         <Route path="/:lang/eshop/back-2-school" element={<Promo1536965 />} />
-
         {/*business*/}
         <Route path="/:lang/business/roaming" element={<Roaming />} />
         <Route path="/:lang/business/m2m" element={<M2M />} />
         <Route path="/:lang/business/gps-track" element={<GpsTrack />} />
         <Route path="/:lang/business/fibra" element={<Fibra />} />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

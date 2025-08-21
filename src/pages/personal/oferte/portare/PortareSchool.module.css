@@ -197,6 +197,9 @@
   margin: 0 auto;
   margin-top: 5px;
 }
+.mobile_carousell_config_2{
+  max-width: 880px;
+}
 
 .mobile_carousell_block {
   margin: 10px auto 0;
@@ -865,7 +868,7 @@
     max-width: 96vw;
   }
   .tm_discover_card {
-    max-width: 90vw;
+    max-width: 88vw;
   }
 
   .tm_carousell_discover :global(.slick-next) {

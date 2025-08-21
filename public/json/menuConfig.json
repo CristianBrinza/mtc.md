@@ -145,8 +145,12 @@
         "items": [
           { "label": "navbar.portare", "to": "/portare" },
           {
-            "label": "navbar.ab_mobile",
+            "label": "navbar.ab_mobile_2",
             "to": "/mobile"
+          },
+          {
+            "label": "navbar.prepay_2",
+            "to": "/personal/prepay-cartela"
           },
           {
             "label": "navbar.modem_wifi",
@@ -161,10 +165,6 @@
         "items": [
           { "label": "navbar.esim", "to": "/personal/esim" },
           { "label": "navbar.esim_acasa", "to": "/personal/esim-acasa" },
-          {
-            "label": "navbar.prepay",
-            "to": "/personal/prepay-cartela"
-          },
           {
             "label": "navbar.prepay_digital",
             "to": "/personal/prepay-digital"

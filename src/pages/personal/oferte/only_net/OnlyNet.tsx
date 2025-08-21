@@ -1395,7 +1395,7 @@ export default function OnlyNet() {
           <ShopCard
             device_id={394534437}
             image="/images/shop/383935269.webp"
-            price={7299}
+            price={7320}
             title="Hisense"
             subtitle="55A4N (4k)"
             characteristics='UHD VA /4K /55"'
@@ -1463,7 +1463,7 @@ export default function OnlyNet() {
           <ShopCard
             device_id={394534437}
             image="/images/shop/383935269.webp"
-            price={7299}
+            price={7320}
             title="Hisense"
             subtitle="55A4N (4k)"
             characteristics='UHD VA /4K /55"'

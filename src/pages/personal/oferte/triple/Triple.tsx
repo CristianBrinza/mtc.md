@@ -1308,7 +1308,7 @@ export default function Triple() {
                   {/*<Toggle />*/}
                 </div>
                 <span>
-                  <b>Arhiva TV</b> inclus{' '}
+                  <b>Arhiva TV</b> {t('combo_home.inclus_2')}{' '}
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
                   >
@@ -1690,7 +1690,7 @@ export default function Triple() {
                   {/*<Toggle />*/}
                 </div>
                 <span>
-                  <b>Arhiva TV</b> inclus{' '}
+                  <b>Arhiva TV</b> {t('combo_home.inclus_2')}{' '}
                   <span
                     className={styles.abonaments_block_inside_subtitle_small}
                   >
@@ -2061,7 +2061,7 @@ export default function Triple() {
                 {/*<Toggle />*/}
               </div>
               <span>
-                <b>Arhiva TV</b> inclus{' '}
+                <b>Arhiva TV</b> {t('combo_home.inclus_2')}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
                   ({t('combo_home.gratiut')})
                 </span>
@@ -2447,7 +2447,7 @@ export default function Triple() {
                 {/*<Toggle />*/}
               </div>
               <span>
-                <b>Arhiva TV</b> inclus{' '}
+                <b>Arhiva TV</b> {t('combo_home.inclus_2')}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
                   ({t('combo_home.gratiut')})
                 </span>
@@ -2828,7 +2828,7 @@ export default function Triple() {
                 {/*<Toggle />*/}
               </div>
               <span>
-                <b>Arhiva TV</b> inclus{' '}
+                <b>Arhiva TV</b> {t('combo_home.inclus_2')}{' '}
                 <span className={styles.abonaments_block_inside_subtitle_small}>
                   ({t('combo_home.gratiut')})
                 </span>
@@ -3276,7 +3276,7 @@ export default function Triple() {
             device_id={394534437}
             image="/images/shop/383935269.webp"
             price={1}
-            old_price={7299}
+            old_price={7320}
             reducere="- 99%"
             title="Hisense"
             subtitle="55A4N (4k)"
@@ -3380,7 +3380,7 @@ export default function Triple() {
             device_id={394534437}
             image="/images/shop/383935269.webp"
             price={2999}
-            old_price={7299}
+            old_price={7320}
             reducere="- 4 321"
             title="Hisense"
             subtitle="55A4N (4k)"
