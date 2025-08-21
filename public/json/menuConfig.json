@@ -54,26 +54,24 @@
         "title": "navbar.promo",
         "items": [
           {
-            "label": "navbar.double",
-            "smallText": "navbar.internet_tv_only",
-            "to": "/personal/Promo_Abonamente-TV-Internet"
+            "label": "navbar.5_5_gbps",
+            "to": "/5gbps"
           },
           {
-            "label": "navbar.triple",
-            "smallText": "navbar.internet_tv_mobil",
-            "to": "/personal/Promo_Abonamente-TV-Internet-Mobil"
+            "label": "navbar.internet_tv_only",
+            "to": "/internet+tv"
+          },
+          {
+            "label": "navbar.internet_tv_mobil",
+            "to": "/internet+tv+mobil"
           },
           {
             "label": "navbar.ab_internet",
-            "to": "/personal/Abonamente-Internet"
+            "to": "/internet"
           },
           {
             "label": "navbar.ab_tv",
             "to": "/personal/Abonamente-Televiziune"
-          },
-          {
-            "label": "navbar.5_5_gbps",
-            "to": "/5gbps"
           }
         ]
       },
@@ -141,10 +139,10 @@
       {
         "title": "navbar.promo",
         "items": [
-          { "label": "navbar.portare", "to": "/personal/Portare" },
+          { "label": "navbar.portare", "to": "/portare" },
           {
             "label": "navbar.ab_mobile",
-            "to": "/personal/Abonamente_Telefonie_Mobila"
+            "to": "/mobile"
           },
           {
             "label": "navbar.modem_wifi",

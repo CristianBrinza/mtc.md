@@ -268,7 +268,11 @@ export default function Triple() {
       // 4️⃣ update the display
       setRegio(initialCity);
       // setIsRegio(true);
-      setIsRegio((obj[initialRegion][initialCity] || []).length > 0);
+      //console.log((obj[initialRegion][initialCity] || []).length > 0);
+      const covered =
+        (window.regiuni?.[initialRegion]?.[initialCity] || []).length > 0;
+      setIsRegio(covered);
+      // setIsRegio((obj[initialRegion][initialCity] || []).length > 0);
       // console.log(isRegio);
     };
 
