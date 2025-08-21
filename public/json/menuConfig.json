@@ -72,8 +72,8 @@
             "to": "/personal/Abonamente-Televiziune"
           },
           {
-            "label": "navbar.2_1_gbps",
-            "to": "/personal/2gbps"
+            "label": "navbar.5_5_gbps",
+            "to": "/5gbps"
           }
         ]
       },
