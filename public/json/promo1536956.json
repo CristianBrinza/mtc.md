@@ -63,7 +63,7 @@
     "model": "Pad SE",
     "brand": "Xiaomi",
     "category": "Tableta",
-    "link": null
+    "link": "/eshop/gadgeturi/xiaomi-redmi-pad-se-4-gb-128-gb-graphite-gray"
   },
   {
     "device_id": "394534437",
@@ -107,7 +107,7 @@
     "model": "Xbox Series S",
     "brand": "Microsoft",
     "category": "Console",
-    "link": null
+    "link": "/eshop/gadgeturi/microsoft-xbox-series-s-white"
   },
   {
     "device_id": "294094407",
@@ -129,7 +129,7 @@
     "model": "PlayStation 5 Slim",
     "brand": "Sony",
     "category": "Console",
-    "link": null
+    "link": "eshop/gadgeturi/consola-sony-playstation-5-slim-disk-edition-16-gb-white"
   },
   {
     "device_id": "294094408",
@@ -151,7 +151,7 @@
     "model": "Pad Pro",
     "brand": "Xiaomi",
     "category": "Tableta",
-    "link": null
+    "link": "/eshop/gadgeturi/xiaomi-redmi-pad-pro-6-gb-128-gb-graphite-gray"
   },
   {
     "device_id": "294094409",
@@ -195,7 +195,7 @@
     "model": "Pad 7 Pro",
     "brand": "Xiaomi",
     "category": "Tableta",
-    "link": null
+    "link": "/eshop/gadgeturi/xiaomi-redmi-pad-pro-6-gb-128-gb-graphite-gray"
   },
   {
     "device_id": "294024402",
@@ -290,7 +290,7 @@
     "model": "Galaxy",
     "brand": "Samsung",
     "category": "Ceasuri",
-    "link": null
+    "link": "/eshop/gadgeturi/samsung-galaxy-watch-7-black"
   },
   {
     "device_id": "294024407",
@@ -312,7 +312,7 @@
     "model": "Galaxy",
     "brand": "Xiaomi",
     "category": "Telefoane",
-    "link": null
+    "link": "/eshop/telefoane/xiaomi-redmi-14c-8-gb-256-gb-midnight-black"
   },
   {
     "device_id": "294024408",
@@ -334,7 +334,7 @@
     "model": "A",
     "brand": "Samsung",
     "category": "Telefoane",
-    "link": null
+    "link": "/eshop/telefoane/samsung-galaxy-a06-4-gb-64-gb-black"
   },
   {
     "device_id": "294024409",
@@ -356,7 +356,7 @@
     "model": "A",
     "brand": "Samsung",
     "category": "Telefoane",
-    "link": null
+    "link": "/eshop/telefoane/samsung-a16-4-gb-128-gb-black"
   },
   {
     "device_id": "294024410",
@@ -378,28 +378,6 @@
     "brand": "Huawei",
     "category": "Ceasuri",
     "link": "/eshop/gadgeturi/huawei-watch-4-pro-2-gb-32-gb-dark-brown"
-  },
-  {
-    "device_id": "294024411",
-    "image": "/images/shop/193519269.webp",
-    "price": "1 799",
-    "old_price": "4 680",
-    "reducere": "- 2 881",
-    "title": "Xiaomi",
-    "subtitle": "Redmi Note 14",
-    "characteristics": "4GB /256GB /eSIM",
-    "tag": "Telefonie Mobila",
-    "subtag": "Doar cu abonament",
-    "tag_color": "var(--theme_primary_color_blue_3)",
-    "style_type": "gray",
-    "color": "Black",
-    "show_like": "TRUE",
-    "show_comapre": "FALSE",
-    "sort": "Telefoane",
-    "model": "Redmi",
-    "brand": "Xiaomi",
-    "category": "Telefoane",
-    "link": null
   },
   {
     "device_id": "294024413",

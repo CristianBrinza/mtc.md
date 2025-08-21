@@ -41,6 +41,10 @@
   background-color: var(--theme_primary_color_blue_3);
   margin: 20px 0 25px;
 }
+.calculaor_select_hiden {
+  opacity: 0;
+  pointer-events: none;
+}
 
 .conversion {
   width: 100%;

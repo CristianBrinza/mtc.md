@@ -161,9 +161,9 @@ export default function PortareSchool() {
   const cond1 = t('tm.details.conditii.itemsConfig1_1', {
     returnObjects: true,
   }) as string[];
-  const cond2 = t('tm.details.conditii.itemsConfigElse_1', {
-    returnObjects: true,
-  }) as string[];
+  // const cond2 = t('tm.details.conditii.itemsConfigElse_1', {
+  //   returnObjects: true,
+  // }) as string[];
   const common = t('tm.details.conditii.commonItems_new', {
     returnObjects: true,
   }) as string[];
@@ -413,13 +413,13 @@ export default function PortareSchool() {
             </div>
             {activeConfig == '2' && (
               <select
-                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+                className={`${styles.popup_regio_select} ${styles.calculaor_select} ${styles.calculaor_select_hiden}`}
               >
                 <option value={'1'}>
-                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
+                  <b>Samsung A06</b> (la 1 leu)&nbsp;
                 </option>
                 <option value={'2'}>
-                  <b>Samsung A06</b> (la 1 leu)&nbsp;
+                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
                 </option>
                 <option value={'3'}>
                   <b>Samsung A16</b> (la 999 lei)&nbsp;
@@ -585,10 +585,10 @@ export default function PortareSchool() {
                 className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
               >
                 <option value={'1'}>
-                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
+                  <b>Samsung A06</b> (la 1 leu)&nbsp;
                 </option>
                 <option value={'2'}>
-                  <b>Samsung A06</b> (la 1 leu)&nbsp;
+                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
                 </option>
                 <option value={'3'}>
                   <b>Samsung A16</b> (la 999 lei)&nbsp;
@@ -780,10 +780,10 @@ export default function PortareSchool() {
                 className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
               >
                 <option value={'1'}>
-                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
+                  <b>Samsung A06</b> (la 1 leu)&nbsp;
                 </option>
                 <option value={'2'}>
-                  <b>Samsung A06</b> (la 1 leu)&nbsp;
+                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
                 </option>
                 <option value={'3'}>
                   <b>Samsung A16</b> (la 999 lei)&nbsp;
@@ -969,10 +969,10 @@ export default function PortareSchool() {
                 className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
               >
                 <option value={'1'}>
-                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
+                  <b>Samsung A06</b> (la 1 leu)&nbsp;
                 </option>
                 <option value={'2'}>
-                  <b>Samsung A06</b> (la 1 leu)&nbsp;
+                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
                 </option>
                 <option value={'3'}>
                   <b>Samsung A16</b> (la 999 lei)&nbsp;
@@ -1041,15 +1041,20 @@ export default function PortareSchool() {
       <Details trackPrefix="tm">
         <DetailsBlock title={t('tm.details.conditii.title_2')}>
           <ul>
-            {(activeConfig === '1' ? cond1 : cond2).map((text, i) => (
-              <li key={i}>{text}</li>
-            ))}
-            {activeConfig == '1' && (
-              <div className={styles.detalii_bold}>
-                {t('tm.details.conditii.title_3')}
-              </div>
+            {/*{(activeConfig === '1' ? cond1 : cond2).map((text, i) => (*/}
+            {/*  <li key={i}>{text}</li>*/}
+            {/*))}*/}
+            {(activeConfig === '1' ? cond1 : []).map(
+              (text: string, i: number) => (
+                <li key={i}>{text}</li>
+              )
             )}
-            {(activeConfig === '1' ? common_1 : []).map(
+            {/*{activeConfig == '2' && (*/}
+            {/*  <div className={styles.detalii_bold}>*/}
+            {/*    {t('tm.details.conditii.title_3')}*/}
+            {/*  </div>*/}
+            {/*)}*/}
+            {(activeConfig === '2' ? common_1 : []).map(
               (text: string, i: number) => (
                 <li key={i}>{text}</li>
               )
