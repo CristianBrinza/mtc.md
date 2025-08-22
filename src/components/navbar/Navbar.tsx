@@ -582,7 +582,7 @@ const Navbar: React.FC = () => {
                         href={
                           item.to.includes('/personal')
                             ? `https://www.moldtelecom.md/${t('lang')}${item.to}`
-                            : item.to
+                            : `https://new.moldtelecom.md/${t('lang')}${item.to}`
                         }
                       >
                         {t(item.label)}

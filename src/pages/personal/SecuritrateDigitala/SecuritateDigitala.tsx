@@ -24,25 +24,13 @@ export default function SecuritateDigitala() {
   return (
     <>
       <SEO {...seo} />
-      <Navbar />
+
       <Chat />
       <Feedback />
-      <Breadcrumb items={breadcrumbItems} />
+      <div className={styles.sec_hero}>
+        <Breadcrumb items={breadcrumbItems} />
+      </div>
 
-      <Hero color="#F7F7F7" classname={styles.hero}>
-        <div className={styles.hero_img_block}>
-          <img
-            className={styles.hero_img}
-            src={`/images/landings/13986912${t('lang')}.webp`}
-            alt={t('wifi_plus.hero.alt')}
-          />
-          <img
-            className={styles.hero_img_tablet}
-            src={`/images/landings/18074013${t('lang')}.webp`}
-            alt={t('wifi_plus.hero.alt')}
-          />
-        </div>
-      </Hero>
 
       <MyApp style_type={'blue_white'} className={styles.myapp} />
       <FaqV2 max_faq={5}>
