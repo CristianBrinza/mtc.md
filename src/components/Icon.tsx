@@ -743,6 +743,24 @@ export const icons = {
       />
     </>
   ),
+  compare_2: (
+    <>
+      <path
+        d="M12 9.5V2M12 9.5L6 11M12 9.5L18 8M6 11L10 18M6 11L2 18M18 8L14 15M18 8L22 15"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M6 22C7.06087 22 8.07828 21.5786 8.82843 20.8284C9.57857 20.0783 10 19.0609 10 18H2C2 19.0609 2.42143 20.0783 3.17157 20.8284C3.92172 21.5786 4.93913 22 6 22ZM18 19C19.0609 19 20.0783 18.5786 20.8284 17.8284C21.5786 17.0783 22 16.0609 22 15H14C14 16.0609 14.4214 17.0783 15.1716 17.8284C15.9217 18.5786 16.9391 19 18 19Z"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </>
+  ),
   office: (
     <>
       <path

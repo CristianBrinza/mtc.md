@@ -16,7 +16,7 @@ import Slider from 'react-slick';
 import Icon from '../../../../components/Icon.tsx';
 import TableRoaming from '../../../../components/Popups/TableRoaming.tsx';
 import Functions from '../../../../components/functions/Functions.tsx';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import Popup from '../../../../components/Popup/Popup.tsx';
 // import Toggle from '../../../../components/toggle/Toggle.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
@@ -121,30 +121,33 @@ export default function MobileSchool() {
     ],
   };
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    arrows: true,
-    autoplay: false,
-    autoplaySpeed: 2500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1301,
-        settings: {
-          slidesToShow: 3,
-          autoplay: true,
-          autoplaySpeed: 1800,
-          arrows: true,
-        },
-      },
-      { breakpoint: 951, settings: { slidesToShow: 2 } },
-      { breakpoint: 651, settings: { slidesToShow: 1 } },
-    ],
-  };
-
   const [activeConfig, setActiveConfig] = useState<string>('2');
+
+  const settings = useMemo(
+    () => ({
+      dots: true,
+      infinite: true,
+      arrows: true,
+      autoplay: false,
+      autoplaySpeed: 2500,
+      slidesToShow: activeConfig === '3' ? 3 : 4,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1301,
+          settings: {
+            slidesToShow: 3,
+            autoplay: true,
+            autoplaySpeed: 1800,
+            arrows: true,
+          },
+        },
+        { breakpoint: 951, settings: { slidesToShow: 2 } },
+        { breakpoint: 651, settings: { slidesToShow: 1 } },
+      ],
+    }),
+    [activeConfig]
+  );
 
   const goToPage = (link: string) => {
     window.location.href = link;
@@ -304,7 +307,37 @@ export default function MobileSchool() {
         >
           {t('tm.btn_not_client')}
         </Button>
+        <Button
+          id="tm_not_client"
+          color={'var(--theme_primary_color_blue_4)'}
+          bgcolor={
+            activeConfig == '3'
+              ? 'var(--theme_primary_color_blue_3)'
+              : 'transparent'
+          }
+          border={'var(--theme_primary_color_blue_3)'}
+          hover_border={'var(--theme_primary_color_blue_2)'}
+          hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+          onClick={() => {
+            setActiveConfig('3');
+          }}
+        >
+          {t('tm.smartphone')}
+        </Button>
 
+        <div className={styles.btns_select_compara}>
+          <div
+            className={styles.btns_select_compara_btn}
+            onClick={() => setActivePopup('1281117')}
+          >
+            <Icon
+              size={'18px'}
+              type={'compare'}
+              color={'var(--theme_primary_color_blue_2)'}
+            />
+            <span>{t('tm.comapra')}</span>
+          </div>
+        </div>
         {/*<Button*/}
         {/*  color={'var(--theme_primary_color_blue_4)'}*/}
         {/*  bgcolor={'transparent'}*/}
@@ -316,154 +349,197 @@ export default function MobileSchool() {
         {/* Device*/}
         {/*</Button>*/}
       </div>
-      <Slider {...settings} className={`${styles.mobile_carousell}`}>
-        <div>
-          <div className={styles.mobile_carousell_block}>
-            <div className={styles.mobile_carousell_tags}>
-              <div className={styles.mobile_carousell_tag}>
-                {t('tm.tags.new')}
+      <Slider
+        {...settings}
+        className={`${styles.mobile_carousell} ${activeConfig == '3' && styles.mobile_carousell_config_2}`}
+      >
+        {activeConfig != '3' && (
+          <div>
+            <div className={styles.mobile_carousell_block}>
+              <div className={styles.mobile_carousell_tags}>
+                <div className={styles.mobile_carousell_tag}>
+                  {t('tm.tags.new')}
+                </div>
+                <div
+                  className={styles.mobile_carousell_tag}
+                  style={{ background: '#E7EBFF' }}
+                >
+                  {t('tm.tags.roaming')}
+                </div>
+                <div
+                  className={styles.mobile_carousell_tag}
+                  style={{ background: '#E7EBFF' }}
+                >
+                  {t('tm.tags.top_sales')}
+                </div>
               </div>
-              <div
-                className={styles.mobile_carousell_tag}
-                style={{ background: '#E7EBFF' }}
-              >
-                {t('tm.tags.roaming')}
+              <div className={styles.mobile_carousell_title}>
+                {t('tm.plan_names.star_120')}
               </div>
-              <div
-                className={styles.mobile_carousell_tag}
-                style={{ background: '#E7EBFF' }}
-              >
-                {t('tm.tags.top_sales')}
-              </div>
-            </div>
-            <div className={styles.mobile_carousell_title}>
-              {t('tm.plan_names.star_120')}
-            </div>
 
-            <div className={styles.tm_carousell_block_rows_2}>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'call_mess'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <span>
-                  <b>{t('tm.nelimitat')}</b> <br />
-                  {t('tm.min_sms_retea')}
-                </span>
-              </div>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'call'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <div className={styles.tm_carousell_block_row_inline}>
+              <div className={styles.tm_carousell_block_rows_2}>
+                <div className={styles.tm_carousell_block_row}>
+                  <div className={styles.tm_carousell_block_row_svg}>
+                    <Icon
+                      type={'call_mess'}
+                      color={'var(--theme_primary_color_blue_2)'}
+                    />
+                  </div>
                   <span>
-                    {' '}
-                    <b>350 {t('tm.min')}</b>
-                    <br />
-                    {t('tm.nationale')}
-                  </span>{' '}
-                  /
-                  <span>
-                    <b>35 {t('tm.min')} </b>
-                    <br /> {t('tm.internationale')}
+                    <b>{t('tm.nelimitat')}</b> <br />
+                    {t('tm.min_sms_retea')}
                   </span>
                 </div>
-              </div>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'internet'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
+                <div className={styles.tm_carousell_block_row}>
+                  <div className={styles.tm_carousell_block_row_svg}>
+                    <Icon
+                      type={'call'}
+                      color={'var(--theme_primary_color_blue_2)'}
+                    />
+                  </div>
+                  <div className={styles.tm_carousell_block_row_inline}>
+                    <span>
+                      {' '}
+                      <b>350 {t('tm.min')}</b>
+                      <br />
+                      {t('tm.nationale')}
+                    </span>{' '}
+                    /
+                    <span>
+                      <b>35 {t('tm.min')} </b>
+                      <br /> {t('tm.internationale')}
+                    </span>
+                  </div>
                 </div>
-                <span>
-                  <b>
-                    {t('tm.nelimitat')} GB{' '}
-                    <span className={styles.start_quest}>*</span>
-                  </b>{' '}
-                  <br /> {t('tm.trafic_internet')}
-                </span>
-              </div>
-              <div className={styles.tm_carousell_block_row}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'sms'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <span>
-                  <b>35 SMS</b> <br /> {t('tm.nationale')}
-                </span>
-              </div>
-              <div className={`${styles.tm_carousell_block_row}`}>
-                <div className={styles.tm_carousell_block_row_svg}>
-                  <Icon
-                    type={'romania'}
-                    color={'var(--theme_primary_color_blue_2)'}
-                  />
-                </div>
-                <div className={styles.tm_carousell_block_row_inline}>
+                <div className={styles.tm_carousell_block_row}>
+                  <div className={styles.tm_carousell_block_row_svg}>
+                    <Icon
+                      type={'internet'}
+                      color={'var(--theme_primary_color_blue_2)'}
+                    />
+                  </div>
                   <span>
-                    {' '}
                     <b>
-                      5 GB <span className={styles.start_quest}>**</span>
-                    </b>
-                    <br />
-                    {t('tm.roaming_ro')}
-                  </span>{' '}
+                      {t('tm.nelimitat')} GB{' '}
+                      <span className={styles.start_quest}>*</span>
+                    </b>{' '}
+                    <br /> {t('tm.trafic_internet')}
+                  </span>
                 </div>
-              </div>
-            </div>
-            <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1'
-                    ? `-25 ${t('tm.lei_reducere_2_ani')}`
-                    : `-40 ${t('tm.lei_reducere')}`}
-                </div>
-              </div>
-              <div className={styles.mobile_carousell_price}>
-                <div> {activeConfig == '1' ? '95' : '80'}</div>
-                <div>
-                  <div className={styles.mobile_carousell_price_valuta}>
-                    {t('lei_luna')}
+                <div className={styles.tm_carousell_block_row}>
+                  <div className={styles.tm_carousell_block_row_svg}>
+                    <Icon
+                      type={'sms'}
+                      color={'var(--theme_primary_color_blue_2)'}
+                    />
                   </div>
-                  <div className={styles.mobile_carousell_price_old}>
-                    <span>120 {t('lei_luna')}</span>
+                  <span>
+                    <b>35 SMS</b> <br /> {t('tm.nationale')}
+                  </span>
+                </div>
+                <div className={`${styles.tm_carousell_block_row}`}>
+                  <div className={styles.tm_carousell_block_row_svg}>
+                    <Icon
+                      type={'romania'}
+                      color={'var(--theme_primary_color_blue_2)'}
+                    />
+                  </div>
+                  <div className={styles.tm_carousell_block_row_inline}>
+                    <span>
+                      {' '}
+                      <b>
+                        5 GB <span className={styles.start_quest}>**</span>
+                      </b>
+                      <br />
+                      {t('tm.roaming_ro')}
+                    </span>{' '}
                   </div>
                 </div>
               </div>
-              <Button
-                id="tm_star120_order"
-                // onClick={() => setShowPopupFunction('aaa')}
-                onClick={() =>
-                  handleConfigClick(
-                    'start 120',
-                    activeConfig == '1' ? '95' : '80',
-                    activeConfig == '1'
-                      ? `-25 ${t('tm.lei_reducere_2_ani')}`
-                      : `-40 ${t('tm.lei_reducere')}`
-                  )
-                }
-                color="#fff"
-                bgcolor="var(--theme_primary_color_blue_4)"
-                border="var(--theme_primary_color_blue_4)"
-                hover_border="var(--theme_primary_color_blue_2)"
-                hover_bgcolor="var(--theme_primary_color_blue_2)"
-                hover_color="var(--theme_primary_color_blue_4)"
-                icon="arrow_right"
-                className={styles.mobile_carousell_block_btn_buy}
-              >
-                {t('order_now')}
-              </Button>
+
+              {activeConfig == '3' && (
+                <select
+                  className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+                >
+                  <option value={'1'}>
+                    <b>Samsung A06</b> (la 1 leu)&nbsp;
+                  </option>
+                  <option value={'2'}>
+                    <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
+                  </option>
+                  <option value={'3'}>
+                    <b>Samsung A16</b> (la 999 lei)&nbsp;
+                  </option>
+                  <option value={'4'}>
+                    <b>Samsung Galaxy Watch 7</b> (la 1999 lei)&nbsp;
+                  </option>
+                  <option value={'5'}>
+                    <b>Xiaomi Redmi Note 14</b> (la 1799 lei)&nbsp;
+                  </option>
+                  <option value={'6'}>
+                    <b>Samsung A36 A16</b> (la 3399 lei)&nbsp;
+                  </option>
+                </select>
+              )}
+              <div className={styles.wifi_carousell_block_inside_btns}>
+                {activeConfig != '3' && (
+                  <div className={styles.tm_carousell_block_row_tags}>
+                    <div className={styles.tm_carousell_block_row_tag}>
+                      {activeConfig == '1'
+                        ? `-25 ${t('tm.lei_reducere_2_ani')}`
+                        : `-40 ${t('tm.lei_reducere')}`}
+                    </div>
+                  </div>
+                )}
+                <div className={styles.mobile_carousell_price}>
+                  <div>
+                    {' '}
+                    {activeConfig == '1'
+                      ? '95'
+                      : activeConfig == '2'
+                        ? '80'
+                        : '120'}
+                  </div>
+                  <div>
+                    <div className={styles.mobile_carousell_price_valuta}>
+                      {t('lei_luna')}
+                    </div>
+                    {activeConfig != '3' && (
+                      <div className={styles.mobile_carousell_price_old}>
+                        <span>120 {t('lei_luna')}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <Button
+                  id="tm_star120_order"
+                  // onClick={() => setShowPopupFunction('aaa')}
+                  onClick={() =>
+                    handleConfigClick(
+                      'start 120',
+                      activeConfig == '1' ? '95' : '80',
+                      activeConfig == '1'
+                        ? `-25 ${t('tm.lei_reducere_2_ani')}`
+                        : activeConfig == '2'
+                          ? `-40 ${t('tm.lei_reducere')}`
+                          : `${t('tm.plus_device')}`
+                    )
+                  }
+                  color="#fff"
+                  bgcolor="var(--theme_primary_color_blue_4)"
+                  border="var(--theme_primary_color_blue_4)"
+                  hover_border="var(--theme_primary_color_blue_2)"
+                  hover_bgcolor="var(--theme_primary_color_blue_2)"
+                  hover_color="var(--theme_primary_color_blue_4)"
+                  icon="arrow_right"
+                  className={styles.mobile_carousell_block_btn_buy}
+                >
+                  {t('order_now')}
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <div>
           <div className={styles.mobile_carousell_block}>
             <div className={styles.mobile_carousell_tags}>
@@ -560,23 +636,59 @@ export default function MobileSchool() {
                 </div>
               </div>
             </div>
+            {activeConfig == '3' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'1'}>
+                  <b>Samsung A06</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'2'}>
+                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'3'}>
+                  <b>Samsung A16</b> (la 999 lei)&nbsp;
+                </option>
+                <option value={'4'}>
+                  <b>Samsung Galaxy Watch 7</b> (la 1999 lei)&nbsp;
+                </option>
+                <option value={'5'}>
+                  <b>Xiaomi Redmi Note 14</b> (la 1799 lei)&nbsp;
+                </option>
+                <option value={'6'}>
+                  <b>Samsung A36 A16</b> (la 3399 lei)&nbsp;
+                </option>
+              </select>
+            )}
             <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1'
-                    ? `-35 ${t('tm.lei_reducere_2_ani')}`
-                    : `-50 ${t('tm.lei_reducere')}`}
+              {activeConfig != '3' && (
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    {activeConfig == '1'
+                      ? `-35 ${t('tm.lei_reducere_2_ani')}`
+                      : `-50 ${t('tm.lei_reducere')}`}
+                  </div>
                 </div>
-              </div>
+              )}
               <div className={styles.mobile_carousell_price}>
-                <div> {activeConfig == '1' ? '115' : '100'}</div>
+                <div>
+                  {' '}
+                  {activeConfig == '1'
+                    ? '115'
+                    : activeConfig == '2'
+                      ? '100'
+                      : '150'}
+                </div>
+
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     {t('lei_luna')}
                   </div>
-                  <div className={styles.mobile_carousell_price_old}>
-                    <span>150 {t('lei_luna')}</span>
-                  </div>
+                  {activeConfig != '3' && (
+                    <div className={styles.mobile_carousell_price_old}>
+                      <span>150 {t('lei_luna')}</span>
+                    </div>
+                  )}
                 </div>
               </div>
               <Button
@@ -588,7 +700,9 @@ export default function MobileSchool() {
                     activeConfig == '1' ? '115' : '100',
                     activeConfig == '1'
                       ? `-35 ${t('tm.lei_reducere')}`
-                      : `-50 ${t('tm.lei_reducere')}`
+                      : activeConfig == '2'
+                        ? `-50 ${t('tm.lei_reducere')}`
+                        : `${t('tm.plus_device')}`
                   )
                 }
                 color="#fff"
@@ -726,24 +840,59 @@ export default function MobileSchool() {
                 </div>
               </div>
             </div>
-
+            {activeConfig == '3' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'1'}>
+                  <b>Samsung A06</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'2'}>
+                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'3'}>
+                  <b>Samsung A16</b> (la 999 lei)&nbsp;
+                </option>
+                <option value={'4'}>
+                  <b>Samsung Galaxy Watch 7</b> (la 1999 lei)&nbsp;
+                </option>
+                <option value={'5'}>
+                  <b>Xiaomi Redmi Note 14</b> (la 1799 lei)&nbsp;
+                </option>
+                <option value={'6'}>
+                  <b>Samsung A36 A16</b> (la 3399 lei)&nbsp;
+                </option>
+              </select>
+            )}
             <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1'
-                    ? `-60 ${t('tm.lei_reducere_2_ani')}`
-                    : `-75 ${t('tm.lei_reducere')}`}
+              {activeConfig != '3' && (
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    {activeConfig == '1'
+                      ? `-60 ${t('tm.lei_reducere_2_ani')}`
+                      : `-75 ${t('tm.lei_reducere')}`}
+                  </div>
                 </div>
-              </div>
+              )}
               <div className={styles.mobile_carousell_price}>
-                <div>{activeConfig == '1' ? '140' : '125'}</div>
+                <div>
+                  {' '}
+                  {activeConfig == '1'
+                    ? '140'
+                    : activeConfig == '2'
+                      ? '125'
+                      : '200'}
+                </div>
+
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     {t('lei_luna')}
                   </div>
-                  <div className={styles.mobile_carousell_price_old}>
-                    <span>200 {t('lei_luna')}</span>
-                  </div>
+                  {activeConfig != '3' && (
+                    <div className={styles.mobile_carousell_price_old}>
+                      <span>200 {t('lei_luna')}</span>
+                    </div>
+                  )}
                 </div>
               </div>
               <Button
@@ -755,7 +904,9 @@ export default function MobileSchool() {
                     activeConfig == '1' ? '140' : '125',
                     activeConfig == '1'
                       ? `-60 ${t('tm.lei_reducere_2_ani')}`
-                      : `-75 ${t('tm.lei_reducere')}`
+                      : activeConfig == '2'
+                        ? `-75 ${t('tm.lei_reducere')}`
+                        : `${t('tm.plus_device')}`
                   )
                 }
                 color="#fff"
@@ -887,24 +1038,58 @@ export default function MobileSchool() {
                 </div>
               </div>
             </div>
-
+            {activeConfig == '3' && (
+              <select
+                className={`${styles.popup_regio_select} ${styles.calculaor_select}`}
+              >
+                <option value={'1'}>
+                  <b>Samsung A06</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'2'}>
+                  <b>Xiaomi Redmi 14C</b> (la 1 leu)&nbsp;
+                </option>
+                <option value={'3'}>
+                  <b>Samsung A16</b> (la 999 lei)&nbsp;
+                </option>
+                <option value={'4'}>
+                  <b>Samsung Galaxy Watch 7</b> (la 1999 lei)&nbsp;
+                </option>
+                <option value={'5'}>
+                  <b>Xiaomi Redmi Note 14</b> (la 1799 lei)&nbsp;
+                </option>
+                <option value={'6'}>
+                  <b>Samsung A36 A16</b> (la 3399 lei)&nbsp;
+                </option>
+              </select>
+            )}
             <div className={styles.wifi_carousell_block_inside_btns}>
-              <div className={styles.tm_carousell_block_row_tags}>
-                <div className={styles.tm_carousell_block_row_tag}>
-                  {activeConfig == '1'
-                    ? `-100 ${t('tm.lei_reducere_2_ani')}`
-                    : `-100 ${t('tm.lei_reducere')}`}
+              {activeConfig != '3' && (
+                <div className={styles.tm_carousell_block_row_tags}>
+                  <div className={styles.tm_carousell_block_row_tag}>
+                    {activeConfig == '1'
+                      ? `-100 ${t('tm.lei_reducere_2_ani')}`
+                      : `-100 ${t('tm.lei_reducere')}`}
+                  </div>
                 </div>
-              </div>
+              )}
               <div className={styles.mobile_carousell_price}>
-                <div>{activeConfig == '1' ? '190' : '190'}</div>
+                <div>
+                  {' '}
+                  {activeConfig == '1'
+                    ? '190'
+                    : activeConfig == '2'
+                      ? '190'
+                      : '290'}
+                </div>
                 <div>
                   <div className={styles.mobile_carousell_price_valuta}>
                     {t('lei_luna')}
                   </div>
-                  <div className={styles.mobile_carousell_price_old}>
-                    <span>290 {t('lei_luna')}</span>
-                  </div>
+                  {activeConfig != '3' && (
+                    <div className={styles.mobile_carousell_price_old}>
+                      <span>290 {t('lei_luna')}</span>
+                    </div>
+                  )}
                 </div>
               </div>
               <Button
@@ -916,7 +1101,9 @@ export default function MobileSchool() {
                     activeConfig == '1' ? '162.5' : '150',
                     activeConfig == '1'
                       ? `-100 ${t('tm.lei_reducere_2_ani')}`
-                      : `-100 ${t('tm.lei_reducere')}`
+                      : activeConfig == '2'
+                        ? `-100 ${t('tm.lei_reducere')}`
+                        : `${t('tm.plus_device')}`
                   )
                 }
                 color="#fff"
@@ -937,15 +1124,25 @@ export default function MobileSchool() {
       <Details trackPrefix="tm">
         <DetailsBlock title={t('tm.details.conditii.title_2')}>
           <ul>
-            {(activeConfig === '1' ? cond1 : cond2).map((text, i) => (
-              <li key={i}>{text}</li>
-            ))}
-            {activeConfig == '1' && (
-              <div className={styles.detalii_bold}>
-                {t('tm.details.conditii.title_3')}
-              </div>
+            {/*{(activeConfig === '1' ? cond1 : cond2).map((text, i) => (*/}
+            {/*  <li key={i}>{text}</li>*/}
+            {/*))}*/}
+            {/*{activeConfig == '1' && (*/}
+            {/*  <div className={styles.detalii_bold}>*/}
+            {/*    {t('tm.details.conditii.title_3')}*/}
+            {/*  </div>*/}
+            {/*)}*/}
+            {(activeConfig === '1' ? cond1 : []).map(
+              (text: string, i: number) => (
+                <li key={i}>{text}</li>
+              )
+            )}{' '}
+            {(activeConfig === '2' ? cond2 : []).map(
+              (text: string, i: number) => (
+                <li key={i}>{text}</li>
+              )
             )}
-            {(activeConfig === '1' ? common_1 : []).map(
+            {(activeConfig === '3' ? common_1 : []).map(
               (text: string, i: number) => (
                 <li key={i}>{text}</li>
               )
@@ -1692,6 +1889,146 @@ export default function MobileSchool() {
             />
           </div>
         )}
+      </Popup>
+      <Popup
+        id="1281117"
+        width="1000px"
+        isVisible={activePopup === '1281117'}
+        // className={styles.popupBuy}
+        onClose={() => setActivePopup(null)}
+      >
+        <b className={styles.popup_title_1}></b>
+        <ScrollableWrapper>
+          <table
+            className={`popup_table ${styles.popup_table_double} ${styles.popup_table_double_2}`}
+          >
+            <tbody>
+              <tr>
+                <td>&nbsp;</td>
+                <td className={styles.popup_table_double_title_table}>
+                  Start 120
+                </td>
+                <td className={styles.popup_table_double_title_table}>
+                  Flex 150
+                </td>
+                <td className={styles.popup_table_double_title_table}>
+                  Liberty 200
+                </td>
+                <td className={styles.popup_table_double_title_table}>
+                  Liberty 290+
+                </td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Min.&nbsp;şi&nbsp;SMS&nbsp;în rețea
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.nelimitat')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.nelimitat')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.nelimitat')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.nelimitat')}
+                </td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Minute Nationale
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  350 min
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  450 min
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  850 min
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.nelimitat')}
+                </td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Minute Internationale
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  35 min
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  45 min
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  85 min
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.nelimitat')}
+                </td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  {t('tm.trafic_internet')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.nelimitat')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.nelimitat')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.nelimitat')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.nelimitat')}
+                </td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Roaming RO
+                </td>
+                <td className={styles.popup_table_double_inside_table}>1 GB</td>
+                <td className={styles.popup_table_double_inside_table}>1 GB</td>
+                <td className={styles.popup_table_double_inside_table}>-</td>
+                <td className={styles.popup_table_double_inside_table}>-</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Roaming Digi
+                </td>
+                <td className={styles.popup_table_double_inside_table}>4 GB</td>
+                <td className={styles.popup_table_double_inside_table}>7 GB</td>
+                <td className={styles.popup_table_double_inside_table}>5 GB</td>
+                <td className={styles.popup_table_double_inside_table}>6 GB</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Roaming Europa
+                </td>
+                <td className={styles.popup_table_double_inside_table}>-</td>
+                <td className={styles.popup_table_double_inside_table}>-</td>
+                <td className={styles.popup_table_double_inside_table}>5 GB</td>
+                <td className={styles.popup_table_double_inside_table}>8 GB</td>
+              </tr>
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  Minute Roaming
+                </td>
+                <td className={styles.popup_table_double_inside_table}>-</td>
+                <td className={styles.popup_table_double_inside_table}>-</td>
+                <td className={styles.popup_table_double_inside_table}>
+                  40 min
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  50 min
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </ScrollableWrapper>
       </Popup>
     </>
   );

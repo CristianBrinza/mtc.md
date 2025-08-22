@@ -3705,10 +3705,10 @@ export default function Triple() {
                 <td className={styles.popup_table_double_inside_table}>-</td>
                 <td className={styles.popup_table_double_inside_table}>-</td>
                 <td className={styles.popup_table_double_inside_table}>
-                  {t('tm.nelimitat')}
+                  40 min
                 </td>
                 <td className={styles.popup_table_double_inside_table}>
-                  {t('tm.nelimitat')}
+                  50 min
                 </td>
               </tr>
 

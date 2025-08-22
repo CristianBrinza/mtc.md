@@ -2025,14 +2025,17 @@
     "portare": "Portare",
     "prepay": "Prepay",
     "btn_not_client": "Nu sunt client",
-    "btn_client": "Sunt client",
+    "smartphone": "Ofertă smartphone",
+    "plus_device": "+ device",
+    "btn_client": "Sunt client Internet",
+    "comapra": "Comapră",
     "discover": {
       "title": "Descoperă extra beneficii",
       "btn": "Vezi mai multe detalii",
       "card_1": {
         "tag": "Descoperă",
-        "title": "Fii unic cu Numar Frumos",
-        "text": "Alege <b>GRATUIT</b> un număr care te reprezintă! <br /><br /> Selecteaza un număr dorit din lista de numere libere disponibile în momentul solicitării.",
+        "title": "Fii unic cu Număr Frumos",
+        "text": "Alege <b>GRATUIT</b> un număr care te reprezintă! <br /><br /> Selectează un număr dorit din lista de numere libere disponibile în momentul solicitării.",
         "l0": "Serviciul „Alege un număr frumos” îți permite să selectezi un număr de telefon special din lista de numere disponibile, oferindu-ți o opțiune unică de personalizare.",
         "l1": "Numerele sunt clasificate în categorii precum „Aur” și „Argint” și sunt alocate conform regulilor de mai jos.",
         "l2": "Numerele din categoria „Aur” și „Argint” pot fi alese doar de abonații noi sau existenți ai serviciului de Telefonie mobilă Postpay, cu condiția ca perioada contractuală obligatorie anterioară să fie expirată.",
@@ -2666,7 +2669,7 @@
       "text": "Explorează tehnologia care redefinește viitorul. Viteză maximă, timp de răspuns instant și stabilitate impecabilă – deja testată de profesioniști și pregătită să susțină, în același timp, <b>streaming 8K</b> de cea mai bună calitate, <b>gaming de performanță</b>, <b>salvarea rapidă a datelor</b>."
     },
     "why_need": {
-      "title": "De ce ai nevoie de 5.5 Gbps ?",
+      "title": "De ce ai nevoie de 5.5 Gbps?",
       "subtitle": "Performanță maxima, semnal puternic, în fiecare colț al locuinței!",
       "items": {
         "gamer": "Dacă ești <b>gamer</b> sau <b>streamer</b> – <br/>VR/AR și multiplayer cu răspuns imediat, fără întreruperi",

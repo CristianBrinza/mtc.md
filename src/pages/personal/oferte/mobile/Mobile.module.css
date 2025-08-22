@@ -108,7 +108,16 @@
   max-width: 1180px;
   display: flex;
   gap: 10px;
-  margin: 0 auto;
+  margin: 10px auto 0;
+  overflow-x: scroll;
+}
+.btns_select::-webkit-scrollbar {
+  height: 10px;
+  display: none;
+}
+
+.btns_select :global(.mtc_button) {
+  min-width: fit-content;
 }
 
 .mobile_carousell :global(.slick-dots),
@@ -163,6 +172,9 @@
   max-width: 1180px;
   margin: 0 auto;
   margin-top: 5px;
+}
+.mobile_carousell_config_2 {
+  max-width: 880px;
 }
 
 .mobile_carousell_block {
@@ -317,6 +329,97 @@
   background-color: rgba(255, 0, 0, 0.16);
   border-radius: 100px;
   width: calc(80%);
+}
+
+.popup_regio_select {
+  /* 1) ascundem controlul nativ */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* 2) stil general */
+  height: 46px;
+  border-radius: 100px;
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 14px;
+  max-width: 205px;
+
+  /* 3) spaţiu în dreapta pentru săgeată */
+  padding: 0 40px 0 20px;
+
+  /* 4) icon‑arrow custom poziţionat cu 20px mai la stânga de marginea dreaptă */
+  background-image: url('/images/svg/ui_svg/select_arrow.svg'); /* sau data‑uri SVG */
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) center;
+  background-size: 16px; /* ajustaţi după dimensiunea iconiţei */
+  border: 1px transparent;
+}
+
+.calculaor_select {
+  background-color: var(--theme_primary_color_blue_3);
+  margin: 20px 0 25px;
+}
+.calculaor_select_hiden {
+  opacity: 0;
+  pointer-events: none;
+}
+.btns_select_compara {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--theme_primary_color_blue_2);
+  font-size: 12px;
+  font-weight: 600;
+}
+.btns_select_compara_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 10px 0;
+  box-sizing: border-box;
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+.btns_select_compara_btn:hover {
+  transform: scale(1.02);
+  text-decoration: underline;
+}
+
+.popup_table_double {
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  border-radius: 20px;
+  font-weight: 600;
+}
+/*.popup_table_double_2 tbody tr td{*/
+/*  border:1px solid #f2f5ff;*/
+/*}*/
+.popup_table_double_2 tbody tr td {
+}
+.popup_table_double tbody td {
+  border: none;
+}
+.popup_table_double tbody tr td {
+  padding: 6px 10px;
+  background: #ffffff;
+}
+
+.popup_table_double_title_table {
+  text-align: center;
+  font-weight: 600;
+  background: var(--theme_primary_color_blue_3) !important;
+}
+.popup_table_double_inside_table {
+  text-align: center;
+}
+.popup_title_1 {
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .mobile_carousell_block_test {
@@ -767,10 +870,8 @@
   }
   .btns_select {
     max-width: 580px;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
     margin: 10px auto 5px;
+    gap: 5px;
   }
   .tm_carousell {
     max-width: 580px;
@@ -787,7 +888,7 @@
     max-width: 580px;
   }
   .btns_select {
-    max-width: 100%;
+    max-width: 92vw;
   }
   .title2 {
     padding: 0 20px;
