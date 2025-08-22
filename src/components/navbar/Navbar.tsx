@@ -432,7 +432,7 @@ const Navbar: React.FC = () => {
                                 href={
                                   block.to.includes('/personal')
                                     ? `https://www.moldtelecom.md/${t('lang')}${block.to}`
-                                    : block.to
+                                    : `https://new.moldtelecom.md/${t('lang')}${block.to}`
                                 }
                                 key={blockIndex}
                                 className={
@@ -478,7 +478,7 @@ const Navbar: React.FC = () => {
                                     href={
                                       subItem.to.includes('/personal')
                                         ? `https://www.moldtelecom.md/${t('lang')}${subItem.to}`
-                                        : subItem.to
+                                        : `https://new.moldtelecom.md/${t('lang')}${subItem.to}`
                                     }
                                     className={
                                       block.small

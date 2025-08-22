@@ -3252,6 +3252,9 @@ export default function Triple() {
             price={1}
             old_price={3360}
             reducere="- 99%"
+            // price={activeConfig==='1'?1: 3360}
+            // old_price={activeConfig==='1'? 3360 : null}
+            // reducere={activeConfig==='1'? "- 99%" : null}
             title="Xiaomi"
             subtitle="Redmi Pad SE"
             characteristics='11"/128 GB/ Wi-Fi'
