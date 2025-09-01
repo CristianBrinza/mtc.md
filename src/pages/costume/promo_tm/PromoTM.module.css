@@ -63,9 +63,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  gap: 30px;
 }
 .compare_block {
-  width: 500px;
+  /*width: 500px;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,6 +121,26 @@
   font-size: 26px;
   font-weight: 600;
 }
+
+.roaming_carousell_block_sp {
+  background: #dfe4fd;
+  padding: 2px;
+  box-sizing: border-box;
+  width: 384px;
+  border-radius: 22px;
+}
+.roaming_carousell_block_sp_title {
+  /*color: #fff;*/
+  /*font-size: 22px;*/
+  /*font-weight: 600;*/
+  /*font-family: Poppins, sans-serif;*/
+  text-align: center;
+  width: 100%;
+  margin: 3px auto -5px;
+}
+.roaming_carousell_block_sp .roaming_carousell_block_inside {
+}
+
 .optionsandservices_block_inside {
   width: 100%;
   margin: 20px 0 40px;

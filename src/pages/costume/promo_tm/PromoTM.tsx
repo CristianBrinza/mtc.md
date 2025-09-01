@@ -191,7 +191,10 @@ export default function PromoTM() {
                             35 GB
                           </div>
                         </div>
-                        <div className={styles.optionsandservices_block_list}>
+                        <div
+                          style={{ border: '0px' }}
+                          className={styles.optionsandservices_block_list}
+                        >
                           <div
                             className={
                               styles.optionsandservices_block_list_right_2
@@ -233,10 +236,52 @@ export default function PromoTM() {
                 </div>
               </div>
               <div className={styles.compare_block}>
-                <span>
-                  {' '}
-                  Pachet <b>Oferta Speciala!</b>
-                </span>
+                <div className={styles.roaming_carousell_block}>
+                  <div className={styles.roaming_carousell_block_sp}>
+                    <div className={styles.roaming_carousell_block_sp_title}>
+                      Pachet <b>Oferta Speciala!</b>
+                    </div>
+                    <div className={styles.roaming_carousell_block_inside}>
+                      <div className={styles.optionsandservices_block_left}>
+                        <div className={styles.optionsandservices_block_title}>
+                          ...
+                        </div>
+                        <div
+                          className={styles.optionsandservices_block_subtitle}
+                        >
+                          ...
+                        </div>
+                      </div>
+                      {/*<div className={styles.optionsandservices_block_inside}></div>*/}
+                      <div
+                        className={styles.roaming_carousell_block_inside_btns}
+                      >
+                        {/*<Button*/}
+                        {/*  to={'https://mtc.md/my-mtc'}*/}
+                        {/*  color="var(--theme_primary_color_blue_4)"*/}
+                        {/*  bgcolor="var(--theme_primary_color_blue_2)"*/}
+                        {/*  border="var(--theme_primary_color_blue_2)"*/}
+                        {/*  hover_border="var(--theme_primary_color_blue_2)"*/}
+                        {/*  hover_bgcolor="var(--theme_primary_color_blue_2)"*/}
+                        {/*  icon="arrow_right"*/}
+                        {/*>*/}
+                        {/*  Activează în aplicație*/}
+                        {/*</Button>*/}
+                        <Button
+                          // onClick={() => openPopup('f5')}
+                          color="var(--theme_primary_color_blue_4)"
+                          bgcolor="var(--theme_primary_color_blue_3)"
+                          border="var(--theme_primary_color_blue_3)"
+                          hover_border="var(--theme_primary_color_blue_2)"
+                          hover_bgcolor="var(--theme_primary_color_blue_2)"
+                          icon="arrow_right"
+                        >
+                          {t('roaming.detalii')}
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
