@@ -45,88 +45,10 @@
   opacity: 0;
   pointer-events: none;
 }
-
-.conversion {
-  width: 100%;
-  max-width: 1180px;
-  margin: 15px auto;
-  min-height: 300px;
-  background-color: var(--theme_primary_color_blue_3);
-  overflow: hidden;
-  border-radius: 15px;
-  display: flex;
-  /*justify-content: flex-start;*/
-  align-items: center;
-  justify-content: space-between;
-}
-.conversion_text_top {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.conversion_text_top .tm_discover_card_inside_top_tag {
-  margin-bottom: 10px;
-}
-.conversion_img_mob {
-  display: none;
-}
-.conversion_text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 24px;
-  box-sizing: border-box;
-  width: 50%;
-  gap: 15px;
-}
-.conversion_img {
-  height: 100%;
-  width: 100%;
-  max-width: 780px;
-}
-.conversion_title {
-  font-size: 30px;
-  line-height: 32px;
-  font-family: Poppins, sans-serif;
-  font-weight: 600;
-}
 .detalii_bold {
   margin: 20px 0 10px;
   font-weight: 600;
 }
-
-@media (max-width: 1300px) {
-  .conversion_img_mob {
-    display: block;
-    max-width: 50%;
-  }
-  .conversion_img {
-    display: none;
-  }
-  .conversion {
-    max-width: 880px;
-  }
-}
-@media (max-width: 950px) {
-  .conversion {
-    flex-direction: column;
-    max-width: 380px;
-    width: 96vw;
-  }
-  .conversion_title {
-    font-size: 24px;
-    line-height: 26px;
-  }
-  .conversion_img_mob {
-    max-width: 100%;
-  }
-  .conversion_text {
-    width: 100%;
-  }
-}
-
 .title2 {
   margin: 25px auto 0px;
   width: 100%;
@@ -868,17 +790,17 @@
     max-width: 96vw;
   }
   .tm_discover_card {
-    max-width: 86vw;
+    max-width: 87vw;
   }
 
   .tm_carousell_discover :global(.slick-next) {
-    right: -10px !important;
+    right: -5px !important;
     border: 3px solid #fff;
     border-radius: 100px;
   }
 
   .tm_carousell_discover :global(.slick-prev) {
-    left: -10px !important;
+    left: -5px !important;
     border: 3px solid #fff;
     border-radius: 100px;
   }

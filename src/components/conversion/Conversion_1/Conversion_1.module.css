@@ -1,0 +1,110 @@
+.conversion {
+  width: 100%;
+  max-width: 1180px;
+  margin: 15px auto;
+  min-height: 300px;
+  overflow: hidden;
+  /*border-radius: 15px;*/
+  display: flex;
+  /*justify-content: flex-start;*/
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.conversion_text_top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.conversion_text_top .tm_discover_card_inside_top_tag {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 15px;
+}
+.conversion_img_mob {
+  display: none;
+  border-radius: 15px;
+}
+.conversion_text_top_svg {
+  margin-bottom: 10px;
+}
+.conversion_text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /*justify-content: flex-start;*/
+  padding: 24px;
+  box-sizing: border-box;
+  width: 45%;
+  gap: 15px;
+  border-radius: 15px;
+  background-color: var(--theme_primary_color_blue_3);
+  /*height: 100%;*/
+  height: -webkit-fill-available;
+  justify-content: center;
+}
+.conversion_img {
+  height: 100%;
+  width: 100%;
+  max-width: 780px;
+  border-radius: 15px;
+}
+.conversion_title {
+  font-size: 30px;
+  line-height: 32px;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+}
+.detalii_bold {
+  margin: 20px 0 10px;
+  font-weight: 600;
+}
+
+@media (max-width: 1300px) {
+  .conversion_img_mob {
+    display: block;
+    max-width: 55%;
+  }
+  .conversion_img {
+    display: none;
+  }
+  .conversion {
+    max-width: 880px;
+  }
+}
+@media (max-width: 950px) {
+  .conversion {
+    flex-direction: column;
+    max-width: 580px;
+    width: 96vw;
+  }
+  .conversion_title {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .conversion_img_mob {
+    max-width: 100%;
+  }
+  .conversion_text {
+    width: 100%;
+  }
+}
+@media (max-width: 651px) {
+  .conversion {
+    max-width: 380px;
+    gap: 0;
+    border-radius: 15px;
+    margin: 40px auto 50px;
+  }
+  .conversion_text {
+    border-radius: 0px;
+    height: auto;
+  }
+  .conversion_img_mob {
+    border-radius: 0;
+  }
+}

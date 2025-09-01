@@ -25,6 +25,7 @@ import FaqQAV2 from '../../../../components/faqV2/FaqQAV2.tsx';
 import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 import ScrollableWrapper from '../../../../components/Popup/ScrollableWrapper.tsx';
 import { trackEvent } from '../../../../initAnalytics.ts';
+import Conversion_1 from '../../../../components/conversion/Conversion_1/Conversion_1.tsx';
 
 export default function PortareSchool() {
   const { t } = useTranslation();
@@ -1284,44 +1285,8 @@ export default function PortareSchool() {
           {t('combo_home.stock_offer')}
         </span>
       </div>
+      <Conversion_1 />
 
-      <div className={styles.conversion}>
-        <div className={styles.conversion_text}>
-          <div className={styles.conversion_text_top}>
-            {/*<div className={styles.tm_discover_card_inside_top_tag}>*/}
-            {/*  Descoperă*/}
-            {/*</div>*/}
-            <div className={styles.conversion_title}>
-              {t('combo_home.totul_triple_1')} <br />
-              {t('combo_home.totul_triple_2')}
-            </div>
-            <div>{t('combo_home.totul_triple_3')}</div>
-          </div>
-          <Button
-            to={`https://www.moldtelecom.md/${t('lang')}/personal/Promo_Abonamente-TV-Internet-Mobil`}
-            color={'var(--theme_primary_color_blue_4)'}
-            bgcolor={'var(--theme_primary_color_blue_2)'}
-            border={'var(--theme_primary_color_blue_2)'}
-            hover_border={'var(--theme_primary_color_blue_4)'}
-            hover_bgcolor={'var(--theme_primary_color_blue_4)'}
-            hover_color={'#fff'}
-            icon={'arrow_right'}
-            id="tm_go_to_triple"
-          >
-            Vezi mai multe
-          </Button>
-        </div>
-        <img
-          className={styles.conversion_img}
-          src="/images/landings/55271183.webp"
-          alt="Moldtelecom"
-        />
-        <img
-          className={styles.conversion_img_mob}
-          src="/images/landings/55271181.webp"
-          alt="Moldtelecom"
-        />
-      </div>
       <Functions
         style_type={'blue'}
         title={'general.recommended_options'}
