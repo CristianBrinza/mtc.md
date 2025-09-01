@@ -1,0 +1,209 @@
+.promo_tm_div {
+  width: 96vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.promo_tm {
+  width: 100vw;
+  background: #f6f7f8;
+  margin: -15px auto 0px;
+  z-index: 100;
+  padding: 20px 0 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar {
+  border-bottom: 1px solid #fff;
+}
+.promo_tm_title_1 {
+  font-size: 40px;
+  line-height: 42px;
+  font-weight: 700;
+  margin-top: 60px;
+  /*color: #000c;*/
+}
+.text_1 {
+  text-align: center;
+  width: 96vw;
+  max-width: 700px;
+  margin: 20px auto 10px;
+  color: #000c;
+}
+.text_2 {
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  background: var(--theme_primary_color_blue_3);
+  padding: 5px 20px;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin: 0 auto 20px;
+  width: fit-content;
+  /*opacity: 0.5;*/
+}
+.promo_tm_block_1 {
+  background: #fff;
+  border-radius: 15px;
+  width: 96vw;
+  max-width: 1400px;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  margin: 10px auto 20px;
+}
+.promo_tm_title_2 {
+  max-width: 800px;
+  margin: 20px auto 10px;
+}
+.compare {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.compare_block {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0 0px;
+}
+.promo_tm_subtext_1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  text-align: center;
+  max-width: 800px;
+}
+.promo_tm_footer {
+  max-width: 1200px;
+  width: 96vw;
+  font-size: 12px;
+  line-height: 14px;
+  opacity: 0.5;
+  margin: 10px auto 20px;
+}
+.promo_tm_btns {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+.promo_tm_btn {
+  background: var(--theme_primary_color_blue_3);
+  border-radius: 100px;
+  padding: 0px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  height: 46px;
+  font-weight: 600;
+  color: #2f3043;
+}
+.promo_tm_btn_red {
+  background: rgba(255, 92, 92, 0.4);
+}
+.promo_tm_btn_green {
+  background: rgba(149, 221, 81, 0.4);
+}
+
+.optionsandservices_block_title {
+  font-size: 26px;
+  font-weight: 600;
+}
+.optionsandservices_block_inside {
+  width: 100%;
+  margin: 20px 0 40px;
+  min-height: 160px;
+}
+.optionsandservices_block_list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dotted #d9d9d9;
+  font-size: 14px;
+}
+.optionsandservices_block_list_left {
+  font-weight: 600;
+  line-height: 1;
+}
+.optionsandservices_block_list_left span {
+  font-weight: 500;
+  font-size: 12px;
+}
+.optionsandservices_block_subtitle {
+  font-size: 12px;
+  color: #666666;
+  line-height: 14px;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  height: 28px;
+}
+.optionsandservices_block_list_left :global(.br_roaming) {
+  display: none;
+}
+
+.roaming_activate_right {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  gap: 10px;
+}
+.optionsandservices_block_list_right_2 {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.roaming_carousell_block_sp .roaming_carousell_block_inside {
+}
+.roaming_carousell_block_inside {
+  margin: 10px auto 0;
+  background-color: #f2f3f7;
+  border: 1.25px transparent var(--theme_primary_color_gray_3);
+  width: 380px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.roaming_carousell_block_inside_btns {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wifi_plus_full_block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0 20px;
+  box-sizing: border-box;
+}
+.wifi_plus_full_block_inside_sutitle {
+  width: 100%;
+  max-width: 96vw;
+  text-align: center;
+}
+.wifi_plus_full_block_inside {
+  width: 100%;
+  max-width: 1180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

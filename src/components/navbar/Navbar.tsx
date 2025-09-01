@@ -40,7 +40,11 @@ interface PromoBlock {
   to?: string;
 }
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  className?: string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const currentHour = new Date().getHours();
   const isAvailable = currentHour >= 6 && currentHour < 24;
 
@@ -162,7 +166,7 @@ const Navbar: React.FC = () => {
         <div className={styles.navbar_bottom_sticky_placeholder}>&nbsp;</div>
       )}
       <nav
-        className={` ${styles.navbar}  ${isSticky ? styles.navbar_bottom_sticky : ''} mtc_navbar `}
+        className={` ${styles.navbar}  ${isSticky ? styles.navbar_bottom_sticky : ''} mtc_navbar ${className || ''}`}
       >
         <div className={styles.navbar_top}>
           <div className={styles.navbar_top_left_block}>

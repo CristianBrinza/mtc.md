@@ -37,6 +37,7 @@ import PoliticaRoaming from './pages/costume/PoliticaRoaming/PoliticaRoaming.tsx
 import Promo1536965 from './pages/eshop/promo_b2s/Promo1536965.tsx';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import PromoTM from './pages/costume/promo_tm/PromoTM.tsx';
 // import Home from './pages/home/Home_v3.tsx';
 
 function AppContent() {
@@ -103,6 +104,7 @@ function AppContent() {
           path="/:lang/politica-de-utilizare-rezonabila-a-serviciului-roaming-europa"
           element={<PoliticaRoaming />}
         />
+        <Route path="/:lang/promo-mobile/:url_link" element={<PromoTM />} />
         <Route path="/:lang/eshop/back-2-school" element={<Promo1536965 />} />
         {/*business*/}
         <Route path="/:lang/business/roaming" element={<Roaming />} />
