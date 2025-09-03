@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 interface BuyFormProps {
   config: string;
   className?: string;
+  coustumeBtn?: string;
   tag: string;
   service: string;
   onSuccess?: () => void;
@@ -35,6 +36,7 @@ export default function BuyForm({
   onSuccess,
   onError,
   className,
+  coustumeBtn,
 }: BuyFormProps) {
   const { t } = useTranslation();
   const [phone, setPhone] = useState('');
@@ -195,7 +197,7 @@ export default function BuyForm({
         icon="arrow_right"
         type="submit"
       >
-        {t('order_now')}
+        {coustumeBtn ? coustumeBtn : t('order_now')}
       </Button>
       <input type="hidden" name="lang" value={t('lang')} />
       <input type="hidden" name="source" value={source} />
