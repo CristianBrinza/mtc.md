@@ -205,12 +205,20 @@ export default function PortareSchool() {
         <div className={styles.hero_img_block}>
           <img
             className={styles.hero_img}
-            src={`/images/landings/16216912${t('lang')}.webp`}
+            src={
+              activeConfig === '1'
+                ? `/images/landings/16216912${t('lang')}.webp`
+                : `/images/landings/19216912${t('lang')}.webp`
+            }
             alt={t('tm.hero.alt')}
           />
           <img
             className={styles.hero_img_tablet}
-            src={`/images/landings/16216112${t('lang')}.webp`}
+            src={
+              activeConfig === '1'
+                ? `/images/landings/16216112${t('lang')}.webp`
+                : `/images/landings/19416912${t('lang')}.webp`
+            }
             alt={t('tm.hero.alt')}
           />
         </div>
