@@ -5,18 +5,19 @@ const GA4_ID = import.meta.env.VITE_GOOGLE_MEASUREMENT_ID!;
 const GTM_ID = import.meta.env.VITE_GOOGLE_TRACKING_TAG;
 const CLARITY_ID = import.meta.env.VITE_CLARITY_ID;
 let initialized = false;
+let clarityLoaded = false;
 
 declare global {
   interface Window {
-    dataLayer: any[];
-    gtag: (...args: any[]) => void;
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
   }
 }
 
 export function initAnalytics() {
   if (initialized || !GA4_ID) return;
   window.dataLayer = window.dataLayer || [];
-  window.gtag = (...args: any[]) => {
+  window.gtag = (...args: unknown[]) => {
     window.dataLayer.push(args);
   };
 
@@ -54,7 +55,24 @@ export function initAnalytics() {
   });
 
   ReactGA.initialize(GA4_ID);
+  if (localStorage.getItem('userConsent') === 'granted') {
+    loadClarity();
+  }
   initialized = true;
+}
+
+function loadClarity() {
+  if (clarityLoaded || !CLARITY_ID) return;
+  clarityLoaded = true;
+  const clarityScript = document.createElement('script');
+  clarityScript.innerHTML = `
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "${CLARITY_ID}");
+  `;
+  document.head.appendChild(clarityScript);
 }
 
 export function grantConsent() {
@@ -65,6 +83,7 @@ export function grantConsent() {
     analytics_storage: 'granted',
   });
   localStorage.setItem('userConsent', 'granted');
+  loadClarity();
   // then fire the first page‑view
   ReactGA.send('pageview');
 }
@@ -77,6 +96,7 @@ export function updateConsent() {
     analytics_storage: 'granted',
   });
   localStorage.setItem('userConsent', 'granted');
+  loadClarity();
 }
 
 export function trackPageview(path: string, title?: string) {
