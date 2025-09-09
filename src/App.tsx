@@ -1,44 +1,99 @@
 // src/App.tsx
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import './App.css';
+import { Suspense, lazy } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
 import { grantConsent } from './initAnalytics';
 import ConsentBanner from './components/consent_banner/ConsentBanner';
 import ScrollToTop from './components/scroll_to_top/ScrollToTop';
-import NotFound from './pages/not_found/NotFound';
 import { LanguageProvider } from './context/LanguageContext';
-import Gaming from './pages/personal/oferte/gaming/Gaming.tsx';
-import OnlyNet from './pages/personal/oferte/only_net/OnlyNet.tsx';
-// import Mobile from './pages/personal/oferte/mobile/Mobile.tsx';
-import MobileSchool from './pages/personal/oferte/mobile/MobileSchool.tsx';
-// import Portare from './pages/personal/oferte/portare/Portare.tsx';
-import PortareSchool from './pages/personal/oferte/portare/PortareSchool.tsx';
-import Magazine from './pages/personal/magazine/Magazine.tsx';
-import SecuritateDigitala from './pages/personal/SecuritrateDigitala/SecuritateDigitala.tsx';
-import Contacts from './pages/personal/contacts/Contacts.tsx';
-import WifiPlus from './pages/personal/oferte/wifiplus/WifiPlus.tsx';
-import IconShowcase from './pages/technical/IconShowcase.tsx';
-import AppRedirect from './components/app/AppRedirect.tsx';
-import OptionsandServices from './pages/personal/oferte/optionsandservices/OptionsandServices.tsx';
-import SmsServices from './pages/personal/oferte/sms_services/SmsServices.tsx';
-import PromoRazuieste from './pages/personal/oferte/promo_razuieste/PromoRazuieste.tsx';
-import OneNumber from './pages/personal/oferte/one_number/OneNumber.tsx';
-import SearchPage from './pages/search/Search.tsx';
-import Roaming from './pages/personal/oferte/roaming/Roaming.tsx';
-import FiveGbps from './pages/personal/oferte/5gbps/FiveGbps.tsx';
-import Double from './pages/personal/oferte/double/Double.tsx';
-import Triple from './pages/personal/oferte/triple/Triple.tsx';
-import M2M from './pages/business/m2m/M2M.tsx';
-import GpsTrack from './pages/business/gps_track/GpsTrack.tsx';
-import Fibra from './pages/business/fibra/Fibra.tsx';
-import PoliticaRoaming from './pages/costume/PoliticaRoaming/PoliticaRoaming.tsx';
-import Promo1536965 from './pages/eshop/promo_b2s/Promo1536965.tsx';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import PromoTM from './pages/costume/promo_tm/PromoTM.tsx';
-// import Home from './pages/home/Home_v3.tsx';
+
+const NotFound = lazy(() => import('./pages/not_found/NotFound'));
+const Gaming = lazy(
+  () => import('./pages/personal/oferte/gaming/Gaming.tsx'),
+);
+const OnlyNet = lazy(
+  () => import('./pages/personal/oferte/only_net/OnlyNet.tsx'),
+);
+// const Mobile = lazy(() => import('./pages/personal/oferte/mobile/Mobile.tsx'));
+const MobileSchool = lazy(
+  () => import('./pages/personal/oferte/mobile/MobileSchool.tsx'),
+);
+// const Portare = lazy(() => import('./pages/personal/oferte/portare/Portare.tsx'));
+const PortareSchool = lazy(
+  () => import('./pages/personal/oferte/portare/PortareSchool.tsx'),
+);
+const Magazine = lazy(
+  () => import('./pages/personal/magazine/Magazine.tsx'),
+);
+const SecuritateDigitala = lazy(
+  () =>
+    import(
+      './pages/personal/SecuritrateDigitala/SecuritateDigitala.tsx'
+    ),
+);
+const Contacts = lazy(
+  () => import('./pages/personal/contacts/Contacts.tsx'),
+);
+const WifiPlus = lazy(
+  () => import('./pages/personal/oferte/wifiplus/WifiPlus.tsx'),
+);
+const IconShowcase = lazy(
+  () => import('./pages/technical/IconShowcase.tsx'),
+);
+const AppRedirect = lazy(
+  () => import('./components/app/AppRedirect.tsx'),
+);
+const OptionsandServices = lazy(
+  () =>
+    import(
+      './pages/personal/oferte/optionsandservices/OptionsandServices.tsx'
+    ),
+);
+const SmsServices = lazy(
+  () => import('./pages/personal/oferte/sms_services/SmsServices.tsx'),
+);
+const PromoRazuieste = lazy(
+  () =>
+    import('./pages/personal/oferte/promo_razuieste/PromoRazuieste.tsx'),
+);
+const OneNumber = lazy(
+  () => import('./pages/personal/oferte/one_number/OneNumber.tsx'),
+);
+const SearchPage = lazy(
+  () => import('./pages/search/Search.tsx'),
+);
+const Roaming = lazy(
+  () => import('./pages/personal/oferte/roaming/Roaming.tsx'),
+);
+const FiveGbps = lazy(
+  () => import('./pages/personal/oferte/5gbps/FiveGbps.tsx'),
+);
+const Double = lazy(
+  () => import('./pages/personal/oferte/double/Double.tsx'),
+);
+const Triple = lazy(
+  () => import('./pages/personal/oferte/triple/Triple.tsx'),
+);
+const M2M = lazy(() => import('./pages/business/m2m/M2M.tsx'));
+const GpsTrack = lazy(
+  () => import('./pages/business/gps_track/GpsTrack.tsx'),
+);
+const Fibra = lazy(
+  () => import('./pages/business/fibra/Fibra.tsx'),
+);
+const PoliticaRoaming = lazy(
+  () =>
+    import('./pages/costume/PoliticaRoaming/PoliticaRoaming.tsx'),
+);
+const Promo1536965 = lazy(
+  () => import('./pages/eshop/promo_b2s/Promo1536965.tsx'),
+);
+const PromoTM = lazy(() => import('./pages/costume/promo_tm/PromoTM.tsx'));
+// const Home = lazy(() => import('./pages/home/Home_v3.tsx'));
 
 function AppContent() {
   return (
@@ -49,7 +104,8 @@ function AppContent() {
         onDecline={() => {}}
       />
       <ScrollToTop />
-      <Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
         <Route path="/" element={<Navigate to="/ro" replace />} />
         <Route path="/" element={<NotFound />} />
         <Route path="/:lang/" element={<NotFound />} />
@@ -113,6 +169,7 @@ function AppContent() {
         <Route path="/:lang/business/fibra" element={<Fibra />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </Suspense>
     </>
   );
 }

@@ -5,7 +5,7 @@ import App from './App.tsx';
 import { initAnalytics } from './initAnalytics.ts';
 import { initServiceWorker } from './registerSW';
 
-initAnalytics();
+void initAnalytics();
 initServiceWorker();
 
 createRoot(document.getElementById('root')!).render(
