@@ -767,11 +767,11 @@ export default function Gaming() {
                 onChange={e => setSelectedDevice_3_3(e.target.value)}
               >
                 <option value={'1780226'}>
-                  <b>Xbox Series S </b> (la 3500 lei)&nbsp;
+                  <b>Xbox Series S </b> (la 3499 lei)&nbsp;
                 </option>
 
                 <option value={'1780227'}>
-                  <b>PlayStation 5 </b> (la 5000 lei)&nbsp;
+                  <b>PlayStation 5 </b> (la 4999 lei)&nbsp;
                 </option>
               </select>
               {selectedDevice_3_3 != 'no_device' && (
@@ -1042,7 +1042,7 @@ export default function Gaming() {
                 </option>
 
                 <option value={'1780227'}>
-                  <b>PlayStation 5 </b> (la 1 leu)&nbsp;
+                  <b>PlayStation 5 </b> (la 1499 leu)&nbsp;
                 </option>
               </select>
               {selectedDevice_4_4 != 'no_device' && (

@@ -1205,7 +1205,7 @@ export default function OnlyNet() {
                   className={styles.abonaments_block_inside_subtitle_small}
                   style={{ textDecoration: 'line-through' }}
                 >
-                  (49 {t('combo_home.lei_luna')})
+                  (98 {t('combo_home.lei_luna')})
                 </span>
               </span>
               <InfoIcon onClick={() => setActivePopup('1280110')} />
@@ -1430,7 +1430,7 @@ export default function OnlyNet() {
           <ShopCard
             device_id={294594497}
             image="/images/shop/183935269.webp"
-            price={11040}
+            price={9999}
             title="Sony"
             subtitle="PlayStation 5 Slim"
             characteristics="Disc Edition /White"
