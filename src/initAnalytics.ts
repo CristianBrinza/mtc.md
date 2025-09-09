@@ -1,5 +1,5 @@
 // src/initAnalytics.ts
-import ReactGA from 'react-ga4';
+let ReactGA: typeof import('react-ga4').default | null = null;
 
 const GA4_ID = import.meta.env.VITE_GOOGLE_MEASUREMENT_ID!;
 const GTM_ID = import.meta.env.VITE_GOOGLE_TRACKING_TAG;
@@ -8,16 +8,18 @@ let initialized = false;
 
 declare global {
   interface Window {
-    dataLayer: any[];
-    gtag: (...args: any[]) => void;
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
-export function initAnalytics() {
+export async function initAnalytics() {
   if (initialized || !GA4_ID) return;
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = (...args: any[]) => {
-    window.dataLayer.push(args);
+  const module = await import('react-ga4');
+  ReactGA = module.default;
+  window.dataLayer = window.dataLayer ?? [];
+  window.gtag = (...args: unknown[]) => {
+    window.dataLayer!.push(args);
   };
 
   const gaScript = document.createElement('script');
@@ -25,8 +27,8 @@ export function initAnalytics() {
   gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
   document.head.appendChild(gaScript);
 
-  window.gtag('js', new Date());
-  window.gtag('config', GA4_ID, {
+  window.gtag?.('js', new Date());
+  window.gtag?.('config', GA4_ID, {
     anonymize_ip: true,
     send_page_view: false,
   });
@@ -48,19 +50,19 @@ export function initAnalytics() {
     document.body.appendChild(noscript);
   }
 
-  window.gtag('consent', 'default', {
+  window.gtag?.('consent', 'default', {
     ad_storage: 'denied',
     analytics_storage: 'denied',
   });
 
-  ReactGA.initialize(GA4_ID);
+  ReactGA!.initialize(GA4_ID);
   initialized = true;
 }
 
 export function grantConsent() {
-  if (!initialized) return;
+  if (!initialized || !ReactGA) return;
   // update consent flags …
-  window.gtag('consent', 'update', {
+  window.gtag?.('consent', 'update', {
     ad_storage: 'granted',
     analytics_storage: 'granted',
   });
@@ -71,8 +73,8 @@ export function grantConsent() {
 
 /** call on mount to unlock route‑based pageviews **without** firing one */
 export function updateConsent() {
-  if (!initialized) return;
-  window.gtag('consent', 'update', {
+  if (!initialized || !ReactGA) return;
+  window.gtag?.('consent', 'update', {
     ad_storage: 'granted',
     analytics_storage: 'granted',
   });
@@ -80,11 +82,11 @@ export function updateConsent() {
 }
 
 export function trackPageview(path: string, title?: string) {
-  if (!initialized) return;
+  if (!initialized || !ReactGA) return;
   ReactGA.send({ hitType: 'pageview', page: path, title });
 }
 
 export function trackEvent(action: string, label?: string) {
-  if (!initialized) return;
+  if (!initialized || !ReactGA) return;
   ReactGA.event({ category: 'interaction', action, label });
 }

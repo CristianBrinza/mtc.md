@@ -5,8 +5,8 @@ import Button from '../Button';
 
 declare global {
   interface Window {
-    dataLayer: any[];
-    gtag: (...args: any[]) => void;
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -23,7 +23,7 @@ export default function ConsentBanner({ visible, onAccept, onDecline }: Props) {
     const saved = localStorage.getItem('userConsent');
     if (!saved) setShow(true);
     else {
-      window.gtag('consent', 'update', {
+      window.gtag?.('consent', 'update', {
         ad_storage: saved,
         analytics_storage: saved,
       });
@@ -37,11 +37,11 @@ export default function ConsentBanner({ visible, onAccept, onDecline }: Props) {
 
   const decline = () => {
     localStorage.setItem('userConsent', 'denied');
-    window.gtag('consent', 'update', {
+    window.gtag?.('consent', 'update', {
       ad_storage: 'denied',
       analytics_storage: 'denied',
     });
-    window.dataLayer.push({ event: 'consent_denied' });
+    window.dataLayer?.push({ event: 'consent_denied' });
     setShow(false);
     onDecline?.();
   };
