@@ -292,6 +292,7 @@ export default function Triple() {
       setActiveRegioConfig('3');
     } else {
       setActiveConfig('1');
+      setActiveRegioConfig('1');
     }
   }, [isRegio]);
 
@@ -1077,6 +1078,8 @@ export default function Triple() {
           <div
             onClick={() => {
               setActiveConfig('1');
+              setActiveRegioConfig('1');
+              // console.log("dddd")
               trackEvent('triple_select_type_package_discount');
             }}
             className={`${styles.config_block} ${styles.config_block_1}  ${styles.config_block_first} ${activeConfig == '1' && styles.config_block_active}`}
@@ -1107,6 +1110,14 @@ export default function Triple() {
           <div
             onClick={() => {
               setActiveConfig('1');
+
+              // if(activeConfig==='1') {
+              //   setActiveRegioConfig('1');
+              //
+              // }else
+              //  {
+              //    setActiveRegioConfig('2');
+              //  }
               setActiveRegioConfig('2');
               trackEvent('triple_select_type_package_discount');
             }}

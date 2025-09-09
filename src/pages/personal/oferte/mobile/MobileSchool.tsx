@@ -215,60 +215,60 @@ export default function MobileSchool() {
           />
         </div>
       </Hero>
-
-      <div className={styles.select_type}>
-        <div
-          className={`${styles.select_type_card} ${styles.select_type_card_active}`}
-          onClick={() => trackEvent('tm_select_type_abonament')}
-        >
-          <div className={styles.select_type_card_top}>
-            <Icon
-              size={'22px'}
-              type={'plus'}
-              color={'var(--theme_primary_color_blue_2)'}
-            />
-            {t('tm.abonament')}
+      <div className={styles.select_type_block}>
+        <div className={styles.select_type}>
+          <div
+            className={`${styles.select_type_card} ${styles.select_type_card_active}`}
+            onClick={() => trackEvent('tm_select_type_abonament')}
+          >
+            <div className={styles.select_type_card_top}>
+              <Icon
+                size={'22px'}
+                type={'plus'}
+                color={'var(--theme_primary_color_blue_2)'}
+              />
+              {t('tm.abonament')}
+            </div>
+            {/*<div className={styles.select_type_card_bottom}></div>*/}
           </div>
-          <div className={styles.select_type_card_bottom}></div>
-        </div>
-        <div
-          className={styles.select_type_card}
-          onClick={() => {
-            trackEvent('tm_select_type_portare');
-            goToPage(`https://new.moldtelecom.md/${t('lang')}/portare`);
-          }}
-        >
-          <div className={styles.select_type_card_top}>
-            <Icon
-              size={'22px'}
-              type={'retry'}
-              color={'var(--theme_primary_color_blue_2)'}
-            />
-            {t('tm.portare')}
+          <div
+            className={styles.select_type_card}
+            onClick={() => {
+              trackEvent('tm_select_type_portare');
+              goToPage(`https://new.moldtelecom.md/${t('lang')}/portare`);
+            }}
+          >
+            <div className={styles.select_type_card_top}>
+              <Icon
+                size={'22px'}
+                type={'retry'}
+                color={'var(--theme_primary_color_blue_2)'}
+              />
+              {t('tm.portare')}
+            </div>
+            {/*<div className={styles.select_type_card_bottom}></div>*/}
           </div>
-          <div className={styles.select_type_card_bottom}></div>
-        </div>
-        <div
-          className={styles.select_type_card}
-          onClick={() => {
-            trackEvent('tm_select_type_prepay');
-            goToPage(
-              `https://www.moldtelecom.md/${t('lang')}/personal/prepay-cartela`
-            );
-          }}
-        >
-          <div className={styles.select_type_card_top}>
-            <Icon
-              size={'22px'}
-              type={'sim'}
-              color={'var(--theme_primary_color_blue_2)'}
-            />
-            {t('tm.prepay')}
+          <div
+            className={styles.select_type_card}
+            onClick={() => {
+              trackEvent('tm_select_type_prepay');
+              goToPage(
+                `https://www.moldtelecom.md/${t('lang')}/personal/prepay-cartela`
+              );
+            }}
+          >
+            <div className={styles.select_type_card_top}>
+              <Icon
+                size={'22px'}
+                type={'sim'}
+                color={'var(--theme_primary_color_blue_2)'}
+              />
+              {t('tm.prepay')}
+            </div>
+            {/*<div className={styles.select_type_card_bottom}></div>*/}
           </div>
-          <div className={styles.select_type_card_bottom}></div>
         </div>
       </div>
-
       <div className={`title title_5 ${styles.title2}`}>
         {t('tm.title_choose')}
       </div>
@@ -379,7 +379,9 @@ export default function MobileSchool() {
               </div>
 
               <div className={styles.tm_carousell_block_rows_2}>
-                <div className={styles.tm_carousell_block_row}>
+                <div
+                  className={`${styles.tm_carousell_block_row} ${styles.tm_carousell_block_row_sp_1}`}
+                >
                   <div className={styles.tm_carousell_block_row_svg}>
                     <Icon
                       type={'call_mess'}

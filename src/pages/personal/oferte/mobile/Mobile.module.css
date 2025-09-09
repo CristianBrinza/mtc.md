@@ -209,6 +209,14 @@
   line-height: 11px;
   margin: 2px 0;
 }
+.tm_carousell_block_row_sp_1 {
+  /*background-color: #fff;*/
+  /*  width: calc(100% + 13px);*/
+  /*  border-radius: 10px;*/
+  /*  margin: -10px 0 0 -7px;*/
+  /*  padding: 10px 15px 10px 7px;*/
+  /*  box-sizing: border-box;*/
+}
 .tm_carousell_block_row b {
   color: var(--color-text-primary);
   /*font-size: 18px;*/
@@ -353,10 +361,17 @@
 }
 .select_type {
   display: flex;
-  width: 100%;
   gap: 10px;
-  margin: 10px auto;
+  border-radius: 100px;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--theme_primary_color_blue_3);
+}
+.select_type_block {
+  width: 100%;
+  margin: 10px auto;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -368,10 +383,12 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border-radius: 100px;
+  margin-left: -5px;
 }
 .select_type_card_top {
-  padding: 10px 10px 5px;
-  margin-bottom: 2px;
+  padding: 13px 22px;
+  /*margin-bottom: 2px;*/
   box-sizing: border-box;
   display: flex;
   gap: 5px;
@@ -387,10 +404,17 @@
 }
 .select_type_card_active {
   cursor: none;
+  background-color: var(--theme_primary_color_blue_3);
+  margin-left: 0;
 }
 .select_type_card_active .select_type_card_bottom,
 .select_type_card_active:hover .select_type_card_bottom {
   background: var(--theme_primary_color_blue_2);
+}
+
+.select_type .select_type_card:hover {
+  background-color: var(--theme_primary_color_gray_2);
+  /*font-size: 19px;*/
 }
 
 .popup_div_title {
