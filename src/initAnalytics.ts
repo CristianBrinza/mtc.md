@@ -7,8 +7,8 @@ let initialized = false;
 
 declare global {
   interface Window {
-    dataLayer: unknown[];
-    gtag: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -16,9 +16,9 @@ export async function initAnalytics() {
   if (initialized || !GA4_ID) return;
   const module = await import('react-ga4');
   ReactGA = module.default;
-  window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer ?? [];
   window.gtag = (...args: unknown[]) => {
-    window.dataLayer.push(args);
+    window.dataLayer!.push(args);
   };
 
   const gaScript = document.createElement('script');
@@ -26,8 +26,8 @@ export async function initAnalytics() {
   gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
   document.head.appendChild(gaScript);
 
-  window.gtag('js', new Date());
-  window.gtag('config', GA4_ID, {
+  window.gtag?.('js', new Date());
+  window.gtag?.('config', GA4_ID, {
     anonymize_ip: true,
     send_page_view: false,
   });
@@ -49,7 +49,7 @@ export async function initAnalytics() {
     document.body.appendChild(noscript);
   }
 
-  window.gtag('consent', 'default', {
+  window.gtag?.('consent', 'default', {
     ad_storage: 'denied',
     analytics_storage: 'denied',
   });
@@ -61,7 +61,7 @@ export async function initAnalytics() {
 export function grantConsent() {
   if (!initialized || !ReactGA) return;
   // update consent flags …
-  window.gtag('consent', 'update', {
+  window.gtag?.('consent', 'update', {
     ad_storage: 'granted',
     analytics_storage: 'granted',
   });
@@ -73,7 +73,7 @@ export function grantConsent() {
 /** call on mount to unlock route‑based pageviews **without** firing one */
 export function updateConsent() {
   if (!initialized || !ReactGA) return;
-  window.gtag('consent', 'update', {
+  window.gtag?.('consent', 'update', {
     ad_storage: 'granted',
     analytics_storage: 'granted',
   });
