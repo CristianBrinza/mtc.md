@@ -414,7 +414,9 @@ export default function MobileSchool() {
                     </span>
                   </div>
                 </div>
-                <div className={styles.tm_carousell_block_row}>
+                <div
+                  className={`${styles.tm_carousell_block_row} ${styles.tm_carousell_block_row_sp_2}`}
+                >
                   <div className={styles.tm_carousell_block_row_svg}>
                     <Icon
                       type={'internet'}
@@ -443,6 +445,7 @@ export default function MobileSchool() {
                 <div className={`${styles.tm_carousell_block_row}`}>
                   <div className={styles.tm_carousell_block_row_svg}>
                     <Icon
+                      // color={'#ff9fb2'}
                       type={'romania'}
                       color={'var(--theme_primary_color_blue_2)'}
                     />
@@ -561,7 +564,9 @@ export default function MobileSchool() {
             </div>
 
             <div className={styles.tm_carousell_block_rows_2}>
-              <div className={styles.tm_carousell_block_row}>
+              <div
+                className={`${styles.tm_carousell_block_row} ${styles.tm_carousell_block_row_sp_1}`}
+              >
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
@@ -594,7 +599,9 @@ export default function MobileSchool() {
                   </span>
                 </div>
               </div>
-              <div className={styles.tm_carousell_block_row}>
+              <div
+                className={`${styles.tm_carousell_block_row} ${styles.tm_carousell_block_row_sp_2}`}
+              >
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'internet'}
@@ -623,6 +630,7 @@ export default function MobileSchool() {
               <div className={`${styles.tm_carousell_block_row}`}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
+                    // color={'#ff9fb2'}
                     type={'romania'}
                     color={'var(--theme_primary_color_blue_2)'}
                   />
@@ -738,7 +746,9 @@ export default function MobileSchool() {
             <div className={styles.mobile_carousell_title}>Liberty 200</div>
 
             <div className={styles.tm_carousell_block_rows_2}>
-              <div className={styles.tm_carousell_block_row}>
+              <div
+                className={`${styles.tm_carousell_block_row} ${styles.tm_carousell_block_row_sp_1}`}
+              >
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
@@ -771,7 +781,9 @@ export default function MobileSchool() {
                   </span>
                 </div>
               </div>
-              <div className={styles.tm_carousell_block_row}>
+              <div
+                className={`${styles.tm_carousell_block_row} ${styles.tm_carousell_block_row_sp_2}`}
+              >
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'internet'}
@@ -828,6 +840,7 @@ export default function MobileSchool() {
               <div className={`${styles.tm_carousell_block_row}`}>
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
+                    // color={'#ff9fb2'}
                     type={'romania'}
                     color={'var(--theme_primary_color_blue_2)'}
                   />
@@ -942,7 +955,9 @@ export default function MobileSchool() {
             <div className={styles.mobile_carousell_title}>Liberty 290+</div>
 
             <div className={styles.tm_carousell_block_rows_2}>
-              <div className={styles.tm_carousell_block_row}>
+              <div
+                className={`${styles.tm_carousell_block_row} ${styles.tm_carousell_block_row_sp_1}`}
+              >
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'call_mess'}
@@ -975,7 +990,9 @@ export default function MobileSchool() {
                   </span>
                 </div>
               </div>
-              <div className={styles.tm_carousell_block_row}>
+              <div
+                className={`${styles.tm_carousell_block_row} ${styles.tm_carousell_block_row_sp_2}`}
+              >
                 <div className={styles.tm_carousell_block_row_svg}>
                   <Icon
                     type={'internet'}
@@ -1028,6 +1045,7 @@ export default function MobileSchool() {
                   <Icon
                     type={'romania'}
                     color={'var(--theme_primary_color_blue_2)'}
+                    // color={'#ff9fb2'}
                   />
                 </div>
                 <div className={styles.tm_carousell_block_row_inline}>

@@ -169,7 +169,7 @@
             "label": "navbar.prepay_digital",
             "to": "/personal/prepay-digital"
           },
-          { "label": "navbar.onenumber", "to": "/personal/" }
+          { "label": "navbar.onenumber", "to": "/personal/one_number" }
         ]
       },
       {

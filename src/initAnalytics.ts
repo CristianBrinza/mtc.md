@@ -3,6 +3,7 @@ import ReactGA from 'react-ga4';
 
 const GA4_ID = import.meta.env.VITE_GOOGLE_MEASUREMENT_ID!;
 const GTM_ID = import.meta.env.VITE_GOOGLE_TRACKING_TAG;
+const CLARITY_ID = import.meta.env.VITE_CLARITY_ID;
 let initialized = false;
 
 declare global {
