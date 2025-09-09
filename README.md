@@ -22,6 +22,7 @@ The official Moldtelecom website is built with **React 19**, **TypeScript** and 
 - Progressive Web App configuration via `vite-plugin-pwa`
 - Invisible reCAPTCHA support (`VITE_RECAPTCHA_SITE_KEY`)
 - Google Analytics tracking (`VITE_GOOGLE_MEASUREMENT_ID`)
+- Microsoft Clarity session recording (`VITE_CLARITY_ID`)
 - Production build and deployment script
 
 ## Requirements
@@ -37,7 +38,7 @@ The official Moldtelecom website is built with **React 19**, **TypeScript** and 
 2. Copy the example environment file and provide your environment variables (reCAPTCHA key, Google Analytics ID,...):
    ```bash
    cp .env.template .env
-   # edit .env and set VITE_RECAPTCHA_SITE_KEY and VITE_GOOGLE_MEASUREMENT_ID
+   # edit .env and set VITE_RECAPTCHA_SITE_KEY, VITE_GOOGLE_MEASUREMENT_ID and VITE_CLARITY_ID
    ```
 
 ## Development
