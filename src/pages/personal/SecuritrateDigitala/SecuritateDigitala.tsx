@@ -251,7 +251,7 @@ export default function SecuritateDigitala() {
         <div className={styles.solutions_card}>
           <img
             className={styles.solutions_card_img}
-            src="/images/landings/79864621.webp"
+            src="/images/landings/79864622.webp"
             alt="Moldtelecom"
           />
           <div className={styles.solutions_card_inside}>

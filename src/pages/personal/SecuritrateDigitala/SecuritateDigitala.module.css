@@ -438,7 +438,7 @@
   border-radius: 100px;
   background: #adbbff;
   display: inline-flex;
-  padding: 10px 12px;
+  padding: 10px 12px 8px;
   justify-content: center;
   align-items: center;
   gap: 10px;
