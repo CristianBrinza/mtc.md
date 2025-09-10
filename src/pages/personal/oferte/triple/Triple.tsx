@@ -1485,7 +1485,19 @@ export default function Triple() {
                       <span>
                         {' '}
                         {activeConfig == '1'
-                          ? `${total_1_1} ${t('lei_luna')}`
+                          ? `${
+                              activeMobil_1 == 0
+                                ? total_1_1
+                                : activeMobil_1 == 1
+                                  ? total_1_1 + 40
+                                  : activeMobil_1 == 2
+                                    ? total_1_1 + 50
+                                    : activeMobil_1 == 3
+                                      ? total_1_1 + 75
+                                      : activeMobil_1 == 4
+                                        ? total_1_1 + 100
+                                        : 0
+                            } ${t('lei_luna')}`
                           : ` `}
                       </span>
                     </div>
@@ -1865,9 +1877,28 @@ export default function Triple() {
                       <span>
                         {' '}
                         {activeConfig == '1'
-                          ? `${total_2_2} ${t('lei_luna')}`
+                          ? `${
+                              activeMobil_2 == 0
+                                ? total_2_2
+                                : activeMobil_2 == 1
+                                  ? total_2_2 + 40
+                                  : activeMobil_2 == 2
+                                    ? total_2_2 + 50
+                                    : activeMobil_2 == 3
+                                      ? total_2_2 + 75
+                                      : activeMobil_2 == 4
+                                        ? total_2_2 + 100
+                                        : 0
+                            } ${t('lei_luna')}`
                           : ` `}
                       </span>
+
+                      {/*<span>*/}
+                      {/*  {' '}*/}
+                      {/*  {activeConfig == '1'*/}
+                      {/*    ? `${total_2_2} ${t('lei_luna')}`*/}
+                      {/*    : ` `}*/}
+                      {/*</span>*/}
                     </div>
                   </div>
                 </div>
@@ -2252,7 +2283,19 @@ export default function Triple() {
                     <span>
                       {' '}
                       {activeConfig == '1'
-                        ? `${total_3_3} ${t('lei_luna')}`
+                        ? `${
+                            activeMobil_3 == 0
+                              ? total_3_3
+                              : activeMobil_3 == 1
+                                ? total_3_3 + 40
+                                : activeMobil_3 == 2
+                                  ? total_3_3 + 50
+                                  : activeMobil_3 == 3
+                                    ? total_3_3 + 75
+                                    : activeMobil_3 == 4
+                                      ? total_3_3 + 100
+                                      : 0
+                          } ${t('lei_luna')}`
                         : ` `}
                     </span>
                   </div>
@@ -2633,7 +2676,19 @@ export default function Triple() {
                     <span>
                       {' '}
                       {activeConfig == '1'
-                        ? `${total_4_4} ${t('lei_luna')}`
+                        ? `${
+                            activeMobil_4 == 0
+                              ? total_4_4
+                              : activeMobil_4 == 1
+                                ? total_4_4 + 40
+                                : activeMobil_4 == 2
+                                  ? total_4_4 + 50
+                                  : activeMobil_4 == 3
+                                    ? total_4_4 + 75
+                                    : activeMobil_4 == 4
+                                      ? total_4_4 + 100
+                                      : 0
+                          } ${t('lei_luna')}`
                         : ` `}
                     </span>
                   </div>
@@ -3015,7 +3070,19 @@ export default function Triple() {
                     <span>
                       {' '}
                       {activeConfig == '1'
-                        ? `${total_5_5} ${t('lei_luna')}`
+                        ? `${
+                            activeMobil_5 == 0
+                              ? total_5_5
+                              : activeMobil_5 == 1
+                                ? total_5_5 + 40
+                                : activeMobil_5 == 2
+                                  ? total_5_5 + 50
+                                  : activeMobil_5 == 3
+                                    ? total_5_5 + 75
+                                    : activeMobil_5 == 4
+                                      ? total_5_5 + 100
+                                      : 0
+                          } ${t('lei_luna')}`
                         : ` `}
                     </span>
                   </div>

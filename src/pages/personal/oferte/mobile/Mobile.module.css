@@ -221,7 +221,7 @@
 }
 .tm_carousell_block_row_sp_2 {
   background-color: rgba(255, 255, 255, 1);
-  border: 1px solid var(--theme_primary_color_blue_3);
+  /*border: 1px solid var(--theme_primary_color_blue_3);*/
   /*background-color: var(--theme_primary_color_blue_3);*/
   padding: 3px 6px 0px;
   margin: 0px -5px -0px -6px;
