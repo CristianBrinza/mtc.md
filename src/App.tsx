@@ -21,7 +21,7 @@ import Contacts from './pages/personal/contacts/Contacts.tsx';
 import WifiPlus from './pages/personal/oferte/wifiplus/WifiPlus.tsx';
 import IconShowcase from './pages/technical/IconShowcase.tsx';
 import AppRedirect from './components/app/AppRedirect.tsx';
-import OptionsandServices from './pages/personal/oferte/optionsandservices/OptionsandServices.tsx';
+import OptionsandServicesV2 from './pages/personal/oferte/optionsandservices/OptionsandServicesV2.tsx';
 import SmsServices from './pages/personal/oferte/sms_services/SmsServices.tsx';
 import PromoRazuieste from './pages/personal/oferte/promo_razuieste/PromoRazuieste.tsx';
 import OneNumber from './pages/personal/oferte/one_number/OneNumber.tsx';
@@ -83,7 +83,7 @@ function AppContent() {
         {/*App redirect*/}
         <Route path="/:lang/mymtc" element={<AppRedirect />} />
         <Route path="/mymtc" element={<AppRedirect />} />
-        <Route path="/:lang/mobile-options" element={<OptionsandServices />} />
+        <Route path="/:lang/mobile-options" element={<OptionsandServicesV2 />} />
         <Route path="/:lang/sms-service" element={<SmsServices />} />
         <Route
           path="/:lang/weekend-cu-beneficii"
