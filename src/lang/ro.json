@@ -2028,7 +2028,28 @@
     "smartphone": "Ofertă smartphone",
     "plus_device": "+ device",
     "btn_client": "Sunt client Internet",
-    "comapra": "Comapră",
+    "comapra": "Compară",
+    "min_internat": "Minute internaționale",
+    "min_nat": "Minute naționale",
+    "Min_sms_retea": "Min. și SMS în rețea",
+
+    "roaming": {
+      "ro": "Roaming RO",
+      "digi": "Roaming Digi",
+      "europa": "Roaming Europa"
+    },
+    "minute_roaming": "Minute în roaming",
+
+    "plan": {
+      "start_120": "Start 120",
+      "flex_150": "Flex 150",
+      "liberty_200": "Liberty 200",
+      "liberty_290_plus": "Liberty 290+"
+    },
+
+    "value_min": "{{value}} min",
+    "value_gb": "{{value}} GB",
+    "none": "-",
     "discover": {
       "title": "Descoperă extra beneficii",
       "btn": "Vezi mai multe detalii",

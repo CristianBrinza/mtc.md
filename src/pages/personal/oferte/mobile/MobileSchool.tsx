@@ -1891,21 +1891,22 @@ export default function MobileSchool() {
               <tr>
                 <td>&nbsp;</td>
                 <td className={styles.popup_table_double_title_table}>
-                  Start 120
+                  {t('tm.plan.start_120')}
                 </td>
                 <td className={styles.popup_table_double_title_table}>
-                  Flex 150
+                  {t('tm.plan.flex_150')}
                 </td>
                 <td className={styles.popup_table_double_title_table}>
-                  Liberty 200
+                  {t('tm.plan.liberty_200')}
                 </td>
                 <td className={styles.popup_table_double_title_table}>
-                  Liberty 290+
+                  {t('tm.plan.liberty_290_plus')}
                 </td>
               </tr>
+
               <tr>
                 <td style={{ color: '#00000099', background: '#eceef0' }}>
-                  Min.&nbsp;şi&nbsp;SMS&nbsp;în rețea
+                  {t('tm.Min_sms_retea')}
                 </td>
                 <td className={styles.popup_table_double_inside_table}>
                   {t('tm.nelimitat')}
@@ -1920,40 +1921,43 @@ export default function MobileSchool() {
                   {t('tm.nelimitat')}
                 </td>
               </tr>
+
               <tr>
                 <td style={{ color: '#00000099', background: '#eceef0' }}>
-                  Minute Nationale
+                  {t('tm.min_nat')}
                 </td>
                 <td className={styles.popup_table_double_inside_table}>
-                  350 min
+                  {t('tm.value_min', { value: 350 })}
                 </td>
                 <td className={styles.popup_table_double_inside_table}>
-                  450 min
+                  {t('tm.value_min', { value: 450 })}
                 </td>
                 <td className={styles.popup_table_double_inside_table}>
-                  850 min
+                  {t('tm.value_min', { value: 850 })}
                 </td>
                 <td className={styles.popup_table_double_inside_table}>
                   {t('tm.nelimitat')}
                 </td>
               </tr>
+
               <tr>
                 <td style={{ color: '#00000099', background: '#eceef0' }}>
-                  Minute Internationale
+                  {t('tm.min_internat')}
                 </td>
                 <td className={styles.popup_table_double_inside_table}>
-                  35 min
+                  {t('tm.value_min', { value: 35 })}
                 </td>
                 <td className={styles.popup_table_double_inside_table}>
-                  45 min
+                  {t('tm.value_min', { value: 45 })}
                 </td>
                 <td className={styles.popup_table_double_inside_table}>
-                  85 min
+                  {t('tm.value_min', { value: 85 })}
                 </td>
                 <td className={styles.popup_table_double_inside_table}>
                   {t('tm.nelimitat')}
                 </td>
               </tr>
+
               <tr>
                 <td style={{ color: '#00000099', background: '#eceef0' }}>
                   {t('tm.trafic_internet')}
@@ -1971,44 +1975,76 @@ export default function MobileSchool() {
                   {t('tm.nelimitat')}
                 </td>
               </tr>
+
               <tr>
                 <td style={{ color: '#00000099', background: '#eceef0' }}>
-                  Roaming RO
-                </td>
-                <td className={styles.popup_table_double_inside_table}>1 GB</td>
-                <td className={styles.popup_table_double_inside_table}>1 GB</td>
-                <td className={styles.popup_table_double_inside_table}>-</td>
-                <td className={styles.popup_table_double_inside_table}>-</td>
-              </tr>
-              <tr>
-                <td style={{ color: '#00000099', background: '#eceef0' }}>
-                  Roaming Digi
-                </td>
-                <td className={styles.popup_table_double_inside_table}>4 GB</td>
-                <td className={styles.popup_table_double_inside_table}>7 GB</td>
-                <td className={styles.popup_table_double_inside_table}>5 GB</td>
-                <td className={styles.popup_table_double_inside_table}>6 GB</td>
-              </tr>
-              <tr>
-                <td style={{ color: '#00000099', background: '#eceef0' }}>
-                  Roaming Europa
-                </td>
-                <td className={styles.popup_table_double_inside_table}>-</td>
-                <td className={styles.popup_table_double_inside_table}>-</td>
-                <td className={styles.popup_table_double_inside_table}>5 GB</td>
-                <td className={styles.popup_table_double_inside_table}>8 GB</td>
-              </tr>
-              <tr>
-                <td style={{ color: '#00000099', background: '#eceef0' }}>
-                  Minute Roaming
-                </td>
-                <td className={styles.popup_table_double_inside_table}>-</td>
-                <td className={styles.popup_table_double_inside_table}>-</td>
-                <td className={styles.popup_table_double_inside_table}>
-                  40 min
+                  {t('tm.roaming.ro')}
                 </td>
                 <td className={styles.popup_table_double_inside_table}>
-                  50 min
+                  {t('tm.value_gb', { value: 1 })}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.value_gb', { value: 1 })}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.none')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.none')}
+                </td>
+              </tr>
+
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  {t('tm.roaming.digi')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.value_gb', { value: 4 })}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.value_gb', { value: 7 })}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.value_gb', { value: 5 })}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.value_gb', { value: 6 })}
+                </td>
+              </tr>
+
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  {t('tm.roaming.europa')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.none')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.none')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.value_gb', { value: 5 })}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.value_gb', { value: 8 })}
+                </td>
+              </tr>
+
+              <tr>
+                <td style={{ color: '#00000099', background: '#eceef0' }}>
+                  {t('tm.minute_roaming')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.none')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.none')}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.value_min', { value: 40 })}
+                </td>
+                <td className={styles.popup_table_double_inside_table}>
+                  {t('tm.value_min', { value: 50 })}
                 </td>
               </tr>
             </tbody>

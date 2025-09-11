@@ -2190,6 +2190,27 @@
     "btn_client": "Я клиент Интернет",
     "smartphone": "Промо-смартфон",
     "plus_device": "+ device",
+    "comapra": "Сравнить",
+    "min_nat": "Национальные минуты",
+    "Min_sms_retea": "Мин. и SMS внутри сети",
+
+    "roaming": {
+      "ro": "Роуминг RO",
+      "digi": "Роуминг Digi",
+      "europa": "Роуминг Европа"
+    },
+    "minute_roaming": "Минуты в роуминге",
+
+    "plan": {
+      "start_120": "Start 120",
+      "flex_150": "Flex 150",
+      "liberty_200": "Liberty 200",
+      "liberty_290_plus": "Liberty 290+"
+    },
+
+    "value_min": "{{value}} мин",
+    "value_gb": "{{value}} ГБ",
+    "none": "-",
     "discover": {
       "title": "Открой дополнительные преимущества",
       "btn": "Посмотреть подробнее",
