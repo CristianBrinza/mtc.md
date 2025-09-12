@@ -179,7 +179,7 @@
           },
           {
             "label": "Orice Țară",
-            "value": "-",
+            "value": "10 min",
             "valability": "30 zile",
             "price": "50 lei"
           }
@@ -265,7 +265,8 @@
             "label": "Internet",
             "value": "5 GB",
             "valability": "30 zile",
-            "price": "50 lei"
+            "price": "50 lei",
+            "tag": "New"
           }
         ]
       },
@@ -274,8 +275,8 @@
         "subtitle": "Majorarea vitezei de download până la 175 Mbps și upload până la 50 Mbps.",
         "items": [
           {
-            "label": "Viteza 4G+",
-            "value": "-",
+            "label": "",
+            "value": "Viteza 4G+",
             "valability": "30 zile",
             "price": "Gratuit"
           }

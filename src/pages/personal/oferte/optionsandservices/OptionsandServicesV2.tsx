@@ -152,43 +152,17 @@ export default function OptionsandServicesV2() {
           </Button>
 
           <div className={styles.optionsandservices_block_bottom_text}>
-            <b>Activează</b> prin <a href="">SMS 100</a>, aplicația{' '}
-            <a href="">My Moldtelecom</a> sau cerere depusă la{' '}
-            <a href="">Magazine</a>.
+            <b>Activează</b> prin{' '}
+            <a href={`https://new.moldtelecom.md/${t('lang')}/sms-service`}>
+              SMS 100
+            </a>
+            , aplicația <a href="https://mtc.md/my-mtc">My Moldtelecom</a> sau
+            cerere depusă la{' '}
+            <a href={`https://new.moldtelecom.md/${t('lang')}/magazine`}>
+              Magazine
+            </a>
+            .
           </div>
-        </div>
-      </div>
-      <div className={styles.optionsandservices_block}>
-        <div className={styles.optionsandservices_block_top}>
-          <div className={`${styles.optionsandservices_block_left}`}>
-            <div className={styles.optionsandservices_block_title}>
-              {t('optionsandservices.blocks.national_minutes.title')}
-            </div>
-            <div className={styles.optionsandservices_block_subtitle}>
-              {t('optionsandservices.blocks.national_minutes.subtitle')}
-            </div>
-
-            {renderItems('optionsandservices.blocks.national_minutes.items')}
-          </div>
-          <img
-            className={styles.optionsandservices_block_top_img}
-            src="/images/landings/59865622.webp"
-            alt="Moldtelecom"
-          />
-        </div>
-        <div className={styles.optionsandservices_block_bottom}>
-          <Button
-            color={'var(--theme_primary_color_blue_4)'}
-            bgcolor={'var(--theme_primary_color_blue_3)'}
-            border={'var(--theme_primary_color_blue_3)'}
-            hover_border={'var(--theme_primary_color_blue_2)'}
-            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
-            className={styles.optionsandservices_block_btn}
-            onClick={() => setActivePopup('f1')}
-          >
-            {t('optionsandservices.usage_conditions')}{' '}
-            <Icon type="arrow_right" color="#212a55" />
-          </Button>
         </div>
       </div>
       <div className={styles.optionsandservices_block}>
@@ -217,7 +191,7 @@ export default function OptionsandServicesV2() {
             hover_border={'var(--theme_primary_color_blue_2)'}
             hover_bgcolor={'var(--theme_primary_color_blue_2)'}
             className={styles.optionsandservices_block_btn}
-            onClick={() => setActivePopup('f1')}
+            onClick={() => setActivePopup('f4')}
           >
             {t('optionsandservices.usage_conditions')}{' '}
             <Icon type="arrow_right" color="#212a55" />
@@ -225,33 +199,255 @@ export default function OptionsandServicesV2() {
         </div>
       </div>
 
+      <div className={styles.optionsandservices_blocks_2}>
+        <div className={styles.optionsandservices_block}>
+          <div className={styles.optionsandservices_block_top}>
+            <div className={`${styles.optionsandservices_block_left}`}>
+              <div className={styles.optionsandservices_block_title}>
+                {t('optionsandservices.blocks.national_minutes.title')}
+              </div>
+              <div className={styles.optionsandservices_block_subtitle}>
+                {t('optionsandservices.blocks.national_minutes.subtitle')}
+              </div>
+
+              {renderItems('optionsandservices.blocks.national_minutes.items')}
+            </div>
+            {/*<img*/}
+            {/*  className={styles.optionsandservices_block_top_img}*/}
+            {/*  src="/images/landings/59865622.webp"*/}
+            {/*  alt="Moldtelecom"*/}
+            {/*/>*/}
+          </div>
+          <div className={styles.optionsandservices_block_bottom}>
+            <Button
+              color={'var(--theme_primary_color_blue_4)'}
+              bgcolor={'var(--theme_primary_color_blue_3)'}
+              border={'var(--theme_primary_color_blue_3)'}
+              hover_border={'var(--theme_primary_color_blue_2)'}
+              hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+              className={styles.optionsandservices_block_btn}
+              onClick={() => setActivePopup('f2')}
+            >
+              {t('optionsandservices.usage_conditions')}{' '}
+              <Icon type="arrow_right" color="#212a55" />
+            </Button>
+          </div>
+        </div>
+        <div className={styles.optionsandservices_block}>
+          <div className={styles.optionsandservices_block_top}>
+            <div className={styles.optionsandservices_block_left}>
+              <div className={styles.optionsandservices_block_title}>
+                {t('optionsandservices.blocks.international_minutes.title')}
+              </div>
+              <div className={styles.optionsandservices_block_subtitle}>
+                {t('optionsandservices.blocks.international_minutes.subtitle')}
+              </div>
+
+              {renderItems(
+                'optionsandservices.blocks.international_minutes.items'
+              )}
+            </div>
+            {/*<img*/}
+            {/*  className={styles.optionsandservices_block_top_img}*/}
+            {/*  src="/images/landings/59865623.webp"*/}
+            {/*  alt="Moldtelecom"*/}
+            {/*/>*/}
+          </div>
+          <div className={styles.optionsandservices_block_bottom}>
+            <Button
+              color={'var(--theme_primary_color_blue_4)'}
+              bgcolor={'var(--theme_primary_color_blue_3)'}
+              border={'var(--theme_primary_color_blue_3)'}
+              hover_border={'var(--theme_primary_color_blue_2)'}
+              hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+              className={styles.optionsandservices_block_btn}
+              onClick={() => setActivePopup('f3')}
+            >
+              {t('optionsandservices.usage_conditions')}{' '}
+              <Icon type="arrow_right" color="#212a55" />
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.optionsandservices_bg}>
+        <div className={`title title_3 ${styles.optionsandservices_title}`}>
+          {t('optionsandservices.titles.roaming')}
+        </div>
+
+        <div className={styles.optionsandservices_block}>
+          <div className={styles.optionsandservices_block_top}>
+            <div className={styles.optionsandservices_block_left}>
+              <div className={styles.optionsandservices_block_title}>
+                {t('optionsandservices.blocks.roaming_europe.title')}
+              </div>
+              <div className={styles.optionsandservices_block_subtitle}>
+                {t('optionsandservices.blocks.roaming_europe.subtitle')}
+              </div>
+
+              {renderItems('optionsandservices.blocks.roaming_europe.items')}
+            </div>
+            <img
+              className={styles.optionsandservices_block_top_img}
+              src="/images/landings/59865624.webp"
+              alt="Moldtelecom"
+            />
+          </div>
+          <div className={styles.optionsandservices_block_bottom}>
+            <Button
+              color={'var(--theme_primary_color_blue_4)'}
+              bgcolor={'var(--theme_primary_color_blue_3)'}
+              border={'var(--theme_primary_color_blue_3)'}
+              hover_border={'var(--theme_primary_color_blue_2)'}
+              hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+              className={styles.optionsandservices_block_btn}
+              onClick={() => setActivePopup('f5')}
+            >
+              {t('optionsandservices.usage_conditions')}{' '}
+              <Icon type="arrow_right" color="#212a55" />
+            </Button>
+          </div>
+        </div>
+        <div className={styles.optionsandservices_blocks_2}>
+          <div className={styles.optionsandservices_block}>
+            <div className={styles.optionsandservices_block_top}>
+              <div className={styles.optionsandservices_block_left}>
+                <div className={styles.optionsandservices_block_title}>
+                  {t('optionsandservices.blocks.roaming_world.title')}
+                </div>
+                <div className={styles.optionsandservices_block_subtitle}>
+                  {t('optionsandservices.blocks.roaming_world.subtitle')}
+                </div>
+
+                {renderItems('optionsandservices.blocks.roaming_world.items')}
+              </div>
+              {/*<img*/}
+              {/*  className={styles.optionsandservices_block_top_img}*/}
+              {/*  src="/images/landings/59865624.webp"*/}
+              {/*  alt="Moldtelecom"*/}
+              {/*/>*/}
+            </div>
+            <div className={styles.optionsandservices_block_bottom}>
+              <Button
+                color={'var(--theme_primary_color_blue_4)'}
+                bgcolor={'var(--theme_primary_color_blue_3)'}
+                border={'var(--theme_primary_color_blue_3)'}
+                hover_border={'var(--theme_primary_color_blue_2)'}
+                hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+                className={styles.optionsandservices_block_btn}
+                onClick={() => setActivePopup('f6')}
+              >
+                {t('optionsandservices.usage_conditions')}{' '}
+                <Icon type="arrow_right" color="#212a55" />
+              </Button>
+            </div>
+          </div>
+          <div className={styles.optionsandservices_block}>
+            <div className={styles.optionsandservices_block_top}>
+              <div className={styles.optionsandservices_block_left}>
+                <div className={styles.optionsandservices_block_title}>
+                  {t('optionsandservices.blocks.roaming_ro.title')}
+                </div>
+                <div className={styles.optionsandservices_block_subtitle}>
+                  {t('optionsandservices.blocks.roaming_ro.subtitle')}
+                </div>
+
+                {renderItems('optionsandservices.blocks.roaming_ro.items')}
+              </div>
+              {/*<img*/}
+              {/*  className={styles.optionsandservices_block_top_img}*/}
+              {/*  src="/images/landings/59865624.webp"*/}
+              {/*  alt="Moldtelecom"*/}
+              {/*/>*/}
+            </div>
+            <div className={styles.optionsandservices_block_bottom}>
+              <Button
+                color={'var(--theme_primary_color_blue_4)'}
+                bgcolor={'var(--theme_primary_color_blue_3)'}
+                border={'var(--theme_primary_color_blue_3)'}
+                hover_border={'var(--theme_primary_color_blue_2)'}
+                hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+                className={styles.optionsandservices_block_btn}
+                onClick={() => setActivePopup('f9')}
+              >
+                {t('optionsandservices.usage_conditions')}{' '}
+                <Icon type="arrow_right" color="#212a55" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className={`title title_3 ${styles.optionsandservices_title}`}>
         {t('optionsandservices.titles.other')}
       </div>
 
-      <div className={styles.optionsandservices_block}>
-        <div className={styles.optionsandservices_block_left}>
-          <div className={styles.optionsandservices_block_title}>
-            {t('optionsandservices.blocks.roaming_europe.title')}
-          </div>
-          <div className={styles.optionsandservices_block_subtitle}>
-            {t('optionsandservices.blocks.roaming_europe.subtitle')}
-          </div>
+      <div className={styles.optionsandservices_blocks_2}>
+        <div className={styles.optionsandservices_block}>
+          <div className={styles.optionsandservices_block_top}>
+            <div className={styles.optionsandservices_block_left}>
+              <div className={styles.optionsandservices_block_title}>
+                {t('optionsandservices.blocks.speed_4g_plus.title')}
+              </div>
+              <div className={styles.optionsandservices_block_subtitle}>
+                {t('optionsandservices.blocks.speed_4g_plus.subtitle')}
+              </div>
 
-          {renderItems('optionsandservices.blocks.roaming_europe.items')}
+              {renderItems('optionsandservices.blocks.speed_4g_plus.items')}
+            </div>
+            {/*<img*/}
+            {/*  className={styles.optionsandservices_block_top_img}*/}
+            {/*  src="/images/landings/59865624.webp"*/}
+            {/*  alt="Moldtelecom"*/}
+            {/*/>*/}
+          </div>
+          <div className={styles.optionsandservices_block_bottom}>
+            <Button
+              color={'var(--theme_primary_color_blue_4)'}
+              bgcolor={'var(--theme_primary_color_blue_3)'}
+              border={'var(--theme_primary_color_blue_3)'}
+              hover_border={'var(--theme_primary_color_blue_2)'}
+              hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+              className={styles.optionsandservices_block_btn}
+              onClick={() => setActivePopup('f7')}
+            >
+              {t('optionsandservices.usage_conditions')}{' '}
+              <Icon type="arrow_right" color="#212a55" />
+            </Button>
+          </div>
+        </div>
+        <div className={styles.optionsandservices_block}>
+          <div className={styles.optionsandservices_block_top}>
+            <div className={styles.optionsandservices_block_left}>
+              <div className={styles.optionsandservices_block_title}>
+                {t('optionsandservices.blocks.upload_max.title')}
+              </div>
+              <div className={styles.optionsandservices_block_subtitle}>
+                {t('optionsandservices.blocks.upload_max.subtitle')}
+              </div>
 
-          <Button
-            color={'var(--theme_primary_color_blue_4)'}
-            bgcolor={'var(--theme_primary_color_blue_3)'}
-            border={'var(--theme_primary_color_blue_3)'}
-            hover_border={'var(--theme_primary_color_blue_2)'}
-            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
-            className={styles.optionsandservices_block_btn}
-            onClick={() => setActivePopup('f1')}
-          >
-            {t('optionsandservices.usage_conditions')}{' '}
-            <Icon type="arrow_right" color="#212a55" />
-          </Button>
+              {renderItems('optionsandservices.blocks.upload_max.items')}
+            </div>
+            {/*<img*/}
+            {/*  className={styles.optionsandservices_block_top_img}*/}
+            {/*  src="/images/landings/59865624.webp"*/}
+            {/*  alt="Moldtelecom"*/}
+            {/*/>*/}
+          </div>
+          <div className={styles.optionsandservices_block_bottom}>
+            <Button
+              color={'var(--theme_primary_color_blue_4)'}
+              bgcolor={'var(--theme_primary_color_blue_3)'}
+              border={'var(--theme_primary_color_blue_3)'}
+              hover_border={'var(--theme_primary_color_blue_2)'}
+              hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+              className={styles.optionsandservices_block_btn}
+              onClick={() => setActivePopup('f8')}
+            >
+              {t('optionsandservices.usage_conditions')}{' '}
+              <Icon type="arrow_right" color="#212a55" />
+            </Button>
+          </div>
         </div>
       </div>
 

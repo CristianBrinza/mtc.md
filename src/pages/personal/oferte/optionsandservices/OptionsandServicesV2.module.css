@@ -134,6 +134,25 @@
   border-radius: 100px;
   margin-right: -7px;
 }
+.optionsandservices_title_2 {
+}
+.optionsandservices_blocks_2 {
+  display: flex;
+  gap: 20px;
+  /*align-items: center;*/
+  align-items: stretch;
+  justify-content: center;
+}
+.optionsandservices_blocks_2 .optionsandservices_block {
+  max-width: 530px;
+  margin: 15px 0 5px;
+}
+.optionsandservices_bg {
+  background: var(--theme_primary_color_gray_2);
+  padding: 20px 0 40px;
+  width: 100%;
+  margin: 40px auto 30px;
+}
 .optionsandservices_block_table_row_price {
   font-size: 12px;
   opacity: 0.6;
