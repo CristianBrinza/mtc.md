@@ -14,6 +14,7 @@ import FaqQAV2 from '../../../../components/faqV2/FaqQAV2';
 import Popups from '../../../../components/Popups/Popups';
 import styles from './OptionsandServicesV2.module.css';
 import SEO from '../../../../components/SEO';
+import Button from '../../../../components/Button.tsx';
 
 export default function OptionsandServicesV2() {
   const { t } = useTranslation();
@@ -27,8 +28,6 @@ export default function OptionsandServicesV2() {
     { label: t('optionsandservices.breadcrumb.mobile'), url: ' ' },
     { label: t('optionsandservices.breadcrumb.optionsandservices') },
   ];
-
-
 
   return (
     <>
@@ -53,6 +52,39 @@ export default function OptionsandServicesV2() {
       </Hero>
       <div className={`title title_3 ${styles.optionsandservices_title}`}>
         {t('optionsandservices.titles.select')}
+      </div>
+
+      <div className={styles.optionsandservices_block}>
+        <div className={styles.optionsandservices_block_left}>
+          <div className={styles.optionsandservices_block_title}>
+            {t('optionsandservices.blocks.internet_mobile.title')}
+          </div>
+          <div className={styles.optionsandservices_block_subtitle}>
+            {t('optionsandservices.blocks.internet_mobile.subtitle')}
+          </div>
+
+          <div className={styles.optionsandservices_block_table}>
+            <table>
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+
+          <Button
+            color={'var(--theme_primary_color_blue_4)'}
+            bgcolor={'var(--theme_primary_color_blue_3)'}
+            border={'var(--theme_primary_color_blue_3)'}
+            hover_border={'var(--theme_primary_color_blue_2)'}
+            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+            className={styles.optionsandservices_block_btn}
+            onClick={() => setActivePopup('f1')}
+          >
+            {t('optionsandservices.usage_conditions')}{' '}
+            <Icon type="arrow_right" color="#212a55" />
+          </Button>
+        </div>
       </div>
 
       <MyApp style_type="blue_white" />

@@ -109,7 +109,11 @@
         "title": "Minute Naționale",
         "subtitle": "Vorbește nelimitat în rețea și național, fără griji și întreruperi.",
         "items": [
-          { "label": "50 minute<span> / 30 zile</span>", "price": "100 lei" },
+          {
+            "label": "50 minute",
+            "valability": "/30 zile",
+            "price": "100 lei"
+          },
           { "label": "100 minute<span> / 30 zile</span>", "price": "20 lei" },
           { "label": "200 minute<span> / 30 zile</span>", "price": "50 lei" }
         ]
@@ -153,6 +157,7 @@
         "items": [
           {
             "label": "Apeluri <br class='br_roaming'/>(100 min)<span> / 30 zile</span>",
+            "value": "(100 min)",
             "price": "70 lei"
           },
           {

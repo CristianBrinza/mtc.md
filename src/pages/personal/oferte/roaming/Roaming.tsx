@@ -146,14 +146,19 @@ export default function Roaming() {
   const renderItems = (key: string) => {
     const items = t(key, { returnObjects: true }) as Array<{
       label: string;
+      valability?: string;
       price: string;
     }>;
     return items.map((item, idx) => (
       <div key={idx} className={styles.optionsandservices_block_list}>
+        {/*{item.valability?}*/}
         <div
           className={styles.optionsandservices_block_list_left}
           dangerouslySetInnerHTML={{ __html: item.label }}
         />
+        {/*<span dangerouslySetInnerHTML={{ __html: item.label }}></span>*/}
+        {/*{item.label}*/}
+        {item.valability}
         <div className={styles.optionsandservices_block_list_right}>
           {item.price}
         </div>

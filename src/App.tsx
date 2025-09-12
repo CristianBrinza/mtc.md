@@ -83,7 +83,10 @@ function AppContent() {
         {/*App redirect*/}
         <Route path="/:lang/mymtc" element={<AppRedirect />} />
         <Route path="/mymtc" element={<AppRedirect />} />
-        <Route path="/:lang/mobile-options" element={<OptionsandServicesV2 />} />
+        <Route
+          path="/:lang/mobile-options"
+          element={<OptionsandServicesV2 />}
+        />
         <Route path="/:lang/sms-service" element={<SmsServices />} />
         <Route
           path="/:lang/weekend-cu-beneficii"
