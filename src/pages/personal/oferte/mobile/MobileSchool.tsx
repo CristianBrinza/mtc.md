@@ -16,7 +16,7 @@ import Slider from 'react-slick';
 import Icon from '../../../../components/Icon.tsx';
 import TableRoaming from '../../../../components/Popups/TableRoaming.tsx';
 import Functions from '../../../../components/functions/Functions.tsx';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Popup from '../../../../components/Popup/Popup.tsx';
 // import Toggle from '../../../../components/toggle/Toggle.tsx';
 import BuyForm from '../../../../components/buy_form/BuyForm.tsx';
@@ -26,6 +26,7 @@ import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 import ScrollableWrapper from '../../../../components/Popup/ScrollableWrapper.tsx';
 import { trackEvent } from '../../../../initAnalytics.ts';
 import Conversion_1 from '../../../../components/conversion/Conversion_1/Conversion_1.tsx';
+import { useSearchParams } from 'react-router-dom';
 
 export default function MobileSchool() {
   const { t } = useTranslation();
@@ -192,6 +193,16 @@ export default function MobileSchool() {
   // const warning5Items = t('tm.details.warning.items_5', {
   //   returnObjects: true,
   // }) as string[];
+
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const offer = searchParams.get('smartphone_offer');
+    if (offer !== null) {
+      // If ?smartphone_offer exists in URL, setActiveConfig('1')
+      setActiveConfig('3');
+    }
+  }, [searchParams]);
 
   return (
     <>

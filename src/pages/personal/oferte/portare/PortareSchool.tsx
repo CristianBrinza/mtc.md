@@ -26,6 +26,8 @@ import ShopCard from '../../../../components/shop_card/ShopCard.tsx';
 import ScrollableWrapper from '../../../../components/Popup/ScrollableWrapper.tsx';
 import { trackEvent } from '../../../../initAnalytics.ts';
 import Conversion_1 from '../../../../components/conversion/Conversion_1/Conversion_1.tsx';
+import { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export default function PortareSchool() {
   const { t } = useTranslation();
@@ -55,12 +57,12 @@ export default function PortareSchool() {
 
   const handleClick = (type: 'sim' | 'esim') => {
     setSelected(type);
-    trackEvent('tm_sim_select', type);
+    trackEvent('portare_sim_select', type);
   };
   const [activePopupSubConfig, setActivePopupSubConfig] = useState<string>('');
   const [activeBuyConfig, setActiveBuyConfig] = useState<string>('');
   const setPopup = (name: string, subname: string) => {
-    trackEvent('tm_device_buy', `${name} ${subname}`);
+    trackEvent('portare_device_buy', `${name} ${subname}`);
     setActivePopup('1934567');
     setActivePopupConfig(name);
     setActivePopupSubConfig(subname);
@@ -193,6 +195,16 @@ export default function PortareSchool() {
   //   returnObjects: true,
   // }) as string[];
 
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const offer = searchParams.get('smartphone_offer');
+    if (offer !== null) {
+      // If ?smartphone_offer exists in URL, setActiveConfig('1')
+      setActiveConfig('2');
+    }
+  }, [searchParams]);
+
   return (
     <>
       <SEO {...seo} />
@@ -223,57 +235,58 @@ export default function PortareSchool() {
           />
         </div>
       </Hero>
-
-      <div className={styles.select_type}>
-        <div
-          className={`${styles.select_type_card} ${styles.select_type_card_active}`}
-          onClick={() => trackEvent('portare_select_type_abonament')}
-        >
-          <div className={styles.select_type_card_top}>
-            <Icon
-              size={'22px'}
-              type={'retry'}
-              color={'var(--theme_primary_color_blue_2)'}
-            />
-            {t('tm.portare')}
+      <div className={styles.select_type_block}>
+        <div className={styles.select_type}>
+          <div
+            className={`${styles.select_type_card} ${styles.select_type_card_active}`}
+            onClick={() => trackEvent('portare_select_type_abonament')}
+          >
+            <div className={styles.select_type_card_top}>
+              <Icon
+                size={'22px'}
+                type={'retry'}
+                color={'var(--theme_primary_color_blue_2)'}
+              />
+              {t('tm.portare')}
+            </div>
+            {/*<div className={styles.select_type_card_bottom}></div>*/}
           </div>
-          <div className={styles.select_type_card_bottom}></div>
-        </div>
-        <div
-          className={styles.select_type_card}
-          onClick={() => {
-            trackEvent('portare_select_type_abonament');
-            goToPage(`https://new.moldtelecom.md/${t('lang')}/mobile`);
-          }}
-        >
-          <div className={styles.select_type_card_top}>
-            <Icon
-              size={'22px'}
-              type={'plus'}
-              color={'var(--theme_primary_color_blue_2)'}
-            />
-            {t('tm.abonament')}
+          <div
+            className={styles.select_type_card}
+            onClick={() => {
+              trackEvent('portare_select_type_portare');
+              goToPage(`https://new.moldtelecom.md/${t('lang')}/mobile`);
+            }}
+          >
+            <div className={styles.select_type_card_top}>
+              <Icon
+                size={'22px'}
+                type={'plus'}
+                color={'var(--theme_primary_color_blue_2)'}
+              />
+              {t('tm.abonament')}
+            </div>
+            {/*<div className={styles.select_type_card_bottom}></div>*/}
           </div>
-          <div className={styles.select_type_card_bottom}></div>
-        </div>
-        <div
-          className={styles.select_type_card}
-          onClick={() => {
-            trackEvent('portare_select_type_prepay');
-            goToPage(
-              `https://www.moldtelecom.md/${t('lang')}/personal/prepay-cartela`
-            );
-          }}
-        >
-          <div className={styles.select_type_card_top}>
-            <Icon
-              size={'22px'}
-              type={'sim'}
-              color={'var(--theme_primary_color_blue_2)'}
-            />
-            {t('tm.prepay')}
+          <div
+            className={styles.select_type_card}
+            onClick={() => {
+              trackEvent('portare_select_type_prepay');
+              goToPage(
+                `https://www.moldtelecom.md/${t('lang')}/personal/prepay-cartela`
+              );
+            }}
+          >
+            <div className={styles.select_type_card_top}>
+              <Icon
+                size={'22px'}
+                type={'sim'}
+                color={'var(--theme_primary_color_blue_2)'}
+              />
+              {t('tm.prepay')}
+            </div>
+            {/*<div className={styles.select_type_card_bottom}></div>*/}
           </div>
-          <div className={styles.select_type_card_bottom}></div>
         </div>
       </div>
       <div className={`title title_5 ${styles.title2}`}>
