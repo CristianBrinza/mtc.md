@@ -38,6 +38,7 @@ import Promo1536965 from './pages/eshop/promo_b2s/Promo1536965.tsx';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import PromoTM from './pages/costume/promo_tm/PromoTM.tsx';
+import OptionsandServices from './pages/personal/oferte/optionsandservices/OptionsandServices.tsx';
 // import Home from './pages/home/Home_v3.tsx';
 
 function AppContent() {
@@ -87,6 +88,7 @@ function AppContent() {
           path="/:lang/mobile-options"
           element={<OptionsandServicesV2 />}
         />
+        <Route path="/:lang/mobile-options2" element={<OptionsandServices />} />
         <Route path="/:lang/sms-service" element={<SmsServices />} />
         <Route
           path="/:lang/weekend-cu-beneficii"

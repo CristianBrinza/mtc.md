@@ -146,7 +146,8 @@ export default function Roaming() {
   const renderItems = (key: string) => {
     const items = t(key, { returnObjects: true }) as Array<{
       label: string;
-      valability?: string;
+      value: string;
+      valability: string;
       price: string;
     }>;
     return items.map((item, idx) => (
@@ -154,11 +155,13 @@ export default function Roaming() {
         {/*{item.valability?}*/}
         <div
           className={styles.optionsandservices_block_list_left}
-          dangerouslySetInnerHTML={{ __html: item.label }}
-        />
-        {/*<span dangerouslySetInnerHTML={{ __html: item.label }}></span>*/}
-        {/*{item.label}*/}
-        {item.valability}
+          // dangerouslySetInnerHTML={{ __html: item.label }}
+        >
+          {/*<span dangerouslySetInnerHTML={{ __html: item.label }}></span>*/}
+          {item.label}
+          <br className={styles.br_roaming} />
+          &nbsp;({item.value})<span> / {item.valability}</span>
+        </div>
         <div className={styles.optionsandservices_block_list_right}>
           {item.price}
         </div>
@@ -205,17 +208,26 @@ export default function Roaming() {
           onChange={handleCountryChange}
         />
 
-        {showSuggestions && filteredCountries.length > 0 && (
+        {showSuggestions && (
           <div className={styles.suggestions}>
-            {filteredCountries.map(name => (
-              <div
-                className={styles.suggestions_btn}
-                key={name}
-                onClick={() => handleSuggestionClick(name)}
-              >
-                {name}
+            {filteredCountries.length > 0 ? (
+              filteredCountries.map(name => (
+                <div
+                  className={styles.suggestions_btn}
+                  key={name}
+                  onClick={() => handleSuggestionClick(name)}
+                >
+                  {name}
+                </div>
+              ))
+            ) : (
+              <div className={styles.suggestions_empty}>
+                {t('roaming.search.no_results', {
+                  country,
+                  defaultValue: `${t('roaming.t1')} „${country}”. ${t('roaming.t2')}`,
+                })}
               </div>
-            ))}
+            )}
           </div>
         )}
 

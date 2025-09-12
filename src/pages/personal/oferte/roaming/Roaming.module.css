@@ -39,6 +39,10 @@
   background-color: #dfe4fd;
   cursor: pointer;
 }
+.suggestions_empty {
+  font-size: 10px;
+  color: var(--theme_primary_color_blue_4);
+}
 
 .operatorTableWrapper {
   width: 100%;
@@ -364,6 +368,9 @@
 .optionsandservices_block_list_left :global(.br_roaming) {
   display: none;
 }
+.optionsandservices_block_list_left .br_roaming {
+  display: none;
+}
 
 .roaming_activate_right {
   width: 100%;
@@ -555,6 +562,9 @@
     left: -40px !important;
   }
   .optionsandservices_block_list_left :global(.br_roaming) {
+    display: block;
+  }
+  .optionsandservices_block_list_left br_roaming {
     display: block;
   }
   .optionsandservices_block_inside {

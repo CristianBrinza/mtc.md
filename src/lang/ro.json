@@ -97,12 +97,44 @@
         "title": "Internet Mobil",
         "subtitle": "Soluția ideală pentru momentele în care traficul tău de internet nu îți ajunge.",
         "items": [
-          { "label": "Nelimitat<span> / 1 zi</span>", "price": "20 lei" },
-          { "label": "Nelimitat<span> / 7 zile</span>", "price": "100 lei" },
-          { "label": "10 GB<span> / 15 zile</span>", "price": "50 lei" },
-          { "label": "5 GB<span> / 30 zile</span>", "price": "60 lei" },
-          { "label": "10 GB<span> / 30 zile</span>", "price": "100 lei" },
-          { "label": "20 GB<span> / 30 zile</span>", "price": "150 lei" }
+          {
+            "label": "Internet",
+            "value": "Nelimitat",
+            "valability": "1 zi",
+            "price": "20 lei",
+            "tag": "New"
+          },
+          {
+            "label": "Internet",
+            "value": "Nelimitat",
+            "valability": "7 zile",
+            "price": "100 lei",
+            "tag": "New"
+          },
+          {
+            "label": "Internet",
+            "value": "5 GB",
+            "valability": "30 zile",
+            "price": "60 lei"
+          },
+          {
+            "label": "Internet",
+            "value": "10 GB",
+            "valability": "15 zile",
+            "price": "50 lei"
+          },
+          {
+            "label": "Internet",
+            "value": "10 GB",
+            "valability": "30 zile",
+            "price": "100 lei"
+          },
+          {
+            "label": "Internet",
+            "value": "20 GB",
+            "valability": "30 zile",
+            "price": "150 lei"
+          }
         ]
       },
       "national_minutes": {
@@ -110,12 +142,23 @@
         "subtitle": "Vorbește nelimitat în rețea și național, fără griji și întreruperi.",
         "items": [
           {
-            "label": "50 minute",
-            "valability": "/30 zile",
+            "label": "Minute",
+            "value": "50",
+            "valability": "30 zile",
             "price": "100 lei"
           },
-          { "label": "100 minute<span> / 30 zile</span>", "price": "20 lei" },
-          { "label": "200 minute<span> / 30 zile</span>", "price": "50 lei" }
+          {
+            "label": "Minute",
+            "value": "100",
+            "valability": "30 zile",
+            "price": "20 lei"
+          },
+          {
+            "label": "Minute",
+            "value": "200",
+            "valability": "30 zile",
+            "price": "50 lei"
+          }
         ]
       },
       "international_minutes": {
@@ -123,14 +166,23 @@
         "subtitle": "Comunică ușor cu cei dragi din afara țării, la tarife avantajoase.",
         "items": [
           {
-            "label": "30 minute<br/><span>România și Ucraina / 30 zile</span>",
+            "label": "România și Ucraina",
+            "value": "30 min",
+            "valability": "30 zile",
             "price": "50 lei"
           },
           {
-            "label": "25 minute<br/><span>Europa, Israel, SUA, Canada / 30 zile</span>",
+            "label": "Europa, Israel, SUA, Canada",
+            "value": "25 min",
+            "valability": "30 zile",
             "price": "50 lei"
           },
-          { "label": "Orice Țară<span> / 30 zile</span>", "price": "50 lei" }
+          {
+            "label": "Orice Țară",
+            "value": "-",
+            "valability": "30 zile",
+            "price": "50 lei"
+          }
         ]
       },
       "sms": {
@@ -138,15 +190,21 @@
         "subtitle": "Trimite rapid mesaje celor dragi, oriunde s-ar afla.",
         "items": [
           {
-            "label": "50 SMS naționale<span> / 30 zile</span>",
+            "label": "SMS naționale",
+            "value": "50",
+            "valability": "30 zile",
             "price": "10 lei"
           },
           {
-            "label": "100 SMS naționale<span> / 30 zile</span>",
+            "label": "SMS naționale",
+            "value": "100",
+            "valability": "30 zile",
             "price": "15 lei"
           },
           {
-            "label": "20 SMS internaționale<span> / 30 zile</span>",
+            "label": "SMS internaționale",
+            "value": "20",
+            "valability": "30 zile",
             "price": "35 lei"
           }
         ]
@@ -156,20 +214,27 @@
         "subtitle": "Comunică în Europa fără griji, la tarife ca acasă.",
         "items": [
           {
-            "label": "Apeluri <br class='br_roaming'/>(100 min)<span> / 30 zile</span>",
-            "value": "(100 min)",
+            "label": "Apeluri",
+            "value": "100 min",
+            "valability": "30 zile",
             "price": "70 lei"
           },
           {
-            "label": "Internet <br class='br_roaming'/>(2 GB)<span> / 30 zile</span>",
+            "label": "Internet",
+            "value": "2 GB",
+            "valability": "30 zile",
             "price": "100 lei"
           },
           {
-            "label": "Combo <br class='br_roaming'/>(1 GB / 50 min)<span> / 30 zile</span>",
+            "label": "Combo",
+            "value": "1 GB / 50 min",
+            "valability": "30 zile",
             "price": "100 lei"
           },
           {
-            "label": "Connect <br class='br_roaming'/>(5 GB / 50 min)<span> / 30 zile</span>",
+            "label": "Connect",
+            "value": "5 GB / 50 min",
+            "valability": "30 zile",
             "price": "180 lei"
           }
         ]
@@ -179,11 +244,15 @@
         "subtitle": "Comunicarea și accesul la internet sunt prioritățile noastre.",
         "items": [
           {
-            "label": "Apeluri World <br class='br_roaming'/>(10 min)<span> / 30 zile</span>",
+            "label": "Apeluri World",
+            "value": "10 min",
+            "valability": "30 zile",
             "price": "70 lei"
           },
           {
-            "label": "Internet World <br class='br_roaming'/>(1 GB)<span> / 30 zile</span>",
+            "label": "Internet World",
+            "value": "1 GB",
+            "valability": "30 zile",
             "price": "100 lei"
           }
         ]
@@ -193,7 +262,9 @@
         "subtitle": "Seteaza Digi Mobile pentru Super Oferta",
         "items": [
           {
-            "label": "Internet <br class='br_roaming'/>(5 GB)<span> / 30 zile</span>",
+            "label": "Internet",
+            "value": "5 GB",
+            "valability": "30 zile",
             "price": "50 lei"
           }
         ]
@@ -201,14 +272,29 @@
       "speed_4g_plus": {
         "title": "Viteza 4G+",
         "subtitle": "Majorarea vitezei de download până la 175 Mbps și upload până la 50 Mbps.",
-        "items": [{ "label": "30 zile", "price": "Gratuit" }]
+        "items": [
+          {
+            "label": "Viteza 4G+",
+            "value": "-",
+            "valability": "30 zile",
+            "price": "Gratuit"
+          }
+        ]
       },
       "upload_max": {
         "title": "Upload Maxim",
         "subtitle": "Acordarea vitezei de upload de 5,76 Mbps.",
-        "items": [{ "label": "30 zile", "price": "20 lei" }]
+        "items": [
+          {
+            "label": "Upload Maxim",
+            "value": "5,76 Mbps",
+            "valability": "30 zile",
+            "price": "20 lei"
+          }
+        ]
       }
     },
+
     "usage_conditions": "Condițiile de utilizare",
     "faq": {
       "q1": "Cum pot să-mi verific starea contului?",
@@ -1450,6 +1536,8 @@
       "mobile": "Mobil",
       "roaming": "Roaming"
     },
+    "t1": "Nu am găsit nicio țară pentru",
+    "t2": "Verifică ortografia sau încearcă o denumire alternativă.",
     "calatoreste": "Călătorește, comunică și navighează fără limite!",
     "table": {
       "headers": {

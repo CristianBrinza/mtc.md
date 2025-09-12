@@ -29,6 +29,69 @@ export default function OptionsandServicesV2() {
     { label: t('optionsandservices.breadcrumb.optionsandservices') },
   ];
 
+  const renderItems = (key: string) => {
+    const items = t(key, { returnObjects: true }) as Array<{
+      label: string;
+      value: string;
+      valability: string;
+      price: string;
+      tag?: string;
+    }>;
+
+    return (
+      <div className={styles.optionsandservices_block_table}>
+        {items.map((item, idx) => (
+          <div key={idx} className={styles.optionsandservices_block_table_row}>
+            <div className={styles.optionsandservices_block_table_row_item}>
+              {item.tag && (
+                <div
+                  className={styles.optionsandservices_block_table_row_item_tag}
+                >
+                  {item.tag}
+                </div>
+              )}
+              <div
+                className={styles.optionsandservices_block_table_row_item_info}
+              >
+                <b>{item.value}</b>{' '}
+                <span className={styles.optionsandservices_block_table_row_sub}>
+                  {item.label}
+                </span>
+              </div>
+            </div>
+            <span>
+              {' '}
+              {item.price}
+              <span className={styles.optionsandservices_block_table_row_price}>
+                {' '}
+                / {item.valability}
+              </span>
+            </span>
+          </div>
+        ))}
+
+        {/*<table>*/}
+        {/*  /!*<thead>*!/*/}
+        {/*  /!*<tr>*!/*/}
+        {/*  /!*  <th>Opțiune</th>*!/*/}
+        {/*  /!*  <th>Preț</th>*!/*/}
+        {/*  /!*  <th>Valabilitate</th>*!/*/}
+        {/*  /!*</tr>*!/*/}
+        {/*  /!*</thead>*!/*/}
+        {/*  <tbody>*/}
+        {/*  {items.map((item, idx) => (*/}
+        {/*    <tr key={idx} className={styles.optionsandservices_block_table_row}>*/}
+        {/*      <td><b>{item.value}</b></td>*/}
+        {/*      <td className={styles.optionsandservices_block_table_td}>{item.price}</td>*/}
+        {/*      <td>{item.valability}</td>*/}
+        {/*    </tr>*/}
+        {/*  ))}*/}
+        {/*  </tbody>*/}
+        {/*</table>*/}
+      </div>
+    );
+  };
+
   return (
     <>
       <SEO {...seo} />
@@ -55,22 +118,127 @@ export default function OptionsandServicesV2() {
       </div>
 
       <div className={styles.optionsandservices_block}>
+        <div className={styles.optionsandservices_block_top}>
+          <div
+            className={`${styles.optionsandservices_block_left} ${styles.optionsandservices_block_left_sp}`}
+          >
+            <div className={styles.optionsandservices_block_title}>
+              {t('optionsandservices.blocks.internet_mobile.title')}
+            </div>
+            <div className={styles.optionsandservices_block_subtitle}>
+              {t('optionsandservices.blocks.internet_mobile.subtitle')}
+            </div>
+
+            {renderItems('optionsandservices.blocks.internet_mobile.items')}
+          </div>
+          <img
+            className={styles.optionsandservices_block_top_img_sp}
+            src="/images/landings/59865621.webp"
+            alt="Moldtelecom"
+          />
+        </div>
+        <div className={styles.optionsandservices_block_bottom}>
+          <Button
+            color={'var(--theme_primary_color_blue_4)'}
+            bgcolor={'var(--theme_primary_color_blue_3)'}
+            border={'var(--theme_primary_color_blue_3)'}
+            hover_border={'var(--theme_primary_color_blue_2)'}
+            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+            className={styles.optionsandservices_block_btn}
+            onClick={() => setActivePopup('f1')}
+          >
+            {t('optionsandservices.usage_conditions')}{' '}
+            <Icon type="arrow_right" color="#212a55" />
+          </Button>
+
+          <div className={styles.optionsandservices_block_bottom_text}>
+            <b>Activează</b> prin <a href="">SMS 100</a>, aplicația{' '}
+            <a href="">My Moldtelecom</a> sau cerere depusă la{' '}
+            <a href="">Magazine</a>.
+          </div>
+        </div>
+      </div>
+      <div className={styles.optionsandservices_block}>
+        <div className={styles.optionsandservices_block_top}>
+          <div className={`${styles.optionsandservices_block_left}`}>
+            <div className={styles.optionsandservices_block_title}>
+              {t('optionsandservices.blocks.national_minutes.title')}
+            </div>
+            <div className={styles.optionsandservices_block_subtitle}>
+              {t('optionsandservices.blocks.national_minutes.subtitle')}
+            </div>
+
+            {renderItems('optionsandservices.blocks.national_minutes.items')}
+          </div>
+          <img
+            className={styles.optionsandservices_block_top_img}
+            src="/images/landings/59865622.webp"
+            alt="Moldtelecom"
+          />
+        </div>
+        <div className={styles.optionsandservices_block_bottom}>
+          <Button
+            color={'var(--theme_primary_color_blue_4)'}
+            bgcolor={'var(--theme_primary_color_blue_3)'}
+            border={'var(--theme_primary_color_blue_3)'}
+            hover_border={'var(--theme_primary_color_blue_2)'}
+            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+            className={styles.optionsandservices_block_btn}
+            onClick={() => setActivePopup('f1')}
+          >
+            {t('optionsandservices.usage_conditions')}{' '}
+            <Icon type="arrow_right" color="#212a55" />
+          </Button>
+        </div>
+      </div>
+      <div className={styles.optionsandservices_block}>
+        <div className={styles.optionsandservices_block_top}>
+          <div className={styles.optionsandservices_block_left}>
+            <div className={styles.optionsandservices_block_title}>
+              {t('optionsandservices.blocks.sms.title')}
+            </div>
+            <div className={styles.optionsandservices_block_subtitle}>
+              {t('optionsandservices.blocks.sms.subtitle')}
+            </div>
+
+            {renderItems('optionsandservices.blocks.sms.items')}
+          </div>
+          <img
+            className={styles.optionsandservices_block_top_img}
+            src="/images/landings/59865623.webp"
+            alt="Moldtelecom"
+          />
+        </div>
+        <div className={styles.optionsandservices_block_bottom}>
+          <Button
+            color={'var(--theme_primary_color_blue_4)'}
+            bgcolor={'var(--theme_primary_color_blue_3)'}
+            border={'var(--theme_primary_color_blue_3)'}
+            hover_border={'var(--theme_primary_color_blue_2)'}
+            hover_bgcolor={'var(--theme_primary_color_blue_2)'}
+            className={styles.optionsandservices_block_btn}
+            onClick={() => setActivePopup('f1')}
+          >
+            {t('optionsandservices.usage_conditions')}{' '}
+            <Icon type="arrow_right" color="#212a55" />
+          </Button>
+        </div>
+      </div>
+
+      <div className={`title title_3 ${styles.optionsandservices_title}`}>
+        {t('optionsandservices.titles.other')}
+      </div>
+
+      <div className={styles.optionsandservices_block}>
         <div className={styles.optionsandservices_block_left}>
           <div className={styles.optionsandservices_block_title}>
-            {t('optionsandservices.blocks.internet_mobile.title')}
+            {t('optionsandservices.blocks.roaming_europe.title')}
           </div>
           <div className={styles.optionsandservices_block_subtitle}>
-            {t('optionsandservices.blocks.internet_mobile.subtitle')}
+            {t('optionsandservices.blocks.roaming_europe.subtitle')}
           </div>
 
-          <div className={styles.optionsandservices_block_table}>
-            <table>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-            </table>
-          </div>
+          {renderItems('optionsandservices.blocks.roaming_europe.items')}
 
           <Button
             color={'var(--theme_primary_color_blue_4)'}
